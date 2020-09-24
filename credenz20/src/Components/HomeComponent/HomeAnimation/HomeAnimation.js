@@ -2,7 +2,7 @@ import React from "react";
 
 const homeanimation = (props) =>{
     return(
-        <div></div>
+        <div>Animation goes here</div>
     );
 }
 

@@ -1,32 +1,7 @@
 import React from "react";
 import classes from './sponsors.module.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
-// $(document).ready(function () {
-//     $('.customer').slick({
-//         slidesToShow: 6,
-//         slidesToScroll: 1,
-//         autoplay: true,
-//         autoplaySpeed: 1500,
-//         arrows: false,
-//         dots: false,
-//         pauseOnHover: true,
-//         responsive: [{
-//             breakpoint: 768,
-//             settings: {
-//                 slidesToShow: 4
-//             }
-//         }, {
-//             breakpoint: 520,
-//             settings: {
-//                 slidesToShow: 3
-//             }
-//         }]
-//     });
-// });
 
 const sponsors =(props)=>{
     return(
