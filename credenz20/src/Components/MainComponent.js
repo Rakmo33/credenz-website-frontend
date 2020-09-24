@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import  Home  from './HomeComponent';
-import  Events  from './EventsComponent';
-import  Register  from './RegisterComponent';
-import  Contact  from './ContactComponent';
+import  Home  from './HomeComponent/HomeComponent';
+import  Events  from './EventsComponent/EventsComponent';
+import  Register  from './RegisterComponent/RegisterComponent';
+import  Contact  from './ContactComponent/ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
