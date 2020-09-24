@@ -1,21 +1,99 @@
 import React from "react";
 import classes from './sponsors.module.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+// $(document).ready(function () {
+//     $('.customer').slick({
+//         slidesToShow: 6,
+//         slidesToScroll: 1,
+//         autoplay: true,
+//         autoplaySpeed: 1500,
+//         arrows: false,
+//         dots: false,
+//         pauseOnHover: true,
+//         responsive: [{
+//             breakpoint: 768,
+//             settings: {
+//                 slidesToShow: 4
+//             }
+//         }, {
+//             breakpoint: 520,
+//             settings: {
+//                 slidesToShow: 3
+//             }
+//         }]
+//     });
+// });
+
 const sponsors =(props)=>{
     return(
-        <div>Sponsors of credenz
-            <section className={"customer-logos slider"}>
-                <div className={"classes.slick-slide"}><img src={require('./img/aarnell.png')} /></div>
-                <div className={"classes.slick-slide"}><img src={require("./img/avaya.jpg")} /></div>
-                <div className={"classess.slick-slide"}><img src={require("./img/Byju's2.jpg")}/></div>
-                <div className="slide"><img src={require("./img/codechef.jpg")}/></div>
-                <div className="slide"><img src={require("./img/c3.jpg")}/></div>
-                <div className="slide"><img src={require("./img/finiq2.png")}/></div>
-                <div className="slide"><img src={require("./img/ims2.jpg")}/></div>
-                <div className="slide"><img src={require("./img/interview3.jpg")}/></div>
-                <div className="slide"><img src={require("./img/tcs.png")}/></div>
-            </section>
-        </div>
+    <div className={classes.mid}>
+        <h2 >Our Sponsors</h2>
+    
+        <Carousel
+  additionalTransfrom={0}
+  arrows
+  autoPlay
+  autoPlaySpeed={1000}
+  centerMode={false}
+  className=""
+  containerClass="container-with-dots"
+  dotListClass=""
+  draggable
+  focusOnSelect={false}
+  infinite
+  itemClass=""
+  keyBoardControl
+  minimumTouchDrag={80}
+  renderButtonGroupOutside={false}
+  renderDotsOutside={false}
+  responsive={{
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024
+      },
+      items: 5,
+      partialVisibilityGutter: 40
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0
+      },
+      items: 1,
+      partialVisibilityGutter: 30
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    }
+  }}
+  showDots={false}
+  sliderClass=""
+  slidesToSlide={2}
+  swipeable >
+
+  <div><img src={require('./img/aarnell.png')}/></div>
+  <div><img src={require('./img/avaya.jpg')}/></div>
+  <div><img src={require("./img/Byju's2.jpg")}/></div>
+  <div><img src={require('./img/c3.jpg')}/></div>
+  <div><img src={require('./img/codechef.jpg')}/></div>
+  <div><img src={require('./img/finiq2.png')}/></div>
+  <div><img src={require('./img/ims2.jpg')}/></div>
+  <div><img src={require('./img/interview3.jpg')}/></div>
+  <div><img src={require('./img/tcs.png')}/></div>
+  </Carousel>
+</div>
     );
 }
 
 export default sponsors;
+
