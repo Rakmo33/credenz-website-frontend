@@ -23,7 +23,7 @@
 //   );
 // }
 import React, { Component } from 'react';
-import Main from './Components/mainComponent/mainComponent'
+import Main from './Components/MainComponent';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 
