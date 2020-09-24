@@ -3,6 +3,7 @@ import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
 import  Contact  from './ContactComponent/ContactComponent';
+import NavBar from './Navbar/Navbar';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
@@ -43,7 +44,6 @@ class Main extends Component {
                     <Route path="/contact" component = { ContactPage } />
                     <Redirect to="/home"/>
                 </Switch>
-                
             </div>
             
         );
