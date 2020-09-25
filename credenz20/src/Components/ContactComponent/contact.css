@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+.tab{
+   
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  
+}
+.select h1 {
+       border-bottom:6px solid #2196f3; 
+}
+.tab h1{
+    color:#40497a;
+    font-family: 'Alata', sans-serif;
+    font-weight: bold;
+    font-size:40px;
+    /* border-bottom:6px solid #2196f3; */
+    padding:10px;
+    cursor:pointer;
+}
+.head{
+    
+    margin-top:5vh;
+    justify-content: center;
+    border:1px solid black;
+}
+.content{
+    margin-top:5vh;
+    height:40vh;
+    border:1px solid black;
+    justify-content: center;
+}
+
+.card{
+    margin:10px;
+}
+.card-title{
+    text-align: center;
+}

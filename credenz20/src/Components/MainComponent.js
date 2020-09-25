@@ -4,6 +4,7 @@ import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
 import  Contact  from './ContactComponent/ContactComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import "bootstrap/dist/css/bootstrap.css";
 
 class Main extends Component {
 
