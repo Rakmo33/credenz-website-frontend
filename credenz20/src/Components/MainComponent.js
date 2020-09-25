@@ -3,8 +3,8 @@ import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
 import  Contact  from './ContactComponent/ContactComponent';
-import NavBar from './Navbar/Navbar';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import NavBar from './Navbar/Navbar';
 
 class Main extends Component {
 
@@ -37,6 +37,7 @@ class Main extends Component {
 
         return(
             <div>
+                <NavBar/>
                 <Switch>
                     <Route path="/home" component = { HomePage } />
                     <Route path="/events" component = { EventsPage } />
