@@ -10,7 +10,7 @@ const Contact = ()=>{
 
   const handleSelect = (select) => {
       setSelect(select);
-      console.log(select);
+      
   }
     return(
 

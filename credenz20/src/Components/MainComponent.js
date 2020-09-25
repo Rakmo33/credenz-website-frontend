@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
-import  Contact  from './ContactComponent/ContactComponent';
+import  Contact  from './ContactComponent/ContactComponent'; 
 import { Switch, Route, Redirect } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.css";
+import SideEvents from './SideEvents/sideEvents';
 
 class Main extends Component {
 
@@ -42,6 +43,7 @@ class Main extends Component {
                     <Route path="/events" component = { EventsPage } />
                     <Route path="/register" component = { RegisterPage } />
                     <Route path="/contact" component = { ContactPage } />
+                    <Route path="/sideEvents" component = {SideEvents}/>
                     <Redirect to="/home"/>
                 </Switch>
                 

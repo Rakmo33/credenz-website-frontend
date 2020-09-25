@@ -1,0 +1,41 @@
+thead tr{
+  height:10vh;
+}
+.body{
+    background-color: black;
+    
+}
+.table{
+    width:90%;
+    color:white;
+    border-collapse: separate;
+    border-spacing:0 5px;
+}
+thead tr th {
+   border:none !important;
+    text-align: center;
+}
+
+tbody tr td {
+    text-align: center;
+    background-color: rgba(14, 69, 114, 0.5);
+    cursor: pointer;
+    border : none !important;
+}
+tbody tr:hover{
+    background-color: rgb(70, 167, 223);
+}
+tr{
+    margin-top:10px;
+}
+tr:nth-child(even){
+    background-color: rgb(5, 34, 59);
+}
+tr:nth-child(even):hover{
+   
+    background-color: rgb(70, 180, 223);
+}
+tr td:first-child { border-top-left-radius: 10px; }
+tr td:last-child { border-top-right-radius: 10px; }
+tr td:first-child { border-bottom-left-radius: 10px; }
+tr td:last-child { border-bottom-right-radius: 10px; }
