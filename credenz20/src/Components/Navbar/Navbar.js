@@ -12,7 +12,7 @@ function NavBar() {
             <Link to="/home" className="navbar-brand">
                 Credenz logo
             </Link>
-            <button id="signup-mob" type="button" class="btn btn-secondary btn-sm d-inline d-lg-none">Sign up</button>
+            <button type="button" class="btn btn-secondary btn-sm d-inline d-lg-none">Sign in</button>
             <button className="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -45,7 +45,7 @@ function NavBar() {
                 </li>
                 </ul>
             </div>
-            <button id="signup" type="button" class="btn btn-secondary btn-sm d-none d-lg-block">Sign up</button>
+            <button id="signin" type="button" class="btn btn-secondary btn-sm d-none d-lg-block">Sign in</button>
             <Link id="logopisb" to="/home" className="navbar-brand d-none d-lg-block">
                 <img src="assets/logopisb.png" alt="PISB" height="30px" width="auto"/>
             </Link>
