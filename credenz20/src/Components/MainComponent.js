@@ -3,6 +3,7 @@ import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
 import  Contact  from './ContactComponent/ContactComponent';
+import About from './AboutComponent/AboutComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './Navbar/Navbar';
 
@@ -34,6 +35,11 @@ class Main extends Component {
             );
         }
 
+        const AboutPage = () => {
+            return(
+                <About/>
+            );
+        }
 
         return(
             <div>
@@ -43,6 +49,7 @@ class Main extends Component {
                     <Route path="/events" component = { EventsPage } />
                     <Route path="/register" component = { RegisterPage } />
                     <Route path="/contact" component = { ContactPage } />
+                    <Route path="/about" component = { AboutPage } />
                     <Redirect to="/home"/>
                 </Switch>
             </div>

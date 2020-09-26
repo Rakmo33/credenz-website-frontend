@@ -12,7 +12,8 @@ function NavBar() {
             <Link to="/home" className="navbar-brand">
                 Credenz logo
             </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="signup-mob" type="button" class="btn btn-secondary btn-sm d-inline d-lg-none">Sign up</button>
+            <button className="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
@@ -33,13 +34,19 @@ function NavBar() {
                     </Link>
                 </li>
                 <li className="nav-item">
+                    <Link to="/about" className="nav-link">
+                        About us
+                    </Link>
+                </li>
+                <li className="nav-item">
                     <Link to="/contact" className="nav-link">
                         Contact us
                     </Link>
                 </li>
                 </ul>
             </div>
-            <Link to="/home" className="navbar-brand d-none d-lg-block">
+            <button id="signup" type="button" class="btn btn-secondary btn-sm d-none d-lg-block">Sign up</button>
+            <Link id="logopisb" to="/home" className="navbar-brand d-none d-lg-block">
                 <img src="assets/logopisb.png" alt="PISB" height="30px" width="auto"/>
             </Link>
             </nav>
