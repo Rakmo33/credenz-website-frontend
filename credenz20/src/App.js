@@ -6,11 +6,8 @@ import Main from './Components/MainComponent';
 import $ from 'jquery';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import Modal from './Components/Modal/Login';
-import useModal from './Components/Modal/useModal';
 
 
-/*
 class App extends Component {
 
   render() {
@@ -18,11 +15,6 @@ class App extends Component {
     return(
       <BrowserRouter>
         <div>
-        <button className="button-default" onClick={toggle}>Show Modal</button>
-        <Modal
-          isShowing={isShowing}
-          hide={toggle}
-        />
         <Main/>  
         </div>
       </BrowserRouter>
@@ -30,21 +22,6 @@ class App extends Component {
   }
 
 }
-*/
-
-const App = () => {
-  const {isShowing, toggleModal} = useModal();
-  return (
-    <div className="App">
-      <button className="button-default" onClick={toggleModal}>Show Modal</button>
-      <Modal
-        isShowing={isShowing}
-        hide={toggleModal}
-      />
-    </div>
-  );
-};
-
 
 export default App;
 
