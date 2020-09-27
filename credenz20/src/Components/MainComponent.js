@@ -3,7 +3,7 @@ import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
 import  Contact  from './ContactComponent/ContactComponent';
-import About from './AboutComponent/AboutComponent';
+import About from './HomeComponent/Aboutus/Aboutus';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './Navbar/Navbar';
 
