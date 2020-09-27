@@ -1,9 +1,9 @@
 import React from "react";
-import "./Register.css";
+import classes from "./Register.module.css";
 
 const Register = () => {
   return (
-    <>
+    <div className={classes.body}>
       <h1 className='reg-head'>Registrations Page</h1>
       <div className='container'>
         <form className='col-md-7 m-auto'>
@@ -249,7 +249,7 @@ const Register = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

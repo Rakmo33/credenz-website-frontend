@@ -56,15 +56,15 @@ const sponsors =(props)=>{
           slidesToSlide={2}
           swipeable >
 
-  <div><img src={require('./img/aarnell.png')}/></div>
-  <div><img src={require('./img/avaya.jpg')}/></div>
+  {/* <div><img src={require('./img/aarnell.png')}/></div>
+  <div><img src={require('./img/avaya.jpg')}/></div> */}
   <div><img src={require("./img/Byju's2.jpg")}/></div>
   <div><img src={require('./img/c3.jpg')}/></div>
   <div><img src={require('./img/codechef.jpg')}/></div>
   <div><img src={require('./img/finiq2.png')}/></div>
   <div><img src={require('./img/ims2.jpg')}/></div>
   <div><img src={require('./img/interview3.jpg')}/></div>
-  <div><img src={require('./img/tcs.png')}/></div>
+  {/* <div><img src={require('./img/tcs.png')}/></div> */}
   </Carousel>
 </div>
     );
