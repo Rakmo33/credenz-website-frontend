@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-
-import React, { Component } from "react";
 import Home from "./HomeComponent/HomeComponent";
 import Events from "./EventsComponent/EventsComponent";
 import Register from "./RegisterComponent/RegisterComponent";

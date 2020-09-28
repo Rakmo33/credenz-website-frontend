@@ -2,7 +2,7 @@ import React from 'react';
 import Aboutus from './Aboutus/Aboutus';
 import Sponsors from "./sponsors/sponsors";
 import HomeAnimation from './HomeAnimation/HomeAnimation';
-import SideEvent from '../sideEvent/sideEvent';
+import SideEvent from '../sideEventButton/sideEvent';
 
 const Home=()=> {
     return(

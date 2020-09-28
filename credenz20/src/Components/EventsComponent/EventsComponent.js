@@ -1,5 +1,5 @@
 import React from 'react';
-import SideEvent from '../sideEvent/sideEvent';
+import SideEvent from '../sideEventButton/sideEvent';
 
 const Events = () =>{
     return(
