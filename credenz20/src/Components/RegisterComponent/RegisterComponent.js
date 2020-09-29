@@ -3,7 +3,7 @@ import "./Register.css";
 
 const Register = () => {
   return (
-    <>
+    <div className='reg-body'>
       <h1 className='reg-head'>Registrations Page</h1>
       <div className='container'>
         <form className='col-md-7 m-auto'>
@@ -249,7 +249,7 @@ const Register = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
