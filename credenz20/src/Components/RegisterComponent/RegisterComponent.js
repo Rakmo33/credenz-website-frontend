@@ -1,5 +1,5 @@
 import React from "react";
-import "./Register.css";
+import classes from "./Register.module.css";
 
 const Register = () => {
   return (
