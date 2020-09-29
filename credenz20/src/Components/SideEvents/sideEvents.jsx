@@ -11,12 +11,12 @@ const SideEvents = () => {
   }
 
     return ( 
-        <div className="container-fluid">
+        <div className="container-fluid con">
             <div className="row head">
               <div className="col-xl-10 col-md-10 ">
                 <div className="row nav" style={{height:"100%"}}>
                    <div className={select ==="Play"?"col-xl-6 tab select":"col-xl-6 tab"} ><h1 onClick={()=>handleSelect("Play")}>
-                       Play
+                       Side Events
                    </h1></div>
                    <div className={select ==="Leaderboard"?"col-xl-6 tab select":"col-xl-6 tab"} ><h1 onClick={()=>handleSelect("Leaderboard")}>
                        Leaderboard
