@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'
-import Login from '../Modal/Login';
+import Modal1 from '../Modal/Modal';
 
 function NavBar() {
 
@@ -11,7 +11,7 @@ function NavBar() {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    let login = true;
 
     return (
         <>
@@ -59,7 +59,7 @@ function NavBar() {
             </Link>
             
             </nav>
-            <Login show={show} handleClose={handleClose}/>
+            <Modal1 show={show} handleClose={handleClose} login={login}/>
  
         </>
     );
