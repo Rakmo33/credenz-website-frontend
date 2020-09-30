@@ -11,7 +11,7 @@ const SideEvents = () => {
   }
 
     return ( 
-        <div className="container-fluid con">
+        <div className="container-fluid cont">
             <div className="row head">
               <div className="col-xl-10 col-md-10 ">
                 <div className="row nav" style={{height:"100%"}}>
