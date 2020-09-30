@@ -1,14 +1,15 @@
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import classes from "./Aboutus.module.css";
+import {FadeInLeft, FadeInRight} from 'animate-components';
 
 const aboutus = (props) => {
     return (
         <Container fluid>
             <h1 className={classes.mid}>About US</h1>
-            <Row>
+            <Row className={classes.credenz}>
                 <Col className={classes.content} sm={8}>
-                    <h3 className={classes.mid}>Credenz</h3>
+                   <FadeInLeft duration="2s" timingFunction="ease-out"> <h3 className={classes.mid}>Credenz</h3>
                     <p>Credenz is the annual technical festival organised by the PICT IEEE Student Branch.
                     Started in 2004, with a view to elicit the best out of each and every one, it has grown to
                     become one of the finest technical events in Pune. Credenz aims not only to infuse a competitive
@@ -19,23 +20,25 @@ const aboutus = (props) => {
                 unique chance for the students to go beyond the traditional spheres of academics and make the most
                 of their potential. This spirit of learning and discovery has inspired the PICT IEEE Student Branch
                 to present Credenz , a podium for you to nurture and cultivate your talents.</p>
+                </FadeInLeft>
                 </Col>
                 <Col sm={4}>
-                    <img className={classes.img_size} src={require('./img/Black Temporary Logo.png')} />
+                    <img className={classes.img_size} src={require('../../../assests/img/Black Temporary Logo.png')} />
                 </Col>
             </Row>
-            <Row>
+            <Row className={classes.pisb}>
                 <Col sm={4}>
-                    <img src={require('./img/pisb-dark.png')} />
+                    <img src={require('../../../assests/img/pisb-dark.png')} />
                 </Col>
                 <Col className={classes.content} sm={8}>
-                    <h3 className={classes.mid}>PICT IEEE Student Branch (PISB)</h3>
+                   <FadeInRight duration="2s" timingFunction="ease-out"> <h3 className={classes.mid}>PICT IEEE Student Branch (PISB)</h3>
                     <p> PICT IEEE Student Branch (PISB) was established in the year 1988 with an aim of
                     inculcating a sense of technical awareness amongst its student members. PISB aims to
                     escalate the knowledge and trends in the diverse fields of technologies amongst its members.
                     PISB upholds two major events every year - Credenz and Credenz Tech Dayz with the first one
                     being conducted in odd semester and the latter one in even semester. PISB is also marked by
                 its Women in Engineering (WIE) chapter, an initiative for empowerment of women.</p>
+                </FadeInRight>
                 </Col>
             </Row>
         </Container >

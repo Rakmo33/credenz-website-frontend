@@ -18,9 +18,10 @@ function NavBar() {
             
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <Link to="/home" className="navbar-brand">
-                Credenz logo
+                <img style={{width:'20%'}} src={require('../../assests/img/logopisb.png')}/>
             </Link>
-            <button type="button" class="btn btn-secondary btn-sm d-inline d-lg-none" onClick={ handleShow }>Log in</button>
+         <button type="button" class="btn btn-secondary btn-sm d-inline d-lg-none" onClick={ handleShow }>Log in</button>
+            <button type="button" className="btn btn-secondary btn-sm d-inline d-lg-none ml-auto mr-4">Sign in</button>
             <button className="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -31,7 +32,7 @@ function NavBar() {
                         Home
                     </Link>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                     <Link to="/events" className="nav-link">
                         Events
                     </Link>
@@ -42,7 +43,17 @@ function NavBar() {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/about" className="nav-link">
+                    <Link to="/sideEvents" className="nav-link">
+                        SideEvents
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/leaderboard" className="nav-link">
+                        LeaderBoard
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="./about" className="nav-link">
                         About us
                     </Link>
                 </li>
@@ -55,7 +66,10 @@ function NavBar() {
             </div>
             <button id="signin" type="button" class="btn btn-secondary btn-sm d-none d-lg-block" onClick={ handleShow }>Log in</button>
             <Link id="logopisb" to="/home" className="navbar-brand d-none d-lg-block">
-                <img src="assets/logopisb.png" alt="PISB" height="30px" width="auto"/>
+                <img src="assets/logopisb.png" alt="PISB" height="30px" width="auto"/></Link>
+            <button id="signin" type="button" class="btn btn-secondary btn-sm d-none d-lg-block">Sign in</button>
+            <Link id="logopisb" to="/home" className="navbar-brand d-none d-lg-block ">
+                <img src={require('../../assests/img/ieeelogo.png')} alt="PISB" height="30px" width="auto"/>
             </Link>
             
             </nav>
