@@ -7,6 +7,7 @@ import Contact from "./ContactComponent/ContactComponent";
 import About from "./AboutComponent/AboutComponent";
 import { Switch, Route, Redirect } from "react-router-dom";
 import NavBar from "./Navbar/Navbar";
+import SideEvents from "./SideEvents/sideEvents";
 
 class Main extends Component {
   render() {
@@ -39,6 +40,7 @@ class Main extends Component {
           <Route path='/register' component={RegisterPage} />
           <Route path='/contact' component={ContactPage} />
           <Route path='/about' component={AboutPage} />
+          <Route path='/sideEvents' component={SideEvents} />
           <Redirect to='/home' />
         </Switch>
       </div>
