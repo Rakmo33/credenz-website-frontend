@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'
-
+import Modal1 from '../Modal/Modal';
 
 function NavBar() {
        //const {isShowing, toggle} = useModal();
