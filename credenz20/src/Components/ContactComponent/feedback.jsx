@@ -5,11 +5,11 @@ const Feedback = () => {
        <form className="feedback">
            <div className="form-group">
                <label for="name">Name</label>
-               <input type="text" className="form-control" name="name" id="name" ></input>
+               <input type="text" className="form-control" name="name" id="name" required ></input>
            </div>
            <div className="form-group">
                <label for="email">Email</label>
-               <input type="email" className="form-control" name="email" id="email" ></input>
+               <input type="email" className="form-control" name="email" id="email" required ></input>
            </div>
            <div className="form-group">
              <label for="message">Message</label>
