@@ -4,6 +4,14 @@ import './NavBar.css'
 
 
 function NavBar() {
+       //const {isShowing, toggle} = useModal();
+
+       const [show, setShow] = useState(false);
+
+       const handleClose = () => setShow(false);
+       const handleShow = () => setShow(true);
+       let login = true;
+   
 
     return (
         <>
@@ -61,7 +69,9 @@ function NavBar() {
             <Link id="logopisb" to="/home" className="navbar-brand d-none d-lg-block ">
                 <img src={require('../../assests/img/ieeelogo.png')} alt="PISB" height="30px" width="auto"/>
             </Link>
+
             </nav>
+            <Modal1 show={show} handleClose={handleClose} login={login}/>
         </>
     );
 }
