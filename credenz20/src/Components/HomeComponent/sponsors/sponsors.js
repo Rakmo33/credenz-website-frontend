@@ -77,20 +77,20 @@ const sponsors =(props)=>{
     <Container fluid>
       <h2 style={{textAlign:'center'}}>Sponsors</h2>
       <Row>
-        <Col sm={2} ><Sponsor url={'aarnell.png'}>FinIq</Sponsor></Col>
-        <Col sm={2} ><Sponsor url={'avaya.jpg'}>amsterdam</Sponsor></Col>
-        <Col sm={2} ><Sponsor url={"Byju's2.jpg"}>australia</Sponsor></Col>
-        <Col sm={2} ><Sponsor url={'c3.jpg'}>columbia</Sponsor></Col>
-        <Col sm={2} ><Sponsor url={'codechef.jpg'}>london</Sponsor></Col>
-        <Col sm={2} ><Sponsor url={'finiq2.png'}>berlin</Sponsor></Col>
+        <Col md={2} sm={4} ><Sponsor url={'aarnell.png'}>FinIq</Sponsor></Col>
+        <Col md={2} sm={4}><Sponsor url={'avaya.jpg'}>amsterdam</Sponsor></Col>
+        <Col md={2} sm={4}><Sponsor url={"Byju's2.jpg"}>australia</Sponsor></Col>
+        <Col md={2} sm={4}><Sponsor url={'c3.jpg'}>columbia</Sponsor></Col>
+        <Col md={2} sm={4}><Sponsor url={'codechef.jpg'}>london</Sponsor></Col>
+        <Col md={2} sm={4}><Sponsor url={'finiq2.png'}>berlin</Sponsor></Col>
       </Row>
       <Row>
-          <Col sm={2} ><Sponsor url={'ims2.jpg'}>nairobi</Sponsor></Col>
-          <Col sm={2} ><Sponsor url={'interview3.jpg'}>tokyo</Sponsor></Col>
-          <Col sm={2} ><Sponsor url={'tcs.png'}>bogata</Sponsor></Col>
-          <Col sm={2} ><Sponsor url={'aarnell.png'}>skyscrapper</Sponsor></Col>
-          <Col sm={2} ><Sponsor url={'aarnell.png'}>spain</Sponsor></Col>
-          <Col sm={2} ><Sponsor url={'aarnell.png'}>mint</Sponsor></Col>
+          <Col md={2} sm={4}><Sponsor url={'ims2.jpg'}>nairobi</Sponsor></Col>
+          <Col md={2} sm={4}><Sponsor url={'interview3.jpg'}>tokyo</Sponsor></Col>
+          <Col md={2} sm={4}><Sponsor url={'tcs.png'}>bogata</Sponsor></Col>
+          <Col md={2} sm={4}><Sponsor url={'aarnell.png'}>skyscrapper</Sponsor></Col>
+          <Col md={2} sm={4}><Sponsor url={'aarnell.png'}>spain</Sponsor></Col>
+          <Col md={2} sm={4}><Sponsor url={'aarnell.png'}>mint</Sponsor></Col>
       </Row>
     </Container>
   );
