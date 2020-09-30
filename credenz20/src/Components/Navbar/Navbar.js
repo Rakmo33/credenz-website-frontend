@@ -16,7 +16,7 @@ function NavBar() {
     return (
         <>
             
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navabr-inner">
             <Link to="/home" className="navbar-brand">
                 <img style={{width:'20%'}} src={require('../../assests/img/logopisb.png')}/>
             </Link>
