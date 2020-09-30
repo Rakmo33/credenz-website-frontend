@@ -12,6 +12,7 @@ function NavBar() {
             <Link to="/home" className="navbar-brand">
                 <img style={{width:'20%'}} src={require('../../assests/img/logopisb.png')}/>
             </Link>
+            <button type="button" class="btn btn-secondary btn-sm d-inline d-lg-none" onClick={ handleShow }>Log in</button>
             <button type="button" className="btn btn-secondary btn-sm d-inline d-lg-none ml-auto mr-2">Sign in</button>
             <button className="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -55,6 +56,7 @@ function NavBar() {
                 </li>
                 </ul>
             </div>
+            <button id="signin" type="button" class="btn btn-secondary btn-sm d-none d-lg-block" onClick={ handleShow }>Log in</button>
             <button id="signin" type="button" class="btn btn-secondary btn-sm d-none d-lg-block">Sign in</button>
             <Link id="logopisb" to="/home" className="navbar-brand d-none d-lg-block ">
                 <img src={require('../../assests/img/ieeelogo.png')} alt="PISB" height="30px" width="auto"/>
