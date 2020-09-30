@@ -6,10 +6,34 @@
     margin-right: 1%;
 }
 
+.navbar-inner{
+    background: #cdcdcd;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    padding-top: 5px;
+  }
+
+.navbar-toggler-icon::before {
+    font-family: FontAwesome;
+    content: "\f0c9"; /* fa-bars, fa-navicon */
+  }
+
+.navbar-brand{
+    display: inline-block;
+}
+
 /*for Galaxy phones*/
 @media only screen and (max-width: 280px) {
     
     .navbar {
         padding: 0.5rem 0rem;
+    }
+}
+
+@media (max-width: 490px){
+    .navbar-brand{
+        display: contents;
     }
 }

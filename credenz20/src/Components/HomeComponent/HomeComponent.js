@@ -11,7 +11,7 @@ const Home=()=> {
             <SideEvent/>
             <h1>Credenz Home Page</h1>
             <HomeAnimation/>
-            <Aboutus/>
+            <Aboutus id="Aboutus" />
             <Sponsors/>
             <Footer/>
         </div>
