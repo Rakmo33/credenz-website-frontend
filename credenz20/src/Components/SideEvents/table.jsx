@@ -111,8 +111,8 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        {users.map((user) => (
-          <tr>
+        {users.map((user,index) => (
+          <tr key={index}>
             <td>{user.rank}</td>
             <td>{user.name}</td>
             <td>{user.college}</td>

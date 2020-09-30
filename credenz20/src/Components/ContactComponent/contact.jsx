@@ -28,13 +28,17 @@ const ContactUs = () => {
                     />
                     </GoogleMapReact>
                 </div> */}
-      <div  className="addr">
-          <h2 className="address">Address</h2>
-        <p className="address">
-            SCTR'S Pune Institute of Computer Technology Survey No. 27, Near,
-            Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra
-            411043 Directions
-        </p>
+      <div  className="addr row">
+          <div className="col-md-12">
+            <h2 className="address">Address</h2>
+          </div>
+        <div className="col-md-8">
+          <p className="address">
+              SCTR'S Pune Institute of Computer Technology Survey No. 27, Near,
+              Trimurti Chowk, Bharati Vidyapeeth Campus, Dhankawadi, Pune, Maharashtra
+              411043 Directions
+          </p>
+        </div>
       </div>
     </React-Fragment>
   );
