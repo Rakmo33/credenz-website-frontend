@@ -24,7 +24,7 @@ function ModalTitle({login, event}) {
                     Enigma
                 </div>
             );
-        else if(event==="xodia")
+        else
             return(
                 <div>
                     Xodia
@@ -102,7 +102,7 @@ function Modal1( {show, handleClose, login, event} ) {
        <Modal dialogClassName="modal-90w" show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered 
         keyboard={false}>
         <Modal.Header closeButton>
-                <Modal.Title text-center> <ModalTitle login={login}/> </Modal.Title>
+                <Modal.Title text-center> <ModalTitle login={login} event={event}/> </Modal.Title>
         </Modal.Header>
         <Modal.Body> 
                 <ModalBody login={login} event={event}/>
