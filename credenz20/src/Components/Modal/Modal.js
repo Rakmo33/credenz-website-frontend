@@ -11,27 +11,7 @@ function ModalTitle({type, event}) {
         </div>
     );
     else {
-<<<<<<< HEAD
-        console.log("else")
-        if(event==="clash")
-            return(
-                <div>
-                    Clash
-                </div>
-            );
-        else if(event==="enigma")
-            return(
-                <div>
-                    Enigma
-                </div>
-            );
-        else
-            return(
-                <div>
-                    Xodia
-                </div>
-            );
-=======
+
 
         switch(event) {
 
@@ -72,8 +52,6 @@ function ModalTitle({type, event}) {
 
         }
 
-
->>>>>>> e7d9d21f34d1c32326e2c2d42384d13b3b76ee43
     }
 }
 
@@ -281,11 +259,8 @@ function Modal1( {show, handleClose, type, event} ) {
        <Modal dialogClassName="modal-90w" show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered 
         keyboard={false}>
         <Modal.Header closeButton>
-<<<<<<< HEAD
-                <Modal.Title text-center> <ModalTitle login={login} event={event}/> </Modal.Title>
-=======
+
                 <Modal.Title text-center> <ModalTitle type={type} event={event}/> </Modal.Title>
->>>>>>> e7d9d21f34d1c32326e2c2d42384d13b3b76ee43
         </Modal.Header>
         <Modal.Body> 
                 <ModalBody handleClose={handleClose} type={type} event={event}/>
