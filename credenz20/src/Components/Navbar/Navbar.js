@@ -12,10 +12,7 @@ function NavBar() {
 
        const handleClose = () => setShow(false);
        const handleShow = () => setShow(true);
-       const [showSignup, setShowSignup] = useState(false);
-       const handleCloseSignup = () => setShowSignup(false);
-       const handleShowSignup = () => setShowSignup(true);
-       let signup = true;  
+      
        const [update, setUpdate] = useState(false);
        const handleClose1 = () => setUpdate(false);
        const handleShow1 = () => setUpdate(true);
