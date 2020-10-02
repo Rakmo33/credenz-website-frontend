@@ -5,10 +5,11 @@
 .footer{
     justify-content: center;
     display: flex;
-    background: #eee;
+    background: #cdcdcd;
     padding: 10px 0;
+    color: #fff;
 }
-
+/* 
 .instagram {
     color: black;
 }
@@ -25,4 +26,4 @@
 .instagram:hover {
     color: black;
     transform: translateY(-2px);
-}
+} */

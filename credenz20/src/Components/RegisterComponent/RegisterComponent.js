@@ -3,6 +3,7 @@ import classes from "./Register.module.css";
 
 const Register = () => {
   return (
+    <>
     <div className={classes.body}>
       <h1 className='reg-head'>Registrations Page</h1>
       <div className='container'>
@@ -249,7 +250,8 @@ const Register = () => {
           </div>
         </form>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

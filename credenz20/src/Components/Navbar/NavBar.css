@@ -33,7 +33,7 @@
 }
 
 @media (max-width: 490px){
-    .navbar-brand{
+    a.navbar-brand{
         display: contents;
     }
 }
