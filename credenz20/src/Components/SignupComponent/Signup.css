@@ -117,9 +117,10 @@ input::-moz-focus-inner {
   border: 0; 
 }
 #submit {
-  color: #707075;
-  margin-top: 40px;
+  /* color: #707075; */
+  /* margin-top: 40px; */
   transition: color 300ms;
+  color: #fff;
 }
 #submit:focus {
   color: #f2f2f2;

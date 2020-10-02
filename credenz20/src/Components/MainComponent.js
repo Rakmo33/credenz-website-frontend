@@ -4,7 +4,7 @@ import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
 import  Contact  from './ContactComponent/ContactComponent';
-import Signup from './SignupForm/Signup';
+import Signup from './SignupComponent/Signup';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './Navbar/Navbar';
 import "bootstrap/dist/css/bootstrap.css";
