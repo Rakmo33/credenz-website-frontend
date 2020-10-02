@@ -23,12 +23,12 @@ const aboutus = (props) => {
                 </FadeInLeft>
                 </Col>
                 <Col sm={4}>
-                    <img className={classes.img_size} src={require('../../../assests/img/Black Temporary Logo.png')} />
+                    <img alt="black" className={classes.img_size} src={require('../../../assests/img/Black Temporary Logo.png')} />
                 </Col>
             </Row>
             <Row className={classes.pisb}>
                 <Col sm={4}>
-                    <img src={require('../../../assests/img/pisb-dark.png')} />
+                    <img alt="pisb dark" src={require('../../../assests/img/pisb-dark.png')} />
                 </Col>
                 <Col className={classes.content} sm={8}>
                    <FadeInRight duration="2s" timingFunction="ease-out"> <h3 className={classes.mid}>PICT IEEE Student Branch (PISB)</h3>
