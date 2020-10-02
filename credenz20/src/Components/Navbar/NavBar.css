@@ -1,13 +1,22 @@
 .nav-item {
     margin-left: 20px;
+    color: white;
 }
 
-#signin {
-    margin-right: 1%;
+.nav-link {
+    color: white;
+}
+
+#logoieee {
+    margin-left: 3%;
+}
+
+#login {
+    margin-left: 2%;
 }
 
 .navbar-inner{
-    background: #cdcdcd;
+    color: white;
 }
 
 .navbar-toggler-icon {
