@@ -2,7 +2,7 @@ import React from "react";
 
 const homeanimation = (props) =>{
     return(
-        <div>Animation goes here</div>
+        <div style={{color: "ivory"}}>Animation goes here</div>
     );
 }
 

@@ -9,7 +9,7 @@ const Home=()=> {
     return(
         <div>
             <SideEvent/>
-            <h1>Credenz Home Page</h1>
+            <h1 style={{color: "ivory"}}>Credenz Home Page</h1>
             <HomeAnimation/>
             <Aboutus id="Aboutus" />
             <Sponsors/>

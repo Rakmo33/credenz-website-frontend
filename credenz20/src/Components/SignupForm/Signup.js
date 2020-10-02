@@ -8,8 +8,8 @@ function Signup() {
         <div className="page">
             <div className="container">
                 <div className="left">
-                <div className="login">Login</div>
-                <div className="eula">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+                <div className="login">Sign up</div>
+                <div className="eula">By signing up you agree to the ridiculously long terms that you didn't bother to read</div>
                 </div>
                 <div className="right">
                 <svg viewBox="0 0 320 300">
