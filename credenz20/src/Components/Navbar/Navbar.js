@@ -26,17 +26,17 @@ function NavBar() {
             <Link to="/home" className="navbar-brand">
                 <img style={{width:'20%'}} alt="logopisb" src={require('../../assests/img/logopisb.png')}/>
             </Link>
-            <button type="button" class="btn btn-secondary btn-sm d-inline d-lg-none" onClick={ handleShow }>Log in</button>
+            <button type="button" class="btn btn-secondary btn-sm d-inline d-lg-none ml-auto mr-2" onClick={ handleShow }>Log in</button>
             <button className="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                <li className="nav-item" style={{color: "ivory"}}>
+                {/* <li className="nav-item" style={{color: "ivory"}}>
                     <Link to="/home" className="nav-link">
                         Home
                     </Link>
-                </li> 
+                </li>  */}
                 <li className="nav-item">
                     <Link to="/events" className="nav-link">
                         Events

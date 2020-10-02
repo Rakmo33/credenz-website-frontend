@@ -3,6 +3,9 @@ import ContactUs from "./contact";
 import Team from "./team";
 import "./contact.css";
 import Feedback from "./feedback";
+import SideEventsButton from '../sideEventButton/sideEvent';
+import Footer from '../Footer/footer';
+
 
 const Contact = () => {
   const [select, setSelect] = useState("Contact");
@@ -53,6 +56,8 @@ const Contact = () => {
       ) : (
         <Feedback />
       )}
+      <SideEventsButton/>
+      <Footer/>
     </div>
   );
 };
