@@ -24,10 +24,10 @@
     padding-top: 5px;
   }
 
-.navbar-toggler-icon::before {
+/* .navbar-toggler-icon::before {
     font-family: FontAwesome;
-    content: "\f0c9"; /* fa-bars, fa-navicon */
-  }
+    content: "\f0c9"; fa-bars, fa-navicon
+  } */
 
 .navbar-brand{
     display: inline-block;
