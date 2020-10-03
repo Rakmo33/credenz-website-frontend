@@ -12,6 +12,7 @@ function ModalTitle({type, event}) {
     );
     else {
 
+
         switch(event) {
 
             case "clash" : return(
@@ -50,7 +51,6 @@ function ModalTitle({type, event}) {
                       
 
         }
-
 
     }
 }
@@ -259,6 +259,7 @@ function Modal1( {show, handleClose, type, event} ) {
        <Modal dialogClassName="modal-90w" show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered 
         keyboard={false}>
         <Modal.Header closeButton>
+
                 <Modal.Title text-center> <ModalTitle type={type} event={event}/> </Modal.Title>
         </Modal.Header>
         <Modal.Body> 

@@ -18,6 +18,7 @@ const Events = () =>{
     return(
         <div>
             <SideEvent/>
+
             <h1 style={{color: "ivory"}}>Events Page</h1>
             <ul style={{color: "ivory"}}>
                 <li onClick={ ()=>handleShow("clash") } >
@@ -36,6 +37,7 @@ const Events = () =>{
                     BPlan
                 </li>
             </ul>
+
             <Modal1 show={show} handleClose={handleClose} type={type} event={event}/>
         </div>
     );

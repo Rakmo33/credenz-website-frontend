@@ -1,8 +1,12 @@
 import React from "react";
 import classes from "./Register.module.css";
+import SideEventsButton from '../sideEventButton/sideEvent';
+import Footer from '../Footer/footer';
 
 const Register = () => {
   return (
+    <>
+    <SideEventsButton/>
     <div className={classes.body}>
       <h1 className='reg-head'>Registrations Page</h1>
       <div className='container'>
@@ -249,7 +253,9 @@ const Register = () => {
           </div>
         </form>
       </div>
-    </div>
+      </div>
+      <Footer/>
+    </>
   );
 };
 
