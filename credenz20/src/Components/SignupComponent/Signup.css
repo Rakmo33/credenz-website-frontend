@@ -1,4 +1,5 @@
-@import url('https://rsms.me/inter/inter-ui.css');
+/*@import url('https://rsms.me/inter/inter-ui.css');*/
+
 ::selection {
   background: #2D2F36;
 }
@@ -10,13 +11,16 @@
 }
 
 .page {
-  background: #e2e2e5;
   display: flex;
+  margin-top: 10%;
   flex-direction: column;
-  height: 100%;
   position: absolute;
   place-content: center;
   width: 100%;
+}
+
+.input {
+  border-bottom: 3px solid white;
 }
 
 @media (max-width: 767px) {
@@ -33,13 +37,7 @@
   margin: 0 auto;
   width: 640px;
 }
-@media (max-width: 767px) {
-  .container {
-    flex-direction: column;
-    height: 630px;
-    width: 320px;
-  }
-}
+
 .left {
   background: white;
   height: calc(100% - 40px);
@@ -47,40 +45,29 @@
   position: relative;
   width: 50%;
 }
-@media (max-width: 767px) {
-  .left {
-    height: 100%;
-    left: 20px;
-    width: calc(100% - 40px);
-    max-height: 270px;
-  }
-}
-.login {
+
+.signup {
   font-size: 50px;
   font-weight: 900;
   margin: 50px 40px 40px;
+  position: relative;
 }
-.eula {
+.text-left {
   color: #999;
   font-size: 14px;
   line-height: 1.5;
-  margin: 40px;
+  margin: 20px;
+  position: relative;
 }
+
 .right {
-  background: #474A59;
+  background: rgba(14, 69, 114, 0.5);
   box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
   color: #F1F1F2;
   position: relative;
   width: 50%;
 }
-@media (max-width: 767px) {
-  .right {
-    flex-shrink: 0;
-    height: 100%;
-    width: 100%;
-    max-height: 350px;
-  }
-}
+
 svg {
   position: absolute;
   width: 320px;
@@ -96,16 +83,29 @@ path {
   position: absolute;
 }
 label {
-  color:  #c2c2c5;
+  color:  ivory;
   display: block;
   font-size: 14px;
   height: 16px;
   margin-top: 20px;
   margin-bottom: 5px;
 }
+
+input[type="email"]{
+  border: 0;
+  border-bottom: 3px solid ivory;
+}
+
+input[type="password"]{
+  border: 0;
+  border-bottom: 3px solid ivory;
+  margin-bottom: 40px;
+}
+
 input {
   background: transparent;
   border: 0;
+  /*border-bottom: 3px solid ivory;*/
   color: #f2f2f2;
   font-size: 20px;
   height: 30px;
@@ -113,6 +113,7 @@ input {
   outline: none !important;
   width: 100%;
 }
+
 input::-moz-focus-inner { 
   border: 0; 
 }
@@ -127,4 +128,33 @@ input::-moz-focus-inner {
 }
 #submit:active {
   color: #d0d0d2;
+}
+
+@media (max-width: 767px) {
+
+  .container {
+    flex-direction: column;
+    height: 630px;
+    width: 320px;
+  }
+
+  .signup {
+    font-size: 30px;
+    margin: 40px 30px 20px;
+  }
+
+  .left {
+    height: 100%;
+    left: 20px;
+    width: calc(100% - 40px);
+    max-height: 270px;
+  }
+
+  .right {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 350px;
+  }
+
 }
