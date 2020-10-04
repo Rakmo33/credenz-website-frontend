@@ -139,6 +139,9 @@ const Leaderboard = () => {
           return u.score.match(input);
         });
         break;
+      default: return(
+        "Invalid!"
+      );
     }
   }
 
