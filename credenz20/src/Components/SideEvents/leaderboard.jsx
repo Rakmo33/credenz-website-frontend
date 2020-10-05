@@ -129,14 +129,9 @@ const Leaderboard = () => {
           return u.name.match(input);
         });
         break;
-      case "Institute":
+      case "Institution":
         users = users.filter((u) => {
           return u.college.match(input);
-        });
-        break;
-      case "Score":
-        users = users.filter((u) => {
-          return u.score.match(input);
         });
         break;
     }
@@ -163,7 +158,7 @@ const Leaderboard = () => {
               </div>
               <ul className={classes}>
                 <li onClick={handleSelect}>Username</li>
-                <li onClick={handleSelect}>Institute</li>
+                <li onClick={handleSelect}>Institution</li>
               </ul>
             </div>
           </div>

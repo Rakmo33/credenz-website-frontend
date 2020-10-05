@@ -60,6 +60,7 @@ tr td:last-child { border-bottom-right-radius: 10px; }
     display: flex;
     height: 40px;
 }
+
 .search-box #search{
     color:black;
     text-align: center;
@@ -72,7 +73,8 @@ tr td:last-child { border-bottom-right-radius: 10px; }
   width:160px;
   color:white;
   height: 35px;
-   background-color:rgb(79, 115, 139);
+   /* background-color:rgb(79, 115, 139); */
+   background-color:  rgb(5, 34, 59);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -102,7 +104,8 @@ div.dropdown::before{
     user-select: none;
     width:148px;
     list-style-type: none;
-    background-color: rgba(79, 115, 139,1);
+    /* background-color: rgba(79, 115, 139,1); */
+    background-color: rgb(5, 34, 59);
     padding-top:5px;
    text-align: center;
    cursor: pointer;
