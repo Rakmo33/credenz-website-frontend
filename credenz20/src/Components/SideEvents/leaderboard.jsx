@@ -134,6 +134,17 @@ const Leaderboard = () => {
           return u.college.match(input);
         });
         break;
+<<<<<<< HEAD
+=======
+      case "Score":
+        users = users.filter((u) => {
+          return u.score.match(input);
+        });
+        break;
+      default: return(
+        "Invalid!"
+      );
+>>>>>>> 1b09620c45bd89625feed000c2a56c32bfada90e
     }
   }
 
