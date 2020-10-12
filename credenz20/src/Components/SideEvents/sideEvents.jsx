@@ -15,12 +15,12 @@ const SideEvents = () => {
             <div className="row head">
               <div className="col-xl-10 col-md-10 ">
                 <div className="row nav" style={{height:"100%"}}>
-                   <div className={select ==="Play"?"col-xl-6 tab select":"col-xl-6 tab"} ><h1 onClick={()=>handleSelect("Play")}>
+                   <div className={select ==="Play"?"col-xl-6 tab select":"col-xl-6 tab"} ><h3 onClick={()=>handleSelect("Play")}>
                        Side Events
-                   </h1></div>
-                   <div className={select ==="Leaderboard"?"col-xl-6 tab select":"col-xl-6 tab"} ><h1 onClick={()=>handleSelect("Leaderboard")}>
+                   </h3></div>
+                   <div className={select ==="Leaderboard"?"col-xl-6 tab select":"col-xl-6 tab"} ><h3 onClick={()=>handleSelect("Leaderboard")}>
                        Leaderboard
-                   </h1></div>
+                   </h3></div>
                 </div>
               </div>
         </div>
