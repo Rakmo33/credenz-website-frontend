@@ -6,7 +6,7 @@ import Main from './Components/MainComponent';
 import $ from 'jquery';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-import "./fontawesome.js";
+// import "./fontawesome.js";
 
 class App extends Component {
 
