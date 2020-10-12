@@ -67,10 +67,10 @@ function NavBar() {
                         Contact
                     </Link>
                 </li>
-                <li className="nav-item" onClick={ handleShow1}>
-                    <Link to="/home" className="nav-link">
-                        Updates
-                    </Link>
+                <li className="nav-item" onClick={handleShow1}>
+                    <div className="nav-link">
+                        Updates    
+                    </div>
                 </li>
                 </ul>
             </div>
