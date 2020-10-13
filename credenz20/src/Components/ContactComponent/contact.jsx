@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./contact.css";
 import ContactCard from "./contactCard";
 // import GoogleMapReact from 'google-map-react';

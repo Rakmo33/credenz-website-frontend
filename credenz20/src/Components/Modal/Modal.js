@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Modal.css';
@@ -57,6 +57,15 @@ function ModalTitle({type, event}) {
 
 function ModalBody({handleClose, type, event}) {
 
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const submitForm = e => {
+        console.log("Current state is : " + JSON.stringify({username, password}))
+        alert("Current state is : " + JSON.stringify({username, password}))
+        e.preventDefualt()
+    }
+
     console.log("ModalBody called!")
 
     if(type==="login") {
@@ -64,17 +73,19 @@ function ModalBody({handleClose, type, event}) {
             <div id="myModal">
             <div className="modal-login">
                 
-                <form>
+                <form onSubmit={ submitForm }>
                     <div className="form-group">
                         <div className="input-group">
                             <span className="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input type="text" className="form-control" name="username" placeholder="Username" required="required"/>
+                            <input type="text" className="form-control" name="username" placeholder="Username"
+                             required="required" onChange={ e => setUsername(e.target.value) }/>
                         </div>
                     </div>
                     <div className="form-group">
                         <div className="input-group">
                             <span className="input-group-addon"><i class="fa fa-lock"></i></span>
-                            <input type="text" className="form-control" name="password" placeholder="Password" required="required"/>
+                            <input type="text" className="form-control" name="password" placeholder="Password"
+                             required="required" onChange={ e => setPassword(e.target.value) }/>
                         </div>
                     </div>
                     <div className="form-group">

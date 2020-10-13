@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { Component, useState } from "react";
+
+import React, { useState } from "react";
 import Table from "./table";
 
 const Leaderboard = () => {

@@ -2,6 +2,12 @@ import React from "react";
 import classes from "./Register.module.css";
 import SideEventsButton from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
+import displayRazorpay from './Razorpay';
+
+const Razorpay = () => {
+  console.log("Razorpay component called!")
+  return <displayRazorpay/>;
+}
 
 const Register = () => {
   return (
@@ -246,7 +252,7 @@ const Register = () => {
 
           <div class='form-group row d-flex justify-content-center'>
             <div class='col-sm-4 d-flex justify-content-center'>
-              <button type='submit' class='btn btn-primary next-btn'>
+              <button class='btn btn-primary next-btn' onClick={Razorpay}>
                 Proceed for Payment
               </button>
             </div>

@@ -1,4 +1,4 @@
-import React, { Component, useReducer, useState } from "react";
+import React from "react";
 import "./leaderboard.css";
 
 const Table = ({users}) => {
