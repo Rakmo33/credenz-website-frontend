@@ -1,6 +1,4 @@
 import React from "react";
-import classes from './sponsors.module.css';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import {Row, Col, Container} from 'react-bootstrap';
 import Sponsor from './sponsor/sponsor';

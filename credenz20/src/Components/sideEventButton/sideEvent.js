@@ -1,9 +1,8 @@
 import React from 'react';
-import { Fab } from '@material-ui/core';
 import classes from './sideEvent.module.css';
 // import AddIcon from '@material-ui/icons/Add';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
+//import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+//import Tooltip from 'react-bootstrap/Tooltip';
 
 // const sideEvent = () =>{
 //   const renderTooltip = (props) => (

@@ -66,6 +66,8 @@
   color: #F1F1F2;
   position: relative;
   width: 50%;
+  top: -50px;
+  height: 500px;
 }
 
 svg {
@@ -91,21 +93,28 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="email"]{
+/*
+input[type="email"],[type="text"] {
   border: 0;
   border-bottom: 3px solid ivory;
 }
-
+*/
 input[type="password"]{
   border: 0;
-  border-bottom: 3px solid ivory;
+  border-bottom: 1px solid ivory;
   margin-bottom: 40px;
+}
+
+input[type="submit"] {
+  border: none;
 }
 
 input {
   background: transparent;
-  border: 0;
-  /*border-bottom: 3px solid ivory;*/
+  /*border: 1px solid ivory;
+  border-radius: 10px;*/
+  border: none;
+  border-bottom: 1px solid ivory;
   color: #f2f2f2;
   font-size: 20px;
   height: 30px;
@@ -154,7 +163,8 @@ input::-moz-focus-inner {
     flex-shrink: 0;
     height: 100%;
     width: 100%;
-    max-height: 350px;
+    max-height: 500px;
+    top: 10px;
   }
 
 }

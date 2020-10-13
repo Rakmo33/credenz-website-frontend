@@ -1,36 +1,42 @@
-import React from 'react';
-import logopisb from '../../assests/img/logopisb.png'
 
 
 function loadScript(src) {
+
+    console.log("load razor called !")
+
     return new Promise( (resolve) => {
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-    document.body.appendChild(script)
-    script.onload = () => {
-        resolve(true)
-    }
-    script.onerror = () => {
-        resolve(false)
-    }
+
+        const script = document.createElement('script');
+        script.src = src;
+        
+        script.onload = () => {
+            resolve(true)
+        }
+        script.onerror = () => {
+            resolve(false)
+        }
+
+        document.body.appendChild(script)
 
     })
 }
 
 const _DEV_ = document.domain === 'localhost'
 
-async function displayRazorpay() {
+function displayRazorpay() {
 
-    const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+    console.log("display razor called !")
+
+    const res = loadScript('https://checkout.razorpay.com/v1/checkout.js')
 
     if(!res) {
-        alert('Razorpay SDK failedto load!')
+        alert('Razorpay SDK failed to load!')
         return
     }
 
     const options = {
-        "key": _DEV_ ? 'dev-key' : 'prod-key', // Enter the Key ID generated from the Dashboard
-        "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "key": _DEV_ ? 'rzp_test_8OXCvHsV5OiOpe' : 'prod-key', // Enter the Key ID generated from the Dashboard
+        "amount": "50000", // 100p = 1rupee
         "currency": "INR",
         "name": "Credenz",
         "description": "Test Transaction",
@@ -53,10 +59,8 @@ async function displayRazorpay() {
             "color": "#F37254"
         }
     };
-    var rzp1 = new Razorpay(options);
-    document.getElementById('rzp-button1').onclick = function(e){
-        rzp1.open();
-        e.preventDefault();
-    }
-
+    const paymentObject = new window.Razorpay(options)
+    paymentObject.open()
 }
+
+export default displayRazorpay;

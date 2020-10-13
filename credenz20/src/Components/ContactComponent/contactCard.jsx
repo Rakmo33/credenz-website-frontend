@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import user from "./user.png";
 import "./contact.css";
 
