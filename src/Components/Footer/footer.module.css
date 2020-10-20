@@ -1,0 +1,29 @@
+.social_container {
+    padding:0 50px;
+  }
+
+.footer{
+    justify-content: center;
+    display: flex;
+    background: #cdcdcd;
+    padding: 10px 0;
+    color: #fff;
+}
+/* 
+.instagram {
+    color: black;
+}
+
+.facebook {
+    margin-right: 10px;
+}
+
+.facebook:hover {
+    color: #4968ad;
+    transform: translateY(-2px);
+}
+
+.instagram:hover {
+    color: black;
+    transform: translateY(-2px);
+} */

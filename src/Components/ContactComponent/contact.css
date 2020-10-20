@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+.cont{
+    background-color: rgb(185, 241, 233);
+    min-height: 100vh;
+    margin-top:-30px;
+}
+.tab{
+   
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  
+}
+.select h3 {
+    /* border-top:5px solid #734ea0 !important;  */
+    border-bottom:4px solid white;
+    color:black ! important;
+}
+
+.tab h3{
+    color:#40497a;
+    font-family: 'Alata', sans-serif;
+    font-weight: bold;
+    font-size:20px;
+    /* border-radius: 5px; */
+    /* background-color:white; */
+    padding:10px;
+    cursor:pointer;
+    /* border-top:4px solid #486881; 
+    box-shadow:  0 0px 2px 3px rgb(118, 190, 190) ; */
+}
+.tab h3:hover{
+color:black;
+    /* box-shadow:  0 0px 2px 3px rgb(118, 190, 190) ; */
+}
+.head{
+    
+    margin-top:5vh;
+    justify-content: center;
+    width:100%;
+   
+}
+.content{
+    justify-content: center;
+}
+.contacts{
+   margin:30px;
+   box-shadow: 0 8px 8px -4px gray;
+}
+.card-title{
+    text-align: center;
+}
+.contacts-img .card-img-top{
+    width:100px;
+    height: 170px;
+}
+.address{
+    color:#40497a;
+    font-family: 'Alata', sans-serif;
+    text-align: center;
+}
+.addr{
+    justify-content: center;
+   margin-top:5vh;
+}
+ .feedback{
+    width:500px;
+    margin:auto;
+    margin-top:30px;
+    color:#40497a;
+    font-family: 'Alata', sans-serif;
+}
+.feedback label{
+    color:#40497a;
+    font-size: 20px;
+}
+.feedback button[type="submit"]
+{
+    margin-left:50%;
+    width:200px;
+    transform: translate(-50%,0);
+}
+@media only screen and (max-width:425px)
+{
+    .feedback{
+        width:300px;
+    }
+}
+@media only screen and (max-width:768px)
+{
+    .tab h3{
+        font-size:16px;
+        
+      } 
+ 
+}
