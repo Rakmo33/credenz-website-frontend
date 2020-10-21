@@ -3,6 +3,10 @@
     color: white;
 }
 
+a:visited{
+    color: white;
+}
+
 .nav-link {
     color: white;
 }
@@ -17,6 +21,10 @@
 
 .navbar-inner{
     color: white;
+}
+
+.nav-colour{
+    background-color: var(--dark-shade);
 }
 
 .navbar-toggler-icon {
@@ -41,8 +49,14 @@
     }
 }
 
-@media (max-width: 490px){
+@media (max-width: 600px){
     a.navbar-brand{
         display: contents;
     }
 }
+
+/* @media (max-width: 490px){
+    a.navbar-brand{
+        display: contents;
+    }
+} */

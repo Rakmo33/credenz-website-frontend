@@ -13,10 +13,11 @@ code {
 }
 
 :root {
-  --light-shades: #fafafa;
-  --light-accent: #97b8d0;
-  --main-brand: #f0bb68;
-  --dark-accent: #b76572;
-  --dark-shades: #3859ab;
-  --lighter-accent: #e5ebf091;
+  --light-shades: #0f8edf;
+  --light-accent: #6eabce;
+  --main-brand: #5a6485;
+  /* --dark-accent: #b76572;
+  --dark-shades: #3859ab; */
+  --lighter-accent: #f0f0f1;
+  --dark-shade: #27252E;
 }

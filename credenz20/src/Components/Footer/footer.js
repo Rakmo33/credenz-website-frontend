@@ -4,7 +4,7 @@ import classes from './footer.module.css';
 const footer=()=>{
     return(
     <div className={classes.footer}>
-        <div><h5 className={'mt-1'}>copyright @ PICT IEEE Student Branch</h5></div>
+        <div><span className={'footer-font'}>copyright @ PICT IEEE Student Branch</span></div>
         {/* <div className={classes.social_container}>
             <a href="https://www.facebook.com/learnbuildteach/"
                 className={classes.facebook}>

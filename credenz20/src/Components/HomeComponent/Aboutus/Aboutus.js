@@ -6,7 +6,7 @@ import {FadeInLeft, FadeInRight} from 'animate-components';
 const aboutus = (props) => {
     return (
         <Container fluid>
-            <h1 className={classes.mid} style={{color: "ivory"}}>About US</h1>
+            <h1 className={classes.mid} style={{backgroundColor: 'var(--light-accent)'}}>About US</h1>
             <Row className={classes.credenz}>
                 <Col className={classes.content} sm={8}>
                    <FadeInLeft duration="2s" timingFunction="ease-out"> <h3 className={classes.mid}>Credenz</h3>
@@ -22,13 +22,13 @@ const aboutus = (props) => {
                 to present Credenz , a podium for you to nurture and cultivate your talents.</p>
                 </FadeInLeft>
                 </Col>
-                <Col sm={4}>
-                    <img className={classes.img_size} alt="black" src={require('../../../assests/img/Black Temporary Logo.png')} />
+                <Col className={classes.logo_pos} sm={4}>
+                    <img className={classes.img_size_cred} alt="black" src={require('../../../assests/img/Black Temporary Logo.png')} />
                 </Col>
             </Row>
             <Row className={classes.pisb}>
-                <Col sm={4}>
-                    <img alt="pisbdark" src={require('../../../assests/img/pisb-dark.png')} />
+                <Col className={classes.logo_pos} sm={4}>
+                    <img className={classes.img_size_pisb} alt="pisbdark" src={require('../../../assests/img/pisb-colour.png')} />
                 </Col>
                 <Col className={classes.content} sm={8}>
                    <FadeInRight duration="2s" timingFunction="ease-out"> <h3 className={classes.mid}>PICT IEEE Student Branch (PISB)</h3>
