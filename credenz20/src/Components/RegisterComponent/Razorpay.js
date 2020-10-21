@@ -23,11 +23,11 @@ function loadScript(src) {
 
 const _DEV_ = document.domain === 'localhost'
 
-function displayRazorpay() {
+async function DisplayRazorpay() {
 
     console.log("display razor called !")
 
-    const res = loadScript('https://checkout.razorpay.com/v1/checkout.js')
+    const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
 
     if(!res) {
         alert('Razorpay SDK failed to load!')
@@ -60,7 +60,8 @@ function displayRazorpay() {
         }
     };
     const paymentObject = new window.Razorpay(options)
+    
     paymentObject.open()
 }
 
-export default displayRazorpay;
+export default DisplayRazorpay;

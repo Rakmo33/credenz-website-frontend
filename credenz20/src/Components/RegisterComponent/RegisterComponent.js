@@ -2,21 +2,83 @@ import React from "react";
 import classes from "./Register.module.css";
 import SideEventsButton from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
-import displayRazorpay from './Razorpay';
 
-const Razorpay = () => {
-  console.log("Razorpay component called!")
-  return <displayRazorpay/>;
+
+function loadScript(src) {
+
+  console.log("load razor called !")
+
+  return new Promise( (resolve) => {
+
+      const script = document.createElement('script');
+      script.src = src;
+      
+      script.onload = () => {
+          resolve(true)
+      }
+      script.onerror = () => {
+          resolve(false)
+      }
+
+      document.body.appendChild(script)
+
+  })
 }
 
+const _DEV_ = document.domain === 'localhost'
+
+async function DisplayRazorpay() {
+
+  console.log("display razor called !")
+  alert("display razor called !")
+  const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+
+  if(!res) {
+      alert('Razorpay SDK failed to load!')
+      return
+  }
+
+  const options = {
+      "key": _DEV_ ? 'rzp_test_8OXCvHsV5OiOpe' : 'prod-key', // Enter the Key ID generated from the Dashboard
+      "amount": "50000", // 100p = 1rupee
+      "currency": "INR",
+      "name": "Credenz",
+      "description": "Test Transaction",
+      "image": "",
+      "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      "handler": function (response){
+          alert("Pay here!")
+          alert(response.razorpay_payment_id);
+          alert(response.razorpay_order_id);
+          alert(response.razorpay_signature)
+      },
+      "prefill": {
+          "name": "Gaurav Kumar",
+          "email": "gaurav.kumar@example.com",
+          "contact": "9999999999"
+      },
+      "notes": {
+          "address": "Razorpay Corporate Office"
+      },
+      "theme": {
+          "color": "#F37254"
+      }
+  };
+  const paymentObject = new window.Razorpay(options)
+  paymentObject.open()
+
+}
+
+
 const Register = () => {
+
   return (
     <div >
     <SideEventsButton/>
     <div style={{height:'1050px'}} className={classes.body}>
       <h1 className='reg-head'>Registrations Page</h1>
       <div className='container'>
-        <form className='col-md-7 m-auto'>
+        <form className='col-md-7 m-auto'> 
           <div class='form-row'>
             {/* NAME OF PARTICIPANTS */}
             <div class='form-group col-md-12'>
@@ -252,9 +314,10 @@ const Register = () => {
 
           <div class='form-group row d-flex justify-content-center'>
             <div class='col-sm-4 d-flex justify-content-center'>
-              <button class='btn btn-primary next-btn' onClick={Razorpay}>
+              <button class='btn btn-primary next-btn' onClick={DisplayRazorpay}>
                 Proceed for Payment
               </button>
+              
             </div>
           </div>
         </form>
