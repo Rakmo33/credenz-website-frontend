@@ -23,7 +23,7 @@ function loadScript(src) {
 
 const _DEV_ = document.domain === 'localhost'
 
-async function displayRazorpay() {
+async function DisplayRazorpay() {
 
     console.log("display razor called !")
 
@@ -60,7 +60,8 @@ async function displayRazorpay() {
         }
     };
     const paymentObject = new window.Razorpay(options)
+    
     paymentObject.open()
 }
 
-export default displayRazorpay;
+export default DisplayRazorpay;
