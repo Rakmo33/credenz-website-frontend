@@ -22,7 +22,7 @@ function NavBar() {
     return (
         <>
 
-            <nav className="navbar navbar-expand-lg navbar-inner navbar-dark">
+            <nav className="navbar navbar-expand-lg navbar-inner nav-colour">
             <Link to="/home" className="navbar-brand">
                 <img style={{width:'20%'}} alt="logopisb" src={require('../../assests/img/logopisb.png')}/>
             </Link>

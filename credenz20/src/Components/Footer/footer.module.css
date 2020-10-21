@@ -5,9 +5,10 @@
 .footer{
     justify-content: center;
     display: flex;
-    background: #cdcdcd;
+    background: var(--dark-shade);
     padding: 10px 0;
     color: #fff;
+
 }
 /* 
 .instagram {
@@ -27,3 +28,17 @@
     color: black;
     transform: translateY(-2px);
 } */
+
+@media (max-width: 600px){
+   footer-font{
+       font-size: 1 rem;
+       
+   }
+}
+
+@media only screen and (max-width: 280px){
+    footer-font{
+        font-size: 10px;
+        
+    }
+}
