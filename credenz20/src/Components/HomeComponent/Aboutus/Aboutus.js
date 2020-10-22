@@ -6,7 +6,7 @@ import {FadeInLeft, FadeInRight} from 'animate-components';
 const aboutus = (props) => {
     return (
         <Container fluid>
-            <h1 className={classes.mid} style={{backgroundColor: 'var(--light-accent)'}}>About US</h1>
+            <h1 className={classes.mid} style={{color: '#dadada'}}>About US</h1>
             <Row className={classes.credenz}>
                 <Col className={classes.content} sm={8}>
                    <FadeInLeft duration="2s" timingFunction="ease-out"> <h3 className={classes.mid}>Credenz</h3>

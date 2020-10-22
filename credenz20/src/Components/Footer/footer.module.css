@@ -5,7 +5,7 @@
 .footer{
     justify-content: center;
     display: flex;
-    background: var(--dark-shade);
+    background: #262626;
     padding: 10px 0;
     color: #fff;
 
