@@ -7,6 +7,15 @@ a:visited{
     color: white;
 }
 
+a.active{
+    border-bottom: 3px solid rebeccapurple;
+}
+
+a:hover{
+    border-bottom: 3px solid #1e90ff;
+    color: #add8e6 !important;
+}
+
 .nav-link {
     color: white;
 }
@@ -24,7 +33,8 @@ a:visited{
 }
 
 .nav-colour{
-    background-color: var(--dark-shade);
+    /* background-color: var(--dark-shade); */
+    background-color: transparent;
 }
 
 .navbar-toggler-icon {

@@ -73,7 +73,7 @@ import Sponsor from './sponsor/sponsor';
 const sponsors =(props)=>{
   return(
     <Container fluid>
-      <h2 style={{textAlign:'center', backgroundColor:'var(--light-accent)'}}>Sponsors</h2>
+      <h2 style={{textAlign:'center', color: '#dadada'}}>Sponsors</h2>
       <Row>
         <Col md={2} sm={4} ><Sponsor url={'aarnell.png'}></Sponsor></Col>
         <Col md={2} sm={4}><Sponsor url={'avaya.jpg'}></Sponsor></Col>
