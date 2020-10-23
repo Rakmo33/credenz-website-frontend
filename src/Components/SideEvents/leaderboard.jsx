@@ -1,6 +1,7 @@
-
 import React, { useState } from "react";
 import Table from "./table";
+import Social from '../sideEventButton/sideEvent';
+import Footer from '../Footer/footer';
 
 const Leaderboard = () => {
   const [input, setInput] = useState("");
@@ -146,10 +147,13 @@ const Leaderboard = () => {
   }
 
   return (
+    <>
+    <Social/>
     <div
       className="row"
       style={{ justifyContent: "center", marginBottom: "20px" }}
     >
+      
       <div className="col-xl-9 col-md-9  mt-4">
         <div className="row leaderboard-head">
           <div className="search-box">
@@ -176,6 +180,8 @@ const Leaderboard = () => {
         </div>
       </div>
     </div>
+    <Footer/>  
+    </>
   );
 };
 

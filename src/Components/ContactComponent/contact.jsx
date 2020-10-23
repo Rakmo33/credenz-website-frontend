@@ -1,6 +1,8 @@
 import React from "react";
 import "./contact.css";
 import ContactCard from "./contactCard";
+import Social from '../sideEventButton/sideEvent';
+import Footer from '../Footer/footer';
 // import GoogleMapReact from 'google-map-react';
 
 // const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -40,6 +42,8 @@ const ContactUs = () => {
           </p>
         </div>
       </div>
+      <Social/>
+      <Footer/>
     </React-Fragment>
   );
 };

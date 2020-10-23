@@ -17,6 +17,12 @@ span:hover{
     color: #add8e6 !important;
 }
 
+.custombtn{
+    background-color: #ccc !important;
+    border-radius: 16px !important;
+    padding: 4px 12px !important;
+}
+
 a:hover{
     color: white !important;
 }

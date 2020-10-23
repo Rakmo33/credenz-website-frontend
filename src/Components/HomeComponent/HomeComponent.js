@@ -17,7 +17,7 @@ const Home=()=> {
             <div className={classes.sponsor}> < Sponsors /></div>   
             </div>
             <SideEventButton />
-            {/* <Footer/> */}
+            <Footer/>
         </div>
     );
 }

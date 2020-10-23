@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 .cont{
-    background-color: rgb(185, 241, 233);
+    /* background-color: rgb(185, 241, 233); */
     min-height: 100vh;
     margin-top:-30px;
 }
+
+.container-fluid{
+    padding: 0 !important;
+}
+
 .tab{
    
     align-items: center;
@@ -13,12 +18,19 @@
 }
 .select h3 {
     /* border-top:5px solid #734ea0 !important;  */
-    border-bottom:4px solid white;
-    color:black ! important;
+    /* border-bottom:4px solid white; */
+    color:#40497a ! important;
 }
 
+/* .footer{
+    margin-top: 0vh;
+  } */
+
 .tab h3{
-    color:#40497a;
+    background-color: #ccc;
+    border-radius: 19px;
+    padding: 5px 12px;
+    color: balck;
     font-family: 'Alata', sans-serif;
     font-weight: bold;
     font-size:20px;
