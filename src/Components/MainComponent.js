@@ -54,7 +54,7 @@ class Main extends Component {
           <Route path='/signup' component={SignUpPage} />
           <Redirect to='/home' />
         </Switch>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }

@@ -1,7 +1,10 @@
 import React from 'react';
+import Social from '../sideEventButton/sideEvent';
+import Footer from '../Footer/footer';
 
 const Feedback = () => {
     return (
+        <>
        <form className="feedback">
            <div className="form-group">
                <label htmlFor="name">Name</label>
@@ -17,6 +20,10 @@ const Feedback = () => {
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
        </form>
+       <Social />
+       <div style={{marginTop:'28vh'}} > <Footer/></div>
+      
+     </>
       );
 }
  

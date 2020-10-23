@@ -5,3 +5,10 @@
 .sponsor{
     margin: 40px 0 ;
 }
+
+@media(max-width: 600px){
+    .body{
+        padding: 0;
+        padding-left: 44px;
+    }
+}

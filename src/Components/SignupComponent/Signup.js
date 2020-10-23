@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Signup.css';
+import Footer from '../Footer/footer';
+import Social from '../sideEventButton/sideEvent';
 
 function Signup() {
 
@@ -18,7 +20,7 @@ function Signup() {
     return(
         <>
         <div className="page">
-            <div className="container">
+            <div  className="container">
                 <div className="left">
                     <div className="signup">Sign Up</div>
                     <div className="text-left">Sign up here and be a part of the exciting adventure Credenz 2020 is!</div>
@@ -45,6 +47,8 @@ function Signup() {
                 </div>
             </div>
         </div>    
+        <Social/>
+        <div className="footer"  ><Footer/></div>
         </>
     );
 

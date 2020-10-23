@@ -5,6 +5,7 @@ import "./contact.css";
 import Feedback from "./feedback";
 
 
+
 const Contact = () => {
   const [select, setSelect] = useState("Contact");
 
@@ -46,7 +47,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
       {select === "Contact" ? (
         <ContactUs />
       ) : select === "Team" ? (
