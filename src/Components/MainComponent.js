@@ -12,6 +12,7 @@ import About from "../Components/HomeComponent/HomeComponent";
 import SideEvents from "./SideEvents/sideEvents";
 import LeaderBoard from './SideEvents/leaderboard';
 import Footer from '../Components/Footer/footer';
+
 class Main extends Component {
   render() {
     const HomePage = () => {
