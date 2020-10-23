@@ -39,37 +39,37 @@ function NavBar() {
                 </li>  */}
                 <li className="nav-item">
                     <Link to="/events" className="nav-link">
-                        Events
+                        <span>Events</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/register" className="nav-link">
-                        Register
+                    <Link  to="/register" className="nav-link">
+                        <span>Register</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/sideEvents" className="nav-link">
-                        SideEvents
+                    <Link  to="/sideEvents" className="nav-link">
+                        <span>SideEvents</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/leaderboard" className="nav-link">
-                        LeaderBoard
+                    <Link  to="/leaderboard" className="nav-link">
+                       <span>LeaderBoard</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="./about" className="nav-link">
-                        About
+                    <Link  to="./about" className="nav-link">
+                        <span>About</span>
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/contact" className="nav-link">
-                        Contact
+                    <Link  to="/contact" className="nav-link">
+                        <span>Contact</span>
                     </Link>
                 </li>
                 <li className="nav-item" onClick={handleShow1}>
-                    <div className="nav-link">
-                        Updates    
+                    <div  className="nav-link">
+                        <span>Updates</span>    
                     </div>
                 </li>
                 </ul>
