@@ -1,3 +1,7 @@
+.body, html{
+ 
+}
+
 .img_size_cred{
     width: 70%;
 }
@@ -75,6 +79,7 @@
     overflow: auto;
     color: #ccc;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 

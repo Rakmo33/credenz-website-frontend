@@ -11,9 +11,14 @@ a.active{
     border-bottom: 3px solid rebeccapurple;
 }
 
-a:hover{
+span:hover{
+    padding-bottom: 5px;
     border-bottom: 3px solid #1e90ff;
     color: #add8e6 !important;
+}
+
+a:hover{
+    color: white !important;
 }
 
 .nav-link {
