@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-image: url(./assests/img/bg1.jpg); */
+  background-color: var(--dark-shade);
+  overflow: hidden;
+}
