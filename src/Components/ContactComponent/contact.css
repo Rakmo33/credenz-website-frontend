@@ -16,14 +16,15 @@
 }
 .select h3 
 {
-    color:#40497a ! important;
+    border-bottom:2px solid #add8e6 !important;
+    color:#add8e6 ! important;
 }
 
 .tab h3{
-    background-color: #ccc;
-    border-radius: 19px;
+    /* background-color: #ccc; */
+    
     padding: 5px 12px;
-
+    color:white;
     font-family: 'Alata', sans-serif;
     font-weight: bold;
     font-size:20px;
@@ -32,7 +33,7 @@
  
 }
 .tab h3:hover{
-color:black;
+color:#add8e6;
 }
 .head{
     
