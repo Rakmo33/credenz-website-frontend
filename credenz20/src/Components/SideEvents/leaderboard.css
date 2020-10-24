@@ -53,28 +53,38 @@ tr td:last-child { border-bottom-right-radius: 10px; }
 }
 
 .search-box{
-    background-color: rgba(245, 251, 252, 0.95);
+    /* background-color: rgba(245, 251, 252, 0.95); */
+    background-color:  rgba(30, 32, 34, 0.7);
     width:350px;
     border-radius : 20px;
-    border:3px solid rgb(121, 178, 216);
+    /* border:3px solid rgb(121, 178, 216); */
+    border:none;
     display: flex;
     height: 40px;
+    
 }
 
 .search-box #search{
-    color:black;
-    text-align: center;
-    padding :18px;
+    color:white;
+    padding-top :12px;
+    padding-left:40px;
+    padding-right:20px;
 }
+.search-box #search:focus::-webkit-input-placeholder {
+    /* WebKit browsers */
+     color: transparent;
+}
+
 .dropdown div.default{
   align-items: center;
   display: flex;
   justify-content: center;
   width:160px;
   color:white;
-  height: 35px;
+  height: 40px;
    /* background-color:rgb(79, 115, 139); */
-   background-color:  rgb(5, 34, 59);
+   background-color:  rgba(30, 43, 54, 0.7);
+   /* background-color:  rgba(5, 34, 59,.7); */
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -105,7 +115,8 @@ div.dropdown::before{
     width:148px;
     list-style-type: none;
     /* background-color: rgba(79, 115, 139,1); */
-    background-color: rgb(5, 34, 59);
+    /* background-color: rgb(5, 34, 59); */
+    background-color:  rgba(30, 43, 54, 0.89);
     padding-top:5px;
    text-align: center;
    cursor: pointer;

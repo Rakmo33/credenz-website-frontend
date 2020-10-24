@@ -159,6 +159,7 @@ const Leaderboard = () => {
               placeholder="Search"
               onChange={handleSearch}
               value={input}
+              autoComplete="off"
             ></input>
             <div className="dropdown">
               <div className="default" onClick={handleClick}>
