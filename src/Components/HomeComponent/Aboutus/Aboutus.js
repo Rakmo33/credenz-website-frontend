@@ -2,15 +2,12 @@ import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import classes from "./Aboutus.module.css";
 import {FadeInUp, FadeInRight} from 'animate-components';
-import Timer from '../Timer';
 
 const aboutus = (props) => {
     return (
         <>
 <Container fluid>
-            <div className="d-flex justify-content-center">
-                <Timer/>
-            </div>
+           
             <h1 className={classes.mid} style={{color: '#dadada'}}>About US</h1>
             <Row className={classes.credenz}>
                 <Col className={classes.content} sm={8}>
