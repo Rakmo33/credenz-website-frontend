@@ -71,13 +71,16 @@ color:#add8e6;
 }
 .card .card-body{
     border:none !important;
+   
   
 }
 .contacts .card-body{
     background-color: #0a1018;
-    color:white;
-  
-   
+    color:white;   
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: transform .2s;
 }
 .card-title{
     text-align: center;

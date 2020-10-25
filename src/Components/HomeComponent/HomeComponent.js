@@ -6,6 +6,7 @@ import SideEventButton from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
 import classes from './HomeComponent.module.css';
 import {Container } from 'react-bootstrap';
+import Member from '../Team/Member';
 
 const Home=()=> {
     return(
@@ -17,6 +18,7 @@ const Home=()=> {
             <div className={classes.sponsor}> < Sponsors /></div>   
             </div>
             <SideEventButton />
+            <Member/>
             <Footer/>
         </div>
     );
