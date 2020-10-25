@@ -16,10 +16,18 @@
 }
 .select h3 
 {
+    border:none!important;
     border-bottom:2px solid #add8e6 !important;
     color:#add8e6 ! important;
+ 
 }
-
+@media(max-width:425px){
+    .tab h3{
+    border-bottom:1px solid #ccc;
+    border-radius:20px;
+    }
+  
+}
 .tab h3{
     /* background-color: #ccc; */
     
@@ -50,6 +58,7 @@ color:#add8e6;
     0%{margin-left:-30px};
     100%{margin-top: 0px};
 }
+
 .contacts{
    margin:30px;
    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
