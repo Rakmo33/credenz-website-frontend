@@ -2,10 +2,15 @@ import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import classes from "./Aboutus.module.css";
 import {FadeInUp, FadeInRight} from 'animate-components';
+import Timer from '../Timer';
 
 const aboutus = (props) => {
     return (
-        <Container fluid>
+        <>
+<Container fluid>
+            <div className="d-flex justify-content-center">
+                <Timer/>
+            </div>
             <h1 className={classes.mid} style={{color: '#dadada'}}>About US</h1>
             <Row className={classes.credenz}>
                 <Col className={classes.content} sm={8}>
@@ -23,7 +28,7 @@ const aboutus = (props) => {
                 </FadeInUp>
                 </Col>
                 <Col className={classes.logo_pos} sm={4}>
-                    <img className={classes.img_size_cred} alt="black" src={require('../../../assests/img/Black Temporary Logo.png')} />
+                    <img className={classes.img_size_cred} alt="black" src={require('../../../assests/img/final-logo.png')} />
                 </Col>
             </Row>
             <Row className={classes.pisb}>
@@ -37,11 +42,12 @@ const aboutus = (props) => {
                     escalate the knowledge and trends in the diverse fields of technologies amongst its members.
                     PISB upholds two major events every year - Credenz and Credenz Tech Dayz with the first one
                     being conducted in odd semester and the latter one in even semester. PISB is also marked by
-                its Women in Engineering (WIE) chapter, an initiative for empowerment of women.</p>
-                </FadeInUp>
+                    its Women in Engineering (WIE) chapter, an initiative for empowerment of women.</p>
+                    </FadeInUp>
                 </Col>
             </Row>
-        </Container >
+        </Container >                    
+        </>       
     );
 }
 
