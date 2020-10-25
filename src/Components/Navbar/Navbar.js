@@ -27,8 +27,8 @@ function NavBar() {
                 <img style={{width:'20%'}} alt="logopisb" src={require('../../assests/img/logopisb.png')}/>
             </Link>
             <button type="button" class="btn custombtn btn-sm d-inline d-lg-none ml-auto mr-2" onClick={ handleShow }>Log in</button>
-            <button className="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+            <button className="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                {/* <span className="navbar-toggler-icon"></span> */}
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
