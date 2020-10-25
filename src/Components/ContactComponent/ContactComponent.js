@@ -20,26 +20,26 @@ const Contact = () => {
             <div
               className={
                 select === "Contact"
-                  ? "col-xl-4 col-md-4  col-sm-2 tab select"
-                  : "col-xl-4 tab  col-md-4  col-sm-2"
+                  ? "col-xl-6 col-md-6  col-sm-2 tab select"
+                  : "col-xl-6 tab  col-md-6  col-sm-2 "
               }
             >
               <h3 onClick={() => handleSelect("Contact")}>Contact Us</h3>
             </div>
-            <div
+            {/* <div
               className={
                 select === "Team"
                   ? "col-xl-4 col-md-4  col-sm-2 tab select"
                   : "col-xl-4 tab  col-md-4  col-sm-2"
               }
             >
-              <h3 onClick={() => handleSelect("Team")}>Our Team</h3>
-            </div>
+               <h3 onClick={() => handleSelect("Team")}>Our Team</h3> 
+            </div> */}
             <div
               className={
                 select === "Feedback"
-                  ? "col-xl-4  col-md-4  col-sm-2 tab select"
-                  : "col-xl-4 tab  col-md-4 col-sm-2"
+                  ? "col-xl-6  col-md-6  col-sm-2 tab select "
+                  : "col-xl-6 tab  col-md-6 col-sm-2 "
               }
             >
               <h3 onClick={() => handleSelect("Feedback")}>Feedback</h3>

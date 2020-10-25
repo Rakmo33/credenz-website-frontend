@@ -39,37 +39,37 @@ function NavBar() {
                 </li>  */}
                 <li className="nav-item">
                     <Link to="/events" className="nav-link">
-                        <span>Events</span>
+                        <samp>Events</samp>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link  to="/register" className="nav-link">
-                        <span>Register</span>
+                        <samp>Register</samp>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link  to="/sideEvents" className="nav-link">
-                        <span>SideEvents</span>
+                        <samp>SideEvents</samp>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link  to="/leaderboard" className="nav-link">
-                       <span>LeaderBoard</span>
+                       <samp>LeaderBoard</samp>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link  to="./about" className="nav-link">
-                        <span>About</span>
+                        <samp>About</samp>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link  to="/contact" className="nav-link">
-                        <span>Contact</span>
+                        <samp>Contact</samp>
                     </Link>
                 </li>
                 <li className="nav-item" onClick={handleShow1}>
                     <div  className="nav-link">
-                        <span>Updates</span>    
+                        <samp>Updates</samp>    
                     </div>
                 </li>
                 </ul>
