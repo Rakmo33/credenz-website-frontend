@@ -29,11 +29,12 @@ const aboutus = (props) => {
                 </Col>
                 <Col className={classes.logo_pos} sm={4}>
                     <img className={classes.img_size_cred} alt="black" src={require('../../../assests/img/final-logo.png')} />
+
                 </Col>
             </Row>
             <Row className={classes.pisb}>
                 <Col className={classes.logo_pos} sm={4}>
-                    <img className={classes.img_size_pisb} alt="pisbdark" src={require('../../../assests/img/pisb-colour.png')} />
+                    <img className={classes.img_size_pisb} alt="pisbdark" src={require('../../../assests/img/pisb.png')} />
                 </Col>
                 <Col className={classes.content} sm={8}>
                    <FadeInUp duration="1s" timingFunction="ease-out"> <h3 className={classes.mid}>PICT IEEE Student Branch (PISB)</h3>
