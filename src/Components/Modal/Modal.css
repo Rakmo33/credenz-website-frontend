@@ -1,3 +1,6 @@
+#create{
+	color: teal;
+}
 
 .modal-title {
     text-align: center;
@@ -62,7 +65,7 @@
 .modal-login .btn, .modal-login .btn:active {        
 	font-size: 16px;
 	font-weight: bold;
-	background: #19aa8d !important;
+	background: var(--light-shades) !important;
 	border-radius: 3px;
 	border: none;
 	min-width: 140px;

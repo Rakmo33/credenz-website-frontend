@@ -1,8 +1,9 @@
 import React from "react";
+import './HomeAnimation.module.css';
 
 const homeanimation = (props) =>{
     return(
-        <div style={{color: "ivory"}}>Animation goes here</div>
+        <div className="anim">Animation goes here</div>
     );
 }
 
