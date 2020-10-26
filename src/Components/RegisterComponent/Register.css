@@ -1,30 +1,19 @@
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-
-/* .body {
-    background: rgb(44, 43, 43);
-    height: 100%;
-} */
-
-label {
+.regPage label {
     color: white;
 }
 
-.reg-head {
+.regPage .reg-head {
+    width: fit-content;
+    margin: 50px auto;
+    color: white;
+}
+
+.regPage .next-btn {
     width: fit-content;
     margin: 50px auto;
 }
 
-.next-btn {
-    width: fit-content;
-    margin: 50px auto;
-}
-
-.cc-selector input {
+.regPage .cc-selector input {
     margin: 0;
     padding: 0;
     -webkit-appearance: none;
@@ -34,17 +23,17 @@ label {
     z-index: 999;
 }
 
-.cc-selector input:active+.drinkcard-cc {
+.regPage .cc-selector input:active+.drinkcard-cc {
     opacity: 0.9;
 }
 
-.cc-selector input:checked+.drinkcard-cc {
+.regPage .cc-selector input:checked+.drinkcard-cc {
     -webkit-filter: none;
     -moz-filter: none;
     filter: none;
 }
 
-.drinkcard-cc {
+.regPage .drinkcard-cc {
     cursor: pointer;
     background-size: contain;
     background-repeat: no-repeat;
@@ -59,7 +48,7 @@ label {
     filter: brightness(1.8) grayscale(1) opacity(0.7);
 }
 
-.drinkcard-cc:hover {
+.regPage .drinkcard-cc:hover {
     -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
     -moz-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
     filter: brightness(1.2) grayscale(0.5) opacity(0.9);
@@ -68,37 +57,77 @@ label {
 
 /* Extras */
 
-a:visited {
+.regPage a:visited {
     color: #888;
 }
 
-a {
+.regPage {
+    font-size: 18px;
+}
+
+.regPage a {
     color: #444;
     text-decoration: none;
 }
 
-p {
+.regPage p {
     margin-bottom: 0.3em;
 }
 
-span.cc {
+.regPage span.cc {
     color: #6d84b4;
 }
 
-#choose-events {
-    color: white;
-    font-size: 16px;
+.regPage .years,
+.regPage .emails,
+.regPage .college {
+    margin: 20px 0;
+}
+
+.regPage .college {
+    margin: 40px 0;
+    margin-top: 50px;
+}
+
+.regPage .members,
+.regPage .years {
+    margin: 40px 0;
+}
+
+.regPage .years .custom-radio {
+    margin: 0 20px;
+}
+
+.regPage #choose-events {
+    color: rgb(255, 255, 255);
+    /* font-size: 18px; */
     margin: 0;
     padding: 0;
     margin-top: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
-.event-icons label {
+.regPage .event-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    row-gap: 15px;
+}
+
+.regPage .event-icons label {
     border-radius: 10px;
     background-color: rgb(59, 59, 53);
 }
 
-.event1 {
+.regPage .event-icons p {
+    color: white;
+}
+
+.regPage .event-wrap {
+    flex-direction: column;
+    align-items: center;
+}
+
+.regPage .event1 {
     background-image: url(../../logo.svg);
+    color: red;
 }
