@@ -91,6 +91,7 @@ function ModalBody({handleClose, type, event}) {
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary btn-block btn-lg">Log in</button>
                     </div>
+                    
                     <p className="hint-text">Don't have an account? <Link id="create" to="/signup" onClick={handleClose}>Create one</Link></p>
                 </form>
                     

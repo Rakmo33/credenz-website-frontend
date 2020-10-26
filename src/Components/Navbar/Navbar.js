@@ -72,6 +72,11 @@ function NavBar() {
                         <samp>Updates</samp>    
                     </div>
                 </li>
+                <li className="nav-item">
+                    <Link  to="/profile" className="nav-link">
+                        <samp>Profile</samp>
+                    </Link>
+                </li>
                 </ul>
             </div>
             <button id="login" type="button" class="btn custombtn btn-sm d-none d-lg-block" onClick={ handleShow }>Login</button>

@@ -13,6 +13,7 @@ import SideEvents from "./SideEvents/sideEvents";
 import LeaderBoard from './SideEvents/leaderboard';
 import Footer from '../Components/Footer/footer';
 import Team from '../Components/Team/Team';
+import Profile from '../Components/Profilepage/Profilepage';
 
 class Main extends Component {
   render() {
@@ -47,6 +48,10 @@ class Main extends Component {
       return <Team />;
     };
 
+    const ProfilePage = () => {
+      return <Profile />;
+    };
+
     return (
       <div>
         <NavBar />
@@ -60,6 +65,7 @@ class Main extends Component {
           <Route path='/leaderboard' component={LeaderBoardPage} />
           <Route path='/signup' component={SignUpPage} />
           <Route path='/team' component={TeamPage} />
+          <Route path='/profile' component={ProfilePage} />
           <Redirect to='/home' />
         </Switch>
         {/* <Footer/> */}
