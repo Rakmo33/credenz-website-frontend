@@ -1,13 +1,17 @@
 import React from 'react';
 import Member from '../Team/Member';
-
-const Team =(props)=>{
+import {Container, Row, Col} from 'react-bootstrap';
+const team =()=>{
     return(
-        <div>
-            <Member/>
-            <Member/>
-        </div>
+       <Container>
+           <Row style={{display:"flex"}}>
+               <Col sm={12}><Member/></Col>
+               <Col sm={12}><Member/></Col>
+               <Col sm={12}><Member/></Col>
+               <Col sm={12}><Member/></Col>
+           </Row>
+       </Container>
     );
 }
 
-export default Team;
+export default team;

@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './footer.module.css';
 import "../ContactComponent/contact.css";
-import Link from '../MainComponent';
+import {Link} from 'react-router-dom';
 
 const footer=()=>{
     return(

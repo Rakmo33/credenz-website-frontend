@@ -5,8 +5,6 @@ import HomeAnimation from './HomeAnimation/HomeAnimation';
 import SideEventButton from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
 import classes from './HomeComponent.module.css';
-import {Container } from 'react-bootstrap';
-import Member from '../Team/Member';
 import Timer from './Timer';
 
 const Home=()=> {
@@ -22,7 +20,6 @@ const Home=()=> {
             <div className={classes.sponsor}> < Sponsors /></div>   
             </div>
             <SideEventButton />
-            <Member/>
             <Footer/>
         </div>
     );

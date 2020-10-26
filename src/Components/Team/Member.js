@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card';
 // import '../../assests/img/'
 const member =(props)=>{
     return(
-        <div >
-            <Card style={{ width: '20rem' }}>
+        <div>
+            <Card className={classes.member}>
             <Card.Img variant="top" src={require('../../assests/img/bg1.jpg')} />
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>
@@ -16,6 +16,7 @@ const member =(props)=>{
                 {/* <Button variant="primary">Go somewhere</Button> */}
             </Card.Body>
             </Card>
+            
         </div>
     );
 }
