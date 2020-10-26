@@ -60,6 +60,31 @@ function ModalBody({handleClose, type, event}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
+    const login = () => {
+        alert("Login func called")
+        fetch('http://credenzwebsite.herokuapp.com/login',
+            {
+                method: 'POST',
+                body: JSON.stringify({username, password})    
+            }
+        ).then(
+            (response) => {
+                    response.json().then((result)=> {
+                        alert("Result is : " + result.accessToken);
+                        localStorage.setItem('login', JSON.stringify(
+                            {
+                                login: true,
+                                token: result.accessToken
+                            }
+                        ))   
+                    }
+                )
+            }
+        )
+
+        alert(localStorage.getItem('login'))
+    }
+
     const submitForm = e => {
         console.log("Current state is : " + JSON.stringify({username, password}))
         alert("Current state is : " + JSON.stringify({username, password}))
@@ -73,7 +98,7 @@ function ModalBody({handleClose, type, event}) {
             <div id="myModal">
             <div className="modal-login">
                 
-                <form onSubmit={ submitForm }>
+                <form onSubmit={ login }>
                     <div className="form-group">
                         <div className="input-group">
                             <span className="input-group-addon"><i class="fa fa-envelope"></i></span>
