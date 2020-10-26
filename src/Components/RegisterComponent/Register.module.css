@@ -5,10 +5,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 
-/* .body {
-    background: rgb(44, 43, 43);
+ .body {
+    background-image: url('../../assests/img/neon.jpg');
     height: 100%;
-} */
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
 
 label {
     color: white;

@@ -76,7 +76,7 @@ const Register = () => {
     <div >
     <SideEventsButton/>
     <div style={{height:'1050px'}} id="formHeight" className={classes.body}>
-      <h1 className='reg-head'>Registrations Page</h1>
+      <h1 className='d-flex justify-content-center reg-head' style={{color: "white"}}>Registrations Page</h1>
       <div className='container'>
         <form className='col-md-7 m-auto'> 
           <div class='form-row'>

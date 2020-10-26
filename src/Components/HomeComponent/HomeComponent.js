@@ -7,6 +7,7 @@ import Footer from '../Footer/footer';
 import classes from './HomeComponent.module.css';
 import {Container } from 'react-bootstrap';
 import Member from '../Team/Member';
+import Timer from './Timer';
 
 const Home=()=> {
     return(
@@ -14,6 +15,9 @@ const Home=()=> {
             <div className={classes.body}>
             <h1 style={{color: "ivory"}}>Credenz Home Page</h1>
             <HomeAnimation/>
+            <div className="d-flex justify-content-center">
+                <Timer/>
+            </div>
             <Aboutus id="Aboutus" />
             <div className={classes.sponsor}> < Sponsors /></div>   
             </div>
