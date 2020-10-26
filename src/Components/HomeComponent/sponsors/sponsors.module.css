@@ -6,6 +6,17 @@
 .sponsor{
     width: 70%;
     border-radius: 50%;
+    transition: transform .2s;
+}
+
+.spons{
+    text-align: center;
+}
+
+.sponsor:hover{
+        color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0px 15px var(--light-shades);
+        transform: scale(1.2); 
 }
 
 @media (max-width : 600px){
