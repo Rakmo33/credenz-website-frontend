@@ -8,12 +8,11 @@ const member =(props)=>{
             <Card className={classes.member}>
             <Card.Img variant="top" src={require('../../assests/img/bg1.jpg')} />
             <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
-                </Card.Text>
-                {/* <Button variant="primary">Go somewhere</Button> */}
+                <Card.Title> <h4>{props.name}</h4></Card.Title>
+                <Card.Title>{props.pos}</Card.Title>
+                <h4 className={classes.icon}>
+                    <a href={props.link}><i class="fa fa-linkedin"></i></a>
+                </h4>
             </Card.Body>
             </Card>
             
