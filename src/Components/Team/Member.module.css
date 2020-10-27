@@ -4,6 +4,10 @@
 }
 
 .icon{
+    text-align: center;
+}
+
+.icon a{
     text-align:center;
     color: var(--light-shades);
 }
