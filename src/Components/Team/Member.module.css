@@ -1,8 +1,23 @@
-.member{
-    width: 20rem;
-    margin: auto;
+@keyframes slidedown{
+    0%{margin-left:-30px};
+    100%{margin-top: 0px};
 }
 
+.member{
+    width: 15rem;
+    margin:30px;
+    animation-name: slidedown;
+    animation-duration:  1s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease;
+}
+.member:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+ .member:nth-child(3){
+    animation-delay: 0.4s;
+}
 .icon{
     text-align: center;
 }
