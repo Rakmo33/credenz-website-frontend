@@ -1,6 +1,7 @@
 {
   "name": "credenz20",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.31",
@@ -12,6 +13,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "animate-components": "^1.4.8",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.2",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
