@@ -53,7 +53,7 @@ class Update extends Component{
             <Form>
                 <Form.Group>
                     <Form.Label>Name</Form.Label>
-                    <Form.Control id="name" type="text" onChange={this.onChangeHandler} value={} placeholder="Enter Event Name" />
+                    <Form.Control id="name" type="text" onChange={this.onChangeHandler}  placeholder="Enter Event Name" />
                 </Form.Group>
                 {/* <Form.Group >
                     <Form.Label><particpant/Form.Label>
@@ -61,7 +61,7 @@ class Update extends Component{
                 </Form.Group> */}
                 <Form.Group >
                     <Form.Label>update details </Form.Label>
-                    <Form.Control id="details" onChange={this.onChangeHandler} value={} as="textarea" rows={3} />
+                    <Form.Control id="details" onChange={this.onChangeHandler}  as="textarea" rows={3} />
                 </Form.Group>
                 <Button variant="primary" type="submit" onClick={this.onSubmitHandler}>
                     Submit
@@ -71,9 +71,15 @@ class Update extends Component{
     }
 
     render(){
+        let form=null;
+        if(this.props.choice==='1'){
+            form=this.addUpdate();
+        } else{
+            form= this.editUpdate();
+        }
         return(
             <Container>
-
+                {form}
             </Container>
         );
     }

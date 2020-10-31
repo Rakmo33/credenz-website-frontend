@@ -104,12 +104,16 @@ class Event extends Component{
 
 
     render(){
-
+        let form=null;
+        if(this.props.choice === "1"){
+            form= this.addEvent();
+        }else{
+            form=this.editEvent();
+        }
 
         return(<div>
             <Container>
-           {this.addEvent()}
-           {this.editEvent()}
+           {form}
            </Container>
         </div>);
     }
