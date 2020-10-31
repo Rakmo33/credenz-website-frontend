@@ -16,6 +16,8 @@ function Signup() {
     
 
     const submitForm = e => {
+
+        e.preventDefault();
         console.log("Current state is : " + JSON.stringify({email, phone, college, password}))
 
 
