@@ -10,7 +10,8 @@ class Event extends Component{
             name: "PISB Member here",
             participants:4,
             details:"hey there you are in the details"
-        }
+        },
+        selectEvent:null
     }
 
     onChangeHandler=(event)=>{
@@ -50,6 +51,15 @@ class Event extends Component{
         } 
     }
 
+    onSelectEditEvent=(e)=>{
+        // e.preventDefault();
+        console.log("in editttt")
+        const target = e.target;
+            this.setState({selectEvent:target.value});
+            // console.log(this.state.selectEvent);
+        
+    }
+
     onSubmitHandler=(e)=>{
         e.preventDefault();
         const eve= this.state.Event;
@@ -65,6 +75,7 @@ class Event extends Component{
                     <Form.Label>Event Name</Form.Label>
                     <Form.Control id="name" type="text" onChange={this.onChangeHandler} placeholder="Enter Event Name" />
                 </Form.Group>
+            
                 <Form.Group >
                     <Form.Label>No. of Participant</Form.Label>
                     <Form.Control id="participant" onChange={this.onChangeHandler} type="number" placeholder="count of participants" />
@@ -76,6 +87,8 @@ class Event extends Component{
                 <Button variant="primary" type="submit" onClick={this.onSubmitHandler}>
                     Submit
                 </Button>
+             
+             
             </Form>
         </div>);
     }
@@ -84,6 +97,18 @@ class Event extends Component{
         return(<div>
             <Form>
                 <Form.Group >
+                    <Form.Label >Example select</Form.Label>
+                    <Form.Control  id="editevent" as="select" onChange={this.onSelectEditEvent}>
+                    <option >select</option>
+                    <option >2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    </Form.Control>
+                </Form.Group>
+                {this.state.selectEvent ?  
+                <div>  
+                <Form.Group>
                     <Form.Label>Event Name</Form.Label>
                     <Form.Control id="name" type="text" value={this.state.Event.name} onChange={this.onChangeHandler} placeholder="Enter Event Name" />
                 </Form.Group>
@@ -98,8 +123,10 @@ class Event extends Component{
                 <Button variant="primary" type="submit" onClick={this.onSubmitHandler}>
                     Submit
                 </Button>
+                   </div> : null }
             </Form>
-        </div>);
+            </div>
+         );
     }
 
 
