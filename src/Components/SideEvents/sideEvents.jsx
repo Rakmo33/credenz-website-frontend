@@ -26,7 +26,6 @@ const SideEvents = () => {
               </div>
         </div>
         <Social/>
-       
         {select==="Play"? "":<Leaderboard/>}
         {/* <Footer/>   */}
         </div>
