@@ -128,6 +128,21 @@ function ModalBody({handleClose, type, event}) {
     else {
 
 
+       /* const allEvents = (e) => {
+
+            e.preventDefault()
+
+            try{
+                axios.get('http://credenzwebsite.herokuapp.com/allevents').then(function (response) {
+                    console.log(response.data);
+                })
+            }
+            catch(e) {
+                alert("Axios error!" + e)
+            }
+
+        }
+*/
         switch(event) {
 
             case "clash" : return(
