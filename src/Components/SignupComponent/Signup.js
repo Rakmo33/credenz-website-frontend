@@ -16,21 +16,13 @@ function Signup() {
     
 
     const submitForm = e => {
-
         e.preventDefault();
         console.log("Current state is : " + JSON.stringify({email, phone, college, password}))
 
 
-        if(!errors.boolean) {
+        if(!errors.boolean) {    
 
-            alert("Inside if")
-            
-            alert("Form successfully submitted.")
-    
-    
                 try{
-
-                    alert("Inside Try")
 
                     axios.post('http://credenzwebsite.herokuapp.com/signup', {
                         username: username,
@@ -40,11 +32,11 @@ function Signup() {
                         phoneno: phone,
                         clgname: college,
                     }).then(function (response) {
-                        alert("Then")
+                        alert("Form successfully submitted.")
                         console.log(response);
                         console.log(response.data);
                         const msg = response.data["accessToken"]
-                        alert(msg)
+                        console.log(msg)
                     })
                 }
                 catch(e) {
@@ -57,6 +49,7 @@ function Signup() {
                 setEmail('')
                 setCollege('')
                 setPassword('')
+                setPasswordCheck('')
                
             }
 
@@ -106,7 +99,7 @@ function Signup() {
                                     </span>
                                 </div>
                                 <input id="Name" type="text" name="name" placeholder="Name" class="form-control bg-white border-left-0 border-md"
-                                onChange={ e => setName(e.target.value) }/>
+                                onChange={ e => setName(e.target.value) } value={name}/>
                                  { 
                                     errors &&
                                     <small id="nameErr" class="form-text text-danger">
@@ -123,7 +116,7 @@ function Signup() {
                                     </span>
                                 </div>
                                 <input id="username" type="text" name="username" placeholder="Username" class="form-control bg-white border-left-0 border-md"
-                                onChange={ e => setUsername(e.target.value) }/>
+                                onChange={ e => setUsername(e.target.value) } value={username}/>
                                  { 
                                     errors &&
                                     <small id="nameErr" class="form-text inline text-danger">
@@ -140,7 +133,7 @@ function Signup() {
                                 </div>
                                 <input id="email" type="email" name="email" placeholder="Email Address"
                                  class="form-control bg-white border-left-0 border-md"
-                                 onChange={ e => setEmail(e.target.value) }/>
+                                 onChange={ e => setEmail(e.target.value) } value={email}/>
                                  { 
                                     errors &&
                                     <small id="nameErr" class="form-text text-danger">
@@ -157,7 +150,7 @@ function Signup() {
                                 </div>
                                 <input id="phoneNumber" type="text" name="phone" placeholder="Phone Number"
                                  class="form-control bg-white border-md border-left-0 pl-3"
-                                 onChange={ e => setPhone(e.target.value) }/>
+                                 onChange={ e => setPhone(e.target.value) } value={phone}/>
                                  { 
                                     errors &&
                                     <small id="phoneErr" class="form-text text-danger">
@@ -172,9 +165,18 @@ function Signup() {
                                         <i class="fa fa-black-tie text-muted"></i>
                                     </span>
                                 </div>
-                                <input id="college" type="college" name="college" placeholder="College"
-                                 class="form-control bg-white border-left-0 border-md"
-                                 onChange={ e => setCollege(e.target.value) }/>
+                                <select id="college" type="college" name="college"
+                                class="form-control bg-white border-left-0 border-md"
+                                onChange={ e => setCollege(e.target.value) } value={college}>
+                                    <option>College name</option>
+                                    <option>PICT</option>
+                                    <option>COEP</option>
+                                    <option>MIT</option>
+                                    <option>VIT</option>
+                                    <option>Cummins</option>
+                                    <option>PCCOE</option>
+                                    <option>Other</option>
+                                </select>
                                  { 
                                     errors &&
                                     <small id="clgErr" class="form-text text-danger">
@@ -191,7 +193,7 @@ function Signup() {
                                 </div>
                                 <input id="password" type="password" name="password" placeholder="Password" 
                                 class="form-control bg-white border-left-0 border-md"
-                                onChange={ e => setPassword(e.target.value) }/>
+                                onChange={ e => setPassword(e.target.value) } value={password}/>
                             </div>
 
                             
@@ -201,7 +203,9 @@ function Signup() {
                                         <i class="fa fa-lock text-muted"></i>
                                     </span>
                                 </div>
-                                <input id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md"/>
+                                <input id="passwordConfirmation" type="password" name="passwordConfirmation" placeholder="Confirm Password" 
+                                class="form-control bg-white border-left-0 border-md"
+                                onChange={ e => setPasswordCheck(e.target.value) } value={passwordCheck}/>
                             </div>
 
                             <div class="form-group col-lg-12 mx-auto mb-0">

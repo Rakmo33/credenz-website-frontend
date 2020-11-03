@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Modal.css';
+import axios from 'axios';
 
 function ModalTitle({type, event}) {
     if(type==="login")
@@ -60,29 +61,44 @@ function ModalBody({handleClose, type, event}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const login = () => {
-        alert("Login func called")
-        fetch('http://credenzwebsite.herokuapp.com/login',
-            {
-                method: 'POST',
-                body: JSON.stringify({username, password})    
-            }
-        ).then(
+    const login = e => {
+
+        //alert("Login")
+        e.preventDefualt()
+
+        try{
+
+            alert("Try")
+
+            axios.post('http://credenzwebsite.herokuapp.com/login', {
+                username: username,
+                password: password,
+            }).then(function (response) {
+                alert("Inside then")
+                alert(response);
+                console.log(response.data);
+                const msg = response.data["accessToken"]
+                console.log(msg)
+            })
+        }
+        catch(e) {
+            alert("Axios error!" + e)
+        }
+        /*alert("Login func called")
+        axios.post('http://credenzwebsite.herokuapp.com/login', {
+            username: username,
+            password: password,
+        }).then(
             (response) => {
-                    response.json().then((result)=> {
-                        alert("Result is : " + result.accessToken);
-                        localStorage.setItem('login', JSON.stringify(
-                            {
-                                login: true,
-                                token: result.accessToken
-                            }
-                        ))   
-                    }
-                )
+                if (response.data.accessToken) {
+                  localStorage.setItem("login", JSON.stringify(response.data));
+                  alert("Response" + JSON.stringify(response.data))
+                }
             }
         )
 
         alert(localStorage.getItem('login'))
+        */
     }
 
     const submitForm = e => {

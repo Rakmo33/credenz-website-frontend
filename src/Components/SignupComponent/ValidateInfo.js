@@ -37,6 +37,8 @@ export default function Validate(values) {
 
     if(!values.password) {
         errors.password = '*Password required.'
+    } else if(values.password !== values.passwordCheck) {
+        errors.password = '*Passwords do not match.'
     } 
 
     console.log(errors)
