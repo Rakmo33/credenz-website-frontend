@@ -7,17 +7,14 @@ const footer=()=>{
     return(
     <div className={classes.footer} >
         <div><span className={'footer-font'}>copyright @ PICT IEEE Student Branch</span></div>
-        <div><Link to="/team"><button className={"team btn"}>OUR TEAM</button></Link></div>
-        {/* <div className={classes.social_container}>
-            <a href="https://www.facebook.com/learnbuildteach/"
-                className={classes.facebook}>
-                <FontAwesomeIcon icon={faFacebook} size="2x" />
-            </a>
-            <a href="https://www.instagram.com/learnbuildteach"
-                className={classes.instagram}>
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </a>
-        </div> */}
+        <div>
+            <div className={classes.social}>
+            <a className={classes.iconfb} href="#"> <i className={"fa fa-facebook"}></i></a>
+            <a className={classes.iconlink} href="#"> <i className={"fa fa-linkedin"}></i></a>
+            <a className={classes.iconinsta} href="#"> <i className={"fa fa-instagram"}></i></a>
+            </div>
+            <Link to="/team"><button className={"team btn"}>OUR TEAM</button></Link>
+        </div>
     </div>
     );
 }

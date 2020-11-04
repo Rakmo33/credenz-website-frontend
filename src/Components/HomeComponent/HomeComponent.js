@@ -6,7 +6,7 @@ import SideEventButton from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
 import classes from './HomeComponent.module.css';
 import Timer from './Timer';
-import AdminEvent from '../AdminSection/event';
+
 const Home=()=> {
     return(
         <div>
@@ -21,7 +21,6 @@ const Home=()=> {
             </div>
             <SideEventButton />
             <Footer/>
-            <AdminEvent/>
         </div>
     );
 }
