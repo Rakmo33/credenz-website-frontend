@@ -153,10 +153,11 @@ color:#add8e6;
 }
 
  .team{
-    margin-left:50%;
+    margin-left:25%;
     border-radius: 19px !important;
     background-color: #ccc !important;
     width:150px;
     height:30px;
-    padding:0   !important
+    padding:0   !important;
+    margin-top: -10px;
 }
