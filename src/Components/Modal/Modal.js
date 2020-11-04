@@ -60,54 +60,36 @@ function ModalBody({handleClose, type, event}) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [logged, setLogged] = useState(false)
 
     const login = e => {
 
         //alert("Login")
-        e.preventDefualt()
+        e.preventDefault()
 
         try{
-
-            alert("Try")
-
             axios.post('http://credenzwebsite.herokuapp.com/login', {
                 username: username,
                 password: password,
             }).then(function (response) {
-                alert("Inside then")
-                alert(response);
                 console.log(response.data);
-                const msg = response.data["accessToken"]
-                console.log(msg)
+                //const msg = response.data["accessToken"]
+                localStorage.setItem("login", JSON.stringify(response.data));
+                if(response.data["accessToken"]) {
+                    alert("Logged in successfully!")
+                    setLogged(true)
+                }
+                else {
+                    alert("Invalid login credentials!")
+                    setLogged(false)
+                }
             })
         }
         catch(e) {
             alert("Axios error!" + e)
         }
-        /*alert("Login func called")
-        axios.post('http://credenzwebsite.herokuapp.com/login', {
-            username: username,
-            password: password,
-        }).then(
-            (response) => {
-                if (response.data.accessToken) {
-                  localStorage.setItem("login", JSON.stringify(response.data));
-                  alert("Response" + JSON.stringify(response.data))
-                }
-            }
-        )
-
-        alert(localStorage.getItem('login'))
-        */
     }
-
-    const submitForm = e => {
-        console.log("Current state is : " + JSON.stringify({username, password}))
-        alert("Current state is : " + JSON.stringify({username, password}))
-        e.preventDefualt()
-    }
-
-    console.log("ModalBody called!")
+    
 
     if(type==="login") {
         return(
@@ -132,6 +114,7 @@ function ModalBody({handleClose, type, event}) {
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary btn-block btn-lg">Log in</button>
                     </div>
+
                     
                     <p className="hint-text">Don't have an account? <Link id="create" to="/signup" onClick={handleClose}>Create one</Link></p>
                 </form>
@@ -145,6 +128,21 @@ function ModalBody({handleClose, type, event}) {
     else {
 
 
+       /* const allEvents = (e) => {
+
+            e.preventDefault()
+
+            try{
+                axios.get('http://credenzwebsite.herokuapp.com/allevents').then(function (response) {
+                    console.log(response.data);
+                })
+            }
+            catch(e) {
+                alert("Axios error!" + e)
+            }
+
+        }
+*/
         switch(event) {
 
             case "clash" : return(
