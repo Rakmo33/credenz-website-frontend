@@ -7,7 +7,7 @@ const member =(props)=>{
      
             <Card className={classes.member}>
             <Card.Img variant="top" src={require('../../assests/img/bg1.jpg')} />
-            <Card.Body>
+            <Card.Body className={classes.teamCardBody}>
                 <Card.Title> <h4>{props.name}</h4></Card.Title>
                 <Card.Title>{props.pos}</Card.Title>
                 <h4 className={classes.icon}>

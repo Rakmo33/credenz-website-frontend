@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Leaderboard from './leaderboard';
 import Social from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
+import SideEventCards from './sideEventCards';
 const SideEvents = () => {
 
     const [select, setSelect]=useState("Play") ;
@@ -26,7 +27,7 @@ const SideEvents = () => {
               </div>
         </div>
         <Social/>
-        {select==="Play"? "":<Leaderboard/>}
+        {select==="Play"? <SideEventCards/>:<Leaderboard/>}
         {/* <Footer/>   */}
         </div>
      );
