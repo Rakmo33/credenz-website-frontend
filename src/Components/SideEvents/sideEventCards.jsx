@@ -35,11 +35,6 @@ const SideEventCards = () => {
           name="name4"
           info={"info4. some info about it. play for free"}
         />
-        <EventCard
-          logo={logo}
-          name="name4"
-          info={"info4. some info about it. play for free"}
-        />
       </div>
     </React-Fragment>
   );
