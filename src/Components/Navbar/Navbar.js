@@ -31,7 +31,7 @@ function NavBar() {
                 {/* <span className="navbar-toggler-icon"></span> */}
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
+                <ul className="navbar-nav ml-auto mr-auto">
                 {/* <li className="nav-item" style={{color: "ivory"}}>
                     <Link to="/home" className="nav-link">
                         Home
