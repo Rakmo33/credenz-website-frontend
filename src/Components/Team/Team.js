@@ -19,12 +19,12 @@ const team =()=>{
             
                <Member
                             name={"Gaurav Ghati"}
-                            url={'gaurav.jpeg'}
+                            url={'gaurav2.jpeg'}
                             pos={"Web Master"}
                             link={"https://www.linkedin.com/in/gauravghati/"}/>
              <Member
                             name={"Omkar Dabir"}
-                            url={'bg2.jpg'}
+                            url={'dabir.jpeg'}
                             pos={"Web Master"}
                             link={"https://www.linkedin.com/in/coderdabir/"}/>
                {/* <Col md={3}><Member
