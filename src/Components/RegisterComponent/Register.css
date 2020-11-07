@@ -78,48 +78,57 @@
     color: #6d84b4;
 }
 
-.regPage .years,
-.regPage .emails,
-.regPage .college {
-    margin: 20px 0;
-}
-
-.regPage .college {
-    margin: 40px 0;
-    margin-top: 50px;
-}
-
-.regPage .members,
-.regPage .years {
-    margin: 40px 0;
-}
-
-.regPage .years .custom-radio {
-    margin: 0 20px;
-}
-
 .regPage #choose-events {
     color: rgb(255, 255, 255);
-    /* font-size: 18px; */
-    margin: 0;
-    padding: 0;
-    margin-top: 25px;
-    margin-bottom: 30px;
+    margin: 50px auto 30px;
+    width: fit-content;
+}
+
+.regPage .form-row {
+    margin: 30px 0;
+}
+
+.regPage .justify-spread {
+    display: flex;
+    justify-content: space-around;
 }
 
 .regPage .event-icons {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    row-gap: 15px;
+    row-gap: 35px;
 }
 
 .regPage .event-icons label {
     border-radius: 10px;
     background-color: rgb(59, 59, 53);
+    margin-bottom: 10px;
+}
+
+.regPage .event-icons label:hover {
+    transform: scale(1.13);
+}
+
+.regPage #total-amount {
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #fff;
+    color: blue;
+    border-radius: 5px;
+    padding: 5px 20px;
 }
 
 .regPage .event-icons p {
     color: white;
+    text-align: center;
+    line-height: 100%;
+}
+
+.regPage .event-icons p.event-price {
+    color: black;
+    background-color: white;
+    padding: 3px 10px;
+    border-radius: 10px;
 }
 
 .regPage .event-wrap {
@@ -129,5 +138,8 @@
 
 .regPage .event1 {
     background-image: url(../../logo.svg);
-    color: red;
+}
+
+.true {
+    transform: scale(1.1);
 }

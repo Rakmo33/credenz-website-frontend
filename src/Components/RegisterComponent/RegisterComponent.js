@@ -1,9 +1,173 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
-import Names from "./Names";
 
+// form components
+import Name from "./Name";
+import Number from "./Number";
+import Email from "./Email";
+import Radio from "./Radio";
+import EventCard from "./EventCard";
+
+const Register = () => {
+  // for total price
+  const [count, setCount] = useState(0);
+
+  // total number of events
+  // const totalEvents = 9;
+
+  const [events, setEvents] = useState([
+    { id: "event1", name: "Clash", price: 100, isCheked: false },
+    { id: "event2", name: "Reverse Coding", price: 50, isCheked: false },
+    { id: "event3", name: "Pixelate", price: 50, isCheked: false },
+    { id: "event4", name: "Cretronix", price: 50, isCheked: false },
+    { id: "event5", name: "Bplan", price: 50, isCheked: false },
+    { id: "event6", name: "Wallstreet", price: 50, isCheked: false },
+    { id: "event7", name: "Roboliga", price: 50, isCheked: false },
+    { id: "event8", name: "Enigma", price: 50, isCheked: false },
+    { id: "event9", name: "Quiz", price: 50, isCheked: false },
+  ]);
+
+  function changeHandler(eventNum) {
+    let tempEvents = [...events];
+
+    // When Checked
+    if (!tempEvents[eventNum].isCheked) {
+      tempEvents[eventNum].isCheked = true;
+      setEvents(tempEvents);
+
+      setCount((count) => count + tempEvents[eventNum].price);
+    }
+    // When Unchecked
+    else {
+      tempEvents[eventNum].isCheked = false;
+      setEvents(tempEvents);
+
+      setCount((count) => count - tempEvents[eventNum].price);
+    }
+  }
+
+  return (
+    <div>
+      <SideEventsButton />
+      <div className='regPage'>
+        <h1 className='reg-head'>Registration Form</h1>
+        <div className='container'>
+          <form className='col-md-7 m-auto' onSubmit={DisplayRazorpay}>
+            <div className='form-row'>
+              {/* NAME OF PARTICIPANTS */}
+              <Name index={1} id='Name1'></Name>
+              <Name index={2} id='Name2'></Name>
+              <Name index={3} id='Name3'></Name>
+              <Name index={4} id='Name4'></Name>
+            </div>
+            <div className='form-row justify-spread'>
+              {/* FE-SE-TE-BE RADIO BUTTONS */}
+              {/* <div className='form-group col-md-12 years'> */}
+              <Radio
+                index={1}
+                id='Radio1'
+                name='year'
+                value='FE'
+                label='FE'></Radio>
+              <Radio
+                index={2}
+                id='Radio2'
+                name='year'
+                value='SE'
+                label='SE'></Radio>
+              <Radio
+                index={3}
+                id='Radio3'
+                name='year'
+                value='TE'
+                label='TE'></Radio>
+              <Radio
+                index={4}
+                id='Radio4'
+                name='year'
+                value='BE'
+                label='BE'></Radio>
+              {/* </div> */}
+            </div>
+
+            {/* Contact Numbers */}
+            <div className='form-row'>
+              <Number index={1} id='inputContact1'></Number>
+              <Number index={2} id='inputContact2'></Number>
+              {/* </div> */}
+
+              {/* Emails */}
+              {/* <div className='form-row'> */}
+              <Email index={1} id='inputEmail1'></Email>
+              <Email index={2} id='inputEmail2'></Email>
+            </div>
+
+            <div className='form-row justify-spread'>
+              <Radio
+                index={1}
+                id='Radio5'
+                name='membership'
+                value='true'
+                label='IEEE Member'></Radio>
+              <Radio
+                index={1}
+                id='Radio6'
+                name='membership'
+                value='false'
+                label='Non IEEE Member'></Radio>
+            </div>
+
+            <div className='form-row'>
+              <label htmlFor='inputState'>College Name</label>
+              <select id='inputState' className='form-control'>
+                <option defaultValue>Choose...</option>
+                <option>PICT</option>
+                <option>COEP</option>
+                <option>MCOE</option>
+                <option>VIT</option>
+              </select>
+            </div>
+
+            {/* FE-SE-TE-BE RADIO BUTTONS */}
+            <p id='choose-events'>Choose Events</p>
+
+            <div className='form-group col-md-12 event-icons'>
+              {events.map((event, index) => {
+                return (
+                  <EventCard
+                    key={index}
+                    id={event.id}
+                    name={event.name}
+                    price={event.price}
+                    isCheked={event.isCheked}
+                    cls={
+                      event.isCheked
+                        ? "custom-control-label event1 drinkcard-cc true"
+                        : "custom-control-label event1 drinkcard-cc"
+                    }
+                    changeHandler={() => changeHandler(index)}></EventCard>
+                );
+              })}
+            </div>
+
+            <div className='col-sm-6 d-flex justify-content-center m-auto'>
+              <button className='btn btn-primary next-btn'>
+                Proceed For Payment
+                <br />
+                <span id='total-amount'>₹{count}</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+// RAZORPAY
 function loadScript(src) {
   console.log("load razor called !");
 
@@ -63,322 +227,5 @@ async function DisplayRazorpay() {
   const paymentObject = new window.Razorpay(options);
   paymentObject.open();
 }
-
-
-
-const Register = () => {
-
-   // Declare a new state variable, which we'll call "count"
-  const [count, setCount] = useState(0);
-
-  function changeHandler(){
-    // if(!isChecked)
-    setCount(count + 50)
-  }
-
-  return (
-    <div>
-      <SideEventsButton />
-      <div className='regPage'>
-  <h1 className='reg-head'>Registrations Page </h1>
-        <div className='container'>
-          <form className='col-md-7 m-auto'>
-            <div className='form-row'>
-              {/* NAME OF PARTICIPANTS */}
-              <div className='form-group col-md-12'>
-                <label for='inputName1'>Participant 1</label>
-                <input type='text' className='form-control' id='inputName1' />
-              </div>
-              <div className='form-group col-md-12'>
-                <label for='inputName1'>Participant 2</label>
-                <input type='text' className='form-control' id='inputName2' />
-              </div>
-              <div className='form-group col-md-12'>
-                <label for='inputName1'>Participant 3</label>
-                <input type='text' className='form-control' id='inputName3' />
-              </div>
-              <div className='form-group col-md-12'>
-                <label for='inputName1'>Participant 4</label>
-                <input type='text' className='form-control' id='inputName4' />
-              </div>
-
-              {/* FE-SE-TE-BE RADIO BUTTONS */}
-              <div className='form-group col-md-12 years'>
-                <div className='custom-control custom-radio custom-control-inline'>
-                  <input
-                    type='radio'
-                    id='customRadioInline1'
-                    name='year'
-                    value='1'
-                    className='custom-control-input'
-                  />
-                  <label
-                    className='custom-control-label'
-                    for='customRadioInline1'>
-                    FE
-                  </label>
-                </div>
-                <div className='custom-control custom-radio custom-control-inline'>
-                  <input
-                    type='radio'
-                    id='customRadioInline2'
-                    name='year'
-                    value='2'
-                    className='custom-control-input'
-                  />
-                  <label
-                    className='custom-control-label'
-                    for='customRadioInline2'>
-                    SE
-                  </label>
-                </div>
-                <div className='custom-control custom-radio custom-control-inline'>
-                  <input
-                    type='radio'
-                    id='customRadioInline3'
-                    value='3'
-                    name='year'
-                    className='custom-control-input'
-                  />
-                  <label
-                    className='custom-control-label'
-                    for='customRadioInline3'>
-                    TE
-                  </label>
-                </div>
-                <div className='custom-control custom-radio custom-control-inline'>
-                  <input
-                    type='radio'
-                    id='customRadioInline4'
-                    value='4'
-                    name='year'
-                    className='custom-control-input'
-                  />
-                  <label
-                    className='custom-control-label'
-                    for='customRadioInline4'>
-                    BE
-                  </label>
-                </div>
-              </div>
-
-              {/* Contact Numbers */}
-              <div className='form-group col-md-6 numbers'>
-                <label for='inputContact1'>Contact Number 1</label>
-                <input
-                  type='tel'
-                  maxLength='10'
-                  className='form-control'
-                  id='inputContact1'
-                />
-              </div>
-              <div className='form-group col-md-6 numbers'>
-                <label for='inputContact2'>Contact Number 2</label>
-                <input type='tel' maxLength='10' className='form-control' id='inputContact2' />
-              </div>
-
-              <div className='form-group col-md-6 emails'>
-                <label for='inputEmail1'>Email 1</label>
-                <input type='email' className='form-control' id='inputEmail1' />
-              </div>
-              <div className='form-group col-md-6 emails'>
-                <label for='inputEmail2'>Email 2</label>
-                <input type='email' className='form-control' id='inputEmail2' />
-              </div>
-            </div>
-
-            <div className='form-group col-md-12 members'>
-              <div className='custom-control custom-radio custom-control-inline'>
-                <input
-                  type='radio'
-                  id='customRadioInline5'
-                  name='isMember'
-                  value='true'
-                  className='custom-control-input'
-                />
-                <label
-                  className='custom-control-label'
-                  for='customRadioInline5'>
-                  IEEE Member
-                </label>
-              </div>
-              <div className='custom-control custom-radio custom-control-inline'>
-                <input
-                  type='radio'
-                  id='customRadioInline6'
-                  name='isMember'
-                  value='false'
-                  className='custom-control-input'
-                />
-                <label
-                  className='custom-control-label'
-                  for='customRadioInline6'>
-                  NON-IEEE Member
-                </label>
-              </div>
-            </div>
-
-            <div className='form-row college'>
-              <div className='form-group col-md-12'>
-                <label for='inputState'>College Name</label>
-                <select id='inputState' className='form-control'>
-                  <option selected>Choose...</option>
-                  <option>...</option>
-                </select>
-              </div>
-            </div>
-
-            {/* FE-SE-TE-BE RADIO BUTTONS */}
-            <p id='choose-events'>Choose Events : </p>
-
-            <div className='form-group col-md-12 event-icons'>
-              <div className='custom-control event-wrap custom-checkbox  custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event1'
-                  name='events'
-                  onChange={changeHandler}
-                  value='event1'
-                  className='custom-control-input event1 '
-                />
-                <label 
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event1'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox  custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event2'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input event2 form-check-input'
-                  value='event2'
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event2'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event3'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input '
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event3'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event4'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input '
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event4'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event5'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input '
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event5'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event6'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input '
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event6'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event7'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input '
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event7'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event8'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input '
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event8'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-              <div className='custom-control event-wrap custom-checkbox custom-control-inline cc-selector'>
-                <input
-                  type='checkbox'
-                  id='event9'
-                  name='events'
-                  onChange={changeHandler}
-                  className='custom-control-input '
-                />
-                <label
-                  className='custom-control-label event1 drinkcard-cc'
-                  for='event9'></label>
-                <p className='event-name'>CLASH</p>
-                <p className='event-price'>₹50</p>
-              </div>
-            </div>
-
-            <div className='form-group row d-flex justify-content-center'>
-              <div className='col-sm-4 d-flex justify-content-center'>
-                <button
-                  className='btn btn-primary next-btn'
-                  onClick={DisplayRazorpay}>
-                  Proceed for Payment :
-
-                  ₹{count}
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <Footer />
-    </div>
-  );
-};
 
 export default Register;
