@@ -124,6 +124,7 @@ const Leaderboard = () => {
   };
 
   if (input.length > 0) {
+try{
     switch (default_op) {
       case "Username":
         users = users.filter((u) => {
@@ -144,6 +145,13 @@ const Leaderboard = () => {
         "Invalid!"
       );
     }
+}
+catch(e)
+{
+  setInput("");
+ // alert("invalid text");
+  
+}
   }
 
   return (

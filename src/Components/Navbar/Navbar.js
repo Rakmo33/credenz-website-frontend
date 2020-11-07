@@ -24,7 +24,7 @@ function NavBar() {
 
             <nav className="navbar navbar-expand-lg navbar-inner nav-colour">
             <Link to="/home" className="navbar-brand">
-                <img style={{width:'20%'}} alt="logopisb" src={require('../../assests/img/logopisb.png')}/>
+                <img className="pisblogo" alt="logopisb" src={require('../../assests/img/logopisb.png')}/>
             </Link>
             <button type="button" class="btn custombtn btn-sm d-inline d-lg-none ml-auto mr-2" onClick={ handleShow }>Log in</button>
             <button className="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,11 @@ function NavBar() {
                         Home
                     </Link>
                 </li>  */}
+                 <li className="nav-item" style={{marginLeft:"80px"}}>
+                    <Link  to="/profile" className="nav-link">
+                        <samp>My Profile</samp>
+                    </Link>
+                </li>
                 <li className="nav-item">
                     <Link to="/events" className="nav-link">
                         <samp>Events</samp>
@@ -49,29 +54,31 @@ function NavBar() {
                 </li>
                 <li className="nav-item">
                     <Link  to="/sideEvents" className="nav-link">
-                        <samp>SideEvents</samp>
+                        <samp>Side-Events</samp>
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" onClick={handleShow1}>
+                    <div  className="nav-link" style={{cursor:"pointer"}}>
+                        <samp>Updates</samp>    
+                    </div>
+                </li>
+                {/* <li className="nav-item">
                     <Link  to="/leaderboard" className="nav-link">
                        <samp>LeaderBoard</samp>
                     </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <Link  to="./about" className="nav-link">
-                        <samp>About</samp>
+                        <samp>About Us</samp>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link  to="/contact" className="nav-link">
-                        <samp>Contact</samp>
+                        <samp>Contact Us</samp>
                     </Link>
                 </li>
-                <li className="nav-item" onClick={handleShow1}>
-                    <div  className="nav-link">
-                        <samp>Updates</samp>    
-                    </div>
-                </li>
+               
+               
                 </ul>
             </div>
             <button id="login" type="button" class="btn custombtn btn-sm d-none d-lg-block" onClick={ handleShow }>Login</button>

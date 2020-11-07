@@ -60,3 +60,7 @@ select.form-control {
 .form-control:focus {
   box-shadow: none;
 }
+
+small {
+  width: 100%;
+}

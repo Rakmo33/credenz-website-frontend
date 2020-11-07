@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Modal.css';
+import axios from 'axios';
 
 function ModalTitle({type, event}) {
     if(type==="login")
@@ -59,21 +60,43 @@ function ModalBody({handleClose, type, event}) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [logged, setLogged] = useState(false)
 
-    const submitForm = e => {
-        console.log("Current state is : " + JSON.stringify({username, password}))
-        alert("Current state is : " + JSON.stringify({username, password}))
-        e.preventDefualt()
+    const login = e => {
+
+        //alert("Login")
+        e.preventDefault()
+
+        try{
+            axios.post('http://credenzwebsite.herokuapp.com/login', {
+                username: username,
+                password: password,
+            }).then(function (response) {
+                console.log(response.data);
+                //const msg = response.data["accessToken"]
+                localStorage.setItem("login", JSON.stringify(response.data));
+                if(response.data["accessToken"]) {
+                    alert("Logged in successfully!")
+                    setLogged(true)
+                }
+                else {
+                    alert("Invalid login credentials!")
+                    setLogged(false)
+                }
+            })
+        }
+        catch(e) {
+            alert("Axios error!" + e)
+        }
     }
-
-    console.log("ModalBody called!")
+    
 
     if(type==="login") {
         return(
             <div id="myModal">
             <div className="modal-login">
                 
-                <form onSubmit={ submitForm }>
+                <form onSubmit={ login }>
                     <div className="form-group">
                         <div className="input-group">
                             <span className="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -91,6 +114,8 @@ function ModalBody({handleClose, type, event}) {
                     <div className="form-group">
                         <button type="submit" className="btn btn-primary btn-block btn-lg">Log in</button>
                     </div>
+
+                    
                     <p className="hint-text">Don't have an account? <Link id="create" to="/signup" onClick={handleClose}>Create one</Link></p>
                 </form>
                     
@@ -103,6 +128,21 @@ function ModalBody({handleClose, type, event}) {
     else {
 
 
+       /* const allEvents = (e) => {
+
+            e.preventDefault()
+
+            try{
+                axios.get('http://credenzwebsite.herokuapp.com/allevents').then(function (response) {
+                    console.log(response.data);
+                })
+            }
+            catch(e) {
+                alert("Axios error!" + e)
+            }
+
+        }
+*/
         switch(event) {
 
             case "clash" : return(

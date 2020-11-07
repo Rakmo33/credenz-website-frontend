@@ -27,10 +27,9 @@ const sideEvent = (props)=>{
     <div>
         <nav className={classes.social}>
             <ul>
-                <li><a href="https://twitter.com/ibrahim_jabbari">Twitter <i className={"fa fa-twitter twitter"}></i></a></li>
-                <li><a href="https://www.instagram.com/ibrahim_jabbari/">Instagram <i className={"fa fa-instagram"}></i></a></li>
-                <li><a href="#">Google+ <i className={"fa fa-google-plus"}></i></a></li>
-                <li><a href="https://www.facebook.com/IbrahimJabbariBlog/">Facebook <i className={"fa fa-facebook"}></i></a></li>
+                <li><a href="https://www.linkedin.com/company/pisbieee/">Linkedin <i className={"fa fa-linkedin linkedin"}></i></a></li>
+                <li><a href="https://www.instagram.com/pisbcredenz/">Instagram <i className={"fa fa-instagram"}></i></a></li>
+                <li><a href="https://www.facebook.com/pisbcredenz/">Facebook <i className={"fa fa-facebook"}></i></a></li>
             </ul>
         </nav>
     </div>
