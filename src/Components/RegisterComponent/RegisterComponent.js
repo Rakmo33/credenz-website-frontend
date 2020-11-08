@@ -70,7 +70,7 @@ const Register = () => {
     // find index of visible component
     const index = isVisible.findIndex((item) => item === true);
     // disable button for first component
-    if (index === 7) {
+    if (index === 5) {
       return;
     }
     let tempVisible = [...isVisible];
