@@ -4,7 +4,7 @@ import Radio from "./Radio";
 const MemberWrap = (props) => {
   if (props.isVisible)
     return (
-      <div className='form-row justify-spread'>
+      <div className={props.cls}>
         <Radio
           index={1}
           id='Radio5'
