@@ -17,7 +17,7 @@ const member = (props) => {
         </Card.Title>
         <Card.Title>{props.pos}</Card.Title>
         <h4 className={classes.icon}>
-          <a href={props.link} target='_blank'>
+          <a href={props.link} target='_blank' rel='noopener noreferrer'>
             <i className='fa fa-linkedin'></i>
           </a>
         </h4>

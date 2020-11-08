@@ -13,7 +13,6 @@
 
 .regPage .container {
   margin: 20px auto;
-  background: green;
   min-height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
