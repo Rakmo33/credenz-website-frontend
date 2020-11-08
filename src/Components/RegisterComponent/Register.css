@@ -13,16 +13,15 @@
 
 .regPage .container {
   margin: 20px auto;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  background: green;
+  min-height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

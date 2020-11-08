@@ -88,8 +88,6 @@ const Register = () => {
 
     // timeout for completion of animations before disappearing
     setTimeout(() => setVisible(tempVisible), 200);
-
-    console.log(isVisible);
   };
 
   // prev click
@@ -116,8 +114,6 @@ const Register = () => {
 
     // timeout for completion of animations before disappearing
     setTimeout(() => setVisible(tempVisible), 200);
-
-    console.log(isVisible);
   };
 
   return (
@@ -125,13 +121,11 @@ const Register = () => {
       <SideEventsButton />
       <div className='regPage'>
         <h1 className='reg-head'>Registration Form</h1>
-        <button id='back-btn' type='button' onClick={prevHandler}>
-          Back
-        </button>
-        <button type='button' onClick={nextHandler}>
-          Next
-        </button>
+
         <div className='container'>
+          <button id='back-btn' type='button' onClick={prevHandler}>
+            Back
+          </button>
           <form className='col-md-9 m-auto' onSubmit={DisplayRazorpay}>
             <NameWrap
               isVisible={isVisible[0]}
@@ -168,6 +162,10 @@ const Register = () => {
               total={total}
               cls={`form-row ${anim[5]}`}></Proceed>
           </form>
+
+          <button type='button' onClick={nextHandler}>
+            Next
+          </button>
         </div>
       </div>
       <Footer />
