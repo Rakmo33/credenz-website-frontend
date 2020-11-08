@@ -51,43 +51,69 @@ const Register = () => {
     }
   };
 
+  // display only first component
   const [isVisible, setVisible] = useState([
     true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
-    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
   ]);
-  const [anim1, setAnim1] = useState("");
-  const [anim2, setAnim2] = useState("");
+  const [anim, setAnim] = useState(["", "", "", "", "", "", "", ""]);
 
-  const visibleHandler = () => {
+  // next click
+  const nextHandler = () => {
+    // find index of visible component
     const index = isVisible.findIndex((item) => item === true);
+    // disable button for first component
+    if (index === 5) {
+      return;
+    }
     let tempVisible = [...isVisible];
+
+    // hide current
     tempVisible[index] = false;
+    // display next
     tempVisible[index + 1] = true;
 
-    setAnim1("toLeft");
-    setAnim2("fromRight");
-    setTimeout(() => setVisible(tempVisible), 200);
+    // set animations
+    let tempAnim = [...anim];
+    tempAnim[index] = "toLeft";
+    tempAnim[index + 1] = "fromRight";
+    setAnim(tempAnim);
 
-    console.log(isVisible);
+    // timeout for completion of animations before disappearing
+    setTimeout(() => setVisible(tempVisible), 200);
   };
 
-  const invisibleHandler = () => {
+  // prev click
+  const prevHandler = () => {
+    // find index of current
     const index = isVisible.findIndex((item) => item === true);
+
+    // disable button for first component
+    if (index === 0) {
+      return;
+    }
+
     let tempVisible = [...isVisible];
+    // hide current
     tempVisible[index] = false;
+    // display prev
     tempVisible[index - 1] = true;
 
-    setAnim1("fromLeft");
-    setAnim2("toRight");
-    setTimeout(() => setVisible(tempVisible), 200);
+    // set animations
+    let tempAnim = [...anim];
+    tempAnim[index - 1] = "fromLeft";
+    tempAnim[index] = "toRight";
+    setAnim(tempAnim);
 
-    console.log(isVisible);
+    // timeout for completion of animations before disappearing
+    setTimeout(() => setVisible(tempVisible), 200);
   };
 
   return (
@@ -95,37 +121,51 @@ const Register = () => {
       <SideEventsButton />
       <div className='regPage'>
         <h1 className='reg-head'>Registration Form</h1>
-        {/* <button id='back-btn' type='button' onClick={invisibleHandler}>
-          Back
-        </button>
-        <button type='button' onClick={visibleHandler}>
-          Next
-        </button> */}
+
         <div className='container'>
+          <button id='back-btn' type='button' onClick={prevHandler}>
+            Back
+          </button>
           <form className='col-md-9 m-auto' onSubmit={DisplayRazorpay}>
             <NameWrap
               isVisible={isVisible[0]}
-              cls={`form-row ${anim1}`}></NameWrap>
+              cls={`form-row ${anim[0]}`}></NameWrap>
 
             <YearWrap
               isVisible={isVisible[1]}
-              cls={`form-row justify-spread ${anim2}`}></YearWrap>
+              cls={`form-row justify-spread ${anim[1]}`}></YearWrap>
 
-            <NumberWrap isVisible={isVisible[2]}></NumberWrap>
+            <NumberWrap
+              isVisible={isVisible[2]}
+              cls={`form-row ${anim[2]}`}></NumberWrap>
 
-            <EmailWrap isVisible={isVisible[3]}></EmailWrap>
+            <EmailWrap
+              isVisible={isVisible[2]}
+              cls={`form-row ${anim[2]}`}></EmailWrap>
 
-            <MemberWrap isVisible={isVisible[4]}></MemberWrap>
+            <MemberWrap
+              isVisible={isVisible[3]}
+              cls={`form-row justify-spread ${anim[3]}`}></MemberWrap>
 
-            <CollegeList isVisible={isVisible[5]}></CollegeList>
+            <CollegeList
+              isVisible={isVisible[3]}
+              cls={`form-row ${anim[3]}`}></CollegeList>
 
             <EventWrap
               changeHandler={changeHandler}
               events={events}
-              isVisible={isVisible[6]}></EventWrap>
+              isVisible={isVisible[4]}
+              cls={`form-row ${anim[4]}`}></EventWrap>
 
-            <Proceed isVisible={isVisible[7]} total={total}></Proceed>
+            <Proceed
+              isVisible={isVisible[5]}
+              total={total}
+              cls={`form-row ${anim[5]}`}></Proceed>
           </form>
+
+          <button type='button' onClick={nextHandler}>
+            Next
+          </button>
         </div>
       </div>
       <Footer />

@@ -4,7 +4,7 @@ import EventCard from "./EventCard";
 function EventWrap(props) {
   if (props.isVisible)
     return (
-      <div className='form-row'>
+      <div className={props.cls}>
         <p id='choose-events'>Choose Events</p>
         <div className='form-group col-md-12 event-icons'>
           {props.events.map((event, index) => {

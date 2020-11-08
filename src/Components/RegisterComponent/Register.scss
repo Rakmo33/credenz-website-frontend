@@ -15,9 +15,9 @@
     }
     .container {
         margin: 20px auto;
-        // background: green;
-        height: max-content;
-        @include flexCentered(column);
+        background: green;
+        min-height: 60vh;
+        @include flexCentered(row);
         label {
             color: rgb(190, 235, 243);
             font-weight: 600;
