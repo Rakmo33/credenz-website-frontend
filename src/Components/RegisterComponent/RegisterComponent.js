@@ -95,12 +95,12 @@ const Register = () => {
       <SideEventsButton />
       <div className='regPage'>
         <h1 className='reg-head'>Registration Form</h1>
-        {/* <button id='back-btn' type='button' onClick={invisibleHandler}>
+        <button id='back-btn' type='button' onClick={invisibleHandler}>
           Back
         </button>
         <button type='button' onClick={visibleHandler}>
           Next
-        </button> */}
+        </button>
         <div className='container'>
           <form className='col-md-9 m-auto' onSubmit={DisplayRazorpay}>
             <NameWrap
