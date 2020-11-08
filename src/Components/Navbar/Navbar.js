@@ -44,6 +44,7 @@ function NavBar() {
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav ml-auto mr-auto'>
             {/* <li className="nav-item" style={{color: "ivory"}}>
+
                     <Link to="/home" className="nav-link">
                         Home
                     </Link>
