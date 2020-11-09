@@ -14,21 +14,6 @@ const Events = () =>{
         setEvent(event);
     }
 
-    const allEvents = (e) => {
-
-        //e.preventDefault()
-
-        try{
-            axios.get('http://credenzwebsite.herokuapp.com/allevents').then(function (response) {
-                alert(JSON.stringify(response.data));
-            })
-        }
-        catch(e) {
-            alert("Axios error!" + e)
-        }
-
-    }
-
     let type = false;
 
     return(
@@ -37,11 +22,11 @@ const Events = () =>{
 
             <h1 style={{color: "ivory"}}>Events Page</h1>
             <ul style={{color: "ivory"}}>
-                <li onClick={ ()=>allEvents() } >
+                <li >
                     All Events
                 </li>
                 <li onClick={ ()=>handleShow("clash") } >
-                    clash
+                    Clash
                 </li>
                 <li onClick={ ()=>handleShow("enigma") }>
                     Enigma
