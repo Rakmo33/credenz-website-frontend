@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
 import  Register  from './RegisterComponent/RegisterComponent';
@@ -18,13 +18,13 @@ import Admin from '../Components/AdminSection/Admin';
 
 class Main extends Component {
   render() {
+
     const HomePage = () => {
       return <Home />;
     };
     const EventsPage = () => {
       return <Events />;
     };
-
     const RegisterPage = () => {
       return <Register />;
     };
@@ -59,7 +59,7 @@ class Main extends Component {
 
     return (
       <div>
-        <NavBar />
+        <NavBar />    
         <Switch>
           <Route path='/home' component={HomePage} />
           <Route path='/events' component={EventsPage} />
