@@ -4,15 +4,18 @@ import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
 
 // form components
-import Name from "./Name";
-import Number from "./Number";
-import Email from "./Email";
-import Radio from "./Radio";
-import EventCard from "./EventCard";
+import NameWrap from "./NameWrap";
+import NumberWrap from "./NumberWrap";
+import MemberWrap from "./MemberWrap";
+import EmailWrap from "./EmailWrap";
+import YearWrap from "./YearWrap";
+import CollegeList from "./CollegeList";
+import EventWrap from "./EventWrap";
+import Proceed from "./Proceed";
 
 const Register = () => {
   // for total price
-  const [count, setCount] = useState(0);
+  const [total, settotal] = useState(0);
 
   // total number of events
   // const totalEvents = 9;
@@ -29,7 +32,7 @@ const Register = () => {
     { id: "event9", name: "Quiz", price: 50, isCheked: false },
   ]);
 
-  function changeHandler(eventNum) {
+  const changeHandler = (eventNum) => {
     let tempEvents = [...events];
 
     // When Checked
@@ -37,129 +40,132 @@ const Register = () => {
       tempEvents[eventNum].isCheked = true;
       setEvents(tempEvents);
 
-      setCount((count) => count + tempEvents[eventNum].price);
+      settotal((total) => total + tempEvents[eventNum].price);
     }
     // When Unchecked
     else {
       tempEvents[eventNum].isCheked = false;
       setEvents(tempEvents);
 
-      setCount((count) => count - tempEvents[eventNum].price);
+      settotal((total) => total - tempEvents[eventNum].price);
     }
-  }
+  };
+
+  // display only first component
+  const [isVisible, setVisible] = useState([
+    true,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const [anim, setAnim] = useState(["", "", "", "", "", "", "", ""]);
+
+  // next click
+  const nextHandler = () => {
+    // find index of visible component
+    const index = isVisible.findIndex((item) => item === true);
+    // disable button for first component
+    if (index === 5) {
+      return;
+    }
+    let tempVisible = [...isVisible];
+
+    // hide current
+    tempVisible[index] = false;
+    // display next
+    tempVisible[index + 1] = true;
+
+    // set animations
+    let tempAnim = [...anim];
+    tempAnim[index] = "toLeft";
+    tempAnim[index + 1] = "fromRight";
+    setAnim(tempAnim);
+
+    // timeout for completion of animations before disappearing
+    setTimeout(() => setVisible(tempVisible), 200);
+  };
+
+  // prev click
+  const prevHandler = () => {
+    // find index of current
+    const index = isVisible.findIndex((item) => item === true);
+
+    // disable button for first component
+    if (index === 0) {
+      return;
+    }
+
+    let tempVisible = [...isVisible];
+    // hide current
+    tempVisible[index] = false;
+    // display prev
+    tempVisible[index - 1] = true;
+
+    // set animations
+    let tempAnim = [...anim];
+    tempAnim[index - 1] = "fromLeft";
+    tempAnim[index] = "toRight";
+    setAnim(tempAnim);
+
+    // timeout for completion of animations before disappearing
+    setTimeout(() => setVisible(tempVisible), 200);
+  };
 
   return (
     <div>
       <SideEventsButton />
       <div className='regPage'>
         <h1 className='reg-head'>Registration Form</h1>
+
         <div className='container'>
-          <form className='col-md-7 m-auto' onSubmit={DisplayRazorpay}>
-            <div className='form-row'>
-              {/* NAME OF PARTICIPANTS */}
-              <Name index={1} id='Name1'></Name>
-              <Name index={2} id='Name2'></Name>
-              <Name index={3} id='Name3'></Name>
-              <Name index={4} id='Name4'></Name>
-            </div>
-            <div className='form-row justify-spread'>
-              {/* FE-SE-TE-BE RADIO BUTTONS */}
-              {/* <div className='form-group col-md-12 years'> */}
-              <Radio
-                index={1}
-                id='Radio1'
-                name='year'
-                value='FE'
-                label='FE'></Radio>
-              <Radio
-                index={2}
-                id='Radio2'
-                name='year'
-                value='SE'
-                label='SE'></Radio>
-              <Radio
-                index={3}
-                id='Radio3'
-                name='year'
-                value='TE'
-                label='TE'></Radio>
-              <Radio
-                index={4}
-                id='Radio4'
-                name='year'
-                value='BE'
-                label='BE'></Radio>
-              {/* </div> */}
-            </div>
+          <button id='back-btn' type='button' onClick={prevHandler}>
+            Back
+          </button>
+          <form className='col-md-9 m-auto' onSubmit={DisplayRazorpay}>
+            <NameWrap
+              isVisible={isVisible[0]}
+              cls={`form-row ${anim[0]}`}></NameWrap>
 
-            {/* Contact Numbers */}
-            <div className='form-row'>
-              <Number index={1} id='inputContact1'></Number>
-              <Number index={2} id='inputContact2'></Number>
-              {/* </div> */}
+            <YearWrap
+              isVisible={isVisible[1]}
+              cls={`form-row justify-spread ${anim[1]}`}></YearWrap>
 
-              {/* Emails */}
-              {/* <div className='form-row'> */}
-              <Email index={1} id='inputEmail1'></Email>
-              <Email index={2} id='inputEmail2'></Email>
-            </div>
+            <NumberWrap
+              isVisible={isVisible[2]}
+              cls={`form-row ${anim[2]}`}></NumberWrap>
 
-            <div className='form-row justify-spread'>
-              <Radio
-                index={1}
-                id='Radio5'
-                name='membership'
-                value='true'
-                label='IEEE Member'></Radio>
-              <Radio
-                index={1}
-                id='Radio6'
-                name='membership'
-                value='false'
-                label='Non IEEE Member'></Radio>
-            </div>
+            <EmailWrap
+              isVisible={isVisible[2]}
+              cls={`form-row ${anim[2]}`}></EmailWrap>
 
-            <div className='form-row'>
-              <label htmlFor='inputState'>College Name</label>
-              <select id='inputState' className='form-control'>
-                <option defaultValue>Choose...</option>
-                <option>PICT</option>
-                <option>COEP</option>
-                <option>MCOE</option>
-                <option>VIT</option>
-              </select>
-            </div>
+            <MemberWrap
+              isVisible={isVisible[3]}
+              cls={`form-row justify-spread ${anim[3]}`}></MemberWrap>
 
-            {/* FE-SE-TE-BE RADIO BUTTONS */}
-            <p id='choose-events'>Choose Events</p>
+            <CollegeList
+              isVisible={isVisible[3]}
+              cls={`form-row ${anim[3]}`}></CollegeList>
 
-            <div className='form-group col-md-12 event-icons'>
-              {events.map((event, index) => {
-                return (
-                  <EventCard
-                    key={index}
-                    id={event.id}
-                    name={event.name}
-                    price={event.price}
-                    isCheked={event.isCheked}
-                    cls={
-                      event.isCheked
-                        ? "custom-control-label event1 drinkcard-cc true"
-                        : "custom-control-label event1 drinkcard-cc"
-                    }
-                    changeHandler={() => changeHandler(index)}></EventCard>
-                );
-              })}
-            </div>
+            <EventWrap
+              changeHandler={changeHandler}
+              events={events}
+              isVisible={isVisible[4]}
+              cls={`form-row ${anim[4]}`}></EventWrap>
 
-            <div className='col-sm-6 d-flex justify-content-center m-auto'>
-              <button className='btn btn-primary next-btn'>
-                Proceed For Payment
-                <br />
-                <span id='total-amount'>₹{count}</span>
-              </button>
-            </div>
+            <Proceed
+              isVisible={isVisible[5]}
+              total={total}
+              cls={`form-row ${anim[5]}`}></Proceed>
           </form>
+
+          <button type='button' onClick={nextHandler}>
+            Next
+          </button>
         </div>
       </div>
       <Footer />

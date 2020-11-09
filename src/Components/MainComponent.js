@@ -1,4 +1,5 @@
 
+
 import React, { Component, useState } from 'react';
 import  Home  from './HomeComponent/HomeComponent';
 import  Events  from './EventsComponent/EventsComponent';
@@ -10,11 +11,11 @@ import NavBar from './Navbar/Navbar';
 import "bootstrap/dist/css/bootstrap.css";
 import About from "../Components/HomeComponent/HomeComponent";
 import SideEvents from "./SideEvents/sideEvents";
-import LeaderBoard from './SideEvents/leaderboard';
-import Footer from '../Components/Footer/footer';
-import Team from '../Components/Team/Team';
-import Profile from '../Components/Profilepage/Profilepage';
-import Admin from '../Components/AdminSection/Admin';
+import LeaderBoard from "./SideEvents/leaderboard";
+// import Footer from "../Components/Footer/footer";
+import Team from "../Components/Team/Team";
+import Profile from "../Components/Profilepage/Profilepage";
+import Admin from "../Components/AdminSection/Admin";
 
 class Main extends Component {
   render() {
@@ -74,7 +75,7 @@ class Main extends Component {
           <Route path='/admin' component={AdminPage} />
           <Redirect to='/home' />
         </Switch>
-        {/* <Footer/> */}
+        {/* <Footer /> */}
       </div>
     );
   }
