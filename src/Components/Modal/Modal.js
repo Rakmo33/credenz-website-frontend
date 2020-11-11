@@ -79,7 +79,7 @@ function ModalBody({handleClose, type, event}) {
                 }).then(function (response) {
                     console.log(response.data);
                     //const msg = response.data["accessToken"]
-                    localStorage.setItem("login", JSON.stringify(response.data));
+                    localStorage.setItem("user", JSON.stringify(response.data));
                     if(response.data["accessToken"]) {
                         alert("Logged in successfully!")
                         setLogged(true)

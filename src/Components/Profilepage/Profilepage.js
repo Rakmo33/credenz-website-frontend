@@ -1,5 +1,12 @@
 import React from 'react';
   
+const getCurrentUser = () => {
+    //alert("ysudh" )
+    console.log("userfsdcszd   : " + JSON.parse(localStorage.getItem("user")))
+    return JSON.parse(localStorage.getItem("user"));
+}
+
+getCurrentUser()
 
 const Profile=()=>{
 
@@ -13,7 +20,7 @@ const Profile=()=>{
         maxWidth:"550px",
         margin:"5% 5%"
     }}>
-        <div>
+    <div>
     <img style={{width:"160px",height:"160px",borderRadius:"80px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTU4TdrkxNElS4sy9i0HLQEDfnqicbXmKqbvg&usqp=CAU"/>
         </div>
         <div>
