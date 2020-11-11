@@ -1,4 +1,4 @@
-
+//"start": "npm run build && (cd server && npm start)",
 
 import React, { Component, useState } from 'react';
 import  Home  from './HomeComponent/HomeComponent';
