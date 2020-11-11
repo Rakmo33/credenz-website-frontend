@@ -3,8 +3,6 @@ import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Modal.css';
 import axios from 'axios';
-import {EVENTS} from '../EventsComponent/allEvents';
-import { data } from 'jquery';
 
 function ModalTitle({type, event}) {
     if(type==="login")
@@ -23,6 +21,13 @@ function ModalTitle({type, event}) {
                                 Clash
                             </div>
                             );
+
+            case "rc" : return(
+                            <div>
+                                Reverse Coding
+                            </div>
+                            );
+
             case "enigma" : return(
                                 <div>
                                     Enigma
@@ -46,6 +51,12 @@ function ModalTitle({type, event}) {
                                 </div>
                             );
 
+            case "quiz" : return(
+                                <div>
+                                    Quiz
+                                </div>
+                            );
+
             default : return(
                             <div>
                                 Invalid request
@@ -58,7 +69,7 @@ function ModalTitle({type, event}) {
     }
 }
 
-function ModalBody({handleClose, type, event}) {
+function ModalBody({handleClose, type, event, event_info}) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -130,80 +141,104 @@ function ModalBody({handleClose, type, event}) {
     }
     else {
 
-        async function AllEvents(){
-    
-            const response =  await axios.get('http://credenzwebsite.herokuapp.com/allevents')
-            const data = await response.data
-            
-            return data;
-        }
+       function EventsCode({des, time, price}){
 
-        const EVENTS = AllEvents();
+                return(
 
-        console.log("Events"+ EVENTS)
+                        <div>
+                            <div className="card shadow-sm  mt-3">
+                            <div className="card-body">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade animated zoomIn show active" id="tabs-clash-1" role="tabpanel" aria-labelledby="tabs-clash-1-tab">
+                                    <p class="text-center text-default font-weight-normal ">
+                                        {des}<br/>
+                                        {time}
+                                    </p>
+                                    </div>                
+                                </div>
+                            </div>
+                            </div>
+                            <h5 class="text-default font-weight-normal ">Registration Fees:</h5>
+                            <div class="d-flex align-items-start ">
+                                <div class="">
+                                <div class="badge badge-pill bg-gradient-primary mr-3 ">
+                                </div>
+                                </div>
+                                <div>
+                                <p class=" text-default font-weight-normal "><strong>{price}</strong> for Non-IEEE members</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start  ">
+                                <div>
+                                <div class="badge badge-pill bg-gradient-primary mr-3">
+                                </div>
+                                </div>
+                                <div>
+                                <p class=" text-default font-weight-normal "><strong>{price}</strong> for IEEE members</p>
+                                </div>
+                            </div>
+                    </div>
+
+                );
+
+       }
 
         switch(event) {
 
             case "clash" : return(
-                            <div>
-                                    <div className="card shadow-sm  mt-3">
-                                    <div className="card-body">
-                                        <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade animated zoomIn show active" id="tabs-clash-1" role="tabpanel" aria-labelledby="tabs-clash-1-tab">
-                                            <p class="text-center text-default font-weight-normal ">
-                                                {/*Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges,
-                                                carefully designed to assess your command over programming in the language of your choice- Python, C or C++. 
-                                                Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.*/}
-                                                {JSON.stringify(EVENTS[0])}
-                                            </p>
-                                            </div>                
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <h5 class="text-default font-weight-normal ">Registration Fees:</h5>
-                                    <div class="d-flex align-items-start ">
-                                        <div class="">
-                                        <div class="badge badge-pill bg-gradient-primary mr-3 ">
-                                        </div>
-                                        </div>
-                                        <div>
-                                        <p class=" text-default font-weight-normal "><strong>₹100</strong> for Non-IEEE members</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-start  ">
-                                        <div>
-                                        <div class="badge badge-pill bg-gradient-primary mr-3">
-                                        </div>
-                                        </div>
-                                        <div>
-                                        <p class=" text-default font-weight-normal "><strong>₹80</strong> for IEEE members</p>
-                                        </div>
-                                    </div>
-                            </div>
+                                <>
+                                    <EventsCode des={JSON.stringify(event_info[0]["event_des"])} 
+                                    time = {JSON.stringify(event_info[0]["event_time"])}
+                                    price = {JSON.stringify(event_info[0]["event_price"])} />
+                                </>
                             );
-
 
             case "enigma" : return(
-                                <div>
-                                    Enigma info
-                                </div>
+                                <>
+                                    <EventsCode des={JSON.stringify(event_info[0]["event_des"])} 
+                                    time = {JSON.stringify(event_info[0]["event_time"])}
+                                    price = {JSON.stringify(event_info[0]["event_price"])} />
+                                </>
+                            );
+
+
+            case "rc" : return(
+                                <>
+                                    <EventsCode des={JSON.stringify(event_info[1]["event_des"])} 
+                                    time = {JSON.stringify(event_info[1]["event_time"])}
+                                    price = {JSON.stringify(event_info[1]["event_price"])} />
+                                </>
                             );
             case "xodia" : return(
-                                <div>
-                                    Xodia info
-                                </div>
+                                <>
+                                    <EventsCode des={JSON.stringify(event_info[0]["event_des"])} 
+                                    time = {JSON.stringify(event_info[0]["event_time"])}
+                                    price = {JSON.stringify(event_info[0]["event_price"])} />
+                                </>
                             );
 
             case "webweaver" : return(
-                                <div>
-                                    Web weaver info
-                                </div>
+                                <>
+                                    <EventsCode des={JSON.stringify(event_info[1]["event_des"])} 
+                                    time = {JSON.stringify(event_info[1]["event_time"])}
+                                    price = {JSON.stringify(event_info[1]["event_price"])} />
+                                </>
                             );
 
             case "bplan" : return(
-                                <div>
-                                    Bplan info
-                                </div>
+                                <>
+                                    <EventsCode des={JSON.stringify(event_info[2]["event_des"])} 
+                                    time = {JSON.stringify(event_info[2]["event_time"])}
+                                    price = {JSON.stringify(event_info[2]["event_price"])} />
+                                </>
+                            );
+
+            case "quiz" : return(
+                                <>
+                                    <EventsCode des={JSON.stringify(event_info[2]["event_des"])} 
+                                    time = {JSON.stringify(event_info[2]["event_time"])}
+                                    price = {JSON.stringify(event_info[2]["event_price"])} />
+                                </>
                             );
 
             default : return(
@@ -222,7 +257,7 @@ function ModalBody({handleClose, type, event}) {
 }
 
 
-function Modal1( {show, handleClose, type, event} ) {
+function Modal1( {show, handleClose, type, event, event_info} ) {
 
     console.log("Login called!")
 
@@ -236,7 +271,7 @@ function Modal1( {show, handleClose, type, event} ) {
                 <Modal.Title text-center> <ModalTitle type={type} event={event}/> </Modal.Title>
         </Modal.Header>
         <Modal.Body> 
-                <ModalBody handleClose={handleClose} type={type} event={event}/>
+                <ModalBody handleClose={handleClose} type={type} event={event} event_info={event_info}/>
         </Modal.Body>
         </Modal> 
     </>
