@@ -42,9 +42,6 @@ const Events = () =>{
 
             <h1 style={{color: "ivory"}}>Events Page</h1>
             <ul style={{color: "ivory"}}>
-                <li >
-                    All Events
-                </li>
                 <li onClick={ ()=>handleShow("clash") } >
                     Clash
                 </li>

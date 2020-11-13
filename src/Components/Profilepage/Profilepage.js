@@ -1,14 +1,33 @@
-import React from 'react';
-  
-const getCurrentUser = () => {
-    //alert("ysudh" )
-    console.log("userfsdcszd   : " + JSON.parse(localStorage.getItem("user")))
-    return JSON.parse(localStorage.getItem("user"));
-}
+import React, {useState} from 'react';
 
-getCurrentUser()
 
 const Profile=()=>{
+
+    const [user, setUser] = useState('')
+
+
+    const logout = () => {
+        localStorage.removeItem("user");
+    }
+
+    const getCurrentUser = () => {
+        //alert("ysudh" )
+        console.log("userfsdcszd   : " + JSON.stringify(localStorage.getItem("user")))
+        return JSON.parse(localStorage.getItem("user"));
+    }
+
+    getCurrentUser()
+    
+    
+    /*
+    let result = getCurrentUser();
+    
+    setUser(result)
+
+    /*result.then(res => {
+        setUser(res);
+    })*/
+
 
    return(
     <div>  
@@ -24,7 +43,7 @@ const Profile=()=>{
     <img style={{width:"160px",height:"160px",borderRadius:"80px"}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTU4TdrkxNElS4sy9i0HLQEDfnqicbXmKqbvg&usqp=CAU"/>
         </div>
         <div>
-         <h4>name</h4>
+        <h4>name: </h4>
          <h4>rank:1</h4>
          <h4>leaderboard</h4>
          <div style={{display:"inline",margin:"5%"}}>
@@ -43,7 +62,8 @@ const Profile=()=>{
           <h6>event</h6>
           <h6>event </h6>   
          </div>
-            </div>   
+        </div>
+        <button type="button" onClick={logout}>Logout</button>   
     </div>
 
     );
