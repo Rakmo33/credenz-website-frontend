@@ -11,6 +11,13 @@
     margin-top: 20px;
     border-radius:50%;
     border:2px solid #1e90ff;
+    padding:5px;
+}
+.teamCardBody h5{
+   /* background-color: rgb(14, 15, 15);*/
+    padding:2px;
+    border-radius:3px;
+    
 }
 .member{
     width: 14rem;
