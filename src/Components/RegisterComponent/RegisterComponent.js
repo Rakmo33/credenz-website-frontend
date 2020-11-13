@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
+import axios from "axios"
 
 // form components
 import NameWrap from "./NameWrap";
@@ -12,7 +13,7 @@ import YearWrap from "./YearWrap";
 import CollegeList from "./CollegeList";
 import EventWrap from "./EventWrap";
 import Proceed from "./Proceed";
-
+import jwt_decode from "jwt-decode";
 const Register = () => {
   // for total price
   const [total, settotal] = useState(0);
@@ -21,15 +22,15 @@ const Register = () => {
   // const totalEvents = 9;
 
   const [events, setEvents] = useState([
-    { id: "event1", name: "Clash", price: 100, isCheked: false },
-    { id: "event2", name: "Reverse Coding", price: 50, isCheked: false },
-    { id: "event3", name: "Pixelate", price: 50, isCheked: false },
-    { id: "event4", name: "Cretronix", price: 50, isCheked: false },
-    { id: "event5", name: "Bplan", price: 50, isCheked: false },
-    { id: "event6", name: "Wallstreet", price: 50, isCheked: false },
-    { id: "event7", name: "Roboliga", price: 50, isCheked: false },
-    { id: "event8", name: "Enigma", price: 50, isCheked: false },
-    { id: "event9", name: "Quiz", price: 50, isCheked: false },
+    { id: "event1", name: "Clash",username:"clash", price: 100, isCheked: false },
+    { id: "event2", name: "Reverse Coding", username:"rc",price: 50, isCheked: false },
+    { id: "event3", name: "Pixelate",username:"pixelate", price: 50, isCheked: false },
+    { id: "event4", name: "Cretronix",username:"cretronix", price: 50, isCheked: false },
+    { id: "event5", name: "Bplan",username:"bplan", price: 50, isCheked: false },
+    { id: "event6", name: "Wallstreet",username:"wallstreet", price: 50, isCheked: false },
+    { id: "event7", name: "Roboliga", username:"roboliga",price: 50, isCheked: false },
+    { id: "event8", name: "Enigma", username:"enigma",price: 50, isCheked: false },
+    { id: "event9", name: "Quiz", username:"quiz",price: 50, isCheked: false },
   ]);
 
   const changeHandler = (eventNum) => {
@@ -171,67 +172,97 @@ const Register = () => {
       <Footer />
     </div>
   );
-};
 
-// RAZORPAY
-function loadScript(src) {
-  console.log("load razor called !");
+  // RAZORPAY
+// function loadScript(src) {
+//   console.log("load razor called !");
 
-  return new Promise((resolve) => {
-    const script = document.createElement("script");
-    script.src = src;
+//   return new Promise((resolve) => {
+//     const script = document.createElement("script");
+//     script.src = src;
 
-    script.onload = () => {
-      resolve(true);
-    };
-    script.onerror = () => {
-      resolve(false);
-    };
+//     script.onload = () => {
+//       resolve(true);
+//     };
+//     script.onerror = () => {
+//       resolve(false);
+//     };
 
-    document.body.appendChild(script);
-  });
-}
+//     document.body.appendChild(script);
+//   });
+// }
 
 const _DEV_ = document.domain === "localhost";
 
-async function DisplayRazorpay() {
+function DisplayRazorpay(e) {
+ e.preventDefault();
   console.log("display razor called !");
   alert("display razor called !");
-  const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
+ 
+  const token = localStorage.getItem("token");
+ 
+  var decoded = jwt_decode(token);
+ 
 
-  if (!res) {
-    alert("Razorpay SDK failed to load!");
-    return;
-  }
+  events.map((event)=>{
+    if(event.isCheked=== true)
+    {
+  
+      axios({
+        method: "post",
+        url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
+        headers: { authorization: `Bearer ${token}` },
+      })
+      .then((response)=>{
+       // console.log(response.data);
+      }).catch((error)=>{
+        console.log(error)
+      })
+    
+    }
+  })
 
-  const options = {
-    key: _DEV_ ? "rzp_test_8OXCvHsV5OiOpe" : "prod-key", // Enter the Key ID generated from the Dashboard
-    amount: "50000", // 100p = 1rupee
-    currency: "INR",
-    name: "Credenz",
-    description: "Test Transaction",
-    image: "",
-    order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    handler: function (response) {
-      alert("Pay here!");
-      alert(response.razorpay_payment_id);
-      alert(response.razorpay_order_id);
-      alert(response.razorpay_signature);
-    },
-    prefill: {
-      name: "Gaurav Kumar",
-      email: "gaurav.kumar@example.com",
-      contact: "9999999999",
-    },
-    notes: {
-      address: "Razorpay Corporate Office",
-    },
-    theme: {
-      color: "#F37254",
-    },
-  };
-  const paymentObject = new window.Razorpay(options);
-  paymentObject.open();
+}
 }
 
 export default Register;
+
+//   const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
+//  if (!res) {
+//     alert("Razorpay SDK failed to load!");
+//     return;
+  
+//   }
+
+//   const options = {
+//     key: _DEV_ ? "rzp_test_8OXCvHsV5OiOpe" : "prod-key", // Enter the Key ID generated from the Dashboard
+//     amount: "50000", // 100p = 1rupee
+//     currency: "INR",
+//     name: "Credenz",
+//     description: "Test Transaction",
+//     image: "",
+//     order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+//     handler: function (response) {
+//       alert("Pay here!");
+//       alert(response.razorpay_payment_id);
+//       alert(response.razorpay_order_id);
+//       alert(response.razorpay_signature);
+//     },
+//     prefill: {
+//       name: "Gaurav Kumar",
+//       email: "gaurav.kumar@example.com",
+//       contact: "9999999999",
+//     },
+//     notes: {
+//       address: "Razorpay Corporate Office",
+//     },
+//     theme: {
+//       color: "#F37254",
+//     },
+//   };
+//   const paymentObject = new window.Razorpay(options);
+//   paymentObject.open();
+// }
+
+//};
+
