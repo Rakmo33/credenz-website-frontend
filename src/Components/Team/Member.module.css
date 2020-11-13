@@ -1,15 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @keyframes slidedown{
     0%{margin-left:-30px};
     100%{margin-top: 0px};
 }
-
+.image{
+    height:10rem;
+    opacity: 0.9;
+   width:10rem;
+    margin:auto;
+    margin-top: 20px;
+    border-radius:50%;
+    border:2px solid #1e90ff;
+}
 .member{
     width: 14rem;
     margin:30px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
-    background-color: #0a1018;
+    background-color: #192b42;
     border: none !important;
-    border-radius: 5px;
+    /* border-radius: 7px; */
+   font-family:  'Alata', sans-serif;
+  
     animation-name: slidedown;
     animation-duration:  1s;
     animation-fill-mode: backwards;
@@ -25,8 +36,9 @@
 
  .teamCardBody{
     border:none !important;
-    background-color:  #0a1018;
-    color:white;   
+    /* background-color:  #0a1018; */
+    color:white;  
+    color:rgba(255, 255, 255, 0.836); 
 }
 
 .icon{

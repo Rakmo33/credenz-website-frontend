@@ -10,6 +10,13 @@ a:visited{
     color: white;
 }
 
+@media only screen and (min-width:769px)
+{
+    .profile{
+    margin-left:80px;
+    }
+}
+
 a.active{
     border-bottom: 3px solid rebeccapurple;
 }

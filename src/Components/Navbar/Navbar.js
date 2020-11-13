@@ -49,7 +49,7 @@ function NavBar() {
                         Home
                     </Link>
                 </li>  */}
-            <li className='nav-item' style={{ marginLeft: "80px" }}>
+            <li className='nav-item profile'>
               <Link to='/profile' className='nav-link'>
                 <samp>My Profile</samp>
               </Link>
