@@ -4,9 +4,9 @@ import {Container, Row, Col} from 'react-bootstrap';
 const team =()=>{
     return(
        <Container fluid>
-           <Row style={{justifyContent: "center"}}>
+           <Row style={{justifyContent: "center",marginTop:"20px"}}>
                <Member  
-                            name={"Aditi Shrivastav"}
+                            name={"Aditi Srivastava"}
                             url={'aditi.jpeg'} 
                             // pos={"Web Master"}
                             link={"https://www.linkedin.com/in/aditi-srivastava-a6046818a/"}/>
