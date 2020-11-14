@@ -11,6 +11,29 @@
   color: white;
 }
 
+.regPage .col-flex {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.regPage .err {
+  border: 2px solid red;
+}
+
+.regPage .txt-center {
+  text-align: center;
+  margin: 15px auto 0;
+}
+
+.regPage span.errormsg {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #ff4949;
+  font-size: 18px;
+}
+
 .regPage .container {
   margin: 20px auto;
   min-height: 60vh;
@@ -29,19 +52,41 @@
           justify-content: center;
 }
 
+.regPage .container .custom-radio,
+.regPage .container .custom-radio input,
+.regPage .container .custom-radio label {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.regPage .container .custom-radio:hover,
+.regPage .container .custom-radio input:hover,
+.regPage .container .custom-radio label:hover {
+  cursor: pointer;
+}
+
 .regPage .container label {
   color: #beebf3;
   font-weight: 600;
   font-size: 20px;
 }
 
+.regPage .container .parent {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .regPage .container .form-row {
   margin: 30px 0;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   background-color: #032f3a;
+  -webkit-box-shadow: 0px 0px 15px #4bedf3;
+          box-shadow: 0px 0px 15px #4bedf3;
+  -webkit-animation: glow 1.5s infinite ease-in-out;
+          animation: glow 1.5s infinite ease-in-out;
 }
 
 .regPage .container .justify-spread {
@@ -58,6 +103,8 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  font-size: 25px;
+  margin-bottom: 30px;
 }
 
 .regPage .container .cc-selector input {
@@ -103,8 +150,9 @@
 .regPage .container .event-icons {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  justify-items: center;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   row-gap: 35px;
   padding: 20px;
   border-radius: 10px;
@@ -118,6 +166,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: auto;
 }
 
 .regPage .container .event-icons .Clash {
@@ -203,13 +252,59 @@
   color: blue;
   border-radius: 5px;
   padding: 5px 20px;
-}
-
-.regPage .container .next-btn {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 50px auto;
+  margin: 0 auto 40px;
+}
+
+.regPage .container #nxt-btn,
+.regPage .container #back-btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #21d5db;
+  -webkit-box-shadow: 0px 0px 5px #fff;
+          box-shadow: 0px 0px 5px #fff;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.regPage .container #nxt-btn i,
+.regPage .container #back-btn i {
+  font-size: 40px;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+.regPage .container #nxt-btn i:hover,
+.regPage .container #back-btn i:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.regPage .container .proceed-btn {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .regPage .toLeft {
@@ -225,13 +320,13 @@
 }
 
 .regPage .fromLeft {
-  -webkit-animation: fromLeft .2s ease-in-out;
-          animation: fromLeft .2s ease-in-out;
+  -webkit-animation: fromLeft .2s ease-in-out !important;
+          animation: fromLeft .2s ease-in-out !important;
 }
 
 .regPage .fromRight {
-  -webkit-animation: fromRight .2s ease-in-out;
-          animation: fromRight .2s ease-in-out;
+  -webkit-animation: fromRight .2s ease-in-out !important;
+          animation: fromRight .2s ease-in-out !important;
 }
 
 @-webkit-keyframes fromLeft {
@@ -283,6 +378,36 @@
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes glow {
+  0% {
+    -webkit-box-shadow: 0px 0px 5px #4bedf3;
+            box-shadow: 0px 0px 5px #4bedf3;
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 17px #4bedf3;
+            box-shadow: 0px 0px 17px #4bedf3;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 5px #4bedf3;
+            box-shadow: 0px 0px 5px #4bedf3;
+  }
+}
+
+@keyframes glow {
+  0% {
+    -webkit-box-shadow: 0px 0px 5px #4bedf3;
+            box-shadow: 0px 0px 5px #4bedf3;
+  }
+  50% {
+    -webkit-box-shadow: 0px 0px 17px #4bedf3;
+            box-shadow: 0px 0px 17px #4bedf3;
+  }
+  100% {
+    -webkit-box-shadow: 0px 0px 5px #4bedf3;
+            box-shadow: 0px 0px 5px #4bedf3;
   }
 }
 /*# sourceMappingURL=Register.css.map */

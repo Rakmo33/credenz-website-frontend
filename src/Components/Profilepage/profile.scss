@@ -1,0 +1,227 @@
+@mixin flexCentered($dir) {
+    display: flex;
+    flex-direction: $dir;
+    align-items: center;
+    justify-content: center;
+}
+
+.profilepage {
+    .container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        .wrapper {
+            display: grid;
+            justify-content: center;
+            align-items: flex-start;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 'pro eve' ' rank svg';
+            grid-column-gap: 50px;
+            grid-row-gap: 40px;
+        }
+        .pro {
+            // width: fit-content;
+            background-color: #0c3264;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 1);
+            border-radius: 20px;
+            padding: 30px 20px;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas: 'pic' 'info';
+            grid-area: pro;
+            p {
+                color: white;
+                font-size: 20px;
+                margin: 0;
+                padding: 0;
+                margin: 10px;
+                // width: fit-content;
+            }
+            .pro-pic {
+                background-color: white;
+                box-shadow: 0 0px 5px rgba(0, 0, 0, 1);
+                border-radius: 20px;
+                grid-area: pic;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                img {
+                    width: 120px;
+                    margin: auto;
+                }
+                .pro-username {
+                    color: #0c3264;
+                    font-size: 45px;
+                    margin: auto 0;
+                }
+            }
+            .pro-info {
+                display: grid;
+                margin: 40px 10px 0;
+                grid-template-columns: auto 1fr;
+                grid-template-areas: 'info1 info2';
+                width: fit-content;
+                .pro-info1 {
+                    grid-area: info1;
+                    // text-align: right;
+                }
+                .pro-info2 {
+                    grid-area: info2;
+                }
+            }
+        }
+        .rank {
+            // width: fit-content;
+            // margin-top: 50px;
+            background-color: #0c3264;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 1);
+            border-radius: 20px;
+            padding: 30px 20px;
+            grid-area: rank;
+            justify-content: space-between;
+            .title {
+                color: white;
+                text-align: center;
+                font-size: 25px;
+            }
+            .rank-pic {
+                background-color: white;
+                box-shadow: 0 0px 5px rgba(0, 0, 0, 1);
+                border-radius: 20px;
+                display: grid;
+                grid-template-columns: 50px auto;
+                justify-content: space-evenly;
+                img {
+                    width: 120px;
+                    margin: auto;
+                    border-radius: 50%;
+                }
+                .rank-num {
+                    color: #0c3264;
+                    font-size: 48px;
+                    margin: auto 0;
+                    text-align: center;
+                    padding: 20px;
+                    padding-right: 40px;
+                }
+            }
+        }
+        .eve {
+            font-size: 20px;
+            grid-area: eve;
+            // width: fit-content;
+            // margin-top: 50px;
+            background-color: #0c3264;
+            box-shadow: 0 -2px 15px rgba(0, 0, 0, 1);
+            border-radius: 20px;
+            padding: 30px 20px;
+            justify-content: space-between;
+            .title {
+                color: white;
+                text-align: center;
+                font-size: 25px;
+            }
+            table {
+                margin: 0 auto;
+                background-color: #0c3264;
+                th {
+                    margin: auto;
+                    text-align: center;
+                }
+                tr {
+                    border-radius: 10px;
+                    &:hover {
+                        background-color: initial;
+                    }
+                    // td {
+                    //     text-align: start;
+                    // }
+                }
+            }
+        }
+        .svg {
+            display: flex;
+            img {
+                width: 80%;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media(max-width: 1205px) {
+    .profilepage {
+        .container {
+            .wrapper {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-areas: 'pro pro' 'rank svg' 'eve eve';
+                grid-row-gap: 10px;
+                align-items: center;
+            }
+            .pro {
+                p {
+                    font-size: 23px;
+                }
+                .pro-pic {
+                    padding: 15px;
+                    img {
+                        width: 120px;
+                    }
+                    .pro-username {
+                        font-size: 38px;
+                    }
+                }
+                .pro-info {
+                    margin: 20px auto;
+                }
+            }
+            .svg {
+                margin: 50px 0;
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media(max-width: 762px) {
+    .profilepage {
+        .container {
+            .wrapper {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-template-areas: 'pro' 'eve' 'rank' 'svg';
+                grid-row-gap: 25px;
+            }
+            .pro {
+                padding: 10px;
+                p {
+                    font-size: 20px;
+                }
+                .pro-pic {
+                    img {
+                        width: 80px;
+                    }
+                    .pro-username {
+                        font-size: 28px;
+                    }
+                }
+                .pro-info {
+                    .pro-info1 p {
+                        margin-right: 0;
+                    }
+                    .pro-info2 p {
+                        margin-left: 0;
+                    }
+                    grid-template-columns: 27vw 50vw;
+                    margin: 10px;
+                }
+            }
+            .svg {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+}
