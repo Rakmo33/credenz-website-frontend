@@ -3,7 +3,7 @@ import { useForm } from "react-hooks-helper";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
-import axios from "axios"
+import axios from "axios";
 
 // form components
 import NameWrap from "./NameWrap";
@@ -16,7 +16,6 @@ import EventWrap from "./EventWrap";
 import Proceed from "./Proceed";
 import NavigateButton from "./NavigateButton";
 import jwt_decode from "jwt-decode";
-
 
 const Register = () => {
   // for total price
@@ -41,15 +40,69 @@ const Register = () => {
   // const totalEvents = 9;
 
   const [events, setEvents] = useState([
-    { id: "event1", name: "Clash",username:"clash", price: 100, isCheked: false },
-    { id: "event2", name: "Reverse Coding", username:"rc",price: 50, isCheked: false },
-    { id: "event3", name: "Pixelate",username:"pixelate", price: 50, isCheked: false },
-    { id: "event4", name: "Cretronix",username:"cretronix", price: 50, isCheked: false },
-    { id: "event5", name: "Bplan",username:"bplan", price: 50, isCheked: false },
-    { id: "event6", name: "Wallstreet",username:"wallstreet", price: 50, isCheked: false },
-    { id: "event7", name: "Roboliga", username:"roboliga",price: 50, isCheked: false },
-    { id: "event8", name: "Enigma", username:"enigma",price: 50, isCheked: false },
-    { id: "event9", name: "Quiz", username:"quiz",price: 50, isCheked: false },
+    {
+      id: "event1",
+      name: "Clash",
+      username: "clash",
+      price: 100,
+      isCheked: false,
+    },
+    {
+      id: "event2",
+      name: "Reverse Coding",
+      username: "rc",
+      price: 50,
+      isCheked: false,
+    },
+    {
+      id: "event3",
+      name: "Pixelate",
+      username: "pixelate",
+      price: 50,
+      isCheked: false,
+    },
+    {
+      id: "event4",
+      name: "Cretronix",
+      username: "cretronix",
+      price: 50,
+      isCheked: false,
+    },
+    {
+      id: "event5",
+      name: "Bplan",
+      username: "bplan",
+      price: 50,
+      isCheked: false,
+    },
+    {
+      id: "event6",
+      name: "Wallstreet",
+      username: "wallstreet",
+      price: 50,
+      isCheked: false,
+    },
+    {
+      id: "event7",
+      name: "Roboliga",
+      username: "roboliga",
+      price: 50,
+      isCheked: false,
+    },
+    {
+      id: "event8",
+      name: "Enigma",
+      username: "enigma",
+      price: 50,
+      isCheked: false,
+    },
+    {
+      id: "event9",
+      name: "Quiz",
+      username: "quiz",
+      price: 50,
+      isCheked: false,
+    },
   ]);
 
   const changeHandler = (eventNum) => {
@@ -59,6 +112,8 @@ const Register = () => {
     if (!tempEvents[eventNum].isCheked) {
       tempEvents[eventNum].isCheked = true;
       setEvents(tempEvents);
+    }
+  };
 
   const [formData, setFormData] = useForm(defaultFormData);
 
@@ -271,38 +326,33 @@ const Register = () => {
     setTimeout(() => setVisible(tempVisible), 200);
   };
 
-  const [events, setEvents] = useState([
-    { id: "event1", name: "Clash", price: 100, isChecked: false },
-    { id: "event2", name: "Reverse Coding", price: 50, isChecked: false },
-    { id: "event3", name: "Pixelate", price: 50, isChecked: false },
-    { id: "event4", name: "Cretronix", price: 50, isChecked: false },
-    { id: "event5", name: "Bplan", price: 50, isChecked: false },
-    { id: "event6", name: "Wallstreet", price: 50, isChecked: false },
-    { id: "event7", name: "Roboliga", price: 50, isChecked: false },
-    { id: "event8", name: "Enigma", price: 50, isChecked: false },
-    // { id: "event9", name: "Quiz", price: 50, isChecked: false },
-  ]);
+  const _DEV_ = document.domain === "localhost";
 
-  // events checkbox handler
-  const changeHandler = (eventNum) => {
-    let tempEvents = [...events];
+  function DisplayRazorpay(e) {
+    e.preventDefault();
+    console.log("display razor called !");
+    alert("display razor called !");
 
-    // When Checked
-    if (!tempEvents[eventNum].isChecked) {
-      tempEvents[eventNum].isChecked = true;
-      setEvents(tempEvents);
+    const token = localStorage.getItem("token");
 
-      setTotal((total) => total + tempEvents[eventNum].price);
-    }
-    // When Unchecked
-    else {
-      tempEvents[eventNum].isChecked = false;
-      setEvents(tempEvents);
+    var decoded = jwt_decode(token);
 
-      setTotal((total) => total - tempEvents[eventNum].price);
-    }
-  };
-
+    events.map((event) => {
+      if (event.isCheked === true) {
+        axios({
+          method: "post",
+          url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
+          headers: { authorization: `Bearer ${token}` },
+        })
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    });
+  }
   return (
     <div>
       <SideEventsButton />
@@ -384,64 +434,30 @@ const Register = () => {
   );
 
   // RAZORPAY
-// function loadScript(src) {
-//   console.log("load razor called !");
+  // function loadScript(src) {
+  //   console.log("load razor called !");
 
-//   return new Promise((resolve) => {
-//     const script = document.createElement("script");
-//     script.src = src;
+  //   return new Promise((resolve) => {
+  //     const script = document.createElement("script");
+  //     script.src = src;
 
-//     script.onload = () => {
-//       resolve(true);
-//     };
-//     script.onerror = () => {
-//       resolve(false);
-//     };
+  //     script.onload = () => {
+  //       resolve(true);
+  //     };
+  //     script.onerror = () => {
+  //       resolve(false);
+  //     };
 
-//     document.body.appendChild(script);
-//   });
-// }
-
-const _DEV_ = document.domain === "localhost";
-
-function DisplayRazorpay(e) {
- e.preventDefault();
-  console.log("display razor called !");
-  alert("display razor called !");
- 
-  const token = localStorage.getItem("token");
- 
-  var decoded = jwt_decode(token);
- 
-
-  events.map((event)=>{
-    if(event.isCheked=== true)
-    {
-  
-      axios({
-        method: "post",
-        url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
-        headers: { authorization: `Bearer ${token}` },
-      })
-      .then((response)=>{
-        console.log(response.data);
-      }).catch((error)=>{
-        console.log(error)
-      })
-    
-    }
-  })
-
-}
-}
-
-export default Register;
+  //     document.body.appendChild(script);
+  //   });
+  // }
+};
 
 //   const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
 //  if (!res) {
 //     alert("Razorpay SDK failed to load!");
 //     return;
-  
+
 //   }
 
 //   const options = {
@@ -476,3 +492,4 @@ export default Register;
 
 //};
 
+export default Register;

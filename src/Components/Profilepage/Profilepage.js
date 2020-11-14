@@ -1,24 +1,23 @@
-import React from "react";
 import "./profile.css";
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
 const Profile = () => {
-   const [user, setUser] = useState('')
+  const [user, setUser] = useState("");
 
+  const logout = () => {
+    localStorage.removeItem("user");
+  };
 
-    const logout = () => {
-        localStorage.removeItem("user");
-    }
+  const getCurrentUser = () => {
+    //alert("ysudh" )
+    console.log(
+      "userfsdcszd   : " + JSON.stringify(localStorage.getItem("user"))
+    );
+    return JSON.parse(localStorage.getItem("user"));
+  };
 
-    const getCurrentUser = () => {
-        //alert("ysudh" )
-        console.log("userfsdcszd   : " + JSON.stringify(localStorage.getItem("user")))
-        return JSON.parse(localStorage.getItem("user"));
-    }
+  getCurrentUser();
 
-    getCurrentUser()
-    
-  
   return (
     <div className='profilepage'>
       <div className='container'>
@@ -81,9 +80,10 @@ const Profile = () => {
           </div>
         </div>
       </div>
-   
-    
-        <button type="button" onClick={logout}>Logout</button>   
+
+      <button type='button' onClick={logout}>
+        Logout
+      </button>
     </div>
   );
 };
