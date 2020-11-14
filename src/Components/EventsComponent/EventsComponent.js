@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import SideEvent from '../sideEventButton/sideEvent';
 import Modal1 from '../Modal/Modal';
 import axios from 'axios';
+import { EVENTS } from './allEvents';
 
 const Events = () =>{
 
     const [show, setShow] = useState(false);
     const [event,setEvent] = useState("clash");
+    const [EVENTS, setEVENTS] = useState("NULL")
 
     const handleClose = () => setShow(false);
     const handleShow = (event) => {
@@ -14,20 +16,23 @@ const Events = () =>{
         setEvent(event);
     }
 
-    const allEvents = (e) => {
-
-        //e.preventDefault()
-
-        try{
-            axios.get('http://credenzwebsite.herokuapp.com/allevents').then(function (response) {
-                alert(JSON.stringify(response.data));
-            })
-        }
-        catch(e) {
-            alert("Axios error!" + e)
-        }
-
+    async function AllEvents(){
+    
+        const response =  await axios.get('http://credenzwebsite.herokuapp.com/allevents')
+        //console.log("I am response" + response);
+        const data = await response.data
+        //console.log("I am data" + JSON.stringify(data));
+        setTimeout(() => {  console.log("I am sleeping"); }, 5);
+        return data;
     }
+
+    let result = AllEvents();
+
+    result.then(res => {
+        setEVENTS(res);
+    })
+
+    //console.log("Events"+ JSON.stringify(EVENTS))
 
     let type = false;
 
@@ -37,11 +42,11 @@ const Events = () =>{
 
             <h1 style={{color: "ivory"}}>Events Page</h1>
             <ul style={{color: "ivory"}}>
-                <li onClick={ ()=>allEvents() } >
-                    All Events
-                </li>
                 <li onClick={ ()=>handleShow("clash") } >
-                    clash
+                    Clash
+                </li>
+                <li onClick={ ()=>handleShow("rc") } >
+                    Reverse Coding
                 </li>
                 <li onClick={ ()=>handleShow("enigma") }>
                     Enigma
@@ -55,9 +60,12 @@ const Events = () =>{
                 <li onClick={ ()=>handleShow("bplan") }>
                     BPlan
                 </li>
+                <li onClick={ ()=>handleShow("quiz") } >
+                    Quiz
+                </li>
             </ul>
 
-            <Modal1 show={show} handleClose={handleClose} type={type} event={event}/>
+            <Modal1 show={show} handleClose={handleClose} type={type} event={event} event_info={EVENTS}/>
         </div>
     );
 }

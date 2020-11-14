@@ -5,17 +5,18 @@ import Card from "react-bootstrap/Card";
 const member = (props) => {
   return (
     <Card className={classes.member}>
-      <Card.Img
+      <Card.Img 
         variant='top'
         src={require("../../assests/img/team/" + props.url)}
+        className={classes.image}
       />
       {/* <img src={require('../../assests/img/team/' + props.url)}  /> */}
       <Card.Body className={classes.teamCardBody}>
         <Card.Title>
           {" "}
-          <h4>{props.name}</h4>
+          <h5>{props.name}</h5>
         </Card.Title>
-        <Card.Title>{props.pos}</Card.Title>
+        {/* <Card.Title>{props.pos}</Card.Title> */}
         <h4 className={classes.icon}>
           <a href={props.link} target='_blank' rel='noopener noreferrer'>
             <i className='fa fa-linkedin'></i>

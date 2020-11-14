@@ -1,5 +1,6 @@
 import React from "react";
 import "./profile.css";
+import React, {useState} from 'react';
 
 const Profile = () => {
   return (
@@ -64,6 +65,23 @@ const Profile = () => {
           </div>
         </div>
       </div>
+    const [user, setUser] = useState('')
+
+
+    const logout = () => {
+        localStorage.removeItem("user");
+    }
+
+    const getCurrentUser = () => {
+        //alert("ysudh" )
+        console.log("userfsdcszd   : " + JSON.stringify(localStorage.getItem("user")))
+        return JSON.parse(localStorage.getItem("user"));
+    }
+
+    getCurrentUser()
+    
+    
+        <button type="button" onClick={logout}>Logout</button>   
     </div>
   );
 };

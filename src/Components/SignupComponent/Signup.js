@@ -37,6 +37,7 @@ function Signup() {
             console.log(response);
             console.log(response.data);
             const msg = response.data["accessToken"];
+            localStorage.setItem("user", JSON.stringify(response.data));
             console.log(msg);
           });
       } catch (e) {
