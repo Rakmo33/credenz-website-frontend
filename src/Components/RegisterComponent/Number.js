@@ -10,8 +10,12 @@ const Number = (props) => {
         minLength='10'
         maxLength='10'
         className='form-control'
+        name={props.name}
+        defaultValue={props.value}
+        onChange={props.changeHandler}
         id={props.id}
       />
+      <span id={props.id} className='errormsg'></span>
     </div>
   );
 };

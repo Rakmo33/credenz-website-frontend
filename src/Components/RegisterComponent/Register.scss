@@ -5,6 +5,12 @@
     justify-content: center;
 }
 
+@mixin customBtn() {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 .regPage {
     font-size: 18px;
     min-height: 80vh;
@@ -13,22 +19,52 @@
         margin: 50px auto;
         color: white;
     }
+    .col-flex {
+        flex-direction: column;
+    }
+    .err {
+        border: 2px solid red;
+    }
+    .txt-center {
+        text-align: center;
+        margin: 15px auto 0;
+    }
+    span.errormsg {
+        transition: all 0.3s;
+        color: rgb(255, 73, 73);
+        font-size: 18px;
+        // background-color: white;
+    }
     .container {
         margin: 20px auto;
         // background: green;
         min-height: 60vh;
         @include flexCentered(row);
+        .custom-radio,
+        .custom-radio input,
+        .custom-radio label {
+            font-size: 20px;
+            letter-spacing: 2px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
         label {
             color: rgb(190, 235, 243);
             font-weight: 600;
             font-size: 20px;
         }
+        .parent {
+            transition: all 0.3s;
+        }
         .form-row {
             margin: 30px 0;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             transition: all 0.3s;
-            background-color: rgb(3, 47, 58);
+            background-color: #032f3a;
+            box-shadow: 0px 0px 15px rgb(75, 237, 243);
+            animation: glow 1.5s infinite ease-in-out;
         }
         .justify-spread {
             display: flex;
@@ -39,6 +75,8 @@
             color: rgb(255, 255, 255);
             margin: 10px auto;
             width: fit-content;
+            font-size: 25px;
+            margin-bottom: 30px;
         }
         .cc-selector input {
             margin: 0;
@@ -74,7 +112,8 @@
         }
         .event-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            justify-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             row-gap: 35px;
             padding: 20px;
             border-radius: 10px;
@@ -82,6 +121,7 @@
             .event-wrap {
                 flex-direction: column;
                 align-items: center;
+                margin: auto;
             }
             .Clash {
                 background: url(./logos/clash.png);
@@ -119,7 +159,7 @@
             .true {
                 // when selected
                 transform: scale(1.1);
-                background-color: rgb(33, 213, 219);
+                background-color: #21d5db;
                 box-shadow: 0px 1px 5px #fff;
             }
             label {
@@ -152,11 +192,32 @@
             color: blue;
             border-radius: 5px;
             padding: 5px 20px;
-        }
-        .next-btn {
             width: fit-content;
-            margin: 50px auto;
-            // background-color: #0a1018;
+            margin: 0 auto 40px;
+        }
+        #nxt-btn,
+        #back-btn {
+            @include customBtn();
+            @include flexCentered(row);
+            width: fit-content;
+            height: 50px;
+            width: 50px;
+            // padding: 20px;
+            border-radius: 50%;
+            background-color: #21d5db;
+            box-shadow: 0px 0px 5px #fff;
+            transition: 0.25s;
+        }
+        #nxt-btn i,
+        #back-btn i {
+            font-size: 40px;
+            transition: 0.25s;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+        .proceed-btn {
+            transition: all 0.3s;
         }
     }
     .toLeft {
@@ -169,11 +230,11 @@
     }
     .fromLeft {
         // transform: translateX(200px);
-        animation: fromLeft .2s ease-in-out;
+        animation: fromLeft .2s ease-in-out !important;
     }
     .fromRight {
         // transform: translateX(200px);
-        animation: fromRight .2s ease-in-out;
+        animation: fromRight .2s ease-in-out !important;
     }
     @keyframes fromLeft {
         0% {
@@ -193,6 +254,17 @@
         100% {
             transform: translateX(0px);
             opacity: 1;
+        }
+    }
+    @keyframes glow {
+        0% {
+            box-shadow: 0px 0px 5px rgb(75, 237, 243);
+        }
+        50% {
+            box-shadow: 0px 0px 17px rgb(75, 237, 243);
+        }
+        100% {
+            box-shadow: 0px 0px 5px rgb(75, 237, 243);
         }
     }
 }

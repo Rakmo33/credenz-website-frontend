@@ -6,8 +6,10 @@ const EventCard = (props) => {
       <input
         type='checkbox'
         id={props.id}
-        name='events'
+        name={`events.${props.name}`}
+        value={props.name}
         onChange={props.changeHandler}
+        onClick={props.clickHandler}
         checked={props.isChecked}
         className='custom-control-input event-checkboxes'
       />

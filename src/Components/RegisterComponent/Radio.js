@@ -8,9 +8,12 @@ const Radio = (props) => {
         id={props.id}
         name={props.name}
         value={props.value}
-        className='custom-control-input'
+        className='custom-control-input '
+        onChange={props.changeHandler}
+        checked={props.checked}
       />
-      <label className='custom-control-label' htmlFor={props.id}>
+
+      <label className='custom-control-label active' htmlFor={props.id}>
         {props.label}
       </label>
     </div>
