@@ -3,6 +3,7 @@ import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Modal.css';
 import axios from 'axios';
+import jwt from 'jwt-decode'
 
 function ModalTitle({type, event}) {
     if(type==="login")
@@ -93,6 +94,9 @@ function ModalBody({handleClose, type, event, event_info}) {
                     localStorage.setItem("user", JSON.stringify(response.data));
                     if(response.data["accessToken"]) {
                         alert("Logged in successfully!")
+                        handleClose()
+                        const user = jwt(response.data["accessToken"]);
+                        console.log("JWT decode : " + JSON.stringify(user))
                         setLogged(true)
                     }
                     else {
