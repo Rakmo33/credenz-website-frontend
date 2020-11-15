@@ -75,6 +75,10 @@ function ModalBody({handleClose, type, event, event_info}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [logged, setLogged] = useState(false)
+
+    function refreshPage() {
+        window.location.reload(false);
+    }
    
 
     if(type==="login") {
@@ -95,6 +99,7 @@ function ModalBody({handleClose, type, event, event_info}) {
                     if(response.data["accessToken"]) {
                         alert("Logged in successfully!")
                         handleClose()
+                        refreshPage()                    
                         const user = jwt(response.data["accessToken"]);
                         console.log("JWT decode : " + JSON.stringify(user))
                         setLogged(true)
@@ -271,7 +276,6 @@ function Modal1( {show, handleClose, type, event, event_info} ) {
        <Modal dialogClassName="modal-90w" show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered 
         keyboard={false}>
         <Modal.Header closeButton>
-
                 <Modal.Title text-center> <ModalTitle type={type} event={event}/> </Modal.Title>
         </Modal.Header>
         <Modal.Body> 
