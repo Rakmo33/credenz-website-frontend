@@ -16,6 +16,8 @@ import EventWrap from "./EventWrap";
 import Proceed from "./Proceed";
 import NavigateButton from "./NavigateButton";
 import jwt_decode from "jwt-decode";
+import jwt from 'jwt-decode'
+
 
 const Register = () => {
   // for total price

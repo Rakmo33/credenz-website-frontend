@@ -1,18 +1,28 @@
 import React from 'react';
 import Social from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
+import jwt from 'jwt-decode'
 
 const Feedback = () => {
+
+    let user = ""
+
+    if(localStorage.getItem("user")) {
+        user = jwt(localStorage.getItem("user"))
+    }
+
     return (
         <>
        <form className="feedback">
            <div className="form-group">
                <label htmlFor="name">Name</label>
-               <input type="text" className="form-control" name="name" id="name" required ></input>
+               <input type="text" className="form-control" name="name" id="name" 
+               value={JSON.stringify(user["name"]).replace(/\"/g, "")} required ></input>
            </div>
            <div className="form-group">
                <label htmlFor="email">Email</label>
-               <input type="email" className="form-control" name="email" id="email" required ></input>
+               <input type="email" className="form-control" name="email" id="email"
+               value={JSON.stringify(user["email"]).replace(/\"/g, "")} required ></input>
            </div>
            <div className="form-group">
              <label htmlFor="message">Message</label>
