@@ -23,18 +23,24 @@ const Register = () => {
   // for total price
   const [total, setTotal] = useState(0);
 
+  let user = ""
+
+  if(localStorage.getItem("user")) {
+      user = jwt(localStorage.getItem("user"))
+  }
+
   const defaultFormData = {
-    name1: "",
+    name1: JSON.stringify(user["name"]).replace(/\"/g, ""),
     name2: "",
     name3: "",
     name4: "",
     year: undefined,
-    number1: undefined,
+    number1: JSON.stringify(user["phoneno"]).replace(/\"/g, ""),
     number2: undefined,
-    email1: "",
+    email1: JSON.stringify(user["email"]).replace(/\"/g, ""),
     email2: "",
     isMember: undefined,
-    college: undefined,
+    college: JSON.stringify(user["clgname"]).replace(/\"/g, ""),
     events: {},
   };
 
