@@ -21,7 +21,7 @@ function Modal2( {show, handleClose} ) {
     let result = AllUpdates();
 
     result.then(res => {
-        console.log("Res" + JSON.stringify(res[1].info))
+        console.log("Res" + JSON.stringify(res[0].info))
         console.log("length" + res.length)
 
         var updates = [];
