@@ -16,6 +16,7 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.2",
     "bootstrap-social": "^5.1.1",
+    "emailjs-com": "^2.6.4",
     "font-awesome": "^4.7.0",
     "framework7-react": "^5.7.12",
     "jQuery": "^1.7.4",
