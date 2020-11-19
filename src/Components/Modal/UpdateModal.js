@@ -1,10 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Modal } from 'react-bootstrap';
 import './Modal.css';
+import axios from 'axios';
+
+async function AllUpdates(){
+    
+    const response =  await axios.get('http://credenzwebsite.herokuapp.com/updates')
+    //console.log("I am response" + response);
+    const data = await response.data
+    //console.log("I am data" + JSON.stringify(data));
+    setTimeout(() => {  console.log("I am sleeping"); }, 5);
+    return data;
+}
 
 function Modal2( {show, handleClose} ) {
 
-    console.log("Login called!")
+    const [updateList, setUpdateList] = useState('')
+
+
+    let result = AllUpdates();
+
+    result.then(res => {
+        console.log("Res" + JSON.stringify(res[1].info))
+        console.log("length" + res.length)
+
+        var updates = [];
+        for(let i=0; i<res.length; i++) {
+            if(res[i].info===undefined)
+                updates.push("undefined")
+            else
+                updates.push(res[i].info)
+        }
+        setUpdateList(updates.map((x) => {return(<li key={x}>{x}</li>)}))
+    })
+
 
     return(
     <>
@@ -17,10 +46,7 @@ function Modal2( {show, handleClose} ) {
         <Modal.Body> 
                 <div>
                     <ul>
-                        <li>Update1</li>
-                        <li>Update2</li>
-                        <li>Update3</li>
-                        <li>Update4</li>
+                        {updateList}
                     </ul>
                 </div>
         </Modal.Body>
