@@ -42,7 +42,7 @@ class Update extends Component{
         console.log("Current state is : " + JSON.stringify(this.state))
         alert("Current state is : " + JSON.stringify(this.state))
 
-        const token = localStorage.getItem("user")
+        const token = localStorage.getItem("token")
 
         try {
             axios({
