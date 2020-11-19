@@ -3,6 +3,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import AdminEvent from "./event";
 import AdminUpdate from "./update";
 import classes from "./Admin.module.css";
+
 class Admin extends Component {
   constructor(props) {
     super(props);
