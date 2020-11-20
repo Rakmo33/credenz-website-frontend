@@ -6,6 +6,9 @@ import Animation from "./Animation";
 import { EVENTS } from "./allEvents";
 
 const Events = () => {
+
+ // window.location.reload(false); //refresh page
+
   const [show, setShow] = useState(false);
   const [event, setEvent] = useState("clash");
   const [EVENTS, setEVENTS] = useState("NULL");
@@ -33,6 +36,7 @@ const Events = () => {
 
   result.then((res) => {
     setEVENTS(res);
+    //window.location.reload(false); //refresh page
   });
 
   //console.log("Events"+ JSON.stringify(EVENTS))
