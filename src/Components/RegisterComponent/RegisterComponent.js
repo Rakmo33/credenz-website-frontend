@@ -16,31 +16,30 @@ import EventWrap from "./EventWrap";
 import Proceed from "./Proceed";
 import NavigateButton from "./NavigateButton";
 import jwt_decode from "jwt-decode";
-import jwt from 'jwt-decode'
-
+import jwt from "jwt-decode";
 
 const Register = () => {
   // for total price
   const [total, setTotal] = useState(0);
 
-  let user = ""
+  let user = "";
 
-  if(localStorage.getItem("user")) {
-      user = jwt(localStorage.getItem("user"))
+  if (localStorage.getItem("user")) {
+    user = jwt(localStorage.getItem("user"));
   }
 
   const defaultFormData = {
-    name1: JSON.stringify(user["name"]).replace(/\"/g, ""),
+    name1: JSON.stringify(user["name"]).replace(/"/g, ""),
     name2: "",
     name3: "",
     name4: "",
     year: undefined,
-    number1: JSON.stringify(user["phoneno"]).replace(/\"/g, ""),
+    number1: JSON.stringify(user["phoneno"]).replace(/"/g, ""),
     number2: undefined,
-    email1: JSON.stringify(user["email"]).replace(/\"/g, ""),
+    email1: JSON.stringify(user["email"]).replace(/"/g, ""),
     email2: "",
     isMember: undefined,
-    college: JSON.stringify(user["clgname"]).replace(/\"/g, ""),
+    college: JSON.stringify(user["clgname"]).replace(/"/g, ""),
     events: {},
   };
 
@@ -53,63 +52,63 @@ const Register = () => {
       name: "Clash",
       username: "clash",
       price: 100,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event2",
       name: "Reverse Coding",
       username: "rc",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event3",
       name: "Pixelate",
       username: "pixelate",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event4",
       name: "Cretronix",
       username: "cretronix",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event5",
       name: "Bplan",
       username: "bplan",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event6",
       name: "Wallstreet",
       username: "wallstreet",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event7",
       name: "Roboliga",
       username: "roboliga",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event8",
       name: "Enigma",
       username: "enigma",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
     {
       id: "event9",
       name: "Quiz",
       username: "quiz",
       price: 50,
-      isCheked: false,
+      isChecked: false,
     },
   ]);
 
@@ -117,9 +116,18 @@ const Register = () => {
     let tempEvents = [...events];
 
     // When Checked
-    if (!tempEvents[eventNum].isCheked) {
-      tempEvents[eventNum].isCheked = true;
+    if (!tempEvents[eventNum].isChecked) {
+      tempEvents[eventNum].isChecked = true;
       setEvents(tempEvents);
+
+      setTotal((total) => total + tempEvents[eventNum].price);
+    }
+    // When Unchecked
+    else {
+      tempEvents[eventNum].isChecked = false;
+      setEvents(tempEvents);
+
+      setTotal((total) => total - tempEvents[eventNum].price);
     }
   };
 
@@ -144,7 +152,6 @@ const Register = () => {
   const nextHandler = () => {
     // find index of visible component
     const index = isVisible.findIndex((item) => item === true);
-
     if (index === 0) {
       if (formData.name1 === "") {
         document.querySelector("#Name1").classList.add("err");
@@ -153,7 +160,6 @@ const Register = () => {
         return;
       }
     }
-
     if (index === 1) {
       if (formData.year === undefined) {
         document.querySelector("#Radio1").classList.add("err");
@@ -163,32 +169,26 @@ const Register = () => {
         return;
       }
     }
-
     let err = false;
-
     if (index === 2) {
       if (!/^[6789]\d{9}$/.test(formData.number1)) {
         document.querySelector("span#inputContact1").innerHTML =
           "Enter Valid Contact Number!";
         document.querySelector("#inputContact1").classList.add("err");
-
         err = true;
       } else {
         document.querySelector("span#inputContact1").innerHTML = "";
         document.querySelector("#inputContact1").classList.remove("err");
-
         err = false;
       }
       if (!/^[6789]\d{9}$/.test(formData.number2)) {
         document.querySelector("span#inputContact2").innerHTML =
           "Enter Valid Contact Number!";
         document.querySelector("#inputContact2").classList.add("err");
-
         err = true;
       } else {
         document.querySelector("span#inputContact2").innerHTML = "";
         document.querySelector("#inputContact2").classList.remove("err");
-
         err = false;
       }
       if (
@@ -199,12 +199,10 @@ const Register = () => {
         document.querySelector("span#inputEmail1").innerHTML =
           "Enter Valid Email!";
         document.querySelector("#inputEmail1").classList.add("err");
-
         err = true;
       } else {
         document.querySelector("span#inputEmail1").innerHTML = "";
         document.querySelector("#inputEmail1").classList.remove("err");
-
         err = false;
       }
       if (
@@ -215,17 +213,14 @@ const Register = () => {
         document.querySelector("span#inputEmail2").innerHTML =
           "Enter Valid Email!";
         document.querySelector("#inputEmail2").classList.add("err");
-
         err = true;
       } else {
         document.querySelector("span#inputEmail2").innerHTML = "";
         document.querySelector("#inputEmail2").classList.remove("err");
-
         err = false;
       }
       if (err) return;
     }
-
     if (index === 3) {
       if (formData.isMember === undefined) {
         document.querySelector("span#memberErrMsg").innerHTML =
@@ -236,7 +231,6 @@ const Register = () => {
         document.querySelector("span#memberErrMsg").innerHTML = "";
         err = false;
       }
-
       if (formData.college === undefined) {
         document.querySelector("span#clgErrMsg").innerHTML =
           "Please Select Your College";
@@ -246,13 +240,10 @@ const Register = () => {
         document.querySelector("span#clgErrMsg").innerHTML = "";
         err = false;
       }
-
       if (err) return;
     }
-
     if (index === 4) {
       err = true;
-
       for (var e in formData.events) {
         // if at least one event is selected
         if (formData.events[e]) {
@@ -260,43 +251,34 @@ const Register = () => {
           break;
         }
       }
-
       if (err) {
         document.querySelector("span#eventErrMsg").innerHTML =
           "Please Select At Least One Event!";
-
         return;
       } else {
         document.querySelector("span#eventErrMsg").innerHTML = "";
       }
       // alert("LOL");
     }
-
     // disable button for first component
     setPrev(true);
     setNext(true);
-
     if (index === 4) {
       setNext(false);
     }
-
     if (index === 5) {
       return;
     }
-
     let tempVisible = [...isVisible];
-
     // hide current
     tempVisible[index] = false;
     // display next
     tempVisible[index + 1] = true;
-
     // set animations
     let tempAnim = ["", "", "", "", "", ""];
     tempAnim[index] = "toLeft";
     tempAnim[index + 1] = "fromRight";
     setAnim(tempAnim);
-
     // timeout for completion of animations before disappearing
     setTimeout(() => setVisible(tempVisible), 200);
   };
@@ -345,8 +327,8 @@ const Register = () => {
 
     var decoded = jwt_decode(token);
 
-    events.map((event) => {
-      if (event.isCheked === true) {
+    events.forEach((event) => {
+      if (event.isChecked === true) {
         axios({
           method: "post",
           url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
@@ -361,43 +343,45 @@ const Register = () => {
       }
     });
 
-    console.log("display razor called !")
+    console.log("display razor called !");
 
-    const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
 
-    if(!res) {
-        alert('Razorpay SDK failed to load!')
-        return
+    if (!res) {
+      alert("Razorpay SDK failed to load!");
+      return;
     }
 
     const options = {
-        "key": _DEV_ ? 'rzp_test_8OXCvHsV5OiOpe' : 'prod-key', // Enter the Key ID generated from the Dashboard
-        "amount": "50000", // 100p = 1rupee
-        "currency": "INR",
-        "name": "Credenz",
-        "description": "Test Transaction",
-        "image": "",
-        "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        "handler": function (response){
-            alert(response.razorpay_payment_id);
-            alert(response.razorpay_order_id);
-            alert(response.razorpay_signature)
-        },
-        "prefill": {
-            "name": "Gaurav Kumar",
-            "email": "gaurav.kumar@example.com",
-            "contact": "9999999999"
-        },
-        "notes": {
-            "address": "Razorpay Corporate Office"
-        },
-        "theme": {
-            "color": "#F37254"
-        }
+      key: _DEV_ ? "rzp_test_8OXCvHsV5OiOpe" : "prod-key", // Enter the Key ID generated from the Dashboard
+      amount: "50000", // 100p = 1rupee
+      currency: "INR",
+      name: "Credenz",
+      description: "Test Transaction",
+      image: "",
+      order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature);
+      },
+      prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com",
+        contact: "9999999999",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#F37254",
+      },
     };
-    const paymentObject = new window.Razorpay(options)
-    
-    paymentObject.open()
+    const paymentObject = new window.Razorpay(options);
+
+    paymentObject.open();
   }
   return (
     <div>
@@ -479,24 +463,24 @@ const Register = () => {
     </div>
   );
 
-   //RAZORPAY
-   function loadScript(src) {
-     console.log("load razor called !");
+  //RAZORPAY
+  function loadScript(src) {
+    console.log("load razor called !");
 
-     return new Promise((resolve) => {
-     const script = document.createElement("script");
-     script.src = src;
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
 
-       script.onload = () => {
-         resolve(true);
-       };
-       script.onerror = () => {
-         resolve(false);
-       };
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
 
-       document.body.appendChild(script);
-     });
-   }
+      document.body.appendChild(script);
+    });
+  }
 };
 
 //   const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
