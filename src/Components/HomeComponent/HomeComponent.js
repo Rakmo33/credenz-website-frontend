@@ -11,7 +11,7 @@ const Home=()=> {
     return(
         <div>
             <div className={classes.body}>
-            <h1 style={{color: "ivory"}}>Credenz Home Page</h1>
+            {/* <h1 style={{color: "ivory"}}>Credenz Home Page</h1> */}
             <HomeAnimation/>
             <div className="d-flex justify-content-center">
                 <Timer/>
