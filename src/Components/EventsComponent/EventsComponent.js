@@ -4,7 +4,7 @@ import Modal1 from "../Modal/Modal";
 import axios from "axios";
 import Animation from "./Animation";
 import { EVENTS } from "./allEvents";
-
+import Footer from "../Footer/footer";
 const Events = () => {
 
  // window.location.reload(false); //refresh page
@@ -67,6 +67,9 @@ const Events = () => {
         event={event}
         event_info={EVENTS}
       />
+      <div style={{marginTop:"70vh"}} >
+        <Footer/>
+      </div>
     </div>
   );
 };

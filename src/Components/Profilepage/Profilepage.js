@@ -1,6 +1,7 @@
 import "./profile.css";
 import React, { useState } from "react";
 import jwt from "jwt-decode";
+import Footer from "../Footer/footer";
 
 const Profile = () => {
   const logout = () => {

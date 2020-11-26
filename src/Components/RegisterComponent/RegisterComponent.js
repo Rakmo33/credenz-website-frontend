@@ -521,8 +521,11 @@ const Register = () => {
                   <i className='fa fa-chevron-circle-right' aria-hidden='true'></i>
                 </NavigateButton>
               </div>
+            </div> 
+            <div style={{marginTop:"18px"}} > 
+             <Footer />
             </div>
-            <Footer />
+          
           </div>
         );
 
