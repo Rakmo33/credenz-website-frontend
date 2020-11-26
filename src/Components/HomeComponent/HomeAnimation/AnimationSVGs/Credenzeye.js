@@ -1,6 +1,66 @@
 import * as React from "react";
+import { useState, useEffect } from 'react';
+import './CredenzEye.css';
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+export function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowDimensions;
+}
 
 function SvgCredenzeye(props) {
+  const [left, setLeft] = useState(0);
+  const [top, setTop] = useState(0);
+  const { height, width } = useWindowDimensions();
+  let xpercentage = 0;
+  let ypercentage = 0;
+
+  useEffect(() => {
+    let outercx = document.getElementById("eyeball-outer").getAttribute("cx");
+    let outercy = document.getElementById("eyeball-outer").getAttribute("cy");
+    let outerr = document.getElementById("eyeball-outer").getAttribute("r");
+    let eyeballOuter = document.getElementById("eyeball-outer");
+    let innercx = document.getElementById("eyeball-inner").getAttribute("cx");
+    let innercy = document.getElementById("eyeball-inner").getAttribute("cy");
+    let innerr = document.getElementById("eyeball-inner").getAttribute("r");
+    let eyeballInner = document.getElementById("eyeball-inner");
+    let outerposx = 0;
+    let outerposy = 0;
+    let innerposx = 0;
+    let innerposy = 0;
+    document.addEventListener('mousemove', (e) => {
+      setLeft(e.pageX);
+      setTop(e.pageY);
+      // this.setState({left: e.pageX, top: e.pageY});
+      xpercentage = (e.pageX - width/2)/width;
+      ypercentage = (e.pageY - height/2)/height;
+      outerposx = 566.21 + xpercentage * outerr *1.8;
+      outerposy = 398.05 + ypercentage * outerr *1.8;
+      innerposx = 565.56 + xpercentage * outerr*1.8;
+      innerposy = 397.4 + ypercentage * outerr*1.8;
+      eyeballOuter.setAttribute("cx", outerposx);
+      eyeballOuter.setAttribute("cy", Math.min(outerposy, 419));
+      eyeballInner.setAttribute("cx", innerposx);
+      eyeballInner.setAttribute("cy", Math.min(innerposy, 419));
+    });
+  });
   return (
     <svg
       id="credenzeye_svg__Layer_1"
@@ -184,13 +244,13 @@ function SvgCredenzeye(props) {
             <stop offset={0.854} stopColor="#1d1d1d" />
             <stop offset={1} stopColor="#1a1a1a" />
           </linearGradient>
-          <path
+          {/* <path
             id="credenzeye_svg__flashlight"
             fill="url(#credenzeye_svg__flashlight_1_)"
             d="M584.28 391.56l53.66 352.89-136.9.96 45.8-354.18z"
-          />
-          <circle cx={566.21} cy={398.05} r={22.55} fill="#29abe2" />
-          <circle cx={565.56} cy={397.4} r={18.72} />
+          /> */}
+          <circle cx={566.21} cy={398.05} r={22.55} id="eyeball-outer" fill="#29abe2" />
+          <circle cx={565.56} cy={397.4} id="eyeball-inner" r={18.72} />
         </g>
         <ellipse
           className="credenzeye_svg__st2"
