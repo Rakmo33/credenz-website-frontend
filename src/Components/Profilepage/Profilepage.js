@@ -129,6 +129,9 @@ const Profile = () => {
             </div>
           </div>
         </div>
+        <div style={{ marginTop: "18px" }}>
+          <Footer />
+        </div>
       </div>
     );
   } else {
