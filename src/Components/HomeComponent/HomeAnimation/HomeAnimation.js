@@ -1,9 +1,12 @@
 import React from "react";
 import './HomeAnimation.module.css';
+import CredenzEye from './AnimationSVGs/Credenzeye';
 
 const homeanimation = (props) =>{
     return(
-        <div className="anim">Animation goes here</div>
+        <div className="anim">
+        <CredenzEye/>
+        </div>
     );
 }
 
