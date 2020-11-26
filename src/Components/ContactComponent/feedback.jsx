@@ -12,7 +12,7 @@ const Feedback = () => {
         user = jwt(localStorage.getItem("user"))
     }
 
-    const [name, setName] = useState(JSON.stringify(user["name"]).replace(/\"/g, ""))
+    const [name, setName] = useState(localStorage.getItem("user") ? JSON.stringify(user["name"]).replace(/\"/g, ""): "")
     const [feedback, setFeedback] = useState('')
 
     function resetForm() {
@@ -54,12 +54,12 @@ const Feedback = () => {
                <label htmlFor="name">Name</label>
                <input type="text" className="form-control" name="name" id="name"
                 onChange={(e) => setName(e.target.value)} 
-               value={JSON.stringify(user["name"]).replace(/\"/g, "")} required ></input>
+               value={localStorage.getItem("user") ? JSON.stringify(user["name"]).replace(/\"/g, "") : "Name"} required ></input>
            </div>
            <div className="form-group">
                <label htmlFor="email">Email</label>
                <input type="email" className="form-control" name="email" id="email"
-               value={JSON.stringify(user["email"]).replace(/\"/g, "")} required ></input>
+               value={localStorage.getItem("user") ? JSON.stringify(user["email"]).replace(/\"/g, "") : "Email"} required ></input>
            </div>
            <div className="form-group">
              <label htmlFor="message">Message</label>
