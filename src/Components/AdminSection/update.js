@@ -41,14 +41,14 @@ class Update extends Component{
 
         console.log("Current state is : " + JSON.stringify(this.state))
         alert("Current state is : " + JSON.stringify(this.state))
-
+        
         const token = localStorage.getItem("token")
 
         try {
             axios({
                 method: "post",
                 url: `http://credenzwebsite.herokuapp.com/addupdate`,
-                headers: { authorization: `Bearer ${token}` },
+                headers: { 'authorization': token },
                 body: {
                     headline: this.state.headline,
                     info: this.state.info
@@ -62,8 +62,7 @@ class Update extends Component{
           } catch (e) {
             alert("Axios error!" + e);
           }
-
-       
+                 
     }
 
     
