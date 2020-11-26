@@ -140,12 +140,19 @@ const Register = () => {
         
       const changeHandler = (eventNum) => {
         let tempEvents = [...events];
-    
         // When Checked
-        if (!tempEvents[eventNum].isCheked) {
-          tempEvents[eventNum].isCheked = true;
+        if (!tempEvents[eventNum].isChecked) {
+          tempEvents[eventNum].isChecked = true;
           setEvents(tempEvents);
+          setTotal((total) => total + tempEvents[eventNum].price);
         }
+        // When Unchecked
+        else {
+          tempEvents[eventNum].isChecked = false;
+          setEvents(tempEvents);
+          setTotal((total) => total - tempEvents[eventNum].price);
+        }
+
       };
     
       const nextHandler = () => {
@@ -379,22 +386,33 @@ const Register = () => {
             alert('Razorpay SDK failed to load!')
             return
         }
+
+        const data = await axios.post("http://credenzwebsite.herokuapp.com/razorpay").then(
+                              function(response) {
+                                console.log(response);
+                                console.log(JSON.stringify(response))
+                                return response;
+                              }
+                           )
+
+        alert("Data " + data)
     
         const options = {
             "key": _DEV_ ? 'rzp_test_8OXCvHsV5OiOpe' : 'prod-key', // Enter the Key ID generated from the Dashboard
-            "amount": "50000", // 100p = 1rupee
-            "currency": "INR",
+            //"amount": "50000", // 100p = 1rupee
+            //"currency": "INR",
             "name": "Credenz",
             "description": "Test Transaction",
             "image": "",
-            "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             "handler": function (response){
                 alert(response.razorpay_payment_id);
                 alert(response.razorpay_order_id);
                 alert(response.razorpay_signature)
             },
+            
             "prefill": {
-                "name": "Gaurav Kumar",
+                "name": localStorage.getItem("user") ? JSON.stringify(user["name"]).replace(/\"/g, "") : "",
                 "email": "gaurav.kumar@example.com",
                 "contact": "9999999999"
             },
