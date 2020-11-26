@@ -16,7 +16,9 @@ const Home=()=> {
             <div className="d-flex justify-content-center">
                 <Timer/>
             </div>
-            <Aboutus id="Aboutus" />
+            <div id="Aboutus">
+                <Aboutus/>
+            </div>
             <div className={classes.sponsor}> < Sponsors /></div>   
             </div>
             <SideEventButton />

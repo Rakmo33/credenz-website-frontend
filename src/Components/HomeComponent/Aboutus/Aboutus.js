@@ -6,7 +6,7 @@ import {FadeInUp, FadeInRight} from 'animate-components';
 const aboutus = (props) => {
     return (
         <>
-<Container fluid>
+<Container fluid id="Aboutus" >
            
             <h1 className={classes.mid} style={{color: '#dadada'}}>About US</h1>
             <Row className={classes.credenz}>

@@ -80,7 +80,7 @@ function NavBar() {
                     </Link>
                 </li> */}
             <li className='nav-item'>
-              <Link to='./about' className='nav-link'>
+              <Link to={{pathname:'./about', hash:'#Aboutus'}} className='nav-link'>
                 <samp>About Us</samp>
               </Link>
             </li>

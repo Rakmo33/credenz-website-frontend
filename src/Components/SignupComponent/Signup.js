@@ -276,7 +276,7 @@ function Signup() {
       </div>
 
       <Social />
-      <div className='footer'>
+      <div  className='footer heightFooter'>
         <Footer />
       </div>
     </>

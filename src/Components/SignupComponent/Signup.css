@@ -64,3 +64,7 @@ select.form-control {
 small {
   width: 100%;
 }
+
+.heightFooter{
+  margin-top: 44px;
+}

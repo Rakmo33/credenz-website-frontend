@@ -70,7 +70,7 @@ const Feedback = () => {
         <button type="submit" className="btn">Submit</button>
        </form>
        <Social />
-       <div style={{marginTop:'28vh'}} > <Footer/></div>
+       <div style={{marginTop:'31vh'}} > <Footer/></div>
       
      </>
       );
