@@ -1,0 +1,53 @@
+.anim {
+    position: relative;
+    height: 720px;
+    width: 1524px;
+    background-color: black;
+}
+.anim-iframe{
+    display: block;
+    transition: ease;
+}
+.anim-iframe-before{
+    display: none;
+}
+.anim-text-container{
+    position: absolute;
+    top: 42%;
+    left:35%;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: block;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+}
+.anim-text-container-before{
+    display: none;
+}
+.anim-text{
+    width: 700px;
+    object-fit: contain;
+    transition-timing-function: ease-in;
+    transition: all 2s;
+}
+.anim-logo-container{
+    position: absolute;
+    top: 30%;
+    left: 18%;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+}
+.anim-logo-container-before{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+}
+.anim-logo{
+    height: 320px;
+    object-fit: contain;
+    transition-timing-function: ease-in;
+    transition: all 1s;
+}
+.anim-logo-before{
+    height: 520px;
+    object-fit: contain;
+}
