@@ -26,28 +26,62 @@
 .anim-text{
     width: 700px;
     object-fit: contain;
-    transition-timing-function: ease-in;
-    transition: all 2s;
+    /* transition-timing-function: ease-in;
+    transition: all 2s; */
+    /* animation-delay: 2s; */
+    animation-name: fadeIn;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
 }
+
 .anim-logo-container{
     position: absolute;
     top: 30%;
     left: 18%;
-    transition-timing-function: ease-in;
-    transition: all 1s;
+    /* transition-timing-function: ease-in;
+    transition: all 1s; */
 }
 .anim-logo-container-before{
     position: absolute;
-    top: 10%;
-    left: 35%;
+    /* height: 320px;
+    object-fit: contain; */
+    top: 12%;
+    left: 33%;
+    height: 10px;
 }
 .anim-logo{
     height: 320px;
     object-fit: contain;
-    transition-timing-function: ease-in;
-    transition: all 1s;
+    /* transition-timing-function: ease-in;
+    transition: all 1s; */
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
 }
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
 .anim-logo-before{
-    height: 520px;
+    height: 420px;
     object-fit: contain;
+}
+.anim-logo-after{
+    animation-name: fadeInAfter;
+    animation-duration: 6s;
+}
+@keyframes fadeInAfter {
+    0% {
+        opacity: 0;
+        /* transform:translateX(0%); */
+    }
+    50%{
+        opacity: 1;
+        /* transform:translateX(0%); */
+    }
+    100%{
+        /* transform:translateX(-100%); */
+        opacity: 1;
+    }
 }
