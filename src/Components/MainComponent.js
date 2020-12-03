@@ -9,7 +9,7 @@ import Signup from './SignupComponent/Signup';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './Navbar/Navbar';
 import "bootstrap/dist/css/bootstrap.css";
-import About from "../Components/HomeComponent/HomeComponent";
+import About from "../Components/HomeComponent/Aboutus/Aboutus";
 import SideEvents from "./SideEvents/sideEvents";
 import LeaderBoard from "./SideEvents/leaderboard";
 // import Footer from "../Components/Footer/footer";
