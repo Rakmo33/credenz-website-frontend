@@ -17,7 +17,7 @@ function NavBar() {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg navbar-inner nav-colour'>
+      <nav className='navbar navbar-expand-lg navbar-inner nav-colour '>
         <Link to='/home' className='navbar-brand'>
           <img
             className='pisblogo'

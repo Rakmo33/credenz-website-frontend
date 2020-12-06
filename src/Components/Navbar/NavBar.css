@@ -6,6 +6,17 @@
     width:6rem;
     height: 2rem;
 }
+
+.navbar{
+    position: fixed !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1000;
+}
+
 a:visited{
     color: white;
 }
@@ -54,8 +65,8 @@ a:hover{
 }
 
 .nav-colour{
-    /* background-color: var(--dark-shade); */
-    background-color: transparent;
+    background-color: var(--dark-shade);
+    /* background-color: transparent; */
 }
 
 .navbar-toggler-icon {
