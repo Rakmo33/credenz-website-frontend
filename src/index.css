@@ -51,6 +51,7 @@ code {
     --main-brand: #5a6485;
     /* --dark-accent: #b76572;
   --dark-shades: #3859ab; */
-    --lighter-accent: #f0f0f1;
-    --dark-shade: #0c0c0c;
+
+  --lighter-accent: #f0f0f1;
+  --dark-shade: #0c0c0c;
 }
