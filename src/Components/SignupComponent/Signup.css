@@ -7,27 +7,32 @@
 */
 
 .border-md {
-  border-width: 2px;
+    border-width: 2px;
 }
 
 .btn-facebook {
-  background: #405D9D;
-  border: none;
+    background: #405D9D;
+    border: none;
 }
 
-.btn-facebook:hover, .btn-facebook:focus {
-  background: #314879;
+.btn-facebook:hover,
+.btn-facebook:focus {
+    background: #314879;
 }
 
 .btn-twitter {
-  background: #42AEEC;
-  border: none;
+    background: #42AEEC;
+    border: none;
 }
 
-.btn-twitter:hover, .btn-twitter:focus {
-  background: #1799e4;
+.btn-twitter:hover,
+.btn-twitter:focus {
+    background: #1799e4;
 }
 
+::placeholder {
+    font-weight: 400;
+}
 
 
 /*
@@ -39,32 +44,33 @@
 */
 
 body {
-  min-height: 100vh;
-  background-color: black;
+    min-height: 100vh;
+    background-color: black;
 }
 
 .form-control:not(select) {
-  padding: 1.5rem 0.5rem;
+    padding: 1.5rem 0.5rem;
 }
 
 select.form-control {
-  height: 52px;
-  padding-left: 0.5rem;
+    height: 52px;
+    padding-left: 0.5rem;
 }
 
 .form-control::placeholder {
-  color: #ccc;
-  font-weight: bold;
-  font-size: 0.9rem;
+    color: #ccc;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
+
 .form-control:focus {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 small {
-  width: 100%;
+    width: 100%;
 }
 
-.heightFooter{
-  margin-top: 44px;
+.heightFooter {
+    margin-top: 44px;
 }

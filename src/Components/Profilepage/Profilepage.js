@@ -2,12 +2,20 @@ import "./profile.css";
 import React, { useState } from "react";
 import jwt from "jwt-decode";
 import Footer from "../Footer/footer";
+import $ from "jquery";
 
 const Profile = () => {
   const logout = () => {
     localStorage.removeItem("user");
     window.location.reload(false); //refresh page
   };
+
+  var screenHeight = window.screen.height;
+  if (screenHeight < 901) {
+    $("body").css("zoom", 0.8);
+  } else {
+    $("body").css("zoom", 1);
+  }
 
   let user = "";
 
