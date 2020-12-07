@@ -73,19 +73,6 @@ const Profile = () => {
                     <p>{JSON.stringify(user["phoneno"])}</p>
                   </div>
                 </div>
-
-                {/* <p className='pro-clg'>College : </p> */}
-                {/* <p className='pro-clg'>Email &nbsp;&nbsp;:</p> */}
-                {/* <p className='pro-clg'>Contact :</p> */}
-                {/* </div> */}
-                {/* <div className='pro-info2'> */}
-                {/* <p className='pro-clg'>{JSON.stringify(user["clgname"])}</p> */}
-                {/* <p className='pro-clg'>{JSON.stringify(user["email"])}</p> */}
-                {/* <p className='pro-clg'>{JSON.stringify(user["phoneno"])}</p> */}
-                {/* </div> */}
-
-                {/* <p className='pro-rank'>2nd</p> */}
-                {/* <p className='pro-events'>7</p> */}
               </div>
             </div>
             <div className='rank '>
@@ -96,37 +83,42 @@ const Profile = () => {
               </div>
             </div>
             <div className='eve '>
-              <p className='title'>Registered Events</p>
-              <table className='table table-striped table-dark'>
-                <tbody>
-                  <tr>
-                    <th scope='row'>1</th>
-                    <td>
-                      {/* <img src='./logos/clash.png' alt='' /> */}
-                      Clash
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope='row'>2</th>
-                    <td>Reverse Coding</td>
-                  </tr>
-                  <tr>
-                    <th scope='row'>3</th>
-                    <td>Pixelate</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className='eve-title'>
+                <i class='fa fa-check-circle'></i>
+                <p className='reg-eve'>Registered Events</p>
+              </div>
+              {/* <p className='title'>Registered Events</p> */}
+              <div className='table-container'>
+                <table className='table table-striped table-dark'>
+                  <tbody>
+                    <tr>
+                      <th scope='row'>1</th>
+                      <td>
+                        {/* <img src='./logos/clash.png' alt='' /> */}
+                        Clash
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope='row'>2</th>
+                      <td>Reverse Coding</td>
+                    </tr>
+                    <tr>
+                      <th scope='row'>3</th>
+                      <td>Pixelate</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
             <div className='svg'>
               <img src='award.svg' alt='svg' />
             </div>
-
-            <div>
-              <button className='btn custombtn' type='button' onClick={logout}>
-                Logout
-              </button>
-            </div>
+          </div>
+          <div className='logout-wrap'>
+            <button className='btn  logout' type='button' onClick={logout}>
+              Logout
+            </button>
           </div>
         </div>
         <div style={{ marginTop: "18px" }}>
