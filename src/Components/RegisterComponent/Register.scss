@@ -13,7 +13,10 @@
 
 .regPage {
     font-size: 18px;
-    min-height: 80vh;
+    min-height: 109vh;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
     .reg-head {
         width: fit-content;
         margin: 50px auto;
@@ -127,7 +130,7 @@
                 background: url(./logos/clash.png);
             }
             .Reverse {
-                background: url(./logos/clash.png);
+                background: url(./logos/rc.png);
             }
             .Pixelate {
                 background: url(./logos/pixelate.png);
@@ -149,6 +152,18 @@
             }
             .Quiz {
                 background: url(./logos/quiz.png);
+            }
+            .Datawiz {
+                background: url(./logos/datawiz.png);
+            }
+            .Paper {
+                background: url(./logos/paper.png);
+            }
+            .Network {
+                background: url(./logos/nth.png);
+            }
+            .Web {
+                background: url(./logos/web.png);
             }
             .event {
                 // background: url(./logos/clash.png);

@@ -78,7 +78,7 @@ function Signup() {
 
   return (
     <>
-      <div className='container'>
+      <div className='container mt-5'>
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
@@ -276,7 +276,7 @@ function Signup() {
       </div>
 
       <Social />
-      <div  className='footer heightFooter'>
+      <div className='footer heightFooter'>
         <Footer />
       </div>
     </>

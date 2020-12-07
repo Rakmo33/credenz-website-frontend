@@ -2,50 +2,51 @@
     margin-left: 20px;
     color: white;
 }
-.pisblogo{
-    width:6rem;
+
+.pisblogo {
+    width: 6rem;
     height: 2rem;
 }
 
-.navbar{
+.navbar {
     position: fixed !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     overflow: hidden;
+    top: 0 !important;
     width: 100%;
     z-index: 1000;
     top: 0%;
 }
 
-a:visited{
+a:visited {
     color: white;
 }
 
-@media only screen and (min-width:769px)
-{
-    .profile{
-    margin-left:80px;
+@media only screen and (min-width:769px) {
+    .profile {
+        margin-left: 80px;
     }
 }
 
-a.active{
+a.active {
     border-bottom: 3px solid rebeccapurple;
 }
 
-samp:hover{
+samp:hover {
     padding-bottom: 5px;
     border-bottom: 3px solid #1e90ff;
     color: #add8e6 !important;
 }
 
-.custombtn{
+.custombtn {
     background-color: #ccc !important;
     border-radius: 16px !important;
     padding: 4px 12px !important;
 }
 
-a:hover{
+a:hover {
     color: white !important;
 }
 
@@ -61,45 +62,51 @@ a:hover{
     margin-left: 2%;
 }
 
-.navbar-inner{
+.navbar-inner {
     color: white;
 }
 
-.nav-colour{
+.nav-colour {
     background-color: var(--dark-shade);
     /* background-color: transparent; */
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
-  border: transparent;
-  padding: 15px; 
-};
-    /* padding-top: 5px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+    border: transparent;
+    padding: 15px;
+}
+
+;
+
+/* padding-top: 5px;
   } */
+
 
 /* .navbar-toggler-icon::before {
     font-family: FontAwesome;
     content: "\f0c9"; fa-bars, fa-navicon
   } */
 
-.navbar-brand{
+.navbar-brand {
     display: inline-block;
 }
 
+
 /*for Galaxy phones*/
+
 @media only screen and (max-width: 280px) {
-    
     .navbar {
         padding: 0.5rem 0rem;
     }
 }
 
-@media (max-width: 600px){
-    a.navbar-brand{
+@media (max-width: 600px) {
+    a.navbar-brand {
         display: contents;
     }
 }
+
 
 /* @media (max-width: 490px){
     a.navbar-brand{

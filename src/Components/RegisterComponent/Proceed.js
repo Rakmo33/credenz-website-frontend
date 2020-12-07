@@ -4,7 +4,6 @@ function Proceed(props) {
   if (props.isVisible)
     return (
       <div>
-        <div>{props.formData.name1}</div>
         <div className={props.cls}>
           <button className='btn btn-primary next-btn'>
             Proceed For Payment

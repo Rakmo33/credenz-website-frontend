@@ -1,6 +1,14 @@
 .regPage {
   font-size: 18px;
-  min-height: 80vh;
+  min-height: 109vh;
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .regPage .reg-head {
@@ -174,7 +182,7 @@
 }
 
 .regPage .container .event-icons .Reverse {
-  background: url(./logos/clash.png);
+  background: url(./logos/rc.png);
 }
 
 .regPage .container .event-icons .Pixelate {
@@ -203,6 +211,22 @@
 
 .regPage .container .event-icons .Quiz {
   background: url(./logos/quiz.png);
+}
+
+.regPage .container .event-icons .Datawiz {
+  background: url(./logos/datawiz.png);
+}
+
+.regPage .container .event-icons .Paper {
+  background: url(./logos/paper.png);
+}
+
+.regPage .container .event-icons .Network {
+  background: url(./logos/nth.png);
+}
+
+.regPage .container .event-icons .Web {
+  background: url(./logos/web.png);
 }
 
 .regPage .container .event-icons .event {
