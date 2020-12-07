@@ -5,15 +5,15 @@ function Timer() {
   const [year, setYear] = useState(new Date().getFullYear());
 
   const calculateTimeLeft = () => {
-    let difference = +new Date(`12/01/${year}`) - +new Date();
+    let difference = +new Date(`12/31/${year}`) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        hrs: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        mins: Math.floor((difference / 1000 / 60) % 60),
+        secs: Math.floor((difference / 1000) % 60),
       };
     }
 
@@ -49,14 +49,16 @@ function Timer() {
         {timeLeft[interval]} {interval}{" "}
       </span>
     );
+
   });
 
+
   return (
-    <div className='rounded bg-gradient-1 text-white shadow p-5 text-center mb-5'>
+    <div className='text-white shadow p-5 text-center mb-5'>
       <p
         className='mb-4 font-weight-bold text-uppercase'
-        style={{ fontSize: 30, color: "black" }}>
-        Credenz 20 starts in
+        style={{ fontSize: 30, color: "white" }}>
+        Credenz 21 starts in
       </p>
       <div
         id='clock-b'
