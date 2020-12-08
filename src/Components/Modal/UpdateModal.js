@@ -37,8 +37,8 @@ function Modal2({ show, handleClose }) {
         else updates.push(res[i].info);
       }
       setUpdateList(
-        updates.map((x) => {
-          return <li key={x}>{x}</li>;
+        updates.map((x, index) => {
+          return <li key={index}>{x}</li>;
         })
       );
     });
