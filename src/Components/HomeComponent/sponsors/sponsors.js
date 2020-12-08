@@ -1,13 +1,13 @@
 import React from "react";
-import 'react-multi-carousel/lib/styles.css';
-import {Row, Col, Container} from 'react-bootstrap';
-import Sponsor from './sponsor/sponsor';
+import "react-multi-carousel/lib/styles.css";
+import { Row, Col, Container } from "react-bootstrap";
+import Sponsor from "./sponsor/sponsor";
 
 // const sponsors =(props)=>{
 //     return(
 //     <div className={classes.mid}>
 //         <h2 >Our Sponsors</h2>
-    
+
 //         <Carousel
 //           additionalTransfrom={0}
 //           arrows={false}
@@ -69,20 +69,36 @@ import Sponsor from './sponsor/sponsor';
 // </div>
 //     );
 
-
-const sponsors =(props)=>{
-  return(
-    <Container fluid>
-      <h2 style={{textAlign:'center', color: '#dadada'}}>Sponsors</h2>
-      <Row>
-        <Col md={2} sm={4} ><Sponsor url={'aarnell.png'}></Sponsor></Col>
-        <Col md={2} sm={4}><Sponsor url={'avaya.jpg'}></Sponsor></Col>
-        <Col md={2} sm={4}><Sponsor url={"Byju's2.jpg"}></Sponsor></Col>
-        <Col md={2} sm={4}><Sponsor url={'c3.jpg'}></Sponsor></Col>
-        <Col md={2} sm={4}><Sponsor url={'codechef.jpg'}></Sponsor></Col>
-        <Col md={2} sm={4}><Sponsor url={'finiq2.png'}></Sponsor></Col>
-      </Row>
-      {/* <Row>
+const sponsors = (props) => {
+  return (
+    <div
+      data-aos='fade-up'
+      data-aos-offset='200'
+      data-aos-easing='ease-in-sine'
+      data-aos-duration='600'>
+      <Container fluid>
+        <h2 style={{ textAlign: "center", color: "#dadada" }}>Sponsors</h2>
+        <Row>
+          <Col md={2} sm={4}>
+            <Sponsor url={"aarnell.png"}></Sponsor>
+          </Col>
+          <Col md={2} sm={4}>
+            <Sponsor url={"avaya.jpg"}></Sponsor>
+          </Col>
+          <Col md={2} sm={4}>
+            <Sponsor url={"Byju's2.jpg"}></Sponsor>
+          </Col>
+          <Col md={2} sm={4}>
+            <Sponsor url={"c3.jpg"}></Sponsor>
+          </Col>
+          <Col md={2} sm={4}>
+            <Sponsor url={"codechef.jpg"}></Sponsor>
+          </Col>
+          <Col md={2} sm={4}>
+            <Sponsor url={"finiq2.png"}></Sponsor>
+          </Col>
+        </Row>
+        {/* <Row>
           <Col md={2} sm={4}><Sponsor url={'ims2.jpg'}>nairobi</Sponsor></Col>
           <Col md={2} sm={4}><Sponsor url={'interview3.jpg'}>tokyo</Sponsor></Col>
           <Col md={2} sm={4}><Sponsor url={'tcs.png'}>bogata</Sponsor></Col>
@@ -90,9 +106,9 @@ const sponsors =(props)=>{
           <Col md={2} sm={4}><Sponsor url={'aarnell.png'}>spain</Sponsor></Col>
           <Col md={2} sm={4}><Sponsor url={'aarnell.png'}>mint</Sponsor></Col>
       </Row> */}
-    </Container>
+      </Container>
+    </div>
   );
-}
+};
 
 export default sponsors;
-

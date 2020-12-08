@@ -5,10 +5,10 @@ import Footer from "../Footer/footer";
 import $ from "jquery";
 
 const Profile = () => {
-  const logout = () => {
-    localStorage.removeItem("user");
-    window.location.reload(false); //refresh page
-  };
+  // const logout = () => {
+  //   localStorage.removeItem("user");
+  //   window.location.reload(false); //refresh page
+  // };
 
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
@@ -122,11 +122,11 @@ const Profile = () => {
               <img src='img/award.svg' alt='svg' />
             </div>
           </div>
-          <div className='logout-wrap'>
+          {/* <div className='logout-wrap'>
             <button className='btn  logout' type='button' onClick={logout}>
               Logout
             </button>
-          </div>
+          </div> */}
         </div>
         <div style={{ marginTop: "18px" }}>
           <Footer />

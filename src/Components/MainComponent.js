@@ -17,7 +17,16 @@ import Team from "../Components/Team/Team";
 import Profile from "../Components/Profilepage/Profilepage";
 import Admin from "../Components/AdminSection/Admin";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 class Main extends Component {
+  componentDidMount() {
+    AOS.init({
+      duration: 2000,
+    });
+  }
+
   render() {
     const HomePage = () => {
       return <Home />;
