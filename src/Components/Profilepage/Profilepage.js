@@ -1,5 +1,5 @@
 import "./profile.css";
-import React, { useState } from "react";
+import React from "react";
 import jwt from "jwt-decode";
 import Footer from "../Footer/footer";
 import $ from "jquery";
@@ -28,7 +28,6 @@ const Profile = () => {
           <div className='wrapper'>
             <div className='pro  '>
               <div className='pro-pic'>
-                {/* <img src='avatar.png' alt='profile' srcset='' /> */}
                 <i className='fa fa-id-card'></i>
                 <p className='pro-username'>
                   {JSON.stringify(user["username"]).replace(/^"(.*)"$/, "$1")}
@@ -86,13 +85,13 @@ const Profile = () => {
             <div className='rank '>
               <p className='title'>Your Rank</p>
               <div className='rank-pic'>
-                <img src='rankk.png' alt='award' srcset='' />
+                <img src='img/rankk.png' alt='award' />
                 <p className='rank-num'>#7</p>
               </div>
             </div>
             <div className='eve '>
               <div className='eve-title'>
-                <i class='fa fa-check-circle'></i>
+                <i className='fa fa-check-circle'></i>
                 <p className='reg-eve'>Registered Events</p>
               </div>
               {/* <p className='title'>Registered Events</p> */}
@@ -120,7 +119,7 @@ const Profile = () => {
             </div>
 
             <div className='svg'>
-              <img src='award.svg' alt='svg' />
+              <img src='img/award.svg' alt='svg' />
             </div>
           </div>
           <div className='logout-wrap'>

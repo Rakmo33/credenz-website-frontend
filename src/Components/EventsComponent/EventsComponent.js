@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SideEvent from "../sideEventButton/sideEvent";
 import Modal1 from "../Modal/Modal";
 import axios from "axios";
@@ -6,8 +6,7 @@ import Animation from "./Animation";
 import { EVENTS } from "./allEvents";
 import Footer from "../Footer/footer";
 const Events = () => {
-
- // window.location.reload(false); //refresh page
+  // window.location.reload(false); //refresh page
 
   const [show, setShow] = useState(false);
   const [event, setEvent] = useState("clash");
@@ -26,18 +25,18 @@ const Events = () => {
     //console.log("I am response" + response);
     const data = await response.data;
     //console.log("I am data" + JSON.stringify(data));
-    setTimeout(() => {
-      console.log("I am sleeping");
-    }, 5);
+
     return data;
   }
 
-  let result = AllEvents();
+  useEffect(() => {
+    let result = AllEvents();
 
-  result.then((res) => {
-    setEVENTS(res);
-    //window.location.reload(false); //refresh page
-  });
+    result.then((res) => {
+      setEVENTS(res);
+      //window.location.reload(false); //refresh page
+    });
+  }, []);
 
   //console.log("Events"+ JSON.stringify(EVENTS))
 
@@ -67,8 +66,8 @@ const Events = () => {
         event={event}
         event_info={EVENTS}
       />
-      <div style={{marginTop:"70vh"}} >
-        <Footer/>
+      <div style={{ marginTop: "70vh" }}>
+        <Footer />
       </div>
     </div>
   );

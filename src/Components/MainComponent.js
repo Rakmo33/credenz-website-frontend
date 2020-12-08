@@ -1,13 +1,13 @@
 //"start": "npm run build && (cd server && npm start)",
 
-import React, { Component, useState } from 'react';
-import  Home  from './HomeComponent/HomeComponent';
-import  Events  from './EventsComponent/EventsComponent';
-import  Register  from './RegisterComponent/RegisterComponent';
-import  Contact  from './ContactComponent/ContactComponent';
-import Signup from './SignupComponent/Signup';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import NavBar from './Navbar/Navbar';
+import React, { Component } from "react";
+import Home from "./HomeComponent/HomeComponent";
+import Events from "./EventsComponent/EventsComponent";
+import Register from "./RegisterComponent/RegisterComponent";
+import Contact from "./ContactComponent/ContactComponent";
+import Signup from "./SignupComponent/Signup";
+import { Switch, Route, Redirect } from "react-router-dom";
+import NavBar from "./Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.css";
 import About from "../Components/HomeComponent/Aboutus/Aboutus";
 import SideEvents from "./SideEvents/sideEvents";
@@ -19,7 +19,6 @@ import Admin from "../Components/AdminSection/Admin";
 
 class Main extends Component {
   render() {
-
     const HomePage = () => {
       return <Home />;
     };
@@ -60,7 +59,7 @@ class Main extends Component {
 
     return (
       <div>
-        <NavBar />    
+        <NavBar />
         <Switch>
           <Route path='/home' component={HomePage} />
           <Route path='/events' component={EventsPage} />
