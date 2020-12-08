@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Modal1 from "../Modal/Modal";
@@ -14,6 +16,39 @@ function NavBar() {
   const [update, setUpdate] = useState(false);
   const handleClose1 = () => setUpdate(false);
   const handleShow1 = () => setUpdate(true);
+
+  const location = useLocation();
+
+  console.log(localStorage.getItem("user"));
+
+  const logout = () => {
+    localStorage.removeItem("user");
+    window.location.reload(false); //refresh page
+  };
+
+  const LoginBtn = () => {
+    if (!localStorage.getItem("user")) {
+      return (
+        <div className='login-wrap'>
+          <button
+            id='login'
+            className='btn  login'
+            type='button'
+            onClick={handleShow}>
+            Login
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div className='logout-wrap'>
+          <button className='btn  logout' type='button' onClick={logout}>
+            Logout
+          </button>
+        </div>
+      );
+    }
+  };
 
   return (
     <>
@@ -51,22 +86,42 @@ function NavBar() {
                 </li>  */}
             <li className='nav-item profile'>
               <Link to='/profile' className='nav-link'>
-                <samp>My Profile</samp>
+                <samp
+                  className={
+                    location.pathname === "/profile" ? "active-nav-tab" : ""
+                  }>
+                  My Profile
+                </samp>
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/events' className='nav-link'>
-                <samp>Events</samp>
+                <samp
+                  className={
+                    location.pathname === "/events" ? "active-nav-tab" : ""
+                  }>
+                  Events
+                </samp>
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/register' className='nav-link'>
-                <samp>Register</samp>
+                <samp
+                  className={
+                    location.pathname === "/register" ? "active-nav-tab" : ""
+                  }>
+                  Register
+                </samp>
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/sideEvents' className='nav-link'>
-                <samp>Side-Events</samp>
+                <samp
+                  className={
+                    location.pathname === "/sideEvents" ? "active-nav-tab" : ""
+                  }>
+                  Side-Events
+                </samp>
               </Link>
             </li>
             <li className='nav-item' onClick={handleShow1}>
@@ -80,24 +135,30 @@ function NavBar() {
                     </Link>
                 </li> */}
             <li className='nav-item'>
-              <Link to={{pathname:'./about', hash:'#Aboutus'}} className='nav-link'>
-                <samp>About Us</samp>
+              <Link
+                to={{ pathname: "./about", hash: "#Aboutus" }}
+                className='nav-link'>
+                <samp
+                  className={
+                    location.pathname === "/about" ? "active-nav-tab" : ""
+                  }>
+                  About Us
+                </samp>
               </Link>
             </li>
             <li className='nav-item'>
               <Link to='/contact' className='nav-link'>
-                <samp>Contact Us</samp>
+                <samp
+                  className={
+                    location.pathname === "/contact" ? "active-nav-tab" : ""
+                  }>
+                  Contact Us
+                </samp>
               </Link>
             </li>
           </ul>
         </div>
-        <button
-          id='login'
-          type='button'
-          className='btn custombtn btn-sm d-none d-lg-block'
-          onClick={handleShow}>
-          Login
-        </button>
+        <LoginBtn></LoginBtn>
 
         <Link
           id='logoieee'

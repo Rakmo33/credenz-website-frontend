@@ -8,7 +8,7 @@ const EventCard = ({ logo, name, info }) => {
       <div className='card-body'>
         <h5 className='card-title'>{name}</h5>
         <p className='card-text'>{info}</p>
-        <a href='#' className='stretched-link'>
+        <a href='.' className='stretched-link'>
           <button className='play'>Play</button>
         </a>
       </div>

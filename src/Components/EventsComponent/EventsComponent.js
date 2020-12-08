@@ -3,7 +3,7 @@ import SideEvent from "../sideEventButton/sideEvent";
 import Modal1 from "../Modal/Modal";
 import axios from "axios";
 import Animation from "./Animation";
-import { EVENTS } from "./allEvents";
+// import { EVENTS } from "./allEvents";
 import Footer from "../Footer/footer";
 const Events = () => {
   // window.location.reload(false); //refresh page
