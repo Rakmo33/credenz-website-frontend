@@ -19,8 +19,6 @@ function NavBar() {
 
   const location = useLocation();
 
-  console.log(localStorage.getItem("user"));
-
   const logout = () => {
     localStorage.removeItem("user");
     window.location.reload(false); //refresh page

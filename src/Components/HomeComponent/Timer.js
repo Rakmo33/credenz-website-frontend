@@ -47,9 +47,9 @@ function Timer() {
   const timerComponents = [];
 
   Object.keys(timeLeft).forEach((interval, index) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
+    // if (!timeLeft[interval]) {
+    //   return 0;
+    // }
 
     timerComponents.push(
       <span key={index}>
