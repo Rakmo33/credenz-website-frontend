@@ -63,14 +63,14 @@
 .our-team .title{
     font-size: 22px;
     font-weight: 700;
-    color: #3b3b3b;
+    color: #faa13b;
     text-transform: capitalize;
     margin: 0 0 8px 0;
 }
 .our-team .post{
     font-size: 13px;
     font-weight: 500;
-    color: #6e6e70;
+    color: #e8e8f8;
     text-transform: capitalize;
 }
 @media only screen and (max-width: 990px){
@@ -82,7 +82,7 @@
     opacity: 0.9;
     width:15rem;
     margin:auto;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     /* border-radius:50%;
     border:2px solid #1e90ff; */
     padding:5px;
@@ -92,4 +92,8 @@
     color: #0f8edf;
     transform: scale(1.5);
     transition: transform .2s;
+}
+
+i{
+    font-size: 25px !important;
 }
