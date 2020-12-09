@@ -25,9 +25,9 @@ a:visited {
 }
 
 @media only screen and (min-width:769px) {
-    .profile {
+    /* .profile {
         margin-left: 80px;
-    }
+    } */
 }
 
 a.active {
@@ -40,6 +40,54 @@ samp:hover {
     color: #add8e6 !important;
 }
 
+.active-nav-tab {
+    padding-bottom: 5px;
+    border-bottom: 3px solid #1e90ff;
+    color: #add8e6 !important;
+}
+
+.logout-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.login-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.logout-wrap button.logout {
+    padding: 5px 10px;
+    background-color: #ee4848;
+    margin: auto;
+    font-weight: 500;
+    color: white;
+}
+
+.logout-wrap button.logout:hover {
+    background-color: #f53f3f;
+}
+
+.login-wrap button.login {
+    padding: 5px 10px;
+    background-color: #1e90ff;
+    margin: auto;
+    font-weight: 500;
+    color: white;
+}
+
+.login-wrap button.login:hover {
+    background-color: #115396;
+}
+
 .custombtn {
     background-color: #ccc !important;
     border-radius: 16px !important;
@@ -47,7 +95,8 @@ samp:hover {
 }
 
 a:hover {
-    color: white !important;
+    color: white;
+    text-decoration: none !important;
 }
 
 .nav-link {

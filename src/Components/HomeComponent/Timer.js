@@ -32,26 +32,31 @@ function Timer() {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+    let isMounted = true;
+
+    if (isMounted)
+      setTimeout(() => {
+        setTimeLeft(calculateTimeLeft());
+      }, 1000);
+
+    return () => {
+      isMounted = false;
+    };
   });
 
   const timerComponents = [];
 
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
+  Object.keys(timeLeft).forEach((interval, index) => {
+    // if (!timeLeft[interval]) {
+    //   return 0;
+    // }
 
     timerComponents.push(
-      <span>
+      <span key={index}>
         {timeLeft[interval]} {interval}{" "}
       </span>
     );
-
   });
-
 
   return (
     <div className='text-white shadow p-5 text-center mb-5'>

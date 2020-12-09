@@ -13,8 +13,8 @@ if (matchMedia) {
 // media query change
 function WidthChange(mq) {
   if (mq.matches) {
-    shape.setAttribute("viewBox", "0 0 765 587");
-    shape.setAttribute("enable-background", "0 0 765 587");
+    // shape.setAttribute("viewBox", "0 0 765 587");
+    // shape.setAttribute("enable-background", "0 0 765 587");
   } else {
     shape.setAttribute("viewBox", "0 0 592 588");
     shape.setAttribute("enable-background", "0 0 592 588");

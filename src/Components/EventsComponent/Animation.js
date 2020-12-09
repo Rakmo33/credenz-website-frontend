@@ -588,9 +588,7 @@ function Animation() {
           {/*dialog*/}
         </div>
         {/*allDialogs*/}
-        <a href className='replay button'>
-          Replay
-        </a>
+        <a className='replay button'>Replay</a>
         <div id='slider' />
       </div>
     </div>
