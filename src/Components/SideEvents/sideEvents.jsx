@@ -16,7 +16,7 @@ const SideEvents = () => {
         <div className="container-fluid cont">
             <div className="row head">
               <div className="col-xl-10 col-md-10 ">
-                <div className="row nav" style={{height:"100%"}}>
+                <div className="row nav" style={{height:"100%",marginTop:"50px"}}>
                    <div className={select ==="Play"?"col-xl-6 tab select":"col-xl-6 tab"} ><h3 onClick={()=>handleSelect("Play")}>
                        Side Events
                    </h3></div>

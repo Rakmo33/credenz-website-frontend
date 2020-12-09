@@ -16,7 +16,7 @@ const Contact = () => {
     <div className="container-fluid cont">
       <div className="row head">
         <div className="col-xl-10 col-md-10 col-sm-12  ">
-          <div className="row nav" style={{ height: "100%" }}>
+          <div className="row nav" style={{ height: "100%" ,marginTop:"50px"}}>
             <div
               className={
                 select === "Contact"
@@ -28,20 +28,12 @@ const Contact = () => {
             </div>
             <div
               className={
-                select === "Team"
+                select === "Feedback"
                   ? "col-xl-4 col-md-4  col-sm-2 tab select"
                   : "col-xl-4 tab  col-md-4  col-sm-2"
               }
             >
-               <h3 onClick={() => handleSelect("Team")}>Our Team</h3> 
-            </div>
-            <div
-              className={
-                select === "Feedback"
-                  ? "col-xl-6  col-md-6  col-sm-2 tab select "
-                  : "col-xl-6 tab  col-md-6 col-sm-2 "
-              }
-            >
+               
               <h3 onClick={() => handleSelect("Feedback")}>Feedback</h3>
             </div>
           </div>
