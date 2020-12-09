@@ -49,6 +49,17 @@ const Feedback = () => {
 
     return (
         <>
+      <div className='container mt-5'>
+        <div className='row py-5 mt-4 align-items-center'>
+          <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
+            <img
+              src={require('../../assests/img/f2.png')}
+              alt=''
+              className='img-fluid mb-3 '
+            />
+            {/* <h1>Feedback</h1> */}
+          </div>
+          <div className='col-md-7 col-lg-6 ml-auto'>
        <form className="feedback" onSubmit={handleSubmit}>
            <div className="form-group">
                <label htmlFor="name">Name</label>
@@ -69,9 +80,12 @@ const Feedback = () => {
         </div>
         <button type="submit" className="btn">Submit</button>
        </form>
-       <Social />
+
+      </div>
+      </div>
+      </div>
+      <Social />
        <div style={{marginTop:'31vh'}} > <Footer/></div>
-      
      </>
       );
 }

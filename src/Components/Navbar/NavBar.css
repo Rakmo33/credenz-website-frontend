@@ -17,11 +17,12 @@
     top: 0 !important;
     width: 100%;
     z-index: 1000;
+    top: 0%;
 }
 
-a:visited {
+/* a:visited {
     color: white;
-}
+} */
 
 @media only screen and (min-width:769px) {
     /* .profile {

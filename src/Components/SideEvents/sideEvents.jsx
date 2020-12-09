@@ -28,7 +28,7 @@ const SideEvents = () => {
         </div>
         <Social/>
         {select==="Play"? <SideEventCards/>:<Leaderboard/>}
-        {/* <Footer/>   */}
+        <Footer/>  
         </div>
      );
 }
