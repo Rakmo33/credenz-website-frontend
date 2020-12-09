@@ -2,6 +2,7 @@ import React from 'react';
 import Member from '../Team/Member';
 import {Container, Row, Col} from 'react-bootstrap';
 import Footer from '../Footer/footer';
+import './newmem.css'
 const team =()=>{
     return(
         <>
@@ -11,24 +12,25 @@ const team =()=>{
                <Member  
                             name={"Aditi Srivastava"}
                             url={'aditi.jpeg'} 
-                            // pos={"Web Master"}
+                            class="sideway"
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/aditi-srivastava-a6046818a/"}/>
               
                <Member
                             name={"Fatema Katawala"}
                             url={'fsk6.jpg'}
-                            // pos={"Web Master"}
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/fatema-katawala-2b99451a1/"}/>
             
                <Member
                             name={"Gaurav Ghati"}
                             url={'gaurav2.jpeg'}
-                            // pos={"Web Master"}
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/gauravghati/"}/>
              <Member
                             name={"Omkar Dabir"}
                             url={'dabir.jpeg'}
-                            // pos={"Web Master"}
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/coderdabir/"}/>
                {/* <Col md={3}><Member
                             name={"Member 4"}
@@ -40,23 +42,23 @@ const team =()=>{
                <Member  
                             name={"Sakshee Phade"}
                             url={'sakshee.jpeg'}
-                            // pos={"Web Master"}
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/saksheephade/"}/>
                 <Member
                             name={"Sanket Landge"}
                             url={'sanket.jpeg'}
-                            // pos={"Web Master"}
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/sanket-landge-293996194/"}/>
                <Member
                             name={"Shreya Deshpande"}
                             url={'shreya.jpg'}
-                            // pos={"Web Master"}
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/shreya-deshpande-420297191/"}/>
             
                <Member
                             name={"Yash Sonar"}
                             url={'yash.jpeg'}
-                            // pos={"Web Master"}
+                            pos={"Web Master"}
                             link={"https://www.linkedin.com/in/yash-sonar-b89265176/"}/>
            
                {/* <Col md={3}><Member
@@ -66,7 +68,7 @@ const team =()=>{
                 </Col> */}
            </Row>
        </Container>
-       <Footer/>
+       {/* <Footer/> */}
        </>
     );
 }
