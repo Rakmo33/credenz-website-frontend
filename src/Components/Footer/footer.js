@@ -9,7 +9,7 @@ const footer=()=>{
     <div className={classes.footer} >
         <Container style={{textAlign:"center"}}>
         <Row>
-            <span className={'footer-font'}>copyright @ PICT IEEE Student Branch</span>
+            <span className={'footer-font'}>copyright @ PICT IEEE Student Branch | Developed with &#9829; by PISB &nbsp; <Link to="/team"><span style={{color:"#6eabce"}}> Web Team</span></Link></span>
         </Row>
         
         <Row>
@@ -20,7 +20,7 @@ const footer=()=>{
             </div>
         </Row>
         <Row>
-            Developed with &#9829; by PISB &nbsp; <Link to="/team"><span style={{color:"#6eabce"}}> Web Team</span></Link>
+           
         </Row>
         </Container>
     </div>

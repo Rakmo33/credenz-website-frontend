@@ -55,7 +55,7 @@ const Feedback = () => {
             <img
               src={require('../../assests/img/f2.png')}
               alt=''
-              className='img-fluid mb-3 d-none d-md-block'
+              className='img-fluid mb-3 '
             />
             {/* <h1>Feedback</h1> */}
           </div>

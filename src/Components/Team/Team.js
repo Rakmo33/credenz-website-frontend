@@ -1,9 +1,12 @@
 import React from 'react';
 import Member from '../Team/Member';
 import {Container, Row, Col} from 'react-bootstrap';
+import Footer from '../Footer/footer';
 const team =()=>{
     return(
+        <>
        <Container fluid>
+           <br/><br/><br/>
            <Row style={{justifyContent: "center",marginTop:"20px"}}>
                <Member  
                             name={"Aditi Srivastava"}
@@ -63,6 +66,8 @@ const team =()=>{
                 </Col> */}
            </Row>
        </Container>
+       <Footer/>
+       </>
     );
 }
 
