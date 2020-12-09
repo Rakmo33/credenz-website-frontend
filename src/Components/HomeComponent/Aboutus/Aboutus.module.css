@@ -2,7 +2,8 @@
 
 
 .img_size_cred{
-    width: 50%;
+    width: 30%;
+    margin-left: 90px;
 }
 
 .img_size_pisb{
@@ -85,6 +86,7 @@
 @media (max-width:600px){
     .img_size_cred{
         width: 70%;
+        margin-left: 0%;
     }
     
     .img_size_pisb{
