@@ -66,9 +66,7 @@ const Events = () => {
         event={event}
         event_info={EVENTS}
       />
-      <div style={{ marginTop: "70vh" }}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

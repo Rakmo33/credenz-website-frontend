@@ -1,20 +1,21 @@
-.our-team{
+.our-team {
     background: #192b42;
     text-align: center;
     margin: 5px 10px;
-  
 }
-.our-team .pic{
+
+.our-team .pic {
     position: relative;
     overflow: hidden;
     transform: scale(1);
     transition: all 0.3s ease 0s;
-   
 }
-.our-team:hover .pic{
+
+.our-team:hover .pic {
     transform: scale(1.01);
 }
-.our-team .pic:after{
+
+.our-team .pic:after {
     content: "";
     width: 200px;
     height: 200px;
@@ -29,15 +30,18 @@
     transform-origin: 50% 50% 0;
     transition: all 0.35s ease 0s;
 }
-.our-team:hover .pic:after{
+
+.our-team:hover .pic:after {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
 }
-.our-team .pic img{
+
+.our-team .pic img {
     width: 100%;
     height: auto;
 }
-.our-team .read-more{
+
+.our-team .read-more {
     width: 100px;
     padding: 0 15px 15px 0;
     font-size: 14px;
@@ -53,47 +57,50 @@
     transform: translate3d(20px, 20px, 0px);
     transition: all 0.35s ease 0s;
 }
-.our-team:hover .read-more{
+
+.our-team:hover .read-more {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
 }
-.our-team .team-content{
+
+.our-team .team-content {
     padding: 20px 0;
 }
-.our-team .title{
+
+.our-team .title {
     font-size: 22px;
     font-weight: 700;
     color: #faa13b;
     text-transform: capitalize;
     margin: 0 0 8px 0;
 }
-.our-team .post{
+
+.our-team .post {
     font-size: 13px;
     font-weight: 500;
     color: #e8e8f8;
     text-transform: capitalize;
 }
-@media only screen and (max-width: 990px){
-    .our-team{ margin-bottom: 30px; }
+
+@media only screen and (max-width: 990px) {
+    .our-team {
+        margin-bottom: 30px;
+    }
 }
 
-.image{
-    height:14rem;
+.image {
+    height: 14rem;
     opacity: 0.9;
-    width:15rem;
-    margin:auto;
+    width: 15rem;
+    margin: auto;
     /* margin-top: 20px; */
     /* border-radius:50%;
     border:2px solid #1e90ff; */
-    padding:5px;
+    padding: 5px;
 }
 
- i:hover {
+i:hover {
     color: #0f8edf;
     transform: scale(1.5);
     transition: transform .2s;
-}
-
-i{
-    font-size: 25px !important;
 }

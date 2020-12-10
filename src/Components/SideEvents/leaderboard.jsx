@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "./table";
-import Social from '../sideEventButton/sideEvent';
-import Footer from '../Footer/footer';
+import Social from "../sideEventButton/sideEvent";
+import Footer from "../Footer/footer";
 
 const Leaderboard = () => {
   const [input, setInput] = useState("");
@@ -124,72 +124,64 @@ const Leaderboard = () => {
   };
 
   if (input.length > 0) {
-try{
-    switch (default_op) {
-      case "Username":
-        users = users.filter((u) => {
-          return u.name.match(input);
-        });
-        break;
-      case "Institution":
-        users = users.filter((u) => {
-          return u.college.match(input);
-        });
-        break;
-      case "Score":
-        users = users.filter((u) => {
-          return u.score.match(input);
-        });
-        break;
-      default: return(
-        "Invalid!"
-      );
+    try {
+      switch (default_op) {
+        case "Username":
+          users = users.filter((u) => {
+            return u.name.match(input);
+          });
+          break;
+        case "Institution":
+          users = users.filter((u) => {
+            return u.college.match(input);
+          });
+          break;
+        case "Score":
+          users = users.filter((u) => {
+            return u.score.match(input);
+          });
+          break;
+        default:
+          return "Invalid!";
+      }
+    } catch (e) {
+      setInput("");
+      // alert("invalid text");
     }
-}
-catch(e)
-{
-  setInput("");
- // alert("invalid text");
-  
-}
   }
 
   return (
     <>
-    <Social/>
-    <div
-      className="row"
-      style={{ justifyContent: "center", marginBottom: "20px" }}
-    >
-      
-      <div className="col-xl-9 col-md-9  mt-4">
-        <div className="row leaderboard-head">
-          <div className="search-box">
-            <input
-              type="text"
-              id="search"
-              placeholder="Search.."
-              onChange={handleSearch}
-              value={input}
-              autoComplete="off"
-            ></input>
-            <div className="dropdown">
-              <div className="default" onClick={handleClick}>
-                {default_op}
+      <Social />
+      <div
+        className='row'
+        style={{ justifyContent: "center", marginBottom: "20px" }}>
+        <div className='col-xl-9 col-md-9  mt-4'>
+          <div className='row leaderboard-head'>
+            <div className='search-box'>
+              <input
+                type='text'
+                id='search'
+                placeholder='Search..'
+                onChange={handleSearch}
+                value={input}
+                autoComplete='off'></input>
+              <div className='dropdown'>
+                <div className='default' onClick={handleClick}>
+                  {default_op}
+                </div>
+                <ul className={classes}>
+                  <li onClick={handleSelect}>Username</li>
+                  <li onClick={handleSelect}>Institution</li>
+                </ul>
               </div>
-              <ul className={classes}>
-                <li onClick={handleSelect}>Username</li>
-                <li onClick={handleSelect}>Institution</li>
-              </ul>
             </div>
           </div>
-        </div>
-        <div className="row body">
-          <Table users={users} />
+          <div className='row body'>
+            <Table users={users} />
+          </div>
         </div>
       </div>
-    </div>
-    <Footer/>  
     </>
   );
 };

@@ -1,16 +1,26 @@
 .social {
     margin: 10px 0;
-    margin-left: 25%;
-    margin-bottom: 20px;
 }
 
 .footer {
     justify-content: center;
-    display: grid;
+    align-items: center;
+    display: flex;
     background: #262626;
     padding: 10px 0;
     color: #fff;
     bottom: 0%;
+}
+
+.footer .footerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer .hiddenRow {
+    display: flex;
 }
 
 .iconfb {
@@ -19,7 +29,6 @@
     padding: 7px 15px;
     font-size: 25px;
     margin: 0 3px;
-   
 }
 
 .iconlink {
@@ -63,7 +72,7 @@
 }
 
 @media (max-width: 600px) {
-    .iconfb {
+    /* .iconfb {
         display: initial;
     }
     .iconinsta {
@@ -71,11 +80,11 @@
     }
     .iconlink {
         display: initial;
-    }
+    } */
 }
 
 @media( min-width:768px) {
-    .iconlink {
+    /* .iconlink {
         display: none;
     }
     .iconfb {
@@ -83,8 +92,14 @@
     }
     .iconinsta {
         display: none;
-    }
+    } */
     .social {
         margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .footer .hiddenRow {
+        display: none;
     }
 }
