@@ -22,9 +22,15 @@ import jwt from "jwt-decode";
 const Register = () => {
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
-    $("body").css("zoom", 0.8);
+    $(document).ready(function () {
+      // your code here...
+      $(".regPage").css({ transform: "scale(0.85)" });
+    });
   } else {
-    $("body").css("zoom", 1);
+    $(document).ready(function () {
+      // your code here...
+      $(".regPage").css({ transform: "scale(1)" });
+    });
   }
   // for total price
   const [total, setTotal] = useState(0);
