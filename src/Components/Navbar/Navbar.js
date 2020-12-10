@@ -52,13 +52,13 @@ function NavBar() {
   return (
     <>
       <nav className='navbar navbar-expand-xl navbar-inner nav-colour '>
-        <Link to='/home' className='navbar-brand'>
+        <a href='http://pictieee.in/' className='navbar-brand'>
           <img
             className='pisblogo'
             alt='logopisb'
             src={require("../../assests/img/logopisb.png")}
           />
-        </Link>
+        </a>
         {/* <button
           type='button'
           className='btn custombtn btn-sm d-inline d-lg-none ml-auto mr-2'
@@ -203,9 +203,9 @@ function NavBar() {
             </li>
 
             <li>
-              <Link
+              <a
                 id='logoieee'
-                to='/home'
+                href='https://www.ieee.org/'
                 className='navbar-brand d-none d-lg-block '>
                 <img
                   src={require("../../assests/img/ieeelogo.png")}
@@ -213,7 +213,7 @@ function NavBar() {
                   height='30px'
                   width='auto'
                 />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
