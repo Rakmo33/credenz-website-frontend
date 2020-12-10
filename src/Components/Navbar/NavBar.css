@@ -52,45 +52,46 @@ samp:hover {
 }
 
 .logout-wrap {
-    display: -webkit-box;
+    /* display: -webkit-box;
     display: -ms-flexbox;
-    /* display: flex; */
+  
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: center; */
+      /* display: flex; */
 }
 
 .login-wrap {
-    display: -webkit-box;
+    /* display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .logout-wrap button.logout {
-    padding: 5px 10px;
+    /* padding: 5px 10px;
     background-color: #ee4848;
     margin: auto;
     font-weight: 500;
-    color: white;
+    color: white; */
 }
 
 .logout-wrap button.logout:hover {
-    background-color: #f53f3f;
+    /* background-color: #f53f3f; */
 }
 
 .login-wrap button.login {
-    padding: 5px 10px;
+    /* padding: 5px 10px;
     background-color: #1e90ff;
     margin: auto;
     font-weight: 500;
-    color: white;
+    color: white; */
 }
 
 .login-wrap button.login:hover {
-    background-color: #115396;
+    /* background-color: #115396; */
 }
 
 .custombtn {
