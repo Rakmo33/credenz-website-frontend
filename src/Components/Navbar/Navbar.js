@@ -51,7 +51,7 @@ function NavBar() {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg navbar-inner nav-colour '>
+      <nav className='navbar navbar-expand-xl navbar-inner nav-colour '>
         <Link to='/home' className='navbar-brand'>
           <img
             className='pisblogo'
@@ -59,12 +59,17 @@ function NavBar() {
             src={require("../../assests/img/logopisb.png")}
           />
         </Link>
-        <button
+        {/* <button
           type='button'
           className='btn custombtn btn-sm d-inline d-lg-none ml-auto mr-2'
           onClick={handleShow}>
           Log in
-        </button>
+        </button> */}
+        <div onClick={handleShow1} className='hiddenBell'>
+          <div>
+            <i className='fa fa-bell' title='Updates'></i>
+          </div>
+        </div>
         <button
           className='navbar-toggler navbar-toggler-icon'
           type='button'
@@ -75,13 +80,22 @@ function NavBar() {
           aria-label='Toggle navigation'>
           {/* <span className="navbar-toggler-icon"></span> */}
         </button>
+
         <div className='collapse navbar-collapse' id='navbarNav'>
-          <ul className='navbar-nav ml-auto mr-auto'>
-            {/* <li className='nav-item' style={{ color: "ivory" }}>
+          <ul className='navbar-nav ml-auto pull-left mr-auto'>
+            <li className='nav-item' style={{ color: "ivory" }}>
               <Link to='/home' className='nav-link'>
-                Home
+                <samp
+                  className={
+                    location.pathname === "/home" &&
+                    location.hash !== "#Aboutus"
+                      ? "active-nav-tab"
+                      : ""
+                  }>
+                  Home
+                </samp>
               </Link>
-            </li> */}
+            </li>
 
             <li className='nav-item'>
               <Link to='/events' className='nav-link'>
@@ -152,33 +166,57 @@ function NavBar() {
                 </samp>
               </Link>
             </li>
+            <li className='hide nav-item'>
+              <LoginBtn></LoginBtn>
+            </li>
+
+            <li className='hide nav-item'>
+              <Link
+                id='logoieee'
+                to='/home'
+                className='navbar-brand d-none d-xl-block '>
+                <img
+                  src={require("../../assests/img/ieeelogo.png")}
+                  alt='PISB'
+                  height='30px'
+                  width='auto'
+                />
+              </Link>
+            </li>
             {/* <li className='nav-item' onClick={handleShow1}>
               <div className='nav-link' style={{ cursor: "pointer" }}>
                 <samp>Updates</samp>
               </div>
             </li> */}
           </ul>
-        </div>
-        <div className='nav-sitem' onClick={handleShow1}>
-          <div className='nav-lisnk' style={{ cursor: "pointer" }}>
-            {/* <samp> */}
-            <i className='fa fa-bell' title='Updates'></i>
-            {/* </samp> */}
-          </div>
-        </div>
-        <LoginBtn></LoginBtn>
+          <ul className='navbar-nav ml-auto second  pull-right'>
+            <li>
+              <div onClick={handleShow1}>
+                <div>
+                  <i className='fa fa-bell' title='Updates'></i>
+                </div>
+              </div>
+            </li>
 
-        <Link
-          id='logoieee'
-          to='/home'
-          className='navbar-brand d-none d-lg-block '>
-          <img
-            src={require("../../assests/img/ieeelogo.png")}
-            alt='PISB'
-            height='30px'
-            width='auto'
-          />
-        </Link>
+            <li>
+              <LoginBtn></LoginBtn>
+            </li>
+
+            <li>
+              <Link
+                id='logoieee'
+                to='/home'
+                className='navbar-brand d-none d-lg-block '>
+                <img
+                  src={require("../../assests/img/ieeelogo.png")}
+                  alt='PISB'
+                  height='30px'
+                  width='auto'
+                />
+              </Link>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <Modal1 show={show} handleClose={handleClose} type={login} />

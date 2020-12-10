@@ -20,15 +20,19 @@
     top: 0%;
 }
 
+.navbar-brand {
+    margin-left: 15px;
+}
+
 
 /* a:visited {
-    color: white;
+color: white;
 } */
 
 @media only screen and (min-width:769px) {
     /* .profile {
-        margin-left: 80px;
-    } */
+    margin-left: 80px;
+} */
 }
 
 a.active {
@@ -50,7 +54,7 @@ samp:hover {
 .logout-wrap {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -136,7 +140,17 @@ a:hover {
     font-size: 20px;
     padding: 5px;
     transition: all 0.15s;
-    margin-right: 25px;
+    cursor: pointer;
+}
+
+.navbar ul.second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul.second li {
+    margin: 0 10px;
 }
 
 .navbar i.fa-bell:hover {
@@ -169,13 +183,13 @@ a:hover {
 
 
 /* padding-top: 5px;
-  } */
+} */
 
 
 /* .navbar-toggler-icon::before {
-    font-family: FontAwesome;
-    content: "\f0c9"; fa-bars, fa-navicon
-  } */
+font-family: FontAwesome;
+content: "\f0c9"; fa-bars, fa-navicon
+} */
 
 .navbar-brand {
     display: inline-block;
@@ -196,9 +210,39 @@ a:hover {
     }
 }
 
+.navbar li.hide {
+    display: none;
+}
+
+.navbar .hiddenBell {
+    display: none;
+    margin: 0 15px;
+    margin-left: auto;
+}
+
+@media (max-width: 1199px) {
+    .navbar ul.second {
+        display: none;
+    }
+    .navbar li.hide {
+        display: initial;
+    }
+    .navbar .hiddenBell {
+        display: initial;
+    }
+}
+
+
+/* @media (min-width: 1100px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+} */
+
 
 /* @media (max-width: 490px){
-    a.navbar-brand{
-        display: contents;
-    }
+a.navbar-brand{
+    display: contents;
+}
 } */
