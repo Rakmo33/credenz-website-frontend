@@ -5,6 +5,8 @@ import axios from "axios";
 import Animation from "./Animation";
 // import { EVENTS } from "./allEvents";
 import Footer from "../Footer/footer";
+import Robo from "./robo";
+
 const Events = () => {
   // window.location.reload(false); //refresh page
 
@@ -45,9 +47,9 @@ const Events = () => {
   return (
     <div>
       <SideEvent />
-
+      
       <h1 style={{ color: "ivory" }}>Events Page</h1>
-      <ul style={{ color: "ivory" }}>
+      {/*<ul style={{ color: "ivory" }}>
         <li onClick={() => handleShow("clash")}>Clash</li>
         <li onClick={() => handleShow("rc")}>Reverse Coding</li>
         <li onClick={() => handleShow("enigma")}>Enigma</li>
@@ -55,9 +57,11 @@ const Events = () => {
         <li onClick={() => handleShow("webweaver")}>Webweaver</li>
         <li onClick={() => handleShow("bplan")}>BPlan</li>
         <li onClick={() => handleShow("quiz")}>Quiz</li>
-      </ul>
+      </ul>*/}
+      <Robo/>
 
-      <Animation></Animation>
+
+      {/*<Animation></Animation>*/}
 
       <Modal1
         show={show}
