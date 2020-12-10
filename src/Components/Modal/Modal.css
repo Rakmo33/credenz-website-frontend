@@ -64,7 +64,10 @@
 }
 
 .modal-login .input-group-addon {
-    max-width: 42px;
+    width: 42px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     text-align: center;
     background: none;
     border-bottom: 1px solid #ced4da;
@@ -76,21 +79,27 @@
 .modal-login .btn:active {
     font-size: 16px;
     font-weight: bold;
-    background: var(--light-shades) !important;
+    background: var(--light-shades);
     border-radius: 3px;
     border: none;
     min-width: 140px;
+    color: white;
 }
 
 .modal-login .btn:hover,
 .modal-login .btn:focus {
-    background: #179b81 !important;
+    background: #179b81;
+    color: white;
 }
 
 .modal-login .hint-text {
     text-align: center;
     padding-top: 5px;
-    font-size: 13px;
+    font-size: 15px;
+}
+
+.modal-login .loginbtnn {
+    font-size: 17px;
 }
 
 .modal-login .modal-footer {
@@ -122,11 +131,80 @@
 
 .modal-login .fa {
     font-size: 21px;
-    position: relative;
-    top: 6px;
+}
+
+.modal-login .fa-lock {
+    font-size: 28px;
 }
 
 .trigger-btn {
     display: inline-block;
     margin: 100px auto;
+}
+
+.modal-login .error {
+    display: none;
+}
+
+.modal-login .invalid.error {
+    text-align: center;
+    margin: 15px 0;
+    color: rgb(214, 42, 42);
+    animation: err 1s;
+    display: block;
+}
+
+.modal-login .loginBtnWrap #loginBtn {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.modal-login .loginBtnWrap {
+    position: relative;
+}
+
+.modal-login .loginBtnWrap span {
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    /* margin: auto; */
+    /* z-index: 500; */
+    left: 46%;
+    top: 10%;
+    border-left: 3px solid #083e57;
+    border-right: 3px solid #083e57;
+    /* border-right: 4px solid black; */
+    padding: 15px;
+    border-radius: 50%;
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes err {
+    0% {
+        transform: translateX(0px);
+    }
+    30% {
+        transform: translateX(5px);
+    }
+    40% {
+        transform: translateX(-5px);
+    }
+    60% {
+        transform: translateX(5px);
+    }
+    70% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }

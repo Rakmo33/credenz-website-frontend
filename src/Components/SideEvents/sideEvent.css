@@ -1,62 +1,59 @@
-.event-card{
+.event-card {
     width: 14rem;
-    margin:30px;
+    margin: 30px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
     background-color: #192b42;
     border: none !important;
     /* border-radius: 7px; */
-   font-family:  'Alata', sans-serif;
-  
+    /* font-family:  'Alata', sans-serif; */
     animation-name: slidedown;
-    animation-duration:  1s;
+    animation-duration: 1s;
     animation-fill-mode: backwards;
     animation-timing-function: ease;
 }
 
-.event-card:nth-child(2){
+.event-card:nth-child(2) {
     animation-delay: 0.2s;
 }
 
-.event-card:nth-child(3){
+.event-card:nth-child(3) {
     animation-delay: 0.4s;
 }
-.card .card-body{
-    border:none !important;
-   
-  
+
+.card .card-body {
+    border: none !important;
 }
-.event-card .card-body{
+
+.event-card .card-body {
     background-color: #192b42;
-    color:white;   
+    color: white;
     text-align: center;
 }
 
-.event-title{
-    margin-top:20px;
-    color:white;
+.event-title {
+    margin-top: 20px;
+    color: white;
     text-align: center;
 }
-.play{
-    border:1px solid white;
+
+.play {
+    border: 1px solid white;
     outline: none;
     background-color: transparent;
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 1);
-    color:white;
-    width:120px;
-    height:40px;
-   align-items: center;
-   
-   
+    color: white;
+    width: 120px;
+    height: 40px;
+    align-items: center;
     /* display: none; */
 }
 
-
-.side-event-logo{
-    height:10rem;
+.side-event-logo {
+    height: 10rem;
     opacity: 0.9;
-   width:10rem;
-    margin:auto;
+    width: 10rem;
+    margin: auto;
     margin-top: 20px;
     /* border-radius:50%; */
-    border:2px solid #030303;
+    border: 2px solid #030303;
 }

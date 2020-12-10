@@ -131,7 +131,42 @@ a:hover {
     padding: 15px;
 }
 
-;
+.navbar i.fa-bell {
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 5px;
+    transition: all 0.15s;
+    margin-right: 25px;
+}
+
+.navbar i.fa-bell:hover {
+    animation: ring 3s infinite;
+    color: #41c3ee !important;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0);
+    }
+    4% {
+        transform: scale(1.2);
+    }
+    8% {
+        transform: rotate(30deg);
+    }
+    10% {
+        transform: rotate(-30deg);
+    }
+    15% {
+        transform: rotate(30deg);
+        transform: scale(1.2);
+    }
+    20% {
+        transform: rotate(0);
+        transform: scale(1);
+    }
+}
+
 
 /* padding-top: 5px;
   } */

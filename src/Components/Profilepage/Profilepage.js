@@ -3,6 +3,7 @@ import React from "react";
 import jwt from "jwt-decode";
 import Footer from "../Footer/footer";
 import SideEventButton from "../sideEventButton/sideEvent";
+import LoginFirst from "../LoginFirst/LoginFirst";
 
 import $ from "jquery";
 
@@ -141,8 +142,10 @@ const Profile = () => {
     );
   } else {
     return (
-      <div className='profilepage'>
-        <h1>Login to view your profile!</h1>
+      <div>
+        <SideEventButton />
+        <LoginFirst></LoginFirst>
+        <Footer />
       </div>
     );
   }
