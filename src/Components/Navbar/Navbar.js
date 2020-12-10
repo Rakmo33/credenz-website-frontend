@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import "./NavBar.css";
 import Modal1 from "../Modal/Modal";
 import Modal2 from "../Modal/UpdateModal";
+import { faDivide } from "@fortawesome/free-solid-svg-icons";
+
 function NavBar() {
   let login = "login";
+  const location = useLocation();
 
   const [show, setShow] = useState(false);
 
@@ -16,8 +19,6 @@ function NavBar() {
   const [update, setUpdate] = useState(false);
   const handleClose1 = () => setUpdate(false);
   const handleShow1 = () => setUpdate(true);
-
-  const location = useLocation();
 
   const logout = () => {
     localStorage.removeItem("user");
@@ -76,22 +77,12 @@ function NavBar() {
         </button>
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav ml-auto mr-auto'>
-            {/* <li className="nav-item" style={{color: "ivory"}}>
-
-                    <Link to="/home" className="nav-link">
-                        Home
-                    </Link>
-                </li>  */}
-            <li className='nav-item profile'>
-              <Link to='/profile' className='nav-link'>
-                <samp
-                  className={
-                    location.pathname === "/profile" ? "active-nav-tab" : ""
-                  }>
-                  My Profile
-                </samp>
+            {/* <li className='nav-item' style={{ color: "ivory" }}>
+              <Link to='/home' className='nav-link'>
+                Home
               </Link>
-            </li>
+            </li> */}
+
             <li className='nav-item'>
               <Link to='/events' className='nav-link'>
                 <samp
@@ -99,16 +90,6 @@ function NavBar() {
                     location.pathname === "/events" ? "active-nav-tab" : ""
                   }>
                   Events
-                </samp>
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/register' className='nav-link'>
-                <samp
-                  className={
-                    location.pathname === "/register" ? "active-nav-tab" : ""
-                  }>
-                  Register
                 </samp>
               </Link>
             </li>
@@ -122,23 +103,30 @@ function NavBar() {
                 </samp>
               </Link>
             </li>
-            <li className='nav-item' onClick={handleShow1}>
-              <div className='nav-link' style={{ cursor: "pointer" }}>
-                <samp>Updates</samp>
-              </div>
+            <li className='nav-item'>
+              <Link to='/register' className='nav-link'>
+                <samp
+                  className={
+                    location.pathname === "/register" ? "active-nav-tab" : ""
+                  }>
+                  Register
+                </samp>
+              </Link>
             </li>
+
             {/* <li className="nav-item">
                     <Link  to="/leaderboard" className="nav-link">
                        <samp>LeaderBoard</samp>
                     </Link>
                 </li> */}
             <li className='nav-item'>
-              <Link
-                to={{ pathname: "./about", hash: "#Aboutus" }}
-                className='nav-link'>
+              <Link to='/home#Aboutus' className='nav-link'>
                 <samp
                   className={
-                    location.pathname === "/about" ? "active-nav-tab" : ""
+                    location.pathname === "/home" &&
+                    location.hash === "#Aboutus"
+                      ? "active-nav-tab"
+                      : ""
                   }>
                   About Us
                 </samp>
@@ -154,7 +142,29 @@ function NavBar() {
                 </samp>
               </Link>
             </li>
+            <li className='nav-item profile'>
+              <Link to='/profile' className='nav-link'>
+                <samp
+                  className={
+                    location.pathname === "/profile" ? "active-nav-tab" : ""
+                  }>
+                  My Profile
+                </samp>
+              </Link>
+            </li>
+            {/* <li className='nav-item' onClick={handleShow1}>
+              <div className='nav-link' style={{ cursor: "pointer" }}>
+                <samp>Updates</samp>
+              </div>
+            </li> */}
           </ul>
+        </div>
+        <div className='nav-sitem' onClick={handleShow1}>
+          <div className='nav-lisnk' style={{ cursor: "pointer" }}>
+            {/* <samp> */}
+            <i className='fa fa-bell' title='Updates'></i>
+            {/* </samp> */}
+          </div>
         </div>
         <LoginBtn></LoginBtn>
 
@@ -178,3 +188,4 @@ function NavBar() {
 }
 
 export default NavBar;
+// export const LoginButton = LoginBtn;

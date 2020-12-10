@@ -45,6 +45,9 @@ function ModalBody({ handleClose, type, event, event_info }) {
   const [password, setPassword] = useState("");
   const [logged, setLogged] = useState(false);
 
+  const [spinner, setSpinner] = useState("form-group");
+  const [error, setError] = useState("error");
+
   function refreshPage() {
     window.location.reload(false);
   }
@@ -52,6 +55,8 @@ function ModalBody({ handleClose, type, event, event_info }) {
   if (type === "login") {
     const login = (e) => {
       console.log("Login Form Submitted!");
+      setSpinner("form-group loginBtnWrap");
+
       e.preventDefault();
 
       try {
@@ -61,18 +66,22 @@ function ModalBody({ handleClose, type, event, event_info }) {
             password: password,
           })
           .then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             //const msg = response.data["accessToken"]
-            localStorage.setItem("user", JSON.stringify(response.data));
             if (response.data["accessToken"]) {
-              alert("Logged in successfully!");
+              // alert("Logged in successfully!");
+              localStorage.setItem("user", JSON.stringify(response.data));
+
               handleClose();
               refreshPage();
               const user = jwt(response.data["accessToken"]);
-              console.log("JWT decode : " + JSON.stringify(user));
+              // console.log("JWT decode : " + JSON.stringify(user));
               setLogged(true);
             } else {
-              alert("Invalid login credentials!");
+              // alert("Invalid login credentials!");
+              setError("error invalid");
+              setSpinner("form-group ");
+
               setLogged(false);
             }
           });
@@ -85,6 +94,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
       <div id='myModal'>
         <div className='modal-login'>
           <form onSubmit={login}>
+            {/* <form> */}
             <div className='form-group'>
               <div className='input-group'>
                 <span className='input-group-addon'>
@@ -115,12 +125,16 @@ function ModalBody({ handleClose, type, event, event_info }) {
                 />
               </div>
             </div>
-            <div className='form-group'>
+            <h6 className={error}>Invalid Credentials!</h6>
+            {/* <div className='form-group'> */}
+            <div className={spinner}>
               <button
+                id='loginBtn'
                 type='submit'
-                className='btn btn-primary btn-block btn-lg'>
-                Log in
+                className='btn loginbtnn  btn-block btn-lg'>
+                Login
               </button>
+              <span></span>
             </div>
 
             <p className='hint-text'>

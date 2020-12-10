@@ -15,6 +15,7 @@ import CollegeList from "./CollegeList";
 import EventWrap from "./EventWrap";
 import Proceed from "./Proceed";
 import NavigateButton from "./NavigateButton";
+import LoginFirst from "../LoginFirst/LoginFirst";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
 
@@ -554,15 +555,16 @@ const Register = () => {
             </NavigateButton>
           </div>
         </div>
-        <div style={{ marginTop: "18px" }}>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     );
   } else {
     return (
       <div>
-        <h1>Login karo pehle</h1>
+        <SideEventsButton />
+
+        <LoginFirst></LoginFirst>
+        <Footer />
       </div>
     );
   }
