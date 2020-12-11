@@ -28,17 +28,17 @@ const member = (props) => {
     // <div class="container">
     //   <div class="row">
     //       <div class="col-md-3 col-sm-6">
-              <div class="our-team">
-                  <div class="pic image">
+              <div className="our-team">
+                  <div className="pic image">
                       <img style={{ }} src={require('../../assests/img/team/' + props.url)} alt=""/>
-                      <a  class="read-more icon" href={props.link} target='_blank' rel='noopener noreferrer'>
+                      <a  className="read-more icon" href={props.link} target='_blank' rel='noopener noreferrer'>
                         <i className='fa fa-linkedin'></i>
                       </a>
                       {/* <a href="#" class="read-more">read more</a> */}
                   </div>
-                  <div class="team-content">
-                      <h3 class="title">{props.name}</h3>
-                      <span class="post">{props.pos}</span>
+                  <div className="team-content">
+                      <h3 className="title">{props.name}</h3>
+                      <span className="post">{props.pos}</span>
                   </div>
               </div>
           // </div>

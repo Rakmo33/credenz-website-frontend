@@ -35,7 +35,7 @@ function NavBar() {
             type='button'
             style={{width:"90px", height:"45px"}}
             onClick={handleShow}>
-            <span class="kave-line"></span>
+            <span className="kave-line"></span>
             Login
           </button>
         </div>
@@ -44,7 +44,7 @@ function NavBar() {
       return (
         <div className='logout-wrap'>
           <button style={{width:"100px", height:"45px"}} class="kave-btn logout" type='button' onClick={logout}>
-            <span class="kave-line"></span>
+            <span className="kave-line"></span>
             Logout
         </button>
           {/* <button className='btn  logout' type='button' onClick={logout}>

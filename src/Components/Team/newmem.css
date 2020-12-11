@@ -105,7 +105,7 @@
     transition: transform .2s;
 }
 
-i{
+.read-more i{
     font-size: 25px !important;
     padding-right: 10px;
     padding-bottom: 2px;
