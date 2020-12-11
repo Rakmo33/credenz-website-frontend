@@ -12,20 +12,20 @@ const ContactUs = () => {
         <ContactCard
           img={user}
           email='email1@email.com'
-          phone='9999999999'
-          name='name1'
+          phone='+91 988114969'
+          name='Onkar Litake'
         />
         <ContactCard
           img={user}
           email='email2@email.com'
-          phone='9999999999'
-          name='name2'
+          phone='+91 9405234240'
+          name='Durvesh Malpure'
         />
         <ContactCard
           img={user}
           email='email3@email.com'
-          phone='9999999999'
-          name='name3'
+          phone='+91 9834570868'
+          name='Rohan Pawar'
         />
       </div>
 
