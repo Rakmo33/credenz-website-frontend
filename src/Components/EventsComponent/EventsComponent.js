@@ -58,10 +58,10 @@ const Events = () => {
         <li onClick={() => handleShow("bplan")}>BPlan</li>
         <li onClick={() => handleShow("quiz")}>Quiz</li>
       </ul>*/}
-      <Robo/>
+      {/*<Robo/>*/}
 
 
-      {/*<Animation></Animation>*/}
+      <Animation></Animation>
 
       <Modal1
         show={show}
