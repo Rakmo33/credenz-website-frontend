@@ -3,6 +3,7 @@ import Social from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
 import jwt from 'jwt-decode'
 import emailjs from 'emailjs-com';
+import './button.css'
 
 const Feedback = () => {
 
@@ -77,8 +78,13 @@ const Feedback = () => {
             <textarea className="form-control" id="message"
              onChange={(e) => setFeedback(e.target.value)}
              style={{resize:"none"}} rows="8"></textarea>
+        </div >
+        <div style={{textAlign:'center'}} >
+          <button class="kave-btn">
+              <span class="kave-line"></span>
+              Submit
+          </button>
         </div>
-        <button type="submit" className="btn">Submit</button>
        </form>
 
       </div>

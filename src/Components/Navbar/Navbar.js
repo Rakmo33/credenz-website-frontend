@@ -31,9 +31,11 @@ function NavBar() {
         <div className='login-wrap'>
           <button
             id='login'
-            className='btn  login'
+            className='kave-btn login'
             type='button'
+            style={{width:"90px", height:"45px"}}
             onClick={handleShow}>
+            <span class="kave-line"></span>
             Login
           </button>
         </div>
@@ -41,9 +43,13 @@ function NavBar() {
     } else {
       return (
         <div className='logout-wrap'>
-          <button className='btn  logout' type='button' onClick={logout}>
+          <button style={{width:"100px", height:"45px"}} class="kave-btn logout" type='button' onClick={logout}>
+            <span class="kave-line"></span>
             Logout
-          </button>
+        </button>
+          {/* <button className='btn  logout' type='button' onClick={logout}>
+            Logout
+          </button> */}
         </div>
       );
     }
