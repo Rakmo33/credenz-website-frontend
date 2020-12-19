@@ -3,6 +3,7 @@ import Social from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
 import jwt from 'jwt-decode'
 import emailjs from 'emailjs-com';
+import './button.css'
 
 const Feedback = () => {
 
@@ -53,7 +54,7 @@ const Feedback = () => {
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
-              src={require('../../assests/img/f2.png')}
+              src={require('../../assests/img/f22.png')}
               alt=''
               className='img-fluid mb-3 '
             />
@@ -77,8 +78,13 @@ const Feedback = () => {
             <textarea className="form-control" id="message"
              onChange={(e) => setFeedback(e.target.value)}
              style={{resize:"none"}} rows="8"></textarea>
+        </div >
+        <div style={{textAlign:'center'}} >
+          <button class="kave-btn">
+              <span class="kave-line"></span>
+              Submit
+          </button>
         </div>
-        <button type="submit" className="btn">Submit</button>
        </form>
 
       </div>

@@ -36,6 +36,11 @@
     text-align: center;
 }
 
+.eventbtn{
+    width: 180px !important;
+   
+}
+
 .play {
     border: 1px solid white;
     outline: none;

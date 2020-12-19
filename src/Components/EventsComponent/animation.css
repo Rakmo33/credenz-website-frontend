@@ -194,7 +194,7 @@
 .eve-anim .container .button,
 .eve-anim .container .button:visited,
 .eve-anim .container .button:active {
-  z-index: 2000;
+  z-index: 100;
   position: absolute;
   background: #23262C;
   color: #49535E;

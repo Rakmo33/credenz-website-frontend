@@ -104,3 +104,9 @@
     transform: scale(1.5);
     transition: transform .2s;
 }
+
+.read-more i{
+    font-size: 25px !important;
+    padding-right: 10px;
+    padding-bottom: 2px;
+}
