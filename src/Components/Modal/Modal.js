@@ -81,6 +81,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
               // alert("Invalid login credentials!");
               setError("error invalid");
               setSpinner("form-group ");
+              localStorage.removeItem("user");
 
               setLogged(false);
             }
