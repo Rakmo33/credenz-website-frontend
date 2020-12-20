@@ -1,7 +1,8 @@
 import React from "react";
 import user from "./user.png";
 import durvesh from '../../assests/img/team/Durvesh.jpg'
-import rohan from '../../assests/img/team/Rohan.jpeg';
+import rohan from '../../assests/img/team/Rohan2.jpeg';
+import onkar from '../../assests/img/team/onkar.jpg'
 import "./contact.css";
 import ContactCard from "./contactCard";
 import Social from "../sideEventButton/sideEvent";
@@ -12,8 +13,8 @@ const ContactUs = () => {
     <div>
       <div className='row content'>
         <ContactCard
-          img={user}
-          email='email1@email.com'
+          img={onkar}
+          email='Jr.onkarlitake@gmail.com'
           phone='+91 988114969'
           name='Onkar Litake'
         />
