@@ -1,5 +1,6 @@
 import React from "react";
 import user from "./user.png";
+import durvesh from '../../assests/img/team/Durvesh.jpg'
 import "./contact.css";
 import ContactCard from "./contactCard";
 import Social from "../sideEventButton/sideEvent";
@@ -12,20 +13,20 @@ const ContactUs = () => {
         <ContactCard
           img={user}
           email='email1@email.com'
-          phone='9999999999'
-          name='name1'
+          phone='+91 988114969'
+          name='Onkar Litake'
         />
         <ContactCard
-          img={user}
-          email='email2@email.com'
-          phone='9999999999'
-          name='name2'
+          img={durvesh}
+          email='durveshmalpurecoc@gmail.com'
+          phone='+91 9172952268'
+          name='Durvesh Malpure'
         />
         <ContactCard
           img={user}
           email='email3@email.com'
-          phone='9999999999'
-          name='name3'
+          phone='+91 9834570868'
+          name='Rohan Pawar'
         />
       </div>
 

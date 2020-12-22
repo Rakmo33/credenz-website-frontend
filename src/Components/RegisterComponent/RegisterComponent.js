@@ -124,7 +124,6 @@ const Register = () => {
   let user = "";
   //alert("JUST BEFORE IF")
   if (localStorage.getItem("user")) {
-    console.log("Inside if");
     user = jwt(localStorage.getItem("user"));
     //alert(user)
   }
@@ -178,14 +177,17 @@ const Register = () => {
     const changeHandler = (eventNum) => {
       let tempEvents = [...events];
       // When Checked
-      if (!tempEvents[eventNum].isChecked) {
-        tempEvents[eventNum].isChecked = true;
+      if (!tempEvents[eventNum].isCheked) {
+
+        console.log("checked : " + JSON.stringify(tempEvents[eventNum]))
+
+        tempEvents[eventNum].isCheked = true;
         setEvents(tempEvents);
         setTotal((total) => total + tempEvents[eventNum].price);
       }
       // When Unchecked
       else {
-        tempEvents[eventNum].isChecked = false;
+        tempEvents[eventNum].isCheked = false;
         setEvents(tempEvents);
         setTotal((total) => total - tempEvents[eventNum].price);
       }
@@ -195,136 +197,7 @@ const Register = () => {
       // find index of visible component
       const index = isVisible.findIndex((item) => item === true);
 
-      // if (index === 0) {
-      //   if (formData.name1 === "") {
-      //     document.querySelector("#Name1").classList.add("err");
-      //     document.querySelector("span#Name1").innerHTML =
-      //       "This Field Is Required!";
-      //     return;
-      //   }
-      // }
-
-      // if (index === 1) {
-      //   if (formData.year === undefined) {
-      //     document.querySelector("#Radio1").classList.add("err");
-      //     document.querySelector("span#yearErrMsg").innerHTML =
-      //       "Please Select A Category!";
-      //     document.querySelector("span#yearErrMsg").classList.add("txt-center");
-      //     return;
-      //   }
-      // }
-
-      // let err = false;
-
-      // if (index === 2) {
-      //   if (!/^[6789]\d{9}$/.test(formData.number1)) {
-      //     document.querySelector("span#inputContact1").innerHTML =
-      //       "Enter Valid Contact Number!";
-      //     document.querySelector("#inputContact1").classList.add("err");
-
-      //     err = true;
-      //   } else {
-      //     document.querySelector("span#inputContact1").innerHTML = "";
-      //     document.querySelector("#inputContact1").classList.remove("err");
-
-      //     err = false;
-      //   }
-      //   if (!/^[6789]\d{9}$/.test(formData.number2)) {
-      //     document.querySelector("span#inputContact2").innerHTML =
-      //       "Enter Valid Contact Number!";
-      //     document.querySelector("#inputContact2").classList.add("err");
-
-      //     err = true;
-      //   } else {
-      //     document.querySelector("span#inputContact2").innerHTML = "";
-      //     document.querySelector("#inputContact2").classList.remove("err");
-
-      //     err = false;
-      //   }
-      //   if (
-      //     !/^\w+[\S\w+]*@[a-zA-Z]+\.([a-zA-Z]+\.)?[a-zA-Z]+$/.test(
-      //       formData.email1
-      //     )
-      //   ) {
-      //     document.querySelector("span#inputEmail1").innerHTML =
-      //       "Enter Valid Email!";
-      //     document.querySelector("#inputEmail1").classList.add("err");
-
-      //     err = true;
-      //   } else {
-      //     document.querySelector("span#inputEmail1").innerHTML = "";
-      //     document.querySelector("#inputEmail1").classList.remove("err");
-
-      //     err = false;
-      //   }
-      //   if (
-      //     !/^\w+[\S\w+]*@[a-zA-Z]+\.([a-zA-Z]+\.)?[a-zA-Z]+$/.test(
-      //       formData.email2
-      //     )
-      //   ) {
-      //     document.querySelector("span#inputEmail2").innerHTML =
-      //       "Enter Valid Email!";
-      //     document.querySelector("#inputEmail2").classList.add("err");
-
-      //     err = true;
-      //   } else {
-      //     document.querySelector("span#inputEmail2").innerHTML = "";
-      //     document.querySelector("#inputEmail2").classList.remove("err");
-
-      //     err = false;
-      //   }
-      //   if (err) return;
-      // }
-
-      // if (index === 3) {
-      //   if (formData.isMember === undefined) {
-      //     document.querySelector("span#memberErrMsg").innerHTML =
-      //       "Please Choose An Option!";
-      //     document
-      //       .querySelector("span#memberErrMsg")
-      //       .classList.add("txt-center");
-      //     err = true;
-      //   } else {
-      //     document.querySelector("span#memberErrMsg").innerHTML = "";
-      //     err = false;
-      //   }
-
-      //   // if (formData.college === undefined) {
-      //   //   document.querySelector("span#clgErrMsg").innerHTML =
-      //   //     "Please Select Your College";
-      //   //   document.querySelector("span#clgErrMsg").classList.add("txt-center");
-      //   //   err = true;
-      //   // } else {
-      //   //   document.querySelector("span#clgErrMsg").innerHTML = "";
-      //   //   err = false;
-      //   // }
-
-      //   if (err) return;
-      // }
-
-      // if (index === 4) {
-      //   err = true;
-
-      //   for (var e in formData.events) {
-      //     // if at least one event is selected
-      //     if (formData.events[e]) {
-      //       err = false;
-      //       break;
-      //     }
-      //   }
-
-      //   if (err) {
-      //     document.querySelector("span#eventErrMsg").innerHTML =
-      //       "Please Select At Least One Event!";
-
-      //     return;
-      //   } else {
-      //     document.querySelector("span#eventErrMsg").innerHTML = "";
-      //   }
-      //   // alert("LOL");
-      // }
-
-      // disable button for first component
+     
       setPrev(true);
       setNext(true);
 
@@ -387,29 +260,43 @@ const Register = () => {
     };
 
     const token = localStorage.getItem("user");
-
-    var decoded = jwt_decode(token);
-
+   // alert(typeof(token))
+   const accessToken = JSON.parse(token).accessToken;
+   var decoded = jwt_decode(token);
+    //alert(typeof(decoded.username))
     const _DEV_ = document.domain === "localhost";
 
     async function DisplayRazorpay(e) {
       e.preventDefault();
       console.log("display razor called !");
-      alert("display razor called !");
+
+      console.log(JSON.stringify(events))
 
       events.forEach((event) => {
         if (event.isCheked === true) {
+
+          axios.post(`http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`, {
+                headers: {
+                  authorization: `Bearer ${accessToken}` 
+                }
+              }).then((response) => {
+                console.log("registered!" + JSON.stringify(response.data));
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+/*
           axios({
             method: "post",
             url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
             headers: { authorization: `Bearer ${token}` },
           })
             .then((response) => {
-              console.log(response.data);
+              console.log("event checked" + JSON.stringify(response.data));
             })
             .catch((error) => {
               console.log(error);
-            });
+            });*/
         }
       });
 
@@ -432,7 +319,7 @@ const Register = () => {
           return response;
         });
 
-      alert("Data " + data);
+      //alert("Data " + data);
 
       const options = {
         key: _DEV_ ? "rzp_test_8OXCvHsV5OiOpe" : "prod-key", // Enter the Key ID generated from the Dashboard
@@ -452,8 +339,12 @@ const Register = () => {
           name: localStorage.getItem("user")
             ? JSON.stringify(user["name"]).replace(/"/g, "")
             : "",
-          email: "gaurav.kumar@example.com",
-          contact: "9999999999",
+          email: localStorage.getItem("user")
+          ? JSON.stringify(user["email"]).replace(/"/g, "")
+          : "",
+          contact: localStorage.getItem("user")
+          ? JSON.stringify(user["phoneno"]).replace(/"/g, "")
+          : "",
         },
         notes: {
           address: "Razorpay Corporate Office",
@@ -465,6 +356,7 @@ const Register = () => {
       const paymentObject = new window.Razorpay(options);
 
       paymentObject.open();
+
     }
 
     //RAZORPAY
@@ -485,6 +377,8 @@ const Register = () => {
         document.body.appendChild(script);
       });
     }
+
+
     return (
       <div>
         <SideEventsButton />

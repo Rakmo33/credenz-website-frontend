@@ -38,6 +38,7 @@ const Feedback = () => {
            templateParams,
           'user_OPMTdBG3Qp9A9ExXTPv1p'//user API key
          ).then((response) => {
+            alert("Your feedback was sent successfully.");
             console.log('SUCCESS!', response.status, response.text);
          }, (err) => {
             console.log('FAILED...', err);
@@ -54,7 +55,7 @@ const Feedback = () => {
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
-              src={require('../../assests/img/f2.png')}
+              src={require('../../assests/img/f22.png')}
               alt=''
               className='img-fluid mb-3 '
             />
@@ -94,6 +95,6 @@ const Feedback = () => {
        <div style={{marginTop:'31vh'}} > <Footer/></div>
      </>
       );
-}
+  }
  
 export default Feedback;
