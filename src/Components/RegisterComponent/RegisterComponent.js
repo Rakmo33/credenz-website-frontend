@@ -280,7 +280,7 @@ const Register = () => {
 
       events.forEach((event) => {
         if (event.isCheked === true) {
-/*
+
           axios.post(`http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`, {
                 headers: {
                   authorization: `Bearer ${accessToken}` 
@@ -290,8 +290,9 @@ const Register = () => {
               })
               .catch((error) => {
                 console.log(error);
-              });*/
+              });
 
+          /*
           axios({
             method: "post",
             url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
@@ -301,8 +302,8 @@ const Register = () => {
               console.log("event checked" + JSON.stringify(response.data));
             })
             .catch((error) => {
-              console.log(error);
-            });
+              console.log("Axios error : " + error);//request fails with 500
+            });*/
         }
       });
 
