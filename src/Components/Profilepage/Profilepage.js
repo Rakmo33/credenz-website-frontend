@@ -1,10 +1,12 @@
 import "./profile.css";
-import React from "react";
-import jwt from "jwt-decode";
+import React, {useState, useEffect} from "react";
 import Footer from "../Footer/footer";
 import SideEventButton from "../sideEventButton/sideEvent";
 import LoginFirst from "../LoginFirst/LoginFirst";
-
+import axios from "axios";
+import jwt_decode from "jwt-decode";
+import jwt from "jwt-decode";
+//import jwt from "jwt-decode";
 import $ from "jquery";
 
 const Profile = () => {
@@ -12,6 +14,9 @@ const Profile = () => {
   //   localStorage.removeItem("user");
   //   window.location.reload(false); //refresh page
   // };
+
+  const [Events, setEvents] = useState(undefined)
+ 
 
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
@@ -27,9 +32,64 @@ const Profile = () => {
   }
 
   let user = "";
+  
+  console.log(localStorage.getItem("user"))
+
+
+
+  function getEvents() {
+    const token = localStorage.getItem("user");
+      var decoded = jwt_decode(token);
+      user = jwt(localStorage.getItem("user"));      
+      const accessToken = JSON.parse(token).accessToken;
+      //alert(typeof(decoded.username))
+
+
+      console.log("type" + typeof(accessToken))
+      console.log(accessToken)
+
+      axios({
+        method: "get",
+        url: `http://credenzwebsite.herokuapp.com/${decoded.username}/present`,
+        headers: { authorization: `Bearer ${accessToken}` },
+      })
+      .then((response) => {
+        console.log(response.data.map((obj)=>{
+          return obj.event_username;
+        }));
+        setEvents(response.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+   
+    
+  }
+
+  useEffect(() => {
+    getEvents()
+  }, [])
 
   if (localStorage.getItem("user")) {
-    user = jwt(localStorage.getItem("user"));
+  
+    let count = 1;
+    user = jwt(localStorage.getItem("user"));    
+
+    if(Events!==undefined) {
+
+      
+      var EventList = Events.map((x) => {
+        return(
+          <tr>
+            <th scope='row'>{count++}</th>
+              <td>
+              {x.event_username}     
+              </td>
+          </tr>
+        )});
+      
+    }
+
 
     return (
       <div>
@@ -111,21 +171,7 @@ const Profile = () => {
                 <div className='table-container'>
                   <table className='table table-striped table-dark'>
                     <tbody>
-                      <tr>
-                        <th scope='row'>1</th>
-                        <td>
-                          {/* <img src='./logos/clash.png' alt='' /> */}
-                          Clash
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope='row'>2</th>
-                        <td>Reverse Coding</td>
-                      </tr>
-                      <tr>
-                        <th scope='row'>3</th>
-                        <td>Pixelate</td>
-                      </tr>
+                      {EventList}
                     </tbody>
                   </table>
                 </div>
@@ -151,7 +197,7 @@ const Profile = () => {
       <div>
         <SideEventButton />
         <LoginFirst></LoginFirst>
-        <Footer />
+        <Footer/>
       </div>
     );
   }

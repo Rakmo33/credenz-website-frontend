@@ -1,29 +1,31 @@
 .eve-anim {
-  min-height: 95vh;
-  width: 80%;
-  margin: auto;
-  padding-top: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: 1fr 1.5fr 1fr;
-      grid-template-columns: 1fr 1.5fr 1fr;
+    min-height: 95vh;
+    width: 80%;
+    margin: auto;
+    padding-top: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-grid-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 1fr 1.5fr 1fr;
 }
 
 .eve-anim .events-grid {
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (120px)[3];
-      grid-template-rows: repeat(3, 120px);
-  padding: 50px 0;
-  grid-gap: 40px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 120px 120px 120px;
+    grid-template-rows: repeat(3, 120px);
+    padding: 50px 0;
+    grid-gap: 40px;
 }
+
+
 /*# sourceMappingURL=animation.css.map */

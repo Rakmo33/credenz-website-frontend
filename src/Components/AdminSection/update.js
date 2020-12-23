@@ -2,6 +2,7 @@ import React, {Component, useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import {Container, Button} from 'react-bootstrap';
 import axios from 'axios';
+import jwt_decode from 'jwt-decode';
 
 class Update extends Component{
 
@@ -42,23 +43,32 @@ class Update extends Component{
         console.log("Current state is : " + JSON.stringify(this.state))
         alert("Current state is : " + JSON.stringify(this.state))
         
-        const token = localStorage.getItem("token")
 
+        const token = localStorage.getItem("user");
+        console.log(JSON.parse(token))
+        var decoded = jwt_decode(token);
+
+        const accessToken = JSON.parse(token).accessToken;
+
+        //const token = localStorage.getItem("token")
+        console.log(accessToken)
         try {
-            axios({
-                method: "post",
-                url: `http://credenzwebsite.herokuapp.com/addupdate`,
-                headers: { 'authorization': token },
-                body: {
-                    headline: this.state.headline,
-                    info: this.state.info
+
+            axios.post(`http://credenzwebsite.herokuapp.com/addupdate`, {
+                event: "update testing",
+                headline: this.state.headline,
+                info: this.state.info
+              }, {
+                headers: {
+                  'authorization': `Bearer ${accessToken}` 
                 }
+              }).then((response) => {
+                console.log("updates stored" + JSON.stringify(response.data));
               })
-              .then(function (response) {
-                alert("Form successfully submitted.");
-                console.log(response);
-                console.log(response.data);
+              .catch((error) => {
+                console.log(error);
               });
+
           } catch (e) {
             alert("Axios error!" + e);
           }

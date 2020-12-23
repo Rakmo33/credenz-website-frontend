@@ -44,6 +44,7 @@ const Feedback = () => {
       )
       .then(
         (response) => {
+          alert("Your feedback was sent successfully.");
           console.log("SUCCESS!", response.status, response.text);
         },
         (err) => {

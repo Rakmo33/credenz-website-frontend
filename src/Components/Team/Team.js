@@ -14,28 +14,28 @@ const team = () => {
           <Member
             name={"Aditi Srivastava"}
             url={"aditi.jpeg"}
-            className='sideway'
-            pos={"Web Master"}
+            class='sideway'
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/aditi-srivastava-a6046818a/"}
           />
 
           <Member
             name={"Fatema Katawala"}
             url={"fsk6.jpg"}
-            pos={"Web Master"}
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/fatema-katawala-2b99451a1/"}
           />
 
           <Member
             name={"Gaurav Ghati"}
             url={"gaurav2.jpeg"}
-            pos={"Web Master"}
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/gauravghati/"}
           />
           <Member
             name={"Omkar Dabir"}
             url={"dabir.jpeg"}
-            pos={"Web Master"}
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/coderdabir/"}
           />
           {/* <Col md={3}><Member
@@ -48,26 +48,26 @@ const team = () => {
           <Member
             name={"Sakshee Phade"}
             url={"sakshee.jpeg"}
-            pos={"Web Master"}
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/saksheephade/"}
           />
           <Member
             name={"Sanket Landge"}
             url={"sanket.jpeg"}
-            pos={"Web Master"}
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/sanket-landge-293996194/"}
           />
           <Member
             name={"Shreya Deshpande"}
             url={"shreya.jpg"}
-            pos={"Web Master"}
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/shreya-deshpande-420297191/"}
           />
 
           <Member
             name={"Yash Sonar"}
             url={"yash.jpeg"}
-            pos={"Web Master"}
+            // pos={"Web Master"}
             link={"https://www.linkedin.com/in/yash-sonar-b89265176/"}
           />
 
