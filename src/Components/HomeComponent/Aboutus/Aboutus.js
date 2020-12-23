@@ -66,7 +66,7 @@ const aboutus = (props) => {
             <img
               className={classes.img_size_pisb}
               alt='pisbdark'
-              src={require("../../../assests/img/pisb.png")}
+              src={require("../../../assests/img/logopisb.png")}
             />
           </Col>
           <Col className={classes.content} sm={8}>

@@ -15,12 +15,12 @@ import Sponsor from "./sponsor/sponsor";
 //           autoPlaySpeed={1500}
 //           centerMode={false}
 //           className=""
-//           containerClass="container-with-dots"
-//           dotListClass=""
+//           containerclassName="container-with-dots"
+//           dotListclassName=""
 //           draggable
 //           focusOnSelect={false}
 //           infinite
-//           itemClass=""
+//           itemclassName=""
 //           keyBoardControl
 //           minimumTouchDrag={80}
 //           renderButtonGroupOutside={false}
@@ -52,7 +52,7 @@ import Sponsor from "./sponsor/sponsor";
 //             }
 //           }}
 //           showDots={false}
-//           sliderClass=""
+//           sliderclassName=""
 //           slidesToSlide={2}
 //           swipeable >
 
