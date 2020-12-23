@@ -259,10 +259,7 @@ const Register = () => {
       setTimeout(() => setVisible(tempVisible), 200);
     };
 
-    const token = localStorage.getItem("user");
-   // alert(typeof(token))
-   const accessToken = JSON.parse(token).accessToken;
-   var decoded = jwt_decode(token);
+   
     //alert(typeof(decoded.username))
     const _DEV_ = document.domain === "localhost";
 
@@ -272,9 +269,18 @@ const Register = () => {
 
       console.log(JSON.stringify(events))
 
+      const token = localStorage.getItem("user");
+      // alert(typeof(token))
+       const accessToken = JSON.parse(token).accessToken;
+       var decoded = jwt_decode(token);
+   
+      console.log("type" + typeof(accessToken))
+      console.log(accessToken)
+   
+
       events.forEach((event) => {
         if (event.isCheked === true) {
-
+/*
           axios.post(`http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`, {
                 headers: {
                   authorization: `Bearer ${accessToken}` 
@@ -284,19 +290,19 @@ const Register = () => {
               })
               .catch((error) => {
                 console.log(error);
-              });
-/*
+              });*/
+
           axios({
             method: "post",
             url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
-            headers: { authorization: `Bearer ${token}` },
+            headers: { authorization: `Bearer ${accessToken}` },
           })
             .then((response) => {
               console.log("event checked" + JSON.stringify(response.data));
             })
             .catch((error) => {
               console.log(error);
-            });*/
+            });
         }
       });
 

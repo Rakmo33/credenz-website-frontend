@@ -173,3 +173,8 @@
     padding: 0 !important;
     margin-top: -10px;
 }
+
+.img-pos{
+    object-fit: cover;
+    object-position: center;
+}

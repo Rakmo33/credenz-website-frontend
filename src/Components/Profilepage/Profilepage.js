@@ -36,12 +36,18 @@ const Profile = () => {
   console.log(localStorage.getItem("user"))
 
 
+
   function getEvents() {
     const token = localStorage.getItem("user");
       var decoded = jwt_decode(token);
       user = jwt(localStorage.getItem("user"));      
       const accessToken = JSON.parse(token).accessToken;
       //alert(typeof(decoded.username))
+
+
+      console.log("type" + typeof(accessToken))
+      console.log(accessToken)
+
       axios({
         method: "get",
         url: `http://credenzwebsite.herokuapp.com/${decoded.username}/present`,
