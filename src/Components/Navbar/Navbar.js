@@ -5,6 +5,7 @@ import { HashLink as Link } from "react-router-hash-link";
 import "./NavBar.css";
 import Modal1 from "../Modal/Modal";
 import Modal2 from "../Modal/UpdateModal";
+import $ from "jquery";
 import { faDivide } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
@@ -31,11 +32,11 @@ function NavBar() {
         <div className='login-wrap'>
           <button
             id='login'
-            className='kave-btn login'
+            className='kave-btn login '
             type='button'
-            style={{width:"90px", height:"45px"}}
+            style={{ width: "90px", height: "45px" }}
             onClick={handleShow}>
-            <span className="kave-line"></span>
+            <span className='kave-line'></span>
             Login
           </button>
         </div>
@@ -43,10 +44,14 @@ function NavBar() {
     } else {
       return (
         <div className='logout-wrap'>
-          <button style={{width:"100px", height:"45px"}} class="kave-btn logout" type='button' onClick={logout}>
-            <span className="kave-line"></span>
+          <button
+            style={{ width: "100px", height: "45px" }}
+            className='kave-btn logout'
+            type='button'
+            onClick={logout}>
+            <span className='kave-line'></span>
             Logout
-        </button>
+          </button>
           {/* <button className='btn  logout' type='button' onClick={logout}>
             Logout
           </button> */}
@@ -55,10 +60,18 @@ function NavBar() {
     }
   };
 
+  const clickHandler = () => {
+    $(".navbar-collapse").removeClass("show");
+    // $(".navbar-collapse").addClass("collapsing");
+  };
+
   return (
     <>
       <nav className='navbar navbar-expand-xl navbar-inner nav-colour '>
-        <a href='http://pictieee.in/' className='navbar-brand'>
+        <a
+          href='http://pictieee.in/'
+          className='navbar-brand'
+          onClick={clickHandler}>
           <img
             className='pisblogo'
             alt='logopisb'
@@ -92,6 +105,7 @@ function NavBar() {
             <li className='nav-item' style={{ color: "ivory" }}>
               <Link to='/home' className='nav-link'>
                 <samp
+                  onClick={clickHandler}
                   className={
                     location.pathname === "/home" &&
                     location.hash !== "#Aboutus"
@@ -104,7 +118,7 @@ function NavBar() {
             </li>
 
             <li className='nav-item'>
-              <Link to='/events' className='nav-link'>
+              <Link to='/events' className='nav-link' onClick={clickHandler}>
                 <samp
                   className={
                     location.pathname === "/events" ? "active-nav-tab" : ""
@@ -114,7 +128,10 @@ function NavBar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/sideEvents' className='nav-link'>
+              <Link
+                to='/sideEvents'
+                className='nav-link'
+                onClick={clickHandler}>
                 <samp
                   className={
                     location.pathname === "/sideEvents" ? "active-nav-tab" : ""
@@ -124,7 +141,7 @@ function NavBar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/register' className='nav-link'>
+              <Link to='/register' className='nav-link' onClick={clickHandler}>
                 <samp
                   className={
                     location.pathname === "/register" ? "active-nav-tab" : ""
@@ -140,7 +157,10 @@ function NavBar() {
                     </Link>
                 </li> */}
             <li className='nav-item'>
-              <Link to='/home#Aboutus' className='nav-link'>
+              <Link
+                to='/home#Aboutus'
+                className='nav-link'
+                onClick={clickHandler}>
                 <samp
                   className={
                     location.pathname === "/home" &&
@@ -153,7 +173,7 @@ function NavBar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link to='/contact' className='nav-link'>
+              <Link to='/contact' className='nav-link' onClick={clickHandler}>
                 <samp
                   className={
                     location.pathname === "/contact" ? "active-nav-tab" : ""
@@ -163,7 +183,7 @@ function NavBar() {
               </Link>
             </li>
             <li className='nav-item profile'>
-              <Link to='/profile' className='nav-link'>
+              <Link to='/profile' className='nav-link' onClick={clickHandler}>
                 <samp
                   className={
                     location.pathname === "/profile" ? "active-nav-tab" : ""
@@ -180,6 +200,7 @@ function NavBar() {
               <Link
                 id='logoieee'
                 to='/home'
+                onClick={clickHandler}
                 className='navbar-brand d-none d-xl-block '>
                 <img
                   src={require("../../assests/img/ieeelogo.png")}
@@ -212,6 +233,7 @@ function NavBar() {
               <a
                 id='logoieee'
                 href='https://www.ieee.org/'
+                onClick={clickHandler}
                 className='navbar-brand d-none d-lg-block '>
                 <img
                   src={require("../../assests/img/ieeelogo.png")}

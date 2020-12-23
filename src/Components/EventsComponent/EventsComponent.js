@@ -5,7 +5,6 @@ import axios from "axios";
 import Animation from "./Animation";
 // import { EVENTS } from "./allEvents";
 import Footer from "../Footer/footer";
-import Robo from "./robo";
 
 const Events = () => {
   // window.location.reload(false); //refresh page
@@ -45,10 +44,10 @@ const Events = () => {
   let type = false;
 
   return (
-    <div>
+    <div className='evePage' style={{ marginTop: "70px" }}>
       <SideEvent />
-      
-      <h1 style={{ color: "ivory" }}>Events Page</h1>
+
+      {/* <h1 style={{ color: "ivory" }}>Events Page</h1> */}
       {/*<ul style={{ color: "ivory" }}>
         <li onClick={() => handleShow("clash")}>Clash</li>
         <li onClick={() => handleShow("rc")}>Reverse Coding</li>
@@ -59,7 +58,6 @@ const Events = () => {
         <li onClick={() => handleShow("quiz")}>Quiz</li>
       </ul>*/}
       {/*<Robo/>*/}
-
 
       <Animation></Animation>
 

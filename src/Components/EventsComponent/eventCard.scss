@@ -1,0 +1,49 @@
+.evePage {
+    .event-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        // background-color: rgb(197, 149, 59);
+        // filter: invert(1);
+        border-radius: 15px;
+        width: 130px;
+        margin: 0 auto;
+        padding: 20px 0;
+        transition: all 0.3s;
+        box-shadow: 0px 0px 8px rgb(19, 19, 19);
+        // grid-template-rows: 3fr 2fr;
+        cursor: pointer;
+        img {
+            height: 80%;
+            margin: auto;
+        }
+        h5 {
+            align-items: center;
+            font-size: 15px;
+            text-align: center;
+            margin: auto 0;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .fadeOut1 {
+        transform: translateX(-50px) scale(0.7);
+        opacity: 0;
+    }
+    .fadeOut2 {
+        transform: translateX(50px) scale(0.7);
+        opacity: 0;
+    }
+    .slideRight {
+        transform: translateX(400px) scale(0.9);
+    }
+    .slideLeft {
+        transform: translateX(-400px) scale(0.9);
+    }
+    .hide {
+        display: none;
+    }
+}

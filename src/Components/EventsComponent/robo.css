@@ -1,0 +1,654 @@
+.robo {
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.robo *::after,
+.robo *::before {
+  position: absolute;
+  content: "";
+}
+
+.robo *,
+.robo *::after,
+.robo *::before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+.robo #head {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 150px;
+  -webkit-animation: float 3s infinite;
+          animation: float 3s infinite;
+}
+
+.robo #head .iris {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: black;
+  z-index: 10;
+  /*circulo branco do olho maior*/
+  /*circulo branco do olho menor*/
+}
+
+.robo #head .iris::after {
+  display: block;
+  position: relative;
+  left: -12px;
+  top: -28px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: white;
+  -webkit-animation: eyeNotAnimation 2s infinite;
+          animation: eyeNotAnimation 2s infinite;
+}
+
+.robo #head .iris::before {
+  display: block;
+  position: relative;
+  left: -12px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: white;
+  -webkit-animation: eyeNotAnimation 2s infinite;
+          animation: eyeNotAnimation 2s infinite;
+}
+
+.robo #head .borda-iris {
+  position: relative;
+  top: -56px;
+  width: 62px;
+  height: 62px;
+  margin: 0 auto;
+  border-radius: 100%;
+  background: #2fb3ff;
+  z-index: -1;
+}
+
+.robo #head .olho {
+  position: relative;
+  top: -160px;
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  margin: 0 auto;
+  background: #e1edf3;
+  z-index: -2;
+}
+
+.robo #head .borda-olho {
+  position: relative;
+  top: -310px;
+  width: 160px;
+  height: 160px;
+  border-radius: 100%;
+  margin: 0 auto;
+  background: #001e2c;
+  z-index: -3;
+}
+
+.robo #head .head {
+  margin: 0 auto;
+  position: relative;
+  top: -440px;
+  width: 280px;
+  height: 0px;
+  border-right: 40px solid transparent;
+  border-left: 40px solid transparent;
+  border-bottom: 170px solid #2fb3ff;
+  z-index: -4;
+  border-radius: 0 0 40px 40px;
+}
+
+.robo #head .antena {
+  position: relative;
+  bottom: 730px;
+  width: 5px;
+  height: 100px;
+  margin: 0 auto;
+  background: black;
+  z-index: -5;
+}
+
+.robo .robo-body {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 50px;
+  -webkit-animation: float 3s infinite;
+          animation: float 3s infinite;
+}
+
+.robo .robo-body .peito {
+  margin: 0 auto;
+  width: 140px;
+  height: 200px;
+  background: #e1edf3;
+  border-radius: 10px 10px 30px 30px;
+  overflow: hidden;
+  /*desenho barriga*/
+  /*bolinhas menores barriga*/
+}
+
+.robo .robo-body .peito::after {
+  display: block;
+  position: relative;
+  top: 20px;
+  left: -20px;
+  width: 180px;
+  height: 10px;
+  border-radius: 00%;
+  background: #2fb3ff;
+}
+
+.robo .robo-body .peito::before {
+  display: block;
+  position: relative;
+  top: 145px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: #003948;
+  z-index: 15;
+  -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+          box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+}
+
+.robo .robo-body .tela {
+  margin: 0 auto;
+  width: 100px;
+  height: 60px;
+  line-height: 45px;
+  background: #001e2c;
+  border-radius: 5px;
+  border: solid 5px #2fb3ff;
+  text-align: center;
+  color: #2fb3ff;
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.robo .leg {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.robo .leg .foot {
+  width: 70px;
+  height: 60px;
+  margin: 0 auto;
+  background: red;
+  background: -webkit-linear-gradient(left, #001e2c 0%, #001e2c 20%, #003948 20%, #003948 40%, #005e7d 40%, #005e7d 60%, #003948 60%, #003948 80%, #001e2c 80%);
+  border-radius: 0 0 10px 10px;
+  -webkit-animation: float 3s infinite;
+          animation: float 3s infinite;
+}
+
+.robo .leg .sombra {
+  position: relative;
+  margin: 0 auto;
+  width: 150px;
+  height: 40px;
+  top: 10px;
+  border-radius: 80%;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-animation: shadow 3s infinite;
+          animation: shadow 3s infinite;
+}
+
+.robo .braco-esquerdo {
+  position: relative;
+  top: -160px;
+  left: -110px;
+  margin: 0 auto;
+  width: 100px;
+  height: 15px;
+  background: #e1edf3;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: -1;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  /*ombro*/
+  /*cotovelo*/
+}
+
+.robo .braco-esquerdo .antebraco-esquerdo {
+  position: absolute;
+  right: 45%;
+  top: -475%;
+  width: 100px;
+  height: 40px;
+  background: red;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 100;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  border-radius: 5px;
+  background: #2fb3ff;
+  /*mao*/
+}
+
+.robo .braco-esquerdo .antebraco-esquerdo::after {
+  width: 40px;
+  height: 50px;
+  border-style: solid;
+  border-left: none;
+  border-width: 10px;
+  border-radius: 0 100% 100% 0;
+  border-color: #005e7d;
+  top: -10%;
+  left: -40%;
+}
+
+.robo .braco-esquerdo::after {
+  display: block;
+  position: relative;
+  left: 75%;
+  top: -25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background: #2fb3ff;
+}
+
+.robo .braco-esquerdo::before {
+  display: block;
+  position: relative;
+  top: -1px;
+  left: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  background: #005e7d;
+}
+
+.robo .moveHand {
+  -webkit-animation: moveHand 5s infinite;
+          animation: moveHand 5s infinite;
+}
+
+.robo .moveHand2 {
+  -webkit-animation: moveHand2 5s infinite;
+          animation: moveHand2 5s infinite;
+}
+
+.robo .switchHand1a {
+  -webkit-transform-origin: unset !important;
+          transform-origin: unset !important;
+  -webkit-transform: rotate(-20deg) !important;
+          transform: rotate(-20deg) !important;
+}
+
+.robo .switchHand1b {
+  -webkit-transform-origin: unset !important;
+          transform-origin: unset !important;
+  -webkit-transform: rotate(-90deg) !important;
+          transform: rotate(-90deg) !important;
+  top: 318% !important;
+}
+
+.robo .switchHand2a {
+  -webkit-transform-origin: left !important;
+          transform-origin: left !important;
+}
+
+.robo .switchHand2b {
+  top: -488% !important;
+  -webkit-transform: rotate(90deg) !important;
+          transform: rotate(90deg) !important;
+}
+
+.robo .braco-direito {
+  position: relative;
+  top: -172px;
+  left: 110px;
+  margin: 0 auto;
+  width: 100px;
+  height: 15px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #e1edf3;
+  z-index: -1;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  /*ombro*/
+  /*cotovelo*/
+}
+
+.robo .braco-direito .antebraco-direito {
+  position: absolute;
+  right: -55%;
+  top: 318%;
+  width: 100px;
+  height: 40px;
+  background: red;
+  z-index: 100;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  border-radius: 5px;
+  background: #2fb3ff;
+  /*mao*/
+}
+
+.robo .braco-direito .antebraco-direito::after {
+  width: 40px;
+  height: 50px;
+  border-style: solid;
+  border-left: none;
+  border-width: 10px;
+  border-radius: 0 100% 100% 0;
+  border-color: #005e7d;
+  top: -10%;
+  left: -40%;
+}
+
+.robo .braco-direito::after {
+  display: block;
+  position: relative;
+  left: -10%;
+  top: -25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  background: #2fb3ff;
+}
+
+.robo .braco-direito::before {
+  display: block;
+  position: relative;
+  top: -1px;
+  left: 95%;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  background: #005e7d;
+}
+
+.robo .autor {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 200px;
+  height: 100px;
+  background: #c0392b;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  border-radius: 20px;
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
+  /*ponta balao*/
+}
+
+.robo .autor:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  -webkit-transition: all ease-in-out 1s;
+  transition: all ease-in-out 1s;
+}
+
+.robo .autor::after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid #c0392b;
+  left: 80%;
+}
+
+.robo .autor > p {
+  width: 100%;
+  height: 50%;
+  line-height: 50px;
+  text-align: center;
+  margin: 0;
+  color: #ecf0f1;
+}
+
+.robo .autor > p > a {
+  text-decoration: none;
+  color: #ecf0f1;
+}
+
+.robo .autor > p > a:hover {
+  text-decoration: underline;
+}
+
+@-webkit-keyframes moveHand {
+  0% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  10% {
+    -webkit-transform: rotate(-80deg);
+            transform: rotate(-80deg);
+  }
+  20% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@keyframes moveHand {
+  0% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  10% {
+    -webkit-transform: rotate(-80deg);
+            transform: rotate(-80deg);
+  }
+  20% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+}
+
+@-webkit-keyframes moveHand2 {
+  0% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  10% {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+  20% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+}
+
+@keyframes moveHand2 {
+  0% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  10% {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg);
+  }
+  20% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+}
+
+@-webkit-keyframes eyeAnimation {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes eyeAnimation {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes eyeNotAnimation {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes eyeNotAnimation {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  35% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  60% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  80% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  35% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  60% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  80% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes shadow {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  40% {
+    -webkit-transform: scaleX(0.6);
+            transform: scaleX(0.6);
+  }
+  55% {
+    -webkit-transform: scaleX(0.9);
+            transform: scaleX(0.9);
+  }
+  80% {
+    -webkit-transform: scaleX(0.75);
+            transform: scaleX(0.75);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  40% {
+    -webkit-transform: scaleX(0.6);
+            transform: scaleX(0.6);
+  }
+  55% {
+    -webkit-transform: scaleX(0.9);
+            transform: scaleX(0.9);
+  }
+  80% {
+    -webkit-transform: scaleX(0.75);
+            transform: scaleX(0.75);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+/*# sourceMappingURL=robo.css.map */
