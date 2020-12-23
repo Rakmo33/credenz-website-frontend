@@ -1,3 +1,9 @@
-#credenzeye_svg__credenz{
+#credenzeye_svg__credenz {
     fill: #e3b1b1;
+}
+
+.evePage #credenzeye_svg__Layer_1 {
+    border-radius: 50%;
+    background: #e1edf3;
+    margin: auto;
 }
