@@ -1,0 +1,42 @@
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
+@keyframes spin_hovered {
+    0% {transform:rotate(0deg);}
+    50% {transform:rotate(-90deg);}
+    100%{transform:rotate(0deg);}
+}
+#eyeDEA2_1_svg__irislines{
+    animation: spin 6s linear infinite;
+    transform-origin: 49.7% 49.8%;
+    transition-timing-function: ease-in;
+}
+.eyeDEA2_1_svg__ring1{
+    animation: spin 6s linear infinite;
+    transform-origin: 51.1% 54.1%;
+    transition-timing-function: ease-in;
+}
+.eyeDEA2_1_svg__ring2{
+    animation: spin 6s linear infinite;
+    transform-origin: 51.1% 54.1%;
+    transition-timing-function: ease-in;
+}
+.eyeDEA2_1_svg__ring3{
+    animation: spin 6s linear infinite;
+    transform-origin: 51.1% 54.1%;
+}
+
+.hovered_animation{
+    animation: spin_hovered 3s linear infinite;
+    transform-origin: 51.1% 54.1%;
+    transition-timing-function: ease-in;
+}
+.anim-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+}

@@ -1,1 +1,1 @@
-export { default as Credenzeye } from './Credenzeye'
+export { default as EyeDea21 } from './EyeDea21'

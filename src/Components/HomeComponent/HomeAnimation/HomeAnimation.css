@@ -1,87 +1,76 @@
-.anim {
+.anim{
+    height: calc(100vh - 60px);
+    width: 100vw;
     position: relative;
-    height: 720px;
-    width: 1524px;
+}
+@keyframes fadein{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes fadeout{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+.hide{
+    animation: fadeout 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.show{
+    animation: fadein 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.anim-overlay-lower{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
     background-color: black;
+    z-index: 3;
 }
-.anim-iframe{
-    display: block;
-    transition: ease;
-}
-.anim-iframe-before{
-    display: none;
-}
-.anim-text-container{
+.anim-overlay-upper{
     position: absolute;
-    top: 42%;
-    left:35%;
-    background-color: rgb(0, 0, 0, 0.5);
-    display: block;
-    transition-timing-function: ease-in;
-    transition: all 1s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 5;
 }
-.anim-text-container-before{
-    display: none;
-}
-.anim-text{
-    width: 700px;
-    object-fit: contain;
-    /* transition-timing-function: ease-in;
-    transition: all 2s; */
-    /* animation-delay: 2s; */
-    animation-name: fadeIn;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-
-.anim-logo-container{
-    position: absolute;
-    top: 30%;
-    left: 18%;
-    /* transition-timing-function: ease-in;
-    transition: all 1s; */
-}
-.anim-logo-container-before{
-    position: absolute;
-    /* height: 320px;
-    object-fit: contain; */
-    top: 12%;
-    left: 33%;
-    height: 10px;
-}
-.anim-logo{
-    height: 320px;
-    object-fit: contain;
-    /* transition-timing-function: ease-in;
-    transition: all 1s; */
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-}
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
- } 
-.anim-logo-before{
-    height: 420px;
-    object-fit: contain;
-}
-.anim-logo-after{
-    animation-name: fadeInAfter;
-    animation-duration: 6s;
-}
-@keyframes fadeInAfter {
-    0% {
+@keyframes disappear{
+    from{
+        opacity: 1;
+        display: block;
+    }
+    to{
         opacity: 0;
-        /* transform:translateX(0%); */
+        display: none;
     }
-    50%{
-        opacity: 1;
-        /* transform:translateX(0%); */
-    }
-    100%{
-        /* transform:translateX(-100%); */
-        opacity: 1;
-    }
+}
+.vanish{
+    animation: disappear 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+}
+.hide-now{
+    display: none;
+}
+@keyframes darken-anim{
+    from { background: rgba(133,133,133,.95) }
+     to { background: rgba(0,0,0,.95) }
+}
+.darken{
+    animation: darken-anim 0.5s linear;
 }

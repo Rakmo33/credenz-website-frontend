@@ -1,0 +1,77 @@
+@keyframes spin-clockwise {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
+@keyframes spin-anticlockwise {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(-360deg);}
+  }
+@keyframes spin_hovered {
+    0% {animation-play-state: paused;}
+    20%{transform:rotate(0deg);}
+    60% {transform:rotate(-120deg);}
+    100%{transform:rotate(0deg);}
+}
+.eyeDEA2_0_svg__ring1{
+    animation: spin-clockwise 6s linear infinite;
+    transform-origin: 49.7% 50.6%;
+    transition-timing-function: ease-in;
+}
+.eyeDEA2_0_svg__ring2{
+    animation: spin-anticlockwise 2s linear infinite;
+    transform-origin: 49.7% 50.6%;
+    transition-timing-function: ease-in;
+}
+.eyeDEA2_0_svg__ring3{
+    animation: spin-anticlockwise 4s linear infinite;
+    transform-origin: 49.7% 50.6%;
+}
+
+.hovered_2_0_animation{
+    animation: spin_hovered 5s linear infinite;
+    transform-origin: 49.7% 50.6%;
+    transition-timing-function: ease-in;
+}
+
+@keyframes scale{
+    0% { transform: scale(1); }
+  10% { transform: scale(.95); }
+  21% { transform: scale(1.05); }
+  31% { transform: scale(1); transform:rotate(0deg);}
+    70%{ transform: rotate(-100deg);}
+    100%{ transform: rotate(0deg);}
+}
+
+.hovered_2_0_animation_ring1{
+    transform-origin: 49.7% 50.6%;
+    animation: scale 2.6s linear;
+}
+.hovered_2_0_animation_ring2{
+    transform-origin: 49.7% 50.6%;
+    animation: scale 2.6s linear;
+    /* display: none; */
+}
+.hovered_2_0_animation_ring3{
+    transform-origin: 49.7% 50.6%;
+    animation: scale 2.6s linear;
+}
+@keyframes zooming {
+    0% { transform: scale(1); 
+        /* background: rgba(133,133,133,.95); */
+    }
+    50% { transform: scale(2);
+         /* background: rgba(0,0,0,.95); */
+        }
+    100%{
+        transform: scale(1);
+    }
+}
+.zoom-in{
+    transform-origin: 49.7% 50.6%;
+    animation: zooming 0.5s linear;
+    /* transform: scale(2); */
+}
+/* .zoom-in-image{
+    transform-origin: center center;
+    animation: spin-clockwise 10s infinite;
+} */
