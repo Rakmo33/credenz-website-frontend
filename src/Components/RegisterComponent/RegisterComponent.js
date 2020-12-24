@@ -267,13 +267,17 @@ const Register = () => {
     async function DisplayRazorpay(e) {
       e.preventDefault();
       console.log("display razor called !");
+      //console.log("display razor called !");
+
+      // console.log(JSON.stringify(events))
+
       const token = localStorage.getItem("user");
       // alert(typeof(token))
        const accessToken = JSON.parse(token).accessToken;
        var decoded = jwt_decode(token);
    
-      console.log("type" + typeof(accessToken))
-      console.log(accessToken)
+      // console.log("type" + typeof(accessToken))
+      // console.log(accessToken)
    
 
        events.forEach((event) => {
@@ -318,7 +322,7 @@ const Register = () => {
 
       });
 
-      console.log("display razor called !");
+     console.log("display razor called !");
 
       const res = await loadScript(
         "https://checkout.razorpay.com/v1/checkout.js"
