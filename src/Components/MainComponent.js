@@ -1,11 +1,11 @@
 //"start": "npm run build && (cd server && npm start)",
-
 import React, { Component } from "react";
 import Home from "./HomeComponent/HomeComponent";
 import Events from "./EventsComponent/EventsComponent";
 import Register from "./RegisterComponent/RegisterComponent";
 import Contact from "./ContactComponent/ContactComponent";
 import Signup from "./SignupComponent/Signup";
+import Edit from "./SignupComponent/EditProfile";
 import { Switch, Route, Redirect } from "react-router-dom";
 import NavBar from "./Navbar/Navbar";
 import "bootstrap/dist/css/bootstrap.css";
@@ -54,6 +54,10 @@ class Main extends Component {
       return <Signup />;
     };
 
+    const EditProfilePage = () => {
+      return <Edit />;
+    };
+
     const TeamPage = () => {
       return <Team />;
     };
@@ -78,6 +82,7 @@ class Main extends Component {
           <Route path='/sideEvents' component={SideEvents} />
           <Route path='/leaderboard' component={LeaderBoardPage} />
           <Route path='/signup' component={SignUpPage} />
+          <Route path='/edit' component={EditProfilePage} />
           <Route path='/team' component={TeamPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/admin' component={AdminPage} />

@@ -122,15 +122,16 @@ const Register = () => {
   ]);
 
   let user = "";
-  //alert("JUST BEFORE IF")
+
   if (localStorage.getItem("user")) {
     user = jwt(localStorage.getItem("user"));
-    //alert(user)
   }
 
   let defaultFormData = {
+    team: "single",
+    teamName: "",
     name1: localStorage.getItem("user")
-      ? JSON.stringify(user["name"]).replace(/"/g, "")
+      ? JSON.stringify(user["username"]).replace(/"/g, "")
       : "",
     name2: "",
     name3: "",
@@ -266,9 +267,6 @@ const Register = () => {
     async function DisplayRazorpay(e) {
       e.preventDefault();
       console.log("display razor called !");
-
-      console.log(JSON.stringify(events))
-
       const token = localStorage.getItem("user");
       // alert(typeof(token))
        const accessToken = JSON.parse(token).accessToken;
@@ -278,21 +276,12 @@ const Register = () => {
       console.log(accessToken)
    
 
-      events.forEach((event) => {
+       events.forEach((event) => {
+
+
         if (event.isCheked === true) {
 
-          axios.post(`http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`, {
-                headers: {
-                  authorization: `Bearer ${accessToken}` 
-                }
-              }).then((response) => {
-                console.log("registered!" + JSON.stringify(response.data));
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-
-          /*
+          if(defaultFormData.team==="single")
           axios({
             method: "post",
             url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
@@ -303,8 +292,30 @@ const Register = () => {
             })
             .catch((error) => {
               console.log("Axios error : " + error);//request fails with 500
-            });*/
+            });
+          
+          else
+          axios({
+            method: "post",
+            url: `http://credenzwebsite.herokuapp.com/addteam`,
+            headers: { authorization: `Bearer ${accessToken}` },
+            body: {
+              players: [defaultFormData.name1, defaultFormData.name2, defaultFormData.name3, defaultFormData.name4],
+              event_name: event.username,
+              team_username: "Team-test1",
+              no_of_players: 2,
+            }
+          })
+            .then((response) => {
+              console.log("event checked" + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              console.log("Axios error : " + error);//request fails with 500
+            });
+
         }
+
+
       });
 
       console.log("display razor called !");
@@ -326,7 +337,7 @@ const Register = () => {
           return response;
         });
 
-      //alert("Data " + data);
+      console.log("Data " + data);
 
       const options = {
         key: _DEV_ ? "rzp_test_8OXCvHsV5OiOpe" : "prod-key", // Enter the Key ID generated from the Dashboard
@@ -413,11 +424,12 @@ const Register = () => {
                 formData={formData}
                 setFormData={setFormData}></YearWrap>
 
+ { defaultFormData.team==="team" && 
               <NumberWrap
                 isVisible={isVisible[2]}
                 cls={`parent ${anim[2]}`}
                 formData={formData}
-                setFormData={setFormData}></NumberWrap>
+                setFormData={setFormData}></NumberWrap>}
 
               <EmailWrap
                 isVisible={isVisible[2]}
