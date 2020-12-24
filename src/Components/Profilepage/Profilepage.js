@@ -32,13 +32,13 @@ const Profile = () => {
   }
 
   let user = "";
-  
-  console.log(localStorage.getItem("user"))
-
 
 
   function getEvents() {
-    const token = localStorage.getItem("user");
+
+    if(localStorage.getItem("user")) {
+      var token = localStorage.getItem("user");
+     if(token!==undefined || token!=='') {
       var decoded = jwt_decode(token);
       user = jwt(localStorage.getItem("user"));      
       const accessToken = JSON.parse(token).accessToken;
@@ -62,10 +62,17 @@ const Profile = () => {
       .catch((error) => {
         console.log(error);
       });
-   
+     }
+    }
+    else{
+      console.log("logged out!")
+    }
+      
+      
     
   }
 
+  
   useEffect(() => {
     getEvents()
   }, [])

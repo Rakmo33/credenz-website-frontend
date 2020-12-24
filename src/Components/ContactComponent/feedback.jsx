@@ -103,6 +103,7 @@ const Feedback = () => {
                 <textarea
                   className='form-control'
                   id='message'
+                  value={feedback}
                   onChange={(e) => setFeedback(e.target.value)}
                   style={{ resize: "none" }}
                   rows='8'></textarea>

@@ -3,11 +3,9 @@ import React from "react";
 
 const Name = (props) => {
 
-  
-
   return (
     <div className='form-group col-md-12'>
-      <label htmlFor={props.id}>Participant {props.index}</label>
+      {props.team==="team" && <label htmlFor={props.id}>Participant {props.index}</label>}
       <input
         type='text'
         className='form-control'
