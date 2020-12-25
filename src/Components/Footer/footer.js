@@ -12,7 +12,7 @@ const footer = () => {
         style={{ textAlign: "center" }}>
         <Row>
           <span className={"footer-font"}>
-            copyright @ PICT IEEE Student Branch | Developed with &#9829; by
+            copyright &#169; PICT IEEE Student Branch | Developed with &#9829; by
             PISB &nbsp;{" "}
             <Link to='/team'>
               <span style={{ color: "#6eabce" }}> Web Team</span>
