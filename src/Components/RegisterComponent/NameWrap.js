@@ -22,7 +22,7 @@ const NameWrap = (props) => {
 
       if(props.formData.team==="single") {
 
-        console.log(props.formData)
+        //console.log(props.formData)
 
         return(
           <>
@@ -66,6 +66,13 @@ const NameWrap = (props) => {
               {console.log(props.formData)}
     
               <p id='choose-events'>Enter Your Usernames</p>
+              <Name
+                index={""}
+                id='teamName'
+                team={props.formData.team}
+                value={props.formData.teamName}
+                changeHandler={props.setFormData}
+                name='teamName'></Name>
               <Name
                 index={"1*"}
                 id='Name1'
