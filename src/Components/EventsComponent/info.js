@@ -4,7 +4,6 @@ export const info = [
     title: "Clash",
     src: "/logos/clash.png",
     tagline: "Clash is based on competetive programming!...",
-    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
       Have you always dreamt of having your own business or product ? B-Plan
       is the perfect platform for you to showcase your ideas before a panel
@@ -69,8 +68,7 @@ export const info = [
   {
     title: "Reverse Coding",
     src: "/logos/rc.png",
-    tagline: "Clash is based on competetive programming!...",
-    tagline: "Clash is based on competetive programming!...",
+    tagline: "Reverse Coding is based on competetive programming!...",
     info1: `<p>
       A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
     </p>
@@ -117,7 +115,7 @@ export const info = [
     title: "Pixelate",
     src: "/logos/pixelate.png",
 
-    tagline: "Clash is based on competetive programming!...",
+    tagline: "Pixelate is based on competetive programming!...",
     info1: `<p>
     Paint your virtual canvas with the pixels of your artistry. 
     Let creativity fuse with the finesse of your vision as the 
@@ -184,7 +182,7 @@ export const info = [
     title: "Cretronix",
     src: "/logos/cretronix.png",
 
-    tagline: "Clash is based on competetive programming!...",
+    tagline: "Cretronix is based on competetive programming!...",
     info1: `<p>
     Battle it out on the bread board!
     <br />

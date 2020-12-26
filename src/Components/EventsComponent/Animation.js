@@ -51,7 +51,10 @@ function Animation() {
       } else {
         clearTimeout(roboTextTimer);
       }
-      setTimeout(robotextFrameLooper, 15); /* change 70 for speed */
+      roboTextTimer = setTimeout(
+        robotextFrameLooper,
+        15
+      ); /* change 70 for speed */
     };
 
     robotextFrameLooper();
@@ -65,9 +68,12 @@ function Animation() {
     // $(".evePageCards").forEach((item) => {
     //   item.unbind("hover");
     // });
+
     document.querySelector(".roboMsg").classList.remove("slide-up");
     setTimeout(() => {
       document.querySelector(".roboMsg").classList.add("slide-up");
+      document.getElementById("Robotext").innerHTML = "";
+
       robotTypeMsg(info[index].tagline);
     }, 300);
   };
@@ -225,7 +231,10 @@ function Animation() {
             className={label !== "detected" ? `roboMsg slide-up` : "roboMsg"}>
             {/* <p>Clash is for the best Competetive</p>
             <p>Programmers!</p> */}
-            <div id='Robotext'></div>
+            <span></span>
+            <div id='RobotextWrap'>
+              <p id='Robotext'></p>
+            </div>
           </div>
           <Robo
             cls={cls3}

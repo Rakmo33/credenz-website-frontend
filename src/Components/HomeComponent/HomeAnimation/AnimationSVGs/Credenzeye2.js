@@ -115,11 +115,11 @@ function SvgCredenzeye(props) {
           <circle
             cx={566.21}
             cy={398.05}
-            r={550.55}
+            r={650.55}
             id={props.ids[0]}
             fill='#2fb3ff'
           />
-          <circle cx={565.56} cy={397.4} id={props.ids[1]} r={430.72} />
+          <circle cx={565.56} cy={397.4} id={props.ids[1]} r={530.72} />
         </g>
       </g>
     </svg>
