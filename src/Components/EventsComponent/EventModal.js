@@ -10,6 +10,16 @@ function EventModal(props) {
   const [tab, setTab] = useState(1);
   const [currentTabInfo, setCurrentTabInfo] = useState(currentInfo.info1);
 
+  const activeTab = (index) => {
+    let tabs = document.querySelectorAll(".tab-button");
+
+    tabs.forEach((item) => {
+      item.classList.remove("activeTabButton");
+    });
+
+    tabs[index - 1].classList.add("activeTabButton");
+  };
+
   const tabSwitchHandler = (tabNumber) => {
     setTab(tabNumber);
 
@@ -17,13 +27,18 @@ function EventModal(props) {
 
     if (tabNumber === 1) {
       setCurrentTabInfo(currentInfo.info1);
+      activeTab(1);
     } else if (tabNumber === 2) {
       setCurrentTabInfo(currentInfo.info2);
+      activeTab(2);
     } else if (tabNumber === 3) {
       setCurrentTabInfo(currentInfo.info3);
+      activeTab(3);
     } else if (tabNumber === 4) {
       setCurrentTabInfo(currentInfo.info4);
+      activeTab(4);
     } else if (tabNumber === 5) {
+      activeTab(5);
       setCurrentTabInfo(currentInfo.info5);
     }
   };
@@ -40,6 +55,7 @@ function EventModal(props) {
         <ul className='tabs'>
           <li>
             <button
+              className='tab-button activeTabButton'
               onClick={() => {
                 tabSwitchHandler(1);
               }}>
@@ -48,6 +64,7 @@ function EventModal(props) {
           </li>
           <li>
             <button
+              className='tab-button'
               onClick={() => {
                 tabSwitchHandler(2);
               }}>
@@ -56,6 +73,7 @@ function EventModal(props) {
           </li>
           <li>
             <button
+              className='tab-button'
               onClick={() => {
                 tabSwitchHandler(3);
               }}>
@@ -64,6 +82,7 @@ function EventModal(props) {
           </li>
           <li>
             <button
+              className='tab-button'
               onClick={() => {
                 tabSwitchHandler(4);
               }}>
@@ -72,6 +91,7 @@ function EventModal(props) {
           </li>
           <li>
             <button
+              className='tab-button'
               onClick={() => {
                 tabSwitchHandler(5);
               }}>

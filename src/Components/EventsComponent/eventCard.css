@@ -12,11 +12,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: white;
-  border-radius: 15px;
   width: 130px;
   margin: 0 auto;
-  padding: 20px 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-box-shadow: 0px 0px 8px #131313;
@@ -24,21 +21,46 @@
   cursor: pointer;
 }
 
-.evePage .event-wrap img {
-  height: 80%;
-  margin: auto;
+.evePage .event-wrap div {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding: 20px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  border-radius: 15px;
 }
 
-.evePage .event-wrap h5 {
+.evePage .event-wrap div img {
+  height: 80%;
+  margin: auto;
+  pointer-events: none;
+}
+
+.evePage .event-wrap div h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   font-size: 15px;
   text-align: center;
   margin: auto 0;
+  pointer-events: none;
 }
 
-.evePage .event-wrap:hover {
+.evePage .event-wrap div:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -67,5 +89,175 @@
 
 .evePage .hide {
   display: none;
+}
+
+.evePage .detect {
+  border-width: 3px !important;
+  border-style: solid !important;
+  border-color: transparent;
+  border-radius: 0 !important;
+}
+
+.evePage .detect span.corner {
+  -webkit-animation: blink 1.8s;
+          animation: blink 1.8s;
+}
+
+.evePage .detect span.corner:before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  background-color: cyan;
+  width: 25%;
+}
+
+.evePage .detect span.corner::after {
+  position: absolute;
+  content: '';
+  width: 2px;
+  background-color: cyan;
+  height: 25%;
+}
+
+.evePage .detect span.corner.top:before,
+.evePage .detect span.corner.top::after {
+  top: -7%;
+}
+
+.evePage .detect span.corner.left:before,
+.evePage .detect span.corner.left:after {
+  left: -7%;
+}
+
+.evePage .detect span.corner.right:before,
+.evePage .detect span.corner.right:after {
+  right: -7%;
+}
+
+.evePage .detect span.corner.bottom:before,
+.evePage .detect span.corner.bottom:after {
+  bottom: -7%;
+}
+
+.evePage .detect span#scanner {
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 100%;
+  background-color: cyan;
+  position: absolute;
+  -webkit-animation: scan 1.8s ease-in;
+          animation: scan 1.8s ease-in;
+}
+
+.evePage .detect.red {
+  border-color: red;
+}
+
+.evePage .detect.blue {
+  border-color: blue;
+}
+
+.evePage .detect.green {
+  border-color: green;
+}
+
+.evePage .detect.green::after {
+  content: 'EVENT';
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #09ff00;
+  position: absolute;
+  font-size: 10px;
+  bottom: -10%;
+  right: 0;
+  font-weight: 500;
+}
+
+@-webkit-keyframes borders {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: blue;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+@keyframes borders {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: blue;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+@-webkit-keyframes scan {
+  0% {
+    top: 0;
+  }
+  80% {
+    top: 100%;
+  }
+  100% {
+    top: 00%;
+  }
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  80% {
+    top: 100%;
+  }
+  100% {
+    top: 00%;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=eventCard.css.map */

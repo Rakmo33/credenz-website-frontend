@@ -152,4 +152,25 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.evePage .modalWrap .modalBody .activeTabButton {
+  background-color: blue !important;
+}
+
+@media (max-width: 1200px) {
+  .evePage .showModal1 {
+    opacity: 1 !important;
+    left: auto;
+  }
+  .evePage .showModal2 {
+    opacity: 1 !important;
+    right: auto;
+  }
+  .evePage .shiftRight {
+    right: auto;
+  }
+  .evePage .modalWrap {
+    width: 80%;
+  }
+}
 /*# sourceMappingURL=eventmodal.css.map */

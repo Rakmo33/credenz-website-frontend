@@ -24,6 +24,11 @@
   -o-box-sizing: border-box;
 }
 
+.robo .invert {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
 .robo #head {
   width: 100%;
   height: 100px;
@@ -38,8 +43,10 @@
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background: black;
+  background: #292929;
   z-index: 10;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   /*circulo branco do olho maior*/
   /*circulo branco do olho menor*/
 }
@@ -79,6 +86,8 @@
   border-radius: 100%;
   background: #2fb3ff;
   z-index: -1;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .robo #head .olho {
@@ -90,6 +99,8 @@
   margin: 0 auto;
   background: #e1edf3;
   z-index: -2;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
 }
 
 .robo #head .borda-olho {
@@ -101,6 +112,8 @@
   margin: 0 auto;
   background: #001e2c;
   z-index: -3;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
 }
 
 .robo #head .head {
@@ -118,11 +131,11 @@
 
 .robo #head .antena {
   position: relative;
-  bottom: 730px;
+  bottom: 700px;
   width: 5px;
   height: 100px;
   margin: 0 auto;
-  background: black;
+  background: #292929;
   z-index: -5;
 }
 
@@ -160,7 +173,7 @@
 .robo .robo-body .peito::before {
   display: block;
   position: relative;
-  top: 145px;
+  top: 155px;
   left: 20px;
   width: 20px;
   height: 20px;
@@ -171,10 +184,15 @@
           box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
 }
 
+.robo .robo-body .peito.lighting::before {
+  -webkit-animation: lighting 0.6s infinite;
+          animation: lighting 0.6s infinite;
+}
+
 .robo .robo-body .tela {
   margin: 0 auto;
   width: 100px;
-  height: 60px;
+  height: 90px;
   line-height: 45px;
   background: #001e2c;
   border-radius: 5px;
@@ -185,6 +203,19 @@
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.robo .robo-body .tela img {
+  width: 85%;
+  height: 85%;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .robo .leg {
@@ -212,7 +243,7 @@
   height: 40px;
   top: 10px;
   border-radius: 80%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(26, 25, 25, 0.3);
   -webkit-animation: shadow 3s infinite;
           animation: shadow 3s infinite;
 }
@@ -238,16 +269,19 @@
 
 .robo .braco-esquerdo .antebraco-esquerdo {
   position: absolute;
-  right: 45%;
-  top: -475%;
+  right: 105%;
+  top: -85%;
   width: 100px;
   height: 40px;
-  background: red;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
   z-index: 100;
+  -webkit-transform-origin: 110% 50%;
+          transform-origin: 110% 50%;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
   border-radius: 5px;
   background: #2fb3ff;
   /*mao*/
@@ -280,7 +314,7 @@
   display: block;
   position: relative;
   top: -1px;
-  left: -2px;
+  left: -5px;
   width: 18px;
   height: 18px;
   border-radius: 100%;
@@ -297,6 +331,13 @@
           animation: moveHand2 5s infinite;
 }
 
+.robo .swingLeftLower {
+  top: 100% !important;
+  right: 100% !important;
+  -webkit-transform-origin: right !important;
+          transform-origin: right !important;
+}
+
 .robo .switchHand1a {
   -webkit-transform-origin: unset !important;
           transform-origin: unset !important;
@@ -305,11 +346,8 @@
 }
 
 .robo .switchHand1b {
-  -webkit-transform-origin: unset !important;
-          transform-origin: unset !important;
   -webkit-transform: rotate(-90deg) !important;
           transform: rotate(-90deg) !important;
-  top: 318% !important;
 }
 
 .robo .switchHand2a {
@@ -318,9 +356,8 @@
 }
 
 .robo .switchHand2b {
-  top: -488% !important;
-  -webkit-transform: rotate(90deg) !important;
-          transform: rotate(90deg) !important;
+  -webkit-transform: rotate(-270deg) !important;
+          transform: rotate(-270deg) !important;
 }
 
 .robo .braco-direito {
@@ -334,16 +371,15 @@
   transition: all 0.3s;
   background: #e1edf3;
   z-index: -1;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
   /*ombro*/
   /*cotovelo*/
 }
 
 .robo .braco-direito .antebraco-direito {
   position: absolute;
-  right: -55%;
-  top: 318%;
+  top: -80%;
   width: 100px;
   height: 40px;
   background: red;
@@ -352,8 +388,12 @@
   transition: all 0.3s;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  -webkit-transform-origin: 110% 50%;
+          transform-origin: 110% 50%;
   border-radius: 5px;
   background: #2fb3ff;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
   /*mao*/
 }
 
@@ -649,6 +689,58 @@
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes lighting {
+  0% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+            box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+  33% {
+    background-color: #2d612d;
+    -webkit-box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+            box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+  }
+  66% {
+    background-color: #459945;
+    -webkit-box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+            box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+  }
+  100% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+            box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+}
+
+@keyframes lighting {
+  0% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+            box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+  33% {
+    background-color: #2d612d;
+    -webkit-box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+            box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+  }
+  66% {
+    background-color: #459945;
+    -webkit-box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+            box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+  }
+  100% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+            box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+}
+
+@media (max-width: 1200px) {
+  .robo {
+    display: none;
   }
 }
 /*# sourceMappingURL=robo.css.map */

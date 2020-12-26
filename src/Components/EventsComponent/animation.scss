@@ -18,4 +18,62 @@
         grid-gap: 40px;
         // grid-template-columns: 1fr 1fr;
     }
+    .roboWrap {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-template-rows: 1fr 10fr;
+        .roboMsg {
+            background-color: #001e2c;
+            width: 70%;
+            height: 100px;
+            display: flex;
+            margin: auto;
+            border: 5px solid #2fb3ff;
+            border-radius: 2px;
+            transform: translateY(50px);
+            transition: all 0.1s;
+            opacity: 0;
+            #Robotext {
+                color: #12f57c;
+                padding: 7px;
+            }
+        }
+        .slide-up {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+    .red {
+        background-color: red;
+    }
+}
+
+@media(max-width: 1200px) {
+    .eve-anim {
+        width: 95%;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        grid-column-gap: 100px;
+    }
+}
+
+@media(max-width: 800px) {
+    .eve-anim {
+        width: 85%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        grid-column-gap: 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .eve-anim {
+        .roboWrap {
+            display: none;
+        }
+    }
 }

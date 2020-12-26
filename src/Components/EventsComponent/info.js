@@ -2,6 +2,9 @@ export const info = [
   // 1
   {
     title: "Clash",
+    src: "/logos/clash.png",
+    tagline: "Clash is based on competetive programming!...",
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
       Have you always dreamt of having your own business or product ? B-Plan
       is the perfect platform for you to showcase your ideas before a panel
@@ -65,6 +68,9 @@ export const info = [
   // 2
   {
     title: "Reverse Coding",
+    src: "/logos/rc.png",
+    tagline: "Clash is based on competetive programming!...",
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
       A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
     </p>
@@ -109,6 +115,9 @@ export const info = [
   // 3#
   {
     title: "Pixelate",
+    src: "/logos/pixelate.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     Paint your virtual canvas with the pixels of your artistry. 
     Let creativity fuse with the finesse of your vision as the 
@@ -124,9 +133,9 @@ export const info = [
         <span>₹120</span> for IEEE members
       </li>
     </ul>`,
-    info2: 
-    //ye last year ka que he iss saal ka badalna hoga
-    `<p>
+    info2:
+      //ye last year ka que he iss saal ka badalna hoga
+      `<p>
     "To observe attentively is to remember distinctly".<br/>    
     We have come a long way from computers in big rooms to ultra thin laptops.memory evolution took place to a great extent.It gave us great opportunities and wide pathways and scope for development in infinite sectors.
     Design a poster which conveys the message of various walks of evolution of memory and evolution  from vaccum tubes to pen drive and hard drives.
@@ -173,6 +182,9 @@ export const info = [
   //4#
   {
     title: "Cretronix",
+    src: "/logos/cretronix.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     Battle it out on the bread board!
     <br />
@@ -232,6 +244,9 @@ export const info = [
   //5#
   {
     title: "Bplan",
+    src: "/logos/bplan.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
       Have you always dreamt of having your own business or product ? B-Plan
       is the perfect platform for you to showcase your ideas before a panel
@@ -302,6 +317,9 @@ export const info = [
   //6#
   {
     title: "Wallstreet",
+    src: "/logos/wallstreet.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     Let the rise and fall of market shares bring out your inner businessman!
     From the chaos due to the fluctuations in Sensex to the never ending trades, get ready to take over the virtual stock market.
@@ -355,6 +373,9 @@ export const info = [
   //7#
   {
     title: "Datawiz",
+    src: "/logos/datawiz.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     Want to step into the world of data science? 
     <br />
@@ -406,6 +427,9 @@ export const info = [
   //8#
   {
     title: "Enigma",
+    src: "/logos/enigma.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     A non-technical aptitude based event. An event everyone can participate in and enjoy.
      Enigma presents to its players, an array of brain tickling logical reasoning questions. 
@@ -488,7 +512,10 @@ export const info = [
   },
   //9#
   {
-    title: "Clash",
+    title: "Quiz",
+    src: "/logos/quiz.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     Get ready to set off on a journey with captivating questions and puzzles on the way, led by a piquant quizmaster. 
     <br />
@@ -563,6 +590,9 @@ export const info = [
   //10#
   {
     title: "Webweaver",
+    src: "/logos/web.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online.
     If you think you have the flair to create such a site, WebWeaver is the competition for you!
@@ -634,6 +664,9 @@ export const info = [
   //11#
   {
     title: "Paper Presentation",
+    src: "/logos/paper.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     An investment in knowledge always pays the best interest.
     <br /> 
@@ -693,6 +726,9 @@ export const info = [
   //12#
   {
     title: "Network Treasure Hunt",
+    src: "/logos/nth.png",
+
+    tagline: "Clash is based on competetive programming!...",
     info1: `<p>
     An online treasure hunt where players find different pieces of clues on various websites to solve a variety of puzzles. Solve a set of riddles with important clues and get to the finish line before anyone can.
     <br />
