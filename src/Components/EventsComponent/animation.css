@@ -1,5 +1,6 @@
 .eve-anim {
   min-height: 95vh;
+  max-height: 95vh;
   width: 80%;
   margin: auto;
   padding-top: 0px;
@@ -49,7 +50,9 @@
 .eve-anim .roboWrap .roboMsg {
   background-color: #001e2c;
   width: 70%;
-  height: 100px;
+  position: relative;
+  top: 80px;
+  height: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,11 +64,30 @@
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
   opacity: 0;
+  z-index: -50;
+}
+
+.eve-anim .roboWrap .roboMsg #RobotextWrap {
+  position: absolute;
+  width: 100%;
+  margin: auto;
 }
 
 .eve-anim .roboWrap .roboMsg #Robotext {
   color: #12f57c;
   padding: 7px;
+}
+
+.eve-anim .roboWrap .roboMsg span {
+  height: 30px;
+  width: 20px;
+  top: 100%;
+  right: auto;
+  left: -5px;
+  border-right: 25px solid transparent;
+  border-top: 35px solid #2fb3ff;
+  bottom: 0;
+  position: relative;
 }
 
 .eve-anim .roboWrap .slide-up {
@@ -76,6 +98,11 @@
 
 .eve-anim .red {
   background-color: red;
+}
+
+.eve-anim .disabled {
+  background-color: red;
+  pointer-events: none;
 }
 
 @media (max-width: 1200px) {

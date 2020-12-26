@@ -43,10 +43,10 @@
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background: #292929;
+  background: black;
   z-index: 10;
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
   /*circulo branco do olho maior*/
   /*circulo branco do olho menor*/
 }
@@ -86,25 +86,26 @@
   border-radius: 100%;
   background: #2fb3ff;
   z-index: -1;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  -webkit-transform: scale(0.6);
+          transform: scale(0.6);
 }
 
 .robo #head .olho {
   position: relative;
-  top: -160px;
-  width: 140px;
-  height: 140px;
+  top: -120px;
+  width: 40%;
   border-radius: 100%;
   margin: 0 auto;
   background: #e1edf3;
   z-index: -2;
-  -webkit-transform: scale(0.7);
-          transform: scale(0.7);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  border: 12px solid #001e2c;
 }
 
 .robo #head .borda-olho {
   position: relative;
+  opacity: 0;
   top: -310px;
   width: 160px;
   height: 160px;
@@ -119,19 +120,33 @@
 .robo #head .head {
   margin: 0 auto;
   position: relative;
-  top: -440px;
-  width: 280px;
-  height: 0px;
+  top: -380px;
+  width: 260px;
+  height: 10px;
   border-right: 40px solid transparent;
   border-left: 40px solid transparent;
-  border-bottom: 170px solid #2fb3ff;
+  border-bottom: 140px solid #2fb3ff;
   z-index: -4;
-  border-radius: 0 0 40px 40px;
+  border-radius: 40px 40px 40px 40px;
+  border-radius: 500px 500px 500px 500px;
 }
 
-.robo #head .antena {
+.robo #head .head::before {
+  height: 20px;
+  width: 20%;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  bottom: -34px;
+  z-index: 500;
+  border: 4px solid black;
+}
+
+.robo .antena {
   position: relative;
-  bottom: 700px;
+  bottom: 600px;
   width: 5px;
   height: 100px;
   margin: 0 auto;
@@ -139,7 +154,7 @@
   z-index: -5;
 }
 
-.robo .robo-body {
+.robo-body {
   width: 100%;
   height: 100px;
   margin: 0 auto;
@@ -148,7 +163,7 @@
           animation: float 3s infinite;
 }
 
-.robo .robo-body .peito {
+.robo-body .peito {
   margin: 0 auto;
   width: 140px;
   height: 200px;
@@ -159,7 +174,7 @@
   /*bolinhas menores barriga*/
 }
 
-.robo .robo-body .peito::after {
+.robo-body .peito::after {
   display: block;
   position: relative;
   top: 20px;
@@ -170,7 +185,7 @@
   background: #2fb3ff;
 }
 
-.robo .robo-body .peito::before {
+.robo-body .peito::before {
   display: block;
   position: relative;
   top: 155px;
@@ -184,12 +199,12 @@
           box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
 }
 
-.robo .robo-body .peito.lighting::before {
+.robo-body .peito.lighting::before {
   -webkit-animation: lighting 0.6s infinite;
           animation: lighting 0.6s infinite;
 }
 
-.robo .robo-body .tela {
+.robo-body .tela {
   margin: 0 auto;
   width: 100px;
   height: 90px;
@@ -208,7 +223,7 @@
   display: flex;
 }
 
-.robo .robo-body .tela img {
+.robo-body .tela img {
   width: 85%;
   height: 85%;
   margin: auto;
@@ -218,14 +233,14 @@
      object-position: center;
 }
 
-.robo .leg {
+.leg {
   width: 100%;
   height: 100px;
   margin: 0 auto;
   margin-top: 100px;
 }
 
-.robo .leg .foot {
+.leg .foot {
   width: 70px;
   height: 60px;
   margin: 0 auto;
@@ -236,7 +251,7 @@
           animation: float 3s infinite;
 }
 
-.robo .leg .sombra {
+.leg .sombra {
   position: relative;
   margin: 0 auto;
   width: 150px;
@@ -248,7 +263,7 @@
           animation: shadow 3s infinite;
 }
 
-.robo .braco-esquerdo {
+.braco-esquerdo {
   position: relative;
   top: -160px;
   left: -110px;
@@ -267,7 +282,7 @@
   /*cotovelo*/
 }
 
-.robo .braco-esquerdo .antebraco-esquerdo {
+.braco-esquerdo .antebraco-esquerdo {
   position: absolute;
   right: 105%;
   top: -85%;
@@ -287,7 +302,7 @@
   /*mao*/
 }
 
-.robo .braco-esquerdo .antebraco-esquerdo::after {
+.braco-esquerdo .antebraco-esquerdo::after {
   width: 40px;
   height: 50px;
   border-style: solid;
@@ -299,7 +314,7 @@
   left: -40%;
 }
 
-.robo .braco-esquerdo::after {
+.braco-esquerdo::after {
   display: block;
   position: relative;
   left: 75%;
@@ -310,7 +325,7 @@
   background: #2fb3ff;
 }
 
-.robo .braco-esquerdo::before {
+.braco-esquerdo::before {
   display: block;
   position: relative;
   top: -1px;
@@ -321,46 +336,46 @@
   background: #005e7d;
 }
 
-.robo .moveHand {
+.moveHand {
   -webkit-animation: moveHand 5s infinite;
           animation: moveHand 5s infinite;
 }
 
-.robo .moveHand2 {
+.moveHand2 {
   -webkit-animation: moveHand2 5s infinite;
           animation: moveHand2 5s infinite;
 }
 
-.robo .swingLeftLower {
+.swingLeftLower {
   top: 100% !important;
   right: 100% !important;
   -webkit-transform-origin: right !important;
           transform-origin: right !important;
 }
 
-.robo .switchHand1a {
+.switchHand1a {
   -webkit-transform-origin: unset !important;
           transform-origin: unset !important;
   -webkit-transform: rotate(-20deg) !important;
           transform: rotate(-20deg) !important;
 }
 
-.robo .switchHand1b {
+.switchHand1b {
   -webkit-transform: rotate(-90deg) !important;
           transform: rotate(-90deg) !important;
 }
 
-.robo .switchHand2a {
+.switchHand2a {
   -webkit-transform-origin: left !important;
           transform-origin: left !important;
 }
 
-.robo .switchHand2b {
+.switchHand2b {
   -webkit-transform: rotate(-270deg) !important;
           transform: rotate(-270deg) !important;
 }
 
-.robo .braco-direito {
+.braco-direito {
   position: relative;
   top: -172px;
   left: 110px;
@@ -377,7 +392,7 @@
   /*cotovelo*/
 }
 
-.robo .braco-direito .antebraco-direito {
+.braco-direito .antebraco-direito {
   position: absolute;
   top: -80%;
   width: 100px;
@@ -397,7 +412,7 @@
   /*mao*/
 }
 
-.robo .braco-direito .antebraco-direito::after {
+.braco-direito .antebraco-direito::after {
   width: 40px;
   height: 50px;
   border-style: solid;
@@ -409,7 +424,7 @@
   left: -40%;
 }
 
-.robo .braco-direito::after {
+.braco-direito::after {
   display: block;
   position: relative;
   left: -10%;
@@ -420,7 +435,7 @@
   background: #2fb3ff;
 }
 
-.robo .braco-direito::before {
+.braco-direito::before {
   display: block;
   position: relative;
   top: -1px;
@@ -431,7 +446,7 @@
   background: #005e7d;
 }
 
-.robo .autor {
+.autor {
   position: absolute;
   top: 10%;
   left: 10%;
@@ -446,14 +461,14 @@
   /*ponta balao*/
 }
 
-.robo .autor:hover {
+.autor:hover {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
   -webkit-transition: all ease-in-out 1s;
   transition: all ease-in-out 1s;
 }
 
-.robo .autor::after {
+.autor::after {
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -462,7 +477,7 @@
   left: 80%;
 }
 
-.robo .autor > p {
+.autor > p {
   width: 100%;
   height: 50%;
   line-height: 50px;
@@ -471,12 +486,12 @@
   color: #ecf0f1;
 }
 
-.robo .autor > p > a {
+.autor > p > a {
   text-decoration: none;
   color: #ecf0f1;
 }
 
-.robo .autor > p > a:hover {
+.autor > p > a:hover {
   text-decoration: underline;
 }
 

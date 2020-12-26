@@ -7,11 +7,11 @@ function eventCard(props) {
   return (
     <div
       id={props.id}
-      className={`evePageCards ${cls}`}
+      className={` ${cls}`}
       // info={props.info}
       onClick={props.onClick}
       onMouseEnter={props.onHover}>
-      <div>
+      <div className='evePageCards button ice'>
         <span id='scanner'></span>
         <span className='corner top left'></span>
         <span className='corner top right'></span>

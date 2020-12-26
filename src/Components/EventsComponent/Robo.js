@@ -15,7 +15,14 @@ function Robo(props) {
   return (
     <div className={cls} onClick={props.onClick}>
       <div id='head'>
-        <div style={{ display: "flex" }}>
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            top: "20px",
+            width: "80%",
+            margin: "auto",
+          }}>
           <div
             className='iris'
             style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
@@ -23,7 +30,14 @@ function Robo(props) {
             className='iris'
             style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
         </div>
-        <div style={{ display: "flex" }}>
+        <div
+          style={{
+            position: "relative",
+            display: "flex",
+            top: "20px",
+            width: "80%",
+            margin: "auto",
+          }}>
           <div
             className='borda-iris'
             style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
@@ -32,7 +46,7 @@ function Robo(props) {
             style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
         </div>
 
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", margin: "auto", width: "80%" }}>
           <div className='olho'>
             <CredenzEye2
               isidle={props.isidle}
@@ -44,7 +58,7 @@ function Robo(props) {
               isidle={props.isidle}></CredenzEye2>
           </div>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", margin: "auto", width: "80%" }}>
           <div className='borda-olho'></div>
           <div className='borda-olho'></div>
         </div>
