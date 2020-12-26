@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Name from "./Name";
 import Radio from "./Radio";
 
@@ -28,23 +28,22 @@ const NameWrap = (props) => {
           <>
           <div className='form-row col-flex'>
             <div className='justify-spread'>
-                {/* FE-SE-TE-BE RADIO BUTTONS */}
                 <Radio
                   index={1}
                   id='Radio1'
                   name='team'
-                  changeHandler={props.setFormData}
                   value='single'
+                  changeHandler={props.setFormData}
                   label='Single participation'
                   checked={checked[0]}></Radio>
                 <Radio
                   index={2}
                   id='Radio2'
                   name='team'
-                  changeHandler={props.setFormData}
                   value='team'
+                  changeHandler={props.setFormData}
                   label='Team participation'
-                  checked={checked[1]}></Radio>
+              checked={checked[1]}></Radio> 
             </div>
             <div style={{margin: 30}}>
             <Name

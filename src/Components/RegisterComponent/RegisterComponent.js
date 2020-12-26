@@ -152,6 +152,8 @@ const Register = () => {
     events: {},
   };
 
+  console.log(defaultFormData)
+
   const [formData, setFormData] = useForm(defaultFormData);
 
   // disable buttons
@@ -428,6 +430,8 @@ const Register = () => {
                 formData={formData}
                 setFormData={setFormData}></YearWrap>
 
+                {console.log(defaultFormData.team==="team")}
+                {console.log(defaultFormData.team)}
  { defaultFormData.team==="team" && 
               <NumberWrap
                 isVisible={isVisible[2]}
