@@ -40,12 +40,12 @@ function SvgCredenzeye(props) {
     if (isMounted) {
       // let outercx = document.getElementById("eyeball-outer").getAttribute("cx");
       // let outercy = document.getElementById("eyeball-outer").getAttribute("cy");
-      let outerr = document.getElementById("eyeball-outer").getAttribute("r");
-      let eyeballOuter = document.getElementById("eyeball-outer");
+      let outerr = document.getElementById(props.ids[0]).getAttribute("r");
+      let eyeballOuter = document.getElementById(props.ids[0]);
       // let innercx = document.getElementById("eyeball-inner").getAttribute("cx");
       // let innercy = document.getElementById("eyeball-inner").getAttribute("cy");
       // let innerr = document.getElementById("eyeball-inner").getAttribute("r");
-      let eyeballInner = document.getElementById("eyeball-inner");
+      let eyeballInner = document.getElementById(props.ids[1]);
       let outerposx = 0;
       let outerposy = 0;
       let innerposx = 0;
@@ -116,10 +116,10 @@ function SvgCredenzeye(props) {
             cx={566.21}
             cy={398.05}
             r={550.55}
-            id='eyeball-outer'
+            id={props.ids[0]}
             fill='#2fb3ff'
           />
-          <circle cx={565.56} cy={397.4} id='eyeball-inner' r={430.72} />
+          <circle cx={565.56} cy={397.4} id={props.ids[1]} r={430.72} />
         </g>
       </g>
     </svg>
