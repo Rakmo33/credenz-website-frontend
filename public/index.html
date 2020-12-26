@@ -12,13 +12,91 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>Credenz'21</title>
+    <style>
+      *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+#preloader{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: radial-gradient(circle,rgba(7, 53, 66,.7),black,rgb(0,0,0));
+}
+
+@keyframes rotate{
+    from {
+        transform:rotate(0deg) ;
+ 
+    }
+    to{
+        transform: rotate(360deg);
+      
+    }
+}
+#aperture{
+    animation: rotate 2s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+
+  
+}
+@keyframes zoom{
+    from {
+        transform:scale(.5,.5);
+ 
+    }
+    to{
+
+      transform:scale(1.3,1.3)
+      
+    }
+}
+.vec{
+    animation: zoom 2s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;  
+}
+
+    </style>
 </head>
 
-<body style="background-color: black;">
+<body style="background-color:black">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="modal-root"></div>
     <div id="root">
-        <img src="img/loader4.gif" style="width:350px;height:300px;position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);"  alt="loading.."></img>
+        <!-- <img src="img/loader(1).gif" style="position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);"  alt="loading.."></img>  -->
+        <div id="preloader">
+          
+          <svg width="205" height="205" viewBox="0 0 285 285" fill="none" xmlns="http://www.w3.org/2000/svg">
+             
+              <g id="aperture-svgrepo-com 1">
+              
+              <g id="Group">
+              <g id="aperture">
+              <path class="vec" id="Vector" d="M88.72 117.638C85.258 125.136 83.322 133.478 83.322 142.265C83.322 149.45 84.616 156.338 86.981 162.711H114.883L88.72 117.638Z" fill="#2FB3FF"/>
+              <path class="vec" id="Vector_2" d="M136.691 83.586C120.681 85.095 106.513 93.031 96.805 104.783L110.832 128.95L136.691 83.586Z" fill="#2FB3FF"/>
+              <path class="vec" id="Vector_3" d="M169.647 121.818L195.81 166.891C199.272 159.393 201.208 151.051 201.208 142.265C201.208 135.079 199.914 128.191 197.549 121.818H169.647V121.818Z" fill="#2FB3FF"/>
+              <path class="vec" id="Vector_4" d="M151.871 84.108L138.04 108.372H190.462C181.538 95.72 167.766 86.725 151.871 84.108Z" fill="#2FB3FF"/>
+              <path class="vec"  id="Vector_5" d="M124.701 176.157C124.699 176.157 124.696 176.156 124.694 176.156H94.067C102.99 188.808 116.763 197.804 132.659 200.42L146.49 176.156H124.708C124.706 176.157 124.704 176.157 124.701 176.157Z" fill="#2FB3FF"/>
+              <path class="vec" id="Vector_6" d="M147.838 200.943C163.848 199.434 178.016 191.498 187.724 179.746L173.697 155.579L147.838 200.943Z" fill="#2FB3FF"/>
+              </g>
+              </g>
+              </g>
+              </svg>
+              
+              
+              
+              
+      </div>
     </div>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
