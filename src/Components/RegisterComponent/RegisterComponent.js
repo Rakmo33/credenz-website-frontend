@@ -277,15 +277,25 @@ const Register = () => {
           }
           else{
 
-            /*axios.post(url, {
-  //...data
-}, {
-  headers: {
-    ...
-  }
-})*/
+            axios.post("http://credenzwebsite.herokuapp.com/addteam", {
+              //...data
+              players: players,
+              event_name: event.username,
+              team_username: formData.teamName,
+              no_of_players: count,
+            }, {
+              headers: {
+                authorization: `Bearer ${accessToken}`
+              }
+            })
+            .then((response) => {
+              console.log("team :" + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              console.log("Axios error : " + error);//request fails with 500
+            });
           console.log("else")
-
+            /*
           axios({
             method: "post",
             url: `http://credenzwebsite.herokuapp.com/addteam`,
@@ -302,8 +312,9 @@ const Register = () => {
             })
             .catch((error) => {
               console.log("Axios error : " + error);//request fails with 500
-            });
-          }
+            });*/
+          
+          }//else
 
         }
 

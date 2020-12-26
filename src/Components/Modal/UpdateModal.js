@@ -5,7 +5,7 @@ import axios from "axios";
 
 async function AllUpdates() {
   const response = await axios.get(
-    "https://35.193.100.157/updates"
+    "http://credenzwebsite.herokuapp.com/updates"
   );
   //console.log("I am response" + response);
   const data = await response.data;
