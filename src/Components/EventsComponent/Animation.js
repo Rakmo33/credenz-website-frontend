@@ -61,7 +61,7 @@ function Animation() {
   };
 
   useEffect(() => {
-    robotTypeMsg(info[0].tagline);
+    robotTypeMsg("Hello There!...Credenz is Coming!!!");
   }, []);
 
   const eventsHoverHandler = (index, e) => {
