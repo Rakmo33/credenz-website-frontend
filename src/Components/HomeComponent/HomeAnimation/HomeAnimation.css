@@ -56,7 +56,7 @@
     }
 }
 .vanish{
-    animation: disappear 0.5s;
+    animation: disappear 1.5s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
