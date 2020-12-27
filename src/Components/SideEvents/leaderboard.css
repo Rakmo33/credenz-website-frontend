@@ -6,12 +6,18 @@ thead tr {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
   justify-content: center;
   border-radius: 5px;
+ 
 }
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+} 
 .table {
   width: 90%;
   color: white;
   border-collapse: separate;
   border-spacing: 0 5px;
+  animation:fadeIn 1.5s  ;
 }
 thead tr th {
   border: none !important;
@@ -60,7 +66,7 @@ tr td:last-child {
 }
 
 .search-box {
-  
+  animation:fadeIn 1.5s  ;
   background-color: #0a1018;
   width: 360px;
   border-radius: 20px;
