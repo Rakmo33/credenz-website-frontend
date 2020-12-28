@@ -14,22 +14,22 @@
 }
 .eyeDEA2_0_svg__ring1{
     animation: spin-clockwise 6s linear infinite;
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
     transition-timing-function: ease-in;
 }
 .eyeDEA2_0_svg__ring2{
     animation: spin-anticlockwise 2s linear infinite;
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
     transition-timing-function: ease-in;
 }
 .eyeDEA2_0_svg__ring3{
     animation: spin-anticlockwise 4s linear infinite;
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
 }
 
 .hovered_2_0_animation{
     animation: spin_hovered 5s linear infinite;
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
     transition-timing-function: ease-in;
 }
 
@@ -62,15 +62,15 @@
 }
 
 .hovered_2_0_animation_ring1{
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
     animation: scale_ring1 4.6s linear;
 }
 .hovered_2_0_animation_ring2{
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
     animation: scale_ring2 4.6s linear;
 }
 .hovered_2_0_animation_ring3{
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
     animation: scale_ring3 4.6s linear;
 }
 @keyframes zooming {
@@ -85,7 +85,7 @@
     }
 }
 .zoom-in{
-    transform-origin: 49.7% 50.6%;
+    transform-origin: 51.5% 47.2%;
     animation: zooming 0.55s linear;
     /* transform: scale(2); */
 }
@@ -94,28 +94,55 @@
     animation: spin-clockwise 10s infinite;
 } */
 @keyframes left_fade{
+    0%{transform: translateX(0%);}
+    50%{transform: translateX(-15%);}
+    100%{transform: translateX(0%);}
+}
+.translate_left{
+    animation: left_fade 0.55s linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+/* @keyframes left_fade{
     0%{transform: translateX(0%); opacity: 1;}
     30%{transform: translateX(0%); opacity: 1;}
     100%{transform: translateX(-15%); opacity: 0;}
-}
-.translate_left{
+} */
+/* .translate_left{
     animation: left_fade 4.6s linear;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-}
+} */
+
 @keyframes right_fade{
-    0%{transform: translateX(0%); opacity: 1;}
-    30%{transform: translateX(0%); opacity: 1;}
-    100%{transform: translateX(15%); opacity: 0;}
+    0%{transform: translateX(0%)}
+    50%{transform: translateX(15%)}
+    100%{transform: translateX(0%)}
 }
 .translate_right{
-    animation: right_fade 4.6s linear;
+    animation: right_fade 0.55s linear;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
+/* @keyframes right_fade{
+    0%{transform: translateX(0%); opacity: 1;}
+    30%{transform: translateX(0%); opacity: 1;}
+    100%{transform: translateX(15%); opacity: 0;}
+} */
+/* .translate_right{
+    animation: right_fade 4.6s linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+} */

@@ -11,7 +11,7 @@ const HomeAnimation = (props) =>{
 
     return(
         <div className="anim">
-            <iframe height="100%" width="100%" frameBorder="0" src="https://yash-567.github.io/background-iframe/" className={`anim-iframe ${showbg && 'show'} `}></iframe>
+            <iframe height="100%" width="100%" loading="lazy" frameBorder="0" src="https://yash-567.github.io/background-iframe/" className={`anim-iframe ${showbg && 'show'} `}></iframe>
             <div className={`anim-overlay-lower ${showbg && 'hide-now'} ${darken && 'darken'}`}>
                 <EyeDea20 showbg={setShowbg} darken={setDarken}/>
             </div>
