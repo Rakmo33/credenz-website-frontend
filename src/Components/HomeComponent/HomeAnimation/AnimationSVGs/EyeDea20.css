@@ -37,7 +37,7 @@
     0% { transform: scale(1); }
   7% { transform: scale(.95); }
   14% { transform: scale(1.05); }
-  21% { transform: scale(1) rotate(0deg);}
+  21% { transform: scale(0.95) rotate(0deg);}
   30%{ transform: scale(0.6) rotate(0deg);}
     70%{ transform: scale(0.6) rotate(-100deg);}
     100%{ transform: scale(0.6) rotate(0deg);}
@@ -46,7 +46,7 @@
     0% { transform: scale(1); }
   7% { transform: scale(.95); }
   14% { transform: scale(1.05); }
-  21% { transform: scale(1) rotate(0deg);}
+  21% { transform: scale(0.95) rotate(0deg);}
   30%{ transform: scale(0.9) rotate(0deg);}
     70%{ transform: scale(0.9) rotate(-100deg);}
     100%{ transform: scale(0.9) rotate(0deg);}
@@ -55,7 +55,7 @@
     0% { transform: scale(1); }
   7% { transform: scale(.95); }
   14% { transform: scale(1.05); }
-  21% { transform: scale(1) rotate(0deg);}
+  21% { transform: scale(0.95) rotate(0deg);}
   30%{ transform: scale(1.55) rotate(0deg);}
     70%{ transform: scale(1.55) rotate(-100deg);}
     100%{ transform: scale(1.55) rotate(0deg);}
@@ -86,7 +86,7 @@
 }
 .zoom-in{
     transform-origin: 51.5% 47.2%;
-    animation: zooming 0.55s linear;
+    animation: zooming 0.85s linear;
     /* transform: scale(2); */
 }
 /* .zoom-in-image{
@@ -94,12 +94,13 @@
     animation: spin-clockwise 10s infinite;
 } */
 @keyframes left_fade{
-    0%{transform: translateX(0%);}
-    50%{transform: translateX(-15%);}
-    100%{transform: translateX(0%);}
+    0%{transform: translateX(0%) scale(1);}
+    50%{transform: translateX(-15%) scale(2);}
+    100%{transform: translateX(0%) scale(1);}
 }
 .translate_left{
-    animation: left_fade 0.55s linear;
+    transform-origin: 51.5% 47.2%;
+    animation: left_fade 0.85s linear;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
@@ -121,12 +122,13 @@
 } */
 
 @keyframes right_fade{
-    0%{transform: translateX(0%)}
-    50%{transform: translateX(15%)}
-    100%{transform: translateX(0%)}
+    0%{transform: translateX(0%) scale(1);}
+    50%{transform: translateX(15%) scale(2);}
+    100%{transform: translateX(0%) scale(1);}
 }
 .translate_right{
-    animation: right_fade 0.55s linear;
+    animation: right_fade 0.85s linear;
+    transform-origin: 51.5% 47.2%;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;

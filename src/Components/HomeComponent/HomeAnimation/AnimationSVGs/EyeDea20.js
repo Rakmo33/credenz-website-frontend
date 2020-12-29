@@ -13,10 +13,9 @@ function SvgEyeDea20(props) {
       setHover(true)
       setTimeout(()=>{
         setShowBg(true)
-        // props.darken(true)
         setTimeout(()=>{
           props.showbg(true)
-        },480)
+        },380)
       },2600)
     },4500)
   })
