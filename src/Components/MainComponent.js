@@ -15,6 +15,7 @@ import LeaderBoard from "./SideEvents/leaderboard";
 import Team from "../Components/Team/Team";
 import Profile from "../Components/Profilepage/Profilepage";
 import Admin from "../Components/AdminSection/Admin";
+import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
 import Footer from '../Components/Footer/footer';
 import './maincomponent.module.css';
 import AOS from "aos";
@@ -74,6 +75,10 @@ class Main extends Component {
       return <Admin />;
     };
 
+    const AboutUsPage = () => {
+      return <AboutUs />;
+    };
+
     return (
       <div>
         {/* <NavBar /> */}
@@ -96,6 +101,7 @@ class Main extends Component {
               <Route path='/team' component={TeamPage} />
               <Route path='/profile' component={ProfilePage} />
               <Route path='/admin' component={AdminPage} />
+              <Route path='/aboutus' component={AboutUs} />
               <Redirect to='/home' />
             </Switch>
             </CSSTransition>

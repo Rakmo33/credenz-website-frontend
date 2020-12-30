@@ -15,7 +15,7 @@ const Home = () => {
       <div className={classes.body}>
         {/* <h1 style={{color: "ivory"}}>Credenz Home Page</h1> */}
         <HomeAnimation />
-        <div
+        {/* <div
           data-aos='fade-up'
           data-aos-mirror='true'
           data-aos-offset='200'
@@ -23,14 +23,14 @@ const Home = () => {
           data-aos-duration='600'
           className='d-flex justify-content-center aos-item'>
           <Timer />
-        </div>
-        <div id='Aboutus'>
+        </div> */}
+        {/* <div id='Aboutus'>
           <Aboutus />
         </div>
         <div className={classes.sponsor}>
           {" "}
           <Sponsors />
-        </div>
+        </div> */}
       </div>
       <SideEventButton />
       <Footer />
