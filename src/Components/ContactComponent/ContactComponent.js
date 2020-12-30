@@ -3,7 +3,7 @@ import ContactUs from "./contact";
 import Team from "./team";
 import "./contact.css";
 import Feedback from "./feedback";
-
+import Nav from '../Navbar/Navbar';
 
 
 const Contact = () => {
@@ -14,6 +14,7 @@ const Contact = () => {
   };
   return (
     <div className="container-fluid cont">
+      <Nav/>
       <div className="row head">
         <div className="col-xl-10 col-md-10 col-sm-12  ">
           <div className="row nav" style={{ height: "100%" ,marginTop:"50px"}}>

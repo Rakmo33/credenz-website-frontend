@@ -3,6 +3,7 @@ import Leaderboard from './leaderboard';
 import Social from '../sideEventButton/sideEvent';
 import Footer from '../Footer/footer';
 import SideEventCards from './sideEventCards';
+import Nav from '../Navbar/Navbar';
 const SideEvents = () => {
 
     const [select, setSelect]=useState("Play") ;
@@ -14,6 +15,7 @@ const SideEvents = () => {
 
     return ( 
         <div className="container-fluid cont">
+          <Nav/>
             <div className="row head">
               <div className="col-xl-10 col-md-10 ">
                 <div className="row nav" style={{height:"100%",marginTop:"50px"}}>

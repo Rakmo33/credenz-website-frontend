@@ -5,6 +5,8 @@ import axios from "axios";
 import Animation from "./Animation";
 // import { EVENTS } from "./allEvents";
 import Footer from "../Footer/footer";
+import { Nav } from "react-bootstrap";
+import Navbar from '../Navbar/Navbar';
 
 const Events = () => {
   // window.location.reload(false); //refresh page
@@ -45,6 +47,7 @@ const Events = () => {
 
   return (
     <div className='evePage' style={{ marginTop: "70px" }}>
+      <Navbar/>
       <SideEvent />
 
       {/* <h1 style={{ color: "ivory" }}>Events Page</h1> */}

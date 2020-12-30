@@ -6,6 +6,7 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
+import Nav from '../Navbar/Navbar';
 //import jwt from "jwt-decode";
 import $ from "jquery";
 
@@ -100,6 +101,7 @@ const Profile = () => {
 
     return (
       <div>
+        <Nav/>
         <div className='profilepage'>
           <div className='container'>
             <div className='wrapper'>
