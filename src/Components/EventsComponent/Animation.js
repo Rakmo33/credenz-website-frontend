@@ -87,21 +87,21 @@ function Animation() {
 
     const eventCard = e.target;
 
-    eventCard.className = "detect red";
+    eventCard.className = "evePageCards customCard   button ice detect red";
     setLogoScreen(true);
 
     setTimeout(() => {
-      eventCard.className = "detect blue";
+      eventCard.className = "evePageCards customCard  button ice detect blue";
       setLogoScreen(false);
     }, 300);
 
     setTimeout(() => {
-      eventCard.className = "detect red";
+      eventCard.className = "evePageCards customCard  button ice detect red";
       setLogoScreen(true);
     }, 700);
 
     setTimeout(() => {
-      eventCard.className = "detect green";
+      eventCard.className = "evePageCards customCard  button ice detect green";
       setLogoScreen(false);
 
       setLabel("detected");
@@ -206,6 +206,7 @@ function Animation() {
               if (index < 6)
                 return (
                   <Event
+                    key={index}
                     id={index}
                     onClick={(e) => {
                       eventsClickHandler(index, e);
@@ -215,7 +216,15 @@ function Animation() {
                     }}
                     src={item.src}
                     name={item.title}
-                    cls={cls1}></Event>
+                    cls={cls1}
+                    gridNumber={"grid1"}
+                    delayCls={
+                      index % 6 === 0 || index % 6 === 1
+                        ? "firstRow"
+                        : index % 6 === 2 || index % 6 === 3
+                        ? "secondRow"
+                        : "thirdRow"
+                    }></Event>
                 );
               else return null;
             })}
@@ -255,6 +264,7 @@ function Animation() {
               if (index > 5)
                 return (
                   <Event
+                    key={index}
                     id={index + 6}
                     onClick={(e) => {
                       eventsClickHandler(index, e);
@@ -264,7 +274,15 @@ function Animation() {
                     }}
                     src={item.src}
                     name={item.title}
-                    cls={cls2}></Event>
+                    cls={cls2}
+                    gridNumber={"grid2"}
+                    delayCls={
+                      index % 6 === 0 || index % 6 === 1
+                        ? "firstRow"
+                        : index % 6 === 2 || index % 6 === 3
+                        ? "secondRow"
+                        : "thirdRow"
+                    }></Event>
                 );
               else return null;
             })}
