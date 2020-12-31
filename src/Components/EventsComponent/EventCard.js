@@ -11,13 +11,14 @@ function eventCard(props) {
       // info={props.info}
       onClick={props.onClick}
       onMouseEnter={props.onHover}>
-      <div className='evePageCards button ice'>
+      <div
+        className={`evePageCards customCard button ice ${props.gridNumber} ${props.delayCls} `}>
         <span id='scanner'></span>
         <span className='corner top left'></span>
         <span className='corner top right'></span>
         <span className='corner bottom left'></span>
         <span className='corner bottom right'></span>
-        <img src={props.src} alt='' srcset='' />
+        <img src={props.src} alt='' />
         <h5>{props.name}</h5>
       </div>
     </div>

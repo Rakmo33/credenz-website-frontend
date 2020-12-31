@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");
 .eve-anim {
   min-height: 95vh;
   width: 80%;
@@ -47,6 +48,8 @@
 }
 
 .eve-anim .roboWrap .roboMsg {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#12398daf), to(#001e2caf));
+  background-image: linear-gradient(to bottom, #12398daf, #001e2caf);
   background-color: #001e2c;
   width: 70%;
   position: relative;
@@ -70,11 +73,14 @@
   position: absolute;
   width: 100%;
   margin: auto;
+  text-align: center;
 }
 
 .eve-anim .roboWrap .roboMsg #Robotext {
-  color: #12f57c;
+  color: #1ff00c;
+  font-weight: 500;
   padding: 7px;
+  font-size: 16px;
 }
 
 .eve-anim .roboWrap .roboMsg span {

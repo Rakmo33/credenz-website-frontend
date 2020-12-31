@@ -15,38 +15,62 @@ function Robo(props) {
   return (
     <div className={cls} onClick={props.onClick}>
       <div id='head'>
+        <span className='eari'>
+          <span className='earo'></span>
+        </span>
+
+        <span className='eari2'>
+          <span className='earo2'></span>
+        </span>
+
         <div
           style={{
             position: "relative",
             display: "flex",
             top: "20px",
-            width: "80%",
+            width: "60%",
             margin: "auto",
           }}>
           <div
             className='iris'
-            style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
+            style={
+              props.isidle
+                ? { visibility: "hidden" }
+                : { visibility: "visible" }
+            }></div>
           <div
             className='iris'
-            style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
+            style={
+              props.isidle
+                ? { visibility: "hidden" }
+                : { visibility: "visible" }
+            }></div>
         </div>
         <div
           style={{
             position: "relative",
             display: "flex",
             top: "20px",
-            width: "80%",
+            width: "60%",
             margin: "auto",
           }}>
           <div
             className='borda-iris'
-            style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
+            style={
+              props.isidle
+                ? { visibility: "hidden" }
+                : { visibility: "visible" }
+            }></div>
           <div
             className='borda-iris'
-            style={props.isidle ? { opacity: "0" } : { opacity: "1" }}></div>
+            style={
+              props.isidle
+                ? { visibility: "hidden" }
+                : { visibility: "visible" }
+            }></div>
         </div>
 
-        <div style={{ display: "flex", margin: "auto", width: "80%" }}>
+        <div style={{ display: "flex", margin: "auto", width: "60%" }}>
           <div className='olho'>
             <CredenzEye2
               isidle={props.isidle}

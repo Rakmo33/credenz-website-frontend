@@ -1,4 +1,4 @@
-$amarelo: #2fb3ff;
+$amarelo: #259ff0;
 $preto: rgb(41, 41, 41);
 $amarelo-claro: #e1edf3;
 $azul: #005e7d;
@@ -10,8 +10,13 @@ $vermelho: rgba(192, 57, 43, 1.0);
 $lighting1: #60e660;
 $lighting2: #459945;
 $lighting3: #2d612d;
-$roboto: 'Roboto',
-sans-serif;
+$lighting5: #add7f0;
+$lighting4: #2fb3ff;
+$gradient: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+$grey:linear-gradient(to bottom, #8d8989, #5a5858);
+$grey2:linear-gradient(to bottom, #f4f6f7, #9da9af);
+$roboto: 'Roboto' sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 .robo {
     transform: scale(0.7);
     width: max-content;
@@ -40,6 +45,38 @@ sans-serif;
         margin: 0 auto;
         margin-top: 150px;
         animation: float 3s infinite;
+        & span.eari {
+            height: 45px;
+            width: 15px;
+            background-image: $grey;
+            position: absolute;
+            left: 45px;
+            top: 30px;
+            & span.earo {
+                height: 24px;
+                width: 10px;
+                background-image: $grey;
+                position: absolute;
+                left: -15px;
+                top: 10px;
+            }
+        }
+        & span.eari2 {
+            height: 45px;
+            width: 15px;
+            background-image: $grey;
+            position: absolute;
+            right: 45px;
+            top: 30px;
+            & span.earo2 {
+                height: 24px;
+                width: 10px;
+                background-image: $grey;
+                position: absolute;
+                right: -15px;
+                top: 10px;
+            }
+        }
         & .iris {
             margin: 0 auto;
             width: 50px;
@@ -47,7 +84,7 @@ sans-serif;
             border-radius: 100%;
             background: black;
             z-index: 10;
-            transform: scale(0.6);
+            transform: scale(0.45);
             // animation: eyeAnimation 2s infinite;
             /*circulo branco do olho maior*/
             &::after {
@@ -60,6 +97,7 @@ sans-serif;
                 border-radius: 100%;
                 background: $branco;
                 animation: eyeNotAnimation 2s infinite;
+                visibility: visible !important;
             }
             /*circulo branco do olho menor*/
             &::before {
@@ -72,6 +110,7 @@ sans-serif;
                 border-radius: 100%;
                 background: $branco;
                 animation: eyeNotAnimation 2s infinite;
+                visibility: visible !important;
             }
         }
         & .borda-iris {
@@ -83,19 +122,24 @@ sans-serif;
             border-radius: 100%;
             background: $amarelo;
             z-index: -1;
-            transform: scale(0.6);
+            transform: scale(0.45);
         }
         & .olho {
             position: relative;
-            top: -120px;
+            top: -105px;
             width: 40%;
+            height: 1%;
             // height: 140px;
-            border-radius: 100%;
-            margin: 0 auto;
+            border-radius: 15px;
+            margin: auto;
+            // padding: 0px 10px;
             background: $amarelo-claro;
+            // background: transparent;
             z-index: -2;
-            transform: scale(0.9);
-            border: 12px solid $azul-escuro;
+            transform: scale(0.6);
+            border: 3px solid $azul-escuro;
+            box-shadow: 0 0 5px 5px rgb(23, 128, 214);
+            // border: 3px solid transparent;
         }
         & .borda-olho {
             position: relative;
@@ -112,36 +156,40 @@ sans-serif;
         & .head {
             margin: 0 auto;
             position: relative;
-            top: -380px;
-            width: 260px;
-            height: 10px;
-            border-right: 40px solid transparent;
-            border-left: 40px solid transparent;
-            border-bottom: 140px solid $amarelo;
+            top: -360px;
+            width: 190px;
+            height: 150px;
+            background-image: $gradient;
+            // border-right: 0px solid transparent;
+            // border-left: 0px solid transparent;
+            // border-bottom: 150px solid $amarelo;
             z-index: -4;
-            border-radius: 40px 40px 40px 40px;
-            border-radius: 500px 500px 500px 500px;
+            border-radius: 15px 15px 15px 15px;
+            // border-radius: 500px 500px 500px 500px;
             &::before {
-                height: 20px;
+                height: 5px;
                 width: 20%;
                 position: fixed;
                 right: 0;
                 left: 0;
                 bottom: 0;
                 margin: auto;
-                bottom: -34px;
+                bottom: -20px;
                 z-index: 500;
-                border: 4px solid black;
+                border: 3px solid black;
+                // background-color: $amarelo;
+                border-top: 2px solid black;
+                animation: speak 2s infinite;
             }
         }
     }
     & .antena {
         position: relative;
-        bottom: 600px;
+        bottom: 550px;
         width: 5px;
         height: 100px;
         margin: 0 auto;
-        background: $preto;
+        background-image: $grey;
         z-index: -5;
     }
 }
@@ -157,6 +205,7 @@ sans-serif;
         width: 140px;
         height: 200px;
         background: $amarelo-claro;
+        background-image: $grey2;
         border-radius: 10px 10px 30px 30px;
         overflow: hidden;
         /*desenho barriga*/
@@ -182,10 +231,11 @@ sans-serif;
             background: $azul2;
             z-index: 15;
             box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+            animation: lighting2 1s infinite;
         }
     }
     & .peito.lighting::before {
-        animation: lighting 0.6s infinite;
+        animation: lighting 0.6s infinite !important;
     }
     & .tela {
         margin: 0 auto;
@@ -246,7 +296,7 @@ sans-serif;
     margin: 0 auto;
     width: 100px;
     height: 15px;
-    background: $amarelo-claro;
+    background: $grey;
     transition: all 0.3s;
     z-index: -1;
     transform: rotate(-30deg);
@@ -263,7 +313,7 @@ sans-serif;
         transform: rotate(90deg);
         transition-delay: 0.1s;
         border-radius: 5px;
-        background: $amarelo;
+        background: $gradient;
         /*mao*/
         &::after {
             width: 40px;
@@ -343,7 +393,7 @@ sans-serif;
     width: 100px;
     height: 15px;
     transition: all 0.3s;
-    background: $amarelo-claro;
+    background: $grey;
     z-index: -1;
     // transform-origin: left;
     transform: rotate(25deg);
@@ -352,13 +402,12 @@ sans-serif;
         top: -80%;
         width: 100px;
         height: 40px;
-        background: red;
         z-index: 100;
         transition: all 0.3s;
         transform: rotate(-90deg);
         transform-origin: 110% 50%;
         border-radius: 5px;
-        background: $amarelo;
+        background: $gradient;
         transition-delay: 0.3s;
         /*mao*/
         &::after {
@@ -538,6 +587,40 @@ sans-serif;
     100% {
         background-color: $lighting1;
         box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
+    }
+}
+
+@keyframes lighting2 {
+    0% {
+        background-color: $azul-escuro;
+        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+    }
+    50% {
+        background-color: $azul;
+        box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
+    }
+    100% {
+        background-color: $azul-escuro;
+        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+    }
+}
+
+@keyframes speak {
+    0% {
+        border-bottom: 3px solid black;
+    }
+    35% {
+        border-bottom: 5px solid black;
+    }
+    50% {
+        border-bottom: 3px solid black;
+    }
+    65% {
+        border-bottom: 7px solid black;
+    }
+    80% {
+        height: 0px !important;
+        border-bottom: 3px solid black;
     }
 }
 

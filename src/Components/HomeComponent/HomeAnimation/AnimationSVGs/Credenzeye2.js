@@ -57,10 +57,10 @@ function SvgCredenzeye(props) {
         // this.setState({left: e.pageX, top: e.pageY});
         xpercentage = (e.pageX - width / 2) / width;
         ypercentage = (e.pageY - height / 2) / height;
-        outerposx = 1166.21 + xpercentage * outerr * 2.0;
-        outerposy = ypercentage * outerr * 1.8 + 1250;
-        innerposx = 1165.56 + xpercentage * outerr * 2.0;
-        innerposy = ypercentage * outerr * 1.8 + 1250;
+        outerposx = 1006.21 + xpercentage * outerr * 2.0;
+        outerposy = ypercentage * outerr * 1.8 + 1050;
+        innerposx = 1005.56 + xpercentage * outerr * 2.0;
+        innerposy = ypercentage * outerr * 1.8 + 1050;
         eyeballOuter.setAttribute("cx", outerposx);
         eyeballOuter.setAttribute("cy", Math.min(outerposy, 2419));
         eyeballInner.setAttribute("cx", innerposx);
@@ -79,7 +79,7 @@ function SvgCredenzeye(props) {
       xmlnsXlink='http://www.w3.org/1999/xlink'
       x={500}
       y={0}
-      viewBox='0 0 2400 2400'
+      viewBox='0 0 2000 2000'
       xmlSpace='preserve'
       style={props.isidle ? { opacity: "1" } : { opacity: "0" }}
       {...props}>
@@ -119,7 +119,7 @@ function SvgCredenzeye(props) {
             id={props.ids[0]}
             fill='#2fb3ff'
           />
-          <circle cx={565.56} cy={397.4} id={props.ids[1]} r={530.72} />
+          <circle cx={65.56} cy={397.4} id={props.ids[1]} r={530.72} />
         </g>
       </g>
     </svg>
