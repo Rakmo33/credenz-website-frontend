@@ -158,16 +158,16 @@ function NavBar() {
                 </li> */}
             <li className='nav-item'>
               <Link
-                to='/home#Aboutus'
+                to='/aboutus'
                 className='nav-link'
                 onClick={clickHandler}>
                 <samp
                   className={
-                    location.pathname === "/home" &&
-                    location.hash === "#Aboutus"
+                    location.pathname === "/aboutus" 
                       ? "active-nav-tab"
                       : ""
                   }>
+                    {/* // && location.hash === "#Aboutus" */}
                   About Us
                 </samp>
               </Link>

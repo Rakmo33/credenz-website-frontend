@@ -14,7 +14,7 @@ const ContactCard = ({ img, email, phone, name }) => {
     </div>
 
   );
-  console.log({ email });
+ 
 }
 
 export default ContactCard;
