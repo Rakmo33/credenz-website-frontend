@@ -31,30 +31,29 @@ function SvgCredenzeye(props) {
   const [left, setLeft] = useState(0);
   const [top, setTop] = useState(0);
   const { height, width } = useWindowDimensions();
-  let xpercentage = 0;
-  let ypercentage = 0;
 
   useEffect(() => {
     let isMounted = true;
+    let xpercentage = 0;
+    let ypercentage = 0;
 
     if (isMounted) {
-      // let outercx = document.getElementById("eyeball-outer").getAttribute("cx");
-      // let outercy = document.getElementById("eyeball-outer").getAttribute("cy");
       let outerr = document.getElementById(props.ids[0]).getAttribute("r");
       let eyeballOuter = document.getElementById(props.ids[0]);
-      // let innercx = document.getElementById("eyeball-inner").getAttribute("cx");
-      // let innercy = document.getElementById("eyeball-inner").getAttribute("cy");
-      // let innerr = document.getElementById("eyeball-inner").getAttribute("r");
       let eyeballInner = document.getElementById(props.ids[1]);
       let outerposx = 0;
       let outerposy = 0;
       let innerposx = 0;
       let innerposy = 0;
 
+      eyeballOuter.setAttribute("cx", 1006);
+      eyeballOuter.setAttribute("cy", 1050);
+      eyeballInner.setAttribute("cx", 1006);
+      eyeballInner.setAttribute("cy", 1050);
+
       document.addEventListener("mousemove", (e) => {
         setLeft(e.pageX);
         setTop(e.pageY);
-        // this.setState({left: e.pageX, top: e.pageY});
         xpercentage = (e.pageX - width / 2) / width;
         ypercentage = (e.pageY - height / 2) / height;
         outerposx = 1006.21 + xpercentage * outerr * 2.0;
@@ -80,8 +79,9 @@ function SvgCredenzeye(props) {
       x={500}
       y={0}
       viewBox='0 0 2000 2000'
-      xmlSpace='preserve'
-      style={props.isidle ? { opacity: "1" } : { opacity: "0" }}
+      style={
+        props.isidle ? { visibility: "visible" } : { visibility: "hidden" }
+      }
       {...props}>
       <style>
         {

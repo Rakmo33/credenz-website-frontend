@@ -3,7 +3,7 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 .eve-anim {
     // min-height: 95vh;
-    min-height: 95vh;
+    min-height: 100vh;
     width: 80%;
     margin: auto;
     // background-color: red;
@@ -13,6 +13,17 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
     display: flex;
     align-items: center;
     grid-template-columns: 1fr 1.5fr 1fr;
+     ::-webkit-scrollbar {
+        width: 5px;
+    }
+     ::-webkit-scrollbar-track {
+        background-color: #ebebeb;
+    }
+     ::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: #6d6d6d;
+    }
     .events-grid {
         display: grid;
         justify-content: center;
@@ -47,12 +58,15 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
             #RobotextWrap {
                 position: absolute;
                 width: 100%;
+                height: 100%;
                 margin: auto;
                 text-align: center;
             }
             #Robotext {
                 color: #1ff00c;
                 font-weight: 500;
+                height: 100%;
+                overflow: hidden;
                 padding: 7px;
                 font-size: 16px;
                 // font-family: 'Orbitron', sans-serif;
@@ -81,6 +95,10 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
         background-color: red;
         pointer-events: none;
     }
+}
+
+.eve-anim.flex {
+    display: flex !important;
 }
 
 @media(max-width: 1200px) {

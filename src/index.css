@@ -26,13 +26,11 @@ html {
 /* Scrollbar Styling */
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
 
 ::-webkit-scrollbar-track {
     background-color: #ebebeb;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {

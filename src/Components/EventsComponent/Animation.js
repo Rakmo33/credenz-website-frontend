@@ -9,7 +9,7 @@ import Event from "./EventCard.js";
 function Animation() {
   const [cls1, setCls1] = useState("");
   const [cls2, setCls2] = useState("");
-  const [cls3, setCls3] = useState("");
+  const [cls3, setCls3] = useState("hide-robo");
   const [moveHandCls1, setMoveHandCls1] = useState("");
   const [moveHandCls2, setMoveHandCls2] = useState("");
   const [modalCls, setModalCls] = useState("");
@@ -61,7 +61,25 @@ function Animation() {
   };
 
   useEffect(() => {
+    setIsGrid(false);
+
+    setTimeout(() => {
+      setIsGrid(true);
+      setCls1("fadeOut1");
+      setCls2("fadeOut2");
+      setCls3("");
+      setModalCls("");
+
+      setTimeout(() => {
+        setCls1("");
+        setCls2("");
+      }, 1);
+    }, 300);
     robotTypeMsg("Hello There!...Credenz is Coming!!!");
+
+    return () => {
+      clearTimeout(roboTextTimer);
+    };
   }, []);
 
   const eventsHoverHandler = (index, e) => {
@@ -87,21 +105,21 @@ function Animation() {
 
     const eventCard = e.target;
 
-    eventCard.className = "evePageCards customCard   button ice detect red";
+    eventCard.className = "evePageCards customCard  button ice detect red";
     setLogoScreen(true);
 
     setTimeout(() => {
-      eventCard.className = "evePageCards customCard  button ice detect blue";
+      eventCard.className = "evePageCards customCard button ice detect blue";
       setLogoScreen(false);
     }, 300);
 
     setTimeout(() => {
-      eventCard.className = "evePageCards customCard  button ice detect red";
+      eventCard.className = "evePageCards customCard button ice detect red";
       setLogoScreen(true);
     }, 700);
 
     setTimeout(() => {
-      eventCard.className = "evePageCards customCard  button ice detect green";
+      eventCard.className = "evePageCards customCard button ice detect green";
       setLogoScreen(false);
 
       setLabel("detected");
@@ -199,7 +217,7 @@ function Animation() {
 
   return (
     <div>
-      <div className='eve-anim'>
+      <div className={`eve-anim ${isGrid ? "" : "flex"}`}>
         {isGrid ? (
           <div className='events-grid'>
             {info.map((item, index) => {
@@ -237,7 +255,13 @@ function Animation() {
         )}
         <div className='roboWrap '>
           <div
-            className={label !== "detected" ? `roboMsg slide-up` : "roboMsg"}>
+            className={
+              isGrid && label === "detected"
+                ? `roboMsg`
+                : isGrid
+                ? "roboMsg  slide-up"
+                : "roboMsg"
+            }>
             {/* <p>Clash is for the best Competetive</p>
             <p>Programmers!</p> */}
             <span></span>
