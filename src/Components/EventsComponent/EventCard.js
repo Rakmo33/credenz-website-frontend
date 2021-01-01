@@ -14,6 +14,7 @@ function eventCard(props) {
       <div
         className={`evePageCards customCard button ice ${props.gridNumber} ${props.delayCls} `}>
         <span id='scanner'></span>
+        <span id={`glow`} className={`${props.gridNumber}`}></span>
         <span className='corner top left'></span>
         <span className='corner top right'></span>
         <span className='corner bottom left'></span>

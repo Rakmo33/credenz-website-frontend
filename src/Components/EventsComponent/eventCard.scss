@@ -4,18 +4,39 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        // background-color: rgb(197, 149, 59);
-        // filter: invert(1);
         width: 130px;
         margin: 0 auto;
         transition: all 0.3s;
-        // grid-template-rows: 3fr 2fr;
         cursor: pointer;
         div.customCard {
             background-color: rgb(3, 56, 105);
-            // border-top-left-radius: 10px;
-            // border-top-right-radius: 10px;
             border: 3px solid skyblue;
+            span#glow {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                z-index: -50;
+                pointer-events: none;
+                box-shadow: 0 0 25px rgba(66, 146, 250, 0.5), 0 5px 25px rgba(48, 138, 255, 0.5), inset 0 1px #a8fff8, inset 0 -1px #a8ffff;
+                box-shadow: 0 0 25px rgb(0, 247, 255);
+                transition: all 0.3s;
+                animation: none !important;
+                & ::before {
+                    box-shadow: inset 0 0 30px 0 #a8ecff;
+                }
+            }
+            #glow.grid1 {
+                border-radius: 20px 5px 20px 0px;
+                animation: breath1 3.6s infinite;
+            }
+            #glow.grid2 {
+                border-radius: 5px 20px 0px 20px;
+                animation: breath2 3.6s infinite;
+            }
+            &:hover span#glow {
+                opacity: 1;
+            }
         }
         div {
             height: 100%;
@@ -26,9 +47,7 @@
             flex-direction: column;
             background-color: white;
             justify-content: center;
-            // background-blend-mode: multiply;
             transition: transform 0.5s;
-            // border-radius: 15px;
             img {
                 height: 90%;
                 margin: auto;
@@ -112,6 +131,9 @@
     }
     .detect {
         background-blend-mode: exclusion;
+        span#glow {
+            opacity: 0.1 !important;
+        }
     }
     .detect span#scanner {
         content: '';
@@ -131,7 +153,7 @@
         border-color: blue !important;
     }
     .detect.green {
-        border-color: green !important;
+        border-color: rgb(0, 255, 13) !important;
     }
     .detect.green::after {
         content: 'EVENT';
@@ -139,7 +161,7 @@
         background-color: rgb(9, 255, 0);
         position: absolute;
         font-size: 10px;
-        bottom: -10%;
+        bottom: -15%;
         right: 0;
         font-weight: 500;
     }
@@ -196,14 +218,13 @@
     .button.ice:before {
         box-shadow: inset 0 0 30px 0 #a8ecff;
     }
-    .button {}
-    .button:hover::after {
-        content: '';
-        transform: scale(1.02) !important;
-        // opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        box-shadow: 0 0 70px rgba(48, 138, 255, 0.8), 0 5px 20px rgba(48, 138, 255, 0.8), inset 0 1px #a8ecff, inset 0 -1px #a8ecff !important;
-    }
+    // .button:hover::after {
+    //     content: '';
+    //     transform: scale(1.02) !important;
+    //     // opacity: 0;
+    //     transition: opacity 0.3s ease-in-out;
+    //     box-shadow: 0 0 70px rgba(48, 138, 255, 0.8), 0 5px 20px rgba(48, 138, 255, 0.8), inset 0 1px #a8ecff, inset 0 -1px #a8ecff !important;
+    // }
     .button+.button {
         margin-top: 15px;
         -webkit-animation-delay: 0.3s;

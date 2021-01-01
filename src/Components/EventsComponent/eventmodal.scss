@@ -69,13 +69,15 @@
                 }
             }
             ul.tabs {
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat( auto-fit, minmax(70px, 1fr));
+                grid-row-gap: 20px;
                 align-items: center;
                 justify-content: center;
                 width: 80%;
-                margin: 0;
+                margin: 40px;
                 li {
-                    margin: 20px;
+                    // margin: 20px;
                     list-style: none;
                     button {
                         border-radius: 50%;
@@ -102,6 +104,7 @@
                 height: 250px;
                 width: 90%;
                 margin: 20px;
+                margin-top: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -131,6 +134,21 @@
         }
         .modalWrap {
             width: 80%;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .evePage {
+        .modalWrap {
+            width: 90%;
+            .modalBody {
+                margin: 10px;
+                .info {
+                    max-height: 50vh;
+                    overflow-y: auto;
+                }
+            }
         }
     }
 }
