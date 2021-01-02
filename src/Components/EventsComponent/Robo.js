@@ -1,7 +1,7 @@
 import React from "react";
 import "./robo.css";
-// import CredenzEye2 from "../HomeComponent/HomeAnimation/AnimationSVGs/Credenzeye2";
-import Animated from "./roboSmall.svg";
+import CredenzEye2 from "./Credenzeye2";
+// import Animated from "./roboSmall.svg";
 
 function Robo(props) {
   let cls = `robo ${props.cls}`;
@@ -72,14 +72,14 @@ function Robo(props) {
 
         <div style={{ display: "flex", margin: "auto", width: "60%" }}>
           <div className='olho'>
-            {/* <CredenzEye2
+            <CredenzEye2
               isidle={props.isidle}
-              ids={CredenzEyeId1}></CredenzEye2> */}
+              ids={CredenzEyeId1}></CredenzEye2>
           </div>
           <div className='olho'>
-            {/* <CredenzEye2
+            <CredenzEye2
               ids={CredenzEyeId2}
-              isidle={props.isidle}></CredenzEye2> */}
+              isidle={props.isidle}></CredenzEye2>
           </div>
         </div>
         <div style={{ display: "flex", margin: "auto", width: "80%" }}>

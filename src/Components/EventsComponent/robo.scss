@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 $amarelo: #259ff0;
 $preto: rgb(41, 41, 41);
 $amarelo-claro: #e1edf3;
@@ -18,10 +25,15 @@ $grey2:linear-gradient(to bottom, #f4f6f7, #9da9af);
 $roboto: 'Roboto' sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 .robo {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
     transform: scale(0.7);
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
     margin: auto;
-    // margin-left: 135px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
     *::after,
     *::before {
@@ -37,6 +49,7 @@ $roboto: 'Roboto' sans-serif;
         -o-box-sizing: border-box;
     }
     .invert {
+        -webkit-filter: invert(1);
         filter: invert(1);
     }
     #head {
@@ -44,6 +57,7 @@ $roboto: 'Roboto' sans-serif;
         height: 100px;
         margin: 0 auto;
         margin-top: 150px;
+        -webkit-animation: float 3s infinite;
         animation: float 3s infinite;
         & span.eari {
             height: 45px;
@@ -84,8 +98,9 @@ $roboto: 'Roboto' sans-serif;
             border-radius: 100%;
             background: black;
             z-index: 10;
+            -webkit-transform: scale(0.45);
+            -ms-transform: scale(0.45);
             transform: scale(0.45);
-            // animation: eyeAnimation 2s infinite;
             /*circulo branco do olho maior*/
             &::after {
                 display: block;
@@ -96,6 +111,7 @@ $roboto: 'Roboto' sans-serif;
                 height: 30px;
                 border-radius: 100%;
                 background: $branco;
+                -webkit-animation: eyeNotAnimation 2s infinite;
                 animation: eyeNotAnimation 2s infinite;
                 visibility: visible !important;
             }
@@ -109,6 +125,7 @@ $roboto: 'Roboto' sans-serif;
                 height: 10px;
                 border-radius: 100%;
                 background: $branco;
+                -webkit-animation: eyeNotAnimation 2s infinite;
                 animation: eyeNotAnimation 2s infinite;
                 visibility: visible !important;
             }
@@ -122,6 +139,8 @@ $roboto: 'Roboto' sans-serif;
             border-radius: 100%;
             background: $amarelo;
             z-index: -1;
+            -webkit-transform: scale(0.45);
+            -ms-transform: scale(0.45);
             transform: scale(0.45);
         }
         & .olho {
@@ -129,17 +148,16 @@ $roboto: 'Roboto' sans-serif;
             top: -105px;
             width: 40%;
             height: 1%;
-            // height: 140px;
             border-radius: 15px;
             margin: auto;
-            // padding: 0px 10px;
             background: $amarelo-claro;
-            // background: transparent;
             z-index: -2;
+            -webkit-transform: scale(0.6);
+            -ms-transform: scale(0.6);
             transform: scale(0.6);
             border: 3px solid $azul-escuro;
+            -webkit-box-shadow: 0 0 5px 5px rgb(23, 128, 214);
             box-shadow: 0 0 5px 5px rgb(23, 128, 214);
-            // border: 3px solid transparent;
         }
         & .borda-olho {
             position: relative;
@@ -151,6 +169,8 @@ $roboto: 'Roboto' sans-serif;
             margin: 0 auto;
             background: $azul-escuro;
             z-index: -3;
+            -webkit-transform: scale(0.7);
+            -ms-transform: scale(0.7);
             transform: scale(0.7);
         }
         & .head {
@@ -160,12 +180,8 @@ $roboto: 'Roboto' sans-serif;
             width: 190px;
             height: 150px;
             background-image: $gradient;
-            // border-right: 0px solid transparent;
-            // border-left: 0px solid transparent;
-            // border-bottom: 150px solid $amarelo;
             z-index: -4;
             border-radius: 15px 15px 15px 15px;
-            // border-radius: 500px 500px 500px 500px;
             &::before {
                 height: 5px;
                 width: 20%;
@@ -177,8 +193,8 @@ $roboto: 'Roboto' sans-serif;
                 bottom: -20px;
                 z-index: 500;
                 border: 3px solid black;
-                // background-color: $amarelo;
                 border-top: 2px solid black;
+                -webkit-animation: speak 2s infinite;
                 animation: speak 2s infinite;
             }
         }
@@ -196,6 +212,8 @@ $roboto: 'Roboto' sans-serif;
 
 .hide-robo {
     opacity: 0;
+    -webkit-transform: translateY(50px) scale(0.7);
+    -ms-transform: translateY(50px) scale(0.7);
     transform: translateY(50px) scale(0.7);
 }
 
@@ -204,6 +222,7 @@ $roboto: 'Roboto' sans-serif;
     height: 100px;
     margin: 0 auto;
     margin-top: 50px;
+    -webkit-animation: float 3s infinite;
     animation: float 3s infinite;
     & .peito {
         margin: 0 auto;
@@ -235,11 +254,14 @@ $roboto: 'Roboto' sans-serif;
             border-radius: 100%;
             background: $azul2;
             z-index: 15;
+            -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
             box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+            -webkit-animation: lighting2 1s infinite;
             animation: lighting2 1s infinite;
         }
     }
     & .peito.lighting::before {
+        -webkit-animation: lighting 0.6s infinite !important;
         animation: lighting 0.6s infinite !important;
     }
     & .tela {
@@ -256,14 +278,17 @@ $roboto: 'Roboto' sans-serif;
         font-family: $roboto;
         font-weight: bold;
         letter-spacing: 2px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         img {
             width: 85%;
             height: 85%;
             margin: auto;
+            -o-object-fit: cover;
             object-fit: cover;
+            -o-object-position: center;
             object-position: center;
-            // filter: invert(1);
         }
     }
 }
@@ -280,6 +305,7 @@ $roboto: 'Roboto' sans-serif;
         background: red;
         background: -webkit-linear-gradient(left, $azul-escuro 0%, $azul-escuro 20%, $azul2 20%, $azul2 40%, $azul 40%, $azul 60%, $azul2 60%, $azul2 80%, $azul-escuro 80%);
         border-radius: 0 0 10px 10px;
+        -webkit-animation: float 3s infinite;
         animation: float 3s infinite;
     }
     & .sombra {
@@ -290,6 +316,7 @@ $roboto: 'Roboto' sans-serif;
         top: 10px;
         border-radius: 80%;
         background: rgba(26, 25, 25, 0.3);
+        -webkit-animation: shadow 3s infinite;
         animation: shadow 3s infinite;
     }
 }
@@ -302,9 +329,15 @@ $roboto: 'Roboto' sans-serif;
     width: 100px;
     height: 15px;
     background: $grey;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
     z-index: -1;
+    -webkit-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
     transform: rotate(-30deg);
+    -webkit-transform-origin: right;
+    -ms-transform-origin: right;
     transform-origin: right;
     & .antebraco-esquerdo {
         position: absolute;
@@ -312,10 +345,18 @@ $roboto: 'Roboto' sans-serif;
         top: -85%;
         width: 100px;
         height: 40px;
+        -webkit-transition: all 0.8s;
+        -o-transition: all 0.8s;
         transition: all 0.8s;
         z-index: 100;
+        -webkit-transform-origin: 110% 50%;
+        -ms-transform-origin: 110% 50%;
         transform-origin: 110% 50%;
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
         transform: rotate(90deg);
+        -webkit-transition-delay: 0.1s;
+        -o-transition-delay: 0.1s;
         transition-delay: 0.1s;
         border-radius: 5px;
         background: $gradient;
@@ -357,36 +398,47 @@ $roboto: 'Roboto' sans-serif;
 }
 
 .moveHand {
+    -webkit-animation: moveHand 5s infinite;
     animation: moveHand 5s infinite;
 }
 
 .moveHand2 {
+    -webkit-animation: moveHand2 5s infinite;
     animation: moveHand2 5s infinite;
 }
 
 .swingLeftLower {
     top: 100% !important;
     right: 100% !important;
+    -webkit-transform-origin: right !important;
+    -ms-transform-origin: right !important;
     transform-origin: right !important;
 }
 
 .switchHand1a {
+    -webkit-transform-origin: unset !important;
+    -ms-transform-origin: unset !important;
     transform-origin: unset !important;
+    -webkit-transform: rotate(-20deg) !important;
+    -ms-transform: rotate(-20deg) !important;
     transform: rotate(-20deg) !important;
 }
 
 .switchHand1b {
-    // transform-origin: unset !important;
+    -webkit-transform: rotate(-90deg) !important;
+    -ms-transform: rotate(-90deg) !important;
     transform: rotate(-90deg) !important;
-    // top: 318% !important;
 }
 
 .switchHand2a {
+    -webkit-transform-origin: left !important;
+    -ms-transform-origin: left !important;
     transform-origin: left !important;
 }
 
 .switchHand2b {
-    // top: -488% !important;
+    -webkit-transform: rotate(-270deg) !important;
+    -ms-transform: rotate(-270deg) !important;
     transform: rotate(-270deg) !important;
 }
 
@@ -397,10 +449,13 @@ $roboto: 'Roboto' sans-serif;
     margin: 0 auto;
     width: 100px;
     height: 15px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
     background: $grey;
     z-index: -1;
-    // transform-origin: left;
+    -webkit-transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
     transform: rotate(25deg);
     & .antebraco-direito {
         position: absolute;
@@ -408,11 +463,19 @@ $roboto: 'Roboto' sans-serif;
         width: 100px;
         height: 40px;
         z-index: 100;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
         transition: all 0.3s;
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
         transform: rotate(-90deg);
+        -webkit-transform-origin: 110% 50%;
+        -ms-transform-origin: 110% 50%;
         transform-origin: 110% 50%;
         border-radius: 5px;
         background: $gradient;
+        -webkit-transition-delay: 0.3s;
+        -o-transition-delay: 0.3s;
         transition-delay: 0.3s;
         /*mao*/
         &::after {
@@ -461,9 +524,15 @@ $roboto: 'Roboto' sans-serif;
     font-family: $roboto;
     font-size: 1.3em;
     border-radius: 20px;
+    -webkit-transition: all ease-in-out 1s;
+    -o-transition: all ease-in-out 1s;
     transition: all ease-in-out 1s;
     &:hover {
+        -webkit-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
         transform: scale(1.1, 1.1);
+        -webkit-transition: all ease-in-out 1s;
+        -o-transition: all ease-in-out 1s;
         transition: all ease-in-out 1s;
     }
     /*ponta balao*/
@@ -492,121 +561,316 @@ $roboto: 'Roboto' sans-serif;
     }
 }
 
-@keyframes moveHand {
+@-webkit-keyframes moveHand {
     0% {
+        -webkit-transform: rotate(-30deg);
         transform: rotate(-30deg);
     }
     10% {
+        -webkit-transform: rotate(-80deg);
         transform: rotate(-80deg);
     }
     20% {
+        -webkit-transform: rotate(-30deg);
         transform: rotate(-30deg);
+    }
+}
+
+@keyframes moveHand {
+    0% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+    10% {
+        -webkit-transform: rotate(-80deg);
+        transform: rotate(-80deg);
+    }
+    20% {
+        -webkit-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+    }
+}
+
+@-webkit-keyframes moveHand2 {
+    0% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+    10% {
+        -webkit-transform: rotate(80deg);
+        transform: rotate(80deg);
+    }
+    20% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
     }
 }
 
 @keyframes moveHand2 {
     0% {
+        -webkit-transform: rotate(30deg);
         transform: rotate(30deg);
     }
     10% {
+        -webkit-transform: rotate(80deg);
         transform: rotate(80deg);
     }
     20% {
+        -webkit-transform: rotate(30deg);
         transform: rotate(30deg);
+    }
+}
+
+@-webkit-keyframes eyeAnimation {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.15);
+        transform: scale(1.15);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
 }
 
 @keyframes eyeAnimation {
     0% {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
     50% {
+        -webkit-transform: scale(1.15);
         transform: scale(1.15);
     }
     100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes eyeNotAnimation {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0.7);
+        transform: scale(0.7);
+    }
+    100% {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
 }
 
 @keyframes eyeNotAnimation {
     0% {
+        -webkit-transform: scale(1);
         transform: scale(1);
     }
     50% {
+        -webkit-transform: scale(0.7);
         transform: scale(0.7);
     }
     100% {
+        -webkit-transform: scale(1);
         transform: scale(1);
+    }
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    35% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+    }
+    60% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    80% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    100% {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
     }
 }
 
 @keyframes float {
     0% {
+        -webkit-transform: translateY(0px);
         transform: translateY(0px);
     }
     35% {
+        -webkit-transform: translateY(-50px);
         transform: translateY(-50px);
     }
     60% {
+        -webkit-transform: translateY(-10px);
         transform: translateY(-10px);
     }
     80% {
+        -webkit-transform: translateY(-30px);
         transform: translateY(-30px);
     }
     100% {
+        -webkit-transform: translateY(0px);
         transform: translateY(0px);
+    }
+}
+
+@-webkit-keyframes shadow {
+    0% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+    40% {
+        -webkit-transform: scaleX(0.6);
+        transform: scaleX(0.6);
+    }
+    55% {
+        -webkit-transform: scaleX(0.9);
+        transform: scaleX(0.9);
+    }
+    80% {
+        -webkit-transform: scaleX(0.75);
+        transform: scaleX(0.75);
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
     }
 }
 
 @keyframes shadow {
     0% {
+        -webkit-transform: scaleX(1);
         transform: scaleX(1);
     }
     40% {
+        -webkit-transform: scaleX(0.6);
         transform: scaleX(0.6);
     }
     55% {
+        -webkit-transform: scaleX(0.9);
         transform: scaleX(0.9);
     }
     80% {
+        -webkit-transform: scaleX(0.75);
         transform: scaleX(0.75);
     }
     100% {
+        -webkit-transform: scaleX(1);
         transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes lighting {
+    0% {
+        background-color: $lighting1;
+        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
+        box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
+    }
+    33% {
+        background-color: $lighting3;
+        -webkit-box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
+        box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
+    }
+    66% {
+        background-color: $lighting2;
+        -webkit-box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
+        box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
+    }
+    100% {
+        background-color: $lighting1;
+        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
+        box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
     }
 }
 
 @keyframes lighting {
     0% {
         background-color: $lighting1;
+        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
         box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
     }
     33% {
         background-color: $lighting3;
+        -webkit-box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
         box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
     }
     66% {
         background-color: $lighting2;
+        -webkit-box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
         box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
     }
     100% {
         background-color: $lighting1;
+        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
         box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
+    }
+}
+
+@-webkit-keyframes lighting2 {
+    0% {
+        background-color: $azul-escuro;
+        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+    }
+    50% {
+        background-color: $azul;
+        -webkit-box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
+        box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
+    }
+    100% {
+        background-color: $azul-escuro;
+        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
     }
 }
 
 @keyframes lighting2 {
     0% {
         background-color: $azul-escuro;
+        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
         box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
     }
     50% {
         background-color: $azul;
+        -webkit-box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
         box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
     }
     100% {
         background-color: $azul-escuro;
+        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
         box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+    }
+}
+
+@-webkit-keyframes speak {
+    0% {
+        border-bottom: 3px solid black;
+    }
+    35% {
+        border-bottom: 5px solid black;
+    }
+    50% {
+        border-bottom: 3px solid black;
+    }
+    65% {
+        border-bottom: 7px solid black;
+    }
+    80% {
+        height: 0px !important;
+        border-bottom: 3px solid black;
     }
 }
 
