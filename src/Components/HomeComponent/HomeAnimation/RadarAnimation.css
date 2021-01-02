@@ -1,0 +1,91 @@
+#monitor{
+
+    margin:auto;
+    position:relative;
+    width:350px;
+    height:580px; 
+    border: 10px solid white;
+    /* position: absolute; */
+    /* transform: translate(-50%, -50%); */
+    z-index:9999;
+  }
+  .screen
+  {
+    margin:auto;
+    /* margin-top:10px; */
+    width:370px;
+    height:580px;
+    background-size:cover;
+    /* margin-left: 23%; */
+    /* border-left:2px solid #4deeea;   */
+    /* border-right:2px solid #4deeea;  */
+    /* background-color: rgba(0,0,0,.2); */
+    z-index:9998;
+    display: inline;
+  }
+  .scan-activated
+  {
+    width:74%;
+    margin-left: 13%;
+    height:5px;
+    background-color:	#3199dc;
+    position:absolute;
+    z-index:9999;
+     -moz-animation: scan 2s infinite;
+    -webkit-animation: scan 2s infinite;
+    animation: scan 2s infinite;
+    -webkit-animation-direction: alternate-reverse;
+    /* -webkit-box-shadow: 3px 20px 5px 7px #4DEEEA;
+    box-shadow: 3px 10px 5px 7px #4DEEEA; */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px #54a4d2;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+  }
+  
+  @keyframes scan {
+    0%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(35px);
+    }
+    100% {
+      -webkit-transform: translateY(540px);
+      transform: translateY(470px);
+    }
+  }
+  
+  .scan-hidden{
+    display: none;
+  }
+  .screen-hidden{
+    border: none;
+  }
+  .leftb{
+    height: 520px;
+    object-fit: contain;
+    opacity: 0;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px #54a4d2; */
+  }
+  .rightb{
+    height: 520px;
+    object-fit: contain;
+    opacity: 0;
+    padding-left: 35px;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px #54a4d2; */
+  }
+
+  .leftb-hovered{
+    opacity: 1;
+  }
+  .rightb-hovered{
+    opacity: 1;
+  }
+  .leftb-hidden{
+    display: none;
+  }
+  .rightb-hidden{
+    display: none;
+  }

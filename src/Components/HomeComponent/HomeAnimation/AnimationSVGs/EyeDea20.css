@@ -1,0 +1,150 @@
+@keyframes spin-clockwise {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
+@keyframes spin-anticlockwise {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(-360deg);}
+  }
+@keyframes spin_hovered {
+    0% {animation-play-state: paused;}
+    20%{transform:rotate(0deg);}
+    60% {transform:rotate(-120deg);}
+    100%{transform:rotate(0deg);}
+}
+.eyeDEA2_0_svg__ring1{
+    animation: spin-clockwise 6s linear infinite;
+    transform-origin: 51.5% 47.2%;
+    transition-timing-function: ease-in;
+}
+.eyeDEA2_0_svg__ring2{
+    animation: spin-anticlockwise 2s linear infinite;
+    transform-origin: 51.5% 47.2%;
+    transition-timing-function: ease-in;
+}
+.eyeDEA2_0_svg__ring3{
+    animation: spin-anticlockwise 4s linear infinite;
+    transform-origin: 51.5% 47.2%;
+}
+
+.hovered_2_0_animation{
+    animation: spin_hovered 5s linear infinite;
+    transform-origin: 51.5% 47.2%;
+    transition-timing-function: ease-in;
+}
+
+@keyframes scale_ring1{
+    0% { transform: scale(1); }
+  7% { transform: scale(.95); }
+  14% { transform: scale(1.05); }
+  21% { transform: scale(0.95) rotate(0deg);}
+  30%{ transform: scale(0.6) rotate(0deg);}
+    70%{ transform: scale(0.6) rotate(-100deg);}
+    100%{ transform: scale(0.6) rotate(0deg);}
+}
+@keyframes scale_ring2{
+    0% { transform: scale(1); }
+  7% { transform: scale(.95); }
+  14% { transform: scale(1.05); }
+  21% { transform: scale(0.95) rotate(0deg);}
+  30%{ transform: scale(0.9) rotate(0deg);}
+    70%{ transform: scale(0.9) rotate(-100deg);}
+    100%{ transform: scale(0.9) rotate(0deg);}
+}
+@keyframes scale_ring3{
+    0% { transform: scale(1); }
+  7% { transform: scale(.95); }
+  14% { transform: scale(1.05); }
+  21% { transform: scale(0.95) rotate(0deg);}
+  30%{ transform: scale(1.55) rotate(0deg);}
+    70%{ transform: scale(1.55) rotate(-100deg);}
+    100%{ transform: scale(1.55) rotate(0deg);}
+}
+
+.hovered_2_0_animation_ring1{
+    transform-origin: 51.5% 47.2%;
+    animation: scale_ring1 4.6s linear;
+}
+.hovered_2_0_animation_ring2{
+    transform-origin: 51.5% 47.2%;
+    animation: scale_ring2 4.6s linear;
+}
+.hovered_2_0_animation_ring3{
+    transform-origin: 51.5% 47.2%;
+    animation: scale_ring3 4.6s linear;
+}
+@keyframes zooming {
+    0% { transform: scale(1); 
+        /* background: rgba(133,133,133,.95); */
+    }
+    50% { transform: scale(2);
+         /* background: rgba(0,0,0,.95); */
+        }
+    100%{
+        transform: scale(0.6);
+    }
+}
+.zoom-in{
+    transform-origin: 51.5% 47.2%;
+    animation: zooming 0.85s linear;
+    /* transform: scale(2); */
+}
+/* .zoom-in-image{
+    transform-origin: center center;
+    animation: spin-clockwise 10s infinite;
+} */
+@keyframes left_fade{
+    0%{transform: translateX(0%) scale(1);}
+    50%{transform: translateX(-15%) scale(2);}
+    100%{transform: translateX(0%) scale(1);}
+}
+.translate_left{
+    transform-origin: 51.5% 47.2%;
+    animation: left_fade 0.85s linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+/* @keyframes left_fade{
+    0%{transform: translateX(0%); opacity: 1;}
+    30%{transform: translateX(0%); opacity: 1;}
+    100%{transform: translateX(-15%); opacity: 0;}
+} */
+/* .translate_left{
+    animation: left_fade 4.6s linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+} */
+
+@keyframes right_fade{
+    0%{transform: translateX(0%) scale(1);}
+    50%{transform: translateX(15%) scale(2);}
+    100%{transform: translateX(0%) scale(1);}
+}
+.translate_right{
+    animation: right_fade 0.85s linear;
+    transform-origin: 51.5% 47.2%;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+/* @keyframes right_fade{
+    0%{transform: translateX(0%); opacity: 1;}
+    30%{transform: translateX(0%); opacity: 1;}
+    100%{transform: translateX(15%); opacity: 0;}
+} */
+/* .translate_right{
+    animation: right_fade 4.6s linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+} */
