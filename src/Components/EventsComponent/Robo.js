@@ -1,6 +1,6 @@
 import React from "react";
 import "./robo.css";
-import CredenzEye2 from "../HomeComponent/HomeAnimation/AnimationSVGs/Credenzeye2";
+import CredenzEye2 from "./Credenzeye2";
 import Animated from "./roboSmall.svg";
 
 function Robo(props) {
