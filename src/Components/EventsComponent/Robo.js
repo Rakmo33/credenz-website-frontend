@@ -1,7 +1,7 @@
 import React from "react";
 import "./robo.css";
 import CredenzEye2 from "./Credenzeye2";
-import Animated from "./roboSmall.svg";
+// import Animated from "./roboSmall.svg";
 
 function Robo(props) {
   let cls = `robo ${props.cls}`;

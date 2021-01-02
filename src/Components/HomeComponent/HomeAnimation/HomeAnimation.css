@@ -1,0 +1,76 @@
+.anim{
+    height: calc(100vh - 60px);
+    width: 100vw;
+    position: relative;
+}
+@keyframes fadein{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes fadeout{
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+.hide{
+    animation: fadeout 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.show{
+    animation: fadein 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.anim-overlay-lower{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 3;
+}
+.anim-overlay-upper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 5;
+}
+@keyframes disappear{
+    from{
+        opacity: 1;
+        display: block;
+    }
+    to{
+        opacity: 0;
+        display: none;
+    }
+}
+.vanish{
+    animation: disappear 1.5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+}
+.hide-now{
+    display: none;
+}
+@keyframes darken-anim{
+    from { background: rgba(133,133,133,.95) }
+     to { background: rgba(0,0,0,.95) }
+}
+.darken{
+    animation: darken-anim 0.5s linear;
+}
