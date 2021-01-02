@@ -5,7 +5,7 @@ import logo from "../../assests/img/bg1.jpg";
 const SideEventCards = () => {
   return (
     <React-Fragment>
-      <h3 className="event-title" style={{marginTop:"20px"}}>Web Weaver</h3>
+      <h3 className="event-title title-1">Web Weaver</h3>
       <div className="row content">
         <EventCard
           logo={logo}
