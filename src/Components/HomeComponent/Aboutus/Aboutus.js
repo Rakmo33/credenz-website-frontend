@@ -13,7 +13,7 @@ const aboutus = (props) => {
   return (
     <>
     <Nav/>
-      <Container fluid id='Aboutus' className={classes.AboutusContainer}>
+      <Container id='Aboutus' className={classes.AboutusContainer}>
         <h1 className={classes.mid} style={{ color: "#dadada" }}>
           About US
         </h1>
