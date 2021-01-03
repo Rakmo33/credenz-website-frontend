@@ -1,12 +1,12 @@
 import "./profile.css";
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../Footer/footer";
 import SideEventButton from "../sideEventButton/sideEvent";
 import LoginFirst from "../LoginFirst/LoginFirst";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
-import Nav from '../Navbar/Navbar';
+import Nav from "../Navbar/Navbar";
 //import jwt from "jwt-decode";
 import $ from "jquery";
 
@@ -16,8 +16,7 @@ const Profile = () => {
   //   window.location.reload(false); //refresh page
   // };
 
-  const [Events, setEvents] = useState(undefined)
- 
+  const [Events, setEvents] = useState(undefined);
 
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
@@ -34,74 +33,62 @@ const Profile = () => {
 
   let user = "";
 
-
   function getEvents() {
-
-    if(localStorage.getItem("user")) {
+    if (localStorage.getItem("user")) {
       var token = localStorage.getItem("user");
-     if(token!==undefined || token!=='') {
-      var decoded = jwt_decode(token);
-      user = jwt(localStorage.getItem("user"));      
-      const accessToken = JSON.parse(token).accessToken;
-      //alert(typeof(decoded.username))
+      if (token !== undefined || token !== "") {
+        var decoded = jwt_decode(token);
+        user = jwt(localStorage.getItem("user"));
+        const accessToken = JSON.parse(token).accessToken;
+        //alert(typeof(decoded.username))
 
+        console.log("type" + typeof accessToken);
+        console.log(accessToken);
 
-      console.log("type" + typeof(accessToken))
-      console.log(accessToken)
-
-      axios({
-        method: "get",
-        url: `http://credenzwebsite.herokuapp.com/${decoded.username}/present`,
-        headers: { authorization: `Bearer ${accessToken}` },
-      })
-      .then((response) => {
-        console.log(response.data.map((obj)=>{
-          return obj.event_username;
-        }));
-        setEvents(response.data)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-     }
+        axios({
+          method: "get",
+          url: `http://credenzwebsite.herokuapp.com/${decoded.username}/present`,
+          headers: { authorization: `Bearer ${accessToken}` },
+        })
+          .then((response) => {
+            console.log(
+              response.data.map((obj) => {
+                return obj.event_username;
+              })
+            );
+            setEvents(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    } else {
+      console.log("logged out!");
     }
-    else{
-      console.log("logged out!")
-    }
-      
-      
-    
   }
 
-  
   useEffect(() => {
-    getEvents()
-  }, [])
+    getEvents();
+  }, []);
 
   if (localStorage.getItem("user")) {
-  
     let count = 1;
-    user = jwt(localStorage.getItem("user"));    
+    user = jwt(localStorage.getItem("user"));
 
-    if(Events!==undefined) {
-
-      
+    if (Events !== undefined) {
       var EventList = Events.map((x) => {
-        return(
+        return (
           <tr>
             <th scope='row'>{count++}</th>
-              <td>
-              {x.event_username}     
-              </td>
+            <td>{x.event_username}</td>
           </tr>
-        )});
-      
+        );
+      });
     }
-
 
     return (
       <div>
-        <Nav/>
+        <Nav />
         <div className='profilepage'>
           <div className='container'>
             <div className='wrapper'>
@@ -179,9 +166,7 @@ const Profile = () => {
                 {/* <p className='title'>Registered Events</p> */}
                 <div className='table-container'>
                   <table className='table table-striped table-dark'>
-                    <tbody>
-                      {EventList}
-                    </tbody>
+                    <tbody>{EventList}</tbody>
                   </table>
                 </div>
               </div>
@@ -206,7 +191,7 @@ const Profile = () => {
       <div>
         <SideEventButton />
         <LoginFirst></LoginFirst>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

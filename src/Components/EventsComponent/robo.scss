@@ -28,9 +28,10 @@ $roboto: 'Roboto' sans-serif;
     -webkit-transform: scale(0.7);
     -ms-transform: scale(0.7);
     transform: scale(0.7);
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+    // width: -webkit-max-content;
+    width: 80%;
+    // width: max-content;
+    width: auto;
     margin: auto;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -39,14 +40,6 @@ $roboto: 'Roboto' sans-serif;
     *::before {
         position: absolute;
         content: "";
-    }
-    *,
-    *::after,
-    *::before {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -o-box-sizing: border-box;
     }
     .invert {
         -webkit-filter: invert(1);

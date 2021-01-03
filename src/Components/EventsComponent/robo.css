@@ -8,9 +8,8 @@
 .robo {
   -webkit-transform: scale(0.7);
   transform: scale(0.7);
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 80%;
+  width: auto;
   margin: auto;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -20,15 +19,6 @@
 .robo *::before {
   position: absolute;
   content: "";
-}
-
-.robo *,
-.robo *::after,
-.robo *::before {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
 }
 
 .robo .invert {
