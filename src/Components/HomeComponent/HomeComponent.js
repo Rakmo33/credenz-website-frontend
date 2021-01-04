@@ -20,7 +20,7 @@ const Home = () => {
           data-aos-easing='ease-in-sine'
           data-aos-duration='600'
           className='d-flex justify-content-center aos-item'>
-          <Timer />
+         {/* <Timer />*/}
         </div>
         <div id='Aboutus'>
           <Aboutus />

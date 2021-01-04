@@ -65,7 +65,22 @@ function Signup() {
     clgname: college,
     passwordCheck: passwordCheck,
   };
+/*
+  const verifyPhone = (e) => {
+    setPhone(e.target.value)
 
+    const e = this.state.code+this.state.pno;
+    await axios.get("http://localhost:8000/verify/getcode", {
+        params: {
+            phonenumber: e,
+            channel: 'sms'
+        }
+    })
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+
+  }
+*/
   console.log(values);
 
   const errors = Validate(values);
@@ -172,7 +187,7 @@ function Signup() {
                     name='phone'
                     placeholder='Phone Number'
                     className='form-control bg-white border-md border-left-0 pl-3'
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e)=> setPhone(e.target.value)}
                     value={phone}
                   />
                   {errors && (

@@ -16,7 +16,7 @@ import LeaderBoard from "./SideEvents/leaderboard";
 import Team from "../Components/Team/Team";
 import Profile from "../Components/Profilepage/Profilepage";
 import Admin from "../Components/AdminSection/Admin";
-
+import VerifyPhone from "../Components/SignupComponent/verifyPhone";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -70,6 +70,10 @@ class Main extends Component {
       return <Admin />;
     };
 
+    const VerifyPhonePage = () => {
+      return <VerifyPhone />;
+    };
+
     return (
       <div>
         <NavBar />
@@ -86,6 +90,7 @@ class Main extends Component {
           <Route path='/team' component={TeamPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/admin' component={AdminPage} />
+          <Route path='/verifyphone' component={VerifyPhonePage} />
           <Redirect to='/home' />
         </Switch>
         {/* <Footer /> */}
