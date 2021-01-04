@@ -8,7 +8,7 @@ const team = () => {
   return (
     <>
     <Nav/>
-      <Container fluid>
+      <Container fluid style={{height:"100vh"}} >
         <br />
         <br />
         <br />
