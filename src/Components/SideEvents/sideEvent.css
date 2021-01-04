@@ -1,5 +1,5 @@
 .event-card {
-    width: 14rem;
+    width: 20rem;
     margin: 30px;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
     background-color: #192b42;
@@ -59,9 +59,9 @@
 }
 
 .side-event-logo {
-    height: 10rem;
+    height: 12rem;
     opacity: 0.9;
-    width: 10rem;
+    width: 16rem;
     margin: auto;
     margin-top: 20px;
     /* border-radius:50%; */
