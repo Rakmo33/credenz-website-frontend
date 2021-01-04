@@ -65,7 +65,7 @@
 
 .contacts {
     margin: 30px;
-    width: 14rem;
+    width: 19rem;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
     /* background-color: #0a1018 !important; */
     background-color: #192b42 !important;
@@ -89,6 +89,7 @@
 
 .card .card-body {
     border: none !important;
+    text-align: center;
 }
 
 .contacts .card-body {
