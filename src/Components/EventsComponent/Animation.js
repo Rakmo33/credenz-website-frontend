@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./animation.css";
 import EventModal from "./EventModal";
 import Robo from "./Robo";
-import $ from "jquery";
 import { info } from "./info";
+import $ from "jquery";
 import Event from "./EventCard.js";
 
 function Animation() {
   const [cls1, setCls1] = useState("");
   const [cls2, setCls2] = useState("");
-  const [cls3, setCls3] = useState("");
+  const [cls3, setCls3] = useState("hide-robo");
   const [moveHandCls1, setMoveHandCls1] = useState("");
   const [moveHandCls2, setMoveHandCls2] = useState("");
   const [modalCls, setModalCls] = useState("");
   const [isGrid, setIsGrid] = useState(true);
+  const [label, setLabel] = useState("");
+  const [lighting, setLighting] = useState("");
+  const [logoScreen, setLogoScreen] = useState(true);
 
   const [isIdle, setIsIdle] = useState(true);
 
@@ -32,58 +35,151 @@ function Animation() {
   const [leftHandMoveCls, setLeftHandMoveCls] = useState(leftHand);
   const [rightHandMoveCls, setRightHandMoveCls] = useState(rightHand);
 
-  const eventsClickHandler = (index) => {
-    setIsIdle(false);
-    setCls1("fadeOut1");
-    setCls2("fadeOut2");
-    index < 6 ? setCls3("slideRight") : setCls3("slideLeft");
+  let roboTextTimer;
 
-    setIndex(index);
+  const robotTypeMsg = (textString) => {
+    let roboTextString = textString;
+    /* type your text here */
+    let roboTextArray = roboTextString.split("");
+
+    clearTimeout(roboTextTimer);
+    document.getElementById("Robotext").innerHTML = "";
+
+    const robotextFrameLooper = () => {
+      if (roboTextArray.length > 0) {
+        document.getElementById("Robotext").innerHTML += roboTextArray.shift();
+      } else {
+        clearTimeout(roboTextTimer);
+      }
+      roboTextTimer = setTimeout(
+        robotextFrameLooper,
+        15
+      ); /* change 70 for speed */
+    };
+
+    robotextFrameLooper();
+  };
+
+  useEffect(() => {
+    setIsGrid(false);
 
     setTimeout(() => {
-      setCls1("fadeOut1 hide");
-      setCls2("fadeOut2 hide");
-
-      if (index < 6) {
-        setMoveHandCls1("moveHand");
-        setMoveHandCls2("");
-
-        let temp = { ...leftHand };
-        temp.upper = "";
-        temp.lower = "";
-        setLeftHandMoveCls(temp);
-
-        temp = { ...rightHand };
-        temp.upper = "";
-        temp.lower = "";
-        setRightHandMoveCls(temp);
-      } else {
-        let temp = { ...leftHand };
-        temp.upper = "switchHand1a";
-        temp.lower = "switchHand1b";
-        setLeftHandMoveCls(temp);
-
-        setTimeout(() => {
-          temp = { ...rightHand };
-          temp.upper = "switchHand2a";
-          temp.lower = "switchHand2b";
-          setRightHandMoveCls(temp);
-        }, 150);
-
-        setTimeout(() => {
-          setMoveHandCls2("moveHand2");
-        }, 800);
-      }
-
-      setIsGrid(false);
+      setIsGrid(true);
+      setCls1("fadeOut1");
+      setCls2("fadeOut2");
+      setCls3("");
+      setModalCls("");
 
       setTimeout(() => {
-        index < 6 ? setModalCls("showModal1") : setModalCls("showModal2");
+        setCls1("");
+        setCls2("");
       }, 1);
+    }, 300);
+    robotTypeMsg("Hello There!...Credenz is Coming!!!");
+
+    return () => {
+      clearTimeout(roboTextTimer);
+    };
+  }, []);
+
+  const eventsHoverHandler = (index, e) => {
+    // $(".evePageCards").forEach((item) => {
+    //   item.unbind("hover");
+    // });
+
+    document.querySelector(".roboMsg").classList.remove("slide-up");
+    setTimeout(() => {
+      document.querySelector(".roboMsg").classList.add("slide-up");
+      document.getElementById("Robotext").innerHTML = "";
+
+      robotTypeMsg(info[index].tagline);
     }, 300);
   };
 
+  const eventsClickHandler = (index, e) => {
+    setIndex(index);
+
+    // robotextFrameLooper();
+    setLighting("lighting");
+    setIsIdle(false);
+
+    const eventCard = e.target;
+
+    eventCard.className = "evePageCards customCard  button ice detect red";
+    setLogoScreen(true);
+
+    setTimeout(() => {
+      eventCard.className = "evePageCards customCard button ice detect blue";
+      setLogoScreen(false);
+    }, 300);
+
+    setTimeout(() => {
+      eventCard.className = "evePageCards customCard button ice detect red";
+      setLogoScreen(true);
+    }, 700);
+
+    setTimeout(() => {
+      eventCard.className = "evePageCards customCard button ice detect green";
+      setLogoScreen(false);
+
+      setLabel("detected");
+    }, 1100);
+
+    setTimeout(() => {
+      setLighting("");
+
+      setCls1("fadeOut1");
+      setCls2("fadeOut2");
+      index < 6 ? setCls3("slideRight") : setCls3("slideLeft");
+
+      setTimeout(() => {
+        setCls1("fadeOut1 hide");
+        setCls2("fadeOut2 hide");
+
+        if (index < 6) {
+          setMoveHandCls1("moveHand");
+          setMoveHandCls2("");
+
+          let temp = { ...leftHand };
+          temp.upper = "";
+          temp.lower = "";
+          setLeftHandMoveCls(temp);
+
+          temp = { ...rightHand };
+          temp.upper = "";
+          temp.lower = "";
+          setRightHandMoveCls(temp);
+        } else {
+          let temp = { ...leftHand };
+          temp.upper = "switchHand1a";
+          temp.lower = "switchHand1b";
+          setLeftHandMoveCls(temp);
+
+          setTimeout(() => {
+            temp = { ...rightHand };
+            temp.upper = "switchHand2a";
+            temp.lower = "switchHand2b";
+            setRightHandMoveCls(temp);
+          }, 150);
+
+          setTimeout(() => {
+            setMoveHandCls2("moveHand2");
+          }, 800);
+        }
+
+        setIsGrid(false);
+
+        setTimeout(() => {
+          index < 6 ? setModalCls("showModal1") : setModalCls("showModal2");
+        }, 1);
+      }, 300);
+    }, 1800);
+  };
+
   const closeModalHandler = () => {
+    setLogoScreen(true);
+    setLabel("");
+
     setIsIdle(true);
 
     setCls3("");
@@ -121,55 +217,35 @@ function Animation() {
 
   return (
     <div>
-      <div className='eve-anim'>
+      <div className={`eve-anim ${isGrid ? "" : "flex"}`}>
         {isGrid ? (
           <div className='events-grid'>
-            <Event
-              onClick={() => {
-                eventsClickHandler(0);
-              }}
-              dataToggle='modal'
-              dataTarget='#myModal1'
-              src='/logos/clash.png'
-              name='Clash'
-              cls={cls1}></Event>
-            {/* <button>close</button> */}
-
-            <Event
-              onClick={() => {
-                eventsClickHandler(1);
-              }}
-              src='/logos/rc.png'
-              name='Reverse Coding'
-              cls={cls1}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(2);
-              }}
-              src='/logos/pixelate.png'
-              name='Pixelate'
-              cls={cls1}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(3);
-              }}
-              src='/logos/cretronix.png'
-              name='Cretronix'
-              cls={cls1}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(4);
-              }}
-              src='/logos/bplan.png'
-              name='Bplan'
-              cls={cls1}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(5);
-              }}
-              src='/logos/wallstreet.png'
-              name='Wallstreet'
-              cls={cls1}></Event>
+            {info.map((item, index) => {
+              if (index < 6)
+                return (
+                  <Event
+                    key={index}
+                    id={index}
+                    onClick={(e) => {
+                      eventsClickHandler(index, e);
+                    }}
+                    onHover={(e) => {
+                      eventsHoverHandler(index, e);
+                    }}
+                    src={item.src}
+                    name={item.title}
+                    cls={cls1}
+                    gridNumber={"grid1"}
+                    delayCls={
+                      index % 6 === 0 || index % 6 === 1
+                        ? "firstRow"
+                        : index % 6 === 2 || index % 6 === 3
+                        ? "secondRow"
+                        : "thirdRow"
+                    }></Event>
+                );
+              else return null;
+            })}
           </div>
         ) : (
           <EventModal
@@ -177,57 +253,63 @@ function Animation() {
             cls={modalCls}
             onClick={closeModalHandler}></EventModal>
         )}
-        <Robo
-          cls={cls3}
-          moveHandCls1={moveHandCls1}
-          moveHandCls2={moveHandCls2}
-          right={rightHandMoveCls}
-          left={leftHandMoveCls}
-          isidle={isIdle}></Robo>
+        <div className='roboWrap '>
+          <div
+            className={
+              isGrid && label === "detected"
+                ? `roboMsg`
+                : isGrid
+                ? "roboMsg  slide-up"
+                : "roboMsg"
+            }>
+            {/* <p>Clash is for the best Competetive</p>
+            <p>Programmers!</p> */}
+            <span></span>
+            <div id='RobotextWrap'>
+              <p id='Robotext'></p>
+            </div>
+          </div>
+          <Robo
+            cls={cls3}
+            moveHandCls1={moveHandCls1}
+            moveHandCls2={moveHandCls2}
+            right={rightHandMoveCls}
+            left={leftHandMoveCls}
+            isidle={isIdle}
+            lighting={lighting}
+            isLogo={logoScreen}
+            logoSrc={
+              logoScreen ? "/logos/credenz19Logo.png" : info[index].src
+            }></Robo>
+        </div>
         {isGrid ? (
           <div className='events-grid'>
-            <Event
-              onClick={() => {
-                eventsClickHandler(6);
-              }}
-              src='/logos/datawiz.png'
-              name='Datawiz'
-              cls={cls2}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(7);
-              }}
-              src='/logos/enigma.png'
-              name='Enigma'
-              cls={cls2}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(8);
-              }}
-              src='/logos/quiz.png'
-              name='Quiz'
-              cls={cls2}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(9);
-              }}
-              src='/logos/web.png'
-              name='Web Weaver'
-              cls={cls2}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(10);
-              }}
-              src='/logos/paper.png'
-              name='Paper Presentation'
-              cls={cls2}></Event>
-            <Event
-              onClick={() => {
-                eventsClickHandler(11);
-              }}
-              src='/logos/nth.png'
-              name='Network Treasure Hunt'
-              cls={cls2}></Event>
+            {info.map((item, index) => {
+              if (index > 5)
+                return (
+                  <Event
+                    key={index}
+                    id={index + 6}
+                    onClick={(e) => {
+                      eventsClickHandler(index, e);
+                    }}
+                    onHover={(e) => {
+                      eventsHoverHandler(index, e);
+                    }}
+                    src={item.src}
+                    name={item.title}
+                    cls={cls2}
+                    gridNumber={"grid2"}
+                    delayCls={
+                      index % 6 === 0 || index % 6 === 1
+                        ? "firstRow"
+                        : index % 6 === 2 || index % 6 === 3
+                        ? "secondRow"
+                        : "thirdRow"
+                    }></Event>
+                );
+              else return null;
+            })}
           </div>
         ) : null}
       </div>

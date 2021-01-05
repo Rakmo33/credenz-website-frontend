@@ -53,8 +53,7 @@ function VerifyPhone() {
       else {
         console.log("else")
         console.log(phone)
-        var IN = "91";
-        var ph = IN.concat(phone)
+        
         console.log(ph)
         console.log(code)
         try {
@@ -66,7 +65,7 @@ function VerifyPhone() {
               }
             })
             .then(function(data){
-                    alert(data)
+                    alert(JSON.stringify(data))
                   })
             .catch(err => console.log(err));
         } catch (e) {

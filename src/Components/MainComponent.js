@@ -12,13 +12,19 @@ import "bootstrap/dist/css/bootstrap.css";
 import About from "../Components/HomeComponent/Aboutus/Aboutus";
 import SideEvents from "./SideEvents/sideEvents";
 import LeaderBoard from "./SideEvents/leaderboard";
-// import Footer from "../Components/Footer/footer";
 import Team from "../Components/Team/Team";
 import Profile from "../Components/Profilepage/Profilepage";
 import Admin from "../Components/AdminSection/Admin";
 import VerifyPhone from "../Components/SignupComponent/verifyPhone";
+//import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
+import Footer from '../Components/Footer/footer';
+import './maincomponent.module.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group';
 
 class Main extends Component {
   componentDidMount() {
@@ -72,7 +78,7 @@ class Main extends Component {
 
     const VerifyPhonePage = () => {
       return <VerifyPhone />;
-    };
+    }
 
     return (
       <div>
@@ -94,6 +100,7 @@ class Main extends Component {
           <Redirect to='/home' />
         </Switch>
         {/* <Footer /> */}
+        {/* <NavBar /> */}
       </div>
     );
   }

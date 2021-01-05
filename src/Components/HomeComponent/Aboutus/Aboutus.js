@@ -2,11 +2,18 @@ import React from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import classes from "./Aboutus.module.css";
 import { FadeInUp, FadeInRight } from "animate-components";
+import Timer from "../Timer";
+import Nav from '../../Navbar/Navbar';
+import sponsorclass from '../HomeComponent.module.css';
+import SideEventButton from "../../sideEventButton/sideEvent";
+import Footer from "../../Footer/footer";
+import Sponsors from "../sponsors/sponsors";
 
 const aboutus = (props) => {
   return (
     <>
-      <Container fluid id='Aboutus' className={classes.AboutusContainer}>
+    <Nav/>
+      <Container id='Aboutus' className={classes.AboutusContainer}>
         <h1 className={classes.mid} style={{ color: "#dadada" }}>
           About US
         </h1>
@@ -91,6 +98,14 @@ const aboutus = (props) => {
           </Col>
         </Row>
       </Container>
+      <Container>
+        <div className={sponsorclass.sponsor}>
+          {" "}
+          <Sponsors />
+        </div>
+      </Container>
+      <SideEventButton />
+      <Footer />
     </>
   );
 };

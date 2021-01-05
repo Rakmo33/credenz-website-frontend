@@ -2,47 +2,45 @@ export const info = [
   // 1
   {
     title: "Clash",
+    src: "/logos/clash.png",
+    tagline: "Clash is based on Competitive Programming!",
     info1: `<p>
-      Have you always dreamt of having your own business or product ? B-Plan
-      is the perfect platform for you to showcase your ideas before a panel
-      of the best marketing professionals! Make a presentation describing
-      your business idea, and get a chance to win funding from the
-      investors.
+    Clash is one of the biggest technical events in CREDENZ in which more than 1500 people participate from various colleges. This game will help you test your ability to understand, interpret and solve complex examples based on C/C++ mainly and python for first years. 
+   <br />
+    Questions are mainly based on concepts, syntax and logic.
+    
     </p>
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹150</span> for Non-IEEE members
+        <span>₹80</span>&nbsp; for Non-IEEE members
       </li>
       <li>
-        <span>₹120</span> for IEEE members
+        <span>₹60</span>&nbsp; for IEEE members
       </li>
     </ul>`,
     info2: `<p>
-    1) Every Participating candidate should be pursuing
-    Undergraduate/Graduate courses.
-    <br /> <br />
-    2) All the participants should bring valid I-Cards while coming for
-    the contest. No one without I-Card will be allowed for the contest and
-    the team will be disqualified.
+  
+    1) MCQs based on coding concepts in C/C++ and python. (Python, C/C++ for FE and 
+      C/C++ for SE, TE and BE)
+      
   </p>`,
     info3: `<p>
-  1) The event will be conducted within PICT campus on all 3 days.
+  1) A 28-minute game for a person or a team of two people.
   <br />
-  2) Participants will have to come to college campus to collect their
-  account credentials after which they can play game from anywhere.
+  2) Teams or players are not allowed to use any IDE or software after the game has 
+  started.  
   <br />
-  3) Every participant will be given virtual money to trade on our
-  virtual stock market.
+  3)You will have 3 lifelines (description will be provided in the game itself) to help 
+  yourself.  
   <br />
-  4) The event will be conducted on our Android App/Website.
+  4) You are not allowed to switch tabs or close the browser during the game. If you do 
+  so, you will be automatically logged out.  
   <br />
-  5) Mock NEWS will be flashed regarding listed companies and their
-  sectors based on which participants will buy/sell stocks to ultimately
-  become the biggest gainer.
-  <br />
-  6) Concepts such as IPO, short selling and high frequency trading will
-  be inculcated within the event.
+  5) The primary marking scheme is +4 -2 if your answer for a particular question is 
+  incorrect, then from the next question onwards the marking scheme will be +2 -1 until 
+  you attempt a question with the correct answer.  
+ 
 </p>`,
     info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.</p>`,
     info5: `<p className=' text-center'>
@@ -65,9 +63,10 @@ export const info = [
   // 2
   {
     title: "Reverse Coding",
+    src: "/logos/rc.png",
+    tagline: "Hone your problem-solving skills by decrypting complex questions",
     info1: `<p>
-      A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
-    </p>
+    Like Clash, RC is also one of the biggest technical events in CREDENZ in which more than 800 people participate from various colleges. This game consists of integer type answer based coding questions where you are allowed to use Linux terminal or any suitable IDE you wish to use. Questions are mainly based on complex mathematical problems.    </p>
     <h5>Registration Fees: </h5>
     <ul>
       <li>
@@ -80,23 +79,20 @@ export const info = [
     info2: `<p>
       1) A maximum of 2 candidates pursuing undergraduate program at their institution are allowed per team.
     <br /> <br />
-    2) All the participants should bring their receipt and valid I-Cards while coming for the contest. A participant without an I-Card will NOT be allowed for the contest and the respective team will be disqualified.
-    <br /> <br />
-    3) Marking scheme will be declared on spot.
+    2) Marking scheme will be declared on spot.
   </p>`,
     info3: `<p>
-      1) There are two rounds:
+      1) Integer type questions which involve complex mathematical problems which are not easy to solve without coding.
   <br />
-      Logic Round.
+     2)A 28-minute game for a person or a team of two people.
   <br />
-      Decipher and Code Round. 
+     3)Teams or players are allowed to use any IDE or software after the game has started.
   <br />
-  2) Logic round consists of Logical questions which can be solved by coding.
+   4)You will have 3 lifelines (description will be provided in the game itself) to help 
+   yourself.
+  <br />
+  5)You will have two attempts to answer a particular question. In the first attempt, the marking scheme will be +4 0. In the second attempt, the marking scheme will be changed to +2 -1.
 
-  <br />
-  3) In the Decipher and code round, the participants have to write the code for pattern that maps input to output.
-  <br />
-  4) The event will be conducted in two categories, Junior level(First and Second year) and Senior level(Third and Fourth year).  <br />
 </p>`,
     info4: `<p>
       1) The competition will test the participants' logical and coding skills.
@@ -109,6 +105,9 @@ export const info = [
   // 3#
   {
     title: "Pixelate",
+    src: "/logos/pixelate.png",
+
+    tagline: "Let your creativity fuse with thoughtful designs and artistic originality.",
     info1: `<p>
     Paint your virtual canvas with the pixels of your artistry. 
     Let creativity fuse with the finesse of your vision as the 
@@ -124,9 +123,9 @@ export const info = [
         <span>₹120</span> for IEEE members
       </li>
     </ul>`,
-    info2: 
-    //ye last year ka que he iss saal ka badalna hoga
-    `<p>
+    info2:
+      //ye last year ka que he iss saal ka badalna hoga
+      `<p>
     "To observe attentively is to remember distinctly".<br/>    
     We have come a long way from computers in big rooms to ultra thin laptops.memory evolution took place to a great extent.It gave us great opportunities and wide pathways and scope for development in infinite sectors.
     Design a poster which conveys the message of various walks of evolution of memory and evolution  from vaccum tubes to pen drive and hard drives.
@@ -173,8 +172,11 @@ export const info = [
   //4#
   {
     title: "Cretronix",
+    src: "/logos/cretronix.png",
+
+    tagline: "Build and exhibit your own circuits by solving tech problems.",
     info1: `<p>
-    Battle it out on the bread board!
+    Battle it out on the breadboard!
     <br />
     Challenge your brains to clear a test where you demonstrate your knowledge in the field of electronics, physics, logical ability and build a circuit by interpreting the hints provided.
     <br />
@@ -183,10 +185,10 @@ export const info = [
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹150</span> for Non-IEEE members
+        <span>₹50</span> for Non-IEEE members
       </li>
       <li>
-        <span>₹120</span> for IEEE members
+        <span>₹40</span> for IEEE members
       </li>
     </ul>`,
     info2: `<p>
@@ -194,8 +196,10 @@ export const info = [
     <br /> <br />
     2) Electronic gadgets are not allowed.
     <br /><br />
-    3)3) All the participants should bring receipt and valid I-Cards while coming for the contest. No one without I-Card will be allowed for the contest and the team will be disqualified.
-  </p>`,
+    3) Participants will be provided with credentials to join tinkercad for the 2nd round.
+    <br /><br />
+    4) Participants can use datasheets for the components they are using and are supposed to provide a link of the same.
+    </p>`,
     info3: `<p>
     (Junior and Senior):
   <br />
@@ -203,35 +207,40 @@ export const info = [
    categories. There will be 30 questions for a time limit of 30 minutes.
   <br />
   2) 2nd round:The participants will be given a problem statement and they are supposed to
-    implement the solution with the help of hardware components (simulation
-    software proteus for senior round).
+    implement the solution with the help of tinkercad simulation environment.
+    <br /> 
+    LINK: <a href="https://www.tinkercad.com/dashboard">https://www.tinkercad.com/dashboard</a>
+    
 </p>`,
-    info4: `<p> Round 1: Each question carries a single mark. No negative marking. Teams having score above  
-    the score threshold will be selected for Round 2. <br>
+    info4: `<p> Round 1:<br /> Each question carries a single mark. No negative marking. Teams having score above  
+    the score threshold will be selected for Round 2. <br />
     Round 2: Credits will be given based on understanding problem statement, component selection,  
-    practical performance and explanation of implemented circuit.<br> 
-    • Winner and runner-up will be awarded.<br>
+    practical performance and explanation of implemented circuit.<br /> 
+    • Winner and runner-up will be awarded.<br />
     </p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+    Ajay Kompalwad &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 8668460490'>
+        <span>&nbsp; +91 8668460490</span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+    Akshay Satpute &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 7057602590'>
+        <span>&nbsp;+91 7057602590</span>
       </a>
     </p>`,
   },
   //5#
   {
     title: "Bplan",
+    src: "/logos/bplan.png",
+
+    tagline: "Showcase your entrepreneurial skills by presenting innovative business plans to the world",
     info1: `<p>
       Have you always dreamt of having your own business or product ? B-Plan
       is the perfect platform for you to showcase your ideas before a panel
@@ -242,10 +251,10 @@ export const info = [
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹150</span> for Non-IEEE members
+        <span>₹120</span> &nbsp;for Non-IEEE members
       </li>
       <li>
-        <span>₹120</span> for IEEE members
+        <span>₹100</span> &nbsp;for IEEE members
       </li>
     </ul>`,
     info2: `<p>
@@ -253,9 +262,6 @@ export const info = [
     program at their institution will be allowed per team.
     <br /> <br />
     2) Proposed business plan should not be in violation of any intellectual property rights.
-    <br /> <br />
-    3) All the participants should bring receipt and valid I-Cards while coming for the contest. 
-    No one without I-Card will be allowed for the contest and the team will be disqualified.
   </p>`,
     info3: `<p>
     1) At stage 1, the soft copy of the abstract (summary) should be submitted to bplan.credenz19@gmail.com
@@ -277,31 +283,42 @@ export const info = [
       <li>3) Technical feasibility.</li>
       <li>4) Implementation of the product.</li>
       <li>5) Cost efficiency (if relevant).</li>
-      <li>6) uperiority of the product over existing products in market.</li>
+      <li>6) Superiority of the product over existing products in market.</li>
       <li>7) Participants will be judged on the basis of their business acumen and on how sustainable and innovative their solution is.</li>
       <li>8) The decision of the judges will be final and shall be respected.</li>
     </ul>
   .</p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+    Janhavi Bagul &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 9970004781'>
+        <span>&nbsp; +91 9970004781</span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+    Manasi Thonte &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel+91 9561118320'>
+        <span>&nbsp; +91 9561118320</span>
+      </a>
+    </p>
+    <p className=' text-center'>
+    Sampreeti Saha &nbsp;
+      <br />
+      <i className='fa fa-phone fa-icons '></i>
+      <a href='tel:+91 9168743366'>
+        <span>&nbsp;+91 9168743366</span>
       </a>
     </p>`,
   },
   //6#
   {
     title: "Wallstreet",
+    src: "/logos/wallstreet.png",
+
+    tagline: "Get an insight on stock markets by Investing and trading virtual money",
     info1: `<p>
     Let the rise and fall of market shares bring out your inner businessman!
     From the chaos due to the fluctuations in Sensex to the never ending trades, get ready to take over the virtual stock market.
@@ -355,62 +372,78 @@ export const info = [
   //7#
   {
     title: "Datawiz",
+    src: "/logos/datawiz.png",
+
+    tagline: "Test your Machine learning and data analytics skills before stepping into the world of Data Science..",
     info1: `<p>
-    Want to step into the world of data science? 
-    <br />
-    DataWiz gives you the perfect opportunity to test your machine learning and data analytics skills. Analyse and find inherent patterns in the dataset provided and make predictions with help of the models you make!
-    </p>
-    <h5>Registration Fees: </h5>
-    <ul>
-      <li>
-        <span>₹100</span> for Non-IEEE members
-      </li>
-      <li>
-        <span>₹80</span> for IEEE members
-      </li>
+    A non-technical aptitude based event. An event everyone can participate in and enjoy.
+    Enigma presents to its players, an array of brain tickling logical reasoning questions. 
+    Put your mind to test and see where you stand among the crowd. May the wittiest triumph.
+   </p>
+   <h5>Registration Fees: </h5>
+   <ul>
+     <li>
+       <span>₹50</span> for Non-IEEE members
+     </li>
+     <li>
+       <span>₹40</span> for IEEE members
+     </li>
     </ul>`,
     info2: `<p>
-    1) A maximum of 2 candidates pursuing undergraduate program at their institution are allowed per team.
+    1)Students can form teams of one, two or three participants only.
     <br /> <br />
-    2) Disclosing the code and data outside of the teams is prohibited and will lead to disqualification.
-    <br /><br/>
-    3) Using code from any external resource(s) is not permitted and will lead to disqualification.
-    <br /><br />
-    4) Round specific rules will be specified on the contest page.
+    2)One account per participant
+    <br /> <br />
+    3)You cannot sign up to Kaggle from multiple accounts and therefore you cannot submit from multiple accounts.
+<br /> <br />
+    4)No private sharing outside teams.
+<br /> <br />
+    5)No private sharing outside teams.
+<br /> <br />
+    6)Privately sharing code or data outside of teams is not permitted.
+<br /> <br />
+    7)Results should be reproducible to be eligible for prizes.
   </p>`,
     info3: `<p>
-    1) The contest will be hosted on Kaggle.
-      <br />
-    2) The duration of the contest and the round structure will be released soon.
-     <br />
-     3) Once the problem statement(s) and the dataset(s) are released, the teams will have to solve the problem and submit the output file on the contest page in the stipulated amount of time. The submission file format will be specified on the contest page.
-</p>`,
-    info4: `<p>The submissions will be evaluated on the error metric decided for the given dataset. If any two teams perform equally well on the overall score, the tie will be broken by comparing the submission time of both the teams.</p>`,
+    Team Mergers: <br />
+    Team mergers are allowed in this competition.
+    <br />
+    Team Limits: <br />
+    A team may consist of a maximum of 3 participants.
+    </p>`,
+    info4: `<p>
+    Submission Limits <br />
+    You may submit a maximum of 10 entries per day. <br />
+    You may select up to 2 final submissions for judging.
+    </p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+    Aboli Marathe &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 9545413291'>
+        <span>&nbsp; +91 9545413291 </span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+    Ayush Das &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 9373236438'>
+        <span>&nbsp;+91 9373236438</span>
       </a>
     </p>`,
   },
   //8#
   {
     title: "Enigma",
+    src: "/logos/enigma.png",
+
+    tagline: "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions.",
     info1: `<p>
-    A non-technical aptitude based event. An event everyone can participate in and enjoy.
-     Enigma presents to its players, an array of brain tickling logical reasoning questions. 
-     Put your mind to test and see where you stand among the crowd. May the wittiest triumph.
-    </p>
+    Do you have, what it takes to face the mind-boggling questions which will push your logical reasoning to its limit? Then do not miss this amazing opportunity.
+    Enigma is a logical reasoning based questionnaire, which will test your aptitude, thinking capability, response time and mental agility.
+    So, get ready to put your Grey Cells to work!
+        </p>
     <h5>Registration Fees: </h5>
     <ul>
       <li>
@@ -421,54 +454,36 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-    1) A maximum of two candidates pursuing undergraduate/graduate program at their institution will be allowed per team.
+    1) Candidates pursuing an Undergraduate/graduate program at their institution will be allowed to participate. It will be an individual event.
     <br /> <br />
-    2) Students with a valid I-Card will be allowed for the contest else will lead to disqualification. A team has to register itself at the registration desk at the time of the event.
+    2)All the participants should follow all the instructions as mentioned in the mail received after registration.
     </p>`,
     info3: `<p>
-    <ul>
-      <li>1) There will be three rounds.</li>
-      <li>2) You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.</li>
-      <li>3) No mobile phones or any electronic gadgets are allowed during the event.</li>
-      <li>4) The decision of the organizer will be final</li>
-      <li>5) There is no negative marking at any stage.</li>
-      <br />
-      <li>
+   1) There will be two rounds.
+   <br/>
+   2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
+   <br /> 
+   3)The decision of the organizer will be final.
+   <br />
+   4)There is no negative marking at any stage.
+   <br />
+5)ROUND 1: <br />
+  &nbsp;&nbsp;&nbsp; a.There will be 35 questions in this round.  <br />
+  &nbsp;&nbsp;&nbsp; b.Time limit is 40 minutes.<br />
+  &nbsp;&nbsp;&nbsp;c.For every right answer, you will be awarded points and no negative points for a wrong answer.
+<br />
+&nbsp;&nbsp;&nbsp;d.The marking scheme will be told on the day of the event. <br />
+6)ROUND 2:<br />
+&nbsp;&nbsp;&nbsp;a.There will be 5 Puzzles and 5 MCQs in this round.<br />
+&nbsp;&nbsp;&nbsp;b.Time Limit is 2 hours<br />
+ c.You must claim whenever you are done. Earliest claim with max. score wins.
 
-          <ul>
-            <h5>Round 1:</h5>
-            <li>There will be 35 questions in this round.</li>
-            <li>Time limit is 30 minutes.</li>
-            <li>For every right answer you will be awarded points and no negative points for a wrong answer.</li>
-            <li>The marking scheme will be told on the day of the event.</li>
-            <li>100 teams will qualify for the second round.</li>
-          </ul>
-      </li>
-      <br />
-      <li>
-
-          <ul>
-            <h5>Round 2:</h5>
-            <li>There will be 15 questions in this round with a time constraint of 2 minutes for each question.</li>
-            <li>Each team will be split in this round, and the players will play individually. Each player of a team will play for the same 15 questions.</li>
-            <li>The scoring will depend on the performance of both the participants.</li>
-            <li>For a question – If both members answer correctly, 4 points will be awarded. If one member answers correctly, 1 point will be awarded. No points will be awarded in any other case.</li>
-            <li>25 teams will qualify for round 3.</li>
-          </ul>
-      </li>
-          <br />
-      <li>
-          <ul>
-            <h5>Round 3:</h5>
-            <li>There will be 5 puzzles in this round.</li>
-            <li>Time limit is 2 hours.</li>
-            <li>You need to claim whenever you are done.</li>
-            <li>The earliest claim with maximum right answers, wins.</li>
-          </ul>
-      </li>
-   </ul>
 </p>`,
-    info4: `<p>No Judging Criteria!</p>`,
+    info4: `<p>
+    Submission Limits <br />
+    You may submit a maximum of 10 entries per day. <br />
+    You may select up to 2 final submissions for judging.
+    </p>`,
     info5: `<p className=' text-center'>
       Manav Peshwani &nbsp;
       <br />
@@ -488,7 +503,10 @@ export const info = [
   },
   //9#
   {
-    title: "Clash",
+    title: "Quiz",
+    src: "/logos/quiz.png",
+
+    tagline: "Test your knowledge across wide range of topics and get a chance to win some exciting prizes.",
     info1: `<p>
     Get ready to set off on a journey with captivating questions and puzzles on the way, led by a piquant quizmaster. 
     <br />
@@ -544,37 +562,42 @@ export const info = [
 </p>`,
     info4: `<p>The winner will be selected on the basis of the maximum points scored in final round and/or on the exclusive discretion of the quiz master.</p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+    Aparna Ranade &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 8149841027'>
+        <span>&nbsp; +91 8149841027</span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+    Asawari Walkade &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 8956783613'>
+        <span>&nbsp;+91 8956783613</span>
       </a>
     </p>`,
   },
   //10#
   {
     title: "Webweaver",
+    src: "/logos/web.png",
+
+    tagline: "Build an aesthetic website to showcase your web development skills",
     info1: `<p>
-    An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online.
-    If you think you have the flair to create such a site, WebWeaver is the competition for you!
-    A perfect integration of technology and creativity will lead you to win this competition.
+    Web Weaver is a web development event that is aimed to target the FE crowd along with the experienced seniors. 
+    <br />
+    The organizing team drops a theme for the event upon which the website is supposed to be based. Participants can participate either individually or in a group of 2 and develop a website which is supposed to be submitted 1-2 days before the start of Credenz. On the first day of Credenz, the best website teams are promoted to the second round where people are informed by us to add specific changes to their website. The website with the most aesthetic changes and best compatibility will be announced as the winner.
+    <br />
+    Tech Stack - As per the comfort of the participant
     </p>
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹150</span> for Non-IEEE members
+        <span>₹80</span> for Non-IEEE members
       </li>
       <li>
-        <span>₹120</span> for IEEE members
+        <span>₹60</span> for IEEE members
       </li>
     </ul>`,
     info2: `<p>
@@ -634,6 +657,9 @@ export const info = [
   //11#
   {
     title: "Paper Presentation",
+    src: "/logos/paper.png",
+
+    tagline: "Present technical research papers with advanced perspectives while honing your skills of research.",
     info1: `<p>
     An investment in knowledge always pays the best interest.
     <br /> 
@@ -693,6 +719,9 @@ export const info = [
   //12#
   {
     title: "Network Treasure Hunt",
+    src: "/logos/nth.png",
+
+    tagline: "Decrypt the clues to solve complex puzzles and race your way to finish at top.",
     info1: `<p>
     An online treasure hunt where players find different pieces of clues on various websites to solve a variety of puzzles. Solve a set of riddles with important clues and get to the finish line before anyone can.
     <br />

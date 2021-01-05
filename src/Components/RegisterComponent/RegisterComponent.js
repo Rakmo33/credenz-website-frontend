@@ -18,6 +18,7 @@ import NavigateButton from "./NavigateButton";
 import LoginFirst from "../LoginFirst/LoginFirst";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
+import Nav from '../Navbar/Navbar';
 
 const Register = () => {
   var screenHeight = window.screen.height;
@@ -456,6 +457,7 @@ const Register = () => {
 
     return (
       <div>
+        <Nav/>
         <SideEventsButton />
         <div className='regPage'>
           <h1 className='reg-head'>Registration Form</h1>

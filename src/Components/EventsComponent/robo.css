@@ -1,9 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");
 .robo {
   -webkit-transform: scale(0.7);
-          transform: scale(0.7);
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  transform: scale(0.7);
+  width: 80%;
+  width: auto;
   margin: auto;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -15,13 +21,9 @@
   content: "";
 }
 
-.robo *,
-.robo *::after,
-.robo *::before {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -o-box-sizing: border-box;
+.robo .invert {
+  -webkit-filter: invert(1);
+  filter: invert(1);
 }
 
 .robo #head {
@@ -30,7 +32,47 @@
   margin: 0 auto;
   margin-top: 150px;
   -webkit-animation: float 3s infinite;
-          animation: float 3s infinite;
+  animation: float 3s infinite;
+}
+
+.robo #head span.eari {
+  height: 45px;
+  width: 15px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
+  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  position: absolute;
+  left: 45px;
+  top: 30px;
+}
+
+.robo #head span.eari span.earo {
+  height: 24px;
+  width: 10px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
+  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  position: absolute;
+  left: -15px;
+  top: 10px;
+}
+
+.robo #head span.eari2 {
+  height: 45px;
+  width: 15px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
+  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  position: absolute;
+  right: 45px;
+  top: 30px;
+}
+
+.robo #head span.eari2 span.earo2 {
+  height: 24px;
+  width: 10px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
+  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  position: absolute;
+  right: -15px;
+  top: 10px;
 }
 
 .robo #head .iris {
@@ -40,6 +82,8 @@
   border-radius: 100%;
   background: black;
   z-index: 10;
+  -webkit-transform: scale(0.45);
+  transform: scale(0.45);
   /*circulo branco do olho maior*/
   /*circulo branco do olho menor*/
 }
@@ -54,7 +98,8 @@
   border-radius: 100%;
   background: white;
   -webkit-animation: eyeNotAnimation 2s infinite;
-          animation: eyeNotAnimation 2s infinite;
+  animation: eyeNotAnimation 2s infinite;
+  visibility: visible !important;
 }
 
 .robo #head .iris::before {
@@ -67,7 +112,8 @@
   border-radius: 100%;
   background: white;
   -webkit-animation: eyeNotAnimation 2s infinite;
-          animation: eyeNotAnimation 2s infinite;
+  animation: eyeNotAnimation 2s infinite;
+  visibility: visible !important;
 }
 
 .robo #head .borda-iris {
@@ -77,23 +123,31 @@
   height: 62px;
   margin: 0 auto;
   border-radius: 100%;
-  background: #2fb3ff;
+  background: #259ff0;
   z-index: -1;
+  -webkit-transform: scale(0.45);
+  transform: scale(0.45);
 }
 
 .robo #head .olho {
   position: relative;
-  top: -160px;
-  width: 140px;
-  height: 140px;
-  border-radius: 100%;
-  margin: 0 auto;
+  top: -105px;
+  width: 40%;
+  height: 1%;
+  border-radius: 15px;
+  margin: auto;
   background: #e1edf3;
   z-index: -2;
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+  border: 3px solid #001e2c;
+  -webkit-box-shadow: 0 0 5px 5px #1780d6;
+  box-shadow: 0 0 5px 5px #1780d6;
 }
 
 .robo #head .borda-olho {
   position: relative;
+  opacity: 0;
   top: -310px;
   width: 160px;
   height: 160px;
@@ -101,52 +155,78 @@
   margin: 0 auto;
   background: #001e2c;
   z-index: -3;
+  -webkit-transform: scale(0.7);
+  transform: scale(0.7);
 }
 
 .robo #head .head {
   margin: 0 auto;
   position: relative;
-  top: -440px;
-  width: 280px;
-  height: 0px;
-  border-right: 40px solid transparent;
-  border-left: 40px solid transparent;
-  border-bottom: 170px solid #2fb3ff;
+  top: -360px;
+  width: 190px;
+  height: 150px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3cbaf5), to(#13719ce5));
+  background-image: linear-gradient(to bottom, #3cbaf5, #13719ce5);
   z-index: -4;
-  border-radius: 0 0 40px 40px;
+  border-radius: 15px 15px 15px 15px;
 }
 
-.robo #head .antena {
+.robo #head .head::before {
+  height: 5px;
+  width: 20%;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  bottom: -20px;
+  z-index: 500;
+  border: 3px solid black;
+  border-top: 2px solid black;
+  -webkit-animation: speak 2s infinite;
+  animation: speak 2s infinite;
+}
+
+.robo .antena {
   position: relative;
-  bottom: 730px;
+  bottom: 550px;
   width: 5px;
   height: 100px;
   margin: 0 auto;
-  background: black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
+  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
   z-index: -5;
 }
 
-.robo .robo-body {
+.hide-robo {
+  opacity: 0;
+  -webkit-transform: translateY(50px) scale(0.7);
+  transform: translateY(50px) scale(0.7);
+}
+
+.robo-body {
   width: 100%;
   height: 100px;
   margin: 0 auto;
   margin-top: 50px;
   -webkit-animation: float 3s infinite;
-          animation: float 3s infinite;
+  animation: float 3s infinite;
 }
 
-.robo .robo-body .peito {
+.robo-body .peito {
   margin: 0 auto;
   width: 140px;
   height: 200px;
   background: #e1edf3;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f6f7), to(#9da9af));
+  background-image: linear-gradient(to bottom, #f4f6f7, #9da9af);
   border-radius: 10px 10px 30px 30px;
   overflow: hidden;
   /*desenho barriga*/
   /*bolinhas menores barriga*/
 }
 
-.robo .robo-body .peito::after {
+.robo-body .peito::after {
   display: block;
   position: relative;
   top: 20px;
@@ -154,13 +234,13 @@
   width: 180px;
   height: 10px;
   border-radius: 00%;
-  background: #2fb3ff;
+  background: #259ff0;
 }
 
-.robo .robo-body .peito::before {
+.robo-body .peito::before {
   display: block;
   position: relative;
-  top: 145px;
+  top: 155px;
   left: 20px;
   width: 20px;
   height: 20px;
@@ -168,33 +248,53 @@
   background: #003948;
   z-index: 15;
   -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
-          box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+  box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+  -webkit-animation: lighting2 1s infinite;
+  animation: lighting2 1s infinite;
 }
 
-.robo .robo-body .tela {
+.robo-body .peito.lighting::before {
+  -webkit-animation: lighting 0.6s infinite !important;
+  animation: lighting 0.6s infinite !important;
+}
+
+.robo-body .tela {
   margin: 0 auto;
   width: 100px;
-  height: 60px;
+  height: 90px;
   line-height: 45px;
   background: #001e2c;
   border-radius: 5px;
-  border: solid 5px #2fb3ff;
+  border: solid 5px #259ff0;
   text-align: center;
-  color: #2fb3ff;
+  color: #259ff0;
   font-size: 2em;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto" sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.robo .leg {
+.robo-body .tela img {
+  width: 85%;
+  height: 85%;
+  margin: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.leg {
   width: 100%;
   height: 100px;
   margin: 0 auto;
   margin-top: 100px;
 }
 
-.robo .leg .foot {
+.leg .foot {
   width: 70px;
   height: 60px;
   margin: 0 auto;
@@ -202,58 +302,63 @@
   background: -webkit-linear-gradient(left, #001e2c 0%, #001e2c 20%, #003948 20%, #003948 40%, #005e7d 40%, #005e7d 60%, #003948 60%, #003948 80%, #001e2c 80%);
   border-radius: 0 0 10px 10px;
   -webkit-animation: float 3s infinite;
-          animation: float 3s infinite;
+  animation: float 3s infinite;
 }
 
-.robo .leg .sombra {
+.leg .sombra {
   position: relative;
   margin: 0 auto;
   width: 150px;
   height: 40px;
   top: 10px;
   border-radius: 80%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(26, 25, 25, 0.3);
   -webkit-animation: shadow 3s infinite;
-          animation: shadow 3s infinite;
+  animation: shadow 3s infinite;
 }
 
-.robo .braco-esquerdo {
+.braco-esquerdo {
   position: relative;
   top: -160px;
   left: -110px;
   margin: 0 auto;
   width: 100px;
   height: 15px;
-  background: #e1edf3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
+  background: linear-gradient(to bottom, #8d8989, #5a5858);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   z-index: -1;
   -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
+  transform: rotate(-30deg);
   -webkit-transform-origin: right;
-          transform-origin: right;
+  transform-origin: right;
   /*ombro*/
   /*cotovelo*/
 }
 
-.robo .braco-esquerdo .antebraco-esquerdo {
+.braco-esquerdo .antebraco-esquerdo {
   position: absolute;
-  right: 45%;
-  top: -475%;
+  right: 105%;
+  top: -85%;
   width: 100px;
   height: 40px;
-  background: red;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
   z-index: 100;
+  -webkit-transform-origin: 110% 50%;
+  transform-origin: 110% 50%;
   -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
   border-radius: 5px;
-  background: #2fb3ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3cbaf5), to(#13719ce5));
+  background: linear-gradient(to bottom, #3cbaf5, #13719ce5);
   /*mao*/
 }
 
-.robo .braco-esquerdo .antebraco-esquerdo::after {
+.braco-esquerdo .antebraco-esquerdo::after {
   width: 40px;
   height: 50px;
   border-style: solid;
@@ -265,7 +370,7 @@
   left: -40%;
 }
 
-.robo .braco-esquerdo::after {
+.braco-esquerdo::after {
   display: block;
   position: relative;
   left: 75%;
@@ -273,57 +378,60 @@
   width: 35px;
   height: 35px;
   border-radius: 100%;
-  background: #2fb3ff;
+  background: #259ff0;
 }
 
-.robo .braco-esquerdo::before {
+.braco-esquerdo::before {
   display: block;
   position: relative;
   top: -1px;
-  left: -2px;
+  left: -5px;
   width: 18px;
   height: 18px;
   border-radius: 100%;
   background: #005e7d;
 }
 
-.robo .moveHand {
+.moveHand {
   -webkit-animation: moveHand 5s infinite;
-          animation: moveHand 5s infinite;
+  animation: moveHand 5s infinite;
 }
 
-.robo .moveHand2 {
+.moveHand2 {
   -webkit-animation: moveHand2 5s infinite;
-          animation: moveHand2 5s infinite;
+  animation: moveHand2 5s infinite;
 }
 
-.robo .switchHand1a {
+.swingLeftLower {
+  top: 100% !important;
+  right: 100% !important;
+  -webkit-transform-origin: right !important;
+  transform-origin: right !important;
+}
+
+.switchHand1a {
   -webkit-transform-origin: unset !important;
-          transform-origin: unset !important;
+  transform-origin: unset !important;
   -webkit-transform: rotate(-20deg) !important;
-          transform: rotate(-20deg) !important;
+  transform: rotate(-20deg) !important;
 }
 
-.robo .switchHand1b {
-  -webkit-transform-origin: unset !important;
-          transform-origin: unset !important;
+.switchHand1b {
   -webkit-transform: rotate(-90deg) !important;
-          transform: rotate(-90deg) !important;
-  top: 318% !important;
+  transform: rotate(-90deg) !important;
 }
 
-.robo .switchHand2a {
+.switchHand2a {
   -webkit-transform-origin: left !important;
-          transform-origin: left !important;
+  transform-origin: left !important;
 }
 
-.robo .switchHand2b {
-  top: -488% !important;
-  -webkit-transform: rotate(90deg) !important;
-          transform: rotate(90deg) !important;
+.switchHand2b {
+  -webkit-transform: rotate(-270deg) !important;
+  transform: rotate(-270deg) !important;
 }
 
-.robo .braco-direito {
+.braco-direito {
   position: relative;
   top: -172px;
   left: 110px;
@@ -332,32 +440,36 @@
   height: 15px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  background: #e1edf3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
+  background: linear-gradient(to bottom, #8d8989, #5a5858);
   z-index: -1;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
   /*ombro*/
   /*cotovelo*/
 }
 
-.robo .braco-direito .antebraco-direito {
+.braco-direito .antebraco-direito {
   position: absolute;
-  right: -55%;
-  top: 318%;
+  top: -80%;
   width: 100px;
   height: 40px;
-  background: red;
   z-index: 100;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transform-origin: 110% 50%;
+  transform-origin: 110% 50%;
   border-radius: 5px;
-  background: #2fb3ff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3cbaf5), to(#13719ce5));
+  background: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
   /*mao*/
 }
 
-.robo .braco-direito .antebraco-direito::after {
+.braco-direito .antebraco-direito::after {
   width: 40px;
   height: 50px;
   border-style: solid;
@@ -369,7 +481,7 @@
   left: -40%;
 }
 
-.robo .braco-direito::after {
+.braco-direito::after {
   display: block;
   position: relative;
   left: -10%;
@@ -377,10 +489,10 @@
   width: 35px;
   height: 35px;
   border-radius: 100%;
-  background: #2fb3ff;
+  background: #259ff0;
 }
 
-.robo .braco-direito::before {
+.braco-direito::before {
   display: block;
   position: relative;
   top: -1px;
@@ -391,14 +503,14 @@
   background: #005e7d;
 }
 
-.robo .autor {
+.autor {
   position: absolute;
   top: 10%;
   left: 10%;
   width: 200px;
   height: 100px;
   background: #c0392b;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto" sans-serif;
   font-size: 1.3em;
   border-radius: 20px;
   -webkit-transition: all ease-in-out 1s;
@@ -406,14 +518,14 @@
   /*ponta balao*/
 }
 
-.robo .autor:hover {
+.autor:hover {
   -webkit-transform: scale(1.1, 1.1);
-          transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
   -webkit-transition: all ease-in-out 1s;
   transition: all ease-in-out 1s;
 }
 
-.robo .autor::after {
+.autor::after {
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -422,7 +534,7 @@
   left: 80%;
 }
 
-.robo .autor > p {
+.autor > p {
   width: 100%;
   height: 50%;
   line-height: 50px;
@@ -431,224 +543,350 @@
   color: #ecf0f1;
 }
 
-.robo .autor > p > a {
+.autor > p > a {
   text-decoration: none;
   color: #ecf0f1;
 }
 
-.robo .autor > p > a:hover {
+.autor > p > a:hover {
   text-decoration: underline;
 }
 
 @-webkit-keyframes moveHand {
   0% {
     -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
+    transform: rotate(-30deg);
   }
   10% {
     -webkit-transform: rotate(-80deg);
-            transform: rotate(-80deg);
+    transform: rotate(-80deg);
   }
   20% {
     -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
+    transform: rotate(-30deg);
   }
 }
 
 @keyframes moveHand {
   0% {
     -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
+    transform: rotate(-30deg);
   }
   10% {
     -webkit-transform: rotate(-80deg);
-            transform: rotate(-80deg);
+    transform: rotate(-80deg);
   }
   20% {
     -webkit-transform: rotate(-30deg);
-            transform: rotate(-30deg);
+    transform: rotate(-30deg);
   }
 }
 
 @-webkit-keyframes moveHand2 {
   0% {
     -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
+    transform: rotate(30deg);
   }
   10% {
     -webkit-transform: rotate(80deg);
-            transform: rotate(80deg);
+    transform: rotate(80deg);
   }
   20% {
     -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
+    transform: rotate(30deg);
   }
 }
 
 @keyframes moveHand2 {
   0% {
     -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
+    transform: rotate(30deg);
   }
   10% {
     -webkit-transform: rotate(80deg);
-            transform: rotate(80deg);
+    transform: rotate(80deg);
   }
   20% {
     -webkit-transform: rotate(30deg);
-            transform: rotate(30deg);
+    transform: rotate(30deg);
   }
 }
 
 @-webkit-keyframes eyeAnimation {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+    transform: scale(1.15);
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes eyeAnimation {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+    transform: scale(1.15);
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @-webkit-keyframes eyeNotAnimation {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     -webkit-transform: scale(0.7);
-            transform: scale(0.7);
+    transform: scale(0.7);
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes eyeNotAnimation {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     -webkit-transform: scale(0.7);
-            transform: scale(0.7);
+    transform: scale(0.7);
   }
   100% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @-webkit-keyframes float {
   0% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
   35% {
     -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    transform: translateY(-50px);
   }
   60% {
     -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   80% {
     -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
   }
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
 }
 
 @keyframes float {
   0% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
   35% {
     -webkit-transform: translateY(-50px);
-            transform: translateY(-50px);
+    transform: translateY(-50px);
   }
   60% {
     -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    transform: translateY(-10px);
   }
   80% {
     -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
   }
   100% {
     -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    transform: translateY(0px);
   }
 }
 
 @-webkit-keyframes shadow {
   0% {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
   40% {
     -webkit-transform: scaleX(0.6);
-            transform: scaleX(0.6);
+    transform: scaleX(0.6);
   }
   55% {
     -webkit-transform: scaleX(0.9);
-            transform: scaleX(0.9);
+    transform: scaleX(0.9);
   }
   80% {
     -webkit-transform: scaleX(0.75);
-            transform: scaleX(0.75);
+    transform: scaleX(0.75);
   }
   100% {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
 
 @keyframes shadow {
   0% {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
   }
   40% {
     -webkit-transform: scaleX(0.6);
-            transform: scaleX(0.6);
+    transform: scaleX(0.6);
   }
   55% {
     -webkit-transform: scaleX(0.9);
-            transform: scaleX(0.9);
+    transform: scaleX(0.9);
   }
   80% {
     -webkit-transform: scaleX(0.75);
-            transform: scaleX(0.75);
+    transform: scaleX(0.75);
   }
   100% {
     -webkit-transform: scaleX(1);
-            transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes lighting {
+  0% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+  33% {
+    background-color: #2d612d;
+    -webkit-box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+    box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+  }
+  66% {
+    background-color: #459945;
+    -webkit-box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+    box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+  }
+  100% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+}
+
+@keyframes lighting {
+  0% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+  33% {
+    background-color: #2d612d;
+    -webkit-box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+    box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+  }
+  66% {
+    background-color: #459945;
+    -webkit-box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+    box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+  }
+  100% {
+    background-color: #60e660;
+    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+  }
+}
+
+@-webkit-keyframes lighting2 {
+  0% {
+    background-color: #001e2c;
+    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+  }
+  50% {
+    background-color: #005e7d;
+    -webkit-box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
+    box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
+  }
+  100% {
+    background-color: #001e2c;
+    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+  }
+}
+
+@keyframes lighting2 {
+  0% {
+    background-color: #001e2c;
+    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+  }
+  50% {
+    background-color: #005e7d;
+    -webkit-box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
+    box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
+  }
+  100% {
+    background-color: #001e2c;
+    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+  }
+}
+
+@-webkit-keyframes speak {
+  0% {
+    border-bottom: 3px solid black;
+  }
+  35% {
+    border-bottom: 5px solid black;
+  }
+  50% {
+    border-bottom: 3px solid black;
+  }
+  65% {
+    border-bottom: 7px solid black;
+  }
+  80% {
+    height: 0px !important;
+    border-bottom: 3px solid black;
+  }
+}
+
+@keyframes speak {
+  0% {
+    border-bottom: 3px solid black;
+  }
+  35% {
+    border-bottom: 5px solid black;
+  }
+  50% {
+    border-bottom: 3px solid black;
+  }
+  65% {
+    border-bottom: 7px solid black;
+  }
+  80% {
+    height: 0px !important;
+    border-bottom: 3px solid black;
+  }
+}
+
+@media (max-width: 1200px) {
+  .robo {
+    display: none;
   }
 }
 /*# sourceMappingURL=robo.css.map */

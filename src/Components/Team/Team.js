@@ -3,10 +3,12 @@ import Member from "../Team/Member";
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from "../Footer/footer";
 import "./newmem.css";
+import Nav from '../Navbar/Navbar';
 const team = () => {
   return (
     <>
-      <Container fluid>
+    <Nav/>
+      <Container fluid style={{height:"100vh"}} >
         <br />
         <br />
         <br />
@@ -78,7 +80,7 @@ const team = () => {
                 </Col> */}
         </Row>
       </Container>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };
