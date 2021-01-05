@@ -153,10 +153,11 @@ const Register = () => {
     events: {},
   };
 
-  console.log(defaultFormData)
+  
 
   const [formData, setFormData] = useForm(defaultFormData);
 
+  console.log(formData)
   // disable buttons
   const [showPrevBtn, setPrev] = useState(false);
   const [showNextBtn, setNext] = useState(true);
@@ -230,6 +231,99 @@ const Register = () => {
       setTimeout(() => setVisible(tempVisible), 200);
     }; //next
 
+
+
+    const eventsReg = () => {
+      const token = localStorage.getItem("user");
+      // alert(typeof(token))
+       const accessToken = JSON.parse(token).accessToken;
+       var decoded = jwt_decode(token);
+
+        // console.log("type" + typeof(accessToken))
+      // console.log(accessToken)
+      let count = 1;
+      var players = [];
+      if(formData.name2!=="") {
+        count++;
+        players[0] = formData.name2
+      }
+      if(formData.name3!=="") {
+        count++;
+        players[1] = formData.name3
+      } 
+      if(formData.name4!=="") {
+        count++;
+        players[2] = formData.name4
+      }  
+
+      console.log(players)
+      console.log(count)
+       events.forEach((event) => {
+
+
+        if (event.isCheked === true) {
+
+          if(formData.team==="single"){
+          axios({
+            method: "post",
+            url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
+            headers: { authorization: `Bearer ${accessToken}` },
+          })
+            .then((response) => {
+              console.log("event checked" + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              console.log("Axios error : " + error);//request fails with 500
+            });
+          }
+          else{
+
+            axios.post("http://credenzwebsite.herokuapp.com/addteam", {
+              //...data
+              players: players,
+              event_name: event.username,
+              team_username: formData.teamName,
+              no_of_players: count,
+            }, {
+              headers: {
+                authorization: `Bearer ${accessToken}`
+              }
+            })
+            .then((response) => {
+              console.log("team :" + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              console.log("Axios error : " + error);//request fails with 500
+            });
+          console.log("else")
+            /*
+          axios({
+            method: "post",
+            url: `http://credenzwebsite.herokuapp.com/addteam`,
+            headers: { authorization: `Bearer ${accessToken}` },
+            body: {
+              players: players,
+              event_name: event.username,
+              team_username: formData.teamName,
+              no_of_players: count,
+            }
+          })
+            .then((response) => {
+              console.log("team :" + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              console.log("Axios error : " + error);//request fails with 500
+            });*/
+          
+          }//else
+
+        }
+
+
+      });
+    }
+
+
     // prev click
     const prevHandler = () => {
       // find index of current
@@ -268,6 +362,7 @@ const Register = () => {
     const _DEV_ = document.domain === "localhost";
 
     async function DisplayRazorpay(e) {
+
       e.preventDefault();
       console.log("display razor called !");
       //console.log("display razor called !");
@@ -278,52 +373,8 @@ const Register = () => {
       // alert(typeof(token))
        const accessToken = JSON.parse(token).accessToken;
        var decoded = jwt_decode(token);
-   
-      // console.log("type" + typeof(accessToken))
-      // console.log(accessToken)
-   
 
-       events.forEach((event) => {
-
-
-        if (event.isCheked === true) {
-
-          if(defaultFormData.team==="single")
-          axios({
-            method: "post",
-            url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
-            headers: { authorization: `Bearer ${accessToken}` },
-          })
-            .then((response) => {
-              console.log("event checked" + JSON.stringify(response.data));
-            })
-            .catch((error) => {
-              console.log("Axios error : " + error);//request fails with 500
-            });
-          
-          else
-          axios({
-            method: "post",
-            url: `http://credenzwebsite.herokuapp.com/addteam`,
-            headers: { authorization: `Bearer ${accessToken}` },
-            body: {
-              players: [defaultFormData.name1, defaultFormData.name2, defaultFormData.name3, defaultFormData.name4],
-              event_name: event.username,
-              team_username: "Team-test1",
-              no_of_players: 2,
-            }
-          })
-            .then((response) => {
-              console.log("event checked" + JSON.stringify(response.data));
-            })
-            .catch((error) => {
-              console.log("Axios error : " + error);//request fails with 500
-            });
-
-        }
-
-
-      });
+        eventsReg();
 
      console.log("display razor called !");
 
@@ -431,10 +482,8 @@ const Register = () => {
                 cls={`parent ${anim[1]}`}
                 formData={formData}
                 setFormData={setFormData}></YearWrap>
-
-                {console.log(defaultFormData.team==="team")}
-                {console.log(defaultFormData.team)}
- { defaultFormData.team==="team" && 
+                
+ { formData.team==="team" && 
               <NumberWrap
                 isVisible={isVisible[2]}
                 cls={`parent ${anim[2]}`}

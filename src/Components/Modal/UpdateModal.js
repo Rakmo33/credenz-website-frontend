@@ -4,9 +4,14 @@ import "./Modal.css";
 import axios from "axios";
 
 async function AllUpdates() {
+  /*
   const response = await axios.get(
     "http://credenzwebsite.herokuapp.com/updates"
+  );*/
+  const response = await axios.get(
+    "https://35.193.100.157/updates"
   );
+
   //console.log("I am response" + response);
   const data = await response.data;
   //console.log("I am data" + JSON.stringify(data));
@@ -15,6 +20,7 @@ async function AllUpdates() {
 
   //setTimeout(() => {  console.log("I am sleeping"); }, 5);
 
+  console.log("update data : " + data)
   return data;
 }
 
@@ -25,11 +31,6 @@ function Modal2({ show, handleClose }) {
     let result = AllUpdates();
 
     result.then((res) => {
-      // console.log("Res" + JSON.stringify(res[0].info))
-      // console.log("length" + res.length)
-
-      //console.log("Res" + JSON.stringify(res[0].info))
-      //console.log("length" + res.length)
 
       var updates = [];
       for (let i = 0; i < res.length; i++) {

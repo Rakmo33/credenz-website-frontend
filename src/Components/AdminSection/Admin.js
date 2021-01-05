@@ -62,7 +62,9 @@ class Admin extends Component {
             <h1>Admin Section</h1>
           </div>
         </Row>
+        
         <Row>
+          {/*
           <Col>
             <div>
               <button
@@ -71,13 +73,13 @@ class Admin extends Component {
                 onClick={() => this.onSubmit("addEvent")}>
                 Add Event
               </button>
-              {/* {this.state.addeve ? <AdminEvent/> : null} */}
+              {/* {this.state.addeve ? <AdminEvent/> : null} 
               <div className={classes.formdiv}>{this.state.addeve}</div>
             </div>
           </Col>
           <Col>
             <div>
-              {/* <AdminEvent choice={"2"}/> */}
+              {/* <AdminEvent choice={"2"}/> 
               <button
                 type='submit'
                 className='btn btn-primary'
@@ -86,9 +88,19 @@ class Admin extends Component {
               </button>
               <div className={classes.formdiv}>{this.state.editeve}</div>
             </div>
-          </Col>
+          </Col>*/}
         </Row>
         <Row>
+        <div>
+              <button
+                type='submit'
+                className='btn btn-primary'
+                onClick={() => this.onSubmit("addUpdate")}>
+                Add Update
+              </button>
+              <div className={classes.formdiv}>{this.state.addupd}</div>
+            </div>
+          {/*
           <Col>
             <div>
               <button
@@ -110,7 +122,7 @@ class Admin extends Component {
               </button>
               <div className={classes.formdiv}>{this.state.editupd}</div>
             </div>
-          </Col>
+          </Col>*/}
         </Row>
       </Container>
     );

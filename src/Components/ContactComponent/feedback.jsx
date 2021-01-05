@@ -77,13 +77,13 @@ const Feedback = () => {
                   name='name'
                   id='name'
                   onChange={(e) => setName(e.target.value)}
-                  value={
-                    localStorage.getItem("user")
-                      ? JSON.stringify(user["name"]).replace(/\"/g, "")
-                      : "Name"
-                  }
+                  defaultValue={localStorage.getItem("user")
+                  ? JSON.stringify(user["name"]).replace(/\"/g, "")
+                  : "Name"}
+                  value={name}
                   required></input>
               </div>
+              {/*
               <div className='form-group'>
                 <label htmlFor='email'>Email</label>
                 <input
@@ -91,13 +91,13 @@ const Feedback = () => {
                   className='form-control'
                   name='email'
                   id='email'
-                  value={
+                  defaultValue={
                     localStorage.getItem("user")
                       ? JSON.stringify(user["email"]).replace(/\"/g, "")
                       : "Email"
                   }
                   required></input>
-              </div>
+                </div>*/}
               <div className='form-group'>
                 <label htmlFor='message'>Message</label>
                 <textarea

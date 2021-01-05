@@ -59,9 +59,11 @@ function ModalBody({ handleClose, type, event, event_info }) {
 
       e.preventDefault();
 
+      
+      /*http://credenzwebsite.herokuapp.com/login */
       try {
         axios
-          .post("http://credenzwebsite.herokuapp.com/login", {
+          .post("https://35.193.100.157/login", {
             username: username,
             password: password,
           })
