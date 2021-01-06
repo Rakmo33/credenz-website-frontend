@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import EventCard from "./eventCard";
 import logo from "../../assests/img/bg1.jpg";
 import web1 from "../../assests/img/webweaver1.jpeg";
-
+import web2 from '../../assests/img/web3.jpeg';
 const SideEventCards = () => {
   return (
     <div className='sideEventTab' style={{ minHeight: "100vh" }}>
@@ -16,9 +16,9 @@ const SideEventCards = () => {
           }
         />
         <EventCard
-          logo={logo}
-          name='name4'
-          info={"info4. some info about it. play for free"}
+          logo={web2}
+          name='Castle Runner'
+          info={"Race against time and clear the exciting levels by reaching the castle. Collect coins and good mushrooms, beware of the big red enemy mushrooms. To win the game, clear all the levels!"}
         />
         {/* <EventCard
           logo={logo}

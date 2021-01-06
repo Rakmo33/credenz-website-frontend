@@ -99,8 +99,19 @@ export const info = [
       <br/>
 2) Time and cost efficiency of the code will be tested in round 2.
       </p>`,
-    info5: `<p class=" text-center">Devashish Dewalkar &nbsp;<br><i class="fa fa-phone fa-icons "></i><a href="tel: +91-8087550042"><span>&nbsp; +91-8551994422</span></a></p>
-      <p class=" text-center">Tanmay Nale &nbsp;<br><i class="fa fa-phone fa-icons "></i><a href="tel:+91-9922993249"><span>&nbsp;+91-9969108722</span></a></p>`,
+    info5: `<p class=" text-center">
+    Devashish Dewalkar &nbsp;<br>
+    <i class="fa fa-phone fa-icons "></i>
+    <a href="tel: +91-8087550042">
+    <span>&nbsp; +91-8551994422</span>
+    </a></p>
+
+      <p class=" text-center">
+      Tanmay Nale &nbsp;<br>
+      <i class="fa fa-phone fa-icons "></i>
+      <a href="tel:+91-9922993249">
+      <span>&nbsp;+91-9969108722</span>
+      </a></p>`,
   },
   // 3#
   {
