@@ -27,7 +27,7 @@
 }
 
 .robo #head {
-  width: 100%;
+  width: -moz-min-content;
   height: 100px;
   margin: 0 auto;
   margin-top: 150px;
