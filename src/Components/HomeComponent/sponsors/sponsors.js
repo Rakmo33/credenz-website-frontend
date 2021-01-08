@@ -80,45 +80,45 @@ const sponsors = (props) => {
       data-aos-easing='ease-in-sine'
       data-aos-duration='600'>
       <Container fluid>
-        <h2 style={{ textAlign: "center", color: "#dadada", marginBottom:'10px' }}>Sponsors</h2>
+        <h2 style={{ textAlign: "center", color: "#dadada", marginBottom:'25px' }}>Sponsors</h2>
         <Row style={{textAlign:'center', justifyContent:'center', marginTop:'10px'}}>
-          <Col md={2} sm={4}  >
+          <Col md={3} sm={4}  >
             <Sponsor url={"aarnell.png"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
           </Row>
-        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'10px'}}>
-          <Col md={2} sm={4}>
+        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
+          <Col md={3} sm={4}>
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-          <Col md={2} sm={4}>
+          <Col md={3} sm={4}>
             <Sponsor url={"Byju's2.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-          <Col md={2} sm={4}>
+          <Col md={3} sm={4}>
             <Sponsor url={"Byju's2.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-          <Col md={2} sm={4}>
+          <Col md={3} sm={4}>
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
         </Row>
-        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'10px'}}>
-          <Col md={2} sm={4}>
+        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
+          <Col md={3} sm={4}>
             <Sponsor url={"c3.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-          <Col md={2} sm={4}>
+          <Col md={3} sm={4}>
             <Sponsor url={"codechef.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-          <Col md={2} sm={4}>
+          <Col md={3} sm={4}>
             <Sponsor url={"finiq2.png"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-          <Col md={2} sm={4}>
+          <Col md={3} sm={4}>
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
