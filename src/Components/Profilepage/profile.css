@@ -214,11 +214,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-height: 250px;
+  overflow-y: scroll;
+  scrollbar-color: dark;
+  margin-top: 30px;
 }
 
 .profilepage .container .eve table {
   margin: auto;
   background-color: #0c3264;
+}
+
+.profilepage .container .eve table tbody {
+  text-align: center;
 }
 
 .profilepage .container .eve table th {
@@ -227,6 +235,10 @@
 }
 
 .profilepage .container .eve table tr {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
   border-radius: 10px;
 }
 
