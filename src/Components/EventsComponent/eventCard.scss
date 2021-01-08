@@ -82,10 +82,10 @@
         opacity: 0;
     }
     .slideRight {
-        transform: translateX(400px) scale(0.9);
+        transform: translateX(400px) translateY(-50px) scale(0.9);
     }
     .slideLeft {
-        transform: translateX(-400px) scale(0.9);
+        transform: translateX(-400px) translateY(-50px) scale(0.9);
     }
     .hide {
         display: none;
