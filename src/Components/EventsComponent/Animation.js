@@ -41,13 +41,14 @@ function Animation() {
     let roboTextString = textString;
     /* type your text here */
     let roboTextArray = roboTextString.split("");
+    let textMsg = document.getElementById("Robotext");
 
     clearTimeout(roboTextTimer);
-    document.getElementById("Robotext").innerHTML = "";
+    textMsg.innerHTML = "";
 
     const robotextFrameLooper = () => {
       if (roboTextArray.length > 0) {
-        document.getElementById("Robotext").innerHTML += roboTextArray.shift();
+        textMsg.innerHTML += roboTextArray.shift();
       } else {
         clearTimeout(roboTextTimer);
       }
@@ -57,10 +58,14 @@ function Animation() {
       ); /* change 70 for speed */
     };
 
-    robotextFrameLooper();
+    setTimeout(() => {
+      robotextFrameLooper();
+    }, 10);
   };
 
   useEffect(() => {
+    clearTimeout(roboTextTimer);
+
     setIsGrid(false);
 
     setTimeout(() => {
@@ -79,6 +84,9 @@ function Animation() {
 
     return () => {
       clearTimeout(roboTextTimer);
+      document.getElementById("Robotext").innerHTML = "";
+
+      setTimeout(() => {}, 10);
     };
   }, []);
 
