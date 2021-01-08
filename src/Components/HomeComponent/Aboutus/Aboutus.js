@@ -13,8 +13,9 @@ const aboutus = (props) => {
   return (
     <>
     <Nav/>
+    <div id="size">
       <Container id='Aboutus' className={classes.AboutusContainer}>
-        <h1 className={classes.mid} style={{ color: "#dadada" }}>
+        <h1 className={classes.mid} style={{ color: "#dadada", marginTop:'100px' }}>
           About US
         </h1>
         <Row className={classes.credenz}>
@@ -98,14 +99,16 @@ const aboutus = (props) => {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className={classes.AboutusContainer} >
         <div className={sponsorclass.sponsor}>
           {" "}
           <Sponsors />
         </div>
       </Container>
+      </div>
       <SideEventButton />
       <Footer />
+      
     </>
   );
 };
