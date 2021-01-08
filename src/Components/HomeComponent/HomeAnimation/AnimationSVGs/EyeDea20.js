@@ -2,23 +2,24 @@ import * as React from "react";
 import './EyeDea20.css';
 import {useState, useEffect} from "react";
 
-function SvgEyeDea20(props) {
+function SvgEyeDea20({showbackg, triggered}) {
   const [hover, setHover] = useState(false);
   const [show, setShow] = useState(true);
   const [hoverTimer, setHoverTimer] = useState(null);
   const [showbg, setShowBg] = useState(false)
-
   useEffect(()=>{
+    console.log("Triggered use Effect lol")
     setTimeout(()=>{
       setHover(true)
       setTimeout(()=>{
         setShowBg(true)
         setTimeout(()=>{
-          props.showbg(true)
+          showbackg(true)
         },380)
       },2600)
-    },4500)
-  })
+    },9000)
+  }, [triggered])
+  
   return (
     <svg
       id="eyeDEA2_0_svg__Layer_1"
@@ -29,7 +30,6 @@ function SvgEyeDea20(props) {
       viewBox="0 0 1366 668"
       xmlSpace="preserve"
       enableBackground="new 0 0 1366 668"
-      {...props}
     >
       <style>
         {

@@ -3,12 +3,13 @@ import { useEffect } from 'react';
 import './EyeDea21.css';
 
 function SvgEyeDea21(props) {
-  useEffect(()=>{
-    setTimeout(()=>{
-      console.log("[Log] Disappearing")
-      props.mechanicalEye(true);
-    }, 3000)
-  })
+  // useEffect(()=>{
+  //   setTimeout(()=>{
+  //     console.log("[Log] Disappearing")
+  //     props.mechanicalEye(true);
+  //   }, 3000)
+  // })
+  const irisHoverHandler = () => props.mechanicalEye(true);
   return (
     <svg
       id="eyeDEA2_1_svg__Layer_1"
@@ -11094,6 +11095,7 @@ function SvgEyeDea21(props) {
           id="eyeDEA2_1_svg__pupil"
           d="M756.84 312.98c0 29.37-24.28 53.17-54.24 53.17s-54.24-23.8-54.24-53.17 24.28-53.17 54.24-53.17 54.24 23.8 54.24 53.17z"
           fill="url(#eyeDEA2_1_svg__pupil_2_)"
+          onMouseEnter={()=>irisHoverHandler()}
         />
         <defs>
           <filter

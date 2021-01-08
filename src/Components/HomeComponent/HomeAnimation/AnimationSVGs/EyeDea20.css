@@ -1,11 +1,17 @@
-@keyframes spin-clockwise {
+/* @keyframes spin-clockwise {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
   }
 @keyframes spin-anticlockwise {
     from {transform:rotate(0deg);}
     to {transform:rotate(-360deg);}
-  }
+  } */
+
+@keyframes spin-initial {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(120deg);}
+    100% {transform: rotate(0deg);}
+}
 @keyframes spin_hovered {
     0% {animation-play-state: paused;}
     20%{transform:rotate(0deg);}
@@ -13,17 +19,17 @@
     100%{transform:rotate(0deg);}
 }
 .eyeDEA2_0_svg__ring1{
-    animation: spin-clockwise 6s linear infinite;
+    animation: spin-initial 6s linear infinite;
     transform-origin: 51.5% 47.2%;
     transition-timing-function: ease-in;
 }
 .eyeDEA2_0_svg__ring2{
-    animation: spin-anticlockwise 2s linear infinite;
+    animation: spin-initial 6s linear infinite;
     transform-origin: 51.5% 47.2%;
     transition-timing-function: ease-in;
 }
 .eyeDEA2_0_svg__ring3{
-    animation: spin-anticlockwise 4s linear infinite;
+    animation: spin-initial 6s linear infinite;
     transform-origin: 51.5% 47.2%;
 }
 
