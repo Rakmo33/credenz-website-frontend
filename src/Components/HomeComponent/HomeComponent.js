@@ -15,14 +15,14 @@ const Home = () => {
       <div className={classes.body}>
         {/* <h1 style={{color: "ivory"}}>Credenz Home Page</h1> */}
         <HomeAnimation />
-    
+{/*     
         <div id='Aboutus'>
           <Aboutus />
         </div>
         <div className={classes.sponsor}>
           {" "}
           <Sponsors />
-        </div> 
+        </div>  */}
       </div>
       <SideEventButton />
       <Footer />
