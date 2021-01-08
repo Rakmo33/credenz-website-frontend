@@ -73,10 +73,11 @@ const Profile = () => {
 
   if (localStorage.getItem("user")) {
     let count = 1;
+    var EventList;
     user = jwt(localStorage.getItem("user"));
 
     if (Events !== undefined) {
-      var EventList = Events.map((x) => {
+      EventList = Events.map((x) => {
         return (
           <tr>
             <th scope='row'>{count++}</th>
@@ -85,7 +86,7 @@ const Profile = () => {
         );
       });
     } else {
-      var EventList = "You have not registered for any event yet. ";
+      EventList = "You have not registered for any event yet. ";
     }
 
     return (
