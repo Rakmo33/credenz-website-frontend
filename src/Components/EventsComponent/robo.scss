@@ -26,7 +26,7 @@ $roboto: 'Roboto' sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 .robo {
     -webkit-transform: scale(0.7);
-    -ms-transform: scale(0.7);
+    -moz-transform: scale(0.7);
     transform: scale(0.7);
     // width: -webkit-max-content;
     width: 80%;
@@ -34,6 +34,7 @@ $roboto: 'Roboto' sans-serif;
     width: auto;
     margin: auto;
     -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     *::after,
@@ -46,7 +47,8 @@ $roboto: 'Roboto' sans-serif;
         filter: invert(1);
     }
     #head {
-        width: 100%;
+        width: -moz-min-content;
+        // width: 100%;
         height: 100px;
         margin: 0 auto;
         margin-top: 150px;
@@ -92,6 +94,7 @@ $roboto: 'Roboto' sans-serif;
             background: black;
             z-index: 10;
             -webkit-transform: scale(0.45);
+            -moz-transform: scale(0.45);
             -ms-transform: scale(0.45);
             transform: scale(0.45);
             /*circulo branco do olho maior*/
@@ -133,6 +136,7 @@ $roboto: 'Roboto' sans-serif;
             background: $amarelo;
             z-index: -1;
             -webkit-transform: scale(0.45);
+            -moz-transform: scale(0.45);
             -ms-transform: scale(0.45);
             transform: scale(0.45);
         }
@@ -146,6 +150,7 @@ $roboto: 'Roboto' sans-serif;
             background: $amarelo-claro;
             z-index: -2;
             -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
             -ms-transform: scale(0.6);
             transform: scale(0.6);
             border: 3px solid $azul-escuro;
@@ -163,6 +168,7 @@ $roboto: 'Roboto' sans-serif;
             background: $azul-escuro;
             z-index: -3;
             -webkit-transform: scale(0.7);
+            -moz-transform: scale(0.7);
             -ms-transform: scale(0.7);
             transform: scale(0.7);
         }
@@ -206,6 +212,7 @@ $roboto: 'Roboto' sans-serif;
 .hide-robo {
     opacity: 0;
     -webkit-transform: translateY(50px) scale(0.7);
+    -moz-transform: translateY(50px) scale(0.7);
     -ms-transform: translateY(50px) scale(0.7);
     transform: translateY(50px) scale(0.7);
 }
@@ -323,13 +330,16 @@ $roboto: 'Roboto' sans-serif;
     height: 15px;
     background: $grey;
     -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
     z-index: -1;
     -webkit-transform: rotate(-30deg);
+    -moz-transform: rotate(-30deg);
     -ms-transform: rotate(-30deg);
     transform: rotate(-30deg);
     -webkit-transform-origin: right;
+    -moz-transform-origin: right;
     -ms-transform-origin: right;
     transform-origin: right;
     & .antebraco-esquerdo {

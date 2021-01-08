@@ -43,7 +43,7 @@ const ContactUs = () => {
               width='2000'
               height='600'
               frameborder='0'
-              style={{ border: "0" }}
+              style={{ border: "0", filter: "invert(90%)"}}
               allowfullscreen=''
               aria-hidden='false'
               tabindex='0'
