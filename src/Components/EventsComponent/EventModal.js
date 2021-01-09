@@ -1,5 +1,7 @@
 /* eslint-disable no-lone-blocks */
 import React, { useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
+
 import "./eventmodal.css";
 
 function EventModal(props) {
@@ -45,7 +47,12 @@ function EventModal(props) {
   return (
     <div className={cls}>
       <div className='modalHead'>
+        <img src={currentInfo.src} alt='logo' />
         <h3>{currentInfo.title}</h3>
+        <Link to='/register' className='regNowBtn'>
+          Register Now!
+        </Link>
+
         <span onClick={props.onClick}>
           <i className='fa fa-times'></i>
         </span>
@@ -60,6 +67,7 @@ function EventModal(props) {
                 tabSwitchHandler(1);
               }}>
               <i className='fa fa-info'></i>
+              <p>Info</p>
             </button>
           </li>
           <li>
@@ -69,6 +77,7 @@ function EventModal(props) {
                 tabSwitchHandler(2);
               }}>
               <i className='fa  fa-pencil-square-o'></i>
+              <p>Rules</p>
             </button>
           </li>
           <li>
@@ -78,6 +87,7 @@ function EventModal(props) {
                 tabSwitchHandler(3);
               }}>
               <i className='fa  fa-cogs'></i>
+              <p>Structure</p>
             </button>
           </li>
           <li>
@@ -87,6 +97,7 @@ function EventModal(props) {
                 tabSwitchHandler(4);
               }}>
               <i className='fa  fa-balance-scale'></i>
+              <p>Judging Criteria</p>
             </button>
           </li>
           <li>
@@ -96,6 +107,7 @@ function EventModal(props) {
                 tabSwitchHandler(5);
               }}>
               <i className='fa  fa-phone'></i>
+              <p>Contact</p>
             </button>
           </li>
         </ul>

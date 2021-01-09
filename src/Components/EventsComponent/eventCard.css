@@ -116,13 +116,13 @@
 }
 
 .evePage .slideRight {
-  -webkit-transform: translateX(400px) translateY(-50px) scale(0.9);
-          transform: translateX(400px) translateY(-50px) scale(0.9);
+  -webkit-transform: translateX(350px) translateY(-50px) scale(0.85);
+          transform: translateX(350px) translateY(-50px) scale(0.85);
 }
 
 .evePage .slideLeft {
-  -webkit-transform: translateX(-400px) translateY(-50px) scale(0.9);
-          transform: translateX(-400px) translateY(-50px) scale(0.9);
+  -webkit-transform: translateX(-350px) translateY(-50px) scale(0.85);
+          transform: translateX(-350px) translateY(-50px) scale(0.85);
 }
 
 .evePage .hide {

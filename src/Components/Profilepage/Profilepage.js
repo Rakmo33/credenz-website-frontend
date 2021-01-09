@@ -89,6 +89,10 @@ const Profile = () => {
       EventList = "You have not registered for any event yet. ";
     }
 
+    if (EventList.length === 0) {
+      EventList = "You have not registered for any event yet. ";
+    }
+
     return (
       <div>
         <Nav />

@@ -118,7 +118,8 @@ export const info = [
     title: "Pixelate",
     src: "/logos/pixelate.png",
 
-    tagline: "Let your creativity fuse with thoughtful designs and artistic originality.",
+    tagline:
+      "Let your creativity fuse with thoughtful designs and artistic originality.",
     info1: `<p>
     Paint your virtual canvas with the pixels of your artistry. 
     Let creativity fuse with the finesse of your vision as the 
@@ -251,7 +252,8 @@ export const info = [
     title: "Bplan",
     src: "/logos/bplan.png",
 
-    tagline: "Showcase your entrepreneurial skills by presenting innovative business plans to the world",
+    tagline:
+      "Showcase your entrepreneurial skills by presenting innovative business plans to the world",
     info1: `<p>
       Have you always dreamt of having your own business or product ? B-Plan
       is the perfect platform for you to showcase your ideas before a panel
@@ -329,7 +331,8 @@ export const info = [
     title: "Wallstreet",
     src: "/logos/wallstreet.png",
 
-    tagline: "Get an insight on stock markets by Investing and trading virtual money",
+    tagline:
+      "Get an insight on stock markets by Investing and trading virtual money",
     info1: `<p>
     Let the rise and fall of market shares bring out your inner businessman!
     From the chaos due to the fluctuations in Sensex to the never ending trades, get ready to take over the virtual stock market.
@@ -385,7 +388,8 @@ export const info = [
     title: "Datawiz",
     src: "/logos/datawiz.png",
 
-    tagline: "Test your Machine learning and data analytics skills before stepping into the world of Data Science..",
+    tagline:
+      "Test your Machine learning and data analytics skills before stepping into the world of Data Science..",
     info1: `<p>
     A non-technical aptitude based event. An event everyone can participate in and enjoy.
     Enigma presents to its players, an array of brain tickling logical reasoning questions. 
@@ -449,7 +453,8 @@ export const info = [
     title: "Enigma",
     src: "/logos/enigma.png",
 
-    tagline: "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions.",
+    tagline:
+      "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions.",
     info1: `<p>
     Do you have, what it takes to face the mind-boggling questions which will push your logical reasoning to its limit? Then do not miss this amazing opportunity.
     Enigma is a logical reasoning based questionnaire, which will test your aptitude, thinking capability, response time and mental agility.
@@ -517,7 +522,8 @@ export const info = [
     title: "Quiz",
     src: "/logos/quiz.png",
 
-    tagline: "Test your knowledge across wide range of topics and get a chance to win some exciting prizes.",
+    tagline:
+      "Test your knowledge across wide range of topics and get a chance to win some exciting prizes.",
     info1: `<p>
     Get ready to set off on a journey with captivating questions and puzzles on the way, led by a piquant quizmaster. 
     <br />
@@ -594,7 +600,8 @@ export const info = [
     title: "Webweaver",
     src: "/logos/web.png",
 
-    tagline: "Build an aesthetic website to showcase your web development skills",
+    tagline:
+      "Build an aesthetic website to showcase your web development skills",
     info1: `<p>
     Web Weaver is a web development event that is aimed to target the FE crowd along with the experienced seniors. 
     <br />
@@ -670,7 +677,8 @@ export const info = [
     title: "Paper Presentation",
     src: "/logos/paper.png",
 
-    tagline: "Present technical research papers with advanced perspectives while honing your skills of research.",
+    tagline:
+      "Present technical research papers with advanced perspectives while honing your skills of research.",
     info1: `<p>
     An investment in knowledge always pays the best interest.
     <br /> 
@@ -732,7 +740,8 @@ export const info = [
     title: "Network Treasure Hunt",
     src: "/logos/nth.png",
 
-    tagline: "Decrypt the clues to solve complex puzzles and race your way to finish at top.",
+    tagline:
+      "Decrypt the clues to solve complex puzzles and race your way to finish at top.",
     info1: `<p>
     An online treasure hunt where players find different pieces of clues on various websites to solve a variety of puzzles. Solve a set of riddles with important clues and get to the finish line before anyone can.
     <br />
