@@ -64,8 +64,17 @@
     animation-fill-mode: forwards;
 
 }
+@keyframes delay_hide {
+    99%{opacity: 1;}
+    100%{opacity: 0;display: none;}
+}
 .hide-now{
-    display: none;
+    animation: delay_hide 9s linear;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 @keyframes darken-anim{
     from { background: rgba(133,133,133,.95) }

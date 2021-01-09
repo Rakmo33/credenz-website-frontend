@@ -13,9 +13,9 @@ const HomeAnimation = (props) =>{
         <div className="anim">
             <iframe height="100%" width="100%" loading="lazy" frameBorder="0" src="https://yash-567.github.io/background-iframe/" className={`anim-iframe ${showbg && 'show'} `}></iframe>
             <div className={`anim-overlay-logos`}>
-                <OverlayLogos />
+                <OverlayLogos trigger={mechanicalEye}/>
             </div>
-            <div className={`anim-overlay-lower ${showbg && 'hide-now'} ${darken && 'darken'}`}>
+            <div className={`anim-overlay-lower ${mechanicalEye && 'hide-now'} ${darken && 'darken'}`}>
                 <EyeDea20 showbackg={setShowbg} darken={setDarken} triggered={mechanicalEye}/>
             </div>
             <div className={`anim-overlay-upper ${mechanicalEye && 'vanish'}`}>

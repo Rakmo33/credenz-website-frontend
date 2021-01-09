@@ -27,12 +27,12 @@ function OverlayLogos() {
 
   return (
     <div style={{ 
-      display: 'absolute', 
-      backgroundColor: 'black', 
+      display: 'flex',  
       width: '100vw', 
       height: '100vh',
       justifyContent: 'center',
       alignItems: 'center',
+      zIndex: '2'
     }}>
       <AnimatePresence
         // exitBeforeEnter={true}
@@ -41,7 +41,7 @@ function OverlayLogos() {
         {
           index === currIndex &&
           <motion.img
-            src={images[index].default}
+            src={images[index]}
             initial={{
               transform: "scale(0,0) translateY(-50%)",
             }}
@@ -52,7 +52,7 @@ function OverlayLogos() {
               transform: "scale(0.75, 0.75) translateY(0%)"
             }}
             exit={{
-              transform: "scale(5,5)",
+              transform: "scale(3,3)",
               opacity: 0
             }}
           />

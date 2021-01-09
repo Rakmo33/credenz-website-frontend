@@ -7,18 +7,18 @@ function SvgEyeDea20({showbackg, triggered}) {
   const [show, setShow] = useState(true);
   const [hoverTimer, setHoverTimer] = useState(null);
   const [showbg, setShowBg] = useState(false)
-  useEffect(()=>{
-    console.log("Triggered use Effect lol")
-    setTimeout(()=>{
-      setHover(true)
-      setTimeout(()=>{
-        setShowBg(true)
-        setTimeout(()=>{
-          showbackg(true)
-        },380)
-      },2600)
-    },9000)
-  }, [triggered])
+  // useEffect(()=>{
+  //   console.log("Triggered use Effect lol")
+  //   setTimeout(()=>{
+  //     setHover(true)
+  //     setTimeout(()=>{
+  //       setShowBg(true)
+  //       setTimeout(()=>{
+  //         showbackg(true)
+  //       },380)
+  //     },2600)
+  //   },9000)
+  // })
   
   return (
     <svg
@@ -12227,7 +12227,7 @@ function SvgEyeDea20({showbackg, triggered}) {
         />
         <g>
           <path d="M773.73 313.53c0 37.39-30.59 67.7-68.31 67.7s-68.31-30.31-68.31-67.7 30.58-67.7 68.31-67.7c37.72 0 68.31 30.31 68.31 67.7z" />
-          <g id="eyeDEA2_0_svg__ring3" opacity={0.5} className={`${!hover && 'eyeDEA2_0_svg__ring3'} ${hover && 'hovered_2_0_animation_ring3'} ${showbg && 'zoom-in'} "eyeDEA2_0_svg__st76" `}>
+          <g id="eyeDEA2_0_svg__ring3" opacity={0.5} className={`${triggered && 'complete_ring3'}`}>
             <radialGradient
               id="eyeDEA2_0_svg__SVGID_442_"
               cx={747.296}
@@ -16889,7 +16889,7 @@ function SvgEyeDea20({showbackg, triggered}) {
             className="eyeDEA2_0_svg__st662"
             d="M718.85 312.46h-5.79l-1.01 1.07 1.01 1.07h5.79l-1-1.07zM691.98 312.46h5.8l.99 1.07-.99 1.07h-5.8l1-1.07z"
           />
-          <g id="eyeDEA2_0_svg__ring1" className={`${!hover && 'eyeDEA2_0_svg__ring1'} ${hover && 'hovered_2_0_animation_ring1'} ${showbg && 'zoom-in'}`}>
+          <g id="eyeDEA2_0_svg__ring1" className={`${triggered && 'complete_ring1'}`}>
             <linearGradient
               id="eyeDEA2_0_svg__SVGID_631_"
               gradientUnits="userSpaceOnUse"
@@ -19406,7 +19406,7 @@ function SvgEyeDea20({showbackg, triggered}) {
             />
           </g>
         </g>
-        <g id="eyeDEA2_0_svg__ring2" className={`${!hover && 'eyeDEA2_0_svg__ring2'} ${hover && 'hovered_2_0_animation_ring2'} ${showbg && 'zoom-in'}`}>
+        <g id="eyeDEA2_0_svg__ring2" className={`${triggered && 'complete_ring2'}`}>
           <linearGradient
             id="eyeDEA2_0_svg__SVGID_750_"
             gradientUnits="userSpaceOnUse"
@@ -22650,7 +22650,7 @@ function SvgEyeDea20({showbackg, triggered}) {
         </g>
       </g>
       <g id="eyeDEA2_0_svg__sides">
-        <g id="eyeDEA2_0_svg__left_x5F_triangle" className={`${showbg && 'translate_left'}`}>
+        <g id="eyeDEA2_0_svg__left_x5F_triangle" className={`${triggered && 'translate_left'}`}>
           <image
             width={1592}
             height={1867}
@@ -22676,7 +22676,7 @@ function SvgEyeDea20({showbackg, triggered}) {
             fill="url(#eyeDEA2_0_svg__SVGID_930_)"
           />
         </g>
-        <g id="eyeDEA2_0_svg__right_x5F_triangle" className={`${showbg && 'translate_right'}`}>
+        <g id="eyeDEA2_0_svg__right_x5F_triangle" className={`${triggered && 'translate_right'}`}>
           <image
             width={1591}
             height={1871}
