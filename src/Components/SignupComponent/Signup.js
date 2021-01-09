@@ -7,7 +7,7 @@ import axios from "axios";
 import Modal1 from "../Modal/Modal";
 
 function Signup() {
-  
+  let login="login"
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
