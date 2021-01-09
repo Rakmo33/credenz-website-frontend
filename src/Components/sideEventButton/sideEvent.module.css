@@ -33,18 +33,29 @@ a {
 
 .social ul li {
     display: block;
-    margin: 5px;
-    background: var(--light-accent);
-    width: 320px;
+    margin: 10px;
+    height: 70px;
+    /* background: var(--light-accent); */
+    background-image: url("socio.png") ;
+    background-position: right ;
+    background-size: 55%;
+    /* image-rendering: ; */
+    width: 340px;
     text-align: right;
     padding: 10px;
-    border-radius: 0 50px 50px 0;
+    /* border-radius: 0 50px 50px 0; */
     transition: all 0.3s;
+    background-repeat: no-repeat;
 }
 
 .social ul li:hover {
     transform: translate(110px, 0);
-    background: var(--light-shades);
+    /* background: var(--light-shades); */
+     background-image: url("socio.png") ;
+     background-repeat: no-repeat;
+     /* background-position: 5px 5px; */
+     /* height: 100px; */
+     background-size: 55%;
     transition: all 0.6s;
 }
 
