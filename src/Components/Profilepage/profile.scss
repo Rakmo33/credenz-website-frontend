@@ -131,6 +131,7 @@
             display: grid;
             grid-template-rows: 1fr 3fr;
             background-color: #0c3264;
+            // align-items: center;
             box-shadow: 0 -2px 15px rgba(0, 0, 0, 1);
             border-radius: 20px;
             padding: 30px 20px;
@@ -159,15 +160,24 @@
             }
             .table-container {
                 display: flex;
+                max-height: 250px;
+                overflow-y: scroll;
+                scrollbar-color: dark;
+                margin-top: 30px;
             }
             table {
                 margin: auto;
                 background-color: #0c3264;
+                tbody {
+                    text-align: center;
+                }
                 th {
                     margin: auto;
                     text-align: center;
                 }
                 tr {
+                    display: grid;
+                    grid-template-columns: 1fr 4fr;
                     border-radius: 10px;
                     &:hover {
                         background-color: initial;

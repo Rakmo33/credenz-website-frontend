@@ -39,6 +39,15 @@ function Signup() {
             const msg = response.data["accessToken"];
             localStorage.setItem("user", JSON.stringify(response.data));
             console.log(msg);
+
+            // alert("Logged in successfully!");
+
+            // handleClose();
+            // window.location.reload(false);
+            // refreshPage();
+            // const user = jwt(response.data["accessToken"]);
+            // console.log("JWT decode : " + JSON.stringify(user));
+            // setLogged(true);
           });
       } catch (e) {
         alert("Axios error!" + e);
@@ -65,7 +74,7 @@ function Signup() {
     clgname: college,
     passwordCheck: passwordCheck,
   };
-/*
+  /*
   const verifyPhone = (e) => {
     setPhone(e.target.value)
 
@@ -93,7 +102,7 @@ function Signup() {
 
   return (
     <>
-      <div className='container mt-5'>
+      <div className='container signupWrap'>
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
@@ -187,7 +196,7 @@ function Signup() {
                     name='phone'
                     placeholder='Phone Number'
                     className='form-control bg-white border-md border-left-0 pl-3'
-                    onChange={(e)=> setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value)}
                     value={phone}
                   />
                   {errors && (
@@ -291,9 +300,7 @@ function Signup() {
       </div>
 
       <Social />
-      <div className='footer heightFooter'>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

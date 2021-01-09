@@ -12,15 +12,32 @@
 }
 
 .regPage {
+    width: 90%;
     font-size: 18px;
-    min-height: 109vh;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    .reg-head {
-        width: fit-content;
-        margin: 50px auto;
-        color: white;
+    min-height: 92vh;
+    margin: auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .regPageVector {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 80%;
+        .reg-head {
+            width: fit-content;
+            margin: 0 auto;
+            color: white;
+        }
+        img {
+            object-fit: cover;
+            object-position: center;
+            margin: 0 auto;
+            width: 80%;
+        }
     }
     .col-flex {
         flex-direction: column;
@@ -39,7 +56,7 @@
         // background-color: white;
     }
     .container {
-        margin: 20px auto;
+        // margin: 20px auto;
         // background: green;
         min-height: 60vh;
         @include flexCentered(row);
@@ -234,6 +251,17 @@
         .proceed-btn {
             transition: all 0.3s;
         }
+        .proceedWrap {
+            font-size: 22px;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            table {
+                margin-bottom: 50px;
+            }
+        }
     }
     .toLeft {
         transform: translateX(-200px);
@@ -280,6 +308,15 @@
         }
         100% {
             box-shadow: 0px 0px 5px rgb(75, 237, 243);
+        }
+    }
+}
+
+@media(max-width: 1200px) {
+    .regPage {
+        grid-template-columns: 1fr;
+        .regPageVector {
+            display: none;
         }
     }
 }

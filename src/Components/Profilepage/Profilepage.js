@@ -73,10 +73,11 @@ const Profile = () => {
 
   if (localStorage.getItem("user")) {
     let count = 1;
+    var EventList;
     user = jwt(localStorage.getItem("user"));
 
     if (Events !== undefined) {
-      var EventList = Events.map((x) => {
+      EventList = Events.map((x) => {
         return (
           <tr>
             <th scope='row'>{count++}</th>
@@ -84,6 +85,12 @@ const Profile = () => {
           </tr>
         );
       });
+    } else {
+      EventList = "You have not registered for any event yet. ";
+    }
+
+    if (EventList.length === 0) {
+      EventList = "You have not registered for any event yet. ";
     }
 
     return (
@@ -163,7 +170,6 @@ const Profile = () => {
                   <i className='fa fa-check-circle'></i>
                   <p className='reg-eve'>Registered Events</p>
                 </div>
-                {/* <p className='title'>Registered Events</p> */}
                 <div className='table-container'>
                   <table className='table table-striped table-dark'>
                     <tbody>{EventList}</tbody>
@@ -175,11 +181,6 @@ const Profile = () => {
                 <img src='img/award.svg' alt='svg' />
               </div>
             </div>
-            {/* <div className='logout-wrap'>
-            <button className='btn  logout' type='button' onClick={logout}>
-              Logout
-            </button>
-          </div> */}
           </div>
         </div>
         <SideEventButton />
