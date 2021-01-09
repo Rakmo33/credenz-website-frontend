@@ -12,7 +12,7 @@ const team = () => {
         <br />
         <br />
         <br />
-        <Row style={{ justifyContent: "center", marginTop: "20px" }}>
+        <Row style={{ justifyContent: "space-around", marginTop: "20px" }}>
           <Member
             name={"Aditi Srivastava"}
             url={"aditi.jpeg"}
@@ -46,7 +46,7 @@ const team = () => {
                             link={"#"}/>
                 </Col> */}
         </Row>
-        <Row style={{ justifyContent: "center" }}>
+        <Row style={{ justifyContent: "space-around" ,marginTop: "60px",marginBottom:"20px"}}>
           <Member
             name={"Sakshee Phade"}
             url={"sakshee.jpeg"}

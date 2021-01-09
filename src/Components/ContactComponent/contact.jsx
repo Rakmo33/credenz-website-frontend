@@ -11,7 +11,7 @@ import Footer from "../Footer/footer";
 const ContactUs = () => {
   return (
     <div>
-      <div style={{height:"100vh"}} >
+      <div style={{height:"100%"}} >
         <div className='row content' style={{marginTop:"20px"}}>
           <ContactCard
             img={onkar}
