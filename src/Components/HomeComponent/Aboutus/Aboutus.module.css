@@ -2,6 +2,7 @@
     margin-top: 50px;
     /* margin-left: 50px !important; */
     /* margin-right: 50px !important; */
+    max-width: 1390px !important;
 
 }
 
@@ -15,6 +16,7 @@
 
 .content {
     padding: 20px;
+    font-size: 20px;
     text-align: justify;
 }
 
@@ -121,3 +123,9 @@
         order: 2;
     }
 }
+
+/* @media (min-width: 1200px){
+   #size #Aboutus .container {
+        width: 1390px !important;
+    }
+} */

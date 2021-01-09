@@ -8,7 +8,7 @@ const team = () => {
   return (
     <>
     <Nav/>
-      <Container fluid style={{height:"100vh"}} >
+      <Container fluid style={{height:"100%"}} >
         <br />
         <br />
         <br />
@@ -16,7 +16,7 @@ const team = () => {
           <Member
             name={"Aditi Srivastava"}
             url={"aditi.jpeg"}
-            class='sideway'
+            className='sideway'
             // pos={"Web Master"}
             link={"https://www.linkedin.com/in/aditi-srivastava-a6046818a/"}
           />

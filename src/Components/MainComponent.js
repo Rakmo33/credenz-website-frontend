@@ -16,7 +16,7 @@ import Team from "../Components/Team/Team";
 import Profile from "../Components/Profilepage/Profilepage";
 import Admin from "../Components/AdminSection/Admin";
 import VerifyPhone from "../Components/SignupComponent/verifyPhone";
-//import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
+import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
 import Footer from '../Components/Footer/footer';
 import './maincomponent.module.css';
 import AOS from "aos";
@@ -80,6 +80,10 @@ class Main extends Component {
       return <VerifyPhone />;
     }
 
+    const AboutUsPage = () => {
+      return <AboutUs/>;
+    }
+
     return (
       <div>
         <NavBar />
@@ -96,6 +100,7 @@ class Main extends Component {
           <Route path='/team' component={TeamPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/admin' component={AdminPage} />
+          <Route path='/aboutus' component={AboutUsPage}/>
           <Route path='/verifyphone' component={VerifyPhonePage} />
           <Redirect to='/home' />
         </Switch>

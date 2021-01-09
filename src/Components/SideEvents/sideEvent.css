@@ -1,69 +1,163 @@
 .event-card {
-    width: 20rem;
-    margin: 30px;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
-    background-color: #192b42;
-    border: none !important;
-    /* border-radius: 7px; */
-    /* font-family:  'Alata', sans-serif; */
-    animation-name: slidedown;
-    animation-duration: 1s;
-    animation-fill-mode: backwards;
-    animation-timing-function: ease;
+  width: 40vw;
+  margin: 30px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+  /* background: rgb(244, 232, 243);
+  background: linear-gradient(
+    115deg,
+    rgb(221, 159, 216) 0%,
+    rgba(212, 76, 190, 1) 35%,
+    rgba(60, 36, 59, 1) 100%
+  ); */
+  /* background: rgb(244, 232, 243);
+  background: linear-gradient(
+    115deg,
+    rgba(244, 232, 243, 1) 0%,
+    rgba(158, 76, 212, 1) 35%,
+    rgba(60, 36, 59, 1) 100%
+  ); */
+  border: none !important;
+  transition: 0.8s;
+  background-color: rgb(47, 160, 175);
 }
 
+div.event-card:hover .card-title {
+  /* text-shadow: 1px 1px rgb(229, 156, 229); */
+  text-shadow: 1px 1px rgb(9, 73, 110);
+}
+
+div.event-card:hover img.side-event-logo {
+  transform: rotate(0deg);
+}
+
+@keyframes slideleft {
+  from {
+    margin-left: 30px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes comedown {
+  from {
+    transform: translate(0, -40px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
 .event-card:nth-child(2) {
-    animation-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .event-card:nth-child(3) {
-    animation-delay: 0.4s;
+  animation-delay: 0.4s;
 }
 
 .card .card-body {
-    border: none !important;
+  border: none !important;
 }
 
 .event-card .card-body {
-    background-color: #192b42;
-    color: white;
-    text-align: center;
+  /* background: rgb(244, 232, 243);
+  background: linear-gradient(
+    115deg,
+    rgb(221, 159, 216) 0%,
+    rgb(226, 211, 224) 35%,
+    rgb(223, 202, 222) 100%
+  ); */
+  background-color: rgb(47, 160, 175);
+  /* color: rgb(59, 1, 54); */
+  color: white;
+  text-align: center;
+  transition: 0.8s;
 }
 
 .event-title {
-    margin-top: 20px;
-    color: white;
-    text-align: center;
+  margin-top: 20px;
+  color: white;
+  text-align: center;
 }
-@media only screen and (max-width:776px){
- .title-1{
-    margin-top:60px !important;
+@media only screen and (min-width:767px) and (max-width: 1024px){
+    .imgbox {
+        width: 200px;
+        height: 60%;
+        margin: auto;
+        /* border:1px solid black; */
+      }
+      .side-event-logo {
+        transform: translate( -10%,0);
+        box-shadow: 0 -5px 10px 5px rgba(0, 0, 0, 0.5);
+        width: inherit !important;
+      }
 }
+@media only screen and (max-width: 776px) {
+  .title-1 {
+    margin-top: 60px !important;
+  }
+  .event-card {
+    width: 70%;
+  }
+  
 }
-
-.eventbtn{
-    width: 180px !important;
-   
+@media only screen and (max-width: 425px) {
+  .event-card {
+    width: 15rem;
+    margin-top: 40px;
+  }
+  .side-event-logo {
+    transform: translate(0, -10%);
+    box-shadow: 0 -5px 10px 5px rgba(0, 0, 0, 0.5);
+    width: inherit !important;
+  }
+  .card-body {
+    animation: comedown 1s ease;
+  }
+  .imgbox {
+    width: 200px;
+    margin: auto;
+    /* border:1px solid black; */
+  }
+}
+.eventbtn {
+  width: 180px !important;
 }
 
 .play {
-    border: 1px solid white;
-    outline: none;
-    background-color: transparent;
-    box-shadow: 0 -1px 5px rgba(0, 0, 0, 1);
-    color: white;
-    width: 120px;
-    height: 40px;
-    align-items: center;
-    /* display: none; */
+  border: 1px solid rgb(47, 160, 175);
+  outline: none;
+  background-color: transparent;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 1);
+  /* color: rgb(59, 1, 54); */
+  color: white;
+  width: 120px;
+  height: 40px;
+  align-items: center;
+  transition: 0.8s;
+}
+.play:hover {
+  /* background-color: rgb(59, 1, 54); */
+  color: rgb(9, 73, 110);
+  background-color: rgb(251, 255, 255);
 }
 
 .side-event-logo {
-    height: 12rem;
-    opacity: 0.9;
-    width: 16rem;
-    margin: auto;
-    margin-top: 20px;
-    /* border-radius:50%; */
-    border: 2px solid #030303;
+  width: 15rem;
+  height: 100%;
+  margin: auto;
+
+  transition: 0.8s;
+}
+@media only screen and (min-width: 1025px) {
+  .side-event-logo {
+    border-radius: 15%;
+    padding: 5%;
+    box-shadow: 7px 0 5px -2px rgb(17, 17, 17);
+    transform: rotate(-5deg);
+    animation-name: slideleft;
+    animation-duration: 0.2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
+  }
 }
