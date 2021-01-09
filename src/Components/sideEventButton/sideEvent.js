@@ -25,12 +25,20 @@ import classes from './sideEvent.module.css';
 const sideEvent = (props)=>{
   return(
     <div>
-        <nav className={classes.social}>
+        {/* <nav className={classes.social}>
             <ul>
                 <li><a href="https://www.linkedin.com/company/pisbieee/">Linkedin <i className={"fa fa-linkedin linkedin"}></i></a></li>
                 <li><a href="https://www.instagram.com/pisbcredenz/">Instagram <i className={"fa fa-instagram"}></i></a></li>
                 <li><a href="https://www.facebook.com/pisbcredenz/">Facebook <i className={"fa fa-facebook"}></i></a></li>
             </ul>
+        </nav> */}
+        {/* <img src="socio.png" /> */}
+        <nav className={classes.social} >
+          <ul>
+            <li><img src={require("./socio.png")} style={{width:"5%"}} /></li>
+            <li><img src={require("./socio.png")} style={{width:"5%"}} /></li>
+            <li><img src={require("./socio.png")} style={{width:"5%"}} /></li>
+          </ul>
         </nav>
     </div>
   );
