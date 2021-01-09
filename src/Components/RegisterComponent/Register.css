@@ -1,7 +1,22 @@
 .regPage {
+  width: 90%;
   font-size: 18px;
-  min-height: 109vh;
-  margin-top: 80px;
+  min-height: 92vh;
+  margin: auto;
+  margin-top: 40px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.regPage .regPageVector {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,14 +24,27 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 80%;
 }
 
-.regPage .reg-head {
+.regPage .regPageVector .reg-head {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 50px auto;
+  margin: 0 auto;
   color: white;
+}
+
+.regPage .regPageVector img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .regPage .col-flex {
@@ -43,7 +71,6 @@
 }
 
 .regPage .container {
-  margin: 20px auto;
   min-height: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -331,6 +358,28 @@
   transition: all 0.3s;
 }
 
+.regPage .container .proceedWrap {
+  font-size: 22px;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regPage .container .proceedWrap table {
+  margin-bottom: 50px;
+}
+
 .regPage .toLeft {
   -webkit-transform: translateX(-200px);
           transform: translateX(-200px);
@@ -432,6 +481,16 @@
   100% {
     -webkit-box-shadow: 0px 0px 5px #4bedf3;
             box-shadow: 0px 0px 5px #4bedf3;
+  }
+}
+
+@media (max-width: 1200px) {
+  .regPage {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .regPage .regPageVector {
+    display: none;
   }
 }
 /*# sourceMappingURL=Register.css.map */

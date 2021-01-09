@@ -6,6 +6,10 @@
 *
 */
 
+.signupWrap {
+    min-height: 95vh;
+}
+
 .border-md {
   border-width: 2px;
 }

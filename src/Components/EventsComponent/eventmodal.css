@@ -1,11 +1,11 @@
 .evePage .showModal1 {
   opacity: 1 !important;
-  left: 150px;
+  left: 200px;
 }
 
 .evePage .showModal2 {
   opacity: 1 !important;
-  right: 150px;
+  right: 200px;
 }
 
 .evePage .shiftRight {
@@ -15,30 +15,39 @@
 .evePage .modalWrap {
   position: absolute !important;
   background-color: #2fb3ff;
-  color: #001e2c;
+  color: #001f2e;
   width: 40%;
   border-radius: 5px;
   opacity: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  -webkit-box-shadow: 0px 0px 15px #aee4fa;
-          box-shadow: 0px 0px 15px #aee4fa;
+  -webkit-box-shadow: 0px 0px 10px 5px #0c455c;
+          box-shadow: 0px 0px 10px 5px #0c455c;
 }
 
 .evePage .modalWrap .modalHead {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  margin: 20px auto;
+  width: 80%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.evePage .modalWrap .modalHead img {
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .evePage .modalWrap .modalHead h3 {
   font-weight: 600;
   margin-top: 15px;
   padding: 20px;
-  padding-bottom: 0;
 }
 
 .evePage .modalWrap .modalHead span {
@@ -48,6 +57,26 @@
   cursor: pointer;
 }
 
+.evePage .modalWrap .modalHead .regNowBtn {
+  background-color: #920926;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  color: white;
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #000;
+          box-shadow: 0 0 5px #000;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.evePage .modalWrap .modalHead .regNowBtn:hover {
+  background-color: #ce0833;
+}
+
 .evePage .modalWrap hr {
   width: 95%;
   border-top: 0px solid #929292;
@@ -55,9 +84,12 @@
 }
 
 .evePage .modalWrap .modalBody {
+  border-radius: 5px;
+  overflow: hidden;
   background-color: #001e2c;
   color: #FFF;
-  margin: 20px;
+  margin: 10px;
+  margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,36 +131,36 @@
 .evePage .modalWrap .modalBody ul.tabs {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(70px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  grid-row-gap: 20px;
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 80%;
-  margin: 40px;
+  width: 100%;
+  padding: 0 2px;
+  background: #001e2c;
 }
 
 .evePage .modalWrap .modalBody ul.tabs li {
+  margin: 3px 1px;
   list-style: none;
 }
 
 .evePage .modalWrap .modalBody ul.tabs li button {
-  border-radius: 50%;
+  width: 100%;
   background-color: white;
   padding: 10px;
-  width: 50px;
   -webkit-transition: all 0.15s;
   transition: all 0.15s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -140,9 +172,8 @@
   font-size: 20px;
 }
 
-.evePage .modalWrap .modalBody ul.tabs li button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.evePage .modalWrap .modalBody ul.tabs li button p {
+  margin: 0;
 }
 
 .evePage .modalWrap .modalBody .info {
@@ -150,7 +181,6 @@
   height: 250px;
   width: 90%;
   margin: 20px;
-  margin-top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,7 +194,10 @@
 }
 
 .evePage .modalWrap .modalBody .activeTabButton {
-  background-color: #0a637e !important;
+  background-color: #001e2c !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white !important;
 }
 
 .evePage .modalWrap .modalBody .activeTabButton i {
@@ -195,9 +228,16 @@
   .evePage .modalWrap .modalBody {
     margin: 10px;
   }
+  .evePage .modalWrap .modalBody ul.tabs {
+    -ms-grid-columns: (minmax(50px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
   .evePage .modalWrap .modalBody .info {
     max-height: 50vh;
     overflow-y: auto;
+  }
+  .evePage .modalWrap .modalBody .tab-button p {
+    display: none;
   }
 }
 /*# sourceMappingURL=eventmodal.css.map */
