@@ -17,9 +17,15 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
+
+  
+  
   const [msg, setMsg] = useState("");
   const [variant, setVar] = useState("");
   const [showAlert, setAlert] = useState(false);
+
+  const [disabled,setdisabled] = useState(true);
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -30,8 +36,8 @@ function Signup() {
       "Current state is : " +
         JSON.stringify({ email, phone, college, password })
     );
-
-    if (!errors.boolean) {
+  
+     if(Object.keys(errors).length === 0 && errors.constructor === Object){
       try {
         axios
           .post("http://credenzwebsite.herokuapp.com/signup", {
@@ -99,6 +105,7 @@ function Signup() {
   console.log(values);
 
   const errors = Validate(values);
+  
 
   console.log(
     "Errors: " + errors.name + errors.username + errors.email + errors.phone
@@ -106,7 +113,9 @@ function Signup() {
 
   //e.preventDefualt()
 
+
   return (
+    
     <>
       <div className='container mt-5'>
         {showAlert ?
@@ -301,8 +310,11 @@ function Signup() {
                 <div className='form-group col-lg-12 mx-auto mb-0'>
                   <button
                     type='submit'
-                    className='btn btn-primary btn-block py-2'>
-                    <span className='font-weight-bold'>
+                    className='btn btn-primary btn-block py-2'
+                    disabled={!(Object.keys(errors).length === 0 && errors.constructor === Object)}
+                    
+                  > 
+                    <span className='font-weight-bold' >
                       Create your account
                     </span>
                   </button>

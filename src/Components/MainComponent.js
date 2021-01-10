@@ -90,7 +90,7 @@ class Main extends Component {
         <Switch>
           <Route path='/home' component={HomePage} />
           <Route path='/events' component={EventsPage} />
-          <Route path='/register' component={RegisterPage} />
+          <Route path='/register/:event' component={RegisterPage} />
           <Route path='/contact' component={ContactPage} />
           <Route path='/about' component={AboutPage} />
           <Route path='/sideEvents' component={SideEvents} />
