@@ -9534,7 +9534,7 @@ function SvgEyeDea21(props) {
           mask="url(#eyeDEA2_1_svg__SVGID_423_)"
           fill="url(#eyeDEA2_1_svg__SVGID_425_)"
         />
-        <g id="eyeDEA2_1_svg__irislines" onMouseEnter={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'eye-hover'}`}>
+        <g id="eyeDEA2_1_svg__irislines" onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'eye-hover'}`}>
           <defs>
             <filter
               id="eyeDEA2_1_svg__Adobe_OpacityMaskFilter_3_"
@@ -22755,7 +22755,7 @@ function SvgEyeDea21(props) {
         </g>
       </g>
       <g id="eyeDEA2_1_svg__sides" >
-        <g id="eyeDEA2_1_svg__left_x5F_triangle" onMouseEnter={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'left-hover'}`}>
+        <g id="eyeDEA2_1_svg__left_x5F_triangle" onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'left-hover'}`}>
           <image
             width={1592}
             height={1867}
@@ -22781,7 +22781,7 @@ function SvgEyeDea21(props) {
             fill="url(#eyeDEA2_1_svg__SVGID_931_)"
           />
         </g>
-        <g id="eyeDEA2_1_svg__right_x5F_triangle" onMouseEnter={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'right-hover'}`}>
+        <g id="eyeDEA2_1_svg__right_x5F_triangle" onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'right-hover'}`}>
           <image
             width={1591}
             height={1871}

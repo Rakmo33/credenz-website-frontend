@@ -38,16 +38,16 @@
 }
 .right-hover{
     transform-origin: 51.5% 47.2%;;
-    transform: translateX(5%) scale(1.2);
-    transition-timing-function: ease-in;
+    transform: translateX(3%) scale(1.1);
+    transition-timing-function: ease;
 }
 .left-hover{
     transform-origin: 51.5% 47.2%;;
-    transform: translateX(-5%) scale(1.2);
-    transition-timing-function: ease-in;
+    transform: translateX(-3%) scale(1.1);
+    transition-timing-function: ease;
 }
 .eye-hover{
     transform-origin: 51.5% 47.2%;;
-    transform: scale(1.2);
-    transition-timing-function: ease-in;
+    transform: scale(1.1);
+    transition-timing-function: ease;
 }
