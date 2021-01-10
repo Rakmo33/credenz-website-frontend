@@ -1,14 +1,58 @@
 import * as React from "react";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './EyeDea21.css';
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+// export function useWindowDimensions() {
+//   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+//   useEffect(() => {
+//     function handleResize() {
+//       setWindowDimensions(getWindowDimensions());
+//     }
+
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
+
+//   return windowDimensions;
+// }
+
 function SvgEyeDea21(props) {
+  const [hover, setHover] = useState(false)
+  // const [leftTriangle, setLeftTriangle] = useState({'transform': 'translateX(0%) scale(1)'})
+  // const [rightTriangle, setRightTriangle] = useState({'transform': 'translateX(0%) scale(1)'})
+  // const { height, width } = useWindowDimensions();
+  // let leftTriangle = {'transform': 'translateX(0%) scale(1)'};
+  // let rightTriangle = {'transform': 'translateX(0%) scale(1)'};
   // useEffect(()=>{
-  //   setTimeout(()=>{
-  //     console.log("[Log] Disappearing")
-  //     props.mechanicalEye(true);
-  //   }, 3000)
+  //   const xCenter = window.innerWidth / 2;
+  //   const yCenter = window.innerHeight / 2;
+  //   let a = 0;
+  //   let b = 0;
+  //   let dist = 0;
+  //   document.addEventListener('mousemove', (e) => {
+  //     // xpercentage = 2*Math.abs((e.pageX - xCenter))/width;
+  //     // ypercentage = 2*Math.abs((e.pageY - yCenter))/height;
+  //     a = e.pageX - xCenter;
+  //     b = e.pageY - yCenter;
+  //     dist = Math.sqrt( a*a + b*b )*2/window.innerWidthwidth;
+  //     // leftTriangle = {'transform': 'translateX(-'+dist*10+'%) scale(1)'}
+  //     // rightTriangle = {'transform': 'translateX('+dist*10+'%) scale(1)'}
+  //     setLeftTriangle({'transform': 'translateX(-'+dist*10+'%) scale(1)'})
+  //     setRightTriangle({'transform': 'translateX('+dist*10+'%) scale(1)'})
+  //   });
+  //   return document.removeEventListener('mousemove', ()=>{})
   // })
+  const eyeHoverHandler = () => setHover(true)
+  const eyeUnhoverHandler = () => setHover(false)
   const irisHoverHandler = () => props.mechanicalEye(true);
   return (
     <svg
@@ -9490,7 +9534,7 @@ function SvgEyeDea21(props) {
           mask="url(#eyeDEA2_1_svg__SVGID_423_)"
           fill="url(#eyeDEA2_1_svg__SVGID_425_)"
         />
-        <g id="eyeDEA2_1_svg__irislines">
+        <g id="eyeDEA2_1_svg__irislines" onMouseEnter={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'eye-hover'}`}>
           <defs>
             <filter
               id="eyeDEA2_1_svg__Adobe_OpacityMaskFilter_3_"
@@ -22710,8 +22754,8 @@ function SvgEyeDea21(props) {
           </g>
         </g>
       </g>
-      <g id="eyeDEA2_1_svg__sides">
-        <g id="eyeDEA2_1_svg__left_x5F_triangle">
+      <g id="eyeDEA2_1_svg__sides" >
+        <g id="eyeDEA2_1_svg__left_x5F_triangle" onMouseEnter={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'left-hover'}`}>
           <image
             width={1592}
             height={1867}
@@ -22737,7 +22781,7 @@ function SvgEyeDea21(props) {
             fill="url(#eyeDEA2_1_svg__SVGID_931_)"
           />
         </g>
-        <g id="eyeDEA2_1_svg__right_x5F_triangle">
+        <g id="eyeDEA2_1_svg__right_x5F_triangle" onMouseEnter={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'right-hover'}`}>
           <image
             width={1591}
             height={1871}

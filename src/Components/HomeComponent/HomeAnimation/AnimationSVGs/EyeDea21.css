@@ -2,13 +2,32 @@
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
   }
+/* @keyframes spin-hovered {
+    0% {transform:rotate(0deg);}
+    50%{transform: scale(2);}
+    100% {transform:rotate(360deg);}
+  } */
 
 #eyeDEA2_1_svg__irislines{
     animation: spin 30s linear infinite;
     transform-origin: 51.5% 47.2%;
     transition-timing-function: ease-in;
 }
-
+/* #eyeDEA2_1_svg__irislines:hover{
+    animation: spin-hovered 1.5s linear infinite;
+    transform-origin: 51.5% 47.2%;;
+    transition-timing-function: ease-in;
+}
+#eyeDEA2_1_svg__left_x5F_triangle:hover{
+    animation: spin-hovered 1.5s linear infinite;
+    transform-origin: 51.5% 47.2%;
+    transition-timing-function: ease-in;
+}
+#eyeDEA2_1_svg__right_x5F_triangle:hover{
+    animation: spin-hovered 1.5s linear infinite;
+    transform-origin: 51.5% 47.2%;;
+    transition-timing-function: ease-in;
+} */
 .anim-overlay{
     position: absolute;
     height: 100%;
@@ -16,4 +35,19 @@
     top: 0;
     left: 0;
     background-color: black;
+}
+.right-hover{
+    transform-origin: 51.5% 47.2%;;
+    transform: translateX(5%) scale(1.2);
+    transition-timing-function: ease-in;
+}
+.left-hover{
+    transform-origin: 51.5% 47.2%;;
+    transform: translateX(-5%) scale(1.2);
+    transition-timing-function: ease-in;
+}
+.eye-hover{
+    transform-origin: 51.5% 47.2%;;
+    transform: scale(1.2);
+    transition-timing-function: ease-in;
 }
