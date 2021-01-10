@@ -6,7 +6,6 @@ import Validate from "./ValidateInfo";
 import axios from "axios";
 import Modal1 from "../Modal/Modal";
 
-
 function Signup() {
   let login="login"
   const [name, setName] = useState("");
@@ -17,10 +16,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
- 
-
   const [disabled,setdisabled] = useState(true);
-
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -44,8 +40,6 @@ function Signup() {
             clgname: college,
           })
           .then(function (response) {
-            // alert("Form successfully submitted.");
-          
             console.log(response);
             console.log(response.data);
             const msg = response.data["accessToken"];
@@ -54,6 +48,7 @@ function Signup() {
           });
       } catch (e) {
        console.log("Axios alert" + e);
+        alert("Axios error!" + e);
       }
 
       setName("");

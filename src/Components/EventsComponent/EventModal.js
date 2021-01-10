@@ -49,7 +49,7 @@ function EventModal(props) {
       <div className='modalHead'>
         <img src={currentInfo.src} alt='logo' />
         <h3>{currentInfo.title}</h3>
-        <Link to='/register' className='regNowBtn'>
+        <Link to={`/register/${currentInfo.title}`} className='regNowBtn'>
           Register Now!
         </Link>
 

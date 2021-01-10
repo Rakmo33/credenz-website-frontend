@@ -15,17 +15,20 @@ const NameWrap = (props) => {
   if (props.isVisible) {
 
     switch(props.event) {
-      case "clash"://2 members
+      case "Clash"://2 members
         teams[1]=true;
         break;
-      case "enigma"://2 members
+      case "Reverse Coding"://2 members
+        teams[1]=true;
+        break;
+      case "Enigma"://2 members
           teams[1]=true;
           break;
       case "Quiz"://3 members
           teams[1]=true;
           teams[2]=true;
           break;
-      case "cretronix"://1 member
+      case "Cretronix"://1 member
           teamAllowed=false;
           break;
       default:
