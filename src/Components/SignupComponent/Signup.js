@@ -40,7 +40,6 @@ function Signup() {
             clgname: college,
           })
           .then(function (response) {
-            alert("Form successfully submitted.");
             console.log(response);
             console.log(response.data);
             const msg = response.data["accessToken"];
@@ -48,6 +47,7 @@ function Signup() {
             console.log(msg);
           });
       } catch (e) {
+       console.log("Axios alert" + e);
         alert("Axios error!" + e);
       }
 
