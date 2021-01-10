@@ -4,8 +4,16 @@ import Footer from "../Footer/footer";
 import jwt from "jwt-decode";
 import emailjs from "emailjs-com";
 import "./button.css";
+import Alert from '../Alert/alert';
+
+
+
+
 
 const Feedback = () => {
+  const [show, setShow] = useState(false);
+  const [msg, setMsg] = useState("");
+  const [variant, setVar] = useState("");
   let user = "";
 
   if (localStorage.getItem("user")) {
@@ -26,7 +34,6 @@ const Feedback = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     console.log(name + feedback);
 
     let templateParams = {
@@ -44,10 +51,15 @@ const Feedback = () => {
       )
       .then(
         (response) => {
-          alert("Your feedback was sent successfully.");
+          // alert("Your feedback was sent successfully.");
+          setShow(true);
+          setMsg("Your feedback was sent successfully.");
+          setVar("success");
           console.log("SUCCESS!", response.status, response.text);
         },
         (err) => {
+          setMsg(err);
+          setVar("danger");
           console.log("FAILED...", err);
         }
       );
@@ -58,6 +70,11 @@ const Feedback = () => {
   return (
     <>
       <div className='container mt-5'>
+        <div>
+        { show ? 
+         ( <Alert var={variant}>{msg}</Alert> )
+          : null }
+        </div>
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
@@ -113,6 +130,7 @@ const Feedback = () => {
                   <span className='kave-line'></span>
                   Submit
                 </button>
+                {/* <Alert>you feedback is submmited</Alert> */}
               </div>
             </form>
           </div>
