@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Name from "./Name";
 import Radio from "./Radio";
 
@@ -6,8 +6,31 @@ const NameWrap = (props) => {
   // console.log(props.formData);
 
   let checked = [false, false];
+  let teams = [true, false, false, false]
+  let teamAllowed = true;
+
+
+  //const [teamAllowed, setteamAllowed] = useState(true)
 
   if (props.isVisible) {
+
+    switch(props.event) {
+      case "clash"://2 members
+        teams[1]=true;
+        break;
+      case "enigma"://2 members
+          teams[1]=true;
+          break;
+      case "Quiz"://3 members
+          teams[1]=true;
+          teams[2]=true;
+          break;
+      case "cretronix"://1 member
+          teamAllowed=false;
+          break;
+      default:
+        break;
+    }
 
     switch (props.formData.team) {
       case "single":
@@ -28,22 +51,22 @@ const NameWrap = (props) => {
           <>
           <div className='form-row col-flex'>
             <div className='justify-spread'>
-                <Radio
+                {teamAllowed && <Radio
                   index={1}
                   id='Radio1'
                   name='team'
                   value='single'
                   changeHandler={props.setFormData}
                   label='Single participation'
-                  checked={checked[0]}></Radio>
-                <Radio
+                  checked={checked[0]}></Radio>}
+                {teamAllowed && <Radio
                   index={2}
                   id='Radio2'
                   name='team'
                   value='team'
                   changeHandler={props.setFormData}
                   label='Team participation'
-              checked={checked[1]}></Radio> 
+              checked={checked[1]}></Radio>} 
             </div>
             <div style={{margin: 30}}>
             <Name
@@ -57,7 +80,8 @@ const NameWrap = (props) => {
           </>
         );
       }
-      else {
+
+      else if(teamAllowed && props.formData.team==="team") {
         return (
 
           <div className={props.cls}>
@@ -73,34 +97,34 @@ const NameWrap = (props) => {
                 value={props.formData.teamName}
                 changeHandler={props.setFormData}
                 name='teamName'></Name>
-              <Name
+              {teams[0] && <Name
                 index={"1*"}
                 id='Name1'
                 team={props.formData.team}
                 value={props.formData.name1}
                 changeHandler={props.setFormData}
-                name='name1'></Name>
-              <Name
+                name='name1'></Name>}
+              {teams[1] && <Name
                 index={2}
                 id='Name2'
                 team={props.formData.team}
                 value={props.formData.name2}
                 changeHandler={props.setFormData}
-                name='name2'></Name>
-              <Name
+                name='name2'></Name>}
+              {teams[2] && <Name
                 index={3}
                 id='Name3'
                 value={props.formData.name3}
                 team={props.formData.team}
                 changeHandler={props.setFormData}
-                name='name3'></Name>
-              <Name
+                name='name3'></Name>}
+              {teams[3] &&<Name
                 index={4}
                 id='Name4'
                 value={props.formData.name4}
                 team={props.formData.team}
                 changeHandler={props.setFormData}
-                name='name4'></Name>
+                name='name4'></Name>}
             </div>
           </div>
         );

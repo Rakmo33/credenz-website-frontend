@@ -140,6 +140,7 @@ function NavBar() {
                 </samp>
               </Link>
             </li>
+            {/*
             <li className='nav-item'>
               <Link to='/register' className='nav-link' onClick={clickHandler}>
                 <samp
@@ -149,7 +150,7 @@ function NavBar() {
                   Register
                 </samp>
               </Link>
-            </li>
+                </li>*/}
 
             {/* <li className="nav-item">
                     <Link  to="/leaderboard" className="nav-link">
