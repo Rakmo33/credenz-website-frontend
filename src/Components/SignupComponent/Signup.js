@@ -5,6 +5,7 @@ import Social from "../sideEventButton/sideEvent";
 import Validate from "./ValidateInfo";
 import axios from "axios";
 import Modal1 from "../Modal/Modal";
+import Alert from '../Alert/alert';
 
 function Signup() {
   let login="login"
@@ -16,6 +17,9 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
+  const [msg, setMsg] = useState("");
+  const [variant, setVar] = useState("");
+  const [showAlert, setAlert] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -39,7 +43,10 @@ function Signup() {
             clgname: college,
           })
           .then(function (response) {
-            alert("Form successfully submitted.");
+            // alert("Form successfully submitted.");
+            setAlert(true);
+            setMsg("Account created Successfully");
+            setVar("success");
             console.log(response);
             console.log(response.data);
             const msg = response.data["accessToken"];
@@ -47,7 +54,9 @@ function Signup() {
             console.log(msg);
           });
       } catch (e) {
-        alert("Axios error!" + e);
+        setAlert(true);
+        setMsg(e);
+        setVar("danger");
       }
 
       setName("");
@@ -100,6 +109,8 @@ function Signup() {
   return (
     <>
       <div className='container mt-5'>
+        {showAlert ?
+         <Alert var={variant}>{msg}</Alert> : null}
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
