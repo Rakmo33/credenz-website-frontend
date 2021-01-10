@@ -5,6 +5,7 @@ import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
 import axios from "axios";
 import $ from "jquery";
+import {useParams} from "react-router-dom";
 // form components
 import NameWrap from "./NameWrap";
 import NumberWrap from "./NumberWrap";
@@ -21,6 +22,10 @@ import jwt from "jwt-decode";
 import Nav from "../Navbar/Navbar";
 
 const Register = () => {
+
+  const params = useParams();
+
+
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
     $(document).ready(function () {
@@ -129,6 +134,7 @@ const Register = () => {
   }
 
   let defaultFormData = {
+    event: params.event,
     team: "single",
     teamName: "",
     name1: localStorage.getItem("user")
@@ -458,10 +464,20 @@ const Register = () => {
               <i className='fa fa-chevron-circle-left' aria-hidden='true'></i>
             </NavigateButton>
 
+        {/*    <EventWrap
+                changeHandler={changeHandler}
+                events={events}
+                isVisible={isVisible[0]}
+                cls={`parent ${anim[0]}`}
+                formData={formData}
+                setFormData={setFormData}
+                total={total}></EventWrap> */}
+
             <form className='col-md-9 m-auto' onSubmit={DisplayRazorpay}>
               <NameWrap
                 isVisible={isVisible[0]}
                 cls={`parent ${anim[0]}`}
+                event={params.event}
                 formData={formData}
                 setFormData={setFormData}></NameWrap>
 
@@ -497,17 +513,8 @@ const Register = () => {
                 formData={formData}
                 setFormData={setFormData}></CollegeList>
 
-              <EventWrap
-                changeHandler={changeHandler}
-                events={events}
-                isVisible={isVisible[4]}
-                cls={`parent ${anim[4]}`}
-                formData={formData}
-                setFormData={setFormData}
-                total={total}></EventWrap>
-
               <Proceed
-                isVisible={isVisible[5]}
+                isVisible={isVisible[4]}
                 total={total}
                 cls={`col-sm-6 d-flex justify-content-center m-auto proceed-btn ${anim[5]}`}
                 formData={formData}
