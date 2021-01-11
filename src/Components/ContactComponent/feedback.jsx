@@ -4,10 +4,13 @@ import Footer from "../Footer/footer";
 import jwt from "jwt-decode";
 import emailjs from "emailjs-com";
 import "./button.css";
+import Alert from '../Alert/alert';
 
 const Feedback = () => {
   let user = "";
-
+  const [show, setShow] = useState(false);
+  const [msg, setMsg] = useState("");
+  const [variant, setVar] = useState("");
   if (localStorage.getItem("user")) {
     user = jwt(localStorage.getItem("user"));
   }
@@ -44,11 +47,17 @@ const Feedback = () => {
       )
       .then(
         (response) => {
-          alert("Your feedback was sent successfully.");
-          console.log("SUCCESS!", response.status, response.text);
+          // alert("Your feedback was sent successfully.");
+          setShow(true);
+          setMsg("Your feedback was sent successfully.");
+          setVar("success");
+          // console.log("SUCCESS!", response.status, response.text);
         },
         (err) => {
-          console.log("FAILED...", err);
+          setShow(true);
+          setMsg(e);
+          setVar("danger");
+          // console.log("FAILED...", err);
         }
       );
 
@@ -58,6 +67,8 @@ const Feedback = () => {
   return (
     <>
       <div className='container mt-5'>
+        { show ?
+        <Alert var={variant} >{msg}</Alert> : null }
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
