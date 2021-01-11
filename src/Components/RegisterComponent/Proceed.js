@@ -18,14 +18,14 @@ function Proceed(props) {
 
     return (
       <div className='proceedWrap'>
-        <table class='table table-striped'>
+        {/*<table class='table table-striped'>
           <thead>
             <tr>
               <th scope='col'>Registered events</th>
             </tr>
           </thead>
           <tbody>{eventList}</tbody>
-        </table>
+    </table>*/}
 
         {/* <div style={{margin:30}}>
       <img
