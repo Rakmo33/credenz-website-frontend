@@ -81,7 +81,7 @@ const Profile = () => {
         return (
           <tr>
             <th scope='row'>{count++}</th>
-            <td>{x.event_username}</td>
+            <td>{x.event_username}, {x.random_pw}</td>
           </tr>
         );
       });
@@ -168,7 +168,7 @@ const Profile = () => {
               <div className='eve '>
                 <div className='eve-title'>
                   <i className='fa fa-check-circle'></i>
-                  <p className='reg-eve'>Registered Events</p>
+                  <p className='reg-eve'>Registered Events and passcodes</p>
                 </div>
                 <div className='table-container'>
                   <table className='table table-striped table-dark'>

@@ -127,6 +127,25 @@ const Register = () => {
     },
   ]);
 
+  const getUsername = (event) => {
+    switch(event) {
+      case "Clash": return ["clash", 100];
+      case "Reverse Coding": return ["rc", 50];
+      case "Pixelate": return ["pixelate", 50];
+      case "Cretronix": return ["cretronix", 50];
+      case "Bplan": return ["bplan", 50];
+      case "Wallstreet": return ["wallstreet", 50];
+      case "Datawiz": return ["datawiz", 50];
+      case "Enigma": return ["enigma", 50];
+      case "Quiz": return ["quiz", 50];
+      case "Web Weaver": return ["webweaver", 50];
+      case "Paper Presentation": return ["paperpresentation", 50];
+      case "Network Treasure Hunt": return ["nth", 50];
+      default: return "Invalid event";
+                
+    }
+  }
+
   let user = "";
 
   if (localStorage.getItem("user")) {
@@ -135,6 +154,7 @@ const Register = () => {
 
   let defaultFormData = {
     event: params.event,
+    price: getUsername(params.event)[1],
     team: "single",
     teamName: "",
     name1: localStorage.getItem("user")
@@ -158,6 +178,8 @@ const Register = () => {
       : "",
     events: {},
   };
+
+
 
   const [formData, setFormData] = useForm(defaultFormData);
 
@@ -235,12 +257,8 @@ const Register = () => {
 
     const eventsReg = () => {
       const token = localStorage.getItem("user");
-      // alert(typeof(token))
       const accessToken = JSON.parse(token).accessToken;
       var decoded = jwt_decode(token);
-
-      // console.log("type" + typeof(accessToken))
-      // console.log(accessToken)
       let count = 1;
       var players = [];
       if (formData.name2 !== "") {
@@ -258,19 +276,17 @@ const Register = () => {
 
       console.log(players);
       console.log(count);
-      events.forEach((event) => {
-        if (event.isCheked === true) {
           if (formData.team === "single") {
             axios({
               method: "post",
-              url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${event.username}`,
+              url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${getUsername(formData.event)[0]}`,
               headers: { authorization: `Bearer ${accessToken}` },
             })
               .then((response) => {
-                console.log("event checked" + JSON.stringify(response.data));
+                alert(response.data)
               })
               .catch((error) => {
-                console.log("Axios error : " + error); //request fails with 500
+                alert("Error!" + error) //request fails with 500
               });
           } else {
             axios
@@ -279,7 +295,7 @@ const Register = () => {
                 {
                   //...data
                   players: players,
-                  event_name: event.username,
+                  event_name: getUsername(formData.event)[0],
                   team_username: formData.teamName,
                   no_of_players: count,
                 },
@@ -296,27 +312,9 @@ const Register = () => {
                 console.log("Axios error : " + error); //request fails with 500
               });
             console.log("else");
-            /*
-          axios({
-            method: "post",
-            url: `http://credenzwebsite.herokuapp.com/addteam`,
-            headers: { authorization: `Bearer ${accessToken}` },
-            body: {
-              players: players,
-              event_name: event.username,
-              team_username: formData.teamName,
-              no_of_players: count,
-            }
-          })
-            .then((response) => {
-              console.log("team :" + JSON.stringify(response.data));
-            })
-            .catch((error) => {
-              console.log("Axios error : " + error);//request fails with 500
-            });*/
           } //else
-        }
-      });
+        
+      
     };
 
     // prev click
@@ -457,6 +455,9 @@ const Register = () => {
           </div>
 
           <div className='container'>
+
+          <h2>Event: {formData.event}</h2>
+
             <NavigateButton
               id='back-btn'
               handler={prevHandler}
@@ -515,7 +516,7 @@ const Register = () => {
 
               <Proceed
                 isVisible={isVisible[4]}
-                total={total}
+                total={formData.price}
                 cls={`col-sm-6 d-flex justify-content-center m-auto proceed-btn ${anim[5]}`}
                 formData={formData}
                 setFormData={setFormData}></Proceed>
