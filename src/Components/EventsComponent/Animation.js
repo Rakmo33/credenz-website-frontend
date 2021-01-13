@@ -22,6 +22,25 @@ function Animation() {
 
   const [index, setIndex] = useState(0);
 
+  const [cart, setCart] = useState([]);
+  
+  
+ // console.log("Cart in animation : " + cart)
+/*
+  function addToCart(event) {
+
+    console.log("add to cart called")
+
+    if(!cart.includes(event)) {
+
+      localStorage.setItem("Cart", cart)
+
+      console.log(event)
+      setCart([...cart, event]);
+      }
+  }
+*/
+  
   let leftHand = {
     upper: "",
     lower: "",
@@ -259,6 +278,9 @@ function Animation() {
           <EventModal
             info={info[index]}
             cls={modalCls}
+            cart={cart}
+            setCart={setCart}
+            
             onClick={closeModalHandler}></EventModal>
         )}
         <div className='roboWrap '>

@@ -18,6 +18,7 @@ import Admin from "../Components/AdminSection/Admin";
 import VerifyPhone from "../Components/SignupComponent/verifyPhone";
 import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
 import Footer from '../Components/Footer/footer';
+import Cart from '../Components/RegisterComponent/Cart';
 import './maincomponent.module.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -84,6 +85,10 @@ class Main extends Component {
       return <AboutUs/>;
     }
 
+    const CartPage = () => {
+      return <Cart/>;
+    }
+
     return (
       <div>
         <NavBar />
@@ -102,6 +107,7 @@ class Main extends Component {
           <Route path='/admin' component={AdminPage} />
           <Route path='/aboutus' component={AboutUsPage}/>
           <Route path='/verifyphone' component={VerifyPhonePage} />
+          <Route path='/cart' component={CartPage} />
           <Redirect to='/home' />
         </Switch>
         {/* <Footer /> */}
