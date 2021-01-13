@@ -3,6 +3,16 @@
     color: white;
 }
 
+.badge{
+    background: red;
+    border-radius:70%;
+    padding:3px;
+    position:relative;
+    left:-8px;
+    top:-10px;
+    opacity:0.9;
+}
+
 .pisblogo {
     width: 6rem;
     height: 2rem;

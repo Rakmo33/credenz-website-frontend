@@ -26,6 +26,10 @@ function NavBar() {
     window.location.reload(false); //refresh page
   };
 
+  var cartArray = localStorage.getItem("Cart") ? localStorage.getItem("Cart").split(","): [];
+
+ 
+
   const LoginBtn = () => {
     if (!localStorage.getItem("user")) {
       return (
@@ -218,6 +222,14 @@ function NavBar() {
             </li> */}
           </ul>
           <ul className='navbar-nav ml-auto second  pull-right'>
+            <li>
+              <div>
+                <div>
+                  <i className='fa fa-lg fa-shopping-cart' title='Cart' value={5}></i>
+                  <span className="badge">{cartArray.length}</span>
+                </div>
+              </div>
+            </li>
             <li>
               <div onClick={handleShow1}>
                 <div>

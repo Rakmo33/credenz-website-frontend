@@ -4,10 +4,26 @@ import { HashLink as Link } from "react-router-hash-link";
 
 import "./eventmodal.css";
 
+function addToCart(event, cart, setCart) {
+  if(!cart.includes(event)) {
+    var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(" "):[];
+    let tempArray = [...cartArray]
+    tempArray.push(event)
+    console.log("temp" + cartArray)
+    setCart(tempArray);
+    localStorage.setItem("Cart", tempArray)
+    window.location.reload(false);
+  }
+}
+
+
 function EventModal(props) {
+
+
   let currentInfo = props.info;
   let currentTab = currentInfo.info1;
   let cls = `modalWrap ${props.cls}`;
+
 
   const [tab, setTab] = useState(1);
   const [currentTabInfo, setCurrentTabInfo] = useState(currentInfo.info1);
@@ -44,15 +60,18 @@ function EventModal(props) {
       setCurrentTabInfo(currentInfo.info5);
     }
   };
+
   return (
     <div className={cls}>
       <div className='modalHead'>
         <img src={currentInfo.src} alt='logo' />
         <h3>{currentInfo.title}</h3>
+        {/*
         <Link to={`/register/${currentInfo.title}`} className='regNowBtn'>
           Register Now!
         </Link>
-
+       */}
+        <button className='regNowBtn' onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>Add to Cart</button>
         <span onClick={props.onClick}>
           <i className='fa fa-times'></i>
         </span>

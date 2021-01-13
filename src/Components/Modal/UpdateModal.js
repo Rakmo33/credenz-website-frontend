@@ -17,7 +17,7 @@ async function AllUpdates() {
 
   //setTimeout(() => {  console.log("I am sleeping"); }, 5);
 
-  console.log("update data : " + data);
+  
   return data;
 }
 
