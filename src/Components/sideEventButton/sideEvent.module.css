@@ -31,16 +31,16 @@ a {
     transform: translate(-270px, 0);
 }
 
-.social ul li {
+ .fb {
     display: block;
     margin: 10px;
-    height: 70px;
+    height: 90px;
     /* background: var(--light-accent); */
-    background-image: url("socio.png") ;
+    background-image: url("fb.svg") ;
     background-position: right ;
-    background-size: 55%;
+    background-size: 30%;
     /* image-rendering: ; */
-    width: 340px;
+    width: 350px;
     text-align: right;
     padding: 10px;
     /* border-radius: 0 50px 50px 0; */
@@ -48,16 +48,50 @@ a {
     background-repeat: no-repeat;
 }
 
-.social ul li:hover {
+.ig {
+    display: block;
+    margin: 10px;
+    height: 90px;
+    /* background: var(--light-accent); */
+    background-image: url("ig.svg") ;
+    background-position: right ;
+    background-size: 30%;
+    /* image-rendering: ; */
+    width: 350px;
+    text-align: right;
+    padding: 10px;
+    /* border-radius: 0 50px 50px 0; */
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+}
+
+.in  {
+    display: block;
+    margin: 10px;
+    height: 90px;
+    /* background: var(--light-accent); */
+    background-image: url("in.svg") ;
+    background-position: right ;
+    background-size: 30%;
+    /* image-rendering: ; */
+    width: 350px;
+    text-align: right;
+    padding: 10px;
+    /* border-radius: 0 50px 50px 0; */
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+}
+
+/* .social ul li:hover {
     transform: translate(110px, 0);
-    /* background: var(--light-shades); */
+    background: var(--light-shades);
      background-image: url("socio.png") ;
      background-repeat: no-repeat;
-     /* background-position: 5px 5px; */
-     /* height: 100px; */
+     background-position: 5px 5px;
+     height: 100px;
      background-size: 55%;
     transition: all 0.6s;
-}
+} */
 
 .social ul li:hover a {
     color: white;
