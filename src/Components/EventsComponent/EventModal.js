@@ -6,7 +6,7 @@ import "./eventmodal.css";
 
 function addToCart(event, cart, setCart) {
   if(!cart.includes(event)) {
-    var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(" "):[];
+    var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
     let tempArray = [...cartArray]
     tempArray.push(event)
     console.log("temp" + cartArray)
