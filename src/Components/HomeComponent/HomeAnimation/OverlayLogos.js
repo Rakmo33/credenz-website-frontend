@@ -16,7 +16,7 @@ function OverlayLogos() {
     const interval = setInterval(() => {
       if (localIndex < images.length)
         setIndex(localIndex++)
-    }, 5000)
+    }, 750)
     if (localIndex === images.length - 2)
       clearInterval(interval)
     return () => clearInterval(interval)
@@ -46,7 +46,7 @@ function OverlayLogos() {
               transform: "scale(0,0) translateY(-50%)",
             }}
             transition={{
-              duration: 2.5
+              duration: 0.375
             }}
             animate={{
               transform: "scale(0.75, 0.75) translateY(0%)"
