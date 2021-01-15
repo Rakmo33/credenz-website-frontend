@@ -149,6 +149,40 @@
     transform: translate(-50%, 0);
 }
 
+.feedback .submitSpinner #feedbackSubmitBtn {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.feedback .submitSpinner {
+    position: relative;
+}
+
+.feedback .submitSpinner span#spinnerCircle {
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    /* margin: auto; */
+    /* z-index: 500; */
+    left: 46%;
+    top: 25%;
+    border-left: 3px solid #083e57;
+    border-right: 3px solid #083e57;
+    /* border-right: 4px solid black; */
+    padding: 15px;
+    border-radius: 50%;
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .form-control {
     padding: 5px !important;
 }
@@ -175,7 +209,7 @@
     margin-top: -10px;
 }
 
-.img-pos{
+.img-pos {
     object-fit: cover;
     object-position: center;
 }
