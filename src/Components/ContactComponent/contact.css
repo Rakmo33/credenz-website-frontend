@@ -131,9 +131,18 @@
 .feedback {
     width: 500px;
     margin: auto;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     color: #fff;
     /* font-family: 'Alata', sans-serif; */
+}
+
+.contactUsWrap {
+    /* max-height: 95vh; */
+}
+
+.feedbackWrap {
+    min-height: 76vh;
+    margin: 0;
 }
 
 .feedback label {

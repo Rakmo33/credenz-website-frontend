@@ -75,7 +75,7 @@ const Feedback = () => {
 
   return (
     <>
-      <div className='container mt-5'>
+      <div className='container mt-5 feedbackWrap'>
         {show ? (
           <Alert show={show} setShow={setShow} var={variant}>
             {msg}
@@ -141,10 +141,7 @@ const Feedback = () => {
         </div>
       </div>
       <Social />
-      <div style={{ marginTop: "31vh" }}>
-        {" "}
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };
