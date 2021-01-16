@@ -13,6 +13,7 @@ class Admin extends Component {
       editeve: false,
       addupd: false,
       editupd: false,
+
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -56,7 +57,7 @@ class Admin extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{marginTop:'10vh'}}>
         <Row>
           <div>
             <h1>Admin Section</h1>
