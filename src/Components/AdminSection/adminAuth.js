@@ -38,7 +38,7 @@ class AdminAuth extends Component {
 
       return(
       <div style={{marginTop:'20vh', padding:"20px"}}>
-          { this.state.showAlert ? <Alert show={this.state.showAlert} var={"danger"} >hi</Alert> : null}
+          { this.state.showAlert ? <Alert show={this.state.showAlert} var={"danger"} > Please Contact Admin Team or Webmasters for Further Instructions. </Alert> : null}
           { this.state.showAdmin ? <Admin/> : 
           <Container>
               <Row>
