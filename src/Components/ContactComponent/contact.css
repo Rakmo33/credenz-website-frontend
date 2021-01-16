@@ -131,9 +131,18 @@
 .feedback {
     width: 500px;
     margin: auto;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     color: #fff;
     /* font-family: 'Alata', sans-serif; */
+}
+
+.contactUsWrap {
+    /* max-height: 95vh; */
+}
+
+.feedbackWrap {
+    min-height: 76vh;
+    margin: 0;
 }
 
 .feedback label {
@@ -147,6 +156,40 @@
     background-color: #ccc;
     width: 200px;
     transform: translate(-50%, 0);
+}
+
+.feedback .submitSpinner #feedbackSubmitBtn {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.feedback .submitSpinner {
+    position: relative;
+}
+
+.feedback .submitSpinner span#spinnerCircle {
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    /* margin: auto; */
+    /* z-index: 500; */
+    left: 46%;
+    top: 25%;
+    border-left: 3px solid #083e57;
+    border-right: 3px solid #083e57;
+    /* border-right: 4px solid black; */
+    padding: 15px;
+    border-radius: 50%;
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .form-control {
@@ -175,7 +218,7 @@
     margin-top: -10px;
 }
 
-.img-pos{
+.img-pos {
     object-fit: cover;
     object-position: center;
 }
