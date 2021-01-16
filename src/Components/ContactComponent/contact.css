@@ -142,7 +142,7 @@
 
 .feedbackWrap {
     min-height: 76vh;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .feedback label {
