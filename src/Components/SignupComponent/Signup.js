@@ -5,6 +5,7 @@ import Social from "../sideEventButton/sideEvent";
 import Validate from "./ValidateInfo";
 import axios from "axios";
 import Modal1 from "../Modal/Modal";
+import Alert from "../Alert/alert";
 
 function Signup() {
   let login = "login";
@@ -19,6 +20,7 @@ function Signup() {
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
   const [disabled, setdisabled] = useState(true);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -43,7 +45,7 @@ function Signup() {
             clgname: college,
           })
           .then(function (response) {
-            // console.log(response);
+            console.log(response);
             // console.log(response.data);
             // const msg = response.data["accessToken"];
             localStorage.setItem("user", JSON.stringify(response.data));
@@ -78,11 +80,25 @@ function Signup() {
             } catch (e) {
               console.log("Axios alert" + e);
               alert("Axios error!" + e);
+              setSpinner("form-group col-lg-12 ");
             }
+          })
+          .catch((e) => {
+            if (e.response.status === 404) {
+              console.log("Axios alert" + e);
+              setSpinner("form-group col-lg-12 ");
+              setShowAlert(true);
+            }
+            // throw e;
+
+            // console.log("Axios alert" + e);
+            // alert("Axios error!" + e);
+            // setSpinner("form-group col-lg-12 ");
           });
       } catch (e) {
         console.log("Axios alert" + e);
         alert("Axios error!" + e);
+        setSpinner("form-group col-lg-12 ");
       }
     }
 
@@ -127,6 +143,11 @@ function Signup() {
   return (
     <>
       <div className='container mt-5 signupFormWrap'>
+        {showAlert ? (
+          <Alert show={showAlert} setShow={setShowAlert} var='danger'>
+            Sign Up Failed!
+          </Alert>
+        ) : null}
         <div className='row py-5 mt-4 align-items-center '>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
