@@ -7,7 +7,9 @@ import axios from "axios";
 import Modal1 from "../Modal/Modal";
 
 function Signup() {
-  let login="login"
+  let login = "login";
+  const [spinner, setSpinner] = useState("form-group col-lg-12 ");
+
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -16,19 +18,20 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
-  const [disabled,setdisabled] = useState(true);
+  const [disabled, setdisabled] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const submitForm = (e) => {
+    setSpinner("form-group col-lg-12 submitSpinner");
     e.preventDefault();
     console.log(
       "Current state is : " +
         JSON.stringify({ email, phone, college, password })
     );
-  
-     if(Object.keys(errors).length === 0 && errors.constructor === Object){
+
+    if (Object.keys(errors).length === 0 && errors.constructor === Object) {
       try {
         axios
           .post("http://credenzwebsite.herokuapp.com/signup", {
@@ -40,24 +43,47 @@ function Signup() {
             clgname: college,
           })
           .then(function (response) {
-            console.log(response);
-            console.log(response.data);
-            const msg = response.data["accessToken"];
+            // console.log(response);
+            // console.log(response.data);
+            // const msg = response.data["accessToken"];
             localStorage.setItem("user", JSON.stringify(response.data));
-            console.log(msg);
+            // console.log(msg);
+            // console.log("HEREEE");
+            try {
+              axios
+                .post("http://credenzwebsite.herokuapp.com/login", {
+                  username: username,
+                  password: password,
+                })
+                .then(function (response) {
+                  setName("");
+                  setUsername("");
+                  setPhone("");
+                  setEmail("");
+                  setCollege("");
+                  setPassword("");
+                  setPasswordCheck("");
+                  // console.log(response.data);
+                  //const msg = response.data["accessToken"]
+                  if (response.data["accessToken"]) {
+                    // alert("Logged in successfully!");
+                    localStorage.setItem("user", JSON.stringify(response.data));
+
+                    handleClose();
+                    window.location.href = "/profile";
+                  } else {
+                    localStorage.removeItem("user");
+                  }
+                });
+            } catch (e) {
+              console.log("Axios alert" + e);
+              alert("Axios error!" + e);
+            }
           });
       } catch (e) {
-       console.log("Axios alert" + e);
+        console.log("Axios alert" + e);
         alert("Axios error!" + e);
       }
-
-      setName("");
-      setUsername("");
-      setPhone("");
-      setEmail("");
-      setCollege("");
-      setPassword("");
-      setPasswordCheck("");
     }
 
     // e.preventDefualt()
@@ -72,7 +98,7 @@ function Signup() {
     clgname: college,
     passwordCheck: passwordCheck,
   };
-/*
+  /*
   const verifyPhone = (e) => {
     setPhone(e.target.value)
 
@@ -91,7 +117,6 @@ function Signup() {
   console.log(values);
 
   const errors = Validate(values);
-  
 
   console.log(
     "Errors: " + errors.name + errors.username + errors.email + errors.phone
@@ -99,12 +124,10 @@ function Signup() {
 
   //e.preventDefualt()
 
-
   return (
-    
     <>
-      <div className='container mt-5'>
-        <div className='row py-5 mt-4 align-items-center'>
+      <div className='container mt-5 signupFormWrap'>
+        <div className='row py-5 mt-4 align-items-center '>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
               src='https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg'
@@ -133,7 +156,7 @@ function Signup() {
                     value={name}
                     required
                   />
-                   <span class="asterisk_input">  </span>  
+                  <span class='asterisk_input'> </span>
                   {errors && (
                     <small id='nameErr' className='form-text text-danger'>
                       {errors.name}
@@ -157,7 +180,7 @@ function Signup() {
                     value={username}
                     required
                   />
-                   <span class="asterisk_input">  </span>  
+                  <span class='asterisk_input'> </span>
                   {errors && (
                     <small
                       id='nameErr'
@@ -183,7 +206,7 @@ function Signup() {
                     value={email}
                     required
                   />
-                   <span class="asterisk_input">  </span>  
+                  <span class='asterisk_input'> </span>
                   {errors && (
                     <small id='nameErr' className='form-text text-danger'>
                       {errors.email}
@@ -203,11 +226,12 @@ function Signup() {
                     name='phone'
                     placeholder='Phone Number'
                     className='form-control bg-white border-md border-left-0 pl-3'
-                    onChange={(e)=> setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value)}
                     value={phone}
                     required
+                    maxLength='10'
                   />
-                   <span class="asterisk_input">  </span>  
+                  <span class='asterisk_input'> </span>
                   {errors && (
                     <small id='phoneErr' className='form-text text-danger'>
                       {errors.phone}
@@ -229,7 +253,7 @@ function Signup() {
                     onChange={(e) => setCollege(e.target.value)}
                     value={college}
                     required>
-                    <option>College name</option>
+                    <option selected>College name</option>
                     <option>PICT</option>
                     <option>COEP</option>
                     <option>MIT</option>
@@ -237,9 +261,8 @@ function Signup() {
                     <option>Cummins</option>
                     <option>PCCOE</option>
                     <option>Other</option>
-                    
                   </select>
-                  <span class="asterisk_input">  </span>  
+                  <span class='asterisk_input'> </span>
                   {errors && (
                     <small id='clgErr' className='form-text text-danger'>
                       {errors.college}
@@ -264,7 +287,7 @@ function Signup() {
                     required
                   />
                 </div>
-               
+
                 <div className='input-group col-lg-6 mb-4'>
                   <div className='input-group-prepend'>
                     <span className='input-group-text bg-white px-4 border-md border-right-0'>
@@ -282,33 +305,41 @@ function Signup() {
                     required
                   />
                 </div>
-             
+
                 <div className='form-group col-lg-12 mx-auto mb-0'>
                   {errors && (
                     <small id='passwordErr' className='form-text text-danger'>
                       {errors.password}
-                    </small> 
+                    </small>
                   )}
                 </div>
 
-                <div className='form-group col-lg-12 mx-auto mb-0'>
+                <div className={spinner}>
                   <button
                     type='submit'
                     className='btn btn-primary btn-block py-2'
-                    disabled={!(Object.keys(errors).length === 0 && errors.constructor === Object)}
-                    
-                  > 
-                    <span className='font-weight-bold' >
+                    disabled={
+                      !(
+                        Object.keys(errors).length === 0 &&
+                        errors.constructor === Object
+                      )
+                    }>
+                    <span className='font-weight-bold'>
                       Create your account
                     </span>
                   </button>
+                  <span id='spinnerCircle'></span>
                 </div>
 
                 <div className='text-center w-100 mt-3'>
                   <p className='text-muted font-weight-bold'>
                     Already Registered?{" "}
-                    <span className='text-primary ml-2' style={{cursor:"pointer"}}
-                    onClick={handleShow}>Login</span>
+                    <span
+                      className='text-primary ml-2'
+                      style={{ cursor: "pointer" }}
+                      onClick={handleShow}>
+                      Login
+                    </span>
                   </p>
                 </div>
               </div>
@@ -318,9 +349,9 @@ function Signup() {
       </div>
       <Modal1 show={show} handleClose={handleClose} type={login} />
       <Social />
-      <div className='footer heightFooter'>
-        <Footer />
-      </div>
+      {/* <div className='footer heightFooter'> */}
+      <Footer />
+      {/* </div> */}
     </>
   );
 }
