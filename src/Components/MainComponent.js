@@ -14,7 +14,7 @@ import SideEvents from "./SideEvents/sideEvents";
 import LeaderBoard from "./SideEvents/leaderboard";
 import Team from "../Components/Team/Team";
 import Profile from "../Components/Profilepage/Profilepage";
-import Admin from "../Components/AdminSection/Admin";
+import Admin from "../Components/AdminSection/adminAuth";
 import VerifyPhone from "../Components/SignupComponent/verifyPhone";
 import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
 import Footer from '../Components/Footer/footer';
