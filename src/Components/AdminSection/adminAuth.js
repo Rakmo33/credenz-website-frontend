@@ -60,7 +60,8 @@ class AdminAuth extends Component {
               setShow={this.setShow}
               var={"danger"}>
               {" "}
-              Please Contact Admin Team or Webmasters for Further Instructions.{" "}
+              Authentication Failed! Please Contact Admin Team or Webmasters for
+              Further Instructions.{" "}
             </Alert>
           ) : null}
         </Container>
