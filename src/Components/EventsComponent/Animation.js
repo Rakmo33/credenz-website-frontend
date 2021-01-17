@@ -23,10 +23,9 @@ function Animation() {
   const [index, setIndex] = useState(0);
 
   const [cart, setCart] = useState([]);
-  
-  
- // console.log("Cart in animation : " + cart)
-/*
+
+  // console.log("Cart in animation : " + cart)
+  /*
   function addToCart(event) {
 
     console.log("add to cart called")
@@ -40,7 +39,7 @@ function Animation() {
       }
   }
 */
-  
+
   let leftHand = {
     upper: "",
     lower: "",
@@ -243,7 +242,7 @@ function Animation() {
   };
 
   return (
-    <div>
+    <div className='eve-anim-wrap'>
       <div className={`eve-anim ${isGrid ? "" : "flex"}`}>
         {isGrid ? (
           <div className='events-grid'>
@@ -280,7 +279,6 @@ function Animation() {
             cls={modalCls}
             cart={cart}
             setCart={setCart}
-            
             onClick={closeModalHandler}></EventModal>
         )}
         <div className='roboWrap '>

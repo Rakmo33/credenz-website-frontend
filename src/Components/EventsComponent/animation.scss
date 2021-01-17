@@ -1,6 +1,14 @@
-$gradient: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+$gradient: linear-gradient(to bottom, #ee4614, #13719ce5);
 $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+.eve-anim-wrap {
+    background: rgb(36, 36, 36);
+    background: radial-gradient(circle, rgba(36, 36, 36, 1) 10%, rgba(18, 18, 18, 1) 60%);
+    margin-top: -35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .eve-anim {
     // min-height: 95vh;
     min-height: 88vh;
@@ -9,6 +17,7 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
     // background-color: red;
     // border: 2px solid blue;
     padding-top: 0px;
+    // background: red;
     // margin-top: 400px;
     display: flex;
     align-items: center;
@@ -41,20 +50,21 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
         align-items: center;
         grid-template-rows: 1fr 10fr;
         .roboMsg {
-            background-image: $gradient2;
-            background-color: #001e2c;
+            // background-image: $gradient2;
+            background-color: #131212;
             width: 70%;
             position: relative;
             top: 80px;
+            z-index: 5000;
             height: 75px;
             display: flex;
             margin: auto;
-            border: 5px solid #2fb3ff;
+            border: 5px solid #15ade5;
             border-radius: 2px;
             transform: translateY(50px);
             transition: all 0.1s;
             opacity: 0;
-            z-index: -50;
+            // z-index: -50;
             #RobotextWrap {
                 position: absolute;
                 width: 100%;
@@ -63,7 +73,8 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
                 text-align: center;
             }
             #Robotext {
-                color: #1ff00c;
+                color: #36dca3;
+                // color: #fff;
                 font-weight: 500;
                 height: 100%;
                 overflow: hidden;
