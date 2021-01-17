@@ -18,7 +18,9 @@
   ); */
   border: none !important;
   transition: 0.8s;
-  background-color: rgb(47, 160, 175);
+  background-color: #252525;
+  border-top-left-radius: 2rem ;
+
 }
 
 div.event-card:hover .card-title {
@@ -56,7 +58,7 @@ div.event-card:hover img.side-event-logo {
 }
 
 .card .card-body {
-  border: none !important;
+  border-bottom-right-radius: 2rem;
 }
 
 .event-card .card-body {
@@ -67,11 +69,12 @@ div.event-card:hover img.side-event-logo {
     rgb(226, 211, 224) 35%,
     rgb(1980223, 202, 222) 100%
   ); */
-  background-color: rgb(47, 160, 175);
+  background-color: #252525;
   /* color: rgb(59, 1, 54); */
   color: white;
   text-align: center;
   transition: 0.8s;
+  /* border-bottom-right-radius: 2rem; */
 }
 
 .event-title {
@@ -125,16 +128,19 @@ div.event-card:hover img.side-event-logo {
 }
 
 .play {
-  border: 1px solid rgb(47, 160, 175);
+  /* border: 1px solid rgb(47, 160, 175); */
   outline: none;
   background-color: transparent;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 1);
   /* color: rgb(59, 1, 54); */
   color: white;
+  background: linear-gradient(45deg, #36dca3 , #3b94df);
   width: 120px;
   height: 40px;
   align-items: center;
   transition: 0.8s;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 }
 .play:hover {
   /* background-color: rgb(59, 1, 54); */
@@ -146,7 +152,8 @@ div.event-card:hover img.side-event-logo {
   width: 15rem;
   height: 100%;
   margin: auto;
-
+  object-fit: cover;
+  object-position: initial;
   transition: 0.8s;
 }
 @media only screen and (min-width: 1025px) {
@@ -159,6 +166,7 @@ div.event-card:hover img.side-event-logo {
     animation-duration: 0.2s;
     animation-fill-mode: backwards;
     animation-timing-function: linear;
+    background: linear-gradient(45deg, #36dca3, #3b94df);
   }
 }
 
