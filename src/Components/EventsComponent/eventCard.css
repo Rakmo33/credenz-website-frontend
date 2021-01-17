@@ -184,7 +184,7 @@
 }
 
 .evePage .detect {
-  background-blend-mode: exclusion;
+  background-blend-mode: color;
 }
 
 .evePage .detect span#glow {

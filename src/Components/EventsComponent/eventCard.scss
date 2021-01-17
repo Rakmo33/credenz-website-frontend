@@ -141,7 +141,7 @@ $cardglowHover: 0 0 25px rgb(0, 247, 255);
         }
     }
     .detect {
-        background-blend-mode: exclusion;
+        background-blend-mode: color;
         span#glow {
             opacity: 0.1 !important;
         }
