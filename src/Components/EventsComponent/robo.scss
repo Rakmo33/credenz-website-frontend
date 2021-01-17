@@ -19,9 +19,19 @@ $lighting2: #459945;
 $lighting3: #2d612d;
 $lighting5: #add7f0;
 $lighting4: #2fb3ff;
-$gradient: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+$border: #15ade5;
+$lighting1a: #02243b;
+$lighting1b: #016083;
+$lighting2a: #15ade5;
+$lighting2b: #15e5d9;
+$shadow: #131212;
+//robo blue
+// $gradient: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+$gradient: linear-gradient(45deg, #3cbaf5, #13719c);
 $grey:linear-gradient(to bottom, #8d8989, #5a5858);
-$grey2:linear-gradient(to bottom, #f4f6f7, #9da9af);
+$grey2:linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
+// $grey2:linear-gradient(to bottom, #f4f6f7, #9da9af);
+// $grey2:linear-gradient(to bottom, #f4f6f7, #9da9af);
 $roboto: 'Roboto' sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
 .robo {
@@ -57,14 +67,14 @@ $roboto: 'Roboto' sans-serif;
         & span.eari {
             height: 45px;
             width: 15px;
-            background-image: $grey;
+            background-image: $grey2;
             position: absolute;
             left: 45px;
             top: 30px;
             & span.earo {
                 height: 24px;
                 width: 10px;
-                background-image: $grey;
+                background-image: $grey2;
                 position: absolute;
                 left: -15px;
                 top: 10px;
@@ -73,14 +83,14 @@ $roboto: 'Roboto' sans-serif;
         & span.eari2 {
             height: 45px;
             width: 15px;
-            background-image: $grey;
+            background-image: $grey2;
             position: absolute;
             right: 45px;
             top: 30px;
             & span.earo2 {
                 height: 24px;
                 width: 10px;
-                background-image: $grey;
+                background-image: $grey2;
                 position: absolute;
                 right: -15px;
                 top: 10px;
@@ -241,7 +251,7 @@ $roboto: 'Roboto' sans-serif;
             width: 180px;
             height: 10px;
             border-radius: 00%;
-            background: $amarelo;
+            background: $border;
         }
         /*bolinhas menores barriga*/
         &::before {
@@ -252,10 +262,10 @@ $roboto: 'Roboto' sans-serif;
             width: 20px;
             height: 20px;
             border-radius: 100%;
-            background: $azul2;
+            background: $lighting1a;
             z-index: 15;
-            -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
-            box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+            // -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+            box-shadow: 40px 0 0 $border, 80px 0 0 $lighting1a;
             -webkit-animation: lighting2 1s infinite;
             animation: lighting2 1s infinite;
         }
@@ -269,9 +279,9 @@ $roboto: 'Roboto' sans-serif;
         width: 100px;
         height: 90px;
         line-height: 45px;
-        background: $azul-escuro;
+        background: #252525;
         border-radius: 5px;
-        border: solid 5px $amarelo;
+        border: solid 5px $border;
         text-align: center;
         color: $amarelo;
         font-size: 2em;
@@ -302,8 +312,7 @@ $roboto: 'Roboto' sans-serif;
         width: 70px;
         height: 60px;
         margin: 0 auto;
-        background: red;
-        background: -webkit-linear-gradient(left, $azul-escuro 0%, $azul-escuro 20%, $azul2 20%, $azul2 40%, $azul 40%, $azul 60%, $azul2 60%, $azul2 80%, $azul-escuro 80%);
+        background: -webkit-linear-gradient(left, $azul 0%, $azul 20%, $azul2 20%, $azul2 40%, $azul-escuro 40%, $azul-escuro 60%, $azul2 60%, $azul2 80%, $azul 80%);
         border-radius: 0 0 10px 10px;
         -webkit-animation: float 3s infinite;
         animation: float 3s infinite;
@@ -315,7 +324,7 @@ $roboto: 'Roboto' sans-serif;
         height: 40px;
         top: 10px;
         border-radius: 80%;
-        background: rgba(26, 25, 25, 0.3);
+        background: $shadow;
         -webkit-animation: shadow 3s infinite;
         animation: shadow 3s infinite;
     }
@@ -328,7 +337,7 @@ $roboto: 'Roboto' sans-serif;
     margin: 0 auto;
     width: 100px;
     height: 15px;
-    background: $grey;
+    background: $grey2;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -455,7 +464,7 @@ $roboto: 'Roboto' sans-serif;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
-    background: $grey;
+    background: $grey2;
     z-index: -1;
     -webkit-transform: rotate(25deg);
     -ms-transform: rotate(25deg);
@@ -776,85 +785,40 @@ $roboto: 'Roboto' sans-serif;
     }
 }
 
-@-webkit-keyframes lighting {
-    0% {
-        background-color: $lighting1;
-        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
-        box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
-    }
-    33% {
-        background-color: $lighting3;
-        -webkit-box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
-        box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
-    }
-    66% {
-        background-color: $lighting2;
-        -webkit-box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
-        box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
-    }
-    100% {
-        background-color: $lighting1;
-        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
-        box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
-    }
-}
-
 @keyframes lighting {
     0% {
-        background-color: $lighting1;
-        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
-        box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
+        background-color: $lighting2a;
+        box-shadow: 40px 0 0 $lighting2b, 80px 0 0 $lighting2a;
     }
     33% {
-        background-color: $lighting3;
-        -webkit-box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
-        box-shadow: 40px 0 0 $lighting1, 80px 0 0 $lighting2;
+        background-color: $lighting2a;
+        box-shadow: 40px 0 0 $lighting2a, 80px 0 0 $lighting2b;
     }
     66% {
-        background-color: $lighting2;
-        -webkit-box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
-        box-shadow: 40px 0 0 $lighting3, 80px 0 0 $lighting1;
+        background-color: $lighting2b;
+        box-shadow: 40px 0 0 $lighting2a, 80px 0 0 $lighting2a;
     }
     100% {
-        background-color: $lighting1;
-        -webkit-box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
-        box-shadow: 40px 0 0 $lighting2, 80px 0 0 $lighting3;
-    }
-}
-
-@-webkit-keyframes lighting2 {
-    0% {
-        background-color: $azul-escuro;
-        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
-        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
-    }
-    50% {
-        background-color: $azul;
-        -webkit-box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
-        box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
-    }
-    100% {
-        background-color: $azul-escuro;
-        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
-        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+        background-color: $lighting2a;
+        box-shadow: 40px 0 0 $lighting2b, 80px 0 0 $lighting2a;
     }
 }
 
 @keyframes lighting2 {
     0% {
-        background-color: $azul-escuro;
-        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
-        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+        background-color: $lighting1a;
+        -webkit-box-shadow: 40px 0 0 $lighting1b, 80px 0 0 $lighting1a;
+        box-shadow: 40px 0 0 $lighting1b, 80px 0 0 $lighting1a
     }
     50% {
-        background-color: $azul;
-        -webkit-box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
-        box-shadow: 40px 0 0 $azul-escuro, 80px 0 0 $azul;
+        background-color: $lighting1b;
+        -webkit-box-shadow: 40px 0 0 $lighting1a, 80px 0 0 $lighting1b;
+        box-shadow: 40px 0 0 $lighting1a, 80px 0 0 $lighting1b;
     }
     100% {
-        background-color: $azul-escuro;
-        -webkit-box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
-        box-shadow: 40px 0 0 $azul, 80px 0 0 $azul-escuro;
+        background-color: $lighting1a;
+        -webkit-box-shadow: 40px 0 0 $lighting1b, 80px 0 0 $lighting1a;
+        box-shadow: 40px 0 0 $lighting1b, 80px 0 0 $lighting1a
     }
 }
 

@@ -69,13 +69,7 @@ function EventModal(props) {
           Register Now!
         </Link>
        */}
-        <button
-          className='regNowBtn'
-          onClick={() =>
-            addToCart(currentInfo.title, props.cart, props.setCart)
-          }>
-          Add to Cart
-        </button>
+
         <span onClick={props.onClick}>
           <i className='fa fa-times'></i>
         </span>
@@ -140,6 +134,12 @@ function EventModal(props) {
           dangerouslySetInnerHTML={{ __html: currentTabInfo }}
         />
       </div>
+      <button
+        className='regNowBtn'
+        onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>
+        <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+        Add to Cart
+      </button>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
 import Admin from "./Admin";
 import Alert from "../Alert/alert";
 
