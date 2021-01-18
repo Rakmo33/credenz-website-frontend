@@ -9,9 +9,22 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 function Cart() {
 
 
-    function clearCart() {
-        localStorage.removeItem("Cart")
-        window.location.reload(false);
+    function clearCart(event) {
+      
+          localStorage.removeItem("Cart")
+          window.location.reload(false);  
+        
+    }
+
+    function clearEvent({event}) {
+
+      var comma = ","
+      var temp = comma.concat(event);
+      var newCart = localStorage.getItem("Cart").replace(temp, "")
+      console.log(newCart)
+      localStorage.setItem("Cart", newCart)
+  
+
     }
 
     let eventList = "";
@@ -21,10 +34,13 @@ function Cart() {
         <tr>
           <td>{count++}</td>
           <td>{x}</td>
+          <td><button onClick={clearEvent(x)}><i class="fa fa-trash"></i></button></td>
         </tr>
       );
-    }):["Please head over to the events page to add items to the cart"];
-
+    }):<tr>
+          <td></td>
+          <td>Please head over to the events page to add items to the cart</td>
+       </tr>
     if(1){
     return (
         <div>
@@ -36,16 +52,28 @@ function Cart() {
               <img src='/img/register.svg' alt='registration form' />
             </div>
             <div className='container'>
-                <table class='table table-striped'>
-                <thead>
-                    <tr>
-                    <th scope='col'></th>
-                    <th scope='col'>Events</th>
-                    </tr>
-                </thead>
-                <tbody>{eventList}</tbody>
-                </table>
-                <button onClick={clearCart}>Clear cart</button>
+                <div className='row'>
+                    <table class='table table-striped'>
+                    <thead>
+                        <tr>
+                        <th scope='col'></th>
+                        <th scope='col'>Events</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      {eventList}
+                      <tr>
+                        
+                      </tr>
+                      <tr style={{textAlign: "center"}}>
+                        <td></td>
+                        <td>
+                        <button onClick={clearCart} type="button" class="btn btn-outline-danger">Clear Cart</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                    </table>
+                </div>
             </div>
           </div>
           <Footer />

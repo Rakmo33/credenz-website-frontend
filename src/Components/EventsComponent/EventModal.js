@@ -5,7 +5,12 @@ import { HashLink as Link } from "react-router-hash-link";
 import "./eventmodal.css";
 
 function addToCart(event, cart, setCart, setTeamAllowed) {
-  if(!cart.includes(event)) {
+
+  var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
+
+  if(!cartArray.includes(event)) {
+
+    console.log("cart"+cart)
 
     const teamPresent = teams(event);
     setTeamAllowed(teamPresent)
@@ -14,13 +19,15 @@ function addToCart(event, cart, setCart, setTeamAllowed) {
       
     }
 
-    var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
+    //var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
     let tempArray = [...cartArray]
     tempArray.push(event)
     console.log("temp" + cartArray)
     setCart(tempArray);
     localStorage.setItem("Cart", tempArray);
-    // window.location.reload(false);
+    window.location.reload(false);
+  }else{
+    alert("Event already present in the cart!")
   }
 }
 

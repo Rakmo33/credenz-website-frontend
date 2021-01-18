@@ -22,7 +22,7 @@ function Animation() {
   const [cart, setCart] = useState([]);
   const [teamAllowed, setTeamAllowed] = useState([]);
 
-
+  console.log("cart"+cart)
 
   // console.log("Cart in animation : " + cart)
   /*
@@ -83,6 +83,7 @@ function Animation() {
 
   useEffect(() => {
     clearTimeout(roboTextTimer);
+
 
     setIsGrid(false);
 
