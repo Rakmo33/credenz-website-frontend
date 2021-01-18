@@ -180,7 +180,7 @@ const Profile = () => {
               </div>
 
               <div className='svg'>
-                <img src='img/award.svg' alt='svg' />
+                <img src={require('../../assests/img/arawd.svg')} alt='svg' />
               </div>
             </div>
           </div>
