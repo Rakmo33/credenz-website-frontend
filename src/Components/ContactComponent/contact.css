@@ -115,11 +115,13 @@
     margin-top: 20px;
     border-radius: 50% !important;
     /* border: 2px solid #1e90ff; */
-    border: 2px solid #3b94df;
+    border: 2px solid #36dca3;
     padding: 5px;
 }
 
-
+.glinks{
+    color: #36dca3 !important;
+}
 
 .address {
     color: #40497a;

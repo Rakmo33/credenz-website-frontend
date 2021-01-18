@@ -169,7 +169,7 @@ function Edit() {
                 <div className="form-group col-lg-12 mx-auto mb-0">
                   <button
                     type="submit"
-                    className="btn btn-primary btn-block py-2"
+                    className="btn stylebtn btn-block py-2"
                   >
                     <span className="font-weight-bold">
                       Create your account

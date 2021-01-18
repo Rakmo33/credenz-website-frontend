@@ -119,7 +119,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
                   <i className='fa fa-lock'></i>
                 </span>
                 <input
-                  type='text'
+                  type='password'
                   className='form-control'
                   name='password'
                   placeholder='Password'
