@@ -87,11 +87,11 @@ function Edit() {
         <div className="row py-5 mt-4 align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img
-              src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg"
+              src={require('../../assests/img/edit.svg')}
               alt=""
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h1>Reset your password</h1>
+            <h2 style={{color:'white'}}>Reset your password</h2>
           </div>
 
           <div className="col-md-7 col-lg-6 ml-auto">
