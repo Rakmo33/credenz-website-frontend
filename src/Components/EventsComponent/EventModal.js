@@ -4,8 +4,16 @@ import { HashLink as Link } from "react-router-hash-link";
 
 import "./eventmodal.css";
 
-function addToCart(event, cart, setCart) {
+function addToCart(event, cart, setCart, setTeamAllowed) {
   if(!cart.includes(event)) {
+
+    const teamPresent = teams(event);
+    setTeamAllowed(teamPresent)
+
+    if(teamPresent) {
+      
+    }
+
     var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
     let tempArray = [...cartArray]
     tempArray.push(event)
@@ -16,6 +24,51 @@ function addToCart(event, cart, setCart) {
   }
 }
 
+function teams(event) {
+
+  let teamAllowed = true;
+
+  switch(event) {
+    case "Clash"://1 member
+        teamAllowed=false;
+        break;
+    case "Reverse Coding"://1 member
+        teamAllowed=false;
+        break;
+    case "Enigma"://1 member
+        teamAllowed=false;
+        break;
+    case "Quiz"://1 member
+        teamAllowed=false;
+        break;
+    case "Cretronix"://1 member
+        teamAllowed=false;
+        break;
+    case "Bplan"://3 members
+        break;
+    case "Network Treasure Hunt"://1 member
+        teamAllowed=false;
+        break;
+    case "Paper Presentation"://3 members
+        break;
+    case "Datawiz"://3 members
+        break;
+    case "Webweaver"://3 members
+        break;
+    case "Wallstreet"://1 member
+        teamAllowed=false;
+        break;
+    case "Pixelate"://1 member
+        teamAllowed=false;
+        break;
+    default:
+      break;
+  }
+
+  return teamAllowed;
+
+}
+
 
 function EventModal(props) {
 
@@ -23,7 +76,6 @@ function EventModal(props) {
   let currentInfo = props.info;
   let currentTab = currentInfo.info1;
   let cls = `modalWrap ${props.cls}`;
-
 
   const [tab, setTab] = useState(1);
   const [currentTabInfo, setCurrentTabInfo] = useState(currentInfo.info1);
@@ -71,7 +123,7 @@ function EventModal(props) {
           Register Now!
         </Link>
        */}
-        <button className='regNowBtn' onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>Add to Cart</button>
+        <button className='regNowBtn' onClick={() => addToCart(currentInfo.title, props.cart, props.setCart, props.setTeamAllowed)}>Add to Cart</button>
         <span onClick={props.onClick}>
           <i className='fa fa-times'></i>
         </span>

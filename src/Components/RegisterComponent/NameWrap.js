@@ -45,6 +45,16 @@ const NameWrap = (props) => {
           teams[1]=true;
           teams[2]=true;
           break;
+      case "Webweaver"://3 members
+          teams[1]=true;
+          teams[2]=true;
+          break;
+      case "Wallstreet"://1 member
+          teamAllowed=false;
+          break;
+      case "Pixelate"://1 member
+          teamAllowed=false;
+          break;
       default:
         break;
     }
