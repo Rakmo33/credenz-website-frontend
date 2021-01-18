@@ -338,7 +338,7 @@ function Signup() {
                 <div className={spinner}>
                   <button
                     type='submit'
-                    className='btn btn-primary btn-block py-2'
+                    className='btn stylebtn btn-block py-2'
                     disabled={
                       !(
                         Object.keys(errors).length === 0 &&

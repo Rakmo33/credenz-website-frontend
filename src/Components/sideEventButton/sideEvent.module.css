@@ -93,16 +93,17 @@ a {
     transition: all 0.6s;
 } */
 
-.social ul li:hover a {
+.social ul li:hover  {
     color: white;
+    background-color: black;
 }
 
-.social ul li:hover i {
+/* .social ul li:hover i {
     color: var(--light-shades);
     background: white;
     transform: rotate(360deg);
     transition: all 0.6s;
-}
+} */
 
 .social ul li i {
     margin-left: 10px;

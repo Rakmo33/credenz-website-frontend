@@ -8,7 +8,7 @@
 }
 
 .our-team {
-    background: #bcbd9d;
+    background: linear-gradient(45deg, #36dca3, #3b94df);
     text-align: center;
     margin: 5px 10px;
     perspective: 1000px;
@@ -52,7 +52,7 @@
     width: 100%;
     height: auto;
     border-radius: 5px;
-    border: 5px solid rgb(49, 55, 58);
+    /* border: 5px solid rgb(49, 55, 58); */
 }
 
 .our-team .read-more {
