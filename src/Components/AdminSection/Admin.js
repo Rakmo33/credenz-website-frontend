@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
 import AdminEvent from "./event";
 import AdminUpdate from "./update";
 import classes from "./Admin.module.css";
-
 
 class Admin extends Component {
   constructor(props) {
@@ -56,13 +55,13 @@ class Admin extends Component {
 
   render() {
     return (
-      <Container>
+      <Container style={{ marginTop: "10vh" }}>
         <Row>
           <div>
             <h1>Admin Section</h1>
           </div>
         </Row>
-        
+
         <Row>
           {/*
           <Col>
@@ -91,15 +90,15 @@ class Admin extends Component {
           </Col>*/}
         </Row>
         <Row>
-        <div>
-              <button
-                type='submit'
-                className='btn btn-primary'
-                onClick={() => this.onSubmit("addUpdate")}>
-                Add Update
-              </button>
-              <div className={classes.formdiv}>{this.state.addupd}</div>
-            </div>
+          <div>
+            <button
+              type='submit'
+              className='btn btn-primary'
+              onClick={() => this.onSubmit("addUpdate")}>
+              Add Update
+            </button>
+            <div className={classes.formdiv}>{this.state.addupd}</div>
+          </div>
           {/*
           <Col>
             <div>

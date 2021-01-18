@@ -38,8 +38,8 @@
 .robo #head span.eari {
   height: 45px;
   width: 15px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
-  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbd4d4), to(#aaa3a3));
+  background-image: linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
   position: absolute;
   left: 45px;
   top: 30px;
@@ -48,8 +48,8 @@
 .robo #head span.eari span.earo {
   height: 24px;
   width: 10px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
-  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbd4d4), to(#aaa3a3));
+  background-image: linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
   position: absolute;
   left: -15px;
   top: 10px;
@@ -58,8 +58,8 @@
 .robo #head span.eari2 {
   height: 45px;
   width: 15px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
-  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbd4d4), to(#aaa3a3));
+  background-image: linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
   position: absolute;
   right: 45px;
   top: 30px;
@@ -68,8 +68,8 @@
 .robo #head span.eari2 span.earo2 {
   height: 24px;
   width: 10px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
-  background-image: linear-gradient(to bottom, #8d8989, #5a5858);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbd4d4), to(#aaa3a3));
+  background-image: linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
   position: absolute;
   right: -15px;
   top: 10px;
@@ -165,8 +165,7 @@
   top: -360px;
   width: 190px;
   height: 150px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#3cbaf5), to(#13719ce5));
-  background-image: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+  background-image: linear-gradient(45deg, #3cbaf5, #13719c);
   z-index: -4;
   border-radius: 15px 15px 15px 15px;
 }
@@ -218,8 +217,8 @@
   width: 140px;
   height: 200px;
   background: #e1edf3;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f6f7), to(#9da9af));
-  background-image: linear-gradient(to bottom, #f4f6f7, #9da9af);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbd4d4), to(#aaa3a3));
+  background-image: linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
   border-radius: 10px 10px 30px 30px;
   overflow: hidden;
   /*desenho barriga*/
@@ -234,7 +233,7 @@
   width: 180px;
   height: 10px;
   border-radius: 00%;
-  background: #259ff0;
+  background: #15ade5;
 }
 
 .robo-body .peito::before {
@@ -245,10 +244,10 @@
   width: 20px;
   height: 20px;
   border-radius: 100%;
-  background: #003948;
+  background: #02243b;
   z-index: 15;
-  -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
-  box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+  -webkit-box-shadow: 40px 0 0 #15ade5, 80px 0 0 #02243b;
+          box-shadow: 40px 0 0 #15ade5, 80px 0 0 #02243b;
   -webkit-animation: lighting2 1s infinite;
   animation: lighting2 1s infinite;
 }
@@ -263,9 +262,9 @@
   width: 100px;
   height: 90px;
   line-height: 45px;
-  background: #001e2c;
+  background: #252525;
   border-radius: 5px;
-  border: solid 5px #259ff0;
+  border: solid 5px #15ade5;
   text-align: center;
   color: #259ff0;
   font-size: 2em;
@@ -298,8 +297,7 @@
   width: 70px;
   height: 60px;
   margin: 0 auto;
-  background: red;
-  background: -webkit-linear-gradient(left, #001e2c 0%, #001e2c 20%, #003948 20%, #003948 40%, #005e7d 40%, #005e7d 60%, #003948 60%, #003948 80%, #001e2c 80%);
+  background: -webkit-linear-gradient(left, #005e7d 0%, #005e7d 20%, #003948 20%, #003948 40%, #001e2c 40%, #001e2c 60%, #003948 60%, #003948 80%, #005e7d 80%);
   border-radius: 0 0 10px 10px;
   -webkit-animation: float 3s infinite;
   animation: float 3s infinite;
@@ -312,7 +310,7 @@
   height: 40px;
   top: 10px;
   border-radius: 80%;
-  background: rgba(26, 25, 25, 0.3);
+  background: #131212;
   -webkit-animation: shadow 3s infinite;
   animation: shadow 3s infinite;
 }
@@ -324,8 +322,8 @@
   margin: 0 auto;
   width: 100px;
   height: 15px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
-  background: linear-gradient(to bottom, #8d8989, #5a5858);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbd4d4), to(#aaa3a3));
+  background: linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   z-index: -1;
@@ -353,8 +351,7 @@
   -webkit-transition-delay: 0.1s;
   transition-delay: 0.1s;
   border-radius: 5px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3cbaf5), to(#13719ce5));
-  background: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+  background: linear-gradient(45deg, #3cbaf5, #13719c);
   /*mao*/
 }
 
@@ -440,8 +437,8 @@
   height: 15px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  background: -webkit-gradient(linear, left top, left bottom, from(#8d8989), to(#5a5858));
-  background: linear-gradient(to bottom, #8d8989, #5a5858);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #dbd4d4), to(#aaa3a3));
+  background: linear-gradient(to bottom, #dbd4d4 50%, #aaa3a3);
   z-index: -1;
   -webkit-transform: rotate(25deg);
   transform: rotate(25deg);
@@ -462,8 +459,7 @@
   -webkit-transform-origin: 110% 50%;
   transform-origin: 110% 50%;
   border-radius: 5px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#3cbaf5), to(#13719ce5));
-  background: linear-gradient(to bottom, #3cbaf5, #13719ce5);
+  background: linear-gradient(45deg, #3cbaf5, #13719c);
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
   /*mao*/
@@ -766,83 +762,83 @@
 
 @-webkit-keyframes lighting {
   0% {
-    background-color: #60e660;
-    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
-    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    background-color: #15ade5;
+    -webkit-box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
+            box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
   }
   33% {
-    background-color: #2d612d;
-    -webkit-box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
-    box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+    background-color: #15ade5;
+    -webkit-box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15e5d9;
+            box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15e5d9;
   }
   66% {
-    background-color: #459945;
-    -webkit-box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
-    box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+    background-color: #15e5d9;
+    -webkit-box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15ade5;
+            box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15ade5;
   }
   100% {
-    background-color: #60e660;
-    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
-    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    background-color: #15ade5;
+    -webkit-box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
+            box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
   }
 }
 
 @keyframes lighting {
   0% {
-    background-color: #60e660;
-    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
-    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    background-color: #15ade5;
+    -webkit-box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
+            box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
   }
   33% {
-    background-color: #2d612d;
-    -webkit-box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
-    box-shadow: 40px 0 0 #60e660, 80px 0 0 #459945;
+    background-color: #15ade5;
+    -webkit-box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15e5d9;
+            box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15e5d9;
   }
   66% {
-    background-color: #459945;
-    -webkit-box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
-    box-shadow: 40px 0 0 #2d612d, 80px 0 0 #60e660;
+    background-color: #15e5d9;
+    -webkit-box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15ade5;
+            box-shadow: 40px 0 0 #15ade5, 80px 0 0 #15ade5;
   }
   100% {
-    background-color: #60e660;
-    -webkit-box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
-    box-shadow: 40px 0 0 #459945, 80px 0 0 #2d612d;
+    background-color: #15ade5;
+    -webkit-box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
+            box-shadow: 40px 0 0 #15e5d9, 80px 0 0 #15ade5;
   }
 }
 
 @-webkit-keyframes lighting2 {
   0% {
-    background-color: #001e2c;
-    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
-    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    background-color: #02243b;
+    -webkit-box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
+    box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
   }
   50% {
-    background-color: #005e7d;
-    -webkit-box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
-    box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
+    background-color: #016083;
+    -webkit-box-shadow: 40px 0 0 #02243b, 80px 0 0 #016083;
+    box-shadow: 40px 0 0 #02243b, 80px 0 0 #016083;
   }
   100% {
-    background-color: #001e2c;
-    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
-    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    background-color: #02243b;
+    -webkit-box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
+    box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
   }
 }
 
 @keyframes lighting2 {
   0% {
-    background-color: #001e2c;
-    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
-    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    background-color: #02243b;
+    -webkit-box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
+    box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
   }
   50% {
-    background-color: #005e7d;
-    -webkit-box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
-    box-shadow: 40px 0 0 #001e2c, 80px 0 0 #005e7d;
+    background-color: #016083;
+    -webkit-box-shadow: 40px 0 0 #02243b, 80px 0 0 #016083;
+    box-shadow: 40px 0 0 #02243b, 80px 0 0 #016083;
   }
   100% {
-    background-color: #001e2c;
-    -webkit-box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
-    box-shadow: 40px 0 0 #005e7d, 80px 0 0 #001e2c;
+    background-color: #02243b;
+    -webkit-box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
+    box-shadow: 40px 0 0 #016083, 80px 0 0 #02243b;
   }
 }
 

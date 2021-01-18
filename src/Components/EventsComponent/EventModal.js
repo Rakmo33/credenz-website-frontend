@@ -19,8 +19,8 @@ function addToCart(event, cart, setCart, setTeamAllowed) {
     tempArray.push(event)
     console.log("temp" + cartArray)
     setCart(tempArray);
-    localStorage.setItem("Cart", tempArray)
-    window.location.reload(false);
+    localStorage.setItem("Cart", tempArray);
+    // window.location.reload(false);
   }
 }
 
@@ -71,8 +71,6 @@ function teams(event) {
 
 
 function EventModal(props) {
-
-
   let currentInfo = props.info;
   let currentTab = currentInfo.info1;
   let cls = `modalWrap ${props.cls}`;
@@ -188,6 +186,12 @@ function EventModal(props) {
           dangerouslySetInnerHTML={{ __html: currentTabInfo }}
         />
       </div>
+      <button
+        className='regNowBtn'
+        onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>
+        <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+        Add to Cart
+      </button>
     </div>
   );
 }

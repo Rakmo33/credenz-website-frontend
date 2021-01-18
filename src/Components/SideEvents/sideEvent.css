@@ -65,7 +65,7 @@ div.event-card:hover img.side-event-logo {
     115deg,
     rgb(221, 159, 216) 0%,
     rgb(226, 211, 224) 35%,
-    rgb(223, 202, 222) 100%
+    rgb(1980223, 202, 222) 100%
   ); */
   background-color: rgb(47, 160, 175);
   /* color: rgb(59, 1, 54); */
@@ -159,5 +159,12 @@ div.event-card:hover img.side-event-logo {
     animation-duration: 0.2s;
     animation-fill-mode: backwards;
     animation-timing-function: linear;
+  }
+}
+
+@media only screen and (min-width:1680px)
+{
+  .event-card{
+    width:30%;
   }
 }

@@ -22,6 +22,24 @@ function Animation() {
   const [cart, setCart] = useState([]);
   const [teamAllowed, setTeamAllowed] = useState([]);
 
+
+
+  // console.log("Cart in animation : " + cart)
+  /*
+  function addToCart(event) {
+
+    console.log("add to cart called")
+
+    if(!cart.includes(event)) {
+
+      localStorage.setItem("Cart", cart)
+
+      console.log(event)
+      setCart([...cart, event]);
+      }
+  }
+*/
+
   let leftHand = {
     upper: "",
     lower: "",
@@ -224,7 +242,7 @@ function Animation() {
   };
 
   return (
-    <div>
+    <div className='eve-anim-wrap'>
       <div className={`eve-anim ${isGrid ? "" : "flex"}`}>
         {isGrid ? (
           <div className='events-grid'>

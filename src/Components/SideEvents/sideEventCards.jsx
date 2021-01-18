@@ -9,22 +9,22 @@ const SideEventCards = () => {
       {/* <h3 className="event-title title-1">Web Weaver</h3> */}
       <div className='row content' style={{ marginTop:"40px"}}>
    
-          <EventCard
-            logo={web1}
-            name='Space Cruiser'
-            info={
-              "There is an outbreak of a space ship combat. Enter into your almighty spaceship and destroy the attackers, to be the protector of the universe.The whole hopes of are on you cheif!!"
-            }
-          />
+            <EventCard
+              logo={web1}
+              name='Space Cruiser'
+              info={
+                "There is an outbreak of a space ship combat. Enter into your almighty spaceship and destroy the attackers, to be the protector of the universe.The whole hopes of are on you cheif!!"
+              }
+            />
+       
      
-     
-          <EventCard
-            logo={web2}
-            name='Castle Runner'
-            info={"Race against time and clear the exciting levels by reaching the castle. Collect coins and good mushrooms, beware of the big red enemy mushrooms. To win the game, clear all the levels!"}
-          />
-    
-        
+            <EventCard
+              logo={web2}
+              name='Castle Runner'
+              info={"Race against time and clear the exciting levels by reaching the castle. Collect coins and good mushrooms, beware of the big red enemy mushrooms. To win the game, clear all the levels!"}
+            />
+      
+                 
       </div>
     
     </div>

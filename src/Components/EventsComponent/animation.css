@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap");
+.eve-anim-wrap {
+  background: #242424;
+  background: radial-gradient(circle, #242424 10%, #121212 60%);
+  margin-top: -35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .eve-anim {
   min-height: 88vh;
   width: 80%;
@@ -61,25 +69,23 @@
 }
 
 .eve-anim .roboWrap .roboMsg {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#12398daf), to(#001e2caf));
-  background-image: linear-gradient(to bottom, #12398daf, #001e2caf);
-  background-color: #001e2c;
+  background-color: #131212;
   width: 70%;
   position: relative;
   top: 80px;
+  z-index: 5000;
   height: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: auto;
-  border: 5px solid #2fb3ff;
+  border: 5px solid #15ade5;
   border-radius: 2px;
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
   opacity: 0;
-  z-index: -50;
 }
 
 .eve-anim .roboWrap .roboMsg #RobotextWrap {
@@ -91,7 +97,7 @@
 }
 
 .eve-anim .roboWrap .roboMsg #Robotext {
-  color: #1ff00c;
+  color: #36dca3;
   font-weight: 500;
   height: 100%;
   overflow: hidden;
