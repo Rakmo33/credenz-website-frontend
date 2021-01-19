@@ -26,7 +26,7 @@
 }
 
 .profilepage .container .pro {
-  background-color: #0c3264;
+  background: linear-gradient(45deg, #36dca3, #3b94df);
   -webkit-box-shadow: 0 -2px 15px black;
           box-shadow: 0 -2px 15px black;
   border-radius: 20px;
@@ -115,7 +115,7 @@
 }
 
 .profilepage .container .rank {
-  background-color: #0c3264;
+  background: linear-gradient(45deg, #36dca3, #3b94df);
   -webkit-box-shadow: 0 -2px 15px black;
           box-shadow: 0 -2px 15px black;
   border-radius: 20px;
@@ -173,7 +173,7 @@
   display: grid;
   -ms-grid-rows: 1fr 3fr;
       grid-template-rows: 1fr 3fr;
-  background-color: #0c3264;
+      background: linear-gradient(45deg, #36dca3, #3b94df);
   -webkit-box-shadow: 0 -2px 15px black;
           box-shadow: 0 -2px 15px black;
   border-radius: 20px;
@@ -222,7 +222,8 @@
 
 .profilepage .container .eve table {
   margin: auto;
-  background-color: #0c3264;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 0.5rem;
 }
 
 .profilepage .container .eve table tbody {
