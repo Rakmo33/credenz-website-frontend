@@ -7,22 +7,22 @@ import { Row, Col, Container } from "react-bootstrap";
 const footer = () => {
   return (
     <div className={classes.footer}>
-      <Container
+      <Container fluid
         className={classes.footerContainer}
         style={{ textAlign: "center" }}>
         <Row>
-          <span className={"footer-font"}>
-            <Col> &#169; PICT IEEE Student Branch </Col>
-            
-             <Col>Developed with &#9829;
+          {/* <span className={"footer-font"}> */}
+          <Col style={{textAlign:'left', paddingLeft:'35px'}} className={"footer-font"}>    &#169; PICT IEEE Student Branch </Col>
+
+          <Col>Developed with &#9829;
             by PISB &nbsp;{" "}
             <Link to='/team'>
               <span style={{ color: "#6eabce" }}> Web Team</span>
             </Link> </Col>
-            <Col>
-            Policy &nbsp;&nbsp; Terms 
+          <Col style={{textAlign:'end', paddingRight:'35px'}} >
+            Policy &nbsp; Terms
             </Col>
-          </span>
+          {/* </span> */}
         </Row>
 
         <Row className={classes.hiddenRow}>

@@ -14,14 +14,14 @@
 }
 
 .footer .footerContainer {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 .footer .hiddenRow {
-    display: flex;
+    display: block;
 }
 
 .iconfb {
