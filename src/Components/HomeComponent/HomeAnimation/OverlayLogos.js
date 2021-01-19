@@ -1,63 +1,14 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-
-const importAll = r => r.keys().map(r)
-
-const images = importAll(require.context('./assets/', false, /\.(png|jpe?g|svg)$/));
+import React from 'react';
+import './OverlayLogos.css';
 
 function OverlayLogos() {
-
-  const [index, setIndex] = useState(0)
-  const [currIndex, setCurrIndex] = useState(0)
-  
-  useEffect(() => {
-    console.log(images)
-    let localIndex = index
-    const interval = setInterval(() => {
-      if (localIndex < images.length)
-        setIndex(localIndex++)
-    }, 750)
-    if (localIndex === images.length - 2)
-      clearInterval(interval)
-    return () => clearInterval(interval)
-  },[])
-
-
-  const incrementCurrIndex = () => setCurrIndex(currIndex + 1)
-
-  return (
-    <div style={{ 
-      display: 'flex',  
-      width: '100vw', 
-      height: '100vh',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: '2'
-    }}>
-      <AnimatePresence
-        // exitBeforeEnter={true}
-        onExitComplete={incrementCurrIndex}
-      >
-        {
-          index === currIndex &&
-          <motion.img
-            src={images[index]}
-            initial={{
-              transform: "scale(0,0) translateY(-50%)",
-            }}
-            transition={{
-              duration: 0.375
-            }}
-            animate={{
-              transform: "scale(0.75, 0.75) translateY(0%)"
-            }}
-            exit={{
-              transform: "scale(3,3)",
-              opacity: 0
-            }}
-          />
-        }
-      </AnimatePresence>
+  const clickHandler = () => {
+    console.log("Hovered on logo")
+    window.location.reload();
+  }
+  return(
+    <div>
+      <img className="sizing zoomInDown" onClick={()=>clickHandler()} src={require('../../../assests/img/credenz_logo.png')}/>
     </div>
   );
 }
