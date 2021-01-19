@@ -25,17 +25,19 @@
 }
 
 .iconfb {
-    background-color: lightcyan;
+     background: linear-gradient(45deg, #36dca3, #3b94df); 
     border-radius: 50%;
+    color: #fff;
     padding: 7px 15px;
     font-size: 25px;
     margin: 0 3px;
 }
 
 .iconlink {
-    background-color: lightcyan;
+    background: linear-gradient(45deg, #36dca3, #3b94df);
     border-radius: 50%;
     padding: 8px 0;
+    color: #fff;
     padding-right: 12px;
     font-size: 25px;
     margin: 0 3px;
@@ -43,8 +45,9 @@
 }
 
 .iconinsta {
-    background-color: lightcyan;
+    background: linear-gradient(45deg, #36dca3, #3b94df);
     border-radius: 50%;
+    color: #fff;
     padding: 8px 0;
     padding-right: 12px;
     font-size: 25px;
