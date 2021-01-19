@@ -16,8 +16,8 @@
 
 .select h3 {
     border: none!important;
-    border-bottom: 2px solid #add8e6 !important;
-    color: #add8e6 ! important;
+    border-bottom: 2px solid #41c3ee !important;
+    color: #41c3ee ! important;
 }
 
 @media(max-width:425px) {

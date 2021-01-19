@@ -91,7 +91,7 @@ function Edit() {
               alt=""
               className="img-fluid mb-3 d-none d-md-block"
             />
-            <h2 style={{color:'white'}}>Reset your password</h2>
+            <h2 style={{color:'white', textAlign:'center'}}>Reset your password</h2>
           </div>
 
           <div className="col-md-7 col-lg-6 ml-auto">
