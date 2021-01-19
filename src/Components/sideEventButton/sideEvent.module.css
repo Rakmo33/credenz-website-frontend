@@ -26,6 +26,31 @@ a {
     z-index: 100;
 }
 
+.eve{
+    background-image: url("eve.svg") ;
+    display: block;
+    margin: 10px;
+    height: 330px;
+    background-position: right ;
+    background-size: 26%;
+    /* image-rendering: ; */
+    width: 350px;
+    text-align: right;
+    padding: 10px;
+    /* border-radius: 0 50px 50px 0; */
+    transition: all 0.3s;
+    background-repeat: no-repeat;
+}
+
+.socialeve {
+    position: fixed;
+    top: 32vh;
+    width: 5px;
+    z-index: 100;
+    bottom: 45px;
+    right: 350px;
+}
+
 .social ul {
     padding: 0px;
     transform: translate(-270px, 0);
@@ -141,6 +166,10 @@ a {
         padding: 10px;
         border-radius: 0 50px 50px 0;
         transition: all 1.5s; */
+        display: none;
+    }
+
+    .socialeve{
         display: none;
     }
 }
