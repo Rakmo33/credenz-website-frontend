@@ -144,8 +144,9 @@ div.event-card:hover img.side-event-logo {
 }
 .play:hover {
   /* background-color: rgb(59, 1, 54); */
-  color: rgb(9, 73, 110);
-  background-color: rgb(251, 255, 255);
+  color: #fff;
+  box-shadow: 1px 1px 8px #36dac3;
+
 }
 
 .side-event-logo {
