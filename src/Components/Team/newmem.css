@@ -8,8 +8,7 @@
 }
 
 .our-team {
-    background: linear-gradient(45deg, #36dca3, #3b94df);
-    text-align: center;
+    background: linear-gradient(45deg, #09b7ec, #2c8bda);    text-align: center;
     margin: 5px 10px;
     perspective: 1000px;
     animation: flip 1.5s ease;
