@@ -97,7 +97,8 @@
 }
 
 .eve-anim .roboWrap .roboMsg #Robotext {
-  color: #36dca3;
+  color: #15ade5;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.644);
   font-weight: 500;
   height: 100%;
   overflow: hidden;
