@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-        <img src="./assests/img/f1.png"></img>
+          {/* <img src="./assests/img/f1.png"></img> */}
           <Main />
         </div>
       </BrowserRouter>
