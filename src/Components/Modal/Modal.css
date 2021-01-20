@@ -88,7 +88,8 @@
 
 .modal-login .btn:hover,
 .modal-login .btn:focus {
-    background: #179b81;
+    background: linear-gradient(45deg, #36dca3, #3b94df);
+    box-shadow: 1px 1px 8px #36dac3;
     color: white;
 }
 
@@ -100,6 +101,8 @@
 
 .modal-login .loginbtnn {
     font-size: 17px;
+    background: linear-gradient(45deg, #36dca3, #3b94df);
+    color: #fff !important;
 }
 
 .modal-login .modal-footer {

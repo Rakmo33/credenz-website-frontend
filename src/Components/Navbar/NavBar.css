@@ -57,8 +57,8 @@ samp:hover {
 
 .active-nav-tab {
     padding-bottom: 5px;
-    border-bottom: 3px solid #1e90ff;
-    color: #add8e6 !important;
+    border-bottom: 3px solid #41c3ee;
+    color: #41c3ee !important;
 }
 
 .logout-wrap {

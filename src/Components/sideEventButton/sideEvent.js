@@ -24,6 +24,7 @@ import classes from './sideEvent.module.css';
 
 const sideEvent = (props)=>{
   return(
+    <>
     <div>
         <nav className={classes.social}>
             <ul>
@@ -40,7 +41,14 @@ const sideEvent = (props)=>{
             <li><img src={require("./in.svg")} style={{width:"30%"}} /></li>
           </ul>
         </nav> */}
+       
     </div>
+    <div>
+          <ul style={{float:'right'}} className={classes.socialeve}>
+            <li><a className={classes.eve} href={require('../EventsComponent/EventsComponent')}></a></li>
+          </ul>
+    </div>
+</>
   );
 }
 

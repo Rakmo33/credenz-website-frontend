@@ -99,12 +99,12 @@ const aboutus = (props) => {
           </Col>
         </Row>
       </Container>
-      {/* <Container className={classes.AboutusContainer} >
+      <Container className={classes.AboutusContainer} >
         <div className={sponsorclass.sponsor}>
           {" "}
           <Sponsors />
         </div>
-      </Container> */}
+      </Container>
       </div>
       <SideEventButton />
       <Footer />

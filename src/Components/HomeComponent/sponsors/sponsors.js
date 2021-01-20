@@ -83,11 +83,11 @@ const sponsors = (props) => {
         <h2 style={{ textAlign: "center", color: "#dadada", marginBottom:'25px' }}>Sponsors</h2>
         <Row style={{textAlign:'center', justifyContent:'center', marginTop:'10px'}}>
           <Col md={3} sm={4}  >
-            <Sponsor url={"aarnell.png"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
+            <Sponsor url={"Logo 2.png"}></Sponsor>
+            <h4 style={{marginTop:'7px', color:"white"}}>Educational Partner</h4>
           </Col>
           </Row>
-        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
+        {/* <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
           <Col md={3} sm={4}>
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
@@ -104,8 +104,8 @@ const sponsors = (props) => {
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-        </Row>
-        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
+        </Row> */}
+        {/* <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
           <Col md={3} sm={4}>
             <Sponsor url={"c3.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
@@ -122,7 +122,12 @@ const sponsors = (props) => {
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
-        </Row>
+        </Row> */}
+
+
+
+
+
         {/* <Row>
           <Col md={2} sm={4}><Sponsor url={'ims2.jpg'}>nairobi</Sponsor></Col>
           <Col md={2} sm={4}><Sponsor url={'interview3.jpg'}>tokyo</Sponsor></Col>
