@@ -6,12 +6,12 @@
 *
 */
 
-.stylebtn{
+.stylebtn {
     background: linear-gradient(45deg, #36dca3, #3b94df);
     color: #ffffff !important;
 }
 
-.stylebtn:hover{
+.stylebtn:hover {
     box-shadow: 1px 1px 8px #36dac3;
 }
 
@@ -23,6 +23,7 @@
 
 .forgotPasswordWrap {
     min-height: 94vh;
+    display: flex;
 }
 
 .signupWrap {
