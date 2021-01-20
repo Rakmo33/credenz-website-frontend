@@ -121,6 +121,12 @@ a {
 .social ul li:hover  {
     color: white;
     background-color: black;
+    box-shadow: 1px 1px 8px #36dac3;
+}
+
+
+.social :hover{
+    /* box-shadow: 1px 1px 8px #36dac3; */
 }
 
 /* .social ul li:hover i {

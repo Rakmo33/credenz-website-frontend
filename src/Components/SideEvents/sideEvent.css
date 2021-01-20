@@ -20,7 +20,7 @@
   transition: 0.8s;
   background-color: #252525;
   border-top-left-radius: 2rem ;
-
+  z-index: 100000000;
 }
 
 div.event-card:hover .card-title {
@@ -134,7 +134,7 @@ div.event-card:hover img.side-event-logo {
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 1);
   /* color: rgb(59, 1, 54); */
   color: white;
-  background: linear-gradient(45deg, #36dca3 , #3b94df);
+  background: linear-gradient(45deg, #09b7ec, #2c8bda);
   width: 120px;
   height: 40px;
   align-items: center;
@@ -167,8 +167,8 @@ div.event-card:hover img.side-event-logo {
     animation-duration: 0.2s;
     animation-fill-mode: backwards;
     animation-timing-function: linear;
-    background: linear-gradient(45deg, #36dca3, #3b94df);
-  }
+    background: linear-gradient(45deg, #09b7ec, #2c8bda);
+    }
 }
 
 @media only screen and (min-width:1680px)
