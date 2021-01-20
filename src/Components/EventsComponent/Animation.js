@@ -20,25 +20,9 @@ function Animation() {
   const [isIdle, setIsIdle] = useState(true);
   const [index, setIndex] = useState(0);
   const [cart, setCart] = useState([]);
-  const [teamAllowed, setTeamAllowed] = useState([]);
+  //const [teamAllowed, setTeamAllowed] = useState([]);
+  const [eventReg, setEventReg] = useState([])//single person team registered for respective event in cart
 
-  console.log("cart"+cart)
-
-  // console.log("Cart in animation : " + cart)
-  /*
-  function addToCart(event) {
-
-    console.log("add to cart called")
-
-    if(!cart.includes(event)) {
-
-      localStorage.setItem("Cart", cart)
-
-      console.log(event)
-      setCart([...cart, event]);
-      }
-  }
-*/
 
   let leftHand = {
     upper: "",
@@ -280,8 +264,8 @@ function Animation() {
             cls={modalCls}
             cart={cart}
             setCart={setCart}
-            teamAllowed={teamAllowed}
-            setTeamAllowed={setTeamAllowed}
+            eventReg={eventReg}
+            setEventReg={setEventReg}
             onClick={closeModalHandler}></EventModal>
         )}
         <div className='roboWrap '>

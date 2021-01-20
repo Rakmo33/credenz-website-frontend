@@ -18,6 +18,7 @@ import Admin from "../Components/AdminSection/adminAuth";
 import VerifyPhone from "../Components/SignupComponent/verifyPhone";
 import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
 import Footer from '../Components/Footer/footer';
+import NewReg from '../Components/RegisterComponent/NewReg';
 import Cart from '../Components/RegisterComponent/Cart';
 import './maincomponent.module.css';
 import AOS from "aos";
@@ -89,6 +90,10 @@ class Main extends Component {
       return <Cart/>;
     }
 
+    const NewRegPage = () => {
+      return <NewReg/>;
+    }
+
     return (
       <div>
         <NavBar />
@@ -108,6 +113,7 @@ class Main extends Component {
           <Route path='/aboutus' component={AboutUsPage}/>
           <Route path='/verifyphone' component={VerifyPhonePage} />
           <Route path='/cart' component={CartPage} />
+          <Route path='/newreg/:event' component={NewRegPage}/>
           <Redirect to='/home' />
         </Switch>
         {/* <Footer /> */}

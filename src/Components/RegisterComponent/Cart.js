@@ -1,30 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
-import axios from "axios";
+//import axios from "axios";
 import Nav from "../Navbar/Navbar";
 import LoginFirst from "../LoginFirst/LoginFirst";
 
 function Cart() {
 
+    
 
     function clearCart(event) {
       
           localStorage.removeItem("Cart")
+          localStorage.removeItem("Register")
           window.location.reload(false);  
         
     }
 
-    function clearEvent({event}) {
-
+    function clearEvent(event) {
+      
       var comma = ","
       var temp = comma.concat(event);
-      var newCart = localStorage.getItem("Cart").replace(temp, "")
-      console.log(newCart)
+      var oldCart = localStorage.getItem("Cart")
+      var newCart = oldCart.replace(temp, "")
+      temp = event.concat(",");
+      newCart = newCart.replace(temp, "")
+      //console.log(newCart)
       localStorage.setItem("Cart", newCart)
-  
-
+      window.location.reload(false);  
     }
 
     let eventList = "";
@@ -34,12 +38,16 @@ function Cart() {
         <tr>
           <td>{count++}</td>
           <td>{x}</td>
-          <td><button onClick={clearEvent(x)}><i class="fa fa-trash"></i></button></td>
+          <td>
+            <button onClick={()=>clearEvent(x)} type="button" class="btn btn-outline-primary"><i class="fa fa-trash"></i></button>
+          </td>
+          
         </tr>
       );
     }):<tr>
           <td></td>
           <td>Please head over to the events page to add items to the cart</td>
+          <td></td>
        </tr>
     if(1){
     return (
@@ -53,11 +61,12 @@ function Cart() {
             </div>
             <div className='container'>
                 <div className='row'>
+                    <div className='col'>
                     <table class='table table-striped'>
                     <thead>
                         <tr>
-                        <th scope='col'></th>
-                        <th scope='col'>Events</th>
+                          <th scope='col'></th>
+                          <th scope='col'>Events</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,14 +74,22 @@ function Cart() {
                       <tr>
                         
                       </tr>
-                      <tr style={{textAlign: "center"}}>
+                      <tr>
+                        <td></td>
+                      <td><button type="button" class="btn btn-outline-info">Proceed to pay</button></td>
+                      <td></td>
+                      </tr>
+                      <tr>
                         <td></td>
                         <td>
                         <button onClick={clearCart} type="button" class="btn btn-outline-danger">Clear Cart</button>
                         </td>
+                        <td></td>
                       </tr>
                     </tbody>
                     </table>
+                    </div>
+
                 </div>
             </div>
           </div>
