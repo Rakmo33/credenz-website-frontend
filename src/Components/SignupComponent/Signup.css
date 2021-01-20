@@ -12,6 +12,10 @@
     flex-direction: column;
 }
 
+.forgotPasswordWrap {
+    min-height: 94vh;
+}
+
 .signupWrap {
     min-height: 95vh;
 }
