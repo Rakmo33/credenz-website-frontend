@@ -17,28 +17,12 @@ function Animation() {
   const [label, setLabel] = useState("");
   const [lighting, setLighting] = useState("");
   const [logoScreen, setLogoScreen] = useState(true);
-
   const [isIdle, setIsIdle] = useState(true);
-
   const [index, setIndex] = useState(0);
-
   const [cart, setCart] = useState([]);
+  //const [teamAllowed, setTeamAllowed] = useState([]);
+  const [eventReg, setEventReg] = useState([])//single person team registered for respective event in cart
 
-  // console.log("Cart in animation : " + cart)
-  /*
-  function addToCart(event) {
-
-    console.log("add to cart called")
-
-    if(!cart.includes(event)) {
-
-      localStorage.setItem("Cart", cart)
-
-      console.log(event)
-      setCart([...cart, event]);
-      }
-  }
-*/
 
   let leftHand = {
     upper: "",
@@ -83,6 +67,7 @@ function Animation() {
 
   useEffect(() => {
     clearTimeout(roboTextTimer);
+
 
     setIsGrid(false);
 
@@ -279,6 +264,8 @@ function Animation() {
             cls={modalCls}
             cart={cart}
             setCart={setCart}
+            eventReg={eventReg}
+            setEventReg={setEventReg}
             onClick={closeModalHandler}></EventModal>
         )}
         <div className='roboWrap '>

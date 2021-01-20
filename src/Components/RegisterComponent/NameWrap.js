@@ -1,68 +1,89 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Name from "./Name";
 import Radio from "./Radio";
+import axios from "axios"
+import jwt_decode from "jwt-decode";
+import jwt from "jwt-decode";
+import {Link} from 'react-router-dom';
 
 const NameWrap = (props) => {
   // console.log(props.formData);
 
+  let accessToken = ''
+
+  if(localStorage.getItem("user")){
+  const token = localStorage.getItem("user");
+  const accessToken = JSON.parse(token).accessToken;
+  }
+
   let checked = [false, false];
-  let teams = [true, false, false, false]
   let teamAllowed = true;
+  var regArray = localStorage.getItem("Register")? localStorage.getItem("Register").split(","):[];
+  var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
+  let user = ''
 
+    if (localStorage.getItem("user")) {
+      user = jwt(localStorage.getItem("user"));
+    }
+    
+    
+    function storeReg() {
 
-  //const [teamAllowed, setteamAllowed] = useState(true)
+      if(!cartArray.includes(props.formData.event)) {
+    
+        let user = ''
+        if (localStorage.getItem("user")) {
+          user = jwt(localStorage.getItem("user"));
+        }
+    
+        let tempArray = [...cartArray]
+        tempArray.push(props.formData.event)
+        //console.log("temp" + cartArray)
+        //setCart(tempArray);
+        localStorage.setItem("Cart", tempArray);
 
-  if (props.isVisible) {
+        console.log("Store reg")
+        let tempRegArray = [...regArray]
+        console.log(props.formData)
+        tempRegArray.push(props.formData)
+        console.log(tempRegArray)
+        localStorage.setItem("Register", tempRegArray);
+        alert("Event team saved.")
+        window.location.reload(false);
+      }else{
+        alert("Event already present in the cart!")
+      }
 
-    switch(props.event) {
-      case "Clash"://1 member
-          teamAllowed=false;
-          break;
-      case "Reverse Coding"://1 member
-          teamAllowed=false;
-          break;
-      case "Enigma"://1 member
-          teamAllowed=false;
-          break;
-      case "Quiz"://1 member
-          teamAllowed=false;
-          break;
-      case "Cretronix"://1 member
-          teamAllowed=false;
-          break;
-      case "Bplan"://3 members
-          teams[1]=true;
-          teams[2]=true;
-          break;
-      case "Network Treasure Hunt"://1 member
-          teamAllowed=false;
-          break;
-      case "Paper Presentation"://3 members
-          teams[1]=true;
-          teams[2]=true;
-          break;
-      case "Datawiz"://3 members
-          teams[1]=true;
-          teams[2]=true;
-          break;
-      default:
-        break;
     }
 
-    switch (props.formData.team) {
-      case "single":
-        checked[0] = true;
-        break;
-      case "team":
-        checked[1] = true;
-        break;
-      default:
-        break;
+
+  const [users, setUsers] = useState('')
+    let userList = '';
+
+    useEffect(() => {
+      axios({
+        method: "get",
+        url: "http://credenzwebsite.herokuapp.com/allusers",
+        headers: { authorization: `Bearer ${accessToken}` },
+      })
+        .then((response) => {
+          //console.log("axios" + response.data)
+          setUsers(response.data)
+          //alert(JSON.stringify(response.data))
+        })
+
+    }, [])
+
+
+    if(users) {
+      userList = users.map((x)=>{
+        return(
+          <option>{x.username}</option>
+        );
+      })
     }
 
       if(props.formData.team==="single") {
-
-        //console.log(props.formData)
 
         return(
           <>
@@ -88,10 +109,18 @@ const NameWrap = (props) => {
             <div style={{margin: 30}}>
             <Name
                 index={""}
-                id='Name1'
+                id='name1'
                 value={props.formData.name1}
                 changeHandler={props.setFormData}
                 name='name1'></Name>
+            <div style={{textAlign: "center"}}>
+            <button onClick={() => storeReg()} type="button" class="btn btn-outline-info">Save</button>
+            <Link to="/events">
+              <button type="button" class="btn btn-outline-info">
+                Back to events
+              </button>
+            </Link>
+            </div>
             </div>
           </div>
           </>
@@ -107,6 +136,8 @@ const NameWrap = (props) => {
               {console.log(props.formData)}
     
               <p id='choose-events'>Enter Your Usernames</p>
+
+              <div>
               <Name
                 index={""}
                 id='teamName'
@@ -114,41 +145,88 @@ const NameWrap = (props) => {
                 value={props.formData.teamName}
                 changeHandler={props.setFormData}
                 name='teamName'></Name>
-              {teams[0] && <Name
+                 
+                 {/*<Name
+                index={"1"}
+                id='Name1'
+                team={props.formData.team}
+                value={props.formData.name1}
+                changeHandler={props.setFormData}
+                 name='name1'></Name>*/}
+
+                <label htmlFor='Name1'>Participant 1</label>
+                  <select
+                      id='name1'
+                      className='form-control custom-select'
+                      name='name1'
+                      value={props.formData.name1}
+                      onChange={props.setFormData}>
+                      <option selected>Username 1</option>
+                      {userList}
+                  </select>  
+
+                <label htmlFor='Name2'>Participant 2</label>
+                  <select
+                      id='name2'
+                      className='form-control custom-select'
+                      name='name2'
+                      value={props.formData.name2}
+                      onChange={props.setFormData}>
+                      <option selected>Username 2</option>
+                      {userList}
+                  </select>
+
+                <label htmlFor='Name3'>Participant 3</label>
+                  <select
+                      id='name3'
+                      className='form-control custom-select'
+                      name='name3'
+                      value={props.formData.name3}
+                      onChange={props.setFormData}>
+                      <option selected>Username 3</option>
+                      {userList}
+                  </select>  
+                  
+                  <div style={{textAlign: "center", marginTop: 10}}>
+                    <button onClick={() => storeReg()} type="button" class="btn btn-outline-info">
+                      Save
+                    </button>
+                    <Link to="/events">
+                    <button type="button" class="btn btn-outline-info">
+                      Back to events
+                    </button>
+                    </Link>
+                  </div>
+             
+              </div>
+              
+                
+            {/*   <Name
                 index={"1*"}
                 id='Name1'
                 team={props.formData.team}
                 value={props.formData.name1}
                 changeHandler={props.setFormData}
-                name='name1'></Name>}
-              {teams[1] && <Name
+                name='name1'></Name>
+               <Name
                 index={2}
                 id='Name2'
                 team={props.formData.team}
                 value={props.formData.name2}
                 changeHandler={props.setFormData}
-                name='name2'></Name>}
-              {teams[2] && <Name
+                name='name2'></Name>
+               <Name
                 index={3}
                 id='Name3'
                 value={props.formData.name3}
                 team={props.formData.team}
                 changeHandler={props.setFormData}
-                name='name3'></Name>}
-              {teams[3] &&<Name
-                index={4}
-                id='Name4'
-                value={props.formData.name4}
-                team={props.formData.team}
-                changeHandler={props.setFormData}
-                name='name4'></Name>}
+            name='name3'></Name>*/}
             </div>
           </div>
         );
       }
-      
-  } 
-  else return <></>;
+      else return <></>;
 };
 
 export default NameWrap;

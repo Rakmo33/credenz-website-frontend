@@ -1,22 +1,93 @@
 /* eslint-disable no-lone-blocks */
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
+import jwt_decode from "jwt-decode";
+import jwt from "jwt-decode";
 
 import "./eventmodal.css";
 
-function addToCart(event, cart, setCart) {
-  if (!cart.includes(event)) {
-    var cartArray = localStorage.getItem("Cart")
-      ? localStorage.getItem("Cart").split(" ")
-      : [];
-    let tempArray = [...cartArray];
-    tempArray.push(event);
-    console.log("temp" + cartArray);
+function addToCart(event, cart, setCart,eventReg, setEventReg) {
+
+  var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
+  var regArray = localStorage.getItem("Register")? localStorage.getItem("Register").split(","):[];
+
+  if(!cartArray.includes(event)) {
+    
+    
+    const teamPresent = teams(event);
+
+    let user = ''
+    if (localStorage.getItem("user")) {
+      user = jwt(localStorage.getItem("user"));
+    }
+
+    if(teamPresent) {    
+      setEventReg("team")
+    }else {
+      let tempRegArray = [...regArray]
+      tempRegArray.push(localStorage.getItem("user") ? JSON.stringify(user["username"]).replace(/"/g, ""):"")
+      setEventReg(tempRegArray)
+      localStorage.setItem("Register", tempRegArray);
+    }
+
+    //console.log(eventReg)
+    //var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
+    let tempArray = [...cartArray]
+    tempArray.push(event)
+    //console.log("temp" + cartArray)
     setCart(tempArray);
     localStorage.setItem("Cart", tempArray);
-    // window.location.reload(false);
+    window.location.reload(false);
+  }else{
+    alert("Event already present in the cart!")
   }
 }
+
+function teams(event) {
+
+  let teamAllowed = true;
+
+  switch(event) {
+    case "Clash"://1 member
+        teamAllowed=false;
+        break;
+    case "Reverse Coding"://1 member
+        teamAllowed=false;
+        break;
+    case "Enigma"://1 member
+        teamAllowed=false;
+        break;
+    case "Quiz"://1 member
+        teamAllowed=false;
+        break;
+    case "Cretronix"://1 member
+        teamAllowed=false;
+        break;
+    case "Bplan"://3 members
+        break;
+    case "Network Treasure Hunt"://1 member
+        teamAllowed=false;
+        break;
+    case "Paper Presentation"://3 members
+        break;
+    case "Datawiz"://3 members
+        break;
+    case "Webweaver"://3 members
+        break;
+    case "Wallstreet"://1 member
+        teamAllowed=false;
+        break;
+    case "Pixelate"://1 member
+        teamAllowed=false;
+        break;
+    default:
+      break;
+  }
+
+  return teamAllowed;
+
+}
+
 
 function EventModal(props) {
   let currentInfo = props.info;
@@ -69,7 +140,20 @@ function EventModal(props) {
           Register Now!
         </Link>
        */}
-
+       {
+          teams(currentInfo.title)===false ? 
+          <button className='regNowBtn' 
+          onClick={() => addToCart(currentInfo.title, props.cart, props.setCart,props.eventReg, props.setEventReg)}>
+            Add to Cart
+          </button> 
+          :
+          <Link to={`/newreg/${currentInfo.title}`}>
+            <button className='regNowBtn'>
+              Add to Cart
+            </button>
+          </Link> 
+       }
+        
         <span onClick={props.onClick}>
           <i className='fa fa-times'></i>
         </span>
@@ -134,12 +218,27 @@ function EventModal(props) {
           dangerouslySetInnerHTML={{ __html: currentTabInfo }}
         />
       </div>
-      <button
+      {/*<button
         className='regNowBtn'
         onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>
         <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
         Add to Cart
-      </button>
+      </button>*/}
+       {
+          teams(currentInfo.title)===false ? 
+          <button className='regNowBtn' 
+          onClick={() => addToCart(currentInfo.title, props.cart, props.setCart,props.eventReg, props.setEventReg)}>
+             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+            Add to Cart
+          </button> 
+          :
+          <Link to={`/newreg/${currentInfo.title}`}>
+            <button className='regNowBtn'>
+            <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+              Add to Cart
+            </button>
+          </Link> 
+       }
     </div>
   );
 }

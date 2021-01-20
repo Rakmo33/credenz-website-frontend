@@ -223,12 +223,12 @@ function NavBar() {
           </ul>
           <ul className='navbar-nav ml-auto second  pull-right'>
             <li>
-              <div>
+              <Link to="/cart">
                 <div>
                   <i className='fa fa-lg fa-shopping-cart' title='Cart' value={5}></i>
                   <span className="badge">{cartArray.length}</span>
                 </div>
-              </div>
+              </Link>
             </li>
             <li>
               <div onClick={handleShow1}>
