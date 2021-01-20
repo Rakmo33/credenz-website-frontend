@@ -2,6 +2,18 @@
     color: teal;
 }
 
+.upmodal{
+    /* background: linear-gradient(45deg, #09b7ec , #2c8bda ); */
+    background: rgb(9,183,236);
+    background: linear-gradient(45deg, rgba(9,183,236,1) 50%, rgba(44,139,218,1) 80%);
+}
+
+.upmodal li{
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+}
+
 .modal-title {
     text-align: center;
     margin-left: 35%;
