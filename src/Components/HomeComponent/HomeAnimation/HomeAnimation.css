@@ -93,3 +93,7 @@
     left: 0;
     z-index: 2;
 }
+.anim-iframe{
+    width: 100vw;
+    object-fit: contain;
+}

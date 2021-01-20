@@ -8,7 +8,7 @@ function OverlayLogos() {
   }
   return(
     <div>
-      <img className="sizing zoomInDown" onClick={()=>clickHandler()} src={require('../../../assests/img/credenz_logo.png')}/>
+      <img className="sizing zoomInDown" onClick={()=>clickHandler()} src={require('../../../assests/img/c-live.png')}/>
     </div>
   );
 }

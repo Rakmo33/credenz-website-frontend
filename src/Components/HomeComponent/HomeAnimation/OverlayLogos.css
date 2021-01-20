@@ -40,14 +40,14 @@
     } 
 
 .zoomInDown:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
     cursor: pointer;
     } 
 
 .sizing{
-    width: 60%;
+    width: 50%;
     object-fit: contain;
     position: absolute;
-    top: 15%;
-    left: 18%;
+    top: 17%;
+    left: 23%;
 }
