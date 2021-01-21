@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classes from './sideEvent.module.css';
 // import AddIcon from '@material-ui/icons/Add';
 //import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
@@ -45,7 +46,7 @@ const sideEvent = (props)=>{
     </div>
     <div>
           <ul style={{float:'right'}} className={classes.socialeve}>
-            <li><a className={classes.eve} href={require('../EventsComponent/EventsComponent')}></a></li>
+            <li><Link className={classes.eve} to='/events' ></Link></li>
           </ul>
     </div>
 </>

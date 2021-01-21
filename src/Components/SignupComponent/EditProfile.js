@@ -83,7 +83,7 @@ function Edit() {
 
   return (
     <>
-      <div className="container mt-5">
+      <div style={{minHeight:'90vh', marginTop:'15vh'}} className="container">
         <div className="row py-5 mt-4 align-items-center">
           <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
             <img

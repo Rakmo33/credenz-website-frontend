@@ -21,9 +21,9 @@ const footer = () => {
               <span style={{ color: "#6eabce" }}> Web Team</span>
             </Link> </Col>
           <Col lg={4} className="rightside" >
-            <a href='#'>Policy</a> &nbsp; 
-            <a href='#'>Terms</a> &nbsp; 
-            <a href="#">Refund </a>
+          <Link to='privacy' >Policy</Link>
+            &nbsp;  <Link to='terms' > Terms </Link>
+            &nbsp; <Link to='refund' > Refund </Link> 
             </Col>
           {/* </span> */}
         </Row>

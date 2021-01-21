@@ -57,7 +57,7 @@ function Cart() {
           <div className='regPage'>
             <div className='regPageVector'>
               <h1 className='reg-head'>Your cart</h1>
-              <img src='/img/register.svg' alt='registration form' />
+              <img src={require('../../assests/img/register.svg')} alt='registration form' />
             </div>
             <div className='container'>
                 <div className='row'>
