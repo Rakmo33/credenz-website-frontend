@@ -47,6 +47,7 @@
       grid-template-rows: repeat(3, 120px);
   padding: 50px 0;
   grid-gap: 40px;
+  z-index: 1000;
 }
 
 .eve-anim .roboWrap {
