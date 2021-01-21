@@ -6,11 +6,9 @@ const privacy =()=>{
     let url="https://credenz.in/";
     return(<div style={{color:'white', marginTop:'10vh'}}>
         <Container>
-       <p><strong>Disclaimer: </strong> Please read and edit the Privacy Policy given below as per your /website’s requirement. Don’t use or apply these as is basis on your website. </p>
 
         <h2>Privacy Policy</h2>
 
-        <h4>Your website may use the Privacy Policy given below:</h4>
         <p>The terms "We" / "Us" / "Our"/”Company” individually and collectively refer to PICT IEEE Student Branch and the terms "You" /"Your" / "Yourself" refer to the users. </p>
         <p>This Privacy Policy is an electronic record in the form of an electronic contract formed under the information Technology Act, 2000 and the rules made thereunder and the amended provisions pertaining to electronic documents / records in various statutes as amended by the information Technology Act, 2000. This Privacy Policy does not require any physical, electronic or digital signature.</p>
         <p>This Privacy Policy is a legally binding document between you and PICT IEEE Student Branch (both terms defined below). The terms of this Privacy Policy will be effective upon your acceptance of the same (directly or indirectly in electronic form, by clicking on the I accept tab or by use of the website or by other means) and will govern the relationship between you and PICT IEEE Student Branch for your use of the website <strong> “Website” </strong> (defined below).</p>

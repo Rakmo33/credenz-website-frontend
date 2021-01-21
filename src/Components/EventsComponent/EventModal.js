@@ -140,7 +140,7 @@ function EventModal(props) {
           Register Now!
         </Link>
        */}
-       {
+       {/* {
           teams(currentInfo.title)===false ? 
           <button className='regNowBtn' 
           onClick={() => addToCart(currentInfo.title, props.cart, props.setCart,props.eventReg, props.setEventReg)}>
@@ -152,7 +152,7 @@ function EventModal(props) {
               Add to Cart
             </button>
           </Link> 
-       }
+       } */}
         
         <span onClick={props.onClick}>
           <i className='fa fa-times'></i>
@@ -232,7 +232,7 @@ function EventModal(props) {
             Add to Cart
           </button> 
           :
-          <Link to={`/newreg/${currentInfo.title}`}>
+          <Link  style={{textAlign:'center'}} to={`/newreg/${currentInfo.title}`}>
             <button className='regNowBtn'>
             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
               Add to Cart

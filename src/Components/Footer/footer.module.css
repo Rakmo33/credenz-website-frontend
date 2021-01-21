@@ -12,6 +12,10 @@
     padding-right: 35px;
 }
 
+#refundsize{
+    height: 100vh;
+}
+
 .footer {
     justify-content: center;
     align-items: center;
@@ -83,6 +87,7 @@
     footer-font {
         font-size: 10px;
     }
+
 }
 
 @media (max-width: 600px) {

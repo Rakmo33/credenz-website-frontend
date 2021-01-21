@@ -6,11 +6,9 @@ const terms =()=>{
     let url='https://credenz.in';
     return(<div style={{color:'white', marginTop:'10vh'}}>
         <Container >
-        <p><strong>Disclaimer: </strong> Please read and edit the TERMS AND CONDITIONS Policy given below as per your /website’s requirement. Don’t use or apply these as is basis on your website.  </p>
 
             <h2>TERMS AND CONDITIONS</h2>
 
-            <h4>Your website may use the Terms and Conditions given below.</h4>
             <p>The terms "We" / "Us" / "Our"/”Company” individually and collectively refer to PICT IEEE Student Branch and the terms "Visitor” ”User” refer to the users. </p>
             <p>This page states the Terms and Conditions under which you (Visitor) may visit this website (“Website”). Please read this page carefully. If you do not accept the Terms and Conditions stated here, we would request you to exit this site. The business, any of its business divisions and / or its subsidiaries, associate companies or subsidiaries to subsidiaries or such other investment companies (in India or abroad) reserve their respective rights to revise these Terms and Conditions at any time by updating this posting. You should visit this page periodically to re-appraise yourself of the Terms and Conditions, because they are binding on all users of this Website.</p>
 

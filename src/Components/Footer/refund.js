@@ -4,7 +4,7 @@ import Footer from './footer';
 
 const refund =()=>{
     return(<div style={{color:'white', marginTop:'10vh'}}>
-        <Container style={{height:'100vh'}}>
+        <Container style={{minHeight:'100vh'}}>
             <h2>Refund and Cancellation Policy</h2>
 
             <p>Our focus is complete candidate satisfaction. Please read the fine prints of each event before booking it, it provides all the details about the services or the event you are going to be a part of.  </p>
