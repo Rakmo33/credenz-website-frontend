@@ -53,7 +53,7 @@ export const info = [
     </a></p>
 
     <p className=' text-center'>
-      Pranjal  &nbsp;
+      Pranjal Newalkar  &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
       <a href='tel:+91 95529 50492'>
@@ -389,10 +389,9 @@ export const info = [
     tagline:
       "Test your Machine learning and data analytics skills before stepping into the world of Data Science..",
     info1: `<p>
-    A non-technical aptitude based event. An event everyone can participate in and enjoy.
-    Enigma presents to its players, an array of brain tickling logical reasoning questions. 
-    Put your mind to test and see where you stand among the crowd. May the wittiest triumph.
-   </p>
+    Get ready to set off on a journey to the world of data science. DataWiz gives you an
+     opportunity to test your machine learning and data analytics skills, work on 
+     datasets to  analyse and make predictions using your models.   </p>
    <h5>Registration Fees: </h5>
    <ul>
      <li>
@@ -430,19 +429,19 @@ export const info = [
     You may select up to 2 final submissions for judging.
     </p>`,
     info5: `<p className=' text-center'>
-      Saket Gupta &nbsp;
+      Aboli Marathe &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91 77200 79968'>
-        <span>&nbsp; +91 77200 79968 </span>
+      <a href='tel:+91 9545413291'>
+        <span>&nbsp; +91 9545413291 </span>
       </a>
     </p>
     <p className=' text-center'>
-     Atharva Sadre &nbsp;
+     Ayush Das &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91 75882 46742'>
-        <span>&nbsp;+91 75882 46742</span>
+      <a href='tel:+91 9373236438'>
+        <span>&nbsp;+91 9373236438</span>
       </a>
     </p>`,
   },
@@ -495,27 +494,24 @@ export const info = [
  c.You must claim whenever you are done. Earliest claim with max. score wins.
 
 </p>`,
-    info4: `<p>
-    Submission Limits <br />
-    You may submit a maximum of 10 entries per day. <br />
-    You may select up to 2 final submissions for judging.
-    </p>`,
-    info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
-      <br />
-      <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
-      </a>
-    </p>
-    <p className=' text-center'>
-      Purvesh Jain &nbsp;
-      <br />
-      <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
-      </a>
-    </p>`,
+    info4:`remaining`,
+    
+    info5:`<p className=' text-center'>
+    Saket Gupta &nbsp;
+    <br />
+    <i className='fa fa-phone fa-icons '></i>
+    <a href='tel:+91 77200 79968'>
+      <span>&nbsp; +91 77200 79968 </span>
+    </a>
+  </p>
+  <p className=' text-center'>
+   Atharva Sadre &nbsp;
+    <br />
+    <i className='fa fa-phone fa-icons '></i>
+    <a href='tel:+91 75882 46742'>
+      <span>&nbsp;+91 75882 46742</span>
+    </a>
+  </p>`,
   },
   //9#
   {
