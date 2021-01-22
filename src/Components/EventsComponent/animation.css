@@ -73,7 +73,7 @@
   width: 70%;
   position: relative;
   top: 80px;
-  z-index: 5000;
+  z-index: 50;
   height: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
