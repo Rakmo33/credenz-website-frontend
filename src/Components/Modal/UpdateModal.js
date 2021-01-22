@@ -50,7 +50,7 @@ function Modal2({ show, handleClose }) {
         aria-labelledby='contained-modal-title-vcenter'
         centered
         keyboard={false}>
-        <Modal.Header closeButton>
+        <Modal.Header className="upmodal" closeButton>
           <Modal.Title>
             {" "}
             <div>
@@ -58,7 +58,7 @@ function Modal2({ show, handleClose }) {
             </div>{" "}
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="upmodal">
           <div>
             <ul>{updateList}</ul>
           </div>

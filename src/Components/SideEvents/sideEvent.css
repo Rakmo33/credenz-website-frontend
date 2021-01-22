@@ -20,7 +20,7 @@
   transition: 0.8s;
   background-color: #252525;
   border-top-left-radius: 2rem ;
-  z-index: 100000000;
+  z-index: 100;
 }
 
 div.event-card:hover .card-title {

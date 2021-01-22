@@ -8,13 +8,15 @@ import $ from "jquery";
 import {useParams} from "react-router-dom";
 // form components
 import NameWrap from "./NameWrap";
+/*
+import Events from "../EventsComponent/EventsComponent";
 import NumberWrap from "./NumberWrap";
 import MemberWrap from "./MemberWrap";
 import EmailWrap from "./EmailWrap";
 import YearWrap from "./YearWrap";
 import CollegeList from "./CollegeList";
 import EventWrap from "./EventWrap";
-import Proceed from "./Proceed";
+import Proceed from "./Proceed";*/
 import NavigateButton from "./NavigateButton";
 import LoginFirst from "../LoginFirst/LoginFirst";
 import jwt_decode from "jwt-decode";
@@ -163,8 +165,9 @@ const Register = () => {
     name2: "",
     name3: "",
     name4: "",
-    year: undefined,
-    number1: localStorage.getItem("user")
+    //year: undefined,
+    
+    /*number1: localStorage.getItem("user")
       ? JSON.stringify(user["phoneno"]).replace(/"/g, "")
       : "",
     number2: undefined,
@@ -172,17 +175,16 @@ const Register = () => {
       ? JSON.stringify(user["email"]).replace(/"/g, "")
       : "",
     email2: "",
-    isMember: undefined,
+    //isMember: undefined,
     college: localStorage.getItem("user")
       ? JSON.stringify(user["email"]).replace(/"/g, "")
       : "",
-    events: {},
+    //events: {},*/
   };
 
 
 
   const [formData, setFormData] = useForm(defaultFormData);
-
   console.log(formData);
   // disable buttons
   const [showPrevBtn, setPrev] = useState(false);
@@ -368,7 +370,6 @@ const Register = () => {
       eventsReg();
 
       console.log("display razor called !");
-
       const res = await loadScript(
         "https://checkout.razorpay.com/v1/checkout.js"
       );
@@ -465,6 +466,8 @@ const Register = () => {
               <i className='fa fa-chevron-circle-left' aria-hidden='true'></i>
             </NavigateButton>
 
+
+
         {/*    <EventWrap
                 changeHandler={changeHandler}
                 events={events}
@@ -482,12 +485,15 @@ const Register = () => {
                 formData={formData}
                 setFormData={setFormData}></NameWrap>
 
+                
+
+            {/*
               <YearWrap
                 isVisible={isVisible[1]}
                 cls={`parent ${anim[1]}`}
                 formData={formData}
                 setFormData={setFormData}></YearWrap>
-
+            
               {formData.team === "team" && (
                 <NumberWrap
                   isVisible={isVisible[2]}
@@ -513,13 +519,13 @@ const Register = () => {
                 cls={`parent ${anim[3]}`}
                 formData={formData}
                 setFormData={setFormData}></CollegeList>
-
+              
               <Proceed
                 isVisible={isVisible[4]}
                 total={formData.price}
                 cls={`col-sm-6 d-flex justify-content-center m-auto proceed-btn ${anim[5]}`}
                 formData={formData}
-                setFormData={setFormData}></Proceed>
+                setFormData={setFormData}></Proceed>*/}
             </form>
 
             <NavigateButton

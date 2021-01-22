@@ -18,7 +18,11 @@ import Admin from "../Components/AdminSection/adminAuth";
 import VerifyPhone from "../Components/SignupComponent/verifyPhone";
 import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
 import Footer from '../Components/Footer/footer';
+import NewReg from '../Components/RegisterComponent/NewReg';
 import Cart from '../Components/RegisterComponent/Cart';
+import Refund from '../Components/Footer/refund';
+import Privacy from '../Components/Footer/privacy';
+import Terms from '../Components/Footer/terms';
 import './maincomponent.module.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -89,6 +93,23 @@ class Main extends Component {
       return <Cart/>;
     }
 
+    const NewRegPage = () => {
+      return <NewReg/>;
+    }
+    
+    const RefundPage = () => {
+      return <Refund/>;
+    }
+
+    const PrivacyPage = () => {
+      return <Privacy/>;
+    }
+
+    const TermsPage = () => {
+      return <Terms/>;
+    }
+
+
     return (
       <div>
         <NavBar />
@@ -108,6 +129,10 @@ class Main extends Component {
           <Route path='/aboutus' component={AboutUsPage}/>
           <Route path='/verifyphone' component={VerifyPhonePage} />
           <Route path='/cart' component={CartPage} />
+          <Route path='/newreg/:event' component={NewRegPage}/>
+          <Route path='/refund' component={RefundPage} />
+          <Route path='/privacy' component={PrivacyPage} />
+          <Route path='/terms' component={TermsPage} />
           <Redirect to='/home' />
         </Switch>
         {/* <Footer /> */}

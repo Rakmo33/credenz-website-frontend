@@ -3,6 +3,7 @@ import classes from "./footer.module.css";
 import "../ContactComponent/contact.css";
 import { Link } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
+// import policy from './policy.html';
 
 const footer = () => {
   return (
@@ -20,7 +21,9 @@ const footer = () => {
               <span style={{ color: "#6eabce" }}> Web Team</span>
             </Link> </Col>
           <Col lg={4} className="rightside" >
-            Policy &nbsp; Terms &nbsp; Refund
+          <Link to='privacy' >Policy</Link>
+            &nbsp;  <Link to='terms' > Terms </Link>
+            &nbsp; <Link to='refund' > Refund </Link> 
             </Col>
           {/* </span> */}
         </Row>
