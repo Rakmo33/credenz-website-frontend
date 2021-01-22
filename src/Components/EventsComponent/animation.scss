@@ -38,7 +38,7 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
         justify-content: center;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, 120px);
-        padding: 50px 0;
+        padding: 20px 0;
         grid-gap: 40px;
         // grid-template-columns: 1fr 1fr;
     }
@@ -55,7 +55,7 @@ $gradient2: linear-gradient(to bottom, #12398daf, #001e2caf);
             width: 70%;
             position: relative;
             top: 80px;
-            z-index: 5000;
+            z-index: 50;
             height: 75px;
             display: flex;
             margin: auto;

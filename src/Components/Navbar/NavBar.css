@@ -3,14 +3,14 @@
     color: white;
 }
 
-.badge{
+.badge {
     background: red;
-    border-radius:70%;
-    padding:3px;
-    position:relative;
-    left:-8px;
-    top:-10px;
-    opacity:0.9;
+    border-radius: 70%;
+    padding: 3px;
+    position: relative;
+    left: -8px;
+    top: -10px;
+    opacity: 0.9;
 }
 
 .pisblogo {
@@ -68,7 +68,7 @@ samp:hover {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; */
-      /* display: flex; */
+    /* display: flex; */
 }
 
 .login-wrap {
@@ -231,6 +231,15 @@ content: "\f0c9"; fa-bars, fa-navicon
     margin-left: auto;
 }
 
+.navbar .hiddenBell .fa-shopping-cart {
+    color: white;
+    transition: all 0.3s;
+}
+
+.navbar .hiddenBell .fa-shopping-cart:hover {
+    color: #41c3ee !important;
+}
+
 @media (max-width: 1199px) {
     .navbar ul.second {
         display: none;
@@ -239,7 +248,14 @@ content: "\f0c9"; fa-bars, fa-navicon
         display: initial;
     }
     .navbar .hiddenBell {
-        display: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar .hiddenBell .badge {
+        top: -10px;
+        left: -2px;
+        color: white;
     }
 }
 

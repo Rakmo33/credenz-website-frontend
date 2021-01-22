@@ -43,11 +43,10 @@
           justify-content: center;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (120px);
+  -ms-grid-rows: (120px)[3];
       grid-template-rows: repeat(3, 120px);
-  padding: 50px 0;
+  padding: 20px 0;
   grid-gap: 40px;
-  z-index: 1000;
 }
 
 .eve-anim .roboWrap {
@@ -74,7 +73,7 @@
   width: 70%;
   position: relative;
   top: 80px;
-  z-index: 5000;
+  z-index: 50;
   height: 75px;
   display: -webkit-box;
   display: -ms-flexbox;

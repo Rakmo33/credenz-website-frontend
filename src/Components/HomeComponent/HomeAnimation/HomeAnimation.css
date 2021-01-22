@@ -1,17 +1,28 @@
-.anim{
+.anim {
     height: calc(100vh - 60px);
     width: 100vw;
     position: relative;
 }
-@keyframes fadein{
-    from{opacity: 0;}
-    to{opacity: 1;}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-@keyframes fadeout{
-    from{opacity: 1;}
-    to{opacity: 0;}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
-.hide{
+
+.anim .hide {
     animation: fadeout 1.5s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
@@ -19,7 +30,8 @@
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
-.show{
+
+.anim .show {
     animation: fadein 1.5s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
@@ -27,7 +39,8 @@
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 }
-.anim-overlay-lower{
+
+.anim .anim-overlay-lower {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -36,7 +49,8 @@
     background-color: black;
     z-index: 3;
 }
-.anim-overlay-upper{
+
+.anim .anim-overlay-upper {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -45,32 +59,40 @@
     background-color: black;
     z-index: 5;
 }
-@keyframes disappear{
-    from{
+
+@keyframes disappear {
+    from {
         opacity: 1;
         display: block;
     }
-    to{
+    to {
         opacity: 0;
         display: none;
     }
 }
-.vanish{
+
+.anim .vanish {
     animation: disappear 1.5s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-
 }
-.hide-now{
+
+.anim .hide-now {
     display: none;
 }
-@keyframes darken-anim{
-    from { background: rgba(133,133,133,.95) }
-     to { background: rgba(0,0,0,.95) }
+
+@keyframes darken-anim {
+    from {
+        background: rgba(133, 133, 133, .95)
+    }
+    to {
+        background: rgba(0, 0, 0, .95)
+    }
 }
-.darken{
+
+.anim .darken {
     animation: darken-anim 0.5s linear;
 }

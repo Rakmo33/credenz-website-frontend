@@ -26,9 +26,9 @@ function NavBar() {
     window.location.reload(false); //refresh page
   };
 
-  var cartArray = localStorage.getItem("Cart") ? localStorage.getItem("Cart").split(","): [];
-
- 
+  var cartArray = localStorage.getItem("Cart")
+    ? localStorage.getItem("Cart").split(",")
+    : [];
 
   const LoginBtn = () => {
     if (!localStorage.getItem("user")) {
@@ -89,9 +89,18 @@ function NavBar() {
           Log in
         </button> */}
         <div onClick={handleShow1} className='hiddenBell'>
-          <div>
+          <li>
+            <Link to='/cart'>
+              <i
+                className='fa fa-lg fa-shopping-cart'
+                title='Cart'
+                value={5}></i>
+              <span className='badge'>{cartArray.length}</span>
+            </Link>
+          </li>
+          <li>
             <i className='fa fa-bell' title='Updates'></i>
-          </div>
+          </li>
         </div>
         <button
           className='navbar-toggler navbar-toggler-icon'
@@ -162,17 +171,12 @@ function NavBar() {
                     </Link>
                 </li> */}
             <li className='nav-item'>
-              <Link
-                to='/aboutus'
-                className='nav-link'
-                onClick={clickHandler}>
+              <Link to='/aboutus' className='nav-link' onClick={clickHandler}>
                 <samp
                   className={
-                    location.pathname === "/aboutus" 
-                      ? "active-nav-tab"
-                      : ""
+                    location.pathname === "/aboutus" ? "active-nav-tab" : ""
                   }>
-                    {/* // && location.hash === "#Aboutus" */}
+                  {/* // && location.hash === "#Aboutus" */}
                   About Us
                 </samp>
               </Link>
@@ -223,10 +227,13 @@ function NavBar() {
           </ul>
           <ul className='navbar-nav ml-auto second  pull-right'>
             <li>
-              <Link to="/cart">
+              <Link to='/cart'>
                 <div>
-                  <i className='fa fa-lg fa-shopping-cart' title='Cart' value={5}></i>
-                  <span className="badge">{cartArray.length}</span>
+                  <i
+                    className='fa fa-lg fa-shopping-cart'
+                    title='Cart'
+                    value={5}></i>
+                  <span className='badge'>{cartArray.length}</span>
                 </div>
               </Link>
             </li>
