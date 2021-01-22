@@ -231,13 +231,17 @@ content: "\f0c9"; fa-bars, fa-navicon
     margin-left: auto;
 }
 
-.navbar .hiddenBell .fa-shopping-cart {
+.navbar .fa-shopping-cart {
     color: white;
     transition: all 0.3s;
 }
 
-.navbar .hiddenBell .fa-shopping-cart:hover {
-    color: #41c3ee !important;
+.navbar .fa-shopping-cart:hover {
+    color: #41c3ee;
+}
+
+.navbar .badge {
+    color: white;
 }
 
 @media (max-width: 1199px) {
