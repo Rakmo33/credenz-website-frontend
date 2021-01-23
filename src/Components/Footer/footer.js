@@ -30,15 +30,15 @@ const footer = () => {
 
         <Row className={classes.hiddenRow}>
           <div className={classes.social}>
-            <a className={classes.iconfb} href='#'>
+            <a className={classes.iconfb} target='_blank' href="https://www.facebook.com/pisbcredenz/"   >
               {" "}
               <i className={"fa fa-facebook"}></i>
             </a>
-            <a className={classes.iconlink} href='#'>
+            <a className={classes.iconlink} target='_blank' href="https://www.linkedin.com/company/pisbieee/">
               {" "}
               <i className={"fa fa-linkedin"}></i>
             </a>
-            <a className={classes.iconinsta} href='#'>
+            <a className={classes.iconinsta} target='_blank' href="https://www.instagram.com/pisbcredenz/">
               {" "}
               <i className={"fa fa-instagram"}></i>
             </a>
