@@ -191,7 +191,7 @@ function SvgEyeDea20({showbackg, triggered}) {
         </g>
       </g>
       <g id="eyeDEA2_0_svg__backgdesign">
-        <g id="eyeDEA2_0_svg__vertical">
+        <g id="eyeDEA2_0_svg__vertical" opacity="0.7">
           <g id="eyeDEA2_0_svg__lower">
             <linearGradient
               id="eyeDEA2_0_svg__SVGID_11_"
@@ -4238,6 +4238,7 @@ function SvgEyeDea20({showbackg, triggered}) {
         <g
           id="eyeDEA2_0_svg__horizontal"
           clipPath="url(#eyeDEA2_0_svg__SVGID_180_)"
+          opacity="0.1"
         >
           <g id="eyeDEA2_0_svg__left">
             <radialGradient
@@ -8444,18 +8445,18 @@ function SvgEyeDea20({showbackg, triggered}) {
           gradientUnits="userSpaceOnUse"
         >
           <stop offset={0.299} stopColor="#000b18" />
-          <stop offset={0.32} stopColor="#00152a" />
+          {/* <stop offset={0.32} stopColor="#00152a" />
           <stop offset={0.359} stopColor="#002446" />
           <stop offset={0.402} stopColor="#012f5b" />
           <stop offset={0.448} stopColor="#01386a" />
-          <stop offset={0.503} stopColor="#013d73" />
+          <stop offset={0.503} stopColor="#013d73" /> */}
           <stop offset={0.584} stopColor="#013e76" />
           <stop offset={0.846} stopColor="#053c87" />
-          <stop offset={0.909} stopColor="#053b85" />
+          {/* <stop offset={0.909} stopColor="#053b85" />
           <stop offset={0.932} stopColor="#05367e" />
           <stop offset={0.948} stopColor="#052d73" />
           <stop offset={0.961} stopColor="#052162" />
-          <stop offset={0.972} stopColor="#05114c" />
+          <stop offset={0.972} stopColor="#05114c" /> */}
           <stop offset={0.98} stopColor="#050035" />
         </radialGradient>
         <ellipse

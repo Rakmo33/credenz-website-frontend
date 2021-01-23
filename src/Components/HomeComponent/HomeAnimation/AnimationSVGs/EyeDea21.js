@@ -192,7 +192,7 @@ function SvgEyeDea21(props) {
         </g>
       </g>
       <g id="eyeDEA2_1_svg__backgdesign">
-        <g id="eyeDEA2_1_svg__vertical">
+        <g id="eyeDEA2_1_svg__vertical" className="fade-in-line" opacity="0.7">
           <g id="eyeDEA2_1_svg__lower">
             <linearGradient
               id="eyeDEA2_1_svg__SVGID_11_"
@@ -4239,6 +4239,8 @@ function SvgEyeDea21(props) {
         <g
           id="eyeDEA2_1_svg__horizontal"
           clipPath="url(#eyeDEA2_1_svg__SVGID_180_)"
+          className="fade-in-line"
+          opacity="0.1"
         >
           <g id="eyeDEA2_1_svg__left">
             <radialGradient
@@ -6708,6 +6710,7 @@ function SvgEyeDea21(props) {
           width={416.82}
           height={419.08}
           id="eyeDEA2_1_svg__he_x5F_bgrad1_1_"
+          onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'mask-hover'}`}
         >
           <g filter="url(#eyeDEA2_1_svg__Adobe_OpacityMaskFilter)">
             <defs>
@@ -6731,19 +6734,20 @@ function SvgEyeDea21(props) {
               gradientTransform="matrix(2.7272 0 0 2.742 -1109.204 -409.144)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset={0} stopColor="#fff" />
-              <stop offset={0.278} stopColor="#fff" />
-              <stop offset={0.404} stopColor="#fff" />
-              <stop offset={0.455} stopColor="#fff" />
-              <stop offset={0.712} stopColor="#fff" />
-              <stop offset={0.934} stopColor="#fff" />
-              <stop offset={0.97} stopColor="#fff" />
+              <stop offset={0} stopColor="#010309" />
+              <stop offset={0.278} stopColor="#0a9f94" />
+              <stop offset={0.404} stopColor="#006290" />
+              <stop offset={0.455} stopColor="#012260" />
+              <stop offset={0.712} stopColor="#012c7c" />
+              <stop offset={0.934} stopColor="#032b5e" />
+              <stop offset={0.97} stopColor="#040010" />
               <stop offset={1} />
             </radialGradient>
             <path
               d="M891.45 317.94c0 115.74-93.3 209.55-208.4 209.55s-208.41-93.81-208.41-209.55c0-115.73 93.31-209.53 208.41-209.53s208.4 93.8 208.4 209.53z"
               mask="url(#eyeDEA2_1_svg__he_x5F_bgrad1_1_)"
               fill="url(#eyeDEA2_1_svg__SVGID_283_)"
+              onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'mask-hover'}`}
             />
           </g>
         </mask>
@@ -6774,6 +6778,7 @@ function SvgEyeDea21(props) {
           id="eyeDEA2_1_svg__he_x5F_bgrad1"
           d="M891.45 317.94c0 115.74-93.3 209.55-208.4 209.55s-208.41-93.81-208.41-209.55c0-115.73 93.31-209.53 208.41-209.53s208.4 93.8 208.4 209.53z"
           fill="url(#eyeDEA2_1_svg__he_x5F_bgrad1_2_)"
+          onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'mask-hover'}`}
         />
         <defs>
           <filter
@@ -6794,6 +6799,7 @@ function SvgEyeDea21(props) {
           width={379.5}
           height={381.56}
           id="eyeDEA2_1_svg__he_x5F_bgrad2_1_"
+          onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'mask-hover'}`}
         >
           <g filter="url(#eyeDEA2_1_svg__Adobe_OpacityMaskFilter_2_)">
             <radialGradient
@@ -6822,13 +6828,13 @@ function SvgEyeDea21(props) {
           gradientUnits="userSpaceOnUse"
         >
           <stop offset={0} stopColor="#000c1b" />
-          <stop offset={0.237} />
-          <stop offset={0.283} stopColor="#000507" />
+          <stop offset={0.237} stopColor="#000000"/>
+          {/* <stop offset={0.283} stopColor="#000507" />
           <stop offset={0.349} stopColor="#00141a" />
-          <stop offset={0.427} stopColor="#002d38" />
-          <stop offset={0.514} stopColor="#005063" />
-          <stop offset={0.607} stopColor="#007b9a" />
-          <stop offset={0.633} stopColor="#08a" />
+          <stop offset={0.427} stopColor="#002d38" /> */}
+          <stop offset={0.514} stopColor="#0088aa" />
+          {/* <stop offset={0.607} stopColor="#007b9a" />
+          <stop offset={0.633} stopColor="#08a" /> */}
           <stop offset={0.854} stopColor="#003b4a" />
         </radialGradient>
         <path
@@ -6837,8 +6843,9 @@ function SvgEyeDea21(props) {
           opacity={0.5}
           mask="url(#eyeDEA2_1_svg__he_x5F_bgrad2_1_)"
           fill="url(#eyeDEA2_1_svg__he_x5F_bgrad2_2_)"
+          onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'mask-hover'}`}
         />
-        <g id="eyeDEA2_1_svg__irislines" onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'eye-hover'}`}>
+        <g id="eyeDEA2_1_svg__irislines" opacity="0.5" onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'eye-hover'}`}>
           <defs>
             <filter
               id="eyeDEA2_1_svg__Adobe_OpacityMaskFilter_3_"

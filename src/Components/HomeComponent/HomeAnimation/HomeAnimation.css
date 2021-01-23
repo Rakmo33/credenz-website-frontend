@@ -3,31 +3,9 @@
     width: 100vw;
     position: relative;
 }
-@keyframes fadein{
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-/* @keyframes fadeout{
-    from{opacity: 1;}
-    to{opacity: 0;}
-} */
-/* .hide{
-    animation: fadeout 0.75s;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -ms-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-} */
+
 .hide{display: none;}
-.show{
-    animation: fadein 1.5s;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -ms-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
+
 .anim-overlay-lower{
     position: absolute;
     height: 100%;
@@ -76,13 +54,6 @@
     -ms-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
-}
-@keyframes darken-anim{
-    from { background: rgba(133,133,133,.95) }
-     to { background: rgba(0,0,0,.95) }
-}
-.darken{
-    animation: darken-anim 0.5s linear;
 }
 
 .anim-overlay-logos{
