@@ -4,11 +4,10 @@
   }
 
 #eyeDEA2_1_svg__irislines{
-    animation: spin 30s linear infinite;
-    transform-origin: 51.5% 47.2%;
+    animation: spin 60s linear infinite;
+    transform-origin: 50.10% 47.3%;
     transition-timing-function: ease-in;
 }
-
 .anim-overlay{
     position: absolute;
     height: 100%;
@@ -16,4 +15,28 @@
     top: 0;
     left: 0;
     background-color: black;
+}
+.right-hover{
+    transform-origin: 50.10% 47.3%;
+    transform: translateX(3%) scale(1.1);
+    transition-timing-function: ease;
+}
+.left-hover{
+    transform-origin: 50.10% 47.3%;
+    transform: translateX(-3%) scale(1.1);
+    transition-timing-function: ease;
+}
+.eye-hover,.mask-hover{
+    transform-origin: 50.10% 47.3%;
+    transform: scale(1.1);
+    transition-timing-function: ease;
+}
+
+
+@keyframes fade-in{
+    from{opacity: 0;}
+    to{opacity: 0.1;}
+}
+.fade-in-line{
+    animation: fade-in 3s linear;
 }

@@ -29,9 +29,9 @@ const sideEvent = (props)=>{
     <div>
         <nav className={classes.social}>
             <ul>
-                <li ><a className={classes.in} href="https://www.linkedin.com/company/pisbieee/"> </a></li>
-                <li ><a className={classes.ig} href="https://www.instagram.com/pisbcredenz/"></a></li>
-                <li ><a className={classes.fb} href="https://www.facebook.com/pisbcredenz/"></a></li>
+                <li ><a className={classes.in} target='_blank' href="https://www.linkedin.com/company/pisbieee/"> </a></li>
+                <li ><a className={classes.ig} target='_blank' href="https://www.instagram.com/pisbcredenz/"></a></li>
+                <li ><a className={classes.fb} target='_blank' href="https://www.facebook.com/pisbcredenz/"></a></li>
             </ul>
         </nav>
         {/* <img src="socio.png" /> */}

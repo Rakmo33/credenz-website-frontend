@@ -1,46 +1,12 @@
-.anim {
+.anim{
     height: calc(100vh - 60px);
     width: 100vw;
     position: relative;
 }
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+.hide{display: none;}
 
-@keyframes fadeout {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-.anim .hide {
-    animation: fadeout 1.5s;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -ms-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-.anim .show {
-    animation: fadein 1.5s;
-    -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;
-    -ms-animation-fill-mode: forwards;
-    -o-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-.anim .anim-overlay-lower {
+.anim-overlay-lower{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -49,8 +15,7 @@
     background-color: black;
     z-index: 3;
 }
-
-.anim .anim-overlay-upper {
+.anim-overlay-upper{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -59,20 +24,31 @@
     background-color: black;
     z-index: 5;
 }
-
-@keyframes disappear {
-    from {
+@keyframes disappear{
+    from{
         opacity: 1;
         display: block;
     }
-    to {
+    to{
         opacity: 0;
         display: none;
     }
 }
+.vanish{
+    animation: disappear 0.75s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 
-.anim .vanish {
-    animation: disappear 1.5s;
+}
+@keyframes delay_hide {
+    99%{opacity: 1;}
+    100%{opacity: 0;display: none;}
+}
+.hide-now{
+    animation: delay_hide 9s linear;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
@@ -80,19 +56,15 @@
     animation-fill-mode: forwards;
 }
 
-.anim .hide-now {
-    display: none;
+.anim-overlay-logos{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
-
-@keyframes darken-anim {
-    from {
-        background: rgba(133, 133, 133, .95)
-    }
-    to {
-        background: rgba(0, 0, 0, .95)
-    }
-}
-
-.anim .darken {
-    animation: darken-anim 0.5s linear;
+.anim-iframe{
+    width: 100vw;
+    object-fit: contain;
 }

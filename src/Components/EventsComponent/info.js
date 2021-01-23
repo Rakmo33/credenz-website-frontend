@@ -23,6 +23,7 @@ export const info = [
   
     1) MCQs based on coding concepts in C/C++ and python. (Python, C/C++ for FE and 
       C/C++ for SE, TE and BE)
+      <br />    
       
   </p>`,
     info3: `<p>
@@ -37,26 +38,26 @@ export const info = [
   4) You are not allowed to switch tabs or close the browser during the game. If you do 
   so, you will be automatically logged out.  
   <br />
-  5) The primary marking scheme is +4 -2 if your answer for a particular question is 
-  incorrect, then from the next question onwards the marking scheme will be +2 -1 until 
-  you attempt a question with the correct answer.  
+  5) The primary marks allotted are +4 if answered correctly and -2 if the answer for a 
+  particular question is incorrect. If a question attempted is incorrect, then from 
+  the next question +2 marks are allotted for each correctly answered question, else 
+  -1 until you get a correct answer for upcoming questions.
  
 </p>`,
     info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.</p>`,
-    info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
-      <br />
-      <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
-      </a>
-    </p>
+    info5: `   <p class=" text-center">
+    Tanmay Nale &nbsp;<br>
+    <i class="fa fa-phone fa-icons "></i>
+    <a href="tel:+91-9922993249">
+    <span>&nbsp;+91-9969108722</span>
+    </a></p>
+
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+      Pranjal Newalkar  &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 95529 50492'>
+        <span>&nbsp;+91 95529 50492</span>
       </a>
     </p>`,
   },
@@ -66,8 +67,7 @@ export const info = [
     src: "/logos/rc.png",
     tagline: "Hone your problem-solving skills by decrypting complex questions",
     info1: `<p>
-    Like Clash, RC is also one of the biggest technical events in CREDENZ in which more than 800 people participate from various colleges. This game consists of integer type answer based coding questions where you are allowed to use Linux terminal or any suitable IDE you wish to use. Questions are mainly based on complex mathematical problems.    </p>
-    <h5>Registration Fees: </h5>
+    RC is one of the biggest technical events in CREDENZ alongside Clash in which more than 800 people participate from various colleges every year. This game consists of questions which have integer answers only. You are allowed to use Linux terminal or any suitable IDE to decode the answer. Questions are mainly based on complex mathematical problems.    <h5>Registration Fees: </h5>
     <ul>
       <li>
         <span>₹80</span> for Non-IEEE members
@@ -100,17 +100,17 @@ export const info = [
 2) Time and cost efficiency of the code will be tested in round 2.
       </p>`,
     info5: `<p class=" text-center">
-    Devashish Dewalkar &nbsp;<br>
+    Sanket Landge &nbsp;<br>
     <i class="fa fa-phone fa-icons "></i>
-    <a href="tel: +91-8087550042">
-    <span>&nbsp; +91-8551994422</span>
+    <a href="tel: +91 70209 83032">
+    <span>&nbsp; +91 70209 83032</span>
     </a></p>
 
       <p class=" text-center">
-      Tanmay Nale &nbsp;<br>
+      Kaustubh Odak &nbsp;<br>
       <i class="fa fa-phone fa-icons "></i>
-      <a href="tel:+91-9922993249">
-      <span>&nbsp;+91-9969108722</span>
+      <a href="tel:+91 96502 11332">
+      <span>&nbsp;+91 96502 11332</span>
       </a></p>`,
   },
   // 3#
@@ -206,11 +206,9 @@ export const info = [
     info2: `<p>
     1) ) Each team can consist of maximum 3 members.
     <br /> <br />
-    2) Electronic gadgets are not allowed.
+    2) Participants will be provided with credentials to join tinkercad for the 2nd round.
     <br /><br />
-    3) Participants will be provided with credentials to join tinkercad for the 2nd round.
-    <br /><br />
-    4) Participants can use datasheets for the components they are using and are supposed to provide a link of the same.
+    3) Participants can use datasheets for the components they are using and are supposed to provide a link of the same.
     </p>`,
     info3: `<p>
     (Junior and Senior):
@@ -226,9 +224,10 @@ export const info = [
 </p>`,
     info4: `<p> Round 1:<br /> Each question carries a single mark. No negative marking. Teams having score above  
     the score threshold will be selected for Round 2. <br />
-    Round 2: Credits will be given based on understanding problem statement, component selection,  
-    practical performance and explanation of implemented circuit.<br /> 
-    • Winner and runner-up will be awarded.<br />
+    Round 2: <br /> Top two teams earning maximum credits based on the understanding of the problem statement, 
+    component selection, practical performance and explanation of the implemented circuit will be declared as winners. 
+    <br />
+     Winner and runner-up will be awarded.<br />
     </p>`,
     info5: `<p className=' text-center'>
     Ajay Kompalwad &nbsp;
@@ -255,11 +254,10 @@ export const info = [
     tagline:
       "Showcase your entrepreneurial skills by presenting innovative business plans to the world",
     info1: `<p>
-      Have you always dreamt of having your own business or product ? B-Plan
-      is the perfect platform for you to showcase your ideas before a panel
-      of the best marketing professionals! Make a presentation describing
-      your business idea, and get a chance to win funding from the
-      investors.
+    Ever dreamt of having your own business or a product? B-Plan is the perfect 
+    platform for you! A perfect presentation describing your business idea will 
+    help you grab a chance to win funding from the investors. So showcase your 
+    ideas before a panel of best marketing professionals. 
     </p>
     <h5>Registration Fees: </h5>
     <ul>
@@ -277,15 +275,15 @@ export const info = [
     2) Proposed business plan should not be in violation of any intellectual property rights.
   </p>`,
     info3: `<p>
-    1) At stage 1, the soft copy of the abstract (summary) should be submitted to bplan.credenz19@gmail.com
+    1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com
   <br />
   2) The Soft copy should be a .pdf file.
   <br />
-  3) Evaluation of Executive Summaries by judges and Short-listing of 7 (+3 waiting) business plans for the next stage takes place.
-  <br />
-  4) Each team will be given 12 minutes in the final round to present their B-PLAN in College Auditorium in front of 
-  panel of judges and audience. A warning bell will be given at 10 minutes and a final 2 minutes thereafter. 
-   <br />
+  3)The Judges will do  Evaluation, and 7 teams will compete in the next stage.
+    <br />
+    4) Each team will be given 12 minutes in the final round to present their B-PLAN in front of a 
+    panel of judges and audience. A warning bell will be given at 10 minutes and a final 2 minutes thereafter. 
+      <br />
    5) The presentation would be followed by a question-answer session where they would be questioned on different hurdles, opportunities and obstacles at various points.
      <br />
      6) The main stress during question-answer session would be given on feasibility and Exit Plan.
@@ -391,10 +389,9 @@ export const info = [
     tagline:
       "Test your Machine learning and data analytics skills before stepping into the world of Data Science..",
     info1: `<p>
-    A non-technical aptitude based event. An event everyone can participate in and enjoy.
-    Enigma presents to its players, an array of brain tickling logical reasoning questions. 
-    Put your mind to test and see where you stand among the crowd. May the wittiest triumph.
-   </p>
+    Get ready to set off on a journey to the world of data science. DataWiz gives you an
+     opportunity to test your machine learning and data analytics skills, work on 
+     datasets to  analyse and make predictions using your models.   </p>
    <h5>Registration Fees: </h5>
    <ul>
      <li>
@@ -405,11 +402,11 @@ export const info = [
      </li>
     </ul>`,
     info2: `<p>
-    1)Students can form teams of one, two or three participants only.
+    1)Each team of students may consist of a maximum of 3 participants.
     <br /> <br />
     2)One account per participant
     <br /> <br />
-    3)You cannot sign up to Kaggle from multiple accounts and therefore you cannot submit from multiple accounts.
+    3)Signing In on Kaggle through Multiple accounts is prohibited.
 <br /> <br />
     4)No private sharing outside teams.
 <br /> <br />
@@ -432,7 +429,7 @@ export const info = [
     You may select up to 2 final submissions for judging.
     </p>`,
     info5: `<p className=' text-center'>
-    Aboli Marathe &nbsp;
+      Aboli Marathe &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
       <a href='tel:+91 9545413291'>
@@ -440,7 +437,7 @@ export const info = [
       </a>
     </p>
     <p className=' text-center'>
-    Ayush Das &nbsp;
+     Ayush Das &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
       <a href='tel:+91 9373236438'>
@@ -456,10 +453,12 @@ export const info = [
     tagline:
       "Get ready to push your aptitude, logical reasoning skills limits by solving mind-boggling questions.",
     info1: `<p>
-    Do you have, what it takes to face the mind-boggling questions which will push your logical reasoning to its limit? Then do not miss this amazing opportunity.
-    Enigma is a logical reasoning based questionnaire, which will test your aptitude, thinking capability, response time and mental agility.
-    So, get ready to put your Grey Cells to work!
-        </p>
+    Are you diligent enough to face the mind-boggling questions which will push your logical 
+    reasoning to its limits? Then do not miss this amazing opportunity. </br>
+    Enigma is a logical reasoning based questionnaire, which will test your aptitude, thinking capability, response time and mental ability.
+    Get ready to put your Grey Cells to work!
+    
+       </p>
     <h5>Registration Fees: </h5>
     <ul>
       <li>
@@ -495,27 +494,24 @@ export const info = [
  c.You must claim whenever you are done. Earliest claim with max. score wins.
 
 </p>`,
-    info4: `<p>
-    Submission Limits <br />
-    You may submit a maximum of 10 entries per day. <br />
-    You may select up to 2 final submissions for judging.
-    </p>`,
-    info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
-      <br />
-      <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
-      </a>
-    </p>
-    <p className=' text-center'>
-      Purvesh Jain &nbsp;
-      <br />
-      <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
-      </a>
-    </p>`,
+    info4:`remaining`,
+    
+    info5:`<p className=' text-center'>
+    Saket Gupta &nbsp;
+    <br />
+    <i className='fa fa-phone fa-icons '></i>
+    <a href='tel:+91 77200 79968'>
+      <span>&nbsp; +91 77200 79968 </span>
+    </a>
+  </p>
+  <p className=' text-center'>
+   Atharva Sadre &nbsp;
+    <br />
+    <i className='fa fa-phone fa-icons '></i>
+    <a href='tel:+91 75882 46742'>
+      <span>&nbsp;+91 75882 46742</span>
+    </a>
+  </p>`,
   },
   //9#
   {
@@ -525,18 +521,11 @@ export const info = [
     tagline:
       "Test your knowledge across wide range of topics and get a chance to win some exciting prizes.",
     info1: `<p>
-    Get ready to set off on a journey with captivating questions and puzzles on the way, led by a piquant quizmaster. 
-    <br />
-    There are three quizzes lying in wait for you:
-    <br />
-    1. General Quiz: Test your knowledge about what's happening in the world in this expansive quiz, ranging from Brexit to Chandrayaan. 
-    <br />
-    2. MELA Quiz: The music, entertainment, literature and arts quiz is hardly as easy as it sounds; with questions from Austen's works to the newest Marvel movie, this is definitely for the pop culture buffs. 
-    <br />
-    3. Biz Tech Quiz: Bring your A game to this quiz, where the knowledge of marketing, business, economics and the latest technology will come in handy. 
-    <br />
-    Can you beat these quizzes or be defeated by our questionnaire?
-    </p>
+    Brainstorm on the questions ranging from Greek mythology to world politics, from 
+    Shakespeare to business gurus. Set out on a voyage through mind-boggling questions
+     captained by a witty quiz master. Flex your IQ in a set of three quizzes,
+      designed to be a battle of wits. <br />
+
     <h5>Registration Fees: </h5>
     <ul>
       <li>
@@ -547,13 +536,12 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-    1) A maximum of two candidates pursuing under graduate/graduate program at their institution will be allowed per team.
-      <br /> <br />
-      2) Teams can register at desks put up at various colleges in and around Pune. No one without I-Card will be allowed for the contest and the team will be disqualified. A team has to register itself at registration desk at time of event, one hour prior to the event.
+    1.General Quiz: It includes everything from robotics to politics. Test your GK!
+       <br /> <br />
+    2.MELA Quiz: Movies Entertainment Literature and Arts (MELA) is all set to test your knowledge of literature, arts and entertainment. If you are an entertainment lover, this is for you! 
       <br /><br />
-      3) Teams may re-register for another time slot.
-      <br /><br />
-      4) All the participants should bring receipt and valid I-Cards while coming for the event.
+    3.BizTech Quiz: If you are passionate about marketing, economics and Business, then BizTech is the ultimate questionnaire you need to answer.
+    <br /><br />
       </p>`,
     info3: `<p>
     <ul>
@@ -603,11 +591,8 @@ export const info = [
     tagline:
       "Build an aesthetic website to showcase your web development skills",
     info1: `<p>
-    Web Weaver is a web development event that is aimed to target the FE crowd along with the experienced seniors. 
-    <br />
-    The organizing team drops a theme for the event upon which the website is supposed to be based. Participants can participate either individually or in a group of 2 and develop a website which is supposed to be submitted 1-2 days before the start of Credenz. On the first day of Credenz, the best website teams are promoted to the second round where people are informed by us to add specific changes to their website. The website with the most aesthetic changes and best compatibility will be announced as the winner.
-    <br />
-    Tech Stack - As per the comfort of the participant
+    An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online. If you think you have the flair to create such a site, WebWeaver is the competition for you! A perfect integration of technology and creativity will lead you to win this competition.
+        <br />
     </p>
     <h5>Registration Fees: </h5>
     <ul>
@@ -619,7 +604,7 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-    1) A team of maximum 3 is permissible for the event.
+    1) A team of maximum 2 is permissible for the event.
     <br /> <br />
     2) Use of any front end framework is permitted.
     <br /> <br />
@@ -627,9 +612,6 @@ export const info = [
     <br /> <br />
     4) Wordpress is not allowed.
     <br /> <br />
-    5) All teams shall have to get their own laptops on the day of the competition. It is advisable to get a high speed data card (even though net connection will be provided), for your convenience.
-    <br /> <br />
-    6) All the participants should bring receipt and valid I-Cards while coming for the contest. A single team member without an I-Card will result in the disqualification of the entire team.
   </p>`,
     info3: `<p>
     <ul>
@@ -656,19 +638,19 @@ export const info = [
     </ul>
 </p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+      Yash Sonar &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 97631 26056'>
+        <span>&nbsp; +91 97631 26056</span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+      Elika Mishra &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 96736 42654'>
+        <span>&nbsp;+91 96736 42654</span>
       </a>
     </p>`,
   },
@@ -698,12 +680,11 @@ export const info = [
     info2: `<p>
     1) A team of maximum three candidates pursuing undergraduate/postgraduate program are allowed.
     <br /> <br />
-    2) All the participants should bring valid I-Cards while coming for the contest. No one without I-Card will be allowed for the contest and the team will be disqualified.
   </p>`,
     info3: `<p>
     1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
       <br />
-    2) Soft copy of the technical paper and the abstract should be mailed to paper.credenz19@gmail.com.
+    2) Soft copy of the technical paper and the abstract should be mailed to paper.pisbcredenz@gmail.com.
     <br />
     3) The paper must strictly adhere to the IEEE format.
       <br />
@@ -719,19 +700,11 @@ export const info = [
     </ul>
 </p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+    Anushka Mali &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
-      </a>
-    </p>
-    <p className=' text-center'>
-      Purvesh Jain &nbsp;
-      <br />
-      <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 7385747678'>
+        <span>&nbsp; +91 7385747678</span>
       </a>
     </p>`,
   },
@@ -743,10 +716,10 @@ export const info = [
     tagline:
       "Decrypt the clues to solve complex puzzles and race your way to finish at top.",
     info1: `<p>
-    An online treasure hunt where players find different pieces of clues on various websites to solve a variety of puzzles. Solve a set of riddles with important clues and get to the finish line before anyone can.
-    <br />
-    Decrypt the encrypted, go along the trail and race with others to win! This is your chance to know how good you are with web and test your surfing skills. So, log on to our website and solve your way through the questions.
-    <br />
+    Tread carefully along your way, solving a series of strategic clues, watching out for the concealed misdirection. <br/>
+    Decrypt the clues, enjoy the hunt and race your way to the finish to win some exciting goodies! <br />
+    This is your chance to put your logic and reasoning to test. So, log on to our website and be a Sherlock for a day!<br />
+
     To start solving, visit nth.credenz.in 
     </p>
     <h5>Registration Fees: </h5>
@@ -770,13 +743,14 @@ export const info = [
     </ul>
   </p>`,
     info3: `<p>
-    1) There will be two Network Treasure Hunts, three and one week respectively before Credenz '19.
+    1) NTH will be conducted twice during Credenz. Both the Treasure Hunt are conducted independently 
+    and will have a separate list of winners.      
+     <br />
+     2)The first hunt is to get the participants acquainted with the format of the online hunt and also with the wide variety of riddles and puzzles that they could come across in the main hunt. 
+     <br />
+    3) The second hunt, also the main "Network Treasure Hunt" has much higher stakes with some amazing prizes. This hunt will be longer than the previous hunt and will test the limits of the participants. 
       <br />
-    2) Both the Treasure Hunts are independent. There will be separate winners for both the Treasure Hunts.
-      <br />
-    3) It consists of 30 to 50 levels each.
-      <br />
-      4) To go to the next level, you need to crack the present level in any possible way.
+      4) The hunt is designed to be very intriguing and super fun to play.
 </p>`,
     info4: `<p>
 The person who has cracked the highest number of levels wins.
@@ -784,19 +758,19 @@ The person who has cracked the highest number of levels wins.
 NOTE: In case of a tie, the one who has reached first on that level is the winner.
 </p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+    Garvita Jain &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 89895 53238'>
+        <span>&nbsp; +91 89895 53238</span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+    Prajwal Patankar &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 88887 26344'>
+        <span>&nbsp;+91 88887 26344</span>
       </a>
     </p>`,
   },
