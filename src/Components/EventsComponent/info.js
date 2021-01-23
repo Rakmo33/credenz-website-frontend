@@ -638,19 +638,19 @@ export const info = [
     </ul>
 </p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+      Yash Sonar &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 97631 26056'>
+        <span>&nbsp; +91 97631 26056</span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+      Elika Mishra &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 96736 42654'>
+        <span>&nbsp;+91 96736 42654</span>
       </a>
     </p>`,
   },

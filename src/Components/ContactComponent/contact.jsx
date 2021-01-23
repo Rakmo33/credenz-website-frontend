@@ -15,7 +15,7 @@ const ContactUs = () => {
         <div className='row content' style={{ marginTop: "20px" }}>
           <ContactCard
             img={onkar}
-            email='Jr.onkarlitake@gmail.com'
+            email='jr.onkarlitake@gmail.com'
             phone='+91 988114969'
             name='Onkar Litake'
           />
