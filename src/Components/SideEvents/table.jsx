@@ -7,7 +7,7 @@ const Table = ({users}) => {
     <table className="table">
       <thead>
         <tr>
-          <th scope="col">Rank</th>
+          {/*<th scope="col">Rank</th>*/}
           <th scope="col">Username</th>
           <th scope="col">Institution</th>
           <th scope="col">Score</th>
@@ -16,8 +16,8 @@ const Table = ({users}) => {
       <tbody>
         {users.map((user,index) => (
           <tr key={index}>
-            <td>{user.rank}</td>
-            <td>{user.name}</td>
+            {/*<td>{user.rank}</td>*/}
+            <td>{user.username}</td>
             <td>{user.college}</td>
             <td>{user.score}</td>
           </tr>
