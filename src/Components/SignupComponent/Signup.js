@@ -36,7 +36,7 @@ function Signup() {
     if (Object.keys(errors).length === 0 && errors.constructor === Object) {
       try {
         axios
-          .post("http://credenzwebsite.herokuapp.com/signup", {
+          .post(`${process.env.REACT_APP_API_URL}/signup`, {
             username: username,
             name: name,
             password: password,
@@ -53,7 +53,7 @@ function Signup() {
             // console.log("HEREEE");
             try {
               axios
-                .post("http://credenzwebsite.herokuapp.com/login", {
+                .post(`${process.env.REACT_APP_API_URL}/login`, {
                   username: username,
                   password: password,
                 })
@@ -151,10 +151,11 @@ function Signup() {
         <div className='row py-5 mt-4 align-items-center '>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
-              src={require('../../assests/img/create.svg')}              alt='areate account'
+              src={require("../../assests/img/create.svg")}
+              alt='areate account'
               className='img-fluid mb-3 d-none d-md-block'
             />
-            <h1 style={{color:'white'}}>Create an Account</h1>
+            <h1 style={{ color: "white" }}>Create an Account</h1>
           </div>
 
           <div className='col-md-7 col-lg-6 ml-auto'>

@@ -22,7 +22,7 @@ const Events = () => {
 
   async function AllEvents() {
     const response = await axios.get(
-      "http://credenzwebsite.herokuapp.com/allevents"
+      `${process.env.REACT_APP_API_URL}/allevents`
     );
     //console.log("I am response" + response);
     const data = await response.data;
