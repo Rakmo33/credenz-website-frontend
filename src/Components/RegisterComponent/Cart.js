@@ -8,8 +8,6 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 
 function Cart() {
 
-    
-
     function clearCart(event) {
       
           localStorage.removeItem("Cart")
@@ -18,13 +16,15 @@ function Cart() {
         
     }
 
-    function clearEvent(event) {
-      
+    function clearEvent(event, index) {
+      alert(index)
       var comma = ","
       var temp = comma.concat(event);
       var oldCart = localStorage.getItem("Cart")
       var newCart = oldCart.replace(temp, "")
       temp = event.concat(",");
+      newCart = newCart.replace(temp, "")
+      temp = event;
       newCart = newCart.replace(temp, "")
       //console.log(newCart)
       localStorage.setItem("Cart", newCart)
@@ -39,7 +39,7 @@ function Cart() {
           <td>{count++}</td>
           <td>{x}</td>
           <td>
-            <button onClick={()=>clearEvent(x)} type="button" class="btn btn-outline-primary"><i class="fa fa-trash"></i></button>
+            <button onClick={()=>clearEvent(x, count-1)} type="button" class="btn btn-outline-primary"><i class="fa fa-trash"></i></button>
           </td>
           
         </tr>

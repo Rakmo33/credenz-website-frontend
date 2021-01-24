@@ -26,85 +26,10 @@ const Leaderboard = () => {
       college: "pict",
       score: 200,
     },
-    {
-      rank: 1,
-      name: "gg",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "as",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "tp",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "sl",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "ko",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "xyz",
-      college: "pict",
-      score: 200,
-    },
+    
   ];
+
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
