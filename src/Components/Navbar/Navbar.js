@@ -8,7 +8,7 @@ import Modal2 from "../Modal/UpdateModal";
 import $ from "jquery";
 // import { faDivide } from "@fortawesome/free-solid-svg-icons";
 
-function NavBar() {
+function NavBar({cartNum}) {
   let login = "login";
   const location = useLocation();
 
@@ -29,6 +29,8 @@ function NavBar() {
   var cartArray = localStorage.getItem("Cart")
     ? localStorage.getItem("Cart").split(",")
     : [];
+
+    //alert("crtt"+cartNum)
 
   const LoginBtn = () => {
     if (!localStorage.getItem("user")) {
@@ -233,7 +235,7 @@ function NavBar() {
                     className='fa fa-lg fa-shopping-cart'
                     title='Cart'
                     value={5}></i>
-                  <span className='badge'>{cartArray.length}</span>
+                  <span className='badge'>{cartNum}</span>
                 </div>
               </Link>
             </li>

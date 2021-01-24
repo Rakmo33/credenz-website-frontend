@@ -12,14 +12,13 @@ import Nav from "../Navbar/Navbar";
 
 function NewReg() {
   const params = useParams();
-
   //   const user = localStorage.getItem("user") ? localStorage.getItem("user") : "";
 
   let defaultFormData = {};
   //if(localStorage.getItem("user")) {
   defaultFormData = {
     event: params.event,
-    team: "single",
+    team: "team",
     teamName: "",
     name1: "", //JSON.stringify(localStorage.getItem("user")),//localStorage.getItem("user")!==undefined ? JSON.stringify(user["username"]).replace(/"/g, "") : "",
     name2: "",
@@ -39,7 +38,6 @@ function NewReg() {
           <h1 className='reg-head'>Choose a team, or go Solo!</h1>
           <img src='/img/register.svg' alt='registration form' />
         </div>
-
         <div className='container'>
           <form className='col-md-9 m-auto'>
             <NameWrap

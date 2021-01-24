@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
-
 import "./eventmodal.css";
 
-function addToCart(event, cart, setCart, eventReg, setEventReg) {
+function addToCart(event, cart, setCart, eventReg, setEventReg, setcartNum) {
+
   var cartArray = localStorage.getItem("Cart")
     ? localStorage.getItem("Cart").split(",")
     : [];
@@ -36,7 +36,6 @@ function addToCart(event, cart, setCart, eventReg, setEventReg) {
 
       let tempRegArray = [...regArray];
       console.log(tempRegArray);
-
       alert(JSON.stringify(tempRegArray));
       tempRegArray.push(singleRegObject);
       setEventReg(tempRegArray);
@@ -50,6 +49,8 @@ function addToCart(event, cart, setCart, eventReg, setEventReg) {
     //console.log("temp" + cartArray)
     setCart(tempArray);
     localStorage.setItem("Cart", tempArray);
+
+    setcartNum(cartArray.length)
     window.location.reload(false);
   } else {
     alert("Event already present in the cart!");
@@ -243,7 +244,8 @@ function EventModal(props) {
               props.cart,
               props.setCart,
               props.eventReg,
-              props.setEventReg
+              props.setEventReg,
+              props.setcartNum
             )
           }>
           <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>

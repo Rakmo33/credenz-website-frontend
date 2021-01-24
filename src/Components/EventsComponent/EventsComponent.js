@@ -7,7 +7,7 @@ import Footer from "../Footer/footer";
 // import { Nav } from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 
-const Events = () => {
+const Events = (setcartNum) => {
   // window.location.reload(false); //refresh page
 
   const [show, setShow] = useState(false);
@@ -46,7 +46,7 @@ const Events = () => {
     <div className='evePage' style={{ marginTop: "70px" }}>
       <Navbar />
       <SideEvent />
-      <Animation></Animation>
+      <Animation setcartNum={setcartNum}></Animation>
       <Modal1
         show={show}
         handleClose={handleClose}
