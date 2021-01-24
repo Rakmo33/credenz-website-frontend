@@ -19,7 +19,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
-  const [disabled, setdisabled] = useState(true);
+  // const [disabled, setdisabled] = useState(true);
   const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -36,7 +36,7 @@ function Signup() {
     if (Object.keys(errors).length === 0 && errors.constructor === Object) {
       try {
         axios
-          .post("http://credenzwebsite.herokuapp.com/signup", {
+          .post(`${process.env.REACT_APP_API_URL}/signup`, {
             username: username,
             name: name,
             password: password,
@@ -53,7 +53,7 @@ function Signup() {
             // console.log("HEREEE");
             try {
               axios
-                .post("http://credenzwebsite.herokuapp.com/login", {
+                .post(`${process.env.REACT_APP_API_URL}/login`, {
                   username: username,
                   password: password,
                 })
@@ -151,10 +151,11 @@ function Signup() {
         <div className='row py-5 mt-4 align-items-center '>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
             <img
-              src={require('../../assests/img/create.svg')}              alt='areate account'
+              src={require("../../assests/img/create.svg")}
+              alt='areate account'
               className='img-fluid mb-3 d-none d-md-block'
             />
-            <h1 style={{color:'white'}}>Create an Account</h1>
+            <h1 style={{ color: "white" }}>Create an Account</h1>
           </div>
 
           <div className='col-md-7 col-lg-6 ml-auto'>
@@ -176,7 +177,7 @@ function Signup() {
                     value={name}
                     required
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='nameErr' className='form-text text-danger'>
                       {errors.name}
@@ -200,7 +201,7 @@ function Signup() {
                     value={username}
                     required
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small
                       id='nameErr'
@@ -226,7 +227,7 @@ function Signup() {
                     value={email}
                     required
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='nameErr' className='form-text text-danger'>
                       {errors.email}
@@ -251,7 +252,7 @@ function Signup() {
                     required
                     maxLength='10'
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='phoneErr' className='form-text text-danger'>
                       {errors.phone}
@@ -282,7 +283,7 @@ function Signup() {
                     <option>PCCOE</option>
                     <option>Other</option>
                   </select>
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='clgErr' className='form-text text-danger'>
                       {errors.college}

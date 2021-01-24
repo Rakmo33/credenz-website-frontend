@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Modal.css";
 import axios from "axios";
-import jwt from "jwt-decode";
+// import jwt from "jwt-decode";
 
 function ModalTitle({ type, event }) {
   if (type === "login")
@@ -59,11 +59,9 @@ function ModalBody({ handleClose, type, event, event_info }) {
 
       e.preventDefault();
 
-      
-      /*http://credenzwebsite.herokuapp.com/login */
       try {
         axios
-          .post("http://credenzwebsite.herokuapp.com/login", {
+          .post(`${process.env.REACT_APP_API_URL}/login`, {
             username: username,
             password: password,
           })
@@ -76,7 +74,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
 
               handleClose();
               refreshPage();
-              const user = jwt(response.data["accessToken"]);
+              // const user = jwt(response.data["accessToken"]);
               // console.log("JWT decode : " + JSON.stringify(user));
               setLogged(true);
             } else {

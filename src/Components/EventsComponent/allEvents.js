@@ -6,7 +6,7 @@ export const AllEvents = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://credenzwebsite.herokuapp.com/allevents")
+        .get(`${process.env.REACT_APP_API_URL}/allevents`)
         .then(function (response) {
           //alert(JSON.stringify(response.data[0]["event_name"]));
           setEventDesc(response.data);

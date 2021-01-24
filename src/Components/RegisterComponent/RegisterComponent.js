@@ -5,7 +5,7 @@ import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
 import axios from "axios";
 import $ from "jquery";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 // form components
 import NameWrap from "./NameWrap";
 /*
@@ -24,9 +24,7 @@ import jwt from "jwt-decode";
 import Nav from "../Navbar/Navbar";
 
 const Register = () => {
-
   const params = useParams();
-
 
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
@@ -130,23 +128,35 @@ const Register = () => {
   ]);
 
   const getUsername = (event) => {
-    switch(event) {
-      case "Clash": return ["clash", 100];
-      case "Reverse Coding": return ["rc", 50];
-      case "Pixelate": return ["pixelate", 50];
-      case "Cretronix": return ["cretronix", 50];
-      case "Bplan": return ["bplan", 50];
-      case "Wallstreet": return ["wallstreet", 50];
-      case "Datawiz": return ["datawiz", 50];
-      case "Enigma": return ["enigma", 50];
-      case "Quiz": return ["quiz", 50];
-      case "Web Weaver": return ["webweaver", 50];
-      case "Paper Presentation": return ["paperpresentation", 50];
-      case "Network Treasure Hunt": return ["nth", 50];
-      default: return "Invalid event";
-                
+    switch (event) {
+      case "Clash":
+        return ["clash", 100];
+      case "Reverse Coding":
+        return ["rc", 50];
+      case "Pixelate":
+        return ["pixelate", 50];
+      case "Cretronix":
+        return ["cretronix", 50];
+      case "Bplan":
+        return ["bplan", 50];
+      case "Wallstreet":
+        return ["wallstreet", 50];
+      case "Datawiz":
+        return ["datawiz", 50];
+      case "Enigma":
+        return ["enigma", 50];
+      case "Quiz":
+        return ["quiz", 50];
+      case "Web Weaver":
+        return ["webweaver", 50];
+      case "Paper Presentation":
+        return ["paperpresentation", 50];
+      case "Network Treasure Hunt":
+        return ["nth", 50];
+      default:
+        return "Invalid event";
     }
-  }
+  };
 
   let user = "";
 
@@ -166,7 +176,7 @@ const Register = () => {
     name3: "",
     name4: "",
     //year: undefined,
-    
+
     /*number1: localStorage.getItem("user")
       ? JSON.stringify(user["phoneno"]).replace(/"/g, "")
       : "",
@@ -181,8 +191,6 @@ const Register = () => {
       : "",
     //events: {},*/
   };
-
-
 
   const [formData, setFormData] = useForm(defaultFormData);
   console.log(formData);
@@ -278,45 +286,45 @@ const Register = () => {
 
       console.log(players);
       console.log(count);
-          if (formData.team === "single") {
-            axios({
-              method: "post",
-              url: `http://credenzwebsite.herokuapp.com/${decoded.username}/${getUsername(formData.event)[0]}`,
-              headers: { authorization: `Bearer ${accessToken}` },
-            })
-              .then((response) => {
-                alert(response.data)
-              })
-              .catch((error) => {
-                alert("Error!" + error) //request fails with 500
-              });
-          } else {
-            axios
-              .post(
-                "http://credenzwebsite.herokuapp.com/addteam",
-                {
-                  //...data
-                  players: players,
-                  event_name: getUsername(formData.event)[0],
-                  team_username: formData.teamName,
-                  no_of_players: count,
-                },
-                {
-                  headers: {
-                    authorization: `Bearer ${accessToken}`,
-                  },
-                }
-              )
-              .then((response) => {
-                console.log("team :" + JSON.stringify(response.data));
-              })
-              .catch((error) => {
-                console.log("Axios error : " + error); //request fails with 500
-              });
-            console.log("else");
-          } //else
-        
-      
+      if (formData.team === "single") {
+        axios({
+          method: "post",
+          url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
+            getUsername(formData.event)[0]
+          }`,
+          headers: { authorization: `Bearer ${accessToken}` },
+        })
+          .then((response) => {
+            alert(response.data);
+          })
+          .catch((error) => {
+            alert("Error!" + error); //request fails with 500
+          });
+      } else {
+        axios
+          .post(
+            `${process.env.REACT_APP_API_URL}/addteam`,
+            {
+              //...data
+              players: players,
+              event_name: getUsername(formData.event)[0],
+              team_username: formData.teamName,
+              no_of_players: count,
+            },
+            {
+              headers: {
+                authorization: `Bearer ${accessToken}`,
+              },
+            }
+          )
+          .then((response) => {
+            console.log("team :" + JSON.stringify(response.data));
+          })
+          .catch((error) => {
+            console.log("Axios error : " + error); //request fails with 500
+          });
+        console.log("else");
+      } //else
     };
 
     // prev click
@@ -362,10 +370,10 @@ const Register = () => {
 
       // console.log(JSON.stringify(events))
 
-      const token = localStorage.getItem("user");
+      // const token = localStorage.getItem("user");
       // alert(typeof(token))
-      const accessToken = JSON.parse(token).accessToken;
-      var decoded = jwt_decode(token);
+      // const accessToken = JSON.parse(token).accessToken;
+      // var decoded = jwt_decode(token);
 
       eventsReg();
 
@@ -380,7 +388,7 @@ const Register = () => {
       }
 
       const data = await axios
-        .post("http://credenzwebsite.herokuapp.com/razorpay")
+        .post(`${process.env.REACT_APP_API_URL}/razorpay`)
         .then(function (response) {
           console.log(response);
           console.log(JSON.stringify(response));
@@ -452,12 +460,14 @@ const Register = () => {
         <div className='regPage'>
           <div className='regPageVector'>
             <h1 className='reg-head'>Registration Form</h1>
-            <img src={require('../../assests/img/register.svg')} alt='registration form' />
+            <img
+              src={require("../../assests/img/register.svg")}
+              alt='registration form'
+            />
           </div>
 
           <div className='container'>
-
-          <h2>Event: {formData.event}</h2>
+            <h2>Event: {formData.event}</h2>
 
             <NavigateButton
               id='back-btn'
@@ -466,9 +476,7 @@ const Register = () => {
               <i className='fa fa-chevron-circle-left' aria-hidden='true'></i>
             </NavigateButton>
 
-
-
-        {/*    <EventWrap
+            {/*    <EventWrap
                 changeHandler={changeHandler}
                 events={events}
                 isVisible={isVisible[0]}
@@ -485,9 +493,7 @@ const Register = () => {
                 formData={formData}
                 setFormData={setFormData}></NameWrap>
 
-                
-
-            {/*
+              {/*
               <YearWrap
                 isVisible={isVisible[1]}
                 cls={`parent ${anim[1]}`}

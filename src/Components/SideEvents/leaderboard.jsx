@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Table from "./table";
 import Social from "../sideEventButton/sideEvent";
-import Footer from "../Footer/footer";
+
+//import Footer from "../Footer/footer";
 import axios from "axios";
 
 const Leaderboard = () => {
@@ -17,6 +18,7 @@ const Leaderboard = () => {
       college: "pict",
       score: 200,
     },
+
     */
 
     useEffect(() => {

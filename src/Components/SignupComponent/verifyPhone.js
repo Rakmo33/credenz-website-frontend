@@ -1,89 +1,80 @@
 import React, { useState } from "react";
 import "./Signup.css";
-import Footer from "../Footer/footer";
+// import Footer from "../Footer/footer";
 import Social from "../sideEventButton/sideEvent";
 import Validate from "./ValidateInfo";
 import axios from "axios";
 
 function VerifyPhone() {
-  
   const [phone, setPhone] = useState("");
-  const [code, setcode] = useState("")
-  const [OTP, setOTP] = useState(false)
+  const [code, setcode] = useState("");
+  const [OTP, setOTP] = useState(false);
 
   const submitForm = (e) => {
     e.preventDefault();
 
-    if(!values.phoneno) {
-        errors.phone = '*Phone no required(with country code for eg 91-0123456789).'
-    } else if(!/^[0-9]{12}$/.test(values.phoneno)) {
-        errors.phone = '*Please enter valid phone number.'
-    } 
+    if (!values.phoneno) {
+      errors.phone =
+        "*Phone no required(with country code for eg 91-0123456789).";
+    } else if (!/^[0-9]{12}$/.test(values.phoneno)) {
+      errors.phone = "*Please enter valid phone number.";
+    }
 
     if (!errors.boolean) {
-
-      
-
-      if(!OTP) {
-        
-      var IN = "91";
-      var ph = IN.concat(phone)
-      console.log(ph)
-      setPhone(ph)
-      console.log(phone)
+      if (!OTP) {
+        var IN = "91";
+        var ph = IN.concat(phone);
+        console.log(ph);
+        setPhone(ph);
+        console.log(phone);
 
         try {
           axios
             .get("http://localhost:5000/getcode", {
               params: {
-                  phonenumber: ph,
-                  channel: 'sms'
-              }
+                phonenumber: ph,
+                channel: "sms",
+              },
             })
-            .then(function(data){
-                    setOTP(true)
-                    console.log(data)
-                  })
-            .catch(err => console.log(err));
+            .then(function (data) {
+              setOTP(true);
+              console.log(data);
+            })
+            .catch((err) => console.log(err));
         } catch (e) {
           alert("Axios error!" + e);
         }
-       
-      }
-      else {
-        console.log("else")
-        console.log(phone)
-        
-        console.log(ph)
-        console.log(code)
+      } else {
+        console.log("else");
+        console.log(phone);
+
+        console.log(ph);
+        console.log(code);
         try {
           axios
             .get("http://localhost:5000/verifycode", {
               params: {
-                  phonenumber: phone,
-                  code: code
-              }
+                phonenumber: phone,
+                code: code,
+              },
             })
-            .then(function(data){
-                    alert(JSON.stringify(data))
-                  })
-            .catch(err => console.log(JSON.stringify(err)));
+            .then(function (data) {
+              alert(JSON.stringify(data));
+            })
+            .catch((err) => console.log(JSON.stringify(err)));
         } catch (e) {
           alert("Axios error!" + e);
         }
       }
-
     }
 
     // e.preventDefualt()
   };
 
   const values = {
-   
     phoneno: phone,
-   
   };
-/*
+  /*
   const verifyPhone = (e) => {
     setPhone(e.target.value)
 
@@ -98,11 +89,11 @@ function VerifyPhone() {
     .catch(err => console.log(err));
 
   }
-*/console.log(values);
+*/ console.log(
+    values
+  );
 
-const errors = Validate(values);
-
-
+  const errors = Validate(values);
 
   //e.preventDefualt()
 
@@ -122,8 +113,6 @@ const errors = Validate(values);
           <div className='col-md-7 col-lg-6 ml-auto'>
             <form onSubmit={submitForm}>
               <div className='row'>
-               
-
                 <div className='input-group col-lg-12 mb-4'>
                   <div className='input-group-prepend'>
                     <span className='input-group-text bg-white px-4 border-md border-right-0'>
@@ -136,7 +125,7 @@ const errors = Validate(values);
                     name='phone'
                     placeholder='Phone Number'
                     className='form-control bg-white border-md border-left-0 pl-3'
-                    onChange={(e)=>setPhone(e.target.value)}
+                    onChange={(e) => setPhone(e.target.value)}
                     value={phone}
                   />
                   {errors && (
@@ -146,35 +135,36 @@ const errors = Validate(values);
                   )}
                 </div>
 
-                { OTP && <div className='input-group col-lg-12 mb-4'>
-                  <div className='input-group-prepend'>
-                    <span className='input-group-text bg-white px-4 border-md border-right-0'>
-                      <i className='fa fa-phone-square text-muted'></i>
-                    </span>
+                {OTP && (
+                  <div className='input-group col-lg-12 mb-4'>
+                    <div className='input-group-prepend'>
+                      <span className='input-group-text bg-white px-4 border-md border-right-0'>
+                        <i className='fa fa-phone-square text-muted'></i>
+                      </span>
+                    </div>
+                    <input
+                      id='phoneNumber'
+                      type='text'
+                      name='phone'
+                      placeholder='Enter Verification Code'
+                      className='form-control bg-white border-md border-left-0 pl-3'
+                      onChange={(e) => setcode(e.target.value)}
+                      value={code}
+                    />
                   </div>
-                  <input
-                    id='phoneNumber'
-                    type='text'
-                    name='phone'
-                    placeholder='Enter Verification Code'
-                    className='form-control bg-white border-md border-left-0 pl-3'
-                    onChange={(e)=>setcode(e.target.value)}
-                    value={code}
-                  />
-                  
-                </div>}
+                )}
 
                 <div className='form-group col-lg-12 mx-auto mb-0'>
                   <button
                     type='submit'
                     className='btn btn-primary btn-block py-2'>
-                    
-                    {OTP? 
-                    <span className='font-weight-bold'>
-                      Verify phone no
-                    </span>: <span className='font-weight-bold'>
-                      Send OTP to verify
-                    </span>}
+                    {OTP ? (
+                      <span className='font-weight-bold'>Verify phone no</span>
+                    ) : (
+                      <span className='font-weight-bold'>
+                        Send OTP to verify
+                      </span>
+                    )}
                   </button>
                 </div>
               </div>
@@ -184,7 +174,6 @@ const errors = Validate(values);
       </div>
 
       <Social />
-
     </>
   );
 }

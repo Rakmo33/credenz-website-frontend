@@ -1,6 +1,6 @@
 import React from "react";
 // import classes from "./Member.module.css";
-import Card from "react-bootstrap/Card";
+// import Card from "react-bootstrap/Card";
 import "./newmem.css";
 // import '../../assests/img/team/'
 const member = (props) => {
