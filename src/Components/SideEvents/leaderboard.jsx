@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Table from "./table";
 import Social from "../sideEventButton/sideEvent";
-import Footer from "../Footer/footer";
+// import Footer from "../Footer/footer";
 
 const Leaderboard = () => {
   const [input, setInput] = useState("");
@@ -26,10 +26,7 @@ const Leaderboard = () => {
       college: "pict",
       score: 200,
     },
-    
   ];
-
-  
 
   const handleSearch = (e) => {
     e.preventDefault();

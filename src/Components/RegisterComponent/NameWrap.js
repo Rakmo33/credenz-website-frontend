@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import Name from "./Name";
 import Radio from "./Radio";
 import axios from "axios";
-import jwt_decode from "jwt-decode";
-import jwt from "jwt-decode";
+// import jwt_decode from "jwt-decode";
+// import jwt from "jwt-decode";
 import { Link } from "react-router-dom";
 
 const NameWrap = (props) => {
@@ -11,10 +11,10 @@ const NameWrap = (props) => {
 
   let accessToken = "";
 
-  if (localStorage.getItem("user")) {
-    const token = localStorage.getItem("user");
-    const accessToken = JSON.parse(token).accessToken;
-  }
+  // if (localStorage.getItem("user")) {
+  // const token = localStorage.getItem("user");
+  // const accessToken = JSON.parse(token).accessToken;
+  // }
 
   let checked = [false, false];
   let teamAllowed = true;
@@ -24,18 +24,18 @@ const NameWrap = (props) => {
   var cartArray = localStorage.getItem("Cart")
     ? localStorage.getItem("Cart").split(",")
     : [];
-  let user = "";
+  // let user = "";
 
-  if (localStorage.getItem("user")) {
-    user = jwt(localStorage.getItem("user"));
-  }
+  // if (localStorage.getItem("user")) {
+  //   user = jwt(localStorage.getItem("user"));
+  // }
 
   function storeReg() {
     if (!cartArray.includes(props.formData.event)) {
-      let user = "";
-      if (localStorage.getItem("user")) {
-        user = jwt(localStorage.getItem("user"));
-      }
+      // let user = "";
+      // if (localStorage.getItem("user")) {
+      //   user = jwt(localStorage.getItem("user"));
+      // }
 
       let tempArray = [...cartArray];
       tempArray.push(props.formData.event);
@@ -114,11 +114,11 @@ const NameWrap = (props) => {
               <button
                 onClick={() => storeReg()}
                 type='button'
-                class='btn btn-outline-info'>
+                className='btn btn-outline-info'>
                 Save
               </button>
               <Link to='/events'>
-                <button type='button' class='btn btn-outline-info'>
+                <button type='button' className='btn btn-outline-info'>
                   Back to events
                 </button>
               </Link>
@@ -190,11 +190,11 @@ const NameWrap = (props) => {
               <button
                 onClick={() => storeReg()}
                 type='button'
-                class='btn btn-outline-info'>
+                className='btn btn-outline-info'>
                 Save
               </button>
               <Link to='/events'>
-                <button type='button' class='btn btn-outline-info'>
+                <button type='button' className='btn btn-outline-info'>
                   Back to events
                 </button>
               </Link>

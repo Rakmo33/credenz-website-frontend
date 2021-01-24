@@ -1,9 +1,9 @@
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 import { Row, Col, Container } from "react-bootstrap";
 import Sponsor from "./sponsor/sponsor";
-import classes from './sponsors.module.css';
+// import classes from './sponsors.module.css';
 
 // const sponsors =(props)=>{
 //     return(
@@ -80,13 +80,27 @@ const sponsors = (props) => {
       data-aos-easing='ease-in-sine'
       data-aos-duration='600'>
       <Container fluid>
-        <h2 style={{ textAlign: "center", color: "#dadada", marginBottom:'25px' }}>Sponsors</h2>
-        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'10px'}}>
-          <Col md={3} sm={4}  >
+        <h2
+          style={{
+            textAlign: "center",
+            color: "#dadada",
+            marginBottom: "25px",
+          }}>
+          Sponsors
+        </h2>
+        <Row
+          style={{
+            textAlign: "center",
+            justifyContent: "center",
+            marginTop: "10px",
+          }}>
+          <Col md={3} sm={4}>
             <Sponsor url={"Logo 2.png"}></Sponsor>
-            <h4 style={{marginTop:'7px', color:"white"}}>Educational Partner</h4>
+            <h4 style={{ marginTop: "7px", color: "white" }}>
+              Educational Partner
+            </h4>
           </Col>
-          </Row>
+        </Row>
         {/* <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
           <Col md={3} sm={4}>
             <Sponsor url={"avaya.jpg"}></Sponsor>
@@ -124,10 +138,6 @@ const sponsors = (props) => {
           </Col>
         </Row> */}
 
-
-
-
-
         {/* <Row>
           <Col md={2} sm={4}><Sponsor url={'ims2.jpg'}>nairobi</Sponsor></Col>
           <Col md={2} sm={4}><Sponsor url={'interview3.jpg'}>tokyo</Sponsor></Col>
@@ -141,4 +151,4 @@ const sponsors = (props) => {
   );
 };
 
-export default sponsors ;
+export default sponsors;

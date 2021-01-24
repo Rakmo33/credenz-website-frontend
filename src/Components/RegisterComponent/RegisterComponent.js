@@ -370,10 +370,10 @@ const Register = () => {
 
       // console.log(JSON.stringify(events))
 
-      const token = localStorage.getItem("user");
+      // const token = localStorage.getItem("user");
       // alert(typeof(token))
-      const accessToken = JSON.parse(token).accessToken;
-      var decoded = jwt_decode(token);
+      // const accessToken = JSON.parse(token).accessToken;
+      // var decoded = jwt_decode(token);
 
       eventsReg();
 

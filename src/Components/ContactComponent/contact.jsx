@@ -1,5 +1,5 @@
 import React from "react";
-import user from "./user.png";
+// import user from "./user.png";
 import durvesh from "../../assests/img/team/Durvesh.jpg";
 import rohan from "../../assests/img/team/Rohan2.jpeg";
 import onkar from "../../assests/img/team/onkar.jpg";

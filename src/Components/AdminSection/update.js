@@ -1,8 +1,8 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import { Container, Button } from "react-bootstrap";
 import axios from "axios";
-import jwt_decode from "jwt-decode";
+// import jwt_decode from "jwt-decode";
 
 class Update extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Update extends Component {
 
     const token = localStorage.getItem("user");
     console.log(JSON.parse(token));
-    var decoded = jwt_decode(token);
+    // var decoded = jwt_decode(token);
 
     const accessToken = JSON.parse(token).accessToken;
 

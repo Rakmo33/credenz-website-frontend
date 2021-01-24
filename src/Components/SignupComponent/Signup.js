@@ -19,7 +19,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
-  const [disabled, setdisabled] = useState(true);
+  // const [disabled, setdisabled] = useState(true);
   const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -177,7 +177,7 @@ function Signup() {
                     value={name}
                     required
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='nameErr' className='form-text text-danger'>
                       {errors.name}
@@ -201,7 +201,7 @@ function Signup() {
                     value={username}
                     required
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small
                       id='nameErr'
@@ -227,7 +227,7 @@ function Signup() {
                     value={email}
                     required
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='nameErr' className='form-text text-danger'>
                       {errors.email}
@@ -252,7 +252,7 @@ function Signup() {
                     required
                     maxLength='10'
                   />
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='phoneErr' className='form-text text-danger'>
                       {errors.phone}
@@ -283,7 +283,7 @@ function Signup() {
                     <option>PCCOE</option>
                     <option>Other</option>
                   </select>
-                  <span class='asterisk_input'> </span>
+                  <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='clgErr' className='form-text text-danger'>
                       {errors.college}

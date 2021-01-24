@@ -19,7 +19,7 @@ const Feedback = () => {
 
   const [name, setName] = useState(
     localStorage.getItem("user")
-      ? JSON.stringify(user["name"]).replace(/\"/g, "")
+      ? JSON.stringify(user["name"]).replace(/"/g, "")
       : ""
   );
   const [feedback, setFeedback] = useState("");
@@ -83,7 +83,11 @@ const Feedback = () => {
         ) : null}
         <div className='row py-5 mt-4 align-items-center'>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>
-            <img src={require('../../assests/img/feedback.svg')} alt='' className='img-fluid mb-3 ' />
+            <img
+              src={require("../../assests/img/feedback.svg")}
+              alt=''
+              className='img-fluid mb-3 '
+            />
             {/* <h1>Feedback</h1> */}
           </div>
           <div className='col-md-7 col-lg-6 ml-auto'>
@@ -98,7 +102,7 @@ const Feedback = () => {
                   onChange={(e) => setName(e.target.value)}
                   defaultValue={
                     localStorage.getItem("user")
-                      ? JSON.stringify(user["name"]).replace(/\"/g, "")
+                      ? JSON.stringify(user["name"]).replace(/"/g, "")
                       : "Name"
                   }
                   required></input>

@@ -18,7 +18,7 @@ function Proceed(props) {
 
     return (
       <div className='proceedWrap'>
-        {/*<table class='table table-striped'>
+        {/*<table className='table table-striped'>
           <thead>
             <tr>
               <th scope='col'>Registered events</th>

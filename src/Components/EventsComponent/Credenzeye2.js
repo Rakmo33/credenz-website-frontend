@@ -28,8 +28,6 @@ export function useWindowDimensions() {
 }
 
 function SvgCredenzeye(props) {
-  const [left, setLeft] = useState(0);
-  const [top, setTop] = useState(0);
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
@@ -52,8 +50,6 @@ function SvgCredenzeye(props) {
       eyeballInner.setAttribute("cy", 1050);
 
       document.addEventListener("mousemove", (e) => {
-        setLeft(e.pageX);
-        setTop(e.pageY);
         xpercentage = (e.pageX - width / 2) / width;
         ypercentage = (e.pageY - height / 2) / height;
         outerposx = 1006.21 + xpercentage * outerr * 2.0;

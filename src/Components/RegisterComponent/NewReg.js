@@ -1,66 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hooks-helper";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
 //import axios from "axios";
-import $ from "jquery";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 // form components
 import NameWrap from "./NameWrap";
 //import LoginFirst from "../LoginFirst/LoginFirst";
-import jwt_decode from "jwt-decode";
-import jwt from "jwt-decode";
 import Nav from "../Navbar/Navbar";
 
 function NewReg() {
+  const params = useParams();
 
-    const params = useParams();
+  //   const user = localStorage.getItem("user") ? localStorage.getItem("user") : "";
 
-    const user = localStorage.getItem("user") ? localStorage.getItem("user"): '';
+  let defaultFormData = {};
+  //if(localStorage.getItem("user")) {
+  defaultFormData = {
+    event: params.event,
+    team: "single",
+    teamName: "",
+    name1: "", //JSON.stringify(localStorage.getItem("user")),//localStorage.getItem("user")!==undefined ? JSON.stringify(user["username"]).replace(/"/g, "") : "",
+    name2: "",
+    name3: "",
+  };
+  // }
+  const [formData, setFormData] = useForm(defaultFormData);
 
-    let defaultFormData = {}
-    //if(localStorage.getItem("user")) {
-    defaultFormData = {
-        event: params.event,
-        team: "single",
-        teamName: "",
-        name1: "",//JSON.stringify(localStorage.getItem("user")),//localStorage.getItem("user")!==undefined ? JSON.stringify(user["username"]).replace(/"/g, "") : "",
-        name2: "",
-        name3: "",
-      };
-   // }
-      const [formData, setFormData] = useForm(defaultFormData);
+  //  if(localStorage.getItem("user")){
 
+  return (
+    <div>
+      <Nav />
+      <SideEventsButton />
+      <div className='regPage'>
+        <div className='regPageVector'>
+          <h1 className='reg-head'>Choose a team, or go Solo!</h1>
+          <img src='/img/register.svg' alt='registration form' />
+        </div>
 
-      //  if(localStorage.getItem("user")){        
+        <div className='container'>
+          <form className='col-md-9 m-auto'>
+            <NameWrap
+              isVisible={true}
+              formData={formData}
+              setFormData={setFormData}></NameWrap>
+          </form>
+        </div>
+      </div>
 
-            return (
-                <div>
-                <Nav />
-                <SideEventsButton />
-                <div className='regPage'>
-                    <div className='regPageVector'>
-                    <h1 className='reg-head'>Choose a team, or go Solo!</h1>
-                    <img src='/img/register.svg' alt='registration form' />
-                    </div>
-        
-                    <div className='container'>
-        
-                    <form className='col-md-9 m-auto'>
-                        <NameWrap
-                        isVisible={true}
-                        formData={formData}
-                        setFormData={setFormData}></NameWrap>
-                    </form>
-                    </div>
-                </div>
-                
-                <Footer />
-                </div>
-                
-            );
-/*            } else {
+      <Footer />
+    </div>
+  );
+  /*            } else {
             return (
                 <div>
                 <SideEventsButton />
@@ -70,9 +63,6 @@ function NewReg() {
                 </div>
             );
             }*/
-  
-};
-  
-export default NewReg;
-  
+}
 
+export default NewReg;

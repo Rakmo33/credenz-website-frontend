@@ -6,101 +6,98 @@ import jwt from "jwt-decode";
 
 import "./eventmodal.css";
 
-function addToCart(event, cart, setCart,eventReg, setEventReg) {
+function addToCart(event, cart, setCart, eventReg, setEventReg) {
+  var cartArray = localStorage.getItem("Cart")
+    ? localStorage.getItem("Cart").split(",")
+    : [];
+  var regArray = localStorage.getItem("Register")
+    ? localStorage.getItem("Register").split(",")
+    : [];
 
-  var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
-  var regArray = localStorage.getItem("Register")? localStorage.getItem("Register").split(","):[];
+  regArray.map((x) => alert(JSON.stringify(x.event)));
 
-  regArray.map((x)=>alert(JSON.stringify(x.event)))
-  
-  if(!cartArray.includes(event)) {
-    
-    
+  if (!cartArray.includes(event)) {
     const teamPresent = teams(event);
 
-    let user = ''
+    let user = "";
     if (localStorage.getItem("user")) {
       user = jwt(localStorage.getItem("user"));
     }
 
-    if(teamPresent) {    
-      setEventReg("team")
-    }else {
-
+    if (teamPresent) {
+      setEventReg("team");
+    } else {
       let singleRegObject = {
         event: event,
-        username: localStorage.getItem("user") ? JSON.stringify(user["username"]).replace(/"/g, ""):""
-      }
+        username: localStorage.getItem("user")
+          ? JSON.stringify(user["username"]).replace(/"/g, "")
+          : "",
+      };
 
-      let tempRegArray = [...regArray]
-      console.log(tempRegArray)
+      let tempRegArray = [...regArray];
+      console.log(tempRegArray);
 
-     
-
-      alert(JSON.stringify(tempRegArray))
-      tempRegArray.push(singleRegObject)
-      setEventReg(tempRegArray)
+      alert(JSON.stringify(tempRegArray));
+      tempRegArray.push(singleRegObject);
+      setEventReg(tempRegArray);
       localStorage.setItem("Register", tempRegArray);
     }
 
     //console.log(eventReg)
     //var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
-    let tempArray = [...cartArray]
-    tempArray.push(event)
+    let tempArray = [...cartArray];
+    tempArray.push(event);
     //console.log("temp" + cartArray)
     setCart(tempArray);
     localStorage.setItem("Cart", tempArray);
     window.location.reload(false);
-  }else{
-    alert("Event already present in the cart!")
+  } else {
+    alert("Event already present in the cart!");
   }
 }
 
 function teams(event) {
-
   let teamAllowed = true;
 
-  switch(event) {
-    case "Clash"://1 member
-        teamAllowed=false;
-        break;
-    case "Reverse Coding"://1 member
-        teamAllowed=false;
-        break;
-    case "Enigma"://1 member
-        teamAllowed=false;
-        break;
-    case "Quiz"://1 member
-        teamAllowed=false;
-        break;
-    case "Cretronix"://1 member
-        teamAllowed=false;
-        break;
-    case "Bplan"://3 members
-        break;
-    case "Network Treasure Hunt"://1 member
-        teamAllowed=false;
-        break;
-    case "Paper Presentation"://3 members
-        break;
-    case "Datawiz"://3 members
-        break;
-    case "Webweaver"://3 members
-        break;
-    case "Wallstreet"://1 member
-        teamAllowed=false;
-        break;
-    case "Pixelate"://1 member
-        teamAllowed=false;
-        break;
+  switch (event) {
+    case "Clash": //1 member
+      teamAllowed = false;
+      break;
+    case "Reverse Coding": //1 member
+      teamAllowed = false;
+      break;
+    case "Enigma": //1 member
+      teamAllowed = false;
+      break;
+    case "Quiz": //1 member
+      teamAllowed = false;
+      break;
+    case "Cretronix": //1 member
+      teamAllowed = false;
+      break;
+    case "Bplan": //3 members
+      break;
+    case "Network Treasure Hunt": //1 member
+      teamAllowed = false;
+      break;
+    case "Paper Presentation": //3 members
+      break;
+    case "Datawiz": //3 members
+      break;
+    case "Webweaver": //3 members
+      break;
+    case "Wallstreet": //1 member
+      teamAllowed = false;
+      break;
+    case "Pixelate": //1 member
+      teamAllowed = false;
+      break;
     default:
       break;
   }
 
   return teamAllowed;
-
 }
-
 
 function EventModal(props) {
   let currentInfo = props.info;
@@ -153,7 +150,7 @@ function EventModal(props) {
           Register Now!
         </Link>
        */}
-       {/* {
+        {/* {
           teams(currentInfo.title)===false ? 
           <button className='regNowBtn' 
           onClick={() => addToCart(currentInfo.title, props.cart, props.setCart,props.eventReg, props.setEventReg)}>
@@ -166,7 +163,7 @@ function EventModal(props) {
             </button>
           </Link> 
        } */}
-        
+
         <span onClick={props.onClick}>
           <i className='fa fa-times'></i>
         </span>
@@ -237,21 +234,31 @@ function EventModal(props) {
         <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
         Add to Cart
       </button>*/}
-       {
-          teams(currentInfo.title)===false ? 
-          <button className='regNowBtn' 
-          onClick={() => addToCart(currentInfo.title, props.cart, props.setCart,props.eventReg, props.setEventReg)}>
-             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-            Add to Cart
-          </button> 
-          :
-          <Link  style={{textAlign:'center'}} to={`/newreg/${currentInfo.title}`}>
-            <button className='regNowBtn'>
+      {teams(currentInfo.title) === false ? (
+        <button
+          className='regNowBtn'
+          onClick={() =>
+            addToCart(
+              currentInfo.title,
+              props.cart,
+              props.setCart,
+              props.eventReg,
+              props.setEventReg
+            )
+          }>
+          <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+          Add to Cart
+        </button>
+      ) : (
+        <Link
+          style={{ textAlign: "center" }}
+          to={`/newreg/${currentInfo.title}`}>
+          <button className='regNowBtn'>
             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-              Add to Cart
-            </button>
-          </Link> 
-       }
+            Add to Cart
+          </button>
+        </Link>
+      )}
     </div>
   );
 }

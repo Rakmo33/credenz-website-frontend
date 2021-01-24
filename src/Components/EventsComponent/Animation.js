@@ -3,7 +3,6 @@ import "./animation.css";
 import EventModal from "./EventModal";
 import Robo from "./Robo";
 import { info } from "./info";
-import $ from "jquery";
 import Event from "./EventCard.js";
 
 function Animation() {
@@ -21,8 +20,7 @@ function Animation() {
   const [index, setIndex] = useState(0);
   const [cart, setCart] = useState([]);
   //const [teamAllowed, setTeamAllowed] = useState([]);
-  const [eventReg, setEventReg] = useState([])//single person team registered for respective event in cart
-
+  const [eventReg, setEventReg] = useState([]); //single person team registered for respective event in cart
 
   let leftHand = {
     upper: "",
@@ -67,7 +65,6 @@ function Animation() {
 
   useEffect(() => {
     clearTimeout(roboTextTimer);
-
 
     setIsGrid(false);
 
