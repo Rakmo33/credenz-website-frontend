@@ -1,8 +1,9 @@
 import React from "react";
 import "./leaderboard.css";
 
-const Table = ({users}) => {
+const Table = ({users, rank}) => {
  
+  var i=0;
   return (
     <table className="table">
       <thead>
@@ -15,9 +16,12 @@ const Table = ({users}) => {
       </thead>
       <tbody>
         {users.map((user,index) => (
+
+          //user.username===localStorage.getItem('user')?localStorage.setItem("Rank"): 
+
           <tr key={index}>
-            <td>{user.rank}</td>
-            <td>{user.name}</td>
+            <td>{rank[i++]}</td>
+            <td>{user.username}</td>
             <td>{user.college}</td>
             <td>{user.score}</td>
           </tr>

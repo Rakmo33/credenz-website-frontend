@@ -88,29 +88,59 @@ const aboutus = (props) => {
                 data-aos-easing='ease-in-sine'
                 data-aos-duration='600'>
                 {" "}
-                <h3 className={classes.mid}>PICT IEEE Student Branch (PISB)</h3>
-                <p>
-                  {" "}
-                  PICT IEEE Student Branch (PISB) was established in the year
-                  1988 with an aim of inculcating a sense of technical awareness
-                  amongst its student members. PISB aims to escalate the
-                  knowledge and trends in the diverse fields of technologies
-                  amongst its members. PISB upholds two major events every year
-                  - Credenz and Credenz Tech Dayz with the first one being
-                  conducted in odd semester and the latter one in even semester.
-                  PISB is also marked by its Women in Engineering (WIE) chapter,
-                  an initiative for the empowerment of women.
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <Container className={classes.AboutusContainer}>
-          <div className={sponsorclass.sponsor}>
-            {" "}
-            <Sponsors />
-          </div>
-        </Container>
+
+                PICT IEEE Student Branch (PISB) was established in the year 1988 with an aim of inculcating a sense of technical awareness amongst its student members. 
+                PISB aims to escalate the knowledge and trends in the diverse fields of technologies amongst its members. PISB upholds two major events every year - 
+                Credenz and Credenz Tech Dayz with the first one being conducted in odd semester and the latter one in even semester. PISB is also marked by its Women in
+                 Engineering (WIE) chapter, an initiative for the empowerment of women.
+              </p>
+            </div>
+          </Col>
+        </Row>
+        <Row className={classes.credenz}>
+          <Col className={classes.content} sm={8}>
+            <div
+              data-aos='fade-up'
+              data-aos-mirror='true'
+              data-aos-offset='200'
+              data-aos-easing='ease-in-sine'
+              data-aos-duration='600'>
+              {" "}
+              <h3 className={classes.mid}> PICT IEEE Newsletter Group (P.I.N.G.)</h3>
+              <p>
+              P.I.N.G. (PICT IEEE Newsletter Group) is the annual technical magazine published 
+              by the student members of PICT IEEE Student Branch  (PISB). P.I.N.G. serves as a 
+              platform for individuals to portray their technical ingenuity. It highlights 
+              articles on cutting-edge technologies from technocrats all around the globe. 
+              It also features interviews of distinguished personalities in various technical
+               domains. P.I.N.G. aims at keeping its readers updated on recent developments in 
+               technology and helps them extrapolate their perceptions to contemporary ideas of 
+               modernisation. With the imminent Issue 16.1, be ready to get P.I.N.G.'d! 
+              </p>
+            </div>
+          </Col>
+          <Col
+            data-aos='zoom-in'
+            data-aos-mirror='true'
+            data-aos-offset='300'
+            data-aos-easing='ease-in-sine'
+            data-aos-duration='600'
+            className={classes.logo_pos}
+            sm={4}>
+            <img
+              className={classes.img_size_cred}
+              alt='black'
+              src={require("../../../assests/img/15.1.png")}
+            />
+          </Col>
+        </Row>
+      </Container>
+      <Container className={classes.AboutusContainer} >
+        <div className={sponsorclass.sponsor}>
+          {" "}
+          <Sponsors />
+        </div>
+      </Container>
       </div>
       <SideEventButton />
       <Footer />

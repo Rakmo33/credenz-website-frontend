@@ -1,32 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "./table";
 import Social from "../sideEventButton/sideEvent";
-// import Footer from "../Footer/footer";
+
+//import Footer from "../Footer/footer";
+import axios from "axios";
 
 const Leaderboard = () => {
   const [input, setInput] = useState("");
   const [default_op, setDefault] = useState("Username");
   const [classes, setClasses] = useState("");
-  let users = [
-    {
+  const [Score, setScore] = useState([]);
+  let users = [];
+
+  /*{
       rank: 1,
       name: "abc",
       college: "pict",
       score: 200,
     },
-    {
-      rank: 1,
-      name: "def",
-      college: "pict",
-      score: 200,
-    },
-    {
-      rank: 1,
-      name: "ghi",
-      college: "pict",
-      score: 200,
-    },
-  ];
+
+    */
+
+    useEffect(() => {
+      
+      
+        axios({
+          method: "get",
+          url: `http://localhost:5000/leaderboard`,
+        })
+          .then((response) => {
+            /*console.log(
+              response.data.map((obj) => {
+                return obj.event_username;
+              })
+            );*/
+            //users= response.data;
+            setScore(response.data)
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+
+      
+    }, [])
+
+    users = Score;
+    let rank = [];
+    var i;
+    for(i=0; i<users.length; i++) {
+      rank[i] = i+1;
+    }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -50,7 +73,7 @@ const Leaderboard = () => {
       switch (default_op) {
         case "Username":
           users = users.filter((u) => {
-            return u.name.match(input);
+            return u.username.match(input);
           });
           break;
         case "Institution":
@@ -104,7 +127,7 @@ const Leaderboard = () => {
             </div>
           </div>
           <div className='row body'>
-            <Table users={users} />
+            <Table users={users} rank={rank}/>
           </div>
         </div>
       </div>
