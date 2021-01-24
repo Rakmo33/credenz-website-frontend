@@ -5,10 +5,7 @@ export const info = [
     src: "/logos/clash.png",
     tagline: "Clash is based on Competitive Programming!",
     info1: `<p>
-    Clash is one of the biggest technical events in CREDENZ in which more than 1500 people participate from various colleges. This game will help you test your ability to understand, interpret and solve complex examples based on C/C++ mainly and python for first years. 
-   <br />
-    Questions are mainly based on concepts, syntax and logic.
-    
+    Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.   <br />
     </p>
     <h5>Registration Fees: </h5>
     <ul>
@@ -67,7 +64,7 @@ export const info = [
     src: "/logos/rc.png",
     tagline: "Hone your problem-solving skills by decrypting complex questions",
     info1: `<p>
-    RC is one of the biggest technical events in CREDENZ alongside Clash in which more than 800 people participate from various colleges every year. This game consists of questions which have integer answers only. You are allowed to use Linux terminal or any suitable IDE to decode the answer. Questions are mainly based on complex mathematical problems.    <h5>Registration Fees: </h5>
+    A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
     <ul>
       <li>
         <span>₹80</span> for Non-IEEE members
@@ -121,10 +118,7 @@ export const info = [
     tagline:
       "Let your creativity fuse with thoughtful designs and artistic originality.",
     info1: `<p>
-    Paint your virtual canvas with the pixels of your artistry. 
-    Let creativity fuse with the finesse of your vision as the 
-    beauty of design integrates with technology. Come, digitalise 
-    your art and let your mouse be your paint brush!
+    Get ready to paint virtual canvas with your creative and thoughtful designs! Come, digitalise your art and let your mouse be your brush.
     </p>
     <h5>Registration Fees: </h5>
     <ul>
@@ -138,46 +132,45 @@ export const info = [
     info2:
       //ye last year ka que he iss saal ka badalna hoga
       `<p>
-    "To observe attentively is to remember distinctly".<br/>    
-    We have come a long way from computers in big rooms to ultra thin laptops.memory evolution took place to a great extent.It gave us great opportunities and wide pathways and scope for development in infinite sectors.
-    Design a poster which conveys the message of various walks of evolution of memory and evolution  from vaccum tubes to pen drive and hard drives.
-    So taking imagination to new level and create magic !!
+    1)Candidate pursuing undergraduate course at any institute is allowed to participate. 
+    <br/>
+    2)Participants can register online on the official Credenz website.
+    <br/>
+    3)Each participant should have their own laptop and internet connection facility.
+    <br/>
   </p>`,
     info3: `<p>
-    1) A team of maximum two candidates pursuing undergraduate courses are allowed per team.
+    1)The topic will be given on the date of the event with detailed instructions in a google form.
+    <br />
+  2) The link will be sent to each participant through their registered email Id.
   <br />
-  2) Each of the teams should have their own laptops on the day of the event.
+  3) The  time allotted to complete the task will be 2 hours.
   <br />
-  3) All the participants should bring receipt and valid I-Cards while coming for
-   the contest. No one without I-Card will be allowed for the contest and the 
-   team will be disqualified.
+  4) The design should be submitted in *psd, *cdr, *ai etc format.
   <br />
-  4) Judging will be done on following basis:-
-  <br />
-    <ul>
-    <li>1) Creativity and originality of the design.</li>
-    <li>2) Distinct features incorporated in the design.</li>
-    <li>3) Persuasiveness of the design, i.e. the efficiency of the design to convey the required message.</li>
-    <li>4) Photoshop skills.</li>
-    <li>5) Layering and masking.</li>
-    <li>6) The decision of the judges will be final and shall be respected.</li>
-    <ul/>
+  5)The design submitted should not be flattened.
+  <br/>
+  6)The brushes and fonts used should be mentioned in the documentation.
+  <br/>
+  7)Any external source or images used should also be included in the documentation.
+  
 </p>`,
-    info4: `<p>Top 3 participants with Highest score will be declared as winners.</p>`,
+    info4: `<p>  
+    <ul>
+      <li>1) Creativity and originality of the design.</li>
+      <li>2) Distinct features incorporated in the design.</li>
+      <li>3) Persuasiveness of the design, i.e. the efficiency of the design to convey the required message.</li>
+      <li>4) Photoshop skills.</li>
+      <li>5) Layering and masking.</li>
+      <li>6) The decision of the judges will be final and shall be respected.</li>
+    <ul/>
+    </p>`,
     info5: `<p className=' text-center'>
-      Shruti Phadke &nbsp;
+      Shreya Deshpande &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
-      </a>
-    </p>
-    <p className=' text-center'>
-    Purvesh Jain &nbsp;
-      <br />
-      <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 7588404218'>
+        <span>&nbsp; +91 7588404218</span>
       </a>
     </p>`,
   },
@@ -332,9 +325,7 @@ export const info = [
     tagline:
       "Get an insight on stock markets by Investing and trading virtual money",
     info1: `<p>
-    Let the rise and fall of market shares bring out your inner businessman!
-    From the chaos due to the fluctuations in Sensex to the never ending trades, get ready to take over the virtual stock market.
-    After all, every investment is one step closer to your dream bank balance!
+    Let the rise and fall of market shares bring out your inner businessman! Get an insight in the field of Investment banking, corporate financing and trading to take over the virtual stock market. After all, every investment is one step closer to your dream bank balance!
         </p>
     <h5>Registration Fees: </h5>
     <ul>
@@ -348,36 +339,33 @@ export const info = [
     info2: `<p>
     1) Every Participating candidate should be pursuing Undergraduate/Graduate courses.
     <br /> <br />
-    2) All the participants should bring valid I-Cards while coming for the contest. 
-    No one without I-Card will be allowed for the contest and the team will be disqualified.  </p>`,
+    2) Participants should have their own college ID cards.
+    </p>`,
     info3: `<p>
-    1) The event will be conducted within PICT campus on all 3 days.
+    1) Every participant will be given virtual money to trade on our virtual stock market.
+          <br />
+    2) The event will be conducted on our Android App/Website.
       <br />
-    2) Participants will have to come to college campus to collect their account credentials after which they can play game from anywhere.
+    3) Mock NEWS will be flashed regarding listed companies and their sectors based on which participants will buy/sell stocks to ultimately become the biggest gainer.
       <br />
-    3) Every participant will be given virtual money to trade on our virtual stock market.
-      <br />
-    4) The event will be conducted on our Android App/Website.
+    4) Concepts such as IPO, short selling and high frequency trading will be inculcated within the event.
      <br />
-   5) Mock NEWS will be flashed regarding listed companies and their sectors based on which participants will buy/sell stocks to ultimately become the biggest gainer.
-      <br />
-      6) Concepts such as IPO, short selling and high frequency trading will be inculcated within the event.
   </p>`,
     info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.</p>`,
     info5: `<p className=' text-center'>
-      Manav Peshwani &nbsp;
+    Muffadal Diwan &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8669109182'>
-        <span>&nbsp; +91-7798401391</span>
+      <a href='tel:+91 7073152539'>
+        <span>&nbsp; +91 7073152539</span>
       </a>
     </p>
     <p className=' text-center'>
-      Purvesh Jain &nbsp;
+    Krishiv Mewani &nbsp;
       <br />
       <i className='fa fa-phone fa-icons '></i>
-      <a href='tel:+91-8208812625'>
-        <span>&nbsp;+91-8275706817</span>
+      <a href='tel:+91 9158087902'>
+        <span>&nbsp;+91 9158087902</span>
       </a>
     </p>`,
   },
@@ -389,9 +377,10 @@ export const info = [
     tagline:
       "Test your Machine learning and data analytics skills before stepping into the world of Data Science..",
     info1: `<p>
-    Get ready to set off on a journey to the world of data science. DataWiz gives you an
-     opportunity to test your machine learning and data analytics skills, work on 
-     datasets to  analyse and make predictions using your models.   </p>
+    Get ready to set off on a journey to the world of data science. DataWiz gives you an opportunity to test your machine learning and data analytics skills, work on datasets to analyse and make predictions using your models.
+    <br/>
+   Datawiz is a week-long machine learning competition hosted on Kaggle. The participants can form teams of up to 3 members and submit their predicted data values. The team with the highest accuracy on the leaderboard at the end of the week will be declared as winners.
+   </p>
    <h5>Registration Fees: </h5>
    <ul>
      <li>
@@ -483,18 +472,26 @@ export const info = [
    4)There is no negative marking at any stage.
    <br />
 5)ROUND 1: <br />
-  &nbsp;&nbsp;&nbsp; a.There will be 35 questions in this round.  <br />
-  &nbsp;&nbsp;&nbsp; b.Time limit is 40 minutes.<br />
+  &nbsp;&nbsp;&nbsp;a.There will be 35 questions in this round.  <br />
+  &nbsp;&nbsp;&nbsp;b.Time limit is 40 minutes.<br />
   &nbsp;&nbsp;&nbsp;c.For every right answer, you will be awarded points and no negative points for a wrong answer.
 <br />
 &nbsp;&nbsp;&nbsp;d.The marking scheme will be told on the day of the event. <br />
 6)ROUND 2:<br />
 &nbsp;&nbsp;&nbsp;a.There will be 5 Puzzles and 5 MCQs in this round.<br />
 &nbsp;&nbsp;&nbsp;b.Time Limit is 2 hours<br />
- c.You must claim whenever you are done. Earliest claim with max. score wins.
+&nbsp;&nbsp;&nbsp;c.You must claim whenever you are done. Earliest claim with max. score wins.
 
 </p>`,
-    info4:`remaining`,
+    info4:`<p>
+    1)There will be two rounds. 
+    <br/>
+    2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
+    <br/>
+    3)The decision of the organizer will be final.
+    <br />
+    4)There is no negative marking at any stage.
+    </p>`,
     
     info5:`<p className=' text-center'>
     Saket Gupta &nbsp;
@@ -544,26 +541,14 @@ export const info = [
     <br /><br />
       </p>`,
     info3: `<p>
-    <ul>
-        <li>1) There will be two rounds - one elimination rounds and one final round.</li>
-        <li>2) Details about structure of quiz will be provided at the time of the event.</li>
-        <li>3) Quiz masters' decision will be final on all matters</li>
-        <li>4) Round 1 will be elimination round with no negative marking and round 2 will be conducted by quizmaster.</li>
-        <br>
-        <li>Round 1: 25 questions
-            <ol>
-                <li>For this round we will keep database of 75 questions.</li>
-                <li>From this 25 questions will be there in quiz offline paper.</li>
-                <li>6 teams will be short listed for the second round.</li>
-            </ol>
-        </li>
-        <br>
-        <li>Round 2:
-            <ol>
-                <li>There will be 6 teams in the final round. The round will be conducted by the Quiz Master.</li>
-            </ol>
-        </li>
-    </ul>
+    1)Candidate pursuing an undergraduate program at any institute is allowed to participate. Participants are encouraged to maintain a copy of their ID card.
+    <br/>
+    2)Participants can register online on the official Credenz website.
+    <br/>
+    3)Each team will have a maximum of one participant.
+    <br />
+    4)Marking scheme and other rules will be announced on the day of the event itself.
+  
 </p>`,
     info4: `<p>The winner will be selected on the basis of the maximum points scored in final round and/or on the exclusive discretion of the quiz master.</p>`,
     info5: `<p className=' text-center'>
@@ -592,7 +577,7 @@ export const info = [
       "Build an aesthetic website to showcase your web development skills",
     info1: `<p>
     An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online. If you think you have the flair to create such a site, WebWeaver is the competition for you! A perfect integration of technology and creativity will lead you to win this competition.
-        <br />
+     <br />
     </p>
     <h5>Registration Fees: </h5>
     <ul>
@@ -614,28 +599,22 @@ export const info = [
     <br /> <br />
   </p>`,
     info3: `<p>
-    <ul>
-        <li>1st ROUND:</li>
-        <li>A problem statement shall be given to the participants online.</li>
-        <li>The problem statement shall be released approximately 20 Days prior on the official website of Credenz '19.</li>
-        <li>The team should mail the files to webweaver.credenz19@gmail.com in <b>zip archive</b>. (All files with understandable documentation.)</li>
-        <br>
-        <li>2nd ROUND</li>
-        <li>The second round shall be conducted at PICT.</li>
-        <li>Approximately 10 teams shall be shortlisted.</li>
-        <li>The teams shall be given certain add-ons over the pages designed earlier.</li>
-        <li>Five add-ons shall be given, specific to the pages designed by the participants.</li>
-    </ul>
+    1st ROUND: <br />
+    A problem statement shall be given to the participants online.
+    <br />
+    The problem statement shall be released approximately 20 days prior on the official website of Credenz '21.
+    <br />
+    The team should mail the files to webweaver.credenzlive@gmail.com in zip archive. (All files with understandable documentation.)
+    <br/><br/>
+    2nd ROUND:<br/>
+    The second round shall be conducted during Credenz Live.<br/>
+    Approximately 10 teams shall be shortlisted.<br/>
+    The teams shall be given certain add-ons over the pages designed earlier.<br/>
+    Five add-ons shall be given, specific to the pages designed by the participants.<br/>
 </p>`,
     info4: `<p>
-    <ul>
-        <li>1) Creativity and originality of the design.</li>
-        <li>2) Distinct features incorporated in the design.</li>
-        <li>3) Navigation through the site, how well the pages are interconnected.</li>
-        <li>4) Persuasiveness of the design, the efficiency of the site to give primary information on the required theme.</li>
-        <li>5) Based on the your Design, UI/UX and Development.</li>
-        <li>6) Additional points will be awarded for backend development.</li>
-    </ul>
+    Participants can participate either individually or in a group of 2 and develop a website which is supposed to be submitted 1-2 days before the start of Credenz. On the first day of Credenz, the best website teams are promoted to the second round where people are informed by us to add specific changes to their website. The website with the most aesthetic changes and best compatibility will be announced as the winner.
+
 </p>`,
     info5: `<p className=' text-center'>
       Yash Sonar &nbsp;
@@ -716,11 +695,13 @@ export const info = [
     tagline:
       "Decrypt the clues to solve complex puzzles and race your way to finish at top.",
     info1: `<p>
-    Tread carefully along your way, solving a series of strategic clues, watching out for the concealed misdirection. <br/>
-    Decrypt the clues, enjoy the hunt and race your way to the finish to win some exciting goodies! <br />
-    This is your chance to put your logic and reasoning to test. So, log on to our website and be a Sherlock for a day!<br />
-
-    To start solving, visit nth.credenz.in 
+    Network Treasure Hunt is an online treasure hunt where participants follow a trail of clues, surfing a range of websites to decipher the puzzles. 
+    <br/>
+    Tread carefully along your way, solving a series of strategic clues, watching out for the concealed misdirection. 
+    <br/>
+    Decrypt the clues, enjoy the hunt and race your way to the finish to win some exciting goodies! 
+    <br/>
+    This is your chance to put your logic and reasoning to test. So, log on to our website and be a Sherlock for a day!
     </p>
     <h5>Registration Fees: </h5>
     <ul>
@@ -729,18 +710,25 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-    <ul>
-        <li></li>
-        <li>Register to get your NTH username.</li>
-        <li>You will be directed to the starting page of the hunt.</li>
-        <li>To advance, crack the question, and put the answer in the URL:<br> FROM
-            <br> http://www.nth.credenz.in/question.php
-            <br> TO
-            <br> http://www.nth.credenz.in/answer.php</li>
-        <li>You need to use Google for many of them to solve. Of course, that is where you search for everything you don't know.</li>
-        <li>Check the source of the pages, you'll get some important clues for hunting further. The titles may also give you clues.</li>
-        <li>Most importantly, do not forget to have fun!</li>
-    </ul>
+    1)Register to get your NTH username and password.
+    <br/>
+    2)Open NTH website: http://www.nth.credenz.in/ 
+    <br/>
+    3)Login using the credentials sent on the mail.
+    <br/>
+    4)You will be directed to the starting page of the hunt.
+    5)To advance, crack the question, and put the answer in the URL: <br/>
+    FROM <br/>
+    http://www.nth.credenz.in/question.php <br/>
+    TO <br/>
+    http://www.nth.credenz.in/answer.php
+    <br/>    
+    6)You need to use Google for many of them to solve. Of course, that is where you search for everything you don't know.
+    <br/>
+    7)Check the source of the pages, you'll get some important clues for hunting further. The titles may also give you clues.
+    <br/>
+    Most importantly, do not forget to have fun!
+
   </p>`,
     info3: `<p>
     1) NTH will be conducted twice during Credenz. Both the Treasure Hunt are conducted independently 
@@ -751,12 +739,12 @@ export const info = [
     3) The second hunt, also the main "Network Treasure Hunt" has much higher stakes with some amazing prizes. This hunt will be longer than the previous hunt and will test the limits of the participants. 
       <br />
       4) The hunt is designed to be very intriguing and super fun to play.
-</p>`,
+   </p>`,
     info4: `<p>
-The person who has cracked the highest number of levels wins.
-<br />
-NOTE: In case of a tie, the one who has reached first on that level is the winner.
-</p>`,
+    The person who has cracked the highest number of levels wins.
+    <br />
+    NOTE: In case of a tie, the one who has reached first on that level is the winner.
+    </p>`,
     info5: `<p className=' text-center'>
     Garvita Jain &nbsp;
       <br />

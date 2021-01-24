@@ -144,7 +144,7 @@ function EventModal(props) {
   };
 
   return (
-    <div className={cls}>
+    <div style={{textAlign:'left !important'}} className={cls}>
       <div className='modalHead'>
         <img src={currentInfo.src} alt='logo' />
         <h3>{currentInfo.title}</h3>
