@@ -34,7 +34,7 @@ function VerifyPhone() {
 
         try {
           axios
-            .get("http://localhost:8000/verify/getcode", {
+            .get("http://localhost:5000/getcode", {
               params: {
                   phonenumber: ph,
                   channel: 'sms'
@@ -58,7 +58,7 @@ function VerifyPhone() {
         console.log(code)
         try {
           axios
-            .get("http://localhost:8000/verify/verifycode", {
+            .get("http://localhost:5000/verifycode", {
               params: {
                   phonenumber: phone,
                   code: code
@@ -67,7 +67,7 @@ function VerifyPhone() {
             .then(function(data){
                     alert(JSON.stringify(data))
                   })
-            .catch(err => console.log(err));
+            .catch(err => console.log(JSON.stringify(err)));
         } catch (e) {
           alert("Axios error!" + e);
         }
@@ -116,7 +116,7 @@ const errors = Validate(values);
               alt=''
               className='img-fluid mb-3 d-none d-md-block'
             />
-            <h1>Create an Account</h1>
+            <h1>Verify your account</h1>
           </div>
 
           <div className='col-md-7 col-lg-6 ml-auto'>

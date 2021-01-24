@@ -11,6 +11,8 @@ function addToCart(event, cart, setCart,eventReg, setEventReg) {
   var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
   var regArray = localStorage.getItem("Register")? localStorage.getItem("Register").split(","):[];
 
+  regArray.map((x)=>alert(JSON.stringify(x.event)))
+  
   if(!cartArray.includes(event)) {
     
     
@@ -24,8 +26,19 @@ function addToCart(event, cart, setCart,eventReg, setEventReg) {
     if(teamPresent) {    
       setEventReg("team")
     }else {
+
+      let singleRegObject = {
+        event: event,
+        username: localStorage.getItem("user") ? JSON.stringify(user["username"]).replace(/"/g, ""):""
+      }
+
       let tempRegArray = [...regArray]
-      tempRegArray.push(localStorage.getItem("user") ? JSON.stringify(user["username"]).replace(/"/g, ""):"")
+      console.log(tempRegArray)
+
+     
+
+      alert(JSON.stringify(tempRegArray))
+      tempRegArray.push(singleRegObject)
       setEventReg(tempRegArray)
       localStorage.setItem("Register", tempRegArray);
     }
