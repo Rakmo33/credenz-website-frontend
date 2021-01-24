@@ -43,7 +43,11 @@ const Leaderboard = () => {
     }, [])
 
     users = Score;
-
+    let rank = [];
+    var i;
+    for(i=0; i<users.length; i++) {
+      rank[i] = i+1;
+    }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -121,7 +125,7 @@ const Leaderboard = () => {
             </div>
           </div>
           <div className='row body'>
-            <Table users={users} />
+            <Table users={users} rank={rank}/>
           </div>
         </div>
       </div>
