@@ -5,7 +5,7 @@ import Robo from "./Robo";
 import { info } from "./info";
 import Event from "./EventCard.js";
 
-function Animation(setcartNum) {
+function Animation(props) {
   const [cls1, setCls1] = useState("");
   const [cls2, setCls2] = useState("");
   const [cls3, setCls3] = useState("hide-robo");
@@ -263,7 +263,8 @@ function Animation(setcartNum) {
             setCart={setCart}
             eventReg={eventReg}
             setEventReg={setEventReg}
-            setcartNum={setcartNum}
+            addToCart={props.addToCart}
+            teams={props.teams}
             onClick={closeModalHandler}></EventModal>
         )}
         <div className='roboWrap '>
