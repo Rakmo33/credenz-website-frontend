@@ -3,30 +3,27 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1399.7 1183.7" style="enable-background:new 0 0 1399.7 1183.7;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#3699CC;}
+	.st0{fill:#29ABE2;}
 	.st1{fill:url(#body_1_);}
-	.st2{fill:#29ABE2;}
 </style>
-<g id="linkedin_x5F_box">
-	<polygon id="arrow" class="st0" points="1219.4,1156.3 1374.4,589 1219.4,21.6 1064.3,21.6 1219.4,589 1064.3,1156.3 	"/>
-	
-		<linearGradient id="body_1_" gradientUnits="userSpaceOnUse" x1="32.5" y1="582.75" x2="1176.1" y2="582.75" gradientTransform="matrix(1 0 0 -1 0 1184)">
-		<stop  offset="0" style="stop-color:#1175A7"/>
-		<stop  offset="0.3439" style="stop-color:#1073A4"/>
-		<stop  offset="0.6017" style="stop-color:#0D6D9A"/>
-		<stop  offset="0.8308" style="stop-color:#09628A"/>
-		<stop  offset="1" style="stop-color:#045779"/>
-	</linearGradient>
-	<polygon id="body" class="st1" points="32.5,139 70.2,149 273.2,149 291.4,191.4 726,191.4 795.8,149 982.1,149 1064.3,149 
-		1176.1,589 1064.3,1033.4 778,1033.4 741.5,997 318.6,997 273.2,1033.4 74.1,1033.4 32.5,1063.5 	"/>
-	<polygon id="top" class="st2" points="120.5,29.6 361.2,29.6 437.9,104.7 601.9,98.2 690,29.6 930.7,29.6 1018.7,98.2 974.7,127.6 
-		778,127.6 734,157 317.2,157 273.2,117.6 76.5,127.6 32.5,98.2 	"/>
-	<polygon id="bottom" class="st2" points="81.5,1061.8 278.2,1061.8 322.2,1033.4 739,1033.4 783,1061.8 979.7,1061.8 
-		1023.7,1090.1 935.7,1156.3 695,1156.3 606.9,1090.1 454.3,1090.1 366.2,1156.3 125.5,1156.3 37.5,1090.1 	"/>
-</g>
 <g>
-	
-		<image style="overflow:visible;" width="1132" height="1129" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABGwAAARpCAYAAACbPZHvAAA8fklEQVR42uzd4XmrRtqA4ZRACZRA
+	<g id="linkedin_x5F_box">
+		<polygon id="arrow" class="st0" points="1219.4,1156.3 1374.4,589 1219.4,21.6 1064.3,21.6 1219.4,589 1064.3,1156.3 		"/>
+		
+			<linearGradient id="body_1_" gradientUnits="userSpaceOnUse" x1="32.5" y1="85.25" x2="1176.1" y2="85.25" gradientTransform="matrix(1 0 0 1 0 516)">
+			<stop  offset="0" style="stop-color:#0CB3EA"/>
+			<stop  offset="1" style="stop-color:#2891DD"/>
+		</linearGradient>
+		<polygon id="body" class="st1" points="32.5,139 70.2,149 273.2,149 291.4,191.4 726,191.4 795.8,149 982.1,149 1064.3,149 
+			1176.1,589 1064.3,1033.4 778,1033.4 741.5,997 318.6,997 273.2,1033.4 74.1,1033.4 32.5,1063.5 		"/>
+		<polygon id="top" class="st0" points="120.5,29.6 361.2,29.6 437.9,104.7 601.9,98.2 690,29.6 930.7,29.6 1018.7,98.2 
+			974.7,127.6 778,127.6 734,157 317.2,157 273.2,117.6 76.5,127.6 32.5,98.2 		"/>
+		<polygon id="bottom" class="st0" points="81.5,1061.8 278.2,1061.8 322.2,1033.4 739,1033.4 783,1061.8 979.7,1061.8 
+			1023.7,1090.1 935.7,1156.3 695,1156.3 606.9,1090.1 454.3,1090.1 366.2,1156.3 125.5,1156.3 37.5,1090.1 		"/>
+	</g>
+	<g id="in">
+		
+			<image style="overflow:visible;enable-background:new    ;" width="1132" height="1129" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABGwAAARpCAYAAACbPZHvAAA8fklEQVR42uzd4XmrRtqA4ZRACZRA
 CZSgEihBJVACJVCCSlAJKkElqANWxDhRvPaxZEvwzsx9X5f+7PftJvGx3hmewPDXXwAAAABADNM0
 NddPe/Pprp/+gU/34b/f+KkCAAAAfGEJKLslrAzXz3H5XKZ1XG7+msPy9zH//bT+dAAAAICsLWFm
 fxNl1goyzwo6w/L33/rTBAAAAJJzE2fG6+c85em0/PPtPWIFAAAAhLMEmn65E6Vkx+Xn0PqtAAAA
@@ -299,6 +296,7 @@ Awg2OPgAwQaw34BgA4INOPjAwQfYb0CwAQQbHHyAYAPYb0CwAQQbHHzg4AOw3yDY+F1BsMHBBwg2
 gP0GBBtAsMHBBwg2gP0G+y3YgGADDj4QbAD7DQg2gGCDgw8QbAD7DfZbsAHBBhx84OAD7Dcg2ACC
 DQ4+QLAB7DfYb8EGBBtw8IGDD7DfgGADCDY4+ADBBrDfgGADCDY4+MDBB2C/4XewyY42nuftfelU
 YeibH/5Pnrf+ha8VYL89795+FwIbK8HJqxdnAAAAAElFTkSuQmCC" transform="matrix(0.3975 0 0 0.3986 397 363.7)">
-	</image>
+		</image>
+	</g>
 </g>
 </svg>
