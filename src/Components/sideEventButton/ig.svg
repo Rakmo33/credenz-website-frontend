@@ -21,7 +21,7 @@
 		<polygon id="bottom" class="st0" points="81.5,1061.8 278.2,1061.8 322.2,1033.4 739,1033.4 783,1061.8 979.7,1061.8 
 			1023.7,1090.1 935.7,1156.3 695,1156.3 606.9,1090.1 454.3,1090.1 366.2,1156.3 125.5,1156.3 37.5,1090.1 		"/>
 	</g>
-	<g>
+	<g id="ig_1_">
 		
 			<image style="overflow:visible;enable-background:new    ;" width="300" height="300" id="ig" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAS0AAAEtCAYAAABd4zbuAAAACXBIWXMAAAdhAAAHYQGVw7i2AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAZsNJREFUeNrsvQm0JFd1JRqZb6i5
