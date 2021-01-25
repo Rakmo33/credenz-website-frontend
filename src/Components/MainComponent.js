@@ -36,7 +36,7 @@ function Main() {
   var cartArray = localStorage.getItem("Cart")
     ? localStorage.getItem("Cart").split(",")
     : [];
-    
+
   const [cartNum, setcartNum] = useState(cartArray.length)
 
   useEffect(() => {
@@ -45,6 +45,7 @@ function Main() {
     });
   }, [])
 
+  
   
     const HomePage = () => {
       return <Home />;
@@ -115,6 +116,9 @@ function Main() {
     const TermsPage = () => {
       return <Terms />;
     };
+
+
+    //const num = cartNum;
 
     return (
       <div>
