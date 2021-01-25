@@ -88,7 +88,7 @@ const aboutus = (props) => {
                 data-aos-easing='ease-in-sine'
                 data-aos-duration='600'>
                 {" "}
-
+                <p>
                 PICT IEEE Student Branch (PISB) was established in the year 1988 with an aim of inculcating a sense of technical awareness amongst its student members. 
                 PISB aims to escalate the knowledge and trends in the diverse fields of technologies amongst its members. PISB upholds two major events every year - 
                 Credenz and Credenz Tech Dayz with the first one being conducted in odd semester and the latter one in even semester. PISB is also marked by its Women in
