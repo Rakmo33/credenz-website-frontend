@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-import React, { useState, useEffect, Component } from "react";
-import './HomeAnimation.css';
-import EyeDea21 from './AnimationSVGs/EyeDea21';
-import EyeDea20 from './AnimationSVGs/EyeDea20';
-import OverlayLogos from './OverlayLogos';
-import Footer from '../../Footer/footer';
-=======
 import React, { useState, useEffect } from "react";
 import "./HomeAnimation.css";
 import EyeDea21 from "./AnimationSVGs/EyeDea21";
 import EyeDea20 from "./AnimationSVGs/EyeDea20";
 import OverlayLogos from "./OverlayLogos";
->>>>>>> b78af795bdc5c945a3da1eb54e657f17d5eb6e9d
 
 const HomeAnimation = (props) => {
   const [mechanicalEye, showMechanicalEye] = useState(false);

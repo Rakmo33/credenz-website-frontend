@@ -38,8 +38,8 @@ function NewReg() {
           <h1 className='reg-head'>Choose a team, or go Solo!</h1>
           <img src='/img/register.svg' alt='registration form' />
         </div>
-        <div className='container'>
-          <form className='col-md-9 m-auto'>
+        <div  className='container '>
+          <form className='col-md-9 m-auto contwidth'>
             <NameWrap
               isVisible={true}
               formData={formData}

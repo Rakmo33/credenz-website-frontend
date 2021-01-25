@@ -4,28 +4,24 @@
 	 viewBox="0 0 221.1 732.2" style="enable-background:new 0 0 221.1 732.2;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:none;stroke:url(#SVGID_2_);stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#0CB3EA;stroke-width:10;stroke-miterlimit:10;}
 	.st2{fill:#FFFFFF;}
 	.st3{font-family:'Montserrat-Regular';}
 	.st4{font-size:104.0181px;}
-	.st5{letter-spacing:4.6;}
+	.st5{letter-spacing:3.66;}
 </style>
 <g id="events">
 	<g>
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="28.5861" y1="366.5301" x2="216.1111" y2="366.5301">
-			<stop  offset="0" style="stop-color:#0F6184"/>
-			<stop  offset="0.16" style="stop-color:#1C6B9A"/>
-			<stop  offset="0.5404" style="stop-color:#3781C8"/>
-			<stop  offset="0.8327" style="stop-color:#498FE5"/>
-			<stop  offset="1" style="stop-color:#4F94F0"/>
+		
+			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="28.6" y1="365.5" x2="216.1" y2="365.5" gradientTransform="matrix(1 0 0 -1 0 732)">
+			<stop  offset="0" style="stop-color:#2693DE"/>
+			<stop  offset="1" style="stop-color:#0EB1E9"/>
 		</linearGradient>
 		<polygon class="st0" points="216.1,25.6 78.3,25.6 28.6,89 28.6,631.2 88.3,707.4 216.1,707.4 		"/>
-		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="366.1111" x2="221.1111" y2="366.1111">
-			<stop  offset="0" style="stop-color:#0F6184"/>
-			<stop  offset="1" style="stop-color:#4F94F0"/>
-		</linearGradient>
 		<polygon class="st1" points="216.1,5 60.9,5 5,72.1 5,646.5 72.3,727.2 216.1,727.2 		"/>
 	</g>
-	<text transform="matrix(-1.799134e-02 1.0914 -0.9999 -1.345154e-02 94.5453 117.8647)" class="st2 st3 st4 st5">EVENTS</text>
+	<g>
+		<text transform="matrix(-0.018 1.0914 -0.9999 -0.0135 94.5452 117.8648)" class="st2 st3 st4 st5">EVENTS</text>
+	</g>
 </g>
 </svg>
