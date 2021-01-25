@@ -3,6 +3,7 @@ import './HomeAnimation.css';
 import EyeDea21 from './AnimationSVGs/EyeDea21';
 import EyeDea20 from './AnimationSVGs/EyeDea20';
 import OverlayLogos from './OverlayLogos';
+import Footer from '../../Footer/footer';
 
 const HomeAnimation = (props) =>{  
     const [mechanicalEye, showMechanicalEye] = useState(false);
@@ -21,6 +22,7 @@ const HomeAnimation = (props) =>{
     }, [mechanicalEye])
 
     return(
+        <>
         <div className="anim">
             <img src={require('../../../assests/img/web_bg.jpg')} className="anim-iframe" />
             <div className={`anim-overlay-logos`}>
@@ -35,6 +37,8 @@ const HomeAnimation = (props) =>{
                 </div>
             </div>
         </div>
+       
+        </>
     );
 }
 
