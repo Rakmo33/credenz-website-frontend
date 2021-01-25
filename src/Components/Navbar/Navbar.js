@@ -6,7 +6,7 @@ import "./NavBar.css";
 import Modal1 from "../Modal/Modal";
 import Modal2 from "../Modal/UpdateModal";
 import $ from "jquery";
-import { faDivide } from "@fortawesome/free-solid-svg-icons";
+// import { faDivide } from "@fortawesome/free-solid-svg-icons";
 
 function NavBar() {
   let login = "login";

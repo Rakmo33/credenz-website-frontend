@@ -16,6 +16,8 @@ const Profile = () => {
   //   window.location.reload(false); //refresh page
   // };
 
+  console.log(`${process.env.REACT_APP_API_URL}/LOL`);
+
   const [Events, setEvents] = useState(undefined);
 
   var screenHeight = window.screen.height;
@@ -47,7 +49,7 @@ const Profile = () => {
 
         axios({
           method: "get",
-          url: `http://credenzwebsite.herokuapp.com/${decoded.username}/present`,
+          url: `${process.env.REACT_APP_API_URL}/${decoded.username}/present`,
           headers: { authorization: `Bearer ${accessToken}` },
         })
           .then((response) => {
@@ -180,7 +182,7 @@ const Profile = () => {
               </div>
 
               <div className='svg'>
-                <img src={require('../../assests/img/arawd.svg')} alt='svg' />
+                <img src={require("../../assests/img/arawd.svg")} alt='svg' />
               </div>
             </div>
           </div>

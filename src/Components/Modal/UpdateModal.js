@@ -4,9 +4,7 @@ import "./Modal.css";
 import axios from "axios";
 
 async function AllUpdates() {
-  const response = await axios.get(
-    "http://credenzwebsite.herokuapp.com/updates"
-  );
+  const response = await axios.get(`${process.env.REACT_APP_API_URL}/updates`);
   // const response = await axios.get("https://35.193.100.157/updates");
 
   //console.log("I am response" + response);
@@ -17,7 +15,6 @@ async function AllUpdates() {
 
   //setTimeout(() => {  console.log("I am sleeping"); }, 5);
 
-  
   return data;
 }
 
@@ -50,7 +47,7 @@ function Modal2({ show, handleClose }) {
         aria-labelledby='contained-modal-title-vcenter'
         centered
         keyboard={false}>
-        <Modal.Header className="upmodal" closeButton>
+        <Modal.Header className='upmodal' closeButton>
           <Modal.Title>
             {" "}
             <div>
@@ -58,7 +55,7 @@ function Modal2({ show, handleClose }) {
             </div>{" "}
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="upmodal">
+        <Modal.Body className='upmodal'>
           <div>
             <ul>{updateList}</ul>
           </div>

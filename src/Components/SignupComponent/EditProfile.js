@@ -29,7 +29,7 @@ function Edit() {
     if (!errors.boolean) {
       try {
         axios
-          .post("http://credenzwebsite.herokuapp.com/signup", {
+          .post(`${process.env.REACT_APP_API_URL}/signup`, {
             username: username,
             name: name,
             password: password,

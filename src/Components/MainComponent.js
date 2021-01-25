@@ -16,20 +16,20 @@ import Team from "../Components/Team/Team";
 import Profile from "../Components/Profilepage/Profilepage";
 import Admin from "../Components/AdminSection/adminAuth";
 import VerifyPhone from "../Components/SignupComponent/verifyPhone";
-import AboutUs from '../Components/HomeComponent/Aboutus/Aboutus';
-import Footer from '../Components/Footer/footer';
-import NewReg from '../Components/RegisterComponent/NewReg';
-import Cart from '../Components/RegisterComponent/Cart';
-import Refund from '../Components/Footer/refund';
-import Privacy from '../Components/Footer/privacy';
-import Terms from '../Components/Footer/terms';
-import './maincomponent.module.css';
+import AboutUs from "../Components/HomeComponent/Aboutus/Aboutus";
+// import Footer from '../Components/Footer/footer';
+import NewReg from "../Components/RegisterComponent/NewReg";
+import Cart from "../Components/RegisterComponent/Cart";
+import Refund from "../Components/Footer/refund";
+import Privacy from "../Components/Footer/privacy";
+import Terms from "../Components/Footer/terms";
+import "./maincomponent.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group';
+// import {
+//   CSSTransition,
+//   TransitionGroup,
+// } from 'react-transition-group';
 
 class Main extends Component {
   componentDidMount() {
@@ -83,32 +83,31 @@ class Main extends Component {
 
     const VerifyPhonePage = () => {
       return <VerifyPhone />;
-    }
+    };
 
     const AboutUsPage = () => {
-      return <AboutUs/>;
-    }
+      return <AboutUs />;
+    };
 
     const CartPage = () => {
-      return <Cart/>;
-    }
+      return <Cart />;
+    };
 
     const NewRegPage = () => {
-      return <NewReg/>;
-    }
-    
+      return <NewReg />;
+    };
+
     const RefundPage = () => {
-      return <Refund/>;
-    }
+      return <Refund />;
+    };
 
     const PrivacyPage = () => {
-      return <Privacy/>;
-    }
+      return <Privacy />;
+    };
 
     const TermsPage = () => {
-      return <Terms/>;
-    }
-
+      return <Terms />;
+    };
 
     return (
       <div>
@@ -126,10 +125,10 @@ class Main extends Component {
           <Route path='/team' component={TeamPage} />
           <Route path='/profile' component={ProfilePage} />
           <Route path='/admin' component={AdminPage} />
-          <Route path='/aboutus' component={AboutUsPage}/>
+          <Route path='/aboutus' component={AboutUsPage} />
           <Route path='/verifyphone' component={VerifyPhonePage} />
           <Route path='/cart' component={CartPage} />
-          <Route path='/newreg/:event' component={NewRegPage}/>
+          <Route path='/newreg/:event' component={NewRegPage} />
           <Route path='/refund' component={RefundPage} />
           <Route path='/privacy' component={PrivacyPage} />
           <Route path='/terms' component={TermsPage} />

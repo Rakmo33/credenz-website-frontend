@@ -4,7 +4,7 @@ import Modal1 from "../Modal/Modal";
 import axios from "axios";
 import Animation from "./Animation";
 import Footer from "../Footer/footer";
-import { Nav } from "react-bootstrap";
+// import { Nav } from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 
 const Events = () => {
@@ -15,14 +15,14 @@ const Events = () => {
   const [EVENTS, setEVENTS] = useState("NULL");
 
   const handleClose = () => setShow(false);
-  const handleShow = (event) => {
-    setShow(true);
-    setEvent(event);
-  };
+  // const handleShow = (event) => {
+  //   setShow(true);
+  //   setEvent(event);
+  // };
 
   async function AllEvents() {
     const response = await axios.get(
-      "http://credenzwebsite.herokuapp.com/allevents"
+      `${process.env.REACT_APP_API_URL}/allevents`
     );
     //console.log("I am response" + response);
     const data = await response.data;

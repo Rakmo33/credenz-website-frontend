@@ -1,6 +1,6 @@
 import React from "react";
 import Member from "../Team/Member";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Footer from "../Footer/footer";
 import "./newmem.css";
 import Nav from "../Navbar/Navbar";

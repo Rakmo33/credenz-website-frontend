@@ -8,37 +8,54 @@ import { Row, Col, Container } from "react-bootstrap";
 const footer = () => {
   return (
     <div className={classes.footer}>
-      <Container fluid
+      <Container
+        fluid
         className={classes.footerContainer}
         style={{ textAlign: "center" }}>
         <Row>
           {/* <span className={"footer-font"}> */}
-          <Col lg={4} className={"footer-font leftside"}>    &#169; PICT IEEE Student Branch </Col>
+          <Col lg={4} className={"footer-font leftside"}>
+            {" "}
+            &#169; PICT IEEE Student Branch{" "}
+          </Col>
 
-          <Col lg={4} >Developed with &#9829;
-            by PISB &nbsp;{" "}
+          <Col lg={4}>
+            Developed with &#9829; by PISB &nbsp;{" "}
             <Link to='/team'>
               <span style={{ color: "#6eabce" }}> Web Team</span>
-            </Link> </Col>
-          <Col lg={4} className="rightside" >
-          <Link to='privacy' >Policy</Link>
-            &nbsp;  <Link to='terms' > Terms </Link>
-            &nbsp; <Link to='refund' > Refund </Link> 
-            </Col>
+            </Link>{" "}
+          </Col>
+          <Col lg={4} className='rightside'>
+            <Link to='privacy'>Policy</Link>
+            &nbsp; <Link to='terms'> Terms </Link>
+            &nbsp; <Link to='refund'> Refund </Link>
+          </Col>
           {/* </span> */}
         </Row>
 
         <Row className={classes.hiddenRow}>
           <div className={classes.social}>
-            <a className={classes.iconfb} target='_blank' href="https://www.facebook.com/pisbcredenz/"   >
+            <a
+              className={classes.iconfb}
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.facebook.com/pisbcredenz/'>
               {" "}
               <i className={"fa fa-facebook"}></i>
             </a>
-            <a className={classes.iconlink} target='_blank' href="https://www.linkedin.com/company/pisbieee/">
+            <a
+              className={classes.iconlink}
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.linkedin.com/company/pisbieee/'>
               {" "}
               <i className={"fa fa-linkedin"}></i>
             </a>
-            <a className={classes.iconinsta} target='_blank' href="https://www.instagram.com/pisbcredenz/">
+            <a
+              className={classes.iconinsta}
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.instagram.com/pisbcredenz/'>
               {" "}
               <i className={"fa fa-instagram"}></i>
             </a>

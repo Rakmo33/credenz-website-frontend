@@ -42,9 +42,9 @@ export const info = [
  
 </p>`,
     info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.</p>`,
-    info5: `   <p class=" text-center">
+    info5: `   <p className=" text-center">
     Tanmay Nale &nbsp;<br>
-    <i class="fa fa-phone fa-icons "></i>
+    <i className="fa fa-phone fa-icons "></i>
     <a href="tel:+91-9922993249">
     <span>&nbsp;+91-9969108722</span>
     </a></p>
@@ -96,16 +96,16 @@ export const info = [
       <br/>
 2) Time and cost efficiency of the code will be tested in round 2.
       </p>`,
-    info5: `<p class=" text-center">
+    info5: `<p className=" text-center">
     Sanket Landge &nbsp;<br>
-    <i class="fa fa-phone fa-icons "></i>
+    <i className="fa fa-phone fa-icons "></i>
     <a href="tel: +91 70209 83032">
     <span>&nbsp; +91 70209 83032</span>
     </a></p>
 
-      <p class=" text-center">
+      <p className=" text-center">
       Kaustubh Odak &nbsp;<br>
-      <i class="fa fa-phone fa-icons "></i>
+      <i className="fa fa-phone fa-icons "></i>
       <a href="tel:+91 96502 11332">
       <span>&nbsp;+91 96502 11332</span>
       </a></p>`,
@@ -281,7 +281,7 @@ export const info = [
      <br />
      6) The main stress during question-answer session would be given on feasibility and Exit Plan.
 </p>`,
-    info4: `<p> <ul class="">
+    info4: `<p> <ul className="">
       <li>1) Innovation involved in the development of the idea and its practicality.</li>
       <li>2) Originality and Patentability.</li>
       <li>3) Technical feasibility.</li>
@@ -483,6 +483,7 @@ export const info = [
 &nbsp;&nbsp;&nbsp;c.You must claim whenever you are done. Earliest claim with max. score wins.
 
 </p>`,
+
     info4:`<p>
     1)There will be two rounds. 
     <br/>
@@ -494,6 +495,7 @@ export const info = [
     </p>`,
     
     info5:`<p className=' text-center'>
+
     Saket Gupta &nbsp;
     <br />
     <i className='fa fa-phone fa-icons '></i>
