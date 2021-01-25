@@ -5,7 +5,7 @@ import Robo from "./Robo";
 import { info } from "./info";
 import Event from "./EventCard.js";
 
-function Animation() {
+function Animation(setcartNum) {
   const [cls1, setCls1] = useState("");
   const [cls2, setCls2] = useState("");
   const [cls3, setCls3] = useState("hide-robo");
@@ -263,6 +263,7 @@ function Animation() {
             setCart={setCart}
             eventReg={eventReg}
             setEventReg={setEventReg}
+            setcartNum={setcartNum}
             onClick={closeModalHandler}></EventModal>
         )}
         <div className='roboWrap '>

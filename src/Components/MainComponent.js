@@ -1,5 +1,5 @@
 //"start": "npm run build && (cd server && npm start)",
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import Home from "./HomeComponent/HomeComponent";
 import Events from "./EventsComponent/EventsComponent";
 import Register from "./RegisterComponent/RegisterComponent";
@@ -31,19 +31,27 @@ import "aos/dist/aos.css";
 //   TransitionGroup,
 // } from 'react-transition-group';
 
-class Main extends Component {
-  componentDidMount() {
+function Main() {
+
+  var cartArray = localStorage.getItem("Cart")
+    ? localStorage.getItem("Cart").split(",")
+    : [];
+
+  const [cartNum, setcartNum] = useState(cartArray.length)
+
+  useEffect(() => {
     AOS.init({
       duration: 2000,
     });
-  }
+  }, [])
 
-  render() {
+  
+  
     const HomePage = () => {
       return <Home />;
     };
     const EventsPage = () => {
-      return <Events />;
+      return <Events setcartNum={setcartNum}/>;
     };
     const RegisterPage = () => {
       return <Register />;
@@ -109,9 +117,12 @@ class Main extends Component {
       return <Terms />;
     };
 
+
+    //const num = cartNum;
+
     return (
       <div>
-        <NavBar />
+        <NavBar cartNum={cartNum}/>
         <Switch>
           <Route path='/home' component={HomePage} />
           <Route path='/events' component={EventsPage} />
@@ -138,7 +149,7 @@ class Main extends Component {
         {/* <NavBar /> */}
       </div>
     );
-  }
+  
 }
 
 export default Main;

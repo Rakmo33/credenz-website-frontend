@@ -117,6 +117,7 @@ const NameWrap = (props) => {
                 className='btn btn-outline-info'>
                 Save
               </button>
+              <br></br>
               <Link to='/events'>
                 <button type='button' className='btn btn-outline-info'>
                   Back to events
@@ -186,8 +187,8 @@ const NameWrap = (props) => {
               {userList}
             </select>
 
-            <div style={{ textAlign: "center", marginTop: 10 }}>
-              <button
+            <div style={{ textAlign: "center", marginTop: 10}}>
+              <button style={{marginRight: 10}}
                 onClick={() => storeReg()}
                 type='button'
                 className='btn btn-outline-info'>
