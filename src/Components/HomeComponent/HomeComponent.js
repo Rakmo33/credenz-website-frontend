@@ -25,7 +25,9 @@ const Home = () => {
         </div>  */}
       </div>
       <SideEventButton />
+   
       <Footer />
+    
     </div>
   );
 };

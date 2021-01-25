@@ -493,4 +493,22 @@
     display: none;
   }
 }
+
+@media (max-width: 600px){
+.contwidth{
+  width: 55vh !important;
+}
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px){
+  .contwidth{
+    width: 45vh !important;
+  }
+}
+
+@media only screen and (min-width: 411px) and (max-width: 731px) {
+  .contwidth{
+    width: 47vh !important;
+  }
+}
 /*# sourceMappingURL=Register.css.map */
