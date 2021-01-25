@@ -5,7 +5,7 @@
 
 #eyeDEA2_1_svg__irislines{
     animation: spin 60s linear infinite;
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 50% 50%;
     transition-timing-function: ease-in;
 }
 .anim-overlay{
@@ -14,20 +14,20 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: black;
+    /* background-color: black; */
 }
 .right-hover{
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 50% 50%;
     transform: translateX(3%) scale(1.1);
     transition-timing-function: ease;
 }
 .left-hover{
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 50% 50%;
     transform: translateX(-3%) scale(1.1);
     transition-timing-function: ease;
 }
 .eye-hover,.mask-hover{
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 50% 50%;
     transform: scale(1.1);
     transition-timing-function: ease;
 }

@@ -22,13 +22,13 @@ const HomeAnimation = (props) =>{
 
     return(
         <div className="anim">
-            <img src={require('../../../assests/img/web_bg.jpg')} className="anim-iframe" />
+            {disableEye === true ? <img src={require('../../../assests/img/web_bg.jpg')} className="anim-iframe" /> : <img src={require('../../../assests/img/main_bg.jpg')} className="anim-overlay-bg" />}
             <div className={`anim-overlay-logos`}>
                 {showLogoTrail ? <OverlayLogos trigger={mechanicalEye}/> : null}
             </div>
             <div className={`${disableEye && 'hide'}`}>
                 <div className={`anim-overlay-lower ${mechanicalEye && 'hide-now'}`}>
-                    <EyeDea20 triggered={mechanicalEye}/>
+                    {mechanicalEye === true ? <EyeDea20 triggered={mechanicalEye}/> : null }
                 </div>
                 <div className={`anim-overlay-upper ${mechanicalEye && 'vanish'}`}>
                     <EyeDea21 mechanicalEye={showMechanicalEye}/>

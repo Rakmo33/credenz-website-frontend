@@ -12,7 +12,12 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: black;
+    /* background-color: black; */
+    z-index: 4;
+}
+.anim-overlay-bg{
+    width: 100vw;
+    object-fit: contain;
     z-index: 3;
 }
 .anim-overlay-upper{
@@ -21,7 +26,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: black;
+    /* background-color: black; */
     z-index: 5;
 }
 @keyframes disappear{
