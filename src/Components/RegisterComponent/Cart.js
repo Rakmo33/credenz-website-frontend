@@ -7,6 +7,11 @@ import Nav from "../Navbar/Navbar";
 import LoginFirst from "../LoginFirst/LoginFirst";
 
 function Cart() {
+
+  function payment() {
+    alert("Payment gateway will open soon. Stay tuned!");
+  }
+
   function clearCart(event) {
     localStorage.removeItem("Cart");
     localStorage.removeItem("Register");
@@ -14,7 +19,7 @@ function Cart() {
   }
 
   function clearEvent(event, index) {
-    alert(index);
+    //alert(index);
     var comma = ",";
     var temp = comma.concat(event);
     var oldCart = localStorage.getItem("Cart");
@@ -86,7 +91,7 @@ function Cart() {
                     <tr>
                       <td></td>
                       <td>
-                        <button type='button' className='btn btn-outline-info'>
+                        <button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay
                         </button>
                       </td>

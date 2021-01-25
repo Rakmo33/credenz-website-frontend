@@ -3,6 +3,11 @@ import "./sideEvent.css";
 import '../ContactComponent/button.css'
 
 const EventCard = ({ logo, name, info }) => {
+
+  function play() {
+    alert("Coming up soon. Stay tuned!")
+  }
+
   return (
     <div className='card event-card'>
       <div className="row no-gutters">
@@ -18,7 +23,7 @@ const EventCard = ({ logo, name, info }) => {
                   <span className="kave-line"></span>
                   Play
               </button> */}
-              <button className='play'>Play</button>
+              <button onClick={play} className='play'>Play</button>
             </a>
         </div> 
         </div>

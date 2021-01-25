@@ -15,7 +15,7 @@ const Table = ({users, rank}) => {
         </tr>
       </thead>
       <tbody>
-        {users.map((user,index) => (
+        {/*users.map((user,index) => (
 
           //user.username===localStorage.getItem('user')?localStorage.setItem("Rank"): 
 
@@ -25,8 +25,16 @@ const Table = ({users, rank}) => {
             <td>{user.college}</td>
             <td>{user.score}</td>
           </tr>
-        ))}
+        ))*/}
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        Track your score against your peers.
       </tbody>
+      
     </table>
   );
 };
