@@ -50,7 +50,7 @@ const NameWrap = (props) => {
       console.log(tempRegArray);
       localStorage.setItem("Register", tempRegArray);
       alert("Event team saved.");
-      window.location.reload(false);
+      window.location.href = "/events";
     } else {
       alert("Event already present in the cart!");
     }
@@ -187,8 +187,9 @@ const NameWrap = (props) => {
               {userList}
             </select>
 
-            <div style={{ textAlign: "center", marginTop: 10}}>
-              <button style={{marginRight: 10}}
+            <div style={{ textAlign: "center", marginTop: 10 }}>
+              <button
+                style={{ marginRight: 10 }}
                 onClick={() => storeReg()}
                 type='button'
                 className='btn btn-outline-info'>

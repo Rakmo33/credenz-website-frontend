@@ -32,124 +32,119 @@ import "aos/dist/aos.css";
 // } from 'react-transition-group';
 
 function Main() {
-
   var cartArray = localStorage.getItem("Cart")
     ? localStorage.getItem("Cart").split(",")
     : [];
 
-  const [cartNum, setcartNum] = useState(cartArray.length)
+  const [cartNum, setcartNum] = useState(cartArray.length);
 
   useEffect(() => {
     AOS.init({
       duration: 2000,
     });
-  }, [])
+  }, []);
 
-  
-  
-    const HomePage = () => {
-      return <Home />;
-    };
-    const EventsPage = () => {
-      return <Events setcartNum={setcartNum}/>;
-    };
-    const RegisterPage = () => {
-      return <Register />;
-    };
+  const HomePage = () => {
+    return <Home />;
+  };
+  const EventsPage = () => {
+    return <Events setcartNum={setcartNum} cartNum={cartNum} />;
+  };
+  const RegisterPage = () => {
+    return <Register />;
+  };
 
-    const ContactPage = () => {
-      return <Contact />;
-    };
+  const ContactPage = () => {
+    return <Contact />;
+  };
 
-    const AboutPage = () => {
-      return <About />;
-    };
+  const AboutPage = () => {
+    return <About />;
+  };
 
-    const LeaderBoardPage = () => {
-      return <LeaderBoard />;
-    };
+  const LeaderBoardPage = () => {
+    return <LeaderBoard />;
+  };
 
-    const SignUpPage = () => {
-      return <Signup />;
-    };
+  const SignUpPage = () => {
+    return <Signup />;
+  };
 
-    const EditProfilePage = () => {
-      return <Edit />;
-    };
+  const EditProfilePage = () => {
+    return <Edit />;
+  };
 
-    const TeamPage = () => {
-      return <Team />;
-    };
+  const TeamPage = () => {
+    return <Team />;
+  };
 
-    const ProfilePage = () => {
-      return <Profile />;
-    };
+  const ProfilePage = () => {
+    return <Profile />;
+  };
 
-    const AdminPage = () => {
-      return <Admin />;
-    };
+  const AdminPage = () => {
+    return <Admin />;
+  };
 
-    const VerifyPhonePage = () => {
-      return <VerifyPhone />;
-    };
+  const VerifyPhonePage = () => {
+    return <VerifyPhone />;
+  };
 
-    const AboutUsPage = () => {
-      return <AboutUs />;
-    };
+  const AboutUsPage = () => {
+    return <AboutUs />;
+  };
 
-    const CartPage = () => {
-      return <Cart />;
-    };
+  const CartPage = () => {
+    return <Cart />;
+  };
 
-    const NewRegPage = () => {
-      return <NewReg />;
-    };
+  const NewRegPage = () => {
+    return <NewReg />;
+  };
 
-    const RefundPage = () => {
-      return <Refund />;
-    };
+  const RefundPage = () => {
+    return <Refund />;
+  };
 
-    const PrivacyPage = () => {
-      return <Privacy />;
-    };
+  const PrivacyPage = () => {
+    return <Privacy />;
+  };
 
-    const TermsPage = () => {
-      return <Terms />;
-    };
+  const TermsPage = () => {
+    return <Terms />;
+  };
 
+  //const num = cartNum;
 
-    //const num = cartNum;
-
-    return (
-      <div>
-        <NavBar cartNum={cartNum}/>
-        <Switch>
-          <Route path='/home' component={HomePage} />
-          <Route path='/events' component={EventsPage} />
-          <Route path='/register/:event' component={RegisterPage} />
-          <Route path='/contact' component={ContactPage} />
-          <Route path='/about' component={AboutPage} />
-          <Route path='/sideEvents' component={SideEvents} />
-          <Route path='/leaderboard' component={LeaderBoardPage} />
-          <Route path='/signup' component={SignUpPage} />
-          <Route path='/edit' component={EditProfilePage} />
-          <Route path='/team' component={TeamPage} />
-          <Route path='/profile' component={ProfilePage} />
-          <Route path='/admin' component={AdminPage} />
-          <Route path='/aboutus' component={AboutUsPage} />
-          <Route path='/verifyphone' component={VerifyPhonePage} />
-          <Route path='/cart' component={CartPage} />
-          <Route path='/newreg/:event' component={NewRegPage} />
-          <Route path='/refund' component={RefundPage} />
-          <Route path='/privacy' component={PrivacyPage} />
-          <Route path='/terms' component={TermsPage} />
-          <Redirect to='/home' />
-        </Switch>
-        {/* <Footer /> */}
-        {/* <NavBar /> */}
-      </div>
-    );
-  
+  return (
+    <div>
+      <NavBar cartNum={cartNum} />
+      <Switch>
+        <Route path='/home' component={HomePage} />
+        <Route path='/events' component={EventsPage} />
+        <Route path='/register/:event' component={RegisterPage} />
+        <Route path='/contact' component={ContactPage} />
+        <Route path='/about' component={AboutPage} />
+        <Route path='/sideEvents' component={SideEvents} />
+        <Route path='/leaderboard' component={LeaderBoardPage} />
+        <Route path='/signup' component={SignUpPage} />
+        <Route path='/edit' component={EditProfilePage} />
+        <Route path='/team' component={TeamPage} />
+        <Route path='/profile' component={ProfilePage} />
+        <Route path='/admin' component={AdminPage} />
+        <Route path='/aboutus' component={AboutUsPage} />
+        <Route path='/verifyphone' component={VerifyPhonePage} />
+        <Route path='/cart' component={CartPage} />
+        <Route path='/newreg/:event' component={NewRegPage} />
+        <Route path='/refund' component={RefundPage} />
+        <Route path='/privacy' component={PrivacyPage} />
+        <Route path='/terms' component={TermsPage} />
+        <Redirect to='/home' />
+      </Switch>
+      {/* <Footer /> */}
+      {/* <NavBar /> */}
+    </div>
+  );
 }
 
 export default Main;
