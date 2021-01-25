@@ -11,6 +11,7 @@ const SideEvents = () => {
     setSelect(select);
   };
 
+
   return (
     <div className='container-fluid cont'>
       <Nav />

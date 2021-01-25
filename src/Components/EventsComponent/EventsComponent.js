@@ -56,7 +56,7 @@ const Events = (props) => {
       ? localStorage.getItem("Register").split(",")
       : [];
 
-    regArray.map((x) => alert(JSON.stringify(x.event)));
+    //regArray.map((x) => alert(JSON.stringify(x.event)));
 
     if (!cartArray.includes(event)) {
       const teamPresent = teams(event);
@@ -78,7 +78,7 @@ const Events = (props) => {
 
         let tempRegArray = [...regArray];
         console.log(tempRegArray);
-        alert(JSON.stringify(tempRegArray));
+        //alert(JSON.stringify(tempRegArray));
         tempRegArray.push(singleRegObject);
         setEventReg(tempRegArray);
         localStorage.setItem("Register", tempRegArray);

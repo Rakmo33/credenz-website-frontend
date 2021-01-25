@@ -162,13 +162,13 @@ const Profile = () => {
                   </div>
                 </div>
               </div>
-              <div className='rank '>
+              {/*<div className='rank '>
                 <p className='title'>Your Rank</p>
                 <div className='rank-pic'>
                   <img src='img/rankk.png' alt='award' />
                   <p className='rank-num'>#7</p>
                 </div>
-              </div>
+                        </div>*/}
               <div className='eve '>
                 <div className='eve-title'>
                   <i className='fa fa-check-circle'></i>
