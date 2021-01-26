@@ -2,6 +2,8 @@
     height: calc(100vh - 60px);
     width: 100vw;
     position: relative;
+    background: rgb(7,19,51);
+    background: radial-gradient(circle, rgba(7,19,51,1) 0%, rgba(0,0,0,1) 100%);
 }
 
 .hide{display: none;}
@@ -57,7 +59,7 @@
     99%{opacity: 1;}
     100%{opacity: 0;display: none;}
 }
-.hide-now{
+.hide-after-nine{
     animation: delay_hide 9s linear;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
@@ -74,7 +76,15 @@
     left: 0;
     z-index: 2;
 }
-.anim-iframe{
-    width: 100vw;
-    object-fit: contain;
+@media only screen and (min-width: 768px) {
+    .anim-iframe{
+        width: 100vw;
+        object-fit: contain;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .anim-iframe{
+        height: 100vh;
+        object-fit: contain;
+    }
 }
