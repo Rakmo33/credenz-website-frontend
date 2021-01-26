@@ -23,7 +23,7 @@
     width: 100vw;
     object-fit: contain;
     z-index: 3;
-    animation: delay-fade-in 3s linear;
+    animation: delay-fade-in 5s linear;
 }
 .anim-overlay-upper{
     position: absolute;

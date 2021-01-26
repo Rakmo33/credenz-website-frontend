@@ -176,7 +176,7 @@ function SvgEyeDea21(props) {
           fill="url(#eyeDEA2_1_svg__he_x5F_bgrad2_2_)"
           onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'mask-hover'}`}
         />
-        <g id="eyeDEA2_1_svg__irislines" onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'eye-hover'}`}>
+        <g id="eyeDEA2_1_svg__irislines" opacity="0.5" onMouseOver={()=>eyeHoverHandler()} onMouseOut={()=>eyeUnhoverHandler()} className={`${hover && 'eye-hover'}`}>
           <defs>
             <filter
               id="eyeDEA2_1_svg__Adobe_OpacityMaskFilter_3_"

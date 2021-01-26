@@ -80,3 +80,6 @@
     animation: anim_ring3 9s linear;
     transform-origin: 49.6% 50%;
 }
+#eyeDEA2_0_svg__Layer_1{
+    transform: scale(0.85) translateY(-8%);
+}
