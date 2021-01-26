@@ -13,6 +13,7 @@
 }
 
 .evePage .modalWrap {
+  z-index: 1000;
   position: absolute !important;
   background: linear-gradient(45deg, #09b7ec, #2c8bda);
   color: #242424;
@@ -132,8 +133,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .evePage .modalWrap .modalBody li span {
