@@ -134,13 +134,41 @@ function EventModal(props) {
           dangerouslySetInnerHTML={{ __html: currentTabInfo }}
         />
       </div>
+
+      {
+        currentInfo.title==="Quiz"?<div style={{display:"flex", paddingTop:10, paddingLeft: 70}}>
+        <div style={{float: "left", padding: 10, marginRight: 20}}>
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+          <label class="form-check-label" for="defaultCheck1">
+            <strong>General quiz</strong>
+          </label>
+        </div>
+        <div style={{padding: 10, marginRight: 20}}>
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+          <label class="form-check-label" for="defaultCheck1">
+            <strong>MELA quiz</strong>
+          </label>
+        </div>
+        <div style={{float:"right", padding: 10}}>
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
+          <label class="form-check-label" for="defaultCheck1">
+            <strong>BizTech quiz</strong>
+          </label>
+        </div>
+      </div> : <div></div>
+      }
+
+      
+      
+
+
       {/*<button
         className='regNowBtn'
         onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>
         <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
         Add to Cart
       </button>*/}
-      {props.teams(currentInfo.title) === false ? (
+      { !props.teams(currentInfo.title) || !localStorage.getItem("user") ? (
         <button
           className='regNowBtn'
           onClick={() =>
