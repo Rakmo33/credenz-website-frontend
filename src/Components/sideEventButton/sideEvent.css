@@ -26,8 +26,8 @@
     display: block;
     margin: 10px;
     height: 380px;
-    background-position: left;
-    background-size: 120%;
+    background-position: center;
+    background-size: 100%;
     /* image-rendering: ; */
     width: 100px;
     text-align: right;
@@ -43,11 +43,11 @@
 
 .floatingWrap .socialeve {
     position: fixed;
-    top: 32vh;
+    top: 31vh;
     width: 5px;
     z-index: 100;
     bottom: 45px;
-    right: 110px;
+    right: 100px;
 }
 
 .floatingWrap .social ul {
