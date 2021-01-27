@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ContactUs from "./contact";
 import Team from "./team";
 import "./contact.css";
@@ -11,6 +11,11 @@ const Contact = () => {
   const handleSelect = (select) => {
     setSelect(select);
   };
+
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | Contact Us`;
+  },[]);
+
   return (
     <div className='container-fluid cont contactUsWrap'>
       <Nav />

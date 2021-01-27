@@ -71,6 +71,7 @@ const Profile = () => {
 
   useEffect(() => {
     getEvents();
+      document.title=`CREDENZ LIVE | Profile`;
   }, []);
 
   if (localStorage.getItem("user")) {

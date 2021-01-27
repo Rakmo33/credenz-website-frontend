@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hooks-helper";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
@@ -24,6 +24,11 @@ import jwt from "jwt-decode";
 import Nav from "../Navbar/Navbar";
 
 const Register = () => {
+  
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | Register`;
+  },[]);
+
   const params = useParams();
 
   var screenHeight = window.screen.height;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import classes from "./Aboutus.module.css";
 // import { FadeInUp, FadeInRight } from "animate-components";
@@ -9,7 +9,12 @@ import SideEventButton from "../../sideEventButton/sideEvent";
 import Footer from "../../Footer/footer";
 import Sponsors from "../sponsors/sponsors";
 
-const aboutus = (props) => {
+const Aboutus = () => {
+
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | About Us`;
+  },[]);
+
   return (
     <>
       <Nav />
@@ -148,4 +153,4 @@ const aboutus = (props) => {
   );
 };
 
-export default aboutus;
+export default Aboutus;

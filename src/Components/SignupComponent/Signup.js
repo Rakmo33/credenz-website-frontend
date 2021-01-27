@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import Footer from "../Footer/footer";
 import Social from "../sideEventButton/sideEvent";
@@ -8,6 +8,11 @@ import Modal1 from "../Modal/Modal";
 import Alert from "../Alert/alert";
 
 function Signup() {
+
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | SignUp`;
+  },[]);
+
   let login = "login";
   const [spinner, setSpinner] = useState("form-group col-lg-12 ");
 
