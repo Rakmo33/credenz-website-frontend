@@ -1,19 +1,15 @@
-import React from "react";
-import "./OverlayLogos.css";
+import React from 'react';
+import './OverlayLogos.css';
 
-function OverlayLogos() {
+function OverlayLogos({mobile}) {
+  
   const clickHandler = () => {
-    console.log("Hovered on logo");
+    console.log("Clicked on logo")
     window.location.reload();
-  };
-  return (
+  }
+  return(
     <div>
-      <img
-        alt='credenz-live-logo'
-        className='sizing zoomInDown'
-        onClick={() => clickHandler()}
-        src={require("../../../assests/img/c-live.png")}
-      />
+      {mobile ? <img className="sizing-mobile zoomInDown" onClick={()=>clickHandler()} src={require('../../../assests/img/c-live-vertical.png')}/> : <img className="sizing zoomInDown" onClick={()=>clickHandler()} src={require('../../../assests/img/c-live.png')}/>}
     </div>
   );
 }

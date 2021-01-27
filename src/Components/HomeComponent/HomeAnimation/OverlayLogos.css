@@ -51,3 +51,10 @@
     top: 17%;
     left: 23%;
 }
+.sizing-mobile{
+    width: 90%;
+    object-fit: contain;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+}

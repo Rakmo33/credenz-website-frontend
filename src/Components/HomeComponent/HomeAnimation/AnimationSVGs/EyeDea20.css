@@ -4,7 +4,7 @@
     100%{transform: translateX(0%) scale(1);}
 }
 .translate_left{
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 50% 49.5%;
     animation: left_fade 9s linear;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
@@ -19,7 +19,7 @@
 }
 .translate_right{
     animation: right_fade 9s linear;
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 50% 49.5%;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     -ms-animation-fill-mode: forwards;
@@ -42,7 +42,7 @@
 }
 .complete_ring1{
     animation: anim_ring1 9s linear;
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 49.6% 50%;
 }
 @keyframes anim_ring2 {
     0% {transform: rotate(0deg);}
@@ -60,7 +60,7 @@
 }
 .complete_ring2{
     animation: anim_ring2 9s linear;
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 49.6% 50%;
 }
 @keyframes anim_ring3 {
     0% {transform: rotate(0deg);}
@@ -78,5 +78,8 @@
 }
 .complete_ring3{
     animation: anim_ring3 9s linear;
-    transform-origin: 50.10% 47.3%;
+    transform-origin: 49.6% 50%;
+}
+#eyeDEA2_0_svg__Layer_1{
+    transform: scale(0.85) translateY(-8%);
 }
