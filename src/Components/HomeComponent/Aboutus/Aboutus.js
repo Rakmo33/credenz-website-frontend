@@ -66,7 +66,7 @@ const Aboutus = () => {
               <img
                 className={classes.img_size_cred}
                 alt='black'
-                src={require("../../../assests/img/final-logo.png")}
+                src={require("../../../assests/img/live30.png")}
               />
             </Col>
           </Row>

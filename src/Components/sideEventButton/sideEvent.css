@@ -14,11 +14,6 @@
     font-family: montserrat;
 } */
 
-a {
-    /* color: white; */
-    text-decoration: none;
-}
-
 .social {
     position: fixed;
     top: 35vh;
@@ -26,15 +21,14 @@ a {
     z-index: 100;
 }
 
-.eve{
-    background-image: url("eve.svg") ;
+.floatingWrap .eve {
+    background-image: url("eve.svg");
     display: block;
     margin: 10px;
     height: 330px;
-    background-position: right ;
-    background-size: 26%;
+    background-position: center;
     /* image-rendering: ; */
-    width: 350px;
+    width: 85px;
     text-align: right;
     padding: 10px;
     /* border-radius: 0 50px 50px 0; */
@@ -42,70 +36,69 @@ a {
     background-repeat: no-repeat;
 }
 
-.socialeve {
+.floatingWrap .eve:hover {
+    transform: scale(1.02);
+}
+
+.floatingWrap .socialeve {
     position: fixed;
     top: 32vh;
     width: 5px;
     z-index: 100;
     bottom: 45px;
-    right: 350px;
+    right: 85px;
 }
 
-.social ul {
+.floatingWrap .social ul {
     padding: 0px;
-    transform: translate(-270px, 0);
+    /* transform: translate(-270px, 0); */
 }
 
- .fb {
+.floatingWrap .social ul li {}
+
+.floatingWrap .social .fb {
     display: block;
-    margin: 10px;
-    height: 90px;
-    /* background: var(--light-accent); */
-    background-image: url("fb.svg") ;
-    background-position: right ;
-    background-size: 30%;
-    /* image-rendering: ; */
-    width: 350px;
-    text-align: right;
+    margin: 0 -5px;
+    height: 100px;
+    background-image: url("fb.svg");
+    background-position: center;
+    width: 100px;
     padding: 10px;
-    /* border-radius: 0 50px 50px 0; */
-    transition: all 0.3s;
     background-repeat: no-repeat;
 }
 
-.ig {
+.floatingWrap .social .ig {
     display: block;
-    margin: 10px;
-    height: 90px;
-    /* background: var(--light-accent); */
-    background-image: url("ig.svg") ;
-    background-position: right ;
-    background-size: 30%;
-    /* image-rendering: ; */
-    width: 350px;
-    text-align: right;
+    margin: 0 -5px;
+    height: 100px;
+    background-image: url("ig.svg");
+    background-position: center;
+    width: 100px;
     padding: 10px;
-    /* border-radius: 0 50px 50px 0; */
-    transition: all 0.3s;
     background-repeat: no-repeat;
 }
 
-.in  {
+.floatingWrap .social .in {
     display: block;
-    margin: 10px;
-    height: 90px;
-    /* background: var(--light-accent); */
-    background-image: url("in.svg") ;
-    background-position: right ;
-    background-size: 30%;
-    /* image-rendering: ; */
-    width: 350px;
-    text-align: right;
+    margin: 0 -5px;
+    height: 100px;
+    background-image: url("in.svg");
+    background-position: center;
+    width: 100px;
     padding: 10px;
-    /* border-radius: 0 50px 50px 0; */
-    transition: all 0.3s;
     background-repeat: no-repeat;
 }
+
+.floatingWrap .social a {
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.floatingWrap .social a:hover {
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
 
 /* .social ul li:hover {
     transform: translate(110px, 0);
@@ -118,16 +111,6 @@ a {
     transition: all 0.6s;
 } */
 
-.social ul li:hover  {
-    color: white;
-    background-color: black;
-    box-shadow: 1px 1px 8px #36dac3;
-}
-
-
-.social :hover{
-    /* box-shadow: 1px 1px 8px #36dac3; */
-}
 
 /* .social ul li:hover i {
     color: var(--light-shades);
@@ -136,7 +119,7 @@ a {
     transition: all 0.6s;
 } */
 
-.social ul li i {
+.floatingWrap .social ul li i {
     margin-left: 10px;
     color: #000;
     background: white;
@@ -150,7 +133,7 @@ a {
 }
 
 @media (max-width: 600px) {
-    .social ul li i {
+    .floatingWrap .social ul li i {
         /* margin-left: 7.5px;
         color: #000;
         background: white;
@@ -163,7 +146,7 @@ a {
         font-size: 15px; */
         display: none;
     }
-    .social ul li {
+    .floatingWrap .social ul li {
         /* display: block;
         margin: 5px;
         background: var(--light-accent);
@@ -174,8 +157,7 @@ a {
         transition: all 1.5s; */
         display: none;
     }
-
-    .socialeve{
+    .floatingWrap .socialeve {
         display: none;
     }
 }
