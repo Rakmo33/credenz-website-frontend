@@ -78,13 +78,13 @@
 }
 @media only screen and (min-width: 768px) {
     .anim-iframe{
-        width: 100vw;
+        width: 101vw;
         object-fit: contain;
     }
 }
 @media only screen and (max-width: 768px) {
     .anim-iframe{
-        height: 100vh;
+        height: 101vh;
         object-fit: contain;
     }
 }
