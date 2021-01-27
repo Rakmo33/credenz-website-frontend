@@ -30,7 +30,7 @@ const HomeAnimation = (props) =>{
 
     return(
         <div className="anim">
-            {mobileDevice ? null : disableEye ? <img src={require('../../../assests/img/web_bg.jpg')} className="anim-iframe" /> : <img src={require('../../../assests/img/main_bg.jpg')} className="anim-overlay-bg" />}
+            {mobileDevice ? null : <img src={require('../../../assests/img/main_bg_2.jpg')} className="anim-iframe" />}
             <div className={`anim-overlay-logos`}>
                 {showLogoTrail ? <OverlayLogos mobile={mobileDevice}/> : null}
             </div>
