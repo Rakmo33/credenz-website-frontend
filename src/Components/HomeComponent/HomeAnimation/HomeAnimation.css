@@ -22,7 +22,7 @@
     to{opacity: 1;}
 }
 .anim-overlay-bg{
-    width: 100vw;
+    width: 101vw;
     object-fit: contain;
     z-index: 3;
     animation: delay-fade-in 5s linear;
