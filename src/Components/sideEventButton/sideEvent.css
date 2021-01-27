@@ -25,10 +25,11 @@
     background-image: url("eve.svg");
     display: block;
     margin: 10px;
-    height: 330px;
-    background-position: center;
+    height: 380px;
+    background-position: left;
+    background-size: 120%;
     /* image-rendering: ; */
-    width: 85px;
+    width: 100px;
     text-align: right;
     padding: 10px;
     /* border-radius: 0 50px 50px 0; */
@@ -46,7 +47,7 @@
     width: 5px;
     z-index: 100;
     bottom: 45px;
-    right: 85px;
+    right: 110px;
 }
 
 .floatingWrap .social ul {
