@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap';
 import Footer from './footer';
 
-const refund =()=>{
+const Refund =()=>{
+    useEffect (()=>{
+        document.title=`CREDENZ LIVE `;
+      },[]);
     return(<div style={{color:'white', marginTop:'10vh'}}>
         <Container style={{minHeight:'100vh'}}>
             <h2>Refund and Cancellation Policy</h2>
@@ -31,4 +34,4 @@ const refund =()=>{
     );
 }
 
-export default refund;
+export default Refund;

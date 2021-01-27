@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 // import Aboutus from "./Aboutus/Aboutus";
 // import Sponsors from "./sponsors/sponsors";
 import HomeAnimation from "./HomeAnimation/HomeAnimation";
@@ -8,7 +8,10 @@ import classes from "./HomeComponent.module.css";
 // import Timer from "./Timer";
 import Nav from "../Navbar/Navbar";
 
-const Home = () => {
+const Home = () =>{
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | Home`;
+  },[]);
   return (
     <div>
       <Nav />

@@ -39,7 +39,7 @@ const Events = (props) => {
 
   useEffect(() => {
     let result = AllEvents();
-
+      document.title=`CREDENZ LIVE | Events`;
     result.then((res) => {
       setEVENTS(res);
       //window.location.reload(false); //refresh page

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap';
 import Footer from './footer';
 
-const terms =()=>{
+const Terms =()=>{
+    useEffect (()=>{
+        document.title=`CREDENZ LIVE `;
+      },[]);
+
     let url='https://credenz.in';
     return(<div style={{color:'white', marginTop:'10vh'}}>
         <Container >
@@ -37,4 +41,4 @@ const terms =()=>{
     );
 }
 
-export default terms;
+export default Terms;

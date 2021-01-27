@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Leaderboard from "./leaderboard";
 import Social from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
@@ -10,7 +10,10 @@ const SideEvents = () => {
   const handleSelect = (select) => {
     setSelect(select);
   };
-
+ 
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | Side Events`;
+  },[]);
 
   return (
     <div className='container-fluid cont'>

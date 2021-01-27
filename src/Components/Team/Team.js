@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import Member from "../Team/Member";
 import { Container, Row } from "react-bootstrap";
 import Footer from "../Footer/footer";
@@ -8,6 +8,10 @@ import { useHistory } from "react-router-dom";
 
 const Team = () => {
   let history = useHistory();
+
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | Our Team`;
+  },[]);
 
   return (
     <>

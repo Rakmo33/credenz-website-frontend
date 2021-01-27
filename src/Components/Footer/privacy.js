@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap';
 import Footer from './footer';
 
-const privacy =()=>{
+const Privacy =()=>{
+
+    useEffect (()=>{
+        document.title=`CREDENZ LIVE `;
+      },[]);
+
     let url="https://credenz.in/";
     return(<div style={{color:'white', marginTop:'10vh'}}>
         <Container>
@@ -67,4 +72,4 @@ const privacy =()=>{
     );
 }
 
-export default privacy;
+export default Privacy;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import Footer from "../Footer/footer";
 import Social from "../sideEventButton/sideEvent";
@@ -7,6 +7,11 @@ import axios from "axios";
 import Modal1 from "../Modal/Modal";
 
 function Edit() {
+
+  useEffect (()=>{
+    document.title=`CREDENZ LIVE | Forgot Password`;
+  },[]);
+
   let login = "login";
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
