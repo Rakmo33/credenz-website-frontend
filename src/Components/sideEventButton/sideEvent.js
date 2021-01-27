@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "./sideEvent.module.css";
+import $ from "jquery";
+import "./sideEvent.css";
+
 // import AddIcon from '@material-ui/icons/Add';
 //import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 //import Tooltip from 'react-bootstrap/Tooltip';
@@ -24,14 +26,29 @@ import classes from "./sideEvent.module.css";
 // }
 
 const sideEvent = (props) => {
+  var screenHeight = window.screen.height;
+  if (screenHeight < 901) {
+    $(document).ready(function () {
+      // your code here...
+      $(".floatingWrap .social  ").css({ transform: "scale(0.85)" });
+      $(".floatingWrap .eve  ").css({ transform: "scale(0.85)" });
+    });
+  } else {
+    $(document).ready(function () {
+      // your code here...
+      $(".floatingWrap .social ").css({ transform: "scale(1)" });
+      $(".floatingWrap .eve ").css({ transform: "scale(1)" });
+    });
+  }
+
   return (
-    <>
+    <div className='floatingWrap'>
       <div>
-        <nav className={classes.social}>
+        <nav className='social'>
           <ul>
             <li>
               <a
-                className={classes.in}
+                className='in'
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://www.linkedin.com/company/pisbieee/'>
@@ -40,7 +57,7 @@ const sideEvent = (props) => {
             </li>
             <li>
               <a
-                className={classes.ig}
+                className='ig'
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://www.instagram.com/pisbcredenz/'>
@@ -49,7 +66,7 @@ const sideEvent = (props) => {
             </li>
             <li>
               <a
-                className={classes.fb}
+                className='fb'
                 target='_blank'
                 rel='noopener noreferrer'
                 href='https://www.facebook.com/pisbcredenz/'>
@@ -59,7 +76,7 @@ const sideEvent = (props) => {
           </ul>
         </nav>
         {/* <img src="socio.png" /> */}
-        {/* <nav className={classes.social} >
+        {/* <nav className={social} >
           <ul>
             <li><img src={require("./fb.svg")} style={{width:"30%"}} /></li>
             <li><img src={require("./ig.svg")} style={{width:"30%"}} /></li>
@@ -68,13 +85,13 @@ const sideEvent = (props) => {
         </nav> */}
       </div>
       <div>
-        <ul style={{ float: "right" }} className={classes.socialeve}>
+        <ul style={{ float: "right" }} className='socialeve'>
           <li>
-            <Link className={classes.eve} to='/events'></Link>
+            <Link className='eve' to='/events'></Link>
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
