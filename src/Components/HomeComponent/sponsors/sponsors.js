@@ -97,7 +97,7 @@ const sponsors = (props) => {
           <Col md={3} sm={4}>
             <Sponsor url={"Logo 2.png"}></Sponsor>
             <h4 style={{ marginTop: "7px", color: "white" }}>
-              Educational Partner
+            Yocket- Overseas Educational Partner
             </h4>
           </Col>
         </Row>
