@@ -19,7 +19,7 @@ const NameWrap = (props) => {
   let checked = [false, false];
   let teamAllowed = true;
   var regArray = localStorage.getItem("Register")
-    ? localStorage.getItem("Register").split(",")
+    ? JSON.parse(localStorage.getItem("Register"))
     : [];
   var cartArray = localStorage.getItem("Cart")
     ? localStorage.getItem("Cart").split(",")
@@ -44,11 +44,12 @@ const NameWrap = (props) => {
       localStorage.setItem("Cart", tempArray);
 
       console.log("Store reg");
+
       let tempRegArray = [...regArray];
       console.log(props.formData);
       tempRegArray.push(props.formData);
       console.log(tempRegArray);
-      localStorage.setItem("Register", tempRegArray);
+      localStorage.setItem("Register", JSON.stringify(tempRegArray));
       alert("Event team saved.");
       window.location.href = "/events";
     } else {

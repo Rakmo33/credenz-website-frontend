@@ -61,8 +61,9 @@ const Events = (props) => {
           var cartArray = localStorage.getItem("Cart")
           ? localStorage.getItem("Cart").split(",")
           : [];
-        var regArray = localStorage.getItem("Register")
-          ? localStorage.getItem("Register").split(",")
+        
+          var regArray = localStorage.getItem("Register")
+          ? JSON.parse(localStorage.getItem("Register"))
           : [];
 
         //regArray.map((x) => alert(JSON.stringify(x.event)));
@@ -79,18 +80,19 @@ const Events = (props) => {
             setEventReg("team");
           } else {
             let singleRegObject = {
+              team: 'single',
               event: event,
               username: localStorage.getItem("user")
                 ? JSON.stringify(user["username"]).replace(/"/g, "")
-                : "",
+                : "",              
             };
-
+            //alert("reg" + props.register)
             let tempRegArray = [...regArray];
             console.log(tempRegArray);
             //alert(JSON.stringify(tempRegArray));
             tempRegArray.push(singleRegObject);
             setEventReg(tempRegArray);
-            localStorage.setItem("Register", tempRegArray);
+            localStorage.setItem("Register", JSON.stringify(tempRegArray));
           }
 
           //console.log(eventReg)
