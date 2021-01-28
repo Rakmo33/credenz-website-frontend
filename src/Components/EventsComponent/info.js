@@ -41,12 +41,21 @@ export const info = [
   -1 until you get a correct answer for upcoming questions.
  
 </p>`,
-    info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.</p>`,
+    info4: `<p>
+    <strong>Prizes</strong><br/>
+    <strong>Junior Section </strong><br/>
+    <strong>Winner :<strong/>&nbsp;3000/- <br/>
+    <strong>1st Runner Up :</strong>&nbsp;2000/- <br/><br/>
+    Senior Section <br/>
+    <strong>Winner :</strong>&nbsp;3000/- <br/>
+    <strong>1st Runner Up :</strong>&nbsp;2000/- <br/>
+
+    </p>`,
     info5: `   <p className=" text-center">
-    Tanmay Nale &nbsp;<br>
+    Tanmay Pardeshi &nbsp;<br>
     <i className="fa fa-phone fa-icons "></i>
-    <a href="tel:+91-9922993249">
-    <span>&nbsp;+91-9969108722</span>
+    <a href="tel:+91 99227 04483">
+    <span>&nbsp;+91 99227 04483</span>
     </a></p>
 
     <p className=' text-center'>
@@ -74,7 +83,7 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-      1) A maximum of 2 candidates pursuing undergraduate program at their institution are allowed per team.
+    1)Candidate pursuing undergraduate course is allowed to participate. 
     <br /> <br />
     2) Marking scheme will be declared on spot.
   </p>`,
@@ -92,9 +101,17 @@ export const info = [
 
 </p>`,
     info4: `<p>
-      1) The competition will test the participants' logical and coding skills.
+      1) The competition will test the participant's logical and coding skills.
       <br/>
-2) Time and cost efficiency of the code will be tested in round 2.
+    2) Time and cost efficiency of the code will be tested in round 2.
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>Junior Section</strong> <br/>
+    <strong>Winner :<strong/>&nbsp;3000/- <br/>
+    <strong>1st Runner Up :<strong/>&nbsp;2000/- <br/><br/>
+    Senior Section <br/>
+    <strong>Winner :</strong>&nbsp;3000/- <br/>
+    <strong>1st Runner Up :</strong>&nbsp;2000/- <br/>
       </p>`,
     info5: `<p className=" text-center">
     Sanket Landge &nbsp;<br>
@@ -123,10 +140,10 @@ export const info = [
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹150</span>&nbsp;  for Non-IEEE members
+        <span>₹40</span>&nbsp;  for Non-IEEE members
       </li>
       <li>
-        <span>₹120</span>&nbsp;  for IEEE members
+        <span>₹50</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
     info2:
@@ -164,6 +181,9 @@ export const info = [
       <li>5) Layering and masking.</li>
       <li>6) The decision of the judges will be final and shall be respected.</li>
     <ul/>
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :<strong/>&nbsp;2000/- <br/>
     </p>`,
     info5: `<p className=' text-center'>
       Shreya Deshpande &nbsp;
@@ -220,7 +240,10 @@ export const info = [
     Round 2: <br /> Top two teams earning maximum credits based on the understanding of the problem statement, 
     component selection, practical performance and explanation of the implemented circuit will be declared as winners. 
     <br />
-     Winner and runner-up will be awarded.<br />
+     Winner and runner-up will be awarded.<br /><br/>
+     <strong>Prizes</strong><br/>
+     <strong>Winner :<strong/>&nbsp;2000/- <br/>
+     <strong>1st Runner Up :<strong/>&nbsp;1000/- <br/>
     </p>`,
     info5: `<p className=' text-center'>
     Ajay Kompalwad &nbsp;
@@ -291,6 +314,10 @@ export const info = [
       <li>7) Participants will be judged on the basis of their business acumen and on how sustainable and innovative their solution is.</li>
       <li>8) The decision of the judges will be final and shall be respected.</li>
     </ul>
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :<strong/>&nbsp;3000/- <br/>
+    <strong>1st Runner Up :<strong/>&nbsp;2000/- <br/>
   .</p>`,
     info5: `<p className=' text-center'>
     Janhavi Bagul &nbsp;
@@ -351,7 +378,12 @@ export const info = [
     4) Concepts such as IPO, short selling and high frequency trading will be inculcated within the event.
      <br />
   </p>`,
-    info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.</p>`,
+    info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.
+    <br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :</strong>&nbsp;3000/- <br/>
+    <strong>1st Runner Up :</strong>&nbsp;2000/- <br/>
+    </p>`,
     info5: `<p className=' text-center'>
     Muffadal Diwan &nbsp;
       <br />
@@ -384,10 +416,10 @@ export const info = [
    <h5>Registration Fees: </h5>
    <ul>
      <li>
-       <span>₹50</span>&nbsp;  for Non-IEEE members
+       <span>₹80</span>&nbsp;  for Non-IEEE members
      </li>
      <li>
-       <span>₹40</span>&nbsp;  for IEEE members
+       <span>₹60</span>&nbsp;  for IEEE members
      </li>
     </ul>`,
     info2: `<p>
@@ -408,14 +440,18 @@ export const info = [
     info3: `<p>
     Team Mergers: <br />
     Team mergers are allowed in this competition.
-    <br />
+    <br /><br/>
     Team Limits: <br />
     A team may consist of a maximum of 3 participants.
     </p>`,
     info4: `<p>
     Submission Limits <br />
     You may submit a maximum of 10 entries per day. <br />
-    You may select up to 2 final submissions for judging.
+    You may select up to 2 final submissions for judging.<br/>
+    <br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :</strong>&nbsp;2000/-<br/>
+    <strong>1st Runner Up :</strong>&nbsp;1000/-<br/>
     </p>`,
     info5: `<p className=' text-center'>
       Aboli Marathe &nbsp;
@@ -465,12 +501,6 @@ export const info = [
     info3: `<p>
    1) There will be two rounds.
    <br/>
-   2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
-   <br /> 
-   3)The decision of the organizer will be final.
-   <br />
-   4)There is no negative marking at any stage.
-   <br />
 5)ROUND 1: <br />
   &nbsp;&nbsp;&nbsp;a.There will be 35 questions in this round.  <br />
   &nbsp;&nbsp;&nbsp;b.Time limit is 40 minutes.<br />
@@ -492,6 +522,10 @@ export const info = [
     3)The decision of the organizer will be final.
     <br />
     4)There is no negative marking at any stage.
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :<strong/>&nbsp;3000/- <br/>
+    <strong>1st Runner Up :<strong/>&nbsp;2000/- <br/>
     </p>`,
     
     info5:`<p className=' text-center'>
@@ -552,7 +586,16 @@ export const info = [
     4)Marking scheme and other rules will be announced on the day of the event itself.
   
 </p>`,
-    info4: `<p>The winner will be selected on the basis of the maximum points scored in final round and/or on the exclusive discretion of the quiz master.</p>`,
+    info4: `<p>The winner will be selected on the basis of the maximum points scored in final round and/or on the exclusive discretion of the quiz master.
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>1)General Quiz </strong><br/>
+    <strong>Winner :<strong/>&nbsp;2000/- <br/><br/>
+    2)MELA Quiz <br/>
+    <strong>Winner :<strong/>&nbsp;2000/- <br/><br/>
+    3)BizTech Quiz<br/>
+    <strong>Winner :<strong/>&nbsp;2000/- <br/>
+    </p>`,
     info5: `<p className=' text-center'>
     Aparna Ranade &nbsp;
       <br />
@@ -616,7 +659,9 @@ export const info = [
 </p>`,
     info4: `<p>
     Participants can participate either individually or in a group of 2 and develop a website which is supposed to be submitted 1-2 days before the start of Credenz. On the first day of Credenz, the best website teams are promoted to the second round where people are informed by us to add specific changes to their website. The website with the most aesthetic changes and best compatibility will be announced as the winner.
-
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :<strong/>&nbsp;2000/- <br/>
 </p>`,
     info5: `<p className=' text-center'>
       Yash Sonar &nbsp;
@@ -644,7 +689,7 @@ export const info = [
       "Present technical research papers with advanced perspectives while honing your skills of research.",
     info1: `<p>
     An investment in knowledge always pays the best interest.
-    <br /> 
+    <br/>
     Compete against the most intellectual minds and their progressive ideas!
     <br />
     Paper presentation is the perfect platform for undergraduate/postgraduate students to present technical papers with advanced perspectives while honing their skills of research and creating new dimensions of technology!
@@ -652,10 +697,10 @@ export const info = [
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹200</span>&nbsp;  for Non-IEEE members
+        <span>₹150</span>&nbsp;  for Non-IEEE members
       </li>
       <li>
-        <span>₹180</span>&nbsp;  for IEEE members
+        <span>₹120</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
     info2: `<p>
@@ -679,6 +724,10 @@ export const info = [
         <li>2) Relevance of the content in context with the chosen topic.</li>
         <li>3) Judge's decision will be final and binding on all.</li>
     </ul>
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :<strong/>&nbsp;2500/- <br/>
+    <strong>1st Runner Up :<strong/>&nbsp;1500/- <br/>
 </p>`,
     info5: `<p className=' text-center'>
     Anushka Mali &nbsp;
@@ -718,7 +767,7 @@ export const info = [
     <br/>
     3)Login using the credentials sent on the mail.
     <br/>
-    4)You will be directed to the starting page of the hunt.
+    4)You will be directed to the starting page of the hunt.<br/>
     5)To advance, crack the question, and put the answer in the URL: <br/>
     FROM <br/>
     http://www.nth.credenz.in/question.php <br/>
@@ -743,9 +792,14 @@ export const info = [
       4) The hunt is designed to be very intriguing and super fun to play.
    </p>`,
     info4: `<p>
-    The person who has cracked the highest number of levels wins.
-    <br />
-    NOTE: In case of a tie, the one who has reached first on that level is the winner.
+    An online dynamic leaderboard is maintained throughout the hunt. The leaderboard shows the level and rank of the participants. 
+    <br /><br/>
+    NOTE: In case of a tie, the participant who cleared the level faster will acquire the top spot.
+    <br/><br/>
+    <strong>Prizes</strong><br/>
+    <strong>Winner :<strong/>&nbsp;2500/- <br/>
+    <strong>1st Runner Up :<strong/>&nbsp;1500/- <br/>
+    <strong>2nd Runner Up :<strong/>&nbsp;1000/- <br/>
     </p>`,
     info5: `<p className=' text-center'>
     Garvita Jain &nbsp;
