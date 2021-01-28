@@ -17,8 +17,8 @@ function NewReg() {
   let defaultFormData = {};
   //if(localStorage.getItem("user")) {
   defaultFormData = {
-    event: params.event,
     team: "team",
+    event: params.event,
     teamName: "",
     name1: "", //JSON.stringify(localStorage.getItem("user")),//localStorage.getItem("user")!==undefined ? JSON.stringify(user["username"]).replace(/"/g, "") : "",
     name2: "",
@@ -43,7 +43,8 @@ function NewReg() {
             <NameWrap
               isVisible={true}
               formData={formData}
-              setFormData={setFormData}></NameWrap>
+              setFormData={setFormData}
+              ></NameWrap>
           </form>
         </div>
       </div>

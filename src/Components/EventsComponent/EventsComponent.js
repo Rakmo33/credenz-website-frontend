@@ -5,6 +5,7 @@ import axios from "axios";
 import Animation from "./Animation";
 import Footer from "../Footer/footer";
 import jwt from "jwt-decode";
+import Alert from "../Alert/alert";
 // import { Nav } from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 
@@ -21,6 +22,11 @@ const Events = (props) => {
   const [tempCartNum, setTempCartNum] = useState(cartArray.length);
 
   const handleClose = () => setShow(false);
+
+  const [showLogin, setShowLogin] = useState(false);
+  const handleClose1 = () => setShowLogin(false);
+  const handleShow1 = () => setShowLogin(true);
+
   // const handleShow = (event) => {
   //   setShow(true);
   //   setEvent(event);
@@ -49,56 +55,66 @@ const Events = (props) => {
   let type = false;
 
   function addToCart(event, cart, setCart, eventReg, setEventReg) {
-    var cartArray = localStorage.getItem("Cart")
-      ? localStorage.getItem("Cart").split(",")
-      : [];
-    var regArray = localStorage.getItem("Register")
-      ? localStorage.getItem("Register").split(",")
-      : [];
 
-    //regArray.map((x) => alert(JSON.stringify(x.event)));
+    if(localStorage.getItem("user")) {
 
-    if (!cartArray.includes(event)) {
-      const teamPresent = teams(event);
+          var cartArray = localStorage.getItem("Cart")
+          ? localStorage.getItem("Cart").split(",")
+          : [];
+        
+          var regArray = localStorage.getItem("Register")
+          ? JSON.parse(localStorage.getItem("Register"))
+          : [];
 
-      let user = "";
-      if (localStorage.getItem("user")) {
-        user = jwt(localStorage.getItem("user"));
-      }
+        //regArray.map((x) => alert(JSON.stringify(x.event)));
 
-      if (teamPresent) {
-        setEventReg("team");
-      } else {
-        let singleRegObject = {
-          event: event,
-          username: localStorage.getItem("user")
-            ? JSON.stringify(user["username"]).replace(/"/g, "")
-            : "",
-        };
+        if (!cartArray.includes(event)) {
+          const teamPresent = teams(event);
 
-        let tempRegArray = [...regArray];
-        console.log(tempRegArray);
-        //alert(JSON.stringify(tempRegArray));
-        tempRegArray.push(singleRegObject);
-        setEventReg(tempRegArray);
-        localStorage.setItem("Register", tempRegArray);
-      }
+          let user = "";
+          if (localStorage.getItem("user")) {
+            user = jwt(localStorage.getItem("user"));
+          }
 
-      //console.log(eventReg)
-      //var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
-      let tempArray = [...cartArray];
-      tempArray.push(event);
-      //console.log("temp" + cartArray)
-      setCart(tempArray);
-      localStorage.setItem("Cart", tempArray);
+          if (teamPresent) {
+            setEventReg("team");
+          } else {
+            let singleRegObject = {
+              team: 'single',
+              event: event,
+              username: localStorage.getItem("user")
+                ? JSON.stringify(user["username"]).replace(/"/g, "")
+                : "",              
+            };
+            //alert("reg" + props.register)
+            let tempRegArray = [...regArray];
+            console.log(tempRegArray);
+            //alert(JSON.stringify(tempRegArray));
+            tempRegArray.push(singleRegObject);
+            setEventReg(tempRegArray);
+            localStorage.setItem("Register", JSON.stringify(tempRegArray));
+          }
 
-      console.log("LOL" + tempArray + " dfsd " + tempArray.length);
+          //console.log(eventReg)
+          //var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
+          let tempArray = [...cartArray];
+          tempArray.push(event);
+          //console.log("temp" + cartArray)
+          setCart(tempArray);
+          localStorage.setItem("Cart", tempArray);
 
-      setTempCartNum((prev) => prev + 1);
-      // window.location.reload(false);
-    } else {
-      alert("Event already present in the cart!");
+          console.log("LOL" + tempArray + " dfsd " + tempArray.length);
+
+          setTempCartNum((prev) => prev + 1);
+          // window.location.reload(false);
+        } else {
+          alert("Event already present in the cart!");
+        }
+    }else {
+      handleShow1();
+      //alert("Please log in before accessing the cart.");
     }
+  
   }
 
   function teams(event) {
@@ -156,6 +172,7 @@ const Events = (props) => {
         event={event}
         event_info={EVENTS}
       />
+       <Modal1 show={showLogin} handleClose={handleClose1} type={"login"} />
       <Footer />
     </div>
   );
