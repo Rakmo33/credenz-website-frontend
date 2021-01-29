@@ -5,7 +5,9 @@ import Footer from "../Footer/footer";
 //import axios from "axios";
 import Nav from "../Navbar/Navbar";
 import LoginFirst from "../LoginFirst/LoginFirst";
-import Axios from "axios";
+import axios from "axios";
+import jwt_decode from "jwt-decode";
+import jwt from "jwt-decode";
 
 function Cart() {
 
@@ -99,20 +101,88 @@ function Cart() {
 
   function Register() {
 
-    let RegItems = localStorage.getItem("Register").split(",")
-    //alert(RegItems)
+    let RegItems = JSON.parse( localStorage.getItem("Register"));
+    let RegItems1 = localStorage.getItem("Register").split(",");
+    
+    //alert(JSON.stringify(RegItems1))
     //alert(typeof(RegItems))
 
     /*
     API call
     */
-/*
+
+   const token = localStorage.getItem("user");
+   const accessToken = JSON.parse(token).accessToken;
+   var decoded = jwt_decode(token);
+
+
+   //alert(RegItems[0])
+
     RegItems.map((regItem)=>{
 
-      //axios
+      var players = [];
+      let count = 1;
 
-    })
+      if (regItem.name1 !== "") {
+        count++;
+        players[0] = regItem.name1;
+      }
+      if (regItem.name2 !== "") {
+        count++;
+        players[1] = regItem.name2;
+      }
+      if (regItem.name3 !== "") {
+        count++;
+        players[2] = regItem.name3;
+      }
+
+      //alert(JSON.stringify(regItem))
+      //axios
+/*
+      if (regItem.team === "single") {
+        axios({
+          method: "post",
+          url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
+            getUsername(regItem.event)[0]
+          }`,
+          headers: { authorization: `Bearer ${accessToken}` },
+        })
+          .then((response) => {
+            alert(response.data);
+          })
+          .catch((error) => {
+            alert("Error!" + error); //request fails with 500
+          });
+      } else {
+        axios
+          .post(
+            `${process.env.REACT_APP_API_URL}/addteam`,
+            {
+              //...data
+              players: players,
+              event_name: getUsername(regItem.event)[0],
+              team_username: regItem.teamName,
+              no_of_players: count,
+            },
+            {
+              headers: {
+                authorization: `Bearer ${accessToken}`,
+              },
+            }
+          )
+          .then((response) => {
+            console.log("team :" + JSON.stringify(response.data));
+          })
+          .catch((error) => {
+            console.log("Axios error : " + error); //request fails with 500
+          });
+        console.log("else");
+      } //else
 */
+    })
+
+    
+
     setPay(true);
 
   }
