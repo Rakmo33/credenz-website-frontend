@@ -90,7 +90,7 @@ function Signup() {
             }
           })
           .catch((e) => {
-            if (e.response.status === 404) {
+            if (e.response.status === member) {
               console.log("Axios alert" + e);
               setSpinner("form-group col-lg-12 ");
               setShowAlert(true);
@@ -279,7 +279,7 @@ function Signup() {
                     required
                     
                   />
-                  <label style={{paddingLeft: 20, marginRight: 50}} for="member">IEEE member</label><br></br>
+                  <label style={{paddingLeft: 20, marginRight: 50, color:'#fff', fontSize:'12px'}} for="member">IEEE member</label><br></br>
                   <input
                     id='member'
                     type='radio'
@@ -290,7 +290,7 @@ function Signup() {
                     required
                    
                   />
-                  <label style={{paddingLeft: 20}} for="member">Non-IEEE member</label><br></br>
+                  <label style={{paddingLeft: 4, color:'#fff', fontSize:'12px'}} for="member">Non-IEEE member</label><br></br>
                 </div>
 
                 {
