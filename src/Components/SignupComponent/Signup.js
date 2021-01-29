@@ -25,6 +25,7 @@ function Signup() {
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
   // const [disabled, setdisabled] = useState(true);
+  const [member, setMember] = useState('');
   const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -264,6 +265,55 @@ function Signup() {
                     </small>
                   )}
                 </div>
+
+                <div className='input-group col-lg-12 mb-4'>
+                  <div className='input-group-prepend'>
+                  </div>
+                  <input
+                    id='member'
+                    type='radio'
+                    name='member'
+                    //className='border-md border-left-0 pl-3'
+                    onChange={(e) => setMember(e.target.value)}
+                    value={"IEEE"}
+                    required
+                    
+                  />
+                  <label style={{paddingLeft: 20, marginRight: 50}} for="member">IEEE member</label><br></br>
+                  <input
+                    id='member'
+                    type='radio'
+                    name='member'
+                    //className='bg-white border-md border-left-0 pl-3'
+                    onChange={(e) => setMember(e.target.value)}
+                    value={"nonIEEE"}
+                    required
+                   
+                  />
+                  <label style={{paddingLeft: 20}} for="member">Non-IEEE member</label><br></br>
+                </div>
+
+                {
+                  member==="IEEE" &&
+                  <div className='input-group col-lg-12 mb-4'>
+                  <div className='input-group-prepend'>
+                  <span className='input-group-text bg-white px-4 border-md border-right-0'>
+                      <i className='fa fa-user text-muted'></i>
+                    </span> 
+                  </div>
+                  <input
+                    id='memberID'
+                    type='text'
+                    name='phone'
+                    placeholder='Membership ID'
+                    className='form-control bg-white border-md border-left-0 pl-3'
+                    //onChange={(e) => setPhone(e.target.value)}
+                    //value={phone}
+                    required
+                    maxLength='10'
+                  />
+                </div>
+                }
 
                 <div className='input-group col-lg-12 mb-4'>
                   <div className='input-group-prepend'>
