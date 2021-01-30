@@ -11,7 +11,9 @@ import jwt from "jwt-decode";
 
 function Cart() {
 
-  const [pay, setPay] = useState(false)
+  const [pay, setPay] = useState(false);
+  const [UPIname, setUPIname] = useState('');
+  const [TransacID, setTransacID] = useState('')
 
   const getUsername = (event) => { //get event names and their prices
     switch (event) {
@@ -44,8 +46,18 @@ function Cart() {
     }
   }
 
+
+
+    let sum = 0;
+    let RegItems = JSON.parse( localStorage.getItem("Register"));
+    RegItems.map((regItem)=>{
+      sum = sum + getUsername(regItem.event)[1];
+    })
+  
+
   function payment() {
-    alert("Payment gateway will open soon. Stay tuned!");
+    setPay(true);
+    //alert("Payment gateway will open soon. Stay tuned!");
   }
 
   function clearCart(event) {
@@ -66,6 +78,11 @@ function Cart() {
     newCart = newCart.replace(temp, "");
     //console.log(newCart)
     localStorage.setItem("Cart", newCart);
+
+    let oldRegItems = JSON.parse( localStorage.getItem("Register"));
+    let newRegItems = oldRegItems.filter((regItem)=>regItem.event!==event)
+    //alert(newRegItems)
+    localStorage.setItem("Register", JSON.stringify(newRegItems));
     window.location.reload(false);
   }
 
@@ -78,8 +95,8 @@ function Cart() {
       .map((x) => {
         return (
           <tr>
-            <td>{count++}</td>
-            <td>{x}</td>
+            <td key={count}>{count++}</td>
+            <td key={x}>{x}</td>
             <td>
               <button
                 onClick={() => clearEvent(x)}
@@ -115,7 +132,6 @@ function Cart() {
    const accessToken = JSON.parse(token).accessToken;
    var decoded = jwt_decode(token);
 
-
    //alert(RegItems[0])
 
     RegItems.map((regItem)=>{
@@ -138,7 +154,8 @@ function Cart() {
 
       //alert(JSON.stringify(regItem))
       //axios
-/*
+      console.log(regItem.team)
+
       if (regItem.team === "single") {
         axios({
           method: "post",
@@ -178,10 +195,8 @@ function Cart() {
           });
         console.log("else");
       } //else
-*/
-    })
 
-    
+    })
 
     setPay(true);
 
@@ -195,15 +210,60 @@ function Cart() {
         <SideEventsButton />
         <div className='regPage'>
           <div className='regPageVector'>
+
+          {pay &&
+          <div style={{marginLeft:10}}>
+            <h1 className='reg-head'>Transaction details</h1>
+            <br/>
+            <div className='input-group col-lg-12 mb-4'>
+                  <input
+                    id='name'
+                    type='text'
+                    name='name'
+                    placeholder='Name of UPI holder'
+                    className='form-control bg-white border-md'
+                    onChange={(e) => setUPIname(e.target.value)}
+                    value={UPIname}
+                    required
+                  />    
+              </div>
+            <div className='input-group col-lg-12 mb-4'>
+                  <input
+                    id='trnsactionNumber'
+                    type='text'
+                    name='phone'
+                    placeholder='Transaction ID'
+                    className='form-control bg-white border-md'
+                    onChange={(e) => setTransacID(e.target.value)}
+                    value={TransacID}
+                    required
+                  />    
+              </div>
+              <div>
+                  <button
+                    type='submit'
+                    className='btn stylebtn btn-block py-2'
+                    >
+                    <span onClick={Register} className='font-weight-bold'>
+                      Click here after payment to register
+                    </span>
+                  </button>
+              </div>
+          </div>}
+
+          {!pay &&
+            <div>
             <h1 className='reg-head'>Your cart</h1>
             <img
               src={require("../../assests/img/register.svg")}
               alt='registration form'
-            />
+              width='350'
+            /> </div>}
           </div>
           <div className='container'>
             <div className='row'>
               <div className='col'>
+              {!pay &&
                 <table className='table table-striped'>
                   <thead>
                     <tr>
@@ -214,25 +274,15 @@ function Cart() {
                   <tbody>
                     {eventList}
                     <tr></tr>
-                    { !pay &&
                     <tr>
                       <td></td>
                       <td>
-                        <button onClick={Register} type='button' className='btn btn-outline-info'>
-                          Register
-                        </button>
-                      </td>
-                      <td></td>
-                    </tr> }
-                   {pay && <tr>
-                      <td></td>
-                      <td>
                         <button onClick={payment} type='button' className='btn btn-outline-info'>
-                          Proceed to pay
+                          Proceed to pay Rs {sum}
                         </button>
                       </td>
                       <td></td>
-                    </tr> }
+                    </tr> 
                     <tr>
                       <td></td>
                       <td>
@@ -246,7 +296,17 @@ function Cart() {
                       <td></td>
                     </tr>
                   </tbody>
-                </table>
+                </table>}
+
+                {
+                  pay &&  
+                  <img
+                    src={require("../../assests/img/gpay.jpeg")}
+                    alt='gpay'
+                    width='350'
+                  />
+                }
+
               </div>
             </div>
           </div>
