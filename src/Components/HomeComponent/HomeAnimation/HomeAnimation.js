@@ -30,11 +30,30 @@ const HomeAnimation = (props) => {
       setDisableEye(true);
       setShowLogoTrail(true);
     }
+
+    return () => {
+      $("body").css({
+        background: "black",
+      });
+
+      // alert("LOL");
+
+      $(".nav-colour").css({
+        backgroundColor: "#ff0000",
+        boxShadow: "0 0 0px 0px #00000055",
+      });
+    };
   }, []);
 
   $("body").css({
     background:
       "radial-gradient(circle, rgba(7, 19, 51, 1) 0%, rgba(0, 0, 0, 1) 100%)",
+  });
+
+  $(".nav-colour").css({
+    backgroundColor: "#00000055",
+    // backgroundColor: "red",
+    boxShadow: "0 0 10px 5px #00000055",
   });
 
   return (

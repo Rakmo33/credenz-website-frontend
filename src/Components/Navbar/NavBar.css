@@ -137,7 +137,16 @@ a:hover {
 
 .nav-colour {
     background-color: var(--dark-shade);
-    /* background-color: transparent; */
+    /* background-color: transparent;
+    background-color: #00000033;
+    box-shadow: 0 0 10px 5px #00000055; */
+}
+
+.nav-colour2 {
+    /* background-color: var(--dark-shade); */
+    background-color: transparent;
+    background-color: #00000055;
+    box-shadow: 0 0 10px 5px #00000055;
 }
 
 .navbar-toggler-icon {

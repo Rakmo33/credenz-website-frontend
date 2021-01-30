@@ -32,14 +32,11 @@ import "aos/dist/aos.css";
 // } from 'react-transition-group';
 
 function Main() {
-
   var cartArray = localStorage.getItem("Cart")
     ? localStorage.getItem("Cart").split(",")
     : [];
 
   const [cartNum, setcartNum] = useState(cartArray.length);
-  
-  
 
   useEffect(() => {
     AOS.init({
@@ -51,7 +48,7 @@ function Main() {
     return <Home />;
   };
   const EventsPage = () => {
-    return <Events setcartNum={setcartNum} cartNum={cartNum}/>;
+    return <Events setcartNum={setcartNum} cartNum={cartNum} />;
   };
   const RegisterPage = () => {
     return <Register />;
@@ -98,11 +95,11 @@ function Main() {
   };
 
   const CartPage = () => {
-    return <Cart/>;
+    return <Cart />;
   };
 
   const NewRegPage = () => {
-    return <NewReg/>;
+    return <NewReg />;
   };
 
   const RefundPage = () => {
@@ -121,7 +118,7 @@ function Main() {
 
   return (
     <div>
-      <NavBar cartNum={cartNum} />
+      {/* <NavBar cartNum={cartNum} /> */}
       <Switch>
         <Route path='/home' component={HomePage} />
         <Route path='/events' component={EventsPage} />
