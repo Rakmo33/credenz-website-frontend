@@ -73,7 +73,10 @@ function NavBar(props) {
 
   return (
     <>
-      <nav className='navbar navbar-expand-xl navbar-inner nav-colour '>
+      <nav
+        className={`navbar navbar-expand-xl navbar-inner ${
+          props.homePage ? "nav-colour2" : "nav-colour"
+        } `}>
         <a
           href='http://pictieee.in/'
           className='navbar-brand'

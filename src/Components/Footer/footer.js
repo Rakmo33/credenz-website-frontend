@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./footer.module.css";
+import "./footer.css";
 import "../ContactComponent/contact.css";
 import { Link } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
@@ -7,10 +7,10 @@ import { Row, Col, Container } from "react-bootstrap";
 
 const footer = () => {
   return (
-    <div className={classes.footer}>
+    <div className='footer'>
       <Container
         fluid
-        className={classes.footerContainer}
+        className='footerContainer'
         style={{ textAlign: "center" }}>
         <Row>
           {/* <span className={"footer-font"}> */}
@@ -33,10 +33,10 @@ const footer = () => {
           {/* </span> */}
         </Row>
 
-        <Row className={classes.hiddenRow}>
-          <div className={classes.social}>
+        <Row className='hiddenRow'>
+          <div className='social'>
             <a
-              className={classes.iconfb}
+              className='iconfb'
               target='_blank'
               rel='noopener noreferrer'
               href='https://www.facebook.com/pisbcredenz/'>
@@ -44,7 +44,7 @@ const footer = () => {
               <i className={"fa fa-facebook"}></i>
             </a>
             <a
-              className={classes.iconlink}
+              className='iconlink'
               target='_blank'
               rel='noopener noreferrer'
               href='https://www.linkedin.com/company/pisbieee/'>
@@ -52,7 +52,7 @@ const footer = () => {
               <i className={"fa fa-linkedin"}></i>
             </a>
             <a
-              className={classes.iconinsta}
+              className='iconinsta'
               target='_blank'
               rel='noopener noreferrer'
               href='https://www.instagram.com/pisbcredenz/'>
