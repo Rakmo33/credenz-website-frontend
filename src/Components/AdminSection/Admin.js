@@ -3,13 +3,13 @@ import { Row, Container } from "react-bootstrap";
 import AdminEvent from "./event";
 import AdminUpdate from "./update";
 import classes from "./Admin.module.css";
+import Approve from './approve';
 
 class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addeve: false,
-      editeve: false,
+      approve:false,
       addupd: false,
       editupd: false,
     };
@@ -38,7 +38,7 @@ class Admin extends Component {
       console.log("addupdate");
       this.setState({
         addupd: <AdminUpdate choice={"1"} />,
-        addeve: false,
+        approve: false,
         editeve: false,
         editupd: false,
       });
@@ -50,11 +50,18 @@ class Admin extends Component {
         addupd: false,
         editeve: false,
       });
+    }else if(type === "approve"){
+      this.setState({
+        approve:<Approve/>,
+        addupd:false,
+        editupd:false
+      })
     }
   };
 
   render() {
     return (
+      <>
       <Container style={{ marginTop: "10vh" }}>
         <Row>
           <div>
@@ -90,15 +97,18 @@ class Admin extends Component {
           </Col>*/}
         </Row>
         <Row>
-          <div>
-            <button
-              type='submit'
-              className='btn btn-primary'
-              onClick={() => this.onSubmit("addUpdate")}>
-              Add Update
-            </button>
-            <div className={classes.formdiv}>{this.state.addupd}</div>
-          </div>
+        <button
+            type='submit'
+            className='btn btn-primary'
+            onClick={() => this.onSubmit("addUpdate")}>
+            Add Update
+          </button>
+          <button
+            type='submit'
+            className='btn btn-primary'
+            onClick={() => this.onSubmit("approve")}>
+            Approve
+          </button>
           {/*
           <Col>
             <div>
@@ -124,6 +134,13 @@ class Admin extends Component {
           </Col>*/}
         </Row>
       </Container>
+      <Container fluid>
+        <Row>
+        <div className={classes.formdiv}>{this.state.addupd}</div>
+        <div>{this.state.approve}</div>
+        </Row>
+      </Container>
+       </> 
     );
   }
 }
