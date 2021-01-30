@@ -23,7 +23,7 @@ const Aboutus = () => {
           <h1
             className={classes.mid}
             style={{ color: "#dadada", marginTop: "100px" }}>
-            About US
+            About Us
           </h1>
           <Row className={classes.credenz}>
             <Col className={classes.content} sm={8}>

@@ -118,7 +118,7 @@
 }
 
 .evePage .modalWrap .modalBody p {
-  text-align: center;
+  text-align: left;
 }
 
 .evePage .modalWrap .modalBody h5 {
@@ -133,7 +133,7 @@
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center;
+          /* justify-content: center; */
 }
 
 .evePage .modalWrap .modalBody li span {
