@@ -28,9 +28,6 @@ const RegisteredEvents =(props)=>{
             </tr>
         )
     }
-    
-      
-    
 }
 
 export default RegisteredEvents;
