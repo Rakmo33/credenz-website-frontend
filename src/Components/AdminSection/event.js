@@ -20,8 +20,8 @@ class Event extends Component{
         //     ...this.state.Event
         // }
         if(target.id==='name'){
-            console.log(event.target.id);
-            console.log(event.target.value);
+            //console.log(event.target.id);
+            //console.log(event.target.value);
         
             this.setState(prevState=>({
                 Event:{
@@ -53,10 +53,10 @@ class Event extends Component{
 
     onSelectEditEvent=(e)=>{
         // e.preventDefault();
-        console.log("in editttt")
+        //console.log("in editttt")
         const target = e.target;
             this.setState({selectEvent:target.value});
-            // console.log(this.state.selectEvent);
+            // //console.log(this.state.selectEvent);
         
     }
 
@@ -64,9 +64,9 @@ class Event extends Component{
         e.preventDefault();
         const eve= this.state.Event;
         this.setState({Event : eve});
-        console.log("event-name : " + this.state.Event.name)
-        console.log("event-deyails : " + this.state.Event.details)
-        console.log("select" + this.state.selectEvent)
+        //console.log("event-name : " + this.state.Event.name)
+        //console.log("event-deyails : " + this.state.Event.details)
+        //console.log("select" + this.state.selectEvent)
     }
 
 
@@ -169,15 +169,15 @@ class Event extends Component{
         //     ...this.state.Event
         // }
         if(target.id==='name'){
-            console.log(event.target.id);
-            console.log(event.target.value);
+            //console.log(event.target.id);
+            //console.log(event.target.value);
         
             this.setState(prevState=>({
                 Event:{
                     ...prevState.Event,
                     name:target.value
                 }
-            }),()=>console.log(this.state.Event));
+            }),()=>//console.log(this.state.Event));
             ;
         }
         else if(target.id==='participant')
@@ -187,7 +187,7 @@ class Event extends Component{
                     ...prevState.Event,
                     participants:target.value
                 }
-            }),()=>console.log(this.state.Event));
+            }),()=>//console.log(this.state.Event));
         } 
         else if(target.id==='details')
         {
@@ -196,16 +196,16 @@ class Event extends Component{
                     ...prevState.Event,
                     details:target.value
                 }
-            }),()=>console.log(this.state.Event));
+            }),()=>//console.log(this.state.Event));
         } 
     }
 
     onSelectEditEvent=(e)=>{
         // e.preventDefault();
-        console.log("in editttt")
+        //console.log("in editttt")
         const target = e.target;
             this.setState({selectEvent:target.value});
-            // console.log(this.state.selectEvent);
+            // //console.log(this.state.selectEvent);
         
     }
 
@@ -213,7 +213,7 @@ class Event extends Component{
         e.preventDefault();
         const eve= this.state.Event;
         this.setState({Event : eve});
-        console.log(eve);
+        //console.log(eve);
     }
 
     addEvent=()=>{

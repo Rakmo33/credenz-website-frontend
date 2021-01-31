@@ -26,7 +26,7 @@ function EventModal(props) {
   const tabSwitchHandler = (tabNumber) => {
     setTab(tabNumber);
 
-    console.log(tabNumber);
+    //console.log(tabNumber);
 
     if (tabNumber === 1) {
       setCurrentTabInfo(currentInfo.info1);

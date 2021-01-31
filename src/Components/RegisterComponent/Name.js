@@ -12,7 +12,8 @@ const Name = (props) => {
         className='form-control'
         name={props.name}
         id={props.id}
-        value={props.value}
+        
+        required
         onChange={props.changeHandler}
       />
       <span id={props.id} className='errormsg'></span>

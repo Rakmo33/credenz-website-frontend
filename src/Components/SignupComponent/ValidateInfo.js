@@ -1,7 +1,7 @@
 export default function Validate(values) {
   let errors = {};
 
-  console.log("Validate called");
+  //console.log("Validate called");
 
   if (!values.name) {
     // errors.name = '*Full name required.'
@@ -44,7 +44,7 @@ export default function Validate(values) {
     errors.password = "*Passwords do not match.";
   }
 
-  console.log(errors);
+  //console.log(errors);
 
   return errors;
 }

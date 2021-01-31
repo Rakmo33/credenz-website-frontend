@@ -17,10 +17,10 @@ const Approve = () => {
   //   window.location.reload(false); //refresh page
   // };
 
-  console.log(`${process.env.REACT_APP_API_URL}/LOL`);
+  //console.log(`${process.env.REACT_APP_API_URL}/LOL`);
 
   const [Events, setEvents] = useState(undefined);
-  const [regAr, setRegAr] = useState([]);
+  const [token, setToken] = useState('');
 
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
@@ -46,10 +46,12 @@ const Approve = () => {
         var decoded = jwt_decode(token);
         user = jwt(localStorage.getItem("user"));
         const accessToken = JSON.parse(token).accessToken;
+        setToken(accessToken);
+       
         //alert(typeof(decoded.username))
 
         // const loading = async () => {
-        for (i = 0; i < 100; i++) {
+        for (i = 0; i < 50; i++) {
           promises.push(
             axios({
               method: "get",
@@ -57,16 +59,16 @@ const Approve = () => {
               headers: { authorization: `Bearer ${accessToken}` },
             })
               .then((response) => {
-                // console.log(
+                // //console.log(
                 //   response.data
                 // );
                 let temp = response.data;
                 arr.push(temp);
-                console.log(arr);
-                setRegAr(arr);
+                // //console.log(arr);
+          
               })
               .catch((error) => {
-                console.log(error);
+                //console.log(error);
               })
           );
         }
@@ -80,7 +82,7 @@ const Approve = () => {
 
         // loading().then(() => {});
 
-        console.log(regAr);
+        
       }
     }
   }
@@ -120,7 +122,9 @@ const Approve = () => {
           <div className='table-container'>
             <table className='table table-striped table-dark'>
               <tbody>
-                <RegEve eveList={Events} />
+                <RegEve 
+                toekn={token}
+                eveList={Events} />
               </tbody>
             </table>
           </div>

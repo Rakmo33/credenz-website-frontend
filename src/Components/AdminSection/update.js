@@ -18,35 +18,35 @@ class Update extends Component {
   }
 
   handleInputChange(event) {
-    console.log("Inputchange");
+    //console.log("Inputchange");
 
     const target = event.target;
     if (target) {
-      console.log("Inside if");
+      //console.log("Inside if");
       const value = target.value;
       const name = target.name;
       this.setState({
         [name]: value,
       });
     } else {
-      console.log("event is null");
+      //console.log("event is null");
     }
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log("Current state is : " + JSON.stringify(this.state));
-    alert("Current state is : " + JSON.stringify(this.state));
+    //console.log("Current state is : " + JSON.stringify(this.state));
+    // alert("Current state is : " + JSON.stringify(this.state));
 
     const token = localStorage.getItem("user");
-    console.log(JSON.parse(token));
+    //console.log(JSON.parse(token));
     // var decoded = jwt_decode(token);
 
     const accessToken = JSON.parse(token).accessToken;
 
     //const token = localStorage.getItem("token")
-    console.log(accessToken);
+    //console.log(accessToken);
     try {
       axios
         .post(
@@ -63,13 +63,13 @@ class Update extends Component {
           }
         )
         .then((response) => {
-          console.log("updates stored" + JSON.stringify(response.data));
+          //console.log("updates stored" + JSON.stringify(response.data));
         })
         .catch((error) => {
-          console.log(error);
+          //console.log(error);
         });
     } catch (e) {
-      alert("Axios error!" + e);
+      // alert("Axios error!" + e);
     }
   }
 

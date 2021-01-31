@@ -54,7 +54,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
 
   if (type === "login") {
     const login = (e) => {
-      console.log("Login Form Submitted!");
+      //console.log("Login Form Submitted!");
       setSpinner("form-group loginBtnWrap");
 
       e.preventDefault();
@@ -66,7 +66,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
             password: password,
           })
           .then(function (response) {
-            // console.log(response.data);
+            // //console.log(response.data);
             //const msg = response.data["accessToken"]
             if (response.data["accessToken"]) {
               // alert("Logged in successfully!");
@@ -75,7 +75,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
               handleClose();
               refreshPage();
               // const user = jwt(response.data["accessToken"]);
-              // console.log("JWT decode : " + JSON.stringify(user));
+              // //console.log("JWT decode : " + JSON.stringify(user));
               setLogged(true);
             } else {
               // alert("Invalid login credentials!");
@@ -87,7 +87,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
             }
           });
       } catch (e) {
-        alert("Axios error!" + e);
+        // alert("Axios error!" + e);
       }
     };
 

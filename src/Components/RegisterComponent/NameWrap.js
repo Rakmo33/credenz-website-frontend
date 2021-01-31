@@ -7,7 +7,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const NameWrap = (props) => {
-  // console.log(props.formData);
+  // //console.log(props.formData);
 
   let accessToken = "";
 
@@ -39,16 +39,16 @@ const NameWrap = (props) => {
 
       let tempArray = [...cartArray];
       tempArray.push(props.formData.event);
-      //console.log("temp" + cartArray)
+      ////console.log("temp" + cartArray)
       //setCart(tempArray);
       localStorage.setItem("Cart", tempArray);
 
-      console.log("Store reg");
+      //console.log("Store reg");
 
       let tempRegArray = [...regArray];
-      console.log(props.formData);
+      //console.log(props.formData);
       tempRegArray.push(props.formData);
-      console.log(tempRegArray);
+      //console.log(tempRegArray);
       localStorage.setItem("Register", JSON.stringify(tempRegArray));
       alert("Event team saved.");
       window.location.href = "/events";
@@ -66,7 +66,7 @@ const NameWrap = (props) => {
       url: `${process.env.REACT_APP_API_URL}/allusers`,
       headers: { authorization: `Bearer ${accessToken}` },
     }).then((response) => {
-      //console.log("axios" + response.data)
+      ////console.log("axios" + response.data)
       setUsers(response.data);
       //alert(JSON.stringify(response.data))
     });
@@ -131,10 +131,10 @@ const NameWrap = (props) => {
     );
   } else if (teamAllowed && props.formData.team === "team") {
     return (
-      <div className={props.cls}>
+      <form className={props.cls}>
         <div className='form-row'>
           {/* NAME OF PARTICIPANTS */}
-          {console.log(props.formData)}
+          {/* //console.log(props.formData) */}
 
           <p id='choose-events'>Enter Your Usernames</p>
 
@@ -156,43 +156,40 @@ const NameWrap = (props) => {
                  name='name1'></Name>*/}
 
             <label htmlFor='Name1'>Participant 1</label>
-            <select
+            <input
               id='name1'
               className='form-control custom-select'
               name='name1'
               value={props.formData.name1}
               onChange={props.setFormData}>
-              <option selected>Username 1</option>
-              {userList}
-            </select>
+              
+            </input>
 
             <label htmlFor='Name2'>Participant 2</label>
-            <select
+            <input
               id='name2'
               className='form-control custom-select'
               name='name2'
               value={props.formData.name2}
               onChange={props.setFormData}>
-              <option selected>Username 2</option>
-              {userList}
-            </select>
+              
+            </input>
 
             <label htmlFor='Name3'>Participant 3</label>
-            <select
-              id='name3'
+            <input             
+             id='name3'
               className='form-control custom-select'
               name='name3'
               value={props.formData.name3}
               onChange={props.setFormData}>
-              <option selected>Username 3</option>
-              {userList}
-            </select>
+           
+            </input>
 
             <div style={{ textAlign: "center", marginTop: 10 }}>
               <button
                 style={{ marginRight: 10 }}
                 onClick={() => storeReg()}
-                type='button'
+                type='submit'
                 className='btn btn-outline-info'>
                 Save
               </button>
@@ -226,7 +223,7 @@ const NameWrap = (props) => {
                 changeHandler={props.setFormData}
             name='name3'></Name>*/}
         </div>
-      </div>
+      </form>
     );
   } else return <></>;
 };

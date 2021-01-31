@@ -140,10 +140,10 @@ export const info = [
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹40</span>&nbsp;  for Non-IEEE members
+        <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
       <li>
-        <span>₹50</span>&nbsp;  for IEEE members
+        <span>₹40</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
     info2:

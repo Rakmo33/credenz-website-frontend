@@ -19,7 +19,7 @@ class Admin extends Component {
 
   onSubmit = (type) => {
     if (type === "addEvent") {
-      console.log("addeve");
+      //console.log("addeve");
       this.setState({
         addeve: <AdminEvent choice={"1"} />,
         editeve: false,
@@ -27,7 +27,7 @@ class Admin extends Component {
         editupd: false,
       });
     } else if (type === "editEvent") {
-      console.log("editeve");
+      //console.log("editeve");
       this.setState({
         editeve: <AdminEvent choice={"2"} />,
         addeve: false,
@@ -35,7 +35,7 @@ class Admin extends Component {
         editupd: false,
       });
     } else if (type === "addUpdate") {
-      console.log("addupdate");
+      //console.log("addupdate");
       this.setState({
         addupd: <AdminUpdate choice={"1"} />,
         approve: false,
@@ -43,7 +43,7 @@ class Admin extends Component {
         editupd: false,
       });
     } else if (type === "editUpdate") {
-      console.log("edit update");
+      //console.log("edit update");
       this.setState({
         editupd: <AdminUpdate choice={"2"} />,
         addeve: false,
@@ -134,7 +134,7 @@ class Admin extends Component {
           </Col>*/}
         </Row>
       </Container>
-      <Container fluid>
+      <Container >
         <Row>
         <div className={classes.formdiv}>{this.state.addupd}</div>
         <div>{this.state.approve}</div>

@@ -2,7 +2,7 @@ import React from "react";
 
 function Proceed(props) {
   if (props.isVisible) {
-    console.log(JSON.stringify(Object.keys(props.formData.events)));
+    //console.log(JSON.stringify(Object.keys(props.formData.events)));
 
     const EVENTS = Object.keys(props.formData.events);
 

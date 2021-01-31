@@ -24,9 +24,9 @@ function VerifyPhone() {
       if (!OTP) {
         var IN = "91";
         var ph = IN.concat(phone);
-        console.log(ph);
+        //console.log(ph);
         setPhone(ph);
-        console.log(phone);
+        //console.log(phone);
 
         try {
           axios
@@ -38,18 +38,19 @@ function VerifyPhone() {
             })
             .then(function (data) {
               setOTP(true);
-              console.log(data);
+              //console.log(data);
             })
-            .catch((err) => console.log(err));
+            .catch((err) => 
+            console.log(err));
         } catch (e) {
-          alert("Axios error!" + e);
+          // alert("Axios error!" + e);
         }
       } else {
-        console.log("else");
-        console.log(phone);
+        //console.log("else");
+        //console.log(phone);
 
-        console.log(ph);
-        console.log(code);
+        //console.log(ph);
+        //console.log(code);
         try {
           axios
             .get("http://localhost:5000/verifycode", {
@@ -59,11 +60,11 @@ function VerifyPhone() {
               },
             })
             .then(function (data) {
-              alert(JSON.stringify(data));
+              // alert(JSON.stringify(data));
             })
             .catch((err) => console.log(JSON.stringify(err)));
         } catch (e) {
-          alert("Axios error!" + e);
+          // alert("Axios error!" + e);
         }
       }
     }
@@ -85,13 +86,13 @@ function VerifyPhone() {
             channel: 'sms'
         }
     })
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+    .then(data => //console.log(data))
+    .catch(err => //console.log(err));
 
   }
-*/ console.log(
-    values
-  );
+*/ //console.log(
+  //   values
+  // );
 
   const errors = Validate(values);
 
