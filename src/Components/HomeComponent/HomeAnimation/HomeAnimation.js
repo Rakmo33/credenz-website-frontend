@@ -5,6 +5,7 @@ import EyeDea20 from "./AnimationSVGs/EyeDea20";
 import $ from "jquery";
 import Footer from "../../Footer/footer";
 
+import '../../../'
 import OverlayLogos from "./OverlayLogos";
 
 const HomeAnimation = (props) => {
@@ -61,7 +62,7 @@ const HomeAnimation = (props) => {
       {mobileDevice ? null : (
         <img
           alt='bg'
-          src='img/main_bg_2.jpg'
+          src={require('../../../assests/img/main_bg_2.jpg')}
           className={` ${bgLoaded ? "loadedBG" : "notLoadedBG"} `}
           onLoad={() => {
             setBgLoaded(true);

@@ -6,6 +6,7 @@ import Validate from "./ValidateInfo";
 import axios from "axios";
 import Modal1 from "../Modal/Modal";
 import Alert from "../Alert/alert";
+import Nav from '../Navbar/Navbar';
 
 function Signup() {
 
@@ -148,6 +149,7 @@ function Signup() {
 
   return (
     <>
+      <Nav/>
       <div className='container mt-5 signupFormWrap'>
         {showAlert ? (
           <Alert show={showAlert} setShow={setShowAlert} var='danger'>

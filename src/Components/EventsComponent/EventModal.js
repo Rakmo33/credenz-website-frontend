@@ -168,7 +168,7 @@ function EventModal(props) {
         <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
         Add to Cart
       </button>*/}
-      { !props.teams(currentInfo.title) || !localStorage.getItem("user") ? (
+      { !props.teams(currentInfo.title) ? (
         <button
           className='regNowBtn'
           onClick={() =>

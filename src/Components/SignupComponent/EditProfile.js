@@ -4,6 +4,7 @@ import Footer from "../Footer/footer";
 import Social from "../sideEventButton/sideEvent";
 import Validate from "./ValidateInfo";
 import axios from "axios";
+import Nav from '../Navbar/Navbar';
 import Modal1 from "../Modal/Modal";
 
 function Edit() {
@@ -88,6 +89,7 @@ function Edit() {
 
   return (
     <>
+      <Nav/>
       <Modal1 show={show} handleClose={handleClose} type={login} />
       <Social />
       {/* <div className="footer heightFooter"> */}

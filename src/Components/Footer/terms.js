@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap';
 import Footer from './footer';
+import Nav from '../Navbar/Navbar';
 
 const Terms =()=>{
     useEffect (()=>{
@@ -9,6 +10,7 @@ const Terms =()=>{
 
     let url='https://credenz.in';
     return(<div style={{color:'white', marginTop:'10vh'}}>
+        <Nav/>
         <Container >
 
             <h2>TERMS AND CONDITIONS</h2>

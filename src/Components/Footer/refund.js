@@ -1,12 +1,14 @@
 import React, {useEffect} from 'react';
 import {Container} from 'react-bootstrap';
 import Footer from './footer';
+import Nav from '../Navbar/Navbar';
 
 const Refund =()=>{
     useEffect (()=>{
         document.title=`CREDENZ LIVE `;
       },[]);
     return(<div style={{color:'white', marginTop:'10vh'}}>
+        <Nav/>
         <Container style={{minHeight:'100vh'}}>
             <h2>Refund and Cancellation Policy</h2>
 
