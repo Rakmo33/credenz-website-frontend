@@ -7,7 +7,7 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
 import Nav from "../Navbar/Navbar";
-import RegEve from './registeredEvents';
+import RegEve from "./registeredEvents";
 //import jwt from "jwt-decode";
 import $ from "jquery";
 
@@ -19,7 +19,7 @@ const Approve = () => {
 
   console.log(`${process.env.REACT_APP_API_URL}/LOL`);
 
-  const [Events, setEvents] = useState([]);
+  const [Events, setEvents] = useState(undefined);
   const [regAr, setRegAr] = useState([]);
 
   var screenHeight = window.screen.height;
@@ -36,8 +36,9 @@ const Approve = () => {
   }
 
   let user = "";
-  let i=0;
-  let arr=[];
+  let i = 0;
+  let arr = [];
+  let promises = [];
   function getEvents() {
     if (localStorage.getItem("user")) {
       var token = localStorage.getItem("user");
@@ -47,52 +48,51 @@ const Approve = () => {
         const accessToken = JSON.parse(token).accessToken;
         //alert(typeof(decoded.username))
 
-        console.log("type" + typeof accessToken);
-        console.log(accessToken);
- 
-      const getData = async () =>{
-        for(i=0;i<50;i++){
-              axios({
+        // const loading = async () => {
+        for (i = 0; i < 100; i++) {
+          promises.push(
+            axios({
               method: "get",
-              url: (`${process.env.REACT_APP_API_URL}/admin/allregs/`+i),
+              url: `${process.env.REACT_APP_API_URL}/admin/allregs/` + i,
               headers: { authorization: `Bearer ${accessToken}` },
             })
               .then((response) => {
                 // console.log(
                 //   response.data
                 // );
-                arr.push(response.data);
-                setEvents(arr);
+                let temp = response.data;
+                arr.push(temp);
+                console.log(arr);
                 setRegAr(arr);
-                console.log(Events);
-                
               })
               .catch((error) => {
                 console.log(error);
-              });
-          } 
-       
+              })
+          );
+        }
+        // };
+
+        Promise.all(promises).then(() => {
+          // alert("LOL");
+
+          setEvents(arr);
+        });
+
+        // loading().then(() => {});
+
+        console.log(regAr);
       }
-     getData();
-
-     console.log(regAr);
-
-     }  
-    
+    }
   }
-  }
-
-
 
   useEffect(() => {
     getEvents();
-      document.title=`CREDENZ LIVE | ADMIN`;
-    
+    document.title = `CREDENZ LIVE | ADMIN`;
   }, []);
 
   if (localStorage.getItem("user")) {
     let count = 1;
-    var EventList=[];
+    var EventList = [];
     user = jwt(localStorage.getItem("user"));
 
     // if (Events !== undefined) {
@@ -112,20 +112,19 @@ const Approve = () => {
     return (
       <div>
         <Nav />
-              <div className='eve '>
-                <div className='eve-title'>
-                  <i className='fa fa-check-circle'></i>
-                  <p className='reg-eve'>Registered Events</p>
-                </div>
-                <div className='table-container'>
-                  <table className='table table-striped table-dark'>
-                    <tbody> 
-                      <RegEve eveList={Events} />
-                    </tbody>
-                  </table>
-                </div>
-              </div>  
-  
+        <div className='eve '>
+          <div className='eve-title'>
+            <i className='fa fa-check-circle'></i>
+            <p className='reg-eve'>Registered Events</p>
+          </div>
+          <div className='table-container'>
+            <table className='table table-striped table-dark'>
+              <tbody>
+                <RegEve eveList={Events} />
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     );
   } else {
