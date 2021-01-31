@@ -7,6 +7,7 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
 import Nav from "../Navbar/Navbar";
+import RegEve from './registeredEvents';
 //import jwt from "jwt-decode";
 import $ from "jquery";
 
@@ -18,7 +19,8 @@ const Approve = () => {
 
   console.log(`${process.env.REACT_APP_API_URL}/LOL`);
 
-  const [Events, setEvents] = useState(undefined);
+  const [Events, setEvents] = useState([]);
+  const [regAr, setRegAr] = useState([]);
 
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
@@ -34,7 +36,8 @@ const Approve = () => {
   }
 
   let user = "";
-
+  let i=0;
+  let arr=[];
   function getEvents() {
     if (localStorage.getItem("user")) {
       var token = localStorage.getItem("user");
@@ -46,130 +49,69 @@ const Approve = () => {
 
         console.log("type" + typeof accessToken);
         console.log(accessToken);
-
-        axios({
-          method: "get",
-          url: `${process.env.REACT_APP_API_URL}/${decoded.username}/present`,
-          headers: { authorization: `Bearer ${accessToken}` },
-        })
-          .then((response) => {
-            console.log(
-              response.data.map((obj) => {
-                return obj.event_username;
+ 
+      const getData = async () =>{
+        for(i=0;i<50;i++){
+              axios({
+              method: "get",
+              url: (`${process.env.REACT_APP_API_URL}/admin/allregs/`+i),
+              headers: { authorization: `Bearer ${accessToken}` },
+            })
+              .then((response) => {
+                // console.log(
+                //   response.data
+                // );
+                arr.push(response.data);
+                setEvents(arr);
+                setRegAr(arr);
+                console.log(Events);
+                
               })
-            );
-            setEvents(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+              .catch((error) => {
+                console.log(error);
+              });
+          } 
+       
       }
-    } else {
-      console.log("logged out!");
-    }
+     getData();
+
+     console.log(regAr);
+
+     }  
+    
   }
+  }
+
+
 
   useEffect(() => {
     getEvents();
       document.title=`CREDENZ LIVE | ADMIN`;
+    
   }, []);
 
   if (localStorage.getItem("user")) {
     let count = 1;
-    var EventList;
+    var EventList=[];
     user = jwt(localStorage.getItem("user"));
 
-    if (Events !== undefined) {
-      EventList = Events.map((x) => {
-        return (
-          <tr>
-            <th scope='row'>{count++}</th>
-            <td>
-              {x.event_username}, {x.random_pw}
-            </td>
-          </tr>
-        );
-      });
-    } else {
-      EventList = "You have not registered for any event yet. ";
-    }
+    // if (Events !== undefined) {
+    //   Events.map((x) => {
+    //       return (
+    //     <div></div>
+    //     );
+    //   });
+    // } else {
+    //   EventList = "You have not registered for any event yet. ";
+    // }
 
-    if (EventList.length === 0) {
-      EventList = "You have not registered for any event yet. ";
-    }
+    // if (EventList.length === 0) {
+    //   EventList = "You have not registered for any event yet. ";
+    // }
 
     return (
       <div>
         <Nav />
-        {/* <div className='profilepage'>
-          <div className='container'>
-            <div className='wrapper'>
-              <div className='pro  '>
-                <div className='pro-pic'>
-                  <i className='fa fa-id-card'></i>
-                  <p className='pro-username'>
-                    {JSON.stringify(user["username"]).replace(/^"(.*)"$/, "$1")}
-                  </p>
-                </div>
-                <div className='pro-info col-12'> */}
-                  {/* <div className='pro-info1'> */}
-                  {/* <div className='row'>
-                    <p className='pro-info1'>
-                      <i className='fa fa-user'></i>
-                      <span>Name &nbsp;&nbsp;&nbsp;&nbsp;:</span>
-                    </p>
-                    <div className='pro-info2'>
-                      <p>
-                        {JSON.stringify(user["name"]).replace(/^"(.*)"$/, "$1")}
-                      </p>
-                    </div>
-                  </div>
-                  <div className='row'>
-                    <p className='pro-info1'>
-                      <i className='fa fa-university'></i>
-                      <span>College :</span>
-                    </p>
-                    <div className='pro-info2'>
-                      <p>
-                        {JSON.stringify(user["clgname"]).replace(
-                          /^"(.*)"$/,
-                          "$1"
-                        )}
-                      </p>
-                    </div>
-                  </div>
-                  <div className='row'>
-                    <p className='pro-info1'>
-                      <i className='fa fa-envelope'></i>
-                      <span>Email &nbsp;&nbsp;:</span>
-                    </p>
-                    <div className='pro-info2'>
-                      <p>
-                        {JSON.stringify(user["email"]).replace(
-                          /^"(.*)"$/,
-                          "$1"
-                        )}
-                      </p>
-                    </div>
-                  </div>
-                  <div className='row'>
-                    <p className='pro-info1'>
-                      <i className='fa fa-phone-square'></i>
-                      <span>Contact :</span>
-                    </p>
-                    <div className='pro-info2'>
-                      <p>{JSON.stringify(user["phoneno"])}</p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-              {/*<div className='rank '>
-                <p className='title'>Your Rank</p>
-                <div className='rank-pic'>
-                  <img src='img/rankk.png' alt='award' />
-                  <p className='rank-num'>#7</p>
-                </div>
-                        </div>*/}
               <div className='eve '>
                 <div className='eve-title'>
                   <i className='fa fa-check-circle'></i>
@@ -177,7 +119,9 @@ const Approve = () => {
                 </div>
                 <div className='table-container'>
                   <table className='table table-striped table-dark'>
-                    <tbody>{EventList}</tbody>
+                    <tbody> 
+                      <RegEve eveList={Events} />
+                    </tbody>
                   </table>
                 </div>
               </div>  
