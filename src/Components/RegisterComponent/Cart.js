@@ -264,7 +264,7 @@ function Cart() {
                     id='transactionNumber'
                     type='text'
                     name='phone'
-                    pattern=".{12,}"
+                    pattern=".{10,}"
                     placeholder='Transaction ID'
                     className='form-control bg-white border-md'
                     onChange={(e) => setTransacID(e.target.value)}
