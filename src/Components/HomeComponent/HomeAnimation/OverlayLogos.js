@@ -4,7 +4,7 @@ import './OverlayLogos.css';
 function OverlayLogos({mobile}) {
   
   const clickHandler = () => {
-    console.log("Clicked on logo")
+    //console.log("Clicked on logo")
     window.location.reload();
   }
   return(

@@ -2,7 +2,7 @@ import React from "react";
 import Radio from "./Radio";
 
 const YearWrap = (props) => {
-  //console.log(props.formData);
+  ////console.log(props.formData);
   let checked = [false, false, false, false];
 
   if (props.isVisible) {

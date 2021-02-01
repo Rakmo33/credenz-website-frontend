@@ -34,7 +34,7 @@ const Feedback = () => {
 
     setSpinner("submitSpinner");
 
-    console.log(name + feedback);
+    //console.log(name + feedback);
 
     let templateParams = {
       from_name: name,
@@ -59,16 +59,16 @@ const Feedback = () => {
           document.querySelector("#message").value = "";
           setSpinner(" ");
 
-          // console.log("SUCCESS!", response.status, response.text);
+          // //console.log("SUCCESS!", response.status, response.text);
         },
         (err) => {
           setShow(true);
           setMsg(e);
           setVar("danger");
-          console.log(err);
+          //console.log(err);
           setSpinner(" ");
 
-          // console.log("FAILED...", err);
+          // //console.log("FAILED...", err);
         }
       );
   }

@@ -36,9 +36,9 @@ const Events = (props) => {
     const response = await axios.get(
       `${process.env.REACT_APP_API_URL}/allevents`
     );
-    //console.log("I am response" + response);
+    ////console.log("I am response" + response);
     const data = await response.data;
-    //console.log("I am data" + JSON.stringify(data));
+    ////console.log("I am data" + JSON.stringify(data));
 
     return data;
   }
@@ -88,22 +88,22 @@ const Events = (props) => {
             };
             //alert("reg" + props.register)
             let tempRegArray = [...regArray];
-            console.log(tempRegArray);
+            //console.log(tempRegArray);
             //alert(JSON.stringify(tempRegArray));
             tempRegArray.push(singleRegObject);
             setEventReg(tempRegArray);
             localStorage.setItem("Register", JSON.stringify(tempRegArray));
           }
 
-          //console.log(eventReg)
+          ////console.log(eventReg)
           //var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
           let tempArray = [...cartArray];
           tempArray.push(event);
-          //console.log("temp" + cartArray)
+          ////console.log("temp" + cartArray)
           setCart(tempArray);
           localStorage.setItem("Cart", tempArray);
 
-          console.log("LOL" + tempArray + " dfsd " + tempArray.length);
+          //console.log("LOL" + tempArray + " dfsd " + tempArray.length);
 
           setTempCartNum((prev) => prev + 1);
           // window.location.reload(false);

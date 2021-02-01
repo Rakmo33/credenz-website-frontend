@@ -2,7 +2,7 @@
 
 function loadScript(src) {
 
-    console.log("load razor called !")
+    //console.log("load razor called !")
 
     return new Promise( (resolve) => {
 
@@ -25,7 +25,7 @@ const _DEV_ = document.domain === 'localhost'
 
 async function DisplayRazorpay() {
 
-    console.log("display razor called !")
+    //console.log("display razor called !")
 
     const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
 

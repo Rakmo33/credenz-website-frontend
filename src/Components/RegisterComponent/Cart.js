@@ -13,46 +13,73 @@ function Cart() {
 
   const [pay, setPay] = useState(false);
   const [UPIname, setUPIname] = useState('');
-  const [TransacID, setTransacID] = useState('')
-
-  const getUsername = (event) => { //get event names and their prices
+  const [TransacID, setTransacID] = useState('');
+  const [currentUser, setCurrentUser] = useState('');
+  const getUsername = (event) => { 
+    //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash", 100];
+        return ["clash",80 , 60];
       case "Reverse Coding":
-        return ["rc", 50];
+        return ["rc", 80, 60];
       case "Pixelate":
-        return ["pixelate", 50];
+        return ["pixelate", 50,40];
       case "Cretronix":
-        return ["cretronix", 50];
+        return ["cretronix", 50,40];
       case "Bplan":
-        return ["bplan", 50];
+        return ["bplan", 120,100];
       case "Wallstreet":
-        return ["wallstreet", 50];
+        return ["wallstreet", 50,40];
       case "Datawiz":
-        return ["datawiz", 50];
+        return ["datawiz", 80,60];
       case "Enigma":
-        return ["enigma", 50];
+        return ["enigma", 50,40];
       case "Quiz":
-        return ["quiz", 50];
+        return ["quiz", 50,40];
       case "Web Weaver":
-        return ["webweaver", 50];
+        return ["webweaver", 80,60];
       case "Paper Presentation":
-        return ["paperpresentation", 50];
+        return ["paperpresentation", 150,120];
       case "Network Treasure Hunt":
-        return ["nth", 50];
+        return ["nth", 0,0];
       default:
         return "Invalid event";
     }
   }
 
+  //get  current user to check if it is ieee member 
+  let user ='';
+  if (localStorage.getItem("user")) {
+    var token = localStorage.getItem("user");
+    if (token !== undefined || token !== "") {
+      var decoded = jwt_decode(token);
+      user = jwt(localStorage.getItem("user"));
+      const accessToken = JSON.parse(token).accessToken;
+        axios({
+        method: "get",
+        url: `${process.env.REACT_APP_API_URL}/user/${decoded.username}`,
+        headers: { authorization: `Bearer ${accessToken}` },
+      })
+        .then((response) => {
+          setCurrentUser(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      }
+    }
 
-
-    let sum = 0;
+    let sum = 0;    
     let RegItems = JSON.parse( localStorage.getItem("Register"));
+    let i=1;
+    if( currentUser.ieee && currentUser.ieee == true){
+      i=2;
+    }
+    if(RegItems){
     RegItems.map((regItem)=>{
-      sum = sum + getUsername(regItem.event)[1];
+      sum = sum + getUsername(regItem.event)[i];
     })
+  }
   
 
   function payment() {
@@ -76,7 +103,7 @@ function Cart() {
     newCart = newCart.replace(temp, "");
     temp = event;
     newCart = newCart.replace(temp, "");
-    //console.log(newCart)
+    ////console.log(newCart)
     localStorage.setItem("Cart", newCart);
 
     let oldRegItems = JSON.parse( localStorage.getItem("Register"));
@@ -88,6 +115,7 @@ function Cart() {
 
   let eventList = "";
   let count = 1;
+
   eventList = localStorage.getItem("Cart") ? (
     localStorage
       .getItem("Cart")
@@ -132,7 +160,7 @@ function Cart() {
    const accessToken = JSON.parse(token).accessToken;
    var decoded = jwt_decode(token);
 
-   //alert(RegItems[0])
+   console.log(RegItems)
 
     RegItems.map((regItem)=>{
 
@@ -154,7 +182,7 @@ function Cart() {
 
       //alert(JSON.stringify(regItem))
       //axios
-      console.log(regItem.team)
+      //console.log(regItem.team)
 
       if (regItem.team === "single") {
         axios({
@@ -162,10 +190,14 @@ function Cart() {
           url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
             getUsername(regItem.event)[0]
           }`,
+          data:{
+            trans_id:TransacID,
+            approved:false
+          },
           headers: { authorization: `Bearer ${accessToken}` },
         })
           .then((response) => {
-            alert(response.data);
+            console.log("insingle");
           })
           .catch((error) => {
             alert("Error!" + error); //request fails with 500
@@ -180,6 +212,8 @@ function Cart() {
               event_name: getUsername(regItem.event)[0],
               team_username: regItem.teamName,
               no_of_players: count,
+              trans_id:TransacID,
+              approved:false
             },
             {
               headers: {
@@ -193,13 +227,11 @@ function Cart() {
           .catch((error) => {
             console.log("Axios error : " + error); //request fails with 500
           });
-        console.log("else");
+        //console.log("else");
       } //else
 
     })
-
     setPay(true);
-
   }
 
 
@@ -212,10 +244,10 @@ function Cart() {
           <div className='regPageVector'>
 
           {pay &&
-          <div style={{marginLeft:10}}>
+          <div className='responsiveTable' style={{order:2}}>
             <h1 className='reg-head'>Transaction details</h1>
             <br/>
-            <div className='input-group col-lg-12 mb-4'>
+            {/* <div className='input-group col-lg-12 mb-4'>
                   <input
                     id='name'
                     type='text'
@@ -226,10 +258,10 @@ function Cart() {
                     value={UPIname}
                     required
                   />    
-              </div>
+              </div> */}
             <div className='input-group col-lg-12 mb-4'>
                   <input
-                    id='trnsactionNumber'
+                    id='transactionNumber'
                     type='text'
                     name='phone'
                     placeholder='Transaction ID'
@@ -300,11 +332,15 @@ function Cart() {
 
                 {
                   pay &&  
-                  <img
+                  <><img
                     src={require("../../assests/img/gpay.jpeg")}
                     alt='gpay'
                     width='350'
                   />
+                  <div style={{color:'white', margin:'10px'}}>
+                   <h4>UPI ID :</h4> <h4>9834570868@okbizaxis</h4>
+                  </div>
+                  </>
                 }
 
               </div>

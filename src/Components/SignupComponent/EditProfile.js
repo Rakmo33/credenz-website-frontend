@@ -27,10 +27,10 @@ function Edit() {
   const handleShow = () => setShow(true);
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(
-      "Current state is : " +
-        JSON.stringify({ email, phone, college, password })
-    );
+    // //console.log(
+    //   "Current state is : " +
+    //     JSON.stringify({ email, phone, college, password })
+    // );
 
     if (!errors.boolean) {
       try {
@@ -45,14 +45,14 @@ function Edit() {
           })
           .then(function (response) {
             alert("Form successfully submitted.");
-            console.log(response);
-            console.log(response.data);
+            // //console.log(response);
+            // //console.log(response.data);
             const msg = response.data["accessToken"];
             localStorage.setItem("user", JSON.stringify(response.data));
-            console.log(msg);
+            // //console.log(msg);
           });
       } catch (e) {
-        alert("Axios error!" + e);
+        // alert("Axios error!" + e);
       }
 
       setName("");
@@ -77,13 +77,13 @@ function Edit() {
     passwordCheck: passwordCheck,
   };
 
-  console.log(values);
+  // //console.log(values);
 
   const errors = Validate(values);
 
-  console.log(
-    "Errors: " + errors.name + errors.username + errors.email + errors.phone
-  );
+  // //console.log(
+  //   "Errors: " + errors.name + errors.username + errors.email + errors.phone
+  // );
 
   //e.preventDefualt()
 

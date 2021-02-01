@@ -198,7 +198,7 @@ const Register = () => {
   };
 
   const [formData, setFormData] = useForm(defaultFormData);
-  console.log(formData);
+  //console.log(formData);
   // disable buttons
   const [showPrevBtn, setPrev] = useState(false);
   const [showNextBtn, setNext] = useState(true);
@@ -224,7 +224,7 @@ const Register = () => {
       let tempEvents = [...events];
       // When Checked
       if (!tempEvents[eventNum].isCheked) {
-        console.log("checked : " + JSON.stringify(tempEvents[eventNum]));
+        //console.log("checked : " + JSON.stringify(tempEvents[eventNum]));
 
         tempEvents[eventNum].isCheked = true;
         setEvents(tempEvents);
@@ -289,8 +289,8 @@ const Register = () => {
         players[2] = formData.name4;
       }
 
-      console.log(players);
-      console.log(count);
+      //console.log(players);
+      //console.log(count);
       if (formData.team === "single") {
         axios({
           method: "post",
@@ -300,10 +300,10 @@ const Register = () => {
           headers: { authorization: `Bearer ${accessToken}` },
         })
           .then((response) => {
-            alert(response.data);
+            // alert(response.data);
           })
           .catch((error) => {
-            alert("Error!" + error); //request fails with 500
+            // alert("Error!" + error); //request fails with 500
           });
       } else {
         axios
@@ -323,12 +323,12 @@ const Register = () => {
             }
           )
           .then((response) => {
-            console.log("team :" + JSON.stringify(response.data));
+            //console.log("team :" + JSON.stringify(response.data));
           })
           .catch((error) => {
-            console.log("Axios error : " + error); //request fails with 500
+            //console.log("Axios error : " + error); //request fails with 500
           });
-        console.log("else");
+        //console.log("else");
       } //else
     };
 
@@ -370,10 +370,10 @@ const Register = () => {
 
     async function DisplayRazorpay(e) {
       e.preventDefault();
-      console.log("display razor called !");
       //console.log("display razor called !");
+      ////console.log("display razor called !");
 
-      // console.log(JSON.stringify(events))
+      // //console.log(JSON.stringify(events))
 
       // const token = localStorage.getItem("user");
       // alert(typeof(token))
@@ -382,25 +382,25 @@ const Register = () => {
 
       eventsReg();
 
-      console.log("display razor called !");
+      //console.log("display razor called !");
       const res = await loadScript(
         "https://checkout.razorpay.com/v1/checkout.js"
       );
 
       if (!res) {
-        alert("Razorpay SDK failed to load!");
+        // alert("Razorpay SDK failed to load!");
         return;
       }
 
       const data = await axios
         .post(`${process.env.REACT_APP_API_URL}/razorpay`)
         .then(function (response) {
-          console.log(response);
-          console.log(JSON.stringify(response));
+          //console.log(response);
+          //console.log(JSON.stringify(response));
           return response;
         });
 
-      console.log("Data " + data);
+      //console.log("Data " + data);
 
       const options = {
         key: _DEV_ ? "rzp_test_8OXCvHsV5OiOpe" : "prod-key", // Enter the Key ID generated from the Dashboard
@@ -411,9 +411,9 @@ const Register = () => {
         image: "",
         //"order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
         handler: function (response) {
-          alert(response.razorpay_payment_id);
-          alert(response.razorpay_order_id);
-          alert(response.razorpay_signature);
+          // alert(response.razorpay_payment_id);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
         },
 
         prefill: {
@@ -441,7 +441,7 @@ const Register = () => {
 
     //RAZORPAY
     function loadScript(src) {
-      console.log("load razor called !");
+      //console.log("load razor called !");
 
       return new Promise((resolve) => {
         const script = document.createElement("script");
