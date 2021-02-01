@@ -51,7 +51,7 @@ const Approve = () => {
         //alert(typeof(decoded.username))
 
         // const loading = async () => {
-        for (i = 0; i < 50; i++) {
+        for (i = 0; i < 70; i++) {
           promises.push(
             axios({
               method: "get",

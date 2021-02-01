@@ -15,7 +15,8 @@ function Cart() {
   const [UPIname, setUPIname] = useState('');
   const [TransacID, setTransacID] = useState('');
   const [currentUser, setCurrentUser] = useState('');
-  const getUsername = (event) => { //get event names and their prices
+  const getUsername = (event) => { 
+    //get event names and their prices
     switch (event) {
       case "Clash":
         return ["clash",80 , 60];
@@ -46,6 +47,7 @@ function Cart() {
     }
   }
 
+  //get  current user to check if it is ieee member 
   let user ='';
   if (localStorage.getItem("user")) {
     var token = localStorage.getItem("user");
@@ -73,9 +75,11 @@ function Cart() {
     if( currentUser.ieee && currentUser.ieee == true){
       i=2;
     }
+    if(RegItems){
     RegItems.map((regItem)=>{
       sum = sum + getUsername(regItem.event)[i];
     })
+  }
   
 
   function payment() {
@@ -111,6 +115,7 @@ function Cart() {
 
   let eventList = "";
   let count = 1;
+
   eventList = localStorage.getItem("Cart") ? (
     localStorage
       .getItem("Cart")
@@ -155,7 +160,7 @@ function Cart() {
    const accessToken = JSON.parse(token).accessToken;
    var decoded = jwt_decode(token);
 
-   //alert(RegItems[0])
+   console.log(RegItems)
 
     RegItems.map((regItem)=>{
 
@@ -185,10 +190,14 @@ function Cart() {
           url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
             getUsername(regItem.event)[0]
           }`,
+          data:{
+            trans_id:TransacID,
+            approved:false
+          },
           headers: { authorization: `Bearer ${accessToken}` },
         })
           .then((response) => {
-            alert(response.data);
+            console.log("insingle");
           })
           .catch((error) => {
             alert("Error!" + error); //request fails with 500
@@ -203,6 +212,8 @@ function Cart() {
               event_name: getUsername(regItem.event)[0],
               team_username: regItem.teamName,
               no_of_players: count,
+              trans_id:TransacID,
+              approved:false
             },
             {
               headers: {
@@ -220,9 +231,7 @@ function Cart() {
       } //else
 
     })
-
     setPay(true);
-
   }
 
 
@@ -252,7 +261,7 @@ function Cart() {
               </div> */}
             <div className='input-group col-lg-12 mb-4'>
                   <input
-                    id='trnsactionNumber'
+                    id='transactionNumber'
                     type='text'
                     name='phone'
                     placeholder='Transaction ID'
