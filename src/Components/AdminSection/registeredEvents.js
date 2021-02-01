@@ -27,7 +27,11 @@ const RegisteredEvents = (props) => {
           method:'post',
           url:(`${process.env.REACT_APP_API_URL}/admin/allregs/`+id),
           headers: { authorization: `Bearer ${token}` },
-      });
+      }).then(()=>{
+        console.log(id)
+      }).catch(err=>{
+        console.log(id+ err)
+      })
   }
 
   if (props.eveList !== undefined) {
@@ -43,8 +47,8 @@ const RegisteredEvents = (props) => {
               <td>{`${item.price}`}</td>
               <td> 
                   {(item.approved == false) ? ( 
-                  <button onClick={()=>{getApproved(item._id, props.token)}}>{`${item.approved}`}</button>
-                  ) : null }
+                  <button className='btn btn-primary' onClick={()=>{getApproved(item._id, props.token)}}>Approve</button>
+                  ) : <button className='btn btn-success' >Already Approved</button> }
              </td>
             </tr>
           );
