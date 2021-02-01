@@ -200,7 +200,7 @@ function Cart() {
             console.log("insingle");
           })
           .catch((error) => {
-            alert("Error!" + error); //request fails with 500
+            alert("Error!" + error); //request fails with 500 
           });
       } else {
         axios
@@ -244,7 +244,7 @@ function Cart() {
           <div className='regPageVector'>
 
           {pay &&
-          <form className='responsiveTable' style={{order:2}}>
+          <div className='responsiveTable' style={{order:2}}>
             <h1 className='reg-head'>Transaction details</h1>
             <br/>
             {/* <div className='input-group col-lg-12 mb-4'>
@@ -282,7 +282,7 @@ function Cart() {
                     </span>
                   </button>
               </div>
-          </form>}
+          </div>}
 
           {!pay &&
             <div>
