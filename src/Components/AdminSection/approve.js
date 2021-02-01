@@ -6,7 +6,6 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
-import Nav from "../Navbar/Navbar";
 import RegEve from "./registeredEvents";
 //import jwt from "jwt-decode";
 import $ from "jquery";
@@ -21,6 +20,7 @@ const Approve = () => {
 
   const [Events, setEvents] = useState(undefined);
   const [token, setToken] = useState('');
+  const [totalreg, setTotalreg] = useState(undefined);
 
   var screenHeight = window.screen.height;
   if (screenHeight < 901) {
@@ -39,6 +39,19 @@ const Approve = () => {
   let i = 0;
   let arr = [];
   let promises = [];
+  let setcount=0;
+  const getTotalreg =()=>{
+    axios.get(`${process.env.REACT_APP_API_URL}/regcount`)
+      .then((response)=>{
+        setTotalreg(response.data);
+        console.log(response.data.count);
+        setcount = response.data;
+      });
+     
+  }
+
+
+
   function getEvents() {
     if (localStorage.getItem("user")) {
       var token = localStorage.getItem("user");
@@ -48,20 +61,23 @@ const Approve = () => {
         const accessToken = JSON.parse(token).accessToken;
         setToken(accessToken);
        
-        //alert(typeof(decoded.username))
-
+        //alert(typeof(decoded.username))      
         // const loading = async () => {
-        for (i = 0; i < 70; i++) {
-          promises.push(
+          
+     
+        
+        
+         for (i = 0; i <= setcount.count; i++) {
+            promises.push(
             axios({
               method: "get",
-              url: `${process.env.REACT_APP_API_URL}/admin/allregs/` + i,
+              url: (`${process.env.REACT_APP_API_URL}/admin/allregs/` + i),
               headers: { authorization: `Bearer ${accessToken}` },
             })
               .then((response) => {
-                // //console.log(
-                //   response.data
-                // );
+                console.log(
+                  response.data
+                );
                 let temp = response.data;
                 arr.push(temp);
                 // //console.log(arr);
@@ -72,6 +88,8 @@ const Approve = () => {
               })
           );
         }
+      
+      
         // };
 
         Promise.all(promises).then(() => {
@@ -88,7 +106,11 @@ const Approve = () => {
   }
 
   useEffect(() => {
-    getEvents();
+    getTotalreg();
+    setTimeout(() => {
+      getEvents();
+        }, 2000);
+    
     document.title = `CREDENZ LIVE | ADMIN`;
   }, []);
 
@@ -113,7 +135,6 @@ const Approve = () => {
 
     return (
       <div>
-        <Nav />
         <div className='eve '>
           <div className='eve-title'>
             <i className='fa fa-check-circle'></i>
@@ -123,7 +144,7 @@ const Approve = () => {
             <table className='table table-striped table-dark'>
               <tbody>
                 <RegEve 
-                toekn={token}
+                token={token}
                 eveList={Events} />
               </tbody>
             </table>

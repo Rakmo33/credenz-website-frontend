@@ -95,7 +95,11 @@ function Main() {
   };
 
   const CartPage = () => {
-    return <Cart />;
+    if (localStorage.getItem("user")) return <Cart />;
+    else {
+      window.location.href = "/home";
+      return null;
+    }
   };
 
   const NewRegPage = () => {

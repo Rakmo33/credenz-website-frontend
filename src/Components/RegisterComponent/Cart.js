@@ -244,7 +244,7 @@ function Cart() {
           <div className='regPageVector'>
 
           {pay &&
-          <div className='responsiveTable' style={{order:2}}>
+          <form className='responsiveTable' style={{order:2}}>
             <h1 className='reg-head'>Transaction details</h1>
             <br/>
             {/* <div className='input-group col-lg-12 mb-4'>
@@ -264,6 +264,7 @@ function Cart() {
                     id='transactionNumber'
                     type='text'
                     name='phone'
+                    pattern=".{10,}"
                     placeholder='Transaction ID'
                     className='form-control bg-white border-md'
                     onChange={(e) => setTransacID(e.target.value)}
@@ -281,7 +282,7 @@ function Cart() {
                     </span>
                   </button>
               </div>
-          </div>}
+          </form>}
 
           {!pay &&
             <div>

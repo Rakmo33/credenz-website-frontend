@@ -4,6 +4,7 @@ import AdminEvent from "./event";
 import AdminUpdate from "./update";
 import classes from "./Admin.module.css";
 import Approve from './approve';
+import Nav from "../Navbar/Navbar";
 
 class Admin extends Component {
   constructor(props) {
@@ -62,6 +63,7 @@ class Admin extends Component {
   render() {
     return (
       <>
+      <Nav/>
       <Container style={{ marginTop: "10vh" }}>
         <Row>
           <div>
