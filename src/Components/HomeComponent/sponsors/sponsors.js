@@ -97,28 +97,28 @@ const sponsors = (props) => {
           <Col md={3} sm={4}>
             <Sponsor url={"Logo 2.png"}></Sponsor>
             <h4 style={{ marginTop: "7px", color: "white" }}>
-            Yocket- Overseas Educational Partner
+            Overseas Educational Partner
             </h4>
           </Col>
         </Row>
-        {/* <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
+        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
           <Col md={3} sm={4}>
-            <Sponsor url={"avaya.jpg"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
+            <Sponsor url={"sum.png"}></Sponsor>
+            <h4 style={{marginTop:'7px', color: "white"}}>Digital Media Partner</h4>
           </Col>
           <Col md={3} sm={4}>
-            <Sponsor url={"Byju's2.jpg"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
+            <Sponsor url={"ims2.jpg"}></Sponsor>
+            <h4 style={{marginTop:'7px', color: "white"}}>Education Partner</h4>
           </Col>
           <Col md={3} sm={4}>
-            <Sponsor url={"Byju's2.jpg"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
+            <Sponsor url={"codechef.jpg"}></Sponsor>
+            <h4 style={{marginTop:'7px', color: "white"}}>Programming Partner</h4>
           </Col>
           <Col md={3} sm={4}>
-            <Sponsor url={"avaya.jpg"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
+            <Sponsor url={"c3.jpg"}></Sponsor>
+            <h4 style={{marginTop:'7px', color: "white"}}>Higher Educational Partner</h4>
           </Col>
-        </Row> */}
+        </Row>
         {/* <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
           <Col md={3} sm={4}>
             <Sponsor url={"c3.jpg"}></Sponsor>
