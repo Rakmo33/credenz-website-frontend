@@ -136,7 +136,7 @@ const NameWrap = (props) => {
           {/* NAME OF PARTICIPANTS */}
           {/* //console.log(props.formData) */}
 
-          <p id='choose-events'>Enter Your Usernames</p>
+          <p id='choose-events'>Enter Names of your team members</p>
 
           <div>
             <Name
@@ -153,22 +153,22 @@ const NameWrap = (props) => {
                 team={props.formData.team}
                 value={props.formData.name1}
                 changeHandler={props.setFormData}
-                 name='name1'></Name>*/}
+                 name='name1'></Name>
 
             <label htmlFor='Name1'>Participant 1</label>
             <input
               id='name1'
-              className='form-control custom-select'
+              className='form-control'
               name='name1'
               value={props.formData.name1}
-              onChange={props.setFormData}>
+            onChange={props.setFormData}>
               
-            </input>
+            </input>*/}
 
             <label htmlFor='Name2'>Participant 2</label>
             <input
               id='name2'
-              className='form-control custom-select'
+              className='form-control'
               name='name2'
               value={props.formData.name2}
               onChange={props.setFormData}>
@@ -178,7 +178,7 @@ const NameWrap = (props) => {
             <label htmlFor='Name3'>Participant 3</label>
             <input             
              id='name3'
-              className='form-control custom-select'
+              className='form-control'
               name='name3'
               value={props.formData.name3}
               onChange={props.setFormData}>

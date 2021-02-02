@@ -8,6 +8,7 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
+import Ipay from "./Ipay";
 
 function Cart() {
 
@@ -122,7 +123,7 @@ function Cart() {
       .split(",")
       .map((x) => {
         return (
-          <tr>
+          <tr key={count}>
             <td key={count}>{count++}</td>
             <td key={x}>{x}</td>
             <td>
@@ -147,7 +148,7 @@ function Cart() {
   function Register() {
 
     let RegItems = JSON.parse( localStorage.getItem("Register"));
-    let RegItems1 = localStorage.getItem("Register").split(",");
+   // let RegItems1 = localStorage.getItem("Register").split(",");
     
     //alert(JSON.stringify(RegItems1))
     //alert(typeof(RegItems))
@@ -159,51 +160,59 @@ function Cart() {
    const token = localStorage.getItem("user");
    const accessToken = JSON.parse(token).accessToken;
    var decoded = jwt_decode(token);
+   //alert(JSON.stringify(decoded))
 
    console.log(RegItems)
 
     RegItems.map((regItem)=>{
-
-      var players = [];
-      let count = 1;
-
-      if (regItem.name1 !== "") {
-        count++;
-        players[0] = regItem.name1;
-      }
-      if (regItem.name2 !== "") {
-        count++;
-        players[1] = regItem.name2;
-      }
-      if (regItem.name3 !== "") {
-        count++;
-        players[2] = regItem.name3;
-      }
 
       //alert(JSON.stringify(regItem))
       //axios
       //console.log(regItem.team)
 
       if (regItem.team === "single") {
-        axios({
-          method: "post",
-          url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
-            getUsername(regItem.event)[0]
-          }`,
-          data:{
-            trans_id:TransacID,
-            approved:false
-          },
-          headers: { authorization: `Bearer ${accessToken}` },
-        })
-          .then((response) => {
-            console.log("insingle");
+
+        if(regItem.username===decoded.username) {
+          axios({
+            method: "post",
+            url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
+              getUsername(regItem.event)[0]
+            }`,
+            data:{
+              trans_id:TransacID,
+              approved:false
+            },
+            headers: { authorization: `Bearer ${accessToken}` },
           })
-          .catch((error) => {
-            alert("Error!" + error); //request fails with 500 
-          });
+            .then((response) => {
+           //   alert("insingle : " + JSON.stringify(response.data))
+              console.log("insingle : " + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              alert("Error!" + error); //request fails with 500 
+            });
+        }
+
       } else {
-        axios
+
+        var players = [];
+        let count = 1;
+
+        if (regItem.name1 !== "") {
+          count++;
+          players[0] = regItem.name1;
+        }
+        if (regItem.name2 !== "") {
+          count++;
+          players[1] = regItem.name2;
+        }
+        if (regItem.name3 !== "") {
+          count++;
+          players[2] = regItem.name3;
+        }
+
+        if(regItem.username===decoded.username) {
+          axios
           .post(
             `${process.env.REACT_APP_API_URL}/addteam`,
             {
@@ -222,20 +231,26 @@ function Cart() {
             }
           )
           .then((response) => {
+  //            alert("team :" + JSON.stringify(response.data))
             console.log("team :" + JSON.stringify(response.data));
           })
           .catch((error) => {
             console.log("Axios error : " + error); //request fails with 500
           });
+        }
         //console.log("else");
       } //else
 
     })
     setPay(true);
+    clearCart();
   }
 
 
-  if (1) {
+
+
+
+  if (localStorage.getItem("user")) {
     return (
       <div>
         <Nav />
@@ -280,6 +295,7 @@ function Cart() {
                     <span onClick={Register} className='font-weight-bold'>
                       Click here after payment to register
                     </span>
+
                   </button>
               </div>
           </div>}
@@ -313,6 +329,7 @@ function Cart() {
                         <button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>
+                        {/*<Ipay/>*/}
                       </td>
                       <td></td>
                     </tr> 
