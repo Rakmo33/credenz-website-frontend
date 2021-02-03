@@ -119,12 +119,12 @@ const sponsors = (props) => {
             <h4 style={{marginTop:'7px', color: "white"}}>Higher Educational Partner</h4>
           </Col>
         </Row>
-        {/* <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
+        <Row style={{textAlign:'center', justifyContent:'center', marginTop:'35px'}}>
           <Col md={3} sm={4}>
-            <Sponsor url={"c3.jpg"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
+            <Sponsor url={"ieee1.png"}></Sponsor>
+            <h4 style={{marginTop:'7px', color: "white"}}>Visionary sponsor</h4>
           </Col>
-          <Col md={3} sm={4}>
+          {/* <Col md={3} sm={4}>
             <Sponsor url={"codechef.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col>
@@ -135,8 +135,8 @@ const sponsors = (props) => {
           <Col md={3} sm={4}>
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
-          </Col>
-        </Row> */}
+          </Col> */}
+        </Row>
 
         {/* <Row>
           <Col md={2} sm={4}><Sponsor url={'ims2.jpg'}>nairobi</Sponsor></Col>
