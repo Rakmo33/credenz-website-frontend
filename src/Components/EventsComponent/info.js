@@ -217,7 +217,7 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-    1) ) Each team can consist of maximum 3 members.
+    1) ) Participant can participate individually.
     <br /> <br />
     2) Participants will be provided with credentials to join tinkercad for the 2nd round.
     <br /><br />
