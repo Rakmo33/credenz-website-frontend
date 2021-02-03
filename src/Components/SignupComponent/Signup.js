@@ -148,7 +148,7 @@ function Signup() {
   //e.preventDefualt()
 
   return (
-    <>
+    <div style={{background:'black'}} >
       <Nav/>
       <div className='container mt-5 signupFormWrap'>
         {showAlert ? (
@@ -430,7 +430,7 @@ function Signup() {
       {/* <div className='footer heightFooter'> */}
       <Footer />
       {/* </div> */}
-    </>
+    </div>
   );
 }
 
