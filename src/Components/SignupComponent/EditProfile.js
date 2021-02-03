@@ -88,7 +88,7 @@ function Edit() {
   //e.preventDefualt()
 
   return (
-    <>
+    <div style={{background:'black'}} >
       <Nav/>
       <Modal1 show={show} handleClose={handleClose} type={login} />
       <Social />
@@ -203,7 +203,7 @@ function Edit() {
       </div>
       <Footer />
       {/* </div> */}
-    </>
+    </div>
   );
 }
 

@@ -100,7 +100,7 @@ const Profile = () => {
     }
 
     return (
-      <div>
+      <div style={{background:'black'}} >
         <Nav />
         <div className='profilepage'>
           <div className='container'>

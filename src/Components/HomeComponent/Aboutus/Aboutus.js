@@ -16,7 +16,7 @@ const Aboutus = () => {
   },[]);
 
   return (
-    <>
+    <div style={{background:'black'}} >
       <Nav />
       <div id='size'>
         <Container id='Aboutus' className={classes.AboutusContainer}>
@@ -149,7 +149,7 @@ const Aboutus = () => {
       </div>
       <SideEventButton />
       <Footer />
-    </>
+    </div>
   );
 };
 

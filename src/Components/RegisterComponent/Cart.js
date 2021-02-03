@@ -253,7 +253,7 @@ function Cart() {
 
   if (localStorage.getItem("user")) {
     return (
-      <div>
+      <div style={{background:'black'}} >
         <Nav />
         <SideEventsButton />
         <div className='regPage'>

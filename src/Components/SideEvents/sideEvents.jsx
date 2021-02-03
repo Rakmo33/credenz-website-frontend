@@ -16,7 +16,7 @@ const SideEvents = () => {
   },[]);
 
   return (
-    <div className='container-fluid cont'>
+    <div style={{background:'black'}} className='container-fluid cont'>
       <Nav />
       <div className='row head'>
         <div className='col-xl-10 col-md-10 '>
