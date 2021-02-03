@@ -217,7 +217,7 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-    1) ) Each team can consist of maximum 3 members.
+    1) ) Participant can participate individually.
     <br /> <br />
     2) Participants will be provided with credentials to join tinkercad for the 2nd round.
     <br /><br />
@@ -431,11 +431,9 @@ export const info = [
 <br /> <br />
     4)No private sharing outside teams.
 <br /> <br />
-    5)No private sharing outside teams.
+    5)Privately sharing code or data outside of teams is not permitted.
 <br /> <br />
-    6)Privately sharing code or data outside of teams is not permitted.
-<br /> <br />
-    7)Results should be reproducible to be eligible for prizes.
+    6)Results should be reproducible to be eligible for prizes.
   </p>`,
     info3: `<p>
     Team Mergers: <br />
