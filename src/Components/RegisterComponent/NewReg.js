@@ -9,10 +9,16 @@ import { useParams } from "react-router-dom";
 import NameWrap from "./NameWrap";
 //import LoginFirst from "../LoginFirst/LoginFirst";
 import Nav from "../Navbar/Navbar";
+import jwt_decode from "jwt-decode";
 
 function NewReg() {
   const params = useParams();
   //   const user = localStorage.getItem("user") ? localStorage.getItem("user") : "";
+
+
+  const token = localStorage.getItem("user");
+  //const accessToken = JSON.parse(token).accessToken;
+  var decoded = jwt_decode(token);
 
   let defaultFormData = {};
   //if(localStorage.getItem("user")) {
@@ -20,6 +26,7 @@ function NewReg() {
     team: "team",
     event: params.event,
     teamName: "",
+    username: decoded.username,
     name1: "", //JSON.stringify(localStorage.getItem("user")),//localStorage.getItem("user")!==undefined ? JSON.stringify(user["username"]).replace(/"/g, "") : "",
     name2: "",
     name3: "",
