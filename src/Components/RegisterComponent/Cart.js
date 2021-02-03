@@ -8,7 +8,7 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
-import Ipay from "./Ipay";
+import Ipay from "../Ipay/Ipay";
 
 function Cart() {
 
@@ -50,8 +50,9 @@ function Cart() {
 
   //get  current user to check if it is ieee member 
   let user ='';
-  if (localStorage.getItem("user")) {
+  /*if (localStorage.getItem("user")) {
     var token = localStorage.getItem("user");
+    
     if (token !== undefined || token !== "") {
       var decoded = jwt_decode(token);
       user = jwt(localStorage.getItem("user"));
@@ -68,7 +69,7 @@ function Cart() {
           console.log(error);
         });
       }
-    }
+    }*/
 
     let sum = 0;    
     let RegItems = JSON.parse( localStorage.getItem("Register"));
@@ -329,7 +330,7 @@ function Cart() {
                         <button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>
-                        {/*<Ipay/>*/}
+                        <Ipay sum={sum}/>
                       </td>
                       <td></td>
                     </tr> 

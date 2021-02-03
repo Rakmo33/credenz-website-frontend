@@ -132,7 +132,7 @@ const NameWrap = (props) => {
   } else if (teamAllowed && props.formData.team === "team") {
     return (
       <form className={props.cls}>
-        <div className='form-row'>
+        <div className='form-row col-flex'>
           {/* NAME OF PARTICIPANTS */}
           {/* //console.log(props.formData) */}
 
@@ -147,43 +147,30 @@ const NameWrap = (props) => {
               changeHandler={props.setFormData}
               name='teamName'></Name>
 
-            {/*<Name
-                index={"1"}
+            <Name
+                index={"2"}
                 id='Name1'
                 team={props.formData.team}
                 value={props.formData.name1}
                 changeHandler={props.setFormData}
                  name='name1'></Name>
 
-            <label htmlFor='Name1'>Participant 1</label>
-            <input
-              id='name1'
-              className='form-control'
-              name='name1'
-              value={props.formData.name1}
-            onChange={props.setFormData}>
-              
-            </input>*/}
+            <Name
+                index={"3"}
+                id='Name1'
+                team={props.formData.team}
+                value={props.formData.name2}
+                changeHandler={props.setFormData}
+                 name='name1'></Name>
+            
+            <Name
+                index={"4"}
+                id='Name1'
+                team={props.formData.team}
+                value={props.formData.name3}
+                changeHandler={props.setFormData}
+                 name='name1'></Name>
 
-            <label htmlFor='Name2'>Participant 2</label>
-            <input
-              id='name2'
-              className='form-control'
-              name='name2'
-              value={props.formData.name2}
-              onChange={props.setFormData}>
-              
-            </input>
-
-            <label htmlFor='Name3'>Participant 3</label>
-            <input             
-             id='name3'
-              className='form-control'
-              name='name3'
-              value={props.formData.name3}
-              onChange={props.setFormData}>
-           
-            </input>
 
             <div style={{ textAlign: "center", marginTop: 10 }}>
               <button

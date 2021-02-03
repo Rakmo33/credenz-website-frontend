@@ -23,7 +23,7 @@ import Cart from "../Components/RegisterComponent/Cart";
 import Refund from "../Components/Footer/refund";
 import Privacy from "../Components/Footer/privacy";
 import Terms from "../Components/Footer/terms";
-import Ipay from "../Components/RegisterComponent/Ipay";
+//import Ipay from "../Components/Ipay/Ipay";
 import "./maincomponent.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -108,7 +108,7 @@ function Main() {
   };
   
   const IpayPage = () => {
-    return <Ipay />;
+    return <NewReg/>;
   };
 
   const RefundPage = () => {

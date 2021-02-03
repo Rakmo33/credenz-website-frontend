@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import {Ippopay} from 'react-ippopay';
 import axios from 'axios';
 
-function getOrderID(){
+function getOrderID(amount){
     axios({
         method: "post",
         url: 'https://public_key:secret_key@api.ippopay.com/v1/order/create',
         body: {
-            "amount": 1,
+            "amount": amount,
             "currency": "INR",
             "payment_modes": "cc,dc,nb,upi" ,
             "customer": {
@@ -20,8 +20,8 @@ function getOrderID(){
               }
         },
         auth: {
-            username: 'pk_live_LxGuVR5mwBuy',
-            password: 'sk_live_eaSKsfOhheBG4PiKerw9ihnwLc84WYLKc2I9IL4u'
+            username: 'pk_test_PMTwU39TjbUC',
+            password: 'sk_test_UYkRAbTh1082YnTIIFNy1NMgBUafLbTZ2tzoRhru'
           }
       }).then((response)=>{
           alert(JSON.stringify(response.data))
@@ -53,7 +53,7 @@ class Ipay extends Component {
   }
 
   componentDidMount(){
-    getOrderID();
+    getOrderID(this.props.sum);
   }
 
   ippopayOpen(){
@@ -63,8 +63,10 @@ class Ipay extends Component {
 
     return (
       <div>
+          {/*
         <span onClick={e => this.ippopayOpen(e)}>IppoPay</span>
-        <Ippopay ippopayOpen={this.state.ippopayOpen} ippopayClose={true} order_id={this.state.order_id} public_key={this.state.public_key}/>
+        <Ippopay ippopayOpen={this.state.ippopayOpen} ippopayClose={true} order_id={this.state.order_id} public_key={this.state.public_key}/>*/}
+        <button onClick={getOrderID}>pay</button>
       </div> 
     );
   }
