@@ -20,9 +20,9 @@ function Cart() {
     //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash",80 , 60];
+        return ["clash",50 , 60];
       case "Reverse Coding":
-        return ["rc", 80, 60];
+        return ["rc", 50, 60];
       case "Pixelate":
         return ["pixelate", 50,40];
       case "Cretronix":
@@ -32,13 +32,13 @@ function Cart() {
       case "Wallstreet":
         return ["wallstreet", 50,40];
       case "Datawiz":
-        return ["datawiz", 80,60];
+        return ["datawiz", 50,60];
       case "Enigma":
         return ["enigma", 50,40];
       case "Quiz":
         return ["quiz", 50,40];
       case "Web Weaver":
-        return ["webweaver", 80,60];
+        return ["webweaver", 50,60];
       case "Paper Presentation":
         return ["paperpresentation", 150,120];
       case "Network Treasure Hunt":

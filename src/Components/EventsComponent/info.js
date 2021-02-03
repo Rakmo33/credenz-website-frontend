@@ -10,7 +10,7 @@ export const info = [
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹80</span>&nbsp; for Non-IEEE members
+        <span>₹50</span>&nbsp; for Non-IEEE members
       </li>
       <li>
         <span>₹60</span>&nbsp; for IEEE members
@@ -18,30 +18,34 @@ export const info = [
     </ul>`,
     info2: `<p>
   
-    1) MCQs based on coding concepts in C/C++ and python. (Python, C/C++ for FE and 
-      C/C++ for SE, TE and BE)
+    1) A maximum of 1 participant pursuing under-graduate program at their institution is allowed to participate
+    <br />
+    2) The participants must keep their college verification in handy as you can be asked to disclose it any point of time. Before the final round, all participants will be asked to verify their identity as an under-graduate student and failure to do so will lead to immediate disqualification.
+    <br />
+    3)Marking scheme and further rules and regulation while playing Clash will be released during the time of the event itself. 
+  
       <br />    
       
   </p>`,
     info3: `<p>
-  1) A 28-minute game for a person or a team of two people.
-  <br />
-  2) Teams or players are not allowed to use any IDE or software after the game has 
-  started.  
-  <br />
-  3)You will have 3 lifelines (description will be provided in the game itself) to help 
-  yourself.  
-  <br />
-  4) You are not allowed to switch tabs or close the browser during the game. If you do 
-  so, you will be automatically logged out.  
-  <br />
-  5) The primary marks allotted are +4 if answered correctly and -2 if the answer for a 
-  particular question is incorrect. If a question attempted is incorrect, then from 
-  the next question +2 marks are allotted for each correctly answered question, else 
-  -1 until you get a correct answer for upcoming questions.
- 
-</p>`,
+    1)There are two rounds in clash: <br/>
+    a)MCQ Round(elimination)<br/>
+    b)Coding Round(final)
+      <br />
+    2)Participants can register via the Credenz app or the website.
+      <br />
+    3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python.
+    <br/>
+    4)The FE and SE participants will be taking on the Junior Category and the TE and BE participants will take on the Senior Category.
+    <br/>
+    5)The participants clearing out the cut off score in round 1 will be notified for round 2 and will be able to participate in the final round for the prize.
+
+      </p>`,
     info4: `<p>
+    1)Judging in round 1 will be based on programming skills, ability to understand code, algorithms and knowledge of the fundamentals of C/C++ and Python.
+    <br/>
+    2)Judging for round 2 will be based on the time and space efficiency of your code to solve the given challenges in restricted time.
+    <br/><br/>
     <strong>Prizes</strong><br/>
     <strong>Junior Section </strong><br/>
     <strong>Winner :<strong/>&nbsp;3000/- <br/>
@@ -76,34 +80,38 @@ export const info = [
     A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
     <ul>
       <li>
-        <span>₹80</span>&nbsp;  for Non-IEEE members
+        <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
       <li>
         <span>₹60</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
     info2: `<p>
-    1)Candidate pursuing undergraduate course is allowed to participate. 
+    1)A maximum of 1 participant pursuing under-graduate program at their institution is allowed to participate. 
     <br /> <br />
-    2) Marking scheme will be declared on spot.
+    2) The participants must keep their college verification in handy as you can be asked to disclose it any point of time. Before the final round, all participants will be asked to verify their identity as an under-graduate student and failure to do so will lead to immediate disqualification.
+    <br/><br/>
+    3)Marking scheme and further rules and regulation while playing RC will be released during the time of the event itself.
   </p>`,
     info3: `<p>
-      1) Integer type questions which involve complex mathematical problems which are not easy to solve without coding.
+    1)There are two rounds in RC:<br/>
+    a)Logic Round (elimination)<br/>
+    b)Decipher and code Round (final)
+    <br />
+     2)Participants can register via the Credenz app or the website.
+
   <br />
-     2)A 28-minute game for a person or a team of two people.
+  3)The event will be divided into two levels, Junior and Senior where the difficulty will vary accordingly. All the levels will test out your knowledge of C/C++ and Python. 
+   <br />
+   4)The FE and SE participants will be taking on the Junior Category and the TE and BE participants will take on the Senior Category.
   <br />
-     3)Teams or players are allowed to use any IDE or software after the game has started.
-  <br />
-   4)You will have 3 lifelines (description will be provided in the game itself) to help 
-   yourself.
-  <br />
-  5)You will have two attempts to answer a particular question. In the first attempt, the marking scheme will be +4 0. In the second attempt, the marking scheme will be changed to +2 -1.
+  5)The participants clearing out the cut off score in round 1 will be notified for round 2 and will be able to participate in the final round for the prize.
 
 </p>`,
     info4: `<p>
-      1) The competition will test the participant's logical and coding skills.
+      1) Judging in round 1 will be based on the correctness of the decoded mathematical pattern with or without coding.
       <br/>
-    2) Time and cost efficiency of the code will be tested in round 2.
+    2) Judging for round 2 will be based on the time and space efficiency of your code to solve the given challenges in restricted time.
     <br/><br/>
     <strong>Prizes</strong><br/>
     <strong>Junior Section</strong> <br/>
@@ -416,7 +424,7 @@ export const info = [
    <h5>Registration Fees: </h5>
    <ul>
      <li>
-       <span>₹80</span>&nbsp;  for Non-IEEE members
+       <span>₹50</span>&nbsp;  for Non-IEEE members
      </li>
      <li>
        <span>₹60</span>&nbsp;  for IEEE members
@@ -625,7 +633,7 @@ export const info = [
     <h5>Registration Fees: </h5>
     <ul>
       <li>
-        <span>₹80</span>&nbsp;  for Non-IEEE members
+        <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
       <li>
         <span>₹60</span>&nbsp;  for IEEE members
