@@ -80,12 +80,13 @@ const Profile = () => {
     user = jwt(localStorage.getItem("user"));
 
     if (Events !== undefined) {
+      console.log(Events)
       EventList = Events.map((x) => {
         return (
           <tr>
             <th scope='row'>{count++}</th>
             <td>
-              {x.event_username}, {x.random_pw}
+              {x.event_username} { x.approved ? ", " + x.random_pw : ""}
             </td>
           </tr>
         );
