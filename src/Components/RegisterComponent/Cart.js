@@ -327,10 +327,10 @@ function Cart() {
                     <tr>
                       <td></td>
                       <td>
-                        <button onClick={payment} type='button' className='btn btn-outline-info'>
+                        {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
-                        </button>
-                        <Ipay sum={sum}/>
+                        </button>*/}
+                       <Ipay sum={sum}/>
                       </td>
                       <td></td>
                     </tr> 
