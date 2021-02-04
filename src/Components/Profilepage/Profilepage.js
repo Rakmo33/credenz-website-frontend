@@ -86,7 +86,7 @@ const Profile = () => {
           <tr>
             <th scope='row'>{count++}</th>
             <td>
-              {x.event_username} { x.approved ? ", " + x.random_pw : ""}
+              {x.event_username} : { x.random_pw }
             </td>
           </tr>
         );
