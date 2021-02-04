@@ -35,10 +35,10 @@ function Signup() {
   const submitForm = (e) => {
     setSpinner("form-group col-lg-12 submitSpinner");
     e.preventDefault();
-    console.log(
-      "Current state is : " +
-        JSON.stringify({ email, phone, college, password })
-    );
+    // //console.log(
+    //   "Current state is : " +
+    //     JSON.stringify({ email, phone, college, password })
+    // );
 
     if (Object.keys(errors).length === 0 && errors.constructor === Object) {
       try {
@@ -52,12 +52,12 @@ function Signup() {
             clgname: college,
           })
           .then(function (response) {
-            console.log(response);
-            // console.log(response.data);
+            // //console.log(response);
+            // //console.log(response.data);
             // const msg = response.data["accessToken"];
             localStorage.setItem("user", JSON.stringify(response.data));
-            // console.log(msg);
-            // console.log("HEREEE");
+            // //console.log(msg);
+            // //console.log("HEREEE");
             try {
               axios
                 .post(`${process.env.REACT_APP_API_URL}/login`, {
@@ -72,7 +72,7 @@ function Signup() {
                   setCollege("");
                   setPassword("");
                   setPasswordCheck("");
-                  // console.log(response.data);
+                  // //console.log(response.data);
                   //const msg = response.data["accessToken"]
                   if (response.data["accessToken"]) {
                     // alert("Logged in successfully!");
@@ -85,26 +85,26 @@ function Signup() {
                   }
                 });
             } catch (e) {
-              console.log("Axios alert" + e);
-              alert("Axios error!" + e);
+              //console.log("Axios alert" + e);
+              // alert("Axios error!" + e);
               setSpinner("form-group col-lg-12 ");
             }
           })
           .catch((e) => {
             if (e.response.status === member) {
-              console.log("Axios alert" + e);
+              //console.log("Axios alert" + e);
               setSpinner("form-group col-lg-12 ");
               setShowAlert(true);
             }
             // throw e;
 
-            // console.log("Axios alert" + e);
+            // //console.log("Axios alert" + e);
             // alert("Axios error!" + e);
             // setSpinner("form-group col-lg-12 ");
           });
       } catch (e) {
-        console.log("Axios alert" + e);
-        alert("Axios error!" + e);
+        //console.log("Axios alert" + e);
+        // alert("Axios error!" + e);
         setSpinner("form-group col-lg-12 ");
       }
     }
@@ -132,23 +132,23 @@ function Signup() {
             channel: 'sms'
         }
     })
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+    .then(data => //console.log(data))
+    .catch(err => //console.log(err));
 
   }
 */
-  console.log(values);
+  //console.log(values);
 
   const errors = Validate(values);
 
-  console.log(
-    "Errors: " + errors.name + errors.username + errors.email + errors.phone
-  );
+  //console.log(
+  //   "Errors: " + errors.name + errors.username + errors.email + errors.phone
+  // );
 
   //e.preventDefualt()
 
   return (
-    <>
+    <div style={{background:'black'}} >
       <Nav/>
       <div className='container mt-5 signupFormWrap'>
         {showAlert ? (
@@ -430,7 +430,7 @@ function Signup() {
       {/* <div className='footer heightFooter'> */}
       <Footer />
       {/* </div> */}
-    </>
+    </div>
   );
 }
 

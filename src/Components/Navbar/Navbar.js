@@ -94,17 +94,20 @@ function NavBar(props) {
           Log in
         </button> */}
         <div onClick={handleShow1} className='hiddenBell'>
-          <li>
-            <Link to='/cart'>
-              <i
-                className='fa fa-lg fa-shopping-cart'
-                title='Cart'
-                value={5}></i>
-              <span className='badge'>
-                {props.cartNum ?? cartArray.length}{" "}
-              </span>
-            </Link>
-          </li>
+          {localStorage.getItem("user") ? (
+            <li>
+              <Link to='/cart'>
+                <i
+                  className='fa fa-lg fa-shopping-cart'
+                  title='Cart'
+                  value={5}></i>
+                <span className='badge'>
+                  {props.cartNum ?? cartArray.length}{" "}
+                </span>
+              </Link>
+            </li>
+          ) : null}
+
           <li>
             <i className='fa fa-bell' title='Updates'></i>
           </li>
@@ -233,19 +236,22 @@ function NavBar(props) {
             </li> */}
           </ul>
           <ul className='navbar-nav ml-auto second  pull-right'>
-            <li>
-              <Link to='/cart'>
-                <div>
-                  <i
-                    className='fa fa-lg fa-shopping-cart'
-                    title='Cart'
-                    value={5}></i>
-                  <span className='badge'>
-                    {props.cartNum ?? cartArray.length}
-                  </span>
-                </div>
-              </Link>
-            </li>
+            {localStorage.getItem("user") ? (
+              <li>
+                <Link to='/cart'>
+                  <div>
+                    <i
+                      className='fa fa-lg fa-shopping-cart'
+                      title='Cart'
+                      value={5}></i>
+                    <span className='badge'>
+                      {props.cartNum ?? cartArray.length}
+                    </span>
+                  </div>
+                </Link>
+              </li>
+            ) : null}
+
             <li>
               <div onClick={handleShow1}>
                 <div>

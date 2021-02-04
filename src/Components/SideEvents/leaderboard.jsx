@@ -29,7 +29,7 @@ const Leaderboard = () => {
           url: `http://localhost:5000/leaderboard`,
         })
           .then((response) => {
-            /*console.log(
+            /*//console.log(
               response.data.map((obj) => {
                 return obj.event_username;
               })
@@ -38,7 +38,7 @@ const Leaderboard = () => {
             setScore(response.data)
           })
           .catch((error) => {
-            console.log(error);
+            //console.log(error);
           });
 
       

@@ -16,7 +16,7 @@ const Profile = () => {
   //   window.location.reload(false); //refresh page
   // };
 
-  console.log(`${process.env.REACT_APP_API_URL}/LOL`);
+  //console.log(`${process.env.REACT_APP_API_URL}/LOL`);
 
   const [Events, setEvents] = useState(undefined);
 
@@ -44,8 +44,8 @@ const Profile = () => {
         const accessToken = JSON.parse(token).accessToken;
         //alert(typeof(decoded.username))
 
-        console.log("type" + typeof accessToken);
-        console.log(accessToken);
+        //console.log("type" + typeof accessToken);
+        //console.log(accessToken);
 
         axios({
           method: "get",
@@ -53,11 +53,11 @@ const Profile = () => {
           headers: { authorization: `Bearer ${accessToken}` },
         })
           .then((response) => {
-            console.log(
-              response.data.map((obj) => {
-                return obj.event_username;
-              })
-            );
+            //console.log(
+            //   response.data.map((obj) => {
+            //     return obj.event_username;
+            //   })
+            // );
             setEvents(response.data);
           })
           .catch((error) => {
@@ -65,7 +65,7 @@ const Profile = () => {
           });
       }
     } else {
-      console.log("logged out!");
+      //console.log("logged out!");
     }
   }
 
@@ -80,12 +80,13 @@ const Profile = () => {
     user = jwt(localStorage.getItem("user"));
 
     if (Events !== undefined) {
+      console.log(Events)
       EventList = Events.map((x) => {
         return (
           <tr>
             <th scope='row'>{count++}</th>
             <td>
-              {x.event_username}, {x.random_pw}
+              {x.event_username} { x.approved ? ", " + x.random_pw : ""}
             </td>
           </tr>
         );
@@ -99,7 +100,7 @@ const Profile = () => {
     }
 
     return (
-      <div>
+      <div style={{background:'black'}} >
         <Nav />
         <div className='profilepage'>
           <div className='container'>

@@ -23,6 +23,7 @@ import Cart from "../Components/RegisterComponent/Cart";
 import Refund from "../Components/Footer/refund";
 import Privacy from "../Components/Footer/privacy";
 import Terms from "../Components/Footer/terms";
+//import Ipay from "../Components/Ipay/Ipay";
 import "./maincomponent.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -95,11 +96,19 @@ function Main() {
   };
 
   const CartPage = () => {
-    return <Cart />;
+    if (localStorage.getItem("user")) return <Cart />;
+    else {
+      window.location.href = "/home";
+      return null;
+    }
   };
 
   const NewRegPage = () => {
     return <NewReg />;
+  };
+  
+  const IpayPage = () => {
+    return <NewReg/>;
   };
 
   const RefundPage = () => {
@@ -139,6 +148,7 @@ function Main() {
         <Route path='/refund' component={RefundPage} />
         <Route path='/privacy' component={PrivacyPage} />
         <Route path='/terms' component={TermsPage} />
+        <Route path='/ipay' component={IpayPage}/>
         <Redirect to='/home' />
       </Switch>
       {/* <Footer /> */}

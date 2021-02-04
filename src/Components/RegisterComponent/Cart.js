@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
@@ -8,49 +8,114 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
+import Ipay from "../Ipay/Ipay";
+import { data } from "jquery";
+
+function getOrderID() {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: "sakshee",
+      amount: "120",
+      email: "sakshee1120@gmail.com",
+      phoneno: "9420324462",
+    }),
+  };
+
+  fetch(`${process.env.REACT_APP_API_URL}/payment`, requestOptions)
+    .then((response) => {
+      //alert(JSON.stringify(response))
+      return response.json();
+    })
+    .then((data) => {
+      //alert(JSON.stringify(data))
+      //setorder_id(data.order_id)
+    });
+
+  return data.order_id;
+}
 
 function Cart() {
   const [pay, setPay] = useState(false);
   const [UPIname, setUPIname] = useState("");
   const [TransacID, setTransacID] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
+  const [order_id, setorder_id] = useState("");
+  /*
+  useEffect(() => {
+    setorder_id(getOrderID)
+  }, [])
+*/
 
   const getUsername = (event) => {
     //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash", 100];
+        return ["clash", 60, 50];
       case "Reverse Coding":
-        return ["rc", 50];
+        return ["rc", 60, 50];
       case "Pixelate":
-        return ["pixelate", 50];
+        return ["pixelate", 50, 40];
       case "Cretronix":
-        return ["cretronix", 50];
+        return ["cretronix", 50, 40];
       case "Bplan":
-        return ["bplan", 50];
+        return ["bplan", 120, 100];
       case "Wallstreet":
-        return ["wallstreet", 50];
+        return ["wallstreet", 50, 40];
       case "Datawiz":
-        return ["datawiz", 50];
+        return ["datawiz", 60, 50];
       case "Enigma":
-        return ["enigma", 50];
+        return ["enigma", 50, 40];
       case "Quiz":
-        return ["quiz", 50];
+        return ["quiz", 50, 40];
       case "Webweaver":
-        return ["webweaver", 50];
+        return ["webweaver", 60, 50];
       case "Paper Presentation":
-        return ["paperpresentation", 50];
+        return ["paperpresentation", 150, 120];
       case "Network Treasure Hunt":
-        return ["nth", 50];
+        return ["nth", 0, 0];
       default:
         return "Invalid event";
     }
   };
 
+  useEffect(() => {
+    let user = "";
+    if (localStorage.getItem("user")) {
+      var token = localStorage.getItem("user");
+
+      if (token !== undefined || token !== "") {
+        var decoded = jwt_decode(token);
+        user = jwt(localStorage.getItem("user"));
+        const accessToken = JSON.parse(token).accessToken;
+        axios({
+          method: "get",
+          url: `${process.env.REACT_APP_API_URL}/user/${decoded.username}`,
+          headers: { authorization: `Bearer ${accessToken}` },
+        })
+          .then((response) => {
+            setCurrentUser(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    }
+  }, []);
+  //get  current user to check if it is ieee member
+
   let sum = 0;
   let RegItems = JSON.parse(localStorage.getItem("Register"));
-  RegItems.forEach((regItem) => {
-    sum = sum + getUsername(regItem.event)[1];
-  });
+  let i = 1;
+  if (currentUser.ieee && currentUser.ieee === true) {
+    i = 2;
+  }
+  if (RegItems) {
+    RegItems.map((regItem) => {
+      sum = sum + getUsername(regItem.event)[i];
+    });
+  }
 
   function payment() {
     setPay(true);
@@ -73,7 +138,7 @@ function Cart() {
     newCart = newCart.replace(temp, "");
     temp = event;
     newCart = newCart.replace(temp, "");
-    //console.log(newCart)
+    ////console.log(newCart)
     localStorage.setItem("Cart", newCart);
 
     let oldRegItems = JSON.parse(localStorage.getItem("Register"));
@@ -85,13 +150,14 @@ function Cart() {
 
   let eventList = "";
   let count = 1;
+
   eventList = localStorage.getItem("Cart") ? (
     localStorage
       .getItem("Cart")
       .split(",")
       .map((x) => {
         return (
-          <tr>
+          <tr key={count}>
             <td key={count}>{count++}</td>
             <td key={x}>{x}</td>
             <td>
@@ -114,8 +180,9 @@ function Cart() {
   );
 
   function Register() {
+    // alert("Registered Succesfully! Go to profile page to check!");
     let RegItems = JSON.parse(localStorage.getItem("Register"));
-    let RegItems1 = localStorage.getItem("Register").split(",");
+    // let RegItems1 = localStorage.getItem("Register").split(",");
 
     //alert(JSON.stringify(RegItems1))
     //alert(typeof(RegItems))
@@ -127,45 +194,57 @@ function Cart() {
     const token = localStorage.getItem("user");
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
+    //alert(JSON.stringify(decoded))
 
-    //alert(RegItems[0])
+    console.log(RegItems);
 
-    RegItems.map((regItem) => {
-      var players = [];
-      let count = 1;
-
-      if (regItem.name1 !== "") {
-        count++;
-        players[0] = regItem.name1;
-      }
-      if (regItem.name2 !== "") {
-        count++;
-        players[1] = regItem.name2;
-      }
-      if (regItem.name3 !== "") {
-        count++;
-        players[2] = regItem.name3;
-      }
-
+    RegItems.forEach((regItem) => {
       //alert(JSON.stringify(regItem))
       //axios
-      console.log(regItem.team);
+      //console.log(regItem.team)
 
       if (regItem.team === "single") {
-        axios({
-          method: "post",
-          url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
-            getUsername(regItem.event)[0]
-          }`,
-          headers: { authorization: `Bearer ${accessToken}` },
-        })
-          .then((response) => {
-            alert(response.data);
+        if (regItem.username === decoded.username) {
+          axios({
+            method: "post",
+            url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
+              getUsername(regItem.event)[0]
+            }`,
+            data: {
+              trans_id: TransacID,
+              approved: false,
+            },
+            headers: { authorization: `Bearer ${accessToken}` },
           })
-          .catch((error) => {
-            alert("Error!" + error); //request fails with 500
-          });
+            .then((response) => {
+              //   alert("insingle : " + JSON.stringify(response.data))
+              console.log("insingle : " + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              alert("Error!" + error); //request fails with 500
+            });
+        }
       } else {
+        var players = [];
+        let count = 1;
+
+        if (regItem.name1 !== "") {
+          count++;
+          players[0] = regItem.name1;
+        }
+        if (regItem.name2 !== "") {
+          count++;
+          players[1] = regItem.name2;
+        }
+        if (regItem.name3 !== "") {
+          count++;
+          players[2] = regItem.name3;
+        }
+
+        // console.log(regItem.username + " " + decoded.username);
+        // alert(regItem.event);
+
+        // if (regItem.username === decoded.username) {
         axios
           .post(
             `${process.env.REACT_APP_API_URL}/addteam`,
@@ -175,6 +254,8 @@ function Cart() {
               event_name: getUsername(regItem.event)[0],
               team_username: regItem.teamName,
               no_of_players: count,
+              trans_id: TransacID,
+              approved: true,
             },
             {
               headers: {
@@ -183,30 +264,34 @@ function Cart() {
             }
           )
           .then((response) => {
+            // alert("team :" + JSON.stringify(response.data));
             console.log("team :" + JSON.stringify(response.data));
+            // alert("Error");
           })
           .catch((error) => {
+            alert("Error");
             console.log("Axios error : " + error); //request fails with 500
           });
-        console.log("else");
+        // }
+        //console.log("else");
       } //else
     });
-
     setPay(true);
+    clearCart();
   }
 
-  if (1) {
+  if (localStorage.getItem("user")) {
     return (
-      <div>
+      <div style={{ background: "black" }}>
         <Nav />
         <SideEventsButton />
         <div className='regPage'>
           <div className='regPageVector'>
-            {/* {pay &&
-          <div style={{marginLeft:10}}>
-            <h1 className='reg-head'>Transaction details</h1>
-            <br/>
-            <div className='input-group col-lg-12 mb-4'>
+            {pay && (
+              <div className='responsiveTable' style={{ order: 2 }}>
+                <h1 className='reg-head'>Transaction details</h1>
+                <br />
+                {/* <div className='input-group col-lg-12 mb-4'>
                   <input
                     id='name'
                     type='text'
@@ -217,30 +302,29 @@ function Cart() {
                     value={UPIname}
                     required
                   />    
-              </div>
-            <div className='input-group col-lg-12 mb-4'>
+              </div> */}
+                <div className='input-group col-lg-12 mb-4'>
                   <input
-                    id='trnsactionNumber'
+                    id='transactionNumber'
                     type='text'
                     name='phone'
+                    pattern='.{10,}'
                     placeholder='Transaction ID'
                     className='form-control bg-white border-md'
                     onChange={(e) => setTransacID(e.target.value)}
                     value={TransacID}
                     required
-                  />    
-              </div>
-              <div>
-                  <button
-                    type='submit'
-                    className='btn stylebtn btn-block py-2'
-                    >
-                    <span onClick={Register} className='font-weight-bold'>
+                  />
+                </div>
+                <div>
+                  <button type='submit' className='btn stylebtn btn-block py-2'>
+                    <span className='font-weight-bold'>
                       Click here after payment to register
                     </span>
                   </button>
+                </div>
               </div>
-          </div>} */}
+            )}
 
             {!pay && (
               <div>
@@ -270,12 +354,10 @@ function Cart() {
                       <tr>
                         <td></td>
                         <td>
-                          <button
-                            onClick={payment}
-                            type='button'
-                            className='btn btn-outline-info'>
-                            Proceed to pay Rs {sum}
-                          </button>
+                          {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
+                          Proceed to pay Rs {sum}
+                        </button>*/}
+                          <Ipay sum={sum} Register={Register} />
                         </td>
                         <td></td>
                       </tr>
@@ -296,11 +378,16 @@ function Cart() {
                 )}
 
                 {pay && (
-                  <img
-                    src={require("../../assests/img/gpay.jpeg")}
-                    alt='gpay'
-                    width='350'
-                  />
+                  <>
+                    <img
+                      src={require("../../assests/img/gpay.jpeg")}
+                      alt='gpay'
+                      width='350'
+                    />
+                    <div style={{ color: "white", margin: "10px" }}>
+                      <h4>UPI ID :</h4> <h4>9834570868@okbizaxis</h4>
+                    </div>
+                  </>
                 )}
               </div>
             </div>

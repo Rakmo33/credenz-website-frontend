@@ -13,7 +13,7 @@ const Home = () => {
     document.title = `CREDENZ LIVE | Home`;
   }, []);
   return (
-    <div className='homeWrap'>
+    <div className='homeWrap' style={{background:'black'}}  >
       <Nav homePage='homePage' />
       {/* <div className={classes.body}> */}
       {/* <h1 style={{color: "ivory"}}>Credenz Home Page</h1> */}

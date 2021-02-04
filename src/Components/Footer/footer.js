@@ -11,10 +11,10 @@ const footer = () => {
       <Container
         fluid
         className='footerContainer'
-        style={{ textAlign: "center" }}>
-        <Row>
+        style={{ textAlign: "center"}}>
+        <Row style={{margin:'10px 0'}}>
           {/* <span className={"footer-font"}> */}
-          <Col lg={4} className={"footer-font leftside"}>
+          <Col lg={4} className={"footer-font "}>
             {" "}
             &#169; PICT IEEE Student Branch{" "}
           </Col>
@@ -25,7 +25,7 @@ const footer = () => {
               <span style={{ color: "#6eabce" }}> Web Team</span>
             </Link>{" "}
           </Col>
-          <Col lg={4} className='rightside'>
+          <Col lg={4} className=''>
             <Link to='privacy'>Policy</Link>
             &nbsp; <Link to='terms'> Terms </Link>
             &nbsp; <Link to='refund'> Refund </Link>
@@ -34,7 +34,7 @@ const footer = () => {
         </Row>
 
         <Row className='hiddenRow'>
-          <div className='social'>
+          <div className=''>
             <a
               className='iconfb'
               target='_blank'

@@ -12,7 +12,7 @@ export const AllEvents = () => {
           setEventDesc(response.data);
         });
     } catch (e) {
-      alert("Axios error!" + e);
+      // alert("Axios error!" + e);
     }
   }, []);
 

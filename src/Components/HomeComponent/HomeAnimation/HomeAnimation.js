@@ -17,11 +17,11 @@ const HomeAnimation = (props) => {
   // let showLogoTrail = false;
   useEffect(() => {
     if (mechanicalEye === true) {
-      console.log("mechanical eye starting");
+      //console.log("mechanical eye starting");
       setTimeout(() => {
         setShowLogoTrail(true);
         setDisableEye(true);
-        console.log("loading Logo trail");
+        //console.log("loading Logo trail");
       }, 9000);
     }
   }, [mechanicalEye]);
