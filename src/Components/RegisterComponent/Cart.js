@@ -52,7 +52,7 @@ function Cart() {
     //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash", 1, 60];
+        return ["clash", 50, 60];
       case "Reverse Coding":
         return ["rc", 50, 60];
       case "Pixelate":
@@ -196,7 +196,7 @@ function Cart() {
     var decoded = jwt_decode(token);
     //alert(JSON.stringify(decoded))
 
-    console.log(RegItems);
+    // console.log(RegItems);
 
     RegItems.map((regItem) => {
       //alert(JSON.stringify(regItem))
@@ -218,7 +218,7 @@ function Cart() {
           })
             .then((response) => {
               //   alert("insingle : " + JSON.stringify(response.data))
-              console.log("insingle : " + JSON.stringify(response.data));
+              // console.log("insingle : " + JSON.stringify(response.data));
             })
             .catch((error) => {
               alert("Error!" + error); //request fails with 500
@@ -262,7 +262,7 @@ function Cart() {
             )
             .then((response) => {
               //            alert("team :" + JSON.stringify(response.data))
-              console.log("team :" + JSON.stringify(response.data));
+              // console.log("team :" + JSON.stringify(response.data));
             })
             .catch((error) => {
               console.log("Axios error : " + error); //request fails with 500
