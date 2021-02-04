@@ -33,7 +33,7 @@
         "react-compound-timer": "^1.2.0",
         "react-dom": "^16.13.1",
         "react-hooks-helper": "^1.6.0",
-        "react-ippopay": "^1.0.2",
+        "react-ippopay": "^1.0.3",
         "react-multi-carousel": "^2.5.5",
         "react-router-dom": "^5.2.0",
         "react-router-hash-link": "^2.3.1",
