@@ -241,7 +241,7 @@ function Cart() {
           count++;
           players[2] = regItem.name3;
         }
-
+          console.log(regItem.username, decoded.username);
         if (regItem.username === decoded.username) {
           axios
             .post(
