@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
@@ -12,118 +12,110 @@ import Ipay from "../Ipay/Ipay";
 import { data } from "jquery";
 
 function getOrderID() {
-
   const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ 
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
       username: "sakshee",
       amount: "120",
       email: "sakshee1120@gmail.com",
-      phoneno: "9420324462"
-     })
+      phoneno: "9420324462",
+    }),
   };
 
   fetch(`${process.env.REACT_APP_API_URL}/payment`, requestOptions)
-  .then(response => {
-    //alert(JSON.stringify(response))
-    return response.json()
-  })
-  .then(data => {
-    //alert(JSON.stringify(data))
-    //setorder_id(data.order_id)
-  });
+    .then((response) => {
+      //alert(JSON.stringify(response))
+      return response.json();
+    })
+    .then((data) => {
+      //alert(JSON.stringify(data))
+      //setorder_id(data.order_id)
+    });
 
   return data.order_id;
-
 }
 
 function Cart() {
-
   const [pay, setPay] = useState(false);
-  const [UPIname, setUPIname] = useState('');
-  const [TransacID, setTransacID] = useState('');
-  const [currentUser, setCurrentUser] = useState('');
-  const [order_id, setorder_id] = useState('')
-/*
+  const [UPIname, setUPIname] = useState("");
+  const [TransacID, setTransacID] = useState("");
+  const [currentUser, setCurrentUser] = useState("");
+  const [order_id, setorder_id] = useState("");
+  /*
   useEffect(() => {
     setorder_id(getOrderID)
   }, [])
 */
 
-  const getUsername = (event) => { 
+  const getUsername = (event) => {
     //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash",50 , 60];
+        return ["clash", 1, 60];
       case "Reverse Coding":
         return ["rc", 50, 60];
       case "Pixelate":
-        return ["pixelate", 50,40];
+        return ["pixelate", 50, 40];
       case "Cretronix":
-        return ["cretronix", 50,40];
+        return ["cretronix", 50, 40];
       case "Bplan":
-        return ["bplan", 120,100];
+        return ["bplan", 120, 100];
       case "Wallstreet":
-        return ["wallstreet", 50,40];
+        return ["wallstreet", 50, 40];
       case "Datawiz":
-        return ["datawiz", 50,60];
+        return ["datawiz", 50, 60];
       case "Enigma":
-        return ["enigma", 50,40];
+        return ["enigma", 50, 40];
       case "Quiz":
-        return ["quiz", 50,40];
+        return ["quiz", 50, 40];
       case "Web Weaver":
-        return ["webweaver", 50,60];
+        return ["webweaver", 50, 60];
       case "Paper Presentation":
-        return ["paperpresentation", 150,120];
+        return ["paperpresentation", 150, 120];
       case "Network Treasure Hunt":
-        return ["nth", 0,0];
+        return ["nth", 0, 0];
       default:
         return "Invalid event";
     }
-  }
+  };
 
-  
   useEffect(() => {
-  
-    let user ='';
-  if (localStorage.getItem("user")) {
-    var token = localStorage.getItem("user");
-    
-    if (token !== undefined || token !== "") {
-      var decoded = jwt_decode(token);
-      user = jwt(localStorage.getItem("user"));
-      const accessToken = JSON.parse(token).accessToken;
+    let user = "";
+    if (localStorage.getItem("user")) {
+      var token = localStorage.getItem("user");
+
+      if (token !== undefined || token !== "") {
+        var decoded = jwt_decode(token);
+        user = jwt(localStorage.getItem("user"));
+        const accessToken = JSON.parse(token).accessToken;
         axios({
-        method: "get",
-        url: `${process.env.REACT_APP_API_URL}/user/${decoded.username}`,
-        headers: { authorization: `Bearer ${accessToken}` },
-      })
-        .then((response) => {
-          setCurrentUser(response.data);
+          method: "get",
+          url: `${process.env.REACT_APP_API_URL}/user/${decoded.username}`,
+          headers: { authorization: `Bearer ${accessToken}` },
         })
-        .catch((error) => {
-          console.log(error);
-        });
+          .then((response) => {
+            setCurrentUser(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       }
     }
+  }, []);
+  //get  current user to check if it is ieee member
 
-  }, [])
-  //get  current user to check if it is ieee member 
-  
-
-    let sum = 0;    
-    let RegItems = JSON.parse( localStorage.getItem("Register"));
-    let i=1;
-    if( currentUser.ieee && currentUser.ieee === true){
-      i=2;
-    }
-    if(RegItems){
-    RegItems.map((regItem)=>{
-      sum = sum + getUsername(regItem.event)[i];
-    })
+  let sum = 0;
+  let RegItems = JSON.parse(localStorage.getItem("Register"));
+  let i = 1;
+  if (currentUser.ieee && currentUser.ieee === true) {
+    i = 2;
   }
-  
+  if (RegItems) {
+    RegItems.map((regItem) => {
+      sum = sum + getUsername(regItem.event)[i];
+    });
+  }
 
   function payment() {
     setPay(true);
@@ -149,8 +141,8 @@ function Cart() {
     ////console.log(newCart)
     localStorage.setItem("Cart", newCart);
 
-    let oldRegItems = JSON.parse( localStorage.getItem("Register"));
-    let newRegItems = oldRegItems.filter((regItem)=>regItem.event!==event)
+    let oldRegItems = JSON.parse(localStorage.getItem("Register"));
+    let newRegItems = oldRegItems.filter((regItem) => regItem.event !== event);
     //alert(newRegItems)
     localStorage.setItem("Register", JSON.stringify(newRegItems));
     window.location.reload(false);
@@ -188,10 +180,10 @@ function Cart() {
   );
 
   function Register() {
+    // alert("Registered Succesfully! Go to profile page to check!");
+    let RegItems = JSON.parse(localStorage.getItem("Register"));
+    // let RegItems1 = localStorage.getItem("Register").split(",");
 
-    let RegItems = JSON.parse( localStorage.getItem("Register"));
-   // let RegItems1 = localStorage.getItem("Register").split(",");
-    
     //alert(JSON.stringify(RegItems1))
     //alert(typeof(RegItems))
 
@@ -199,44 +191,40 @@ function Cart() {
     API call
     */
 
-   const token = localStorage.getItem("user");
-   const accessToken = JSON.parse(token).accessToken;
-   var decoded = jwt_decode(token);
-   //alert(JSON.stringify(decoded))
+    const token = localStorage.getItem("user");
+    const accessToken = JSON.parse(token).accessToken;
+    var decoded = jwt_decode(token);
+    //alert(JSON.stringify(decoded))
 
-   console.log(RegItems)
+    console.log(RegItems);
 
-    RegItems.map((regItem)=>{
-
+    RegItems.map((regItem) => {
       //alert(JSON.stringify(regItem))
       //axios
       //console.log(regItem.team)
 
       if (regItem.team === "single") {
-
-        if(regItem.username===decoded.username) {
+        if (regItem.username === decoded.username) {
           axios({
             method: "post",
             url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
               getUsername(regItem.event)[0]
             }`,
-            data:{
-              trans_id:TransacID,
-              approved:false
+            data: {
+              trans_id: TransacID,
+              approved: false,
             },
             headers: { authorization: `Bearer ${accessToken}` },
           })
             .then((response) => {
-           //   alert("insingle : " + JSON.stringify(response.data))
+              //   alert("insingle : " + JSON.stringify(response.data))
               console.log("insingle : " + JSON.stringify(response.data));
             })
             .catch((error) => {
-              alert("Error!" + error); //request fails with 500 
+              alert("Error!" + error); //request fails with 500
             });
         }
-
       } else {
-
         var players = [];
         let count = 1;
 
@@ -253,58 +241,52 @@ function Cart() {
           players[2] = regItem.name3;
         }
 
-        if(regItem.username===decoded.username) {
+        if (regItem.username === decoded.username) {
           axios
-          .post(
-            `${process.env.REACT_APP_API_URL}/addteam`,
-            {
-              //...data
-              players: players,
-              event_name: getUsername(regItem.event)[0],
-              team_username: regItem.teamName,
-              no_of_players: count,
-              trans_id:TransacID,
-              approved:false
-            },
-            {
-              headers: {
-                authorization: `Bearer ${accessToken}`,
+            .post(
+              `${process.env.REACT_APP_API_URL}/addteam`,
+              {
+                //...data
+                players: players,
+                event_name: getUsername(regItem.event)[0],
+                team_username: regItem.teamName,
+                no_of_players: count,
+                trans_id: TransacID,
+                approved: false,
               },
-            }
-          )
-          .then((response) => {
-  //            alert("team :" + JSON.stringify(response.data))
-            console.log("team :" + JSON.stringify(response.data));
-          })
-          .catch((error) => {
-            console.log("Axios error : " + error); //request fails with 500
-          });
+              {
+                headers: {
+                  authorization: `Bearer ${accessToken}`,
+                },
+              }
+            )
+            .then((response) => {
+              //            alert("team :" + JSON.stringify(response.data))
+              console.log("team :" + JSON.stringify(response.data));
+            })
+            .catch((error) => {
+              console.log("Axios error : " + error); //request fails with 500
+            });
         }
         //console.log("else");
       } //else
-
-    })
+    });
     setPay(true);
     clearCart();
   }
 
-
-
-
-
   if (localStorage.getItem("user")) {
     return (
-      <div style={{background:'black'}} >
+      <div style={{ background: "black" }}>
         <Nav />
         <SideEventsButton />
         <div className='regPage'>
           <div className='regPageVector'>
-
-          {pay &&
-          <div className='responsiveTable' style={{order:2}}>
-            <h1 className='reg-head'>Transaction details</h1>
-            <br/>
-            {/* <div className='input-group col-lg-12 mb-4'>
+            {pay && (
+              <div className='responsiveTable' style={{ order: 2 }}>
+                <h1 className='reg-head'>Transaction details</h1>
+                <br />
+                {/* <div className='input-group col-lg-12 mb-4'>
                   <input
                     id='name'
                     type='text'
@@ -316,93 +298,92 @@ function Cart() {
                     required
                   />    
               </div> */}
-            <div className='input-group col-lg-12 mb-4'>
+                <div className='input-group col-lg-12 mb-4'>
                   <input
                     id='transactionNumber'
                     type='text'
                     name='phone'
-                    pattern=".{10,}"
+                    pattern='.{10,}'
                     placeholder='Transaction ID'
                     className='form-control bg-white border-md'
                     onChange={(e) => setTransacID(e.target.value)}
                     value={TransacID}
                     required
-                  />    
-              </div>
-              <div>
-                  <button
-                    type='submit'
-                    className='btn stylebtn btn-block py-2'
-                    >
-                    <span onClick={Register} className='font-weight-bold'>
+                  />
+                </div>
+                <div>
+                  <button type='submit' className='btn stylebtn btn-block py-2'>
+                    <span className='font-weight-bold'>
                       Click here after payment to register
                     </span>
-
                   </button>
+                </div>
               </div>
-          </div>}
+            )}
 
-          {!pay &&
-            <div>
-            <h1 className='reg-head'>Your cart</h1>
-            <img
-              src={require("../../assests/img/register.svg")}
-              alt='registration form'
-              width='350'
-            /> </div>}
+            {!pay && (
+              <div>
+                <h1 className='reg-head'>Your cart</h1>
+                <img
+                  src={require("../../assests/img/register.svg")}
+                  alt='registration form'
+                  width='350'
+                />{" "}
+              </div>
+            )}
           </div>
           <div className='container'>
             <div className='row'>
               <div className='col'>
-              {!pay &&
-                <table className='table table-striped'>
-                  <thead>
-                    <tr>
-                      <th scope='col'></th>
-                      <th scope='col'>Events</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {eventList}
-                    <tr></tr>
-                    <tr>
-                      <td></td>
-                      <td>
-                        {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
+                {!pay && (
+                  <table className='table table-striped'>
+                    <thead>
+                      <tr>
+                        <th scope='col'></th>
+                        <th scope='col'>Events</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {eventList}
+                      <tr></tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>*/}
-                       <Ipay sum={sum} Register={Register}/>
-                      </td>
-                      <td></td>
-                    </tr> 
-                    <tr>
-                      <td></td>
-                      <td>
-                        <button
-                          onClick={clearCart}
-                          type='button'
-                          className='btn btn-outline-danger'>
-                          Clear Cart
-                        </button>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>}
+                          <Ipay sum={sum} Register={Register} />
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <button
+                            onClick={clearCart}
+                            type='button'
+                            className='btn btn-outline-danger'>
+                            Clear Cart
+                          </button>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                )}
 
-                {
-                  pay &&  
-                  <><img
-                    src={require("../../assests/img/gpay.jpeg")}
-                    alt='gpay'
-                    width='350'
-                  />
-                  <div style={{color:'white', margin:'10px'}}>
-                   <h4>UPI ID :</h4> <h4>9834570868@okbizaxis</h4>
-                  </div>
+                {pay && (
+                  <>
+                    <img
+                      src={require("../../assests/img/gpay.jpeg")}
+                      alt='gpay'
+                      width='350'
+                    />
+                    <div style={{ color: "white", margin: "10px" }}>
+                      <h4>UPI ID :</h4> <h4>9834570868@okbizaxis</h4>
+                    </div>
                   </>
-                }
-
+                )}
               </div>
             </div>
           </div>

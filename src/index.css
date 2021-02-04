@@ -8,7 +8,7 @@ body {
     font-family: 'Montserrat', sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-y: scroll !important;
+    overflow-y: scroll;
     overflow-x: hidden;
     /* position: absolute;
     top: 10px;
