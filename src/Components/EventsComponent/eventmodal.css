@@ -23,6 +23,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 5000;
   width: 40%;
   border-radius: 5px;
   opacity: 0;
@@ -118,7 +119,7 @@
 }
 
 .evePage .modalWrap .modalBody p {
-  text-align: left;
+  text-align: center;
 }
 
 .evePage .modalWrap .modalBody h5 {
@@ -133,7 +134,7 @@
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          /* justify-content: center; */
+          justify-content: center;
 }
 
 .evePage .modalWrap .modalBody li span {
@@ -215,6 +216,16 @@
 
 .evePage .modalWrap .modalBody .activeTabButton i {
   color: white !important;
+}
+
+.evePage .modalWrap .quizCheckboxWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.evePage .modalWrap .quizCheckboxWrap .quizCheckboxes {
+  margin: 20px auto 0;
 }
 
 @media (max-width: 1200px) {

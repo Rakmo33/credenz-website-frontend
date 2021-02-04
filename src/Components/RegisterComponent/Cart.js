@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
@@ -10,12 +10,12 @@ import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
 
 function Cart() {
-
   const [pay, setPay] = useState(false);
-  const [UPIname, setUPIname] = useState('');
-  const [TransacID, setTransacID] = useState('')
+  const [UPIname, setUPIname] = useState("");
+  const [TransacID, setTransacID] = useState("");
 
-  const getUsername = (event) => { //get event names and their prices
+  const getUsername = (event) => {
+    //get event names and their prices
     switch (event) {
       case "Clash":
         return ["clash", 100];
@@ -35,7 +35,7 @@ function Cart() {
         return ["enigma", 50];
       case "Quiz":
         return ["quiz", 50];
-      case "Web Weaver":
+      case "Webweaver":
         return ["webweaver", 50];
       case "Paper Presentation":
         return ["paperpresentation", 50];
@@ -44,16 +44,13 @@ function Cart() {
       default:
         return "Invalid event";
     }
-  }
+  };
 
-
-
-    let sum = 0;
-    let RegItems = JSON.parse( localStorage.getItem("Register"));
-    RegItems.map((regItem)=>{
-      sum = sum + getUsername(regItem.event)[1];
-    })
-  
+  let sum = 0;
+  let RegItems = JSON.parse(localStorage.getItem("Register"));
+  RegItems.forEach((regItem) => {
+    sum = sum + getUsername(regItem.event)[1];
+  });
 
   function payment() {
     setPay(true);
@@ -79,8 +76,8 @@ function Cart() {
     //console.log(newCart)
     localStorage.setItem("Cart", newCart);
 
-    let oldRegItems = JSON.parse( localStorage.getItem("Register"));
-    let newRegItems = oldRegItems.filter((regItem)=>regItem.event!==event)
+    let oldRegItems = JSON.parse(localStorage.getItem("Register"));
+    let newRegItems = oldRegItems.filter((regItem) => regItem.event !== event);
     //alert(newRegItems)
     localStorage.setItem("Register", JSON.stringify(newRegItems));
     window.location.reload(false);
@@ -117,10 +114,9 @@ function Cart() {
   );
 
   function Register() {
-
-    let RegItems = JSON.parse( localStorage.getItem("Register"));
+    let RegItems = JSON.parse(localStorage.getItem("Register"));
     let RegItems1 = localStorage.getItem("Register").split(",");
-    
+
     //alert(JSON.stringify(RegItems1))
     //alert(typeof(RegItems))
 
@@ -128,14 +124,13 @@ function Cart() {
     API call
     */
 
-   const token = localStorage.getItem("user");
-   const accessToken = JSON.parse(token).accessToken;
-   var decoded = jwt_decode(token);
+    const token = localStorage.getItem("user");
+    const accessToken = JSON.parse(token).accessToken;
+    var decoded = jwt_decode(token);
 
-   //alert(RegItems[0])
+    //alert(RegItems[0])
 
-    RegItems.map((regItem)=>{
-
+    RegItems.map((regItem) => {
       var players = [];
       let count = 1;
 
@@ -154,7 +149,7 @@ function Cart() {
 
       //alert(JSON.stringify(regItem))
       //axios
-      console.log(regItem.team)
+      console.log(regItem.team);
 
       if (regItem.team === "single") {
         axios({
@@ -195,13 +190,10 @@ function Cart() {
           });
         console.log("else");
       } //else
-
-    })
+    });
 
     setPay(true);
-
   }
-
 
   if (1) {
     return (
@@ -210,8 +202,7 @@ function Cart() {
         <SideEventsButton />
         <div className='regPage'>
           <div className='regPageVector'>
-
-          {pay &&
+            {/* {pay &&
           <div style={{marginLeft:10}}>
             <h1 className='reg-head'>Transaction details</h1>
             <br/>
@@ -249,64 +240,68 @@ function Cart() {
                     </span>
                   </button>
               </div>
-          </div>}
+          </div>} */}
 
-          {!pay &&
-            <div>
-            <h1 className='reg-head'>Your cart</h1>
-            <img
-              src={require("../../assests/img/register.svg")}
-              alt='registration form'
-              width='350'
-            /> </div>}
+            {!pay && (
+              <div>
+                <h1 className='reg-head'>Your cart</h1>
+                <img
+                  src={require("../../assests/img/register.svg")}
+                  alt='registration form'
+                  width='350'
+                />{" "}
+              </div>
+            )}
           </div>
           <div className='container'>
             <div className='row'>
               <div className='col'>
-              {!pay &&
-                <table className='table table-striped'>
-                  <thead>
-                    <tr>
-                      <th scope='col'></th>
-                      <th scope='col'>Events</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {eventList}
-                    <tr></tr>
-                    <tr>
-                      <td></td>
-                      <td>
-                        <button onClick={payment} type='button' className='btn btn-outline-info'>
-                          Proceed to pay Rs {sum}
-                        </button>
-                      </td>
-                      <td></td>
-                    </tr> 
-                    <tr>
-                      <td></td>
-                      <td>
-                        <button
-                          onClick={clearCart}
-                          type='button'
-                          className='btn btn-outline-danger'>
-                          Clear Cart
-                        </button>
-                      </td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>}
+                {!pay && (
+                  <table className='table table-striped'>
+                    <thead>
+                      <tr>
+                        <th scope='col'></th>
+                        <th scope='col'>Events</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {eventList}
+                      <tr></tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <button
+                            onClick={payment}
+                            type='button'
+                            className='btn btn-outline-info'>
+                            Proceed to pay Rs {sum}
+                          </button>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          <button
+                            onClick={clearCart}
+                            type='button'
+                            className='btn btn-outline-danger'>
+                            Clear Cart
+                          </button>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                )}
 
-                {
-                  pay &&  
+                {pay && (
                   <img
                     src={require("../../assests/img/gpay.jpeg")}
                     alt='gpay'
                     width='350'
                   />
-                }
-
+                )}
               </div>
             </div>
           </div>

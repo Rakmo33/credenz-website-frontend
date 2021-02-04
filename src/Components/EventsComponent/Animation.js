@@ -80,7 +80,7 @@ function Animation(props) {
         setCls2("");
       }, 1);
     }, 300);
-    robotTypeMsg("Hello There!...Credenz is Coming!!!");
+    robotTypeMsg("Hello there, Credenz is here!");
 
     return () => {
       clearTimeout(roboTextTimer);
