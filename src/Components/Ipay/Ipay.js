@@ -16,6 +16,8 @@ const Ipay = (props) => {
     // this.setState({ ippopayOpen: true });
     setIsIppoPayOpen(true);
     // props.Register();
+
+    // props.Register();
     // this.props.Register();
   };
   const ippopayHandler = (e) => {
