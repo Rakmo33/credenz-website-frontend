@@ -52,7 +52,7 @@ function Cart() {
     //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash", 50, 60];
+        return ["clash", 1, 60];
       case "Reverse Coding":
         return ["rc", 50, 60];
       case "Pixelate":
@@ -180,6 +180,7 @@ function Cart() {
   );
 
   function Register() {
+    // alert("Registered Succesfully! Go to profile page to check!");
     let RegItems = JSON.parse(localStorage.getItem("Register"));
     // let RegItems1 = localStorage.getItem("Register").split(",");
 
@@ -312,7 +313,7 @@ function Cart() {
                 </div>
                 <div>
                   <button type='submit' className='btn stylebtn btn-block py-2'>
-                    <span onClick={Register} className='font-weight-bold'>
+                    <span className='font-weight-bold'>
                       Click here after payment to register
                     </span>
                   </button>
