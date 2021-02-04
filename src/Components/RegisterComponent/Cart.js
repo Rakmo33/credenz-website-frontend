@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import Ipay from "../Ipay/Ipay";
-
+import React, { useState, useEffect } from "react";
 import "./Register.css";
 import SideEventsButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
@@ -10,12 +8,46 @@ import LoginFirst from "../LoginFirst/LoginFirst";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
+import Ipay from "../Ipay/Ipay";
+import { data } from "jquery";
+
+function getOrderID() {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: "sakshee",
+      amount: "120",
+      email: "sakshee1120@gmail.com",
+      phoneno: "9420324462",
+    }),
+  };
+
+  fetch(`${process.env.REACT_APP_API_URL}/payment`, requestOptions)
+    .then((response) => {
+      //alert(JSON.stringify(response))
+      return response.json();
+    })
+    .then((data) => {
+      //alert(JSON.stringify(data))
+      //setorder_id(data.order_id)
+    });
+
+  return data.order_id;
+}
 
 function Cart() {
   const [pay, setPay] = useState(false);
   const [UPIname, setUPIname] = useState("");
   const [TransacID, setTransacID] = useState("");
   const [currentUser, setCurrentUser] = useState("");
+  const [order_id, setorder_id] = useState("");
+  /*
+  useEffect(() => {
+    setorder_id(getOrderID)
+  }, [])
+*/
+
   const getUsername = (event) => {
     //get event names and their prices
     switch (event) {
@@ -48,33 +80,35 @@ function Cart() {
     }
   };
 
-  //get  current user to check if it is ieee member
-  let user = "";
-  /*if (localStorage.getItem("user")) {
-    var token = localStorage.getItem("user");
-    
-    if (token !== undefined || token !== "") {
-      var decoded = jwt_decode(token);
-      user = jwt(localStorage.getItem("user"));
-      const accessToken = JSON.parse(token).accessToken;
+  useEffect(() => {
+    let user = "";
+    if (localStorage.getItem("user")) {
+      var token = localStorage.getItem("user");
+
+      if (token !== undefined || token !== "") {
+        var decoded = jwt_decode(token);
+        user = jwt(localStorage.getItem("user"));
+        const accessToken = JSON.parse(token).accessToken;
         axios({
-        method: "get",
-        url: `${process.env.REACT_APP_API_URL}/user/${decoded.username}`,
-        headers: { authorization: `Bearer ${accessToken}` },
-      })
-        .then((response) => {
-          setCurrentUser(response.data);
+          method: "get",
+          url: `${process.env.REACT_APP_API_URL}/user/${decoded.username}`,
+          headers: { authorization: `Bearer ${accessToken}` },
         })
-        .catch((error) => {
-          console.log(error);
-        });
+          .then((response) => {
+            setCurrentUser(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       }
-    }*/
+    }
+  }, []);
+  //get  current user to check if it is ieee member
 
   let sum = 0;
   let RegItems = JSON.parse(localStorage.getItem("Register"));
   let i = 1;
-  if (currentUser.ieee && currentUser.ieee == true) {
+  if (currentUser.ieee && currentUser.ieee === true) {
     i = 2;
   }
   if (RegItems) {
@@ -314,13 +348,10 @@ function Cart() {
                       <tr>
                         <td></td>
                         <td>
-                          <button
-                            onClick={payment}
-                            type='button'
-                            className='btn btn-outline-info'>
-                            Proceed to pay Rs {sum}
-                          </button>
-                          {/* <Ipay sum={sum} /> */}
+                          {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
+                          Proceed to pay Rs {sum}
+                        </button>*/}
+                          <Ipay sum={sum} Register={Register} />
                         </td>
                         <td></td>
                       </tr>
