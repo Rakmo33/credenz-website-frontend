@@ -52,27 +52,27 @@ function Cart() {
     //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash", 50, 60];
+        return ["clash", 1, 60];
       case "Reverse Coding":
-        return ["rc", 50, 60];
+        return ["rc", 1, 60];
       case "Pixelate":
-        return ["pixelate", 50, 40];
+        return ["pixelate", 1, 40];
       case "Cretronix":
         return ["cretronix", 50, 40];
       case "Bplan":
-        return ["bplan", 120, 100];
+        return ["bplan", 1, 100];
       case "Wallstreet":
-        return ["wallstreet", 50, 40];
+        return ["wallstreet", 1, 40];
       case "Datawiz":
-        return ["datawiz", 50, 60];
+        return ["datawiz", 1, 60];
       case "Enigma":
-        return ["enigma", 50, 40];
+        return ["enigma", 1, 40];
       case "Quiz":
-        return ["quiz", 50, 40];
-      case "Web Weaver":
-        return ["webweaver", 50, 60];
+        return ["quiz", 1, 40];
+      case "Webweaver":
+        return ["webweaver", 1, 60];
       case "Paper Presentation":
-        return ["paperpresentation", 150, 120];
+        return ["paperpresentation", 1, 120];
       case "Network Treasure Hunt":
         return ["nth", 0, 0];
       default:
@@ -112,6 +112,7 @@ function Cart() {
     i = 2;
   }
   if (RegItems) {
+    console.log(RegItems);
     RegItems.map((regItem) => {
       sum = sum + getUsername(regItem.event)[i];
     });
@@ -184,7 +185,7 @@ function Cart() {
     let RegItems = JSON.parse(localStorage.getItem("Register"));
     // let RegItems1 = localStorage.getItem("Register").split(",");
 
-    //alert(JSON.stringify(RegItems1))
+    // alert(JSON.stringify(RegItems));
     //alert(typeof(RegItems))
 
     /*
@@ -217,8 +218,8 @@ function Cart() {
             headers: { authorization: `Bearer ${accessToken}` },
           })
             .then((response) => {
-              //   alert("insingle : " + JSON.stringify(response.data))
-              // console.log("insingle : " + JSON.stringify(response.data));
+                // alert("insingle : " + JSON.stringify(response.data))
+              console.log("insingle : " + JSON.stringify(response.data));
             })
             .catch((error) => {
               alert("Error!" + error); //request fails with 500
@@ -261,8 +262,8 @@ function Cart() {
               }
             )
             .then((response) => {
-              //            alert("team :" + JSON.stringify(response.data))
-              // console.log("team :" + JSON.stringify(response.data));
+                        //  alert("team :" + JSON.stringify(response.data))
+              console.log("team :" + JSON.stringify(response.data));
             })
             .catch((error) => {
               console.log("Axios error : " + error); //request fails with 500

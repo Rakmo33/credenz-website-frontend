@@ -21,6 +21,7 @@ const Ipay = (props) => {
   const ippopayHandler = (e) => {
     if (e.data.status === "success") {
       console.log("success");
+      alert("success");
       props.Register();
     }
     if (e.data.status === "failure") {
