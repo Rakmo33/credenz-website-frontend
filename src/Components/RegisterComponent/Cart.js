@@ -374,6 +374,12 @@ function Cart() {
                         </td>
                         <td></td>
                       </tr>
+                      <tr>
+                        <td>
+                          After clicking on proceed to pay the payment gateway will request you the money 
+                          under the name "FOLOOSI TECHNOLOGIES PVT LTD", we request you to accept that and proceed further. 
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 )}

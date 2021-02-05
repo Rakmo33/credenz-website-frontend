@@ -95,7 +95,7 @@ const sponsors = (props) => {
             marginTop: "10px",
           }}>
           <Col md={3} sm={4}>
-            <Sponsor url={"Logo 2.png"}></Sponsor>
+            <Sponsor url={"cakesoft.png"}></Sponsor>
             <h4 style={{ marginTop: "7px", color: "white" }}>
             Title Sponsor
             </h4>
