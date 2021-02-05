@@ -354,11 +354,13 @@ function Cart() {
                       <tr></tr>
                       <tr>
                         <td></td>
-                        <td>
+                        <td >
                           {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>*/}
+                       
                           <Ipay sum={sum} Register={Register} />
+                       
                         </td>
                         <td></td>
                       </tr>
@@ -375,10 +377,12 @@ function Cart() {
                         <td></td>
                       </tr>
                       <tr>
+                        <td></td>
                         <td>
-                          After clicking on proceed to pay the payment gateway will request you the money 
-                          under the name "FOLOOSI TECHNOLOGIES PVT LTD", we request you to accept that and proceed further. 
+                          After clicking on proceed to pay the payment will be requested  
+                          under the name of "FOLOOSI TECHNOLOGIES PVT LTD", we request you to accept that and proceed further. 
                         </td>
+                        <td></td>
                       </tr>
                     </tbody>
                   </table>

@@ -114,7 +114,7 @@ const Ipay = (props) => {
     // console.log(order_id);
     return (
       <div>
-        <span onClick={(e) => ippopayOpen(e)}>
+        <span className='btn btn-primary' onClick={(e) => ippopayOpen(e)}>
           Proceed to pay Rs {props.sum}
         </span>
         <Ippopay
