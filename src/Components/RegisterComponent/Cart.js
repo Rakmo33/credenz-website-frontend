@@ -112,6 +112,7 @@ function Cart() {
     i = 2;
   }
   if (RegItems) {
+    console.log(RegItems);
     RegItems.map((regItem) => {
       sum = sum + getUsername(regItem.event)[i];
     });
@@ -184,7 +185,7 @@ function Cart() {
     let RegItems = JSON.parse(localStorage.getItem("Register"));
     // let RegItems1 = localStorage.getItem("Register").split(",");
 
-    //alert(JSON.stringify(RegItems1))
+    // alert(JSON.stringify(RegItems));
     //alert(typeof(RegItems))
 
     /*
@@ -196,7 +197,7 @@ function Cart() {
     var decoded = jwt_decode(token);
     //alert(JSON.stringify(decoded))
 
-    console.log(RegItems);
+    // console.log(RegItems);
 
     RegItems.forEach((regItem) => {
       //alert(JSON.stringify(regItem))
@@ -217,7 +218,7 @@ function Cart() {
             headers: { authorization: `Bearer ${accessToken}` },
           })
             .then((response) => {
-              //   alert("insingle : " + JSON.stringify(response.data))
+                // alert("insingle : " + JSON.stringify(response.data))
               console.log("insingle : " + JSON.stringify(response.data));
             })
             .catch((error) => {
@@ -353,11 +354,13 @@ function Cart() {
                       <tr></tr>
                       <tr>
                         <td></td>
-                        <td>
+                        <td >
                           {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>*/}
+                       
                           <Ipay sum={sum} Register={Register} />
+                       
                         </td>
                         <td></td>
                       </tr>
@@ -370,6 +373,14 @@ function Cart() {
                             className='btn btn-outline-danger'>
                             Clear Cart
                           </button>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          After clicking on proceed to pay the payment will be requested  
+                          under the name of "FOLOOSI TECHNOLOGIES PVT LTD", we request you to accept that and proceed further. 
                         </td>
                         <td></td>
                       </tr>
