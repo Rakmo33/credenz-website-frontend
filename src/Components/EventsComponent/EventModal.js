@@ -183,8 +183,13 @@ function EventModal(props) {
         onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>
         <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
         Add to Cart
-      </button>*/}
-      {!props.teams(currentInfo.title) ? (
+      </button>*/
+      //alert(currentInfo.title)
+    }
+      
+     
+
+      { !props.teams(currentInfo.title) && currentInfo.title!=='Network Treasure Hunt' ? (
         <button
           className='regNowBtn'
           onClick={() =>
@@ -200,14 +205,25 @@ function EventModal(props) {
           Add to Cart
         </button>
       ) : (
+
+       currentInfo.title==='Network Treasure Hunt' ? 
+        /*<Link
+          style={{ textAlign: "center" }}
+          to='https://nth.credenz.in/'>*/
+            <button className='regNowBtn'>
+                <a style={{color: 'white'}} href='https://nth.credenz.in'>Head over to the NTH website to register</a>
+            </button> 
+        /*</Link>*/
+
+        :
         <Link
           style={{ textAlign: "center" }}
           to={`/newreg/${currentInfo.title}`}>
-          <button className='regNowBtn'>
+            <button className='regNowBtn'>
             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-            Add to Cart
+              Add to Cart
           </button>
-        </Link>
+        </Link> 
       )}
     </div>
   );
