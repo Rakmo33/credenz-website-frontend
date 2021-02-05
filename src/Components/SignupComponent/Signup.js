@@ -323,23 +323,14 @@ function Signup() {
                       <i className='fa fa-black-tie text-muted'></i>
                     </span>
                   </div>
-                  <select
+                  <input
                     id='college'
                     type='college'
                     name='college'
                     className='form-control bg-white border-left-0 border-md'
                     onChange={(e) => setCollege(e.target.value)}
                     value={college}
-                    required>
-                    <option selected>College name</option>
-                    <option>PICT</option>
-                    <option>COEP</option>
-                    <option>MIT</option>
-                    <option>VIT</option>
-                    <option>Cummins</option>
-                    <option>PCCOE</option>
-                    <option>Other</option>
-                  </select>
+                    required/>
                   <span className='asterisk_input'> </span>
                   {errors && (
                     <small id='clgErr' className='form-text text-danger'>
