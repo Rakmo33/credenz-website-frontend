@@ -1,13 +1,13 @@
 .regPage {
-  width: 90%;
+  width: 70%;
   font-size: 18px;
   min-height: 92vh;
   margin: auto;
   margin-top: 40px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr;
-      grid-template-columns: 1fr 2fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -34,7 +34,9 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0 auto;
+  margin: 15px auto;
+  font-size: 35px;
+  margin-bottom: 50px;
   color: white;
 }
 

@@ -9,6 +9,7 @@ function EventModal(props) {
   let currentInfo = props.info;
   let currentTab = currentInfo.info1;
   let cls = `modalWrap ${props.cls}`;
+  const [selectedQuiz, setSelectedQuiz] = useState([false, false, false]);
 
   const [tab, setTab] = useState(1);
   const [currentTabInfo, setCurrentTabInfo] = useState(currentInfo.info1);
@@ -43,6 +44,24 @@ function EventModal(props) {
     } else if (tabNumber === 5) {
       activeTab(5);
       setCurrentTabInfo(currentInfo.info5);
+    }
+  };
+
+  const quizHandler = (e, index) => {
+    let tempSelectedQuiz = [...selectedQuiz];
+
+    if (index === 1) {
+      tempSelectedQuiz[0] = e.target.checked ? true : false;
+      setSelectedQuiz(tempSelectedQuiz);
+      console.log(selectedQuiz);
+    } else if (index === 2) {
+      tempSelectedQuiz[1] = e.target.checked ? true : false;
+      setSelectedQuiz(tempSelectedQuiz);
+      console.log(selectedQuiz);
+    } else if (index === 3) {
+      tempSelectedQuiz[2] = e.target.checked ? true : false;
+      setSelectedQuiz(tempSelectedQuiz);
+      console.log(selectedQuiz);
     }
   };
 
@@ -144,6 +163,9 @@ function EventModal(props) {
               value='general'
               id='quiz1'
               name='quiz1'
+              onChange={(e) => {
+                quizHandler(e, 1);
+              }}
             />
             <label class='form-check-label' for='quiz1'>
               <strong>General quiz</strong>
@@ -151,6 +173,9 @@ function EventModal(props) {
           </div>
           <div className='quizCheckboxes'>
             <input
+              onChange={(e) => {
+                quizHandler(e, 2);
+              }}
               class='form-check-input'
               type='checkbox'
               value='mela'
@@ -163,6 +188,9 @@ function EventModal(props) {
           </div>
           <div className='quizCheckboxes'>
             <input
+              onChange={(e) => {
+                quizHandler(e, 3);
+              }}
               class='form-check-input'
               type='checkbox'
               value='biztech'
@@ -193,7 +221,8 @@ function EventModal(props) {
               props.cart,
               props.setCart,
               props.eventReg,
-              props.setEventReg
+              props.setEventReg,
+              selectedQuiz
             )
           }>
           <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>

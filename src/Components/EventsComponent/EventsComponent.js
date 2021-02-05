@@ -45,7 +45,7 @@ const Events = (props) => {
 
   useEffect(() => {
     let result = AllEvents();
-      document.title=`CREDENZ LIVE | Events`;
+    document.title = `CREDENZ LIVE | Events`;
     result.then((res) => {
       setEVENTS(res);
       //window.location.reload(false); //refresh page
@@ -54,67 +54,124 @@ const Events = (props) => {
 
   let type = false;
 
-  function addToCart(event, cart, setCart, eventReg, setEventReg) {
+  function addToCart(
+    event,
+    cart,
+    setCart,
+    eventReg,
+    setEventReg,
+    selectedQuiz
+  ) {
+    if (localStorage.getItem("user")) {
+      var cartArray = localStorage.getItem("Cart")
+        ? localStorage.getItem("Cart").split(",")
+        : [];
 
-    if(localStorage.getItem("user")) {
+      var regArray = localStorage.getItem("Register")
+        ? JSON.parse(localStorage.getItem("Register"))
+        : [];
 
-          var cartArray = localStorage.getItem("Cart")
-          ? localStorage.getItem("Cart").split(",")
-          : [];
-        
-          var regArray = localStorage.getItem("Register")
-          ? JSON.parse(localStorage.getItem("Register"))
-          : [];
+      //regArray.map((x) => alert(JSON.stringify(x.event)));
 
-        //regArray.map((x) => alert(JSON.stringify(x.event)));
+      if (!cartArray.includes(event)) {
+        const teamPresent = teams(event);
 
-        if (!cartArray.includes(event)) {
-          const teamPresent = teams(event);
+        let user = "";
+        if (localStorage.getItem("user")) {
+          user = jwt(localStorage.getItem("user"));
+        }
 
-          let user = "";
-          if (localStorage.getItem("user")) {
-            user = jwt(localStorage.getItem("user"));
+        if (teamPresent) {
+          setEventReg("team");
+        } else if (event === "Quiz") {
+          if (!selectedQuiz[0] && !selectedQuiz[1] && !selectedQuiz[2]) {
+            alert("Please select at least one quiz in order to proceed!");
+            return;
           }
 
-          if (teamPresent) {
-            setEventReg("team");
-          } else {
+          let tempRegArray = [...regArray];
+          let tempArray = [...cartArray];
+
+          if (selectedQuiz[0]) {
             let singleRegObject = {
-              team: 'single',
-              event: event,
+              team: "single",
+              event: "Quiz",
               username: localStorage.getItem("user")
                 ? JSON.stringify(user["username"]).replace(/"/g, "")
-                : "",              
+                : "",
             };
-            //alert("reg" + props.register)
-            let tempRegArray = [...regArray];
-            //console.log(tempRegArray);
-            //alert(JSON.stringify(tempRegArray));
             tempRegArray.push(singleRegObject);
-            setEventReg(tempRegArray);
-            localStorage.setItem("Register", JSON.stringify(tempRegArray));
+
+            tempArray.push("General Quiz");
+
+            setTempCartNum((prev) => prev + 1);
+          }
+          if (selectedQuiz[1]) {
+            let singleRegObject = {
+              team: "single",
+              event: "Quiz",
+              username: localStorage.getItem("user")
+                ? JSON.stringify(user["username"]).replace(/"/g, "")
+                : "",
+            };
+            tempRegArray.push(singleRegObject);
+
+            tempArray.push("MELA Quiz");
+
+            setTempCartNum((prev) => prev + 1);
+          }
+          if (selectedQuiz[2]) {
+            let singleRegObject = {
+              team: "single",
+              event: "Quiz",
+              username: localStorage.getItem("user")
+                ? JSON.stringify(user["username"]).replace(/"/g, "")
+                : "",
+            };
+            tempRegArray.push(singleRegObject);
+
+            tempArray.push("BizTech Quiz");
+
+            setTempCartNum((prev) => prev + 1);
           }
 
-          ////console.log(eventReg)
-          //var cartArray = localStorage.getItem("Cart")? localStorage.getItem("Cart").split(","):[];
+          setEventReg(tempRegArray);
+          localStorage.setItem("Register", JSON.stringify(tempRegArray));
+
+          setCart(tempArray);
+          localStorage.setItem("Cart", tempArray);
+        } else {
+          let singleRegObject = {
+            team: "single",
+            event: event,
+            username: localStorage.getItem("user")
+              ? JSON.stringify(user["username"]).replace(/"/g, "")
+              : "",
+          };
+          //alert("reg" + props.register)
+          let tempRegArray = [...regArray];
+          //console.log(tempRegArray);
+          //alert(JSON.stringify(tempRegArray));
+          tempRegArray.push(singleRegObject);
+          setEventReg(tempRegArray);
+          localStorage.setItem("Register", JSON.stringify(tempRegArray));
+        }
+
+        if (event !== "Quiz") {
           let tempArray = [...cartArray];
           tempArray.push(event);
-          ////console.log("temp" + cartArray)
           setCart(tempArray);
           localStorage.setItem("Cart", tempArray);
 
-          //console.log("LOL" + tempArray + " dfsd " + tempArray.length);
-
           setTempCartNum((prev) => prev + 1);
-          // window.location.reload(false);
-        } else {
-          alert("Event already present in the cart!");
         }
-    }else {
+      } else {
+        alert("Event already present in the cart!");
+      }
+    } else {
       handleShow1();
       //alert("Please log in before accessing the cart.");
     }
-  
   }
 
   function teams(event) {
@@ -172,7 +229,7 @@ const Events = (props) => {
         event={event}
         event_info={EVENTS}
       />
-       <Modal1 show={showLogin} handleClose={handleClose1} type={"login"} />
+      <Modal1 show={showLogin} handleClose={handleClose1} type={"login"} />
       <Footer />
     </div>
   );
