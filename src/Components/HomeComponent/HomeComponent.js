@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import HomeAnimation from "./HomeAnimation/HomeAnimation";
 import SideEventButton from "../sideEventButton/sideEvent";
 import Footer from "../Footer/footer";
-import classes from "./HomeComponent.module.css";
 // import Timer from "./Timer";
 import Nav from "../Navbar/Navbar";
 
