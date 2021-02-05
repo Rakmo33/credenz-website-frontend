@@ -95,9 +95,9 @@ const sponsors = (props) => {
             marginTop: "10px",
           }}>
           <Col md={3} sm={4}>
-            <Sponsor url={"Logo 2.png"}></Sponsor>
+            <Sponsor url={"cakesoft.png"}></Sponsor>
             <h4 style={{ marginTop: "7px", color: "white" }}>
-            Overseas Educational Partner
+            Title Sponsor
             </h4>
           </Col>
         </Row>
@@ -124,15 +124,17 @@ const sponsors = (props) => {
             <Sponsor url={"ieee1.png"}></Sponsor>
             <h4 style={{marginTop:'7px', color: "white"}}>Visionary sponsor</h4>
           </Col>
+          <Col md={3} sm={4}>
+            <Sponsor url={"Logo 2.png"}></Sponsor>
+            <h4 style={{ marginTop: "7px", color: "white" }}>
+            Overseas Educational Partner
+            </h4>
+          </Col>
+          <Col md={3} sm={4}>
+            <Sponsor url={"Byju's2.jpg"}></Sponsor>
+            <h4 style={{marginTop:'7px', color:"white"}}>Associate Partner</h4>
+          </Col>
           {/* <Col md={3} sm={4}>
-            <Sponsor url={"codechef.jpg"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
-          </Col>
-          <Col md={3} sm={4}>
-            <Sponsor url={"finiq2.png"}></Sponsor>
-            <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
-          </Col>
-          <Col md={3} sm={4}>
             <Sponsor url={"avaya.jpg"}></Sponsor>
             <h4 style={{marginTop:'7px'}}>Title Sponsor</h4>
           </Col> */}

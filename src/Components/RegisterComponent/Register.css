@@ -490,10 +490,7 @@
         grid-template-columns: 1fr;
   }
   .regPage .regPageVector {
-    display: contents;
-  }
-  .regPage .regPageVector .responsiveTable{
-    margin: 50px;
+    display: none;
   }
 }
 /*# sourceMappingURL=Register.css.map */

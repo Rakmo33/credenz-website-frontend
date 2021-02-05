@@ -22,11 +22,12 @@ const Ipay = (props) => {
   };
   const ippopayHandler = (e) => {
     if (e.data.status === "success") {
-      console.log("success" + e.data);
+      console.log("success");
+      alert("success");
       props.Register();
     }
     if (e.data.status === "failure") {
-      console.log("failure" + e.data);
+      console.log("failure" );
     }
   };
 
@@ -63,7 +64,7 @@ const Ipay = (props) => {
       .then((data) => {
         //alert(JSON.stringify(data.data.order.order_id))
         //alert("orderid" + data)
-        console.log(data);
+        // console.log(data);
         setOrder_id(data.data.order.order_id);
         // this.setState({ order_id: data.data.order.order_id });
       });
@@ -110,10 +111,10 @@ const Ipay = (props) => {
 
   // render() {
   if (order_id !== "" || order_id !== undefined) {
-    console.log(order_id);
+    // console.log(order_id);
     return (
       <div>
-        <span onClick={(e) => ippopayOpen(e)}>
+        <span className='btn btn-primary' onClick={(e) => ippopayOpen(e)}>
           Proceed to pay Rs {props.sum}
         </span>
         <Ippopay
