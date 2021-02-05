@@ -240,7 +240,7 @@ function EventModal(props) {
           style={{ textAlign: "center" }}
           to='https://nth.credenz.in/'>*/
             <button className='regNowBtn'>
-                <a style={{color: 'white'}} href='https://nth.credenz.in'>Head over to the NTH website to register</a>
+                <a style={{color: 'white'}} target='_blank' href='https://nth.credenz.in'>Head over to the NTH website to register</a>
             </button> 
         /*</Link>*/
 
