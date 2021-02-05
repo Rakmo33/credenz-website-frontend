@@ -49,6 +49,7 @@ function Signup() {
             password: password,
             email: email,
             phoneno: phone,
+            ieee : member === "IEEE" ? true : false,
             clgname: college,
           })
           .then(function (response) {

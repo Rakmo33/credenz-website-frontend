@@ -108,7 +108,7 @@ function Cart() {
   let sum = 0;
   let RegItems = JSON.parse(localStorage.getItem("Register"));
   let i = 1;
-  if (currentUser.ieee && currentUser.ieee === true) {
+  if (currentUser.ieee === true) {
     i = 2;
   }
   if (RegItems) {
