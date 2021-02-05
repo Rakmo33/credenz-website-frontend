@@ -52,27 +52,27 @@ function Cart() {
     //get event names and their prices
     switch (event) {
       case "Clash":
-        return ["clash", 1, 60];
+        return ["clash", 60, 50];
       case "Reverse Coding":
-        return ["rc", 1, 60];
+        return ["rc", 60, 50];
       case "Pixelate":
-        return ["pixelate", 1, 40];
+        return ["pixelate", 50, 40];
       case "Cretronix":
         return ["cretronix", 50, 40];
       case "Bplan":
-        return ["bplan", 1, 100];
+        return ["bplan", 120, 100];
       case "Wallstreet":
-        return ["wallstreet", 1, 40];
+        return ["wallstreet", 50, 40];
       case "Datawiz":
-        return ["datawiz", 1, 60];
+        return ["datawiz", 60, 50];
       case "Enigma":
-        return ["enigma", 1, 40];
+        return ["enigma", 50, 40];
       case "Quiz":
-        return ["quiz", 1, 40];
+        return ["quiz", 50, 40];
       case "Webweaver":
-        return ["webweaver", 1, 60];
+        return ["webweaver", 60, 50];
       case "Paper Presentation":
-        return ["paperpresentation", 1, 120];
+        return ["paperpresentation", 150, 120];
       case "Network Treasure Hunt":
         return ["nth", 0, 0];
       default:
@@ -199,7 +199,7 @@ function Cart() {
 
     // console.log(RegItems);
 
-    RegItems.map((regItem) => {
+    RegItems.forEach((regItem) => {
       //alert(JSON.stringify(regItem))
       //axios
       //console.log(regItem.team)
@@ -241,34 +241,39 @@ function Cart() {
           count++;
           players[2] = regItem.name3;
         }
-          console.log(regItem.username, decoded.username);
-        if (regItem.username === decoded.username) {
-          axios
-            .post(
-              `${process.env.REACT_APP_API_URL}/addteam`,
-              {
-                //...data
-                players: players,
-                event_name: getUsername(regItem.event)[0],
-                team_username: regItem.teamName,
-                no_of_players: count,
-                trans_id: TransacID,
-                approved: false,
+
+        // console.log(regItem.username + " " + decoded.username);
+        // alert(regItem.event);
+
+        // if (regItem.username === decoded.username) {
+        axios
+          .post(
+            `${process.env.REACT_APP_API_URL}/addteam`,
+            {
+              //...data
+              players: players,
+              event_name: getUsername(regItem.event)[0],
+              team_username: regItem.teamName,
+              no_of_players: count,
+              trans_id: TransacID,
+              approved: true,
+            },
+            {
+              headers: {
+                authorization: `Bearer ${accessToken}`,
               },
-              {
-                headers: {
-                  authorization: `Bearer ${accessToken}`,
-                },
-              }
-            )
-            .then((response) => {
-                        //  alert("team :" + JSON.stringify(response.data))
-              console.log("team :" + JSON.stringify(response.data));
-            })
-            .catch((error) => {
-              console.log("Axios error : " + error); //request fails with 500
-            });
-        }
+            }
+          )
+          .then((response) => {
+            // alert("team :" + JSON.stringify(response.data));
+            console.log("team :" + JSON.stringify(response.data));
+            // alert("Error");
+          })
+          .catch((error) => {
+            alert("Error");
+            console.log("Axios error : " + error); //request fails with 500
+          });
+        // }
         //console.log("else");
       } //else
     });
