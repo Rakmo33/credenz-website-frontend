@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { Ippopay } from "react-ippopay";
 import jwt from "jwt-decode";
+import axios from 'axios';
 
 const Ipay = (props) => {
   const [isIppopayOpen, setIsIppoPayOpen] = useState(false);
@@ -25,6 +26,12 @@ const Ipay = (props) => {
       console.log("success");
       alert("success");
       props.Register();
+
+      axios.post(`${process.env.REACT_APP_API_URL}/${props.username}/sendmail`)
+      .then(function(response){
+        console.log(response)
+      })
+
     }
     if (e.data.status === "failure") {
       console.log("failure" );

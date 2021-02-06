@@ -78,6 +78,8 @@ function ModalBody({ handleClose, type, event, event_info }) {
               refreshPage();
               // const user = jwt(response.data["accessToken"]);
               // //console.log("JWT decode : " + JSON.stringify(user));
+              localStorage.removeItem("Cart");
+              localStorage.removeItem("Register");
               setLogged(true);
             } else {
               // alert("Invalid login credentials!");

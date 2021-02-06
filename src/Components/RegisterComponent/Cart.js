@@ -327,7 +327,8 @@ function Cart() {
                        <button onClick={Register} type='button' className='btn btn-info'>
                           Free Registeration for PICTians!
                         </button> :
-                         <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser}/>} 
+                         <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser} 
+                         username={decoded.username}/>} 
                         </td>
                         <td></td>
                       </tr>
