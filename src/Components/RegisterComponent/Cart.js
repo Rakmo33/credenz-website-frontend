@@ -55,35 +55,25 @@ function Cart() {
     }
   };
 
-  useEffect(() => {
-    let user = "";
+  //get  current user to check if it is ieee member
+
+
+  let user = "";
     if (localStorage.getItem("user")) {
       var token = localStorage.getItem("user");
 
       if (token !== undefined || token !== "") {
         var decoded = jwt_decode(token);
         user = jwt(localStorage.getItem("user"));
-        const accessToken = JSON.parse(token).accessToken;
-        axios({
-          method: "get",
-          url: `${process.env.REACT_APP_API_URL}/user/${decoded.username}`,
-          headers: { authorization: `Bearer ${accessToken}` },
-        })
-          .then((response) => {
-            setCurrentUser(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+       
       }
     }
-  }, []);
-  //get  current user to check if it is ieee member
 
   let sum = 0;
   let RegItems = JSON.parse(localStorage.getItem("Register"));
   let i = 1;
-  if (currentUser.ieee && currentUser.ieee === true) {
+  //alert(JSON.stringify(currentUser))
+  if (decoded.ieee) {
     i = 2;
   }
   if (RegItems) {
@@ -333,11 +323,11 @@ function Cart() {
                           {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>*/}
-                       {currentUser.clgname==='PICT' ? 
+                       {decoded.clgname==='PICT' ? 
                        <button onClick={Register} type='button' className='btn btn-info'>
                           Free Registeration for PICTians!
                         </button> :
-                         <Ipay sum={sum} Register={Register} />} 
+                         <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser}/>} 
                         </td>
                         <td></td>
                       </tr>
