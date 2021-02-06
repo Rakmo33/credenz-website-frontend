@@ -331,7 +331,7 @@ function Signup() {
                     value={"PICT"}
                     required
                   />
-                  <label style={{paddingLeft: 20, marginRight: 50, color:'#fff', fontSize:'12px'}} for="member">PICT student/alumnus</label><br></br>
+                  <label style={{paddingLeft: 20, marginRight: 50, color:'#fff', fontSize:'12px'}} for="member">PICT student</label><br></br>
                   <input
                     id='college'
                     type='radio'
