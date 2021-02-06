@@ -11,31 +11,6 @@ import jwt from "jwt-decode";
 import Ipay from "../Ipay/Ipay";
 import { data } from "jquery";
 
-function getOrderID() {
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      username: "sakshee",
-      amount: "120",
-      email: "sakshee1120@gmail.com",
-      phoneno: "9420324462",
-    }),
-  };
-
-  fetch(`${process.env.REACT_APP_API_URL}/payment`, requestOptions)
-    .then((response) => {
-      //alert(JSON.stringify(response))
-      return response.json();
-    })
-    .then((data) => {
-      //alert(JSON.stringify(data))
-      //setorder_id(data.order_id)
-    });
-
-  return data.order_id;
-}
-
 function Cart() {
   const [pay, setPay] = useState(false);
   const [UPIname, setUPIname] = useState("");
@@ -358,9 +333,11 @@ function Cart() {
                           {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>*/}
-                       
-                          <Ipay sum={sum} Register={Register} />
-                       
+                       {currentUser.clgname==='PICT' ? 
+                       <button onClick={Register} type='button' className='btn btn-info'>
+                          Free Registeration for PICTians!
+                        </button> :
+                         <Ipay sum={sum} Register={Register} />} 
                         </td>
                         <td></td>
                       </tr>
