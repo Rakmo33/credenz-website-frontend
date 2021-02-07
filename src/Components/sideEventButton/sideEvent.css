@@ -90,14 +90,18 @@
     background-repeat: no-repeat;
 }
 
-.floatingWrap .social a {
+.floatingWrap .social a,
+.floatingWrap .socialeve li {
     text-decoration: none;
     transition: all 0.3s;
 }
 
-.floatingWrap .social a:hover {
+.floatingWrap .social a:hover,
+.floatingWrap .socialeve li:hover {
     text-decoration: none;
-    transform: scale(1.05);
+    transform: scale(1.03) translateX(-5px);
+    /* backgroun */
+    filter: brightness(1.15)
 }
 
 

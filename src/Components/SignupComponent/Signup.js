@@ -6,13 +6,12 @@ import Validate from "./ValidateInfo";
 import axios from "axios";
 import Modal1 from "../Modal/Modal";
 import Alert from "../Alert/alert";
-import Nav from '../Navbar/Navbar';
+import Nav from "../Navbar/Navbar";
 
 function Signup() {
-
-  useEffect (()=>{
-    document.title=`CREDENZ LIVE | SignUp`;
-  },[]);
+  useEffect(() => {
+    document.title = `CREDENZ LIVE | SignUp`;
+  }, []);
 
   let login = "login";
   const [spinner, setSpinner] = useState("form-group col-lg-12 ");
@@ -21,13 +20,13 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [college, setCollege] = useState("");
+  const [college, setCollege] = useState("null");
   const [clgID, setClgID] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [show, setShow] = useState(false);
   // const [disabled, setdisabled] = useState(true);
-  const [member, setMember] = useState('');
+  const [member, setMember] = useState("");
   const [showAlert, setShowAlert] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -51,7 +50,7 @@ function Signup() {
             email: email,
             phoneno: phone,
             clgname: college,
-            clgID: clgID
+            clgID: clgID,
           })
           .then(function (response) {
             // //console.log(response);
@@ -121,6 +120,7 @@ function Signup() {
     email: email,
     phoneno: phone,
     clgname: college,
+    clgID: clgID,
     passwordCheck: passwordCheck,
   };
   /*
@@ -150,8 +150,8 @@ function Signup() {
   //e.preventDefualt()
 
   return (
-    <div style={{background:'black'}} >
-      <Nav/>
+    <div style={{ background: "black" }}>
+      <Nav />
       <div className='container mt-5 signupFormWrap'>
         {showAlert ? (
           <Alert show={showAlert} setShow={setShowAlert} var='danger'>
@@ -271,57 +271,72 @@ function Signup() {
                 </div>
 
                 <div className='input-group col-lg-12 mb-4'>
-                  <div className='input-group-prepend'>
+                  <div className='input-group-prepend'></div>
+                  <div className='form-group'>
+                    <input
+                      id='member'
+                      type='radio'
+                      name='member'
+                      //className='border-md border-left-0 pl-3'
+                      onChange={(e) => setMember(e.target.value)}
+                      value={"IEEE"}
+                      required
+                    />
+                    <label
+                      style={{
+                        paddingLeft: 20,
+                        marginRight: 50,
+                        color: "#fff",
+                        fontSize: "15px",
+                      }}
+                      for='member'>
+                      IEEE member
+                    </label>
+
+                    <input
+                      id='nonmember'
+                      type='radio'
+                      name='member'
+                      //className='bg-white border-md border-left-0 pl-3'
+                      onChange={(e) => setMember(e.target.value)}
+                      value={"nonIEEE"}
+                      required
+                    />
+                    <label
+                      style={{
+                        paddingLeft: 4,
+                        color: "#fff",
+                        fontSize: "15px",
+                      }}
+                      for='nonmember'>
+                      Non-IEEE member
+                    </label>
                   </div>
-                  <input
-                    id='member'
-                    type='radio'
-                    name='member'
-                    //className='border-md border-left-0 pl-3'
-                    onChange={(e) => setMember(e.target.value)}
-                    value={"IEEE"}
-                    required
-                    
-                  />
-                  <label style={{paddingLeft: 20, marginRight: 50, color:'#fff', fontSize:'12px'}} for="member">IEEE member</label><br></br>
-                  <input
-                    id='member'
-                    type='radio'
-                    name='member'
-                    //className='bg-white border-md border-left-0 pl-3'
-                    onChange={(e) => setMember(e.target.value)}
-                    value={"nonIEEE"}
-                    required
-                   
-                  />
-                  <label style={{paddingLeft: 4, color:'#fff', fontSize:'12px'}} for="member">Non-IEEE member</label><br></br>
                 </div>
 
-                {
-                  member==="IEEE" &&
+                {member === "IEEE" && (
                   <div className='input-group col-lg-12 mb-4'>
-                  <div className='input-group-prepend'>
-                  <span className='input-group-text bg-white px-4 border-md border-right-0'>
-                      <i className='fa fa-user text-muted'></i>
-                    </span> 
+                    <div className='input-group-prepend'>
+                      <span className='input-group-text bg-white px-4 border-md border-right-0'>
+                        <i className='fa fa-user text-muted'></i>
+                      </span>
+                    </div>
+                    <input
+                      id='memberID'
+                      type='text'
+                      name='phone'
+                      placeholder='Membership ID'
+                      className='form-control bg-white border-md border-left-0 pl-3'
+                      //onChange={(e) => setPhone(e.target.value)}
+                      //value={phone}
+                      required
+                      maxLength='10'
+                    />
                   </div>
-                  <input
-                    id='memberID'
-                    type='text'
-                    name='phone'
-                    placeholder='Membership ID'
-                    className='form-control bg-white border-md border-left-0 pl-3'
-                    //onChange={(e) => setPhone(e.target.value)}
-                    //value={phone}
-                    required
-                    maxLength='10'
-                  />
-                </div>
-                }
+                )}
 
-                  <div className='input-group col-lg-12 mb-4'>
-                  <div className='input-group-prepend'>
-                  </div>
+                <div className='input-group col-lg-12 mb-4'>
+                  <div className='input-group-prepend'></div>
                   <input
                     id='college'
                     type='radio'
@@ -331,9 +346,19 @@ function Signup() {
                     value={"PICT"}
                     required
                   />
-                  <label style={{paddingLeft: 20, marginRight: 50, color:'#fff', fontSize:'12px'}} for="member">PICT student</label><br></br>
+                  <label
+                    style={{
+                      paddingLeft: 20,
+                      marginRight: 50,
+                      color: "#fff",
+                      fontSize: "15px",
+                    }}
+                    for='college'>
+                    PICT student
+                  </label>
+                  <br></br>
                   <input
-                    id='college'
+                    id='othercollege'
                     type='radio'
                     name='college'
                     //className='bg-white border-md border-left-0 pl-3'
@@ -341,53 +366,65 @@ function Signup() {
                     value={"College name"}
                     required
                   />
-                  <label style={{paddingLeft: 4, color:'#fff', fontSize:'12px'}} for="member">Other College</label><br></br>
+                  <label
+                    style={{ paddingLeft: 4, color: "#fff", fontSize: "15px" }}
+                    for='othercollege'>
+                    Other College
+                  </label>
+                  <br></br>
                 </div>
 
-                {
-                  college==="PICT" &&
-                  <div className='input-group col-lg-12 mb-4'>
-                  <div className='input-group-prepend'>
-                  <span className='input-group-text bg-white px-4 border-md border-right-0'>
-                      <i className='fa fa-user text-muted'></i>
-                    </span> 
-                  </div>
-                  <input
-                    id='clgID'
-                    type='text'
-                    name='clgID'
-                    placeholder='PICT Reg No(I2K.....)'
-                    className='form-control bg-white border-md border-left-0 pl-3'
-                    onChange={(e) => setClgID(e.target.value)}
-                    //value={phone}
-                    required
-                    maxLength='20'
-                  />
-                </div>
-                }
-
-                { college!=='PICT' &&
-                <div className='input-group col-lg-12 mb-4'>
-                  <div className='input-group-prepend'>
-                    <span className='input-group-text bg-white px-4 border-md border-right-0'>
-                      <i className='fa fa-black-tie text-muted'></i>
-                    </span>
-                  </div>
-                  <input
-                    id='college'
-                    type='college'
-                    name='college'
-                    className='form-control bg-white border-left-0 border-md'
-                    onChange={(e) => setCollege(e.target.value)}
-                    value={college}
-                    required/>
-                  <span className='asterisk_input'> </span>
-                  {errors && (
-                    <small id='clgErr' className='form-text text-danger'>
-                      {errors.college}
-                    </small>
-                  )}
-                </div> }
+                {college !== "null" &&
+                  (college === "PICT" ? (
+                    <div className='input-group col-lg-12 mb-4'>
+                      <div className='input-group-prepend'>
+                        <span className='input-group-text bg-white px-4 border-md border-right-0'>
+                          <i className='fa fa-user text-muted'></i>
+                        </span>
+                      </div>
+                      <input
+                        id='clgID'
+                        type='text'
+                        name='clgID'
+                        placeholder='PICT Registration ID'
+                        className='form-control bg-white border-md border-left-0 pl-3'
+                        onChange={(e) => setClgID(e.target.value)}
+                        value={clgID}
+                        required
+                        maxLength='20'
+                      />
+                      <span className='asterisk_input'> </span>
+                      {errors && (
+                        <small id='clgErr' className='form-text text-danger'>
+                          {errors.clgID}
+                        </small>
+                      )}
+                    </div>
+                  ) : (
+                    <div className='input-group col-lg-12 mb-4'>
+                      <div className='input-group-prepend'>
+                        <span className='input-group-text bg-white px-4 border-md border-right-0'>
+                          <i className='fa fa-black-tie text-muted'></i>
+                        </span>
+                      </div>
+                      <input
+                        id='college'
+                        type='college'
+                        name='college'
+                        placeholder='College Name'
+                        className='form-control bg-white border-left-0 border-md'
+                        onChange={(e) => setCollege(e.target.value)}
+                        value={college === "College name" ? "" : college}
+                        required
+                      />
+                      <span className='asterisk_input'> </span>
+                      {errors && (
+                        <small id='clgErr' className='form-text text-danger'>
+                          {errors.college}
+                        </small>
+                      )}
+                    </div>
+                  ))}
 
                 <div className='input-group col-lg-6 mb-4'>
                   <div className='input-group-prepend'>
