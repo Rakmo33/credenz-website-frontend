@@ -45,19 +45,21 @@ function EventModal(props) {
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
 
-    console.log(decoded.clgname==="PICT");
-    if ((decoded.clgname !== "PICT" || !decoded.ispict || !checkPICT(decoded.clgname)) && decoded.ieee) {
+    console.log(decoded);
+
+    if ((decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) && decoded.ieee) {
       $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "hidden" });
     } else if (
-      (decoded.clgname !== "PICT" || !decoded.ispict || !checkPICT(decoded.clgname)) &&
+      //console.log()
+      (decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) &&
       !decoded.ieee
     ) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "visible" });
       $(".pict").css({ visibility: "hidden" });
-    } else if (decoded.ispict || decoded.clgname === "PICT" || checkPICT(decoded.clgname)) {
+    } else if (decoded.clgname === "PICT" || checkPICT(decoded.clgname) || (decoded.ispict!==undefined?decoded.pict:false)) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "visible" });
