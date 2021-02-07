@@ -73,6 +73,8 @@ function ModalBody({ handleClose, type, event, event_info }) {
               localStorage.setItem("user", JSON.stringify(response.data));
 
               handleClose();
+              localStorage.removeItem("Cart");
+              localStorage.removeItem("Register");
               refreshPage();
               // const user = jwt(response.data["accessToken"]);
               // //console.log("JWT decode : " + JSON.stringify(user));
@@ -81,8 +83,9 @@ function ModalBody({ handleClose, type, event, event_info }) {
               // alert("Invalid login credentials!");
               setError("error invalid");
               setSpinner("form-group ");
+              localStorage.removeItem("Cart");
+              localStorage.removeItem("Register");
               localStorage.removeItem("user");
-
               setLogged(false);
             }
           });

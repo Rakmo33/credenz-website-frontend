@@ -37,6 +37,7 @@ const Ipay = (props) => {
 
   useEffect(() => {
     let user = "";
+
     if (localStorage.getItem("user")) {
       user = jwt(localStorage.getItem("user"));
     }
@@ -70,46 +71,7 @@ const Ipay = (props) => {
         // this.setState({ order_id: data.data.order.order_id });
       });
   }, []);
-  // let componentDidUpdate = ()  => {
-  //   window.addEventListener("message", this.ippopayHandler);
-  // }
-  // let componentDidMount = () => {
-  //   let user = "";
-  //   if (localStorage.getItem("user")) {
-  //     user = jwt(localStorage.getItem("user"));
-  //   }
-  //   const requestOptions = {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       username: localStorage.getItem("user")
-  //         ? JSON.stringify(user["username"]).replace(/"/g, "")
-  //         : "",
-  //       amount: this.props.sum,
-  //       email: localStorage.getItem("user")
-  //         ? JSON.stringify(user["email"]).replace(/"/g, "")
-  //         : "",
-  //       phoneno: localStorage.getItem("user")
-  //         ? JSON.stringify(user["phoneno"]).replace(/"/g, "")
-  //         : "",
-  //     }),
-  //   };
-
-  //   fetch(`${process.env.REACT_APP_API_URL}/payment`, requestOptions)
-  //     .then((response) => {
-  //       //alert(JSON.stringify(response))
-  //       return response.json();
-  //     })
-  //     .then((data) => {
-  //       //alert(JSON.stringify(data.data.order.order_id))
-  //       //alert("orderid" + data)
-  //       console.log(data);
-  //       this.setState({ order_id: data.data.order.order_id });
-  //     });
-
-  //   //          alert("orderid" + this.props.order_id)
-  // }
-
+  
   // render() {
   if (order_id !== "" || order_id !== undefined) {
     // console.log(order_id);
