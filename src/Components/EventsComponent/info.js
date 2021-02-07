@@ -10,12 +10,10 @@ export const info = [
 
     <p>
       <h3>Timings</h3> <br/>
-      <p>
       12-02-2020 , Friday : 10:00am to 7:00pm <br/>
       13-02-2020 , Saturday : 10:00am to 6:00pm <br/>
-      14-02-2020 , Sunday : 9:00am to 10:00am
+      14-02-2020 , Sunday : 9:00am to 11:00am
       </p>
-    </p>
 
 
     <h5>Registration Fees: </h5>
@@ -92,11 +90,9 @@ export const info = [
     
     <p>
       <h3>Timings</h3> <br/>
-      <p>
       12-02-2020 , Friday : 10:00am to 7:00pm <br/>
       13-02-2020 , Saturday : 10:00am to 6:00pm <br/>
       14-02-2020 , Sunday : 12:00pm to 2:00pm
-      </p>
     </p>
     
     <h5>Registration Fees: </h5>
@@ -170,10 +166,8 @@ export const info = [
 
     <p>
     <h3>Timings</h3> <br/>
-    <p>
     13-02-2020 , Saturday : 2:30pm to 5:15pm <br/>
     </p>
-  </p>
 
     <h5>Registration Fees: </h5>
     <ul>
@@ -248,10 +242,8 @@ export const info = [
 
     <p>
       <h3>Timings</h3> <br/>
-      <p>
       12-02-2020 , Friday : 10:00am to 7:00pm <br/>
       14-02-2020 , Sunday : 10:00am to 12:00pm
-      </p>
     </p>
 
     <h5>Registration Fees: </h5>
@@ -324,35 +316,9 @@ export const info = [
     </p>
 
     <p>
-      <h3>General Quiz</h3>
       <h3>Timings</h3> <br/>
-      <p>
-      13-02-2020 , Saturday : <br/> 
-      Round 1:  12:00 noon to 12:30 pm <br/>
-      Round 2: 1:30pm to 3:00 pm 
-      </p>
+      14-02-2020 , Sunday : 10:30am to 4:00pm
     </p>
-
-    <p>
-      <h3>Buisness Quiz</h3>
-      <h3>Timings</h3> <br/>
-      <p>
-      12-02-2020 , Friday : <br/> 
-      Round 1:  4:30pm to 5:00 pm <br/>
-      Round 2: 5:30pm to 7:00 pm 
-      </p>
-   </p>
-
-   <p>
-    <h3>Mela Quiz</h3>
-    <h3>Timings</h3> <br/>
-    <p>
-    14-02-2020 , Sunday : <br/> 
-    Round 1:  11:30am to 12:00 pm <br/>
-    Round 2: 1:00pm to 2:30 pm 
-    </p>
-  </p>
-
 
     <h5>Registration Fees: </h5>
     <ul>
@@ -564,14 +530,10 @@ export const info = [
        </p>
 
     <p>
-      <h3>Mela Quiz</h3>
       <h3>Timings</h3> <br/>
-      <p>
       12-02-2020, Friday : 10:00 am to 7:00pm <br/>
       13-02-2020, Saturday : 10:00am to 6:00pm <br/>
       14-02-2020 , Sunday : 2:00pm to 5:00pm <br/> 
-   
-      </p>
     </p>
 
 
@@ -650,6 +612,30 @@ export const info = [
      captained by a witty quiz master. Flex your IQ in a set of three quizzes,
       designed to be a battle of wits. <br />
 
+      <p>
+      <h3>General Quiz</h3>
+      <h3>Timings</h3> <br/>    
+      13-02-2020 , Saturday : <br/> 
+      Round 1:  12:00 noon to 12:30 pm <br/>
+      Round 2: 1:30pm to 3:00 pm 
+    </p>
+
+    <p>
+      <h3>Buisness Quiz</h3>
+      <h3>Timings</h3> <br/>
+      12-02-2020 , Friday : <br/> 
+      Round 1:  4:30pm to 5:00 pm <br/>
+      Round 2: 5:30pm to 7:00 pm 
+   </p>
+
+   <p>
+    <h3>Mela Quiz</h3>
+    <h3>Timings</h3> <br/>
+    14-02-2020 , Sunday : <br/> 
+    Round 1:  11:30am to 12:00 pm <br/>
+    Round 2: 1:00pm to 2:30 pm 
+  </p>
+
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
@@ -715,6 +701,13 @@ export const info = [
     An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online. If you think you have the flair to create such a site, WebWeaver is the competition for you! A perfect integration of technology and creativity will lead you to win this competition.
      <br />
     </p>
+
+    <p>
+    <h3>Timings</h3> <br/>
+    14-02-2020 , Sunday : 1:00pm to 4:00pm
+    </p>
+
+
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
@@ -785,6 +778,12 @@ export const info = [
     <br />
     Paper presentation is the perfect platform for undergraduate/postgraduate students to present technical papers with advanced perspectives while honing their skills of research and creating new dimensions of technology!
     </p>
+
+    <p>
+    <h3>Timings</h3> <br/>
+    14-02-2020 , Sunday : 1:00pm to 3:30pm
+    </p>
+   
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
