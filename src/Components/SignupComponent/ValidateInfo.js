@@ -33,9 +33,23 @@ export default function Validate(values) {
     errors.phone = "*Please enter valid phone number.";
   }
 
-  if (!values.clgname) {
+  if (!values.clg) {
     //errors.college = '*College name required.'
     errors.college = "";
+  }
+
+  if (values.clg === "other college" && values.clgName === "") {
+    errors.clg = "";
+  }
+
+  if (values.clg === "PICT" && !values.clgID) {
+    //errors.phone = '*Phone no required.'
+    errors.clgID = "";
+  } else if (
+    values.clg === "PICT" &&
+    !/^[ECI]2K(17|18|19|20)[0-9]{6}$/.test(values.clgID)
+  ) {
+    errors.clgID = "*Please enter valid registration ID.";
   }
 
   if (!values.password) {

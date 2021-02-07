@@ -1,6 +1,5 @@
 import * as React from "react";
 import './EyeDea20.css';
-import {useState, useEffect} from "react";
 
 function SvgEyeDea20({triggered}) {
   return (

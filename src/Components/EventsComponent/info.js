@@ -7,14 +7,26 @@ export const info = [
     info1: `<p>
     Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.   <br />
     </p>
+
+    <p>
+      <h3>Timings</h3> <br/>
+      12-02-2021 , Friday : 10:00am to 7:00pm <br/>
+      13-02-2021 , Saturday : 10:00am to 6:00pm <br/>
+      14-02-2021 , Sunday : 9:00am to 11:00am
+      </p>
+
+
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹60</span>&nbsp; for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹50</span>&nbsp; for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
   
@@ -78,13 +90,25 @@ export const info = [
     tagline: "Hone your problem-solving skills by decrypting complex questions",
     info1: `<p>
     A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
+    
+    <p>
+      <h3>Timings</h3> <br/>
+      12-02-2021 , Friday : 10:00am to 7:00pm <br/>
+      13-02-2021 , Saturday : 10:00am to 6:00pm <br/>
+      14-02-2021 , Sunday : 12:00pm to 2:00pm
+    </p>
+    
+    <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹60</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1)A maximum of 1 participant pursuing under-graduate program at their institution is allowed to participate. 
@@ -145,14 +169,23 @@ export const info = [
     info1: `<p>
     Get ready to paint virtual canvas with your creative and thoughtful designs! Come, digitalise your art and let your mouse be your brush.
     </p>
+
+    <p>
+    <h3>Timings</h3> <br/>
+    13-02-2021 , Saturday : 2:30pm to 5:15pm <br/>
+    </p>
+
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2:
       //ye last year ka que he iss saal ka badalna hoga
@@ -215,14 +248,24 @@ export const info = [
     <br />
     Prerequisites: Theoretical and practical knowledge in the field of digital electronics, electrical circuits and physics.
     </p>
+
+    <p>
+      <h3>Timings</h3> <br/>
+      12-02-2021 , Friday : 10:00am to 7:00pm <br/>
+      14-02-2021 , Sunday : 10:00am to 12:00pm
+    </p>
+
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) ) Participant can participate individually.
@@ -283,14 +326,23 @@ export const info = [
     help you grab a chance to win funding from the investors. So showcase your 
     ideas before a panel of best marketing professionals. 
     </p>
+
+    <p>
+      <h3>Timings</h3> <br/>
+      14-02-2021 , Sunday : 10:30am to 4:00pm
+    </p>
+
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹120</span> &nbsp;for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹100</span> &nbsp;for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) A maximum of three candidates per plan pursuing undergraduate/graduate/postgraduate 
@@ -364,12 +416,15 @@ export const info = [
         </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) Every Participating candidate should be pursuing Undergraduate/Graduate courses.
@@ -421,14 +476,25 @@ export const info = [
     <br/>
    Datawiz is a week-long machine learning competition hosted on Kaggle. The participants can form teams of up to 3 members and submit their predicted data values. The team with the highest accuracy on the leaderboard at the end of the week will be declared as winners.
    </p>
+
+   <p>
+   <h3>Timings</h3> <br/>
+   Round 1: 12th - 16th February 2021 <br/>
+   Round 2: 17th - 20th February 2021
+   </p>
+  
+
    <h5>Registration Fees: </h5>
    <ul>
-     <li>
+     <li class='nonMemberPrice'>
        <span>₹60</span>&nbsp;  for Non-IEEE members
      </li>
-     <li>
+     <li class='memberPrice'>
        <span>₹50</span>&nbsp;  for IEEE members
      </li>
+     <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1)Each team of students may consist of a maximum of 3 participants.
@@ -490,14 +556,26 @@ export const info = [
     Get ready to put your Grey Cells to work!
     
        </p>
+
+    <p>
+      <h3>Timings</h3> <br/>
+      12-02-2021, Friday : 10:00 am to 7:00pm <br/>
+      13-02-2021, Saturday : 10:00am to 6:00pm <br/>
+      14-02-2021 , Sunday : 2:00pm to 5:00pm <br/> 
+    </p>
+
+
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) Candidates pursuing an Undergraduate/graduate program at their institution will be allowed to participate. It will be an individual event.
@@ -520,7 +598,7 @@ export const info = [
 
 </p>`,
 
-    info4:`<p>
+    info4: `<p>
     1)There will be two rounds. 
     <br/>
     2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
@@ -533,8 +611,8 @@ export const info = [
     <strong>Winner :<strong/>&nbsp;3000/- <br/>
     <strong>1st Runner Up :<strong/>&nbsp;2000/- <br/>
     </p>`,
-    
-    info5:`<p className=' text-center'>
+
+    info5: `<p className=' text-center'>
 
     Saket Gupta &nbsp;
     <br />
@@ -565,14 +643,41 @@ export const info = [
      captained by a witty quiz master. Flex your IQ in a set of three quizzes,
       designed to be a battle of wits. <br />
 
+      <p>
+      <h3>General Quiz</h3>
+      <h3>Timings</h3> <br/>    
+      13-02-2021 , Saturday : <br/> 
+      Round 1:  12:00 noon to 12:30 pm <br/>
+      Round 2: 1:30pm to 3:00 pm 
+    </p>
+
+    <p>
+      <h3>Buisness Quiz</h3>
+      <h3>Timings</h3> <br/>
+      12-02-2021 , Friday : <br/> 
+      Round 1:  4:30pm to 5:00 pm <br/>
+      Round 2: 5:30pm to 7:00 pm 
+   </p>
+
+   <p>
+    <h3>Mela Quiz</h3>
+    <h3>Timings</h3> <br/>
+    14-02-2021 , Sunday : <br/> 
+    Round 1:  11:30am to 12:00 pm <br/>
+    Round 2: 1:00pm to 2:30 pm 
+  </p>
+
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1.General Quiz: It includes everything from robotics to politics. Test your GK!
@@ -630,14 +735,24 @@ export const info = [
     An aesthetically pleasing and user-friendly website is necessary to keep visitors engaged online. If you think you have the flair to create such a site, WebWeaver is the competition for you! A perfect integration of technology and creativity will lead you to win this competition.
      <br />
     </p>
+
+    <p>
+    <h3>Timings</h3> <br/>
+    14-02-2021 , Sunday : 1:00pm to 4:00pm
+    </p>
+
+
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
-        <span>₹60</span>&nbsp;  for Non-IEEE members
+      <li class='nonMemberPrice'>
+        <span >₹60</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) A team of maximum 2 is permissible for the event.
@@ -651,11 +766,7 @@ export const info = [
   </p>`,
     info3: `<p>
     1st ROUND: <br />
-    A problem statement shall be given to the participants online.
-    <br />
-    The problem statement shall be released approximately 20 days prior on the official website of Credenz '21.
-    <br />
-    The team should mail the files to webweaver.credenzlive@gmail.com in zip archive. (All files with understandable documentation.)
+    The problem statement for this year is Fictional universe. Fiction fanatics flaunt your development skills, creating a website on your favourite series anime, movies, books!
     <br/><br/>
     2nd ROUND:<br/>
     The second round shall be conducted during Credenz Live.<br/>
@@ -700,18 +811,29 @@ export const info = [
     <br />
     Paper presentation is the perfect platform for undergraduate/postgraduate students to present technical papers with advanced perspectives while honing their skills of research and creating new dimensions of technology!
     </p>
+
+    <p>
+    <h3>Timings</h3> <br/>
+    14-02-2021 , Sunday : 1:00pm to 3:30pm
+    </p>
+   
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹150</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
-        <span>₹120</span>&nbsp;  for IEEE members
+      <li class='memberPrice'>
+        <span >₹120</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
-    1) A team of maximum three candidates pursuing undergraduate/postgraduate program are allowed.
-    <br /> <br />
+    1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed. <br/>
+    2.Marking Scheme will be declared on the spot. <br/>
+    3.Research Papers sent after 10th February, 2021 11:59 PM won’t be accepted.
+    <br /> 
   </p>`,
     info3: `<p>
     1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.

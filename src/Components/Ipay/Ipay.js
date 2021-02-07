@@ -72,8 +72,9 @@ const Ipay = (props) => {
       .then((data) => {
         //alert(JSON.stringify(data.data.order.order_id))
         //alert("orderid" + data)
-        // console.log(data);
+      
         setOrder_id(data.data.order.order_id);
+        
         // this.setState({ order_id: data.data.order.order_id });
       });
   }, []);
