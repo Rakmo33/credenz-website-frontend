@@ -30,10 +30,13 @@ function EventModal(props) {
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
 
+    console.log(decoded);
     if (decoded.ieee) {
+      $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
     } else {
       $(".memberPrice").css({ visibility: "hidden" });
+      $(".nonMemberPrice").css({ visibility: "visible" });
     }
   }
 

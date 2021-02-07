@@ -21,6 +21,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [college, setCollege] = useState("null");
+  const [collegeName, setCollegeName] = useState("");
   const [clgID, setClgID] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
@@ -119,7 +120,8 @@ function Signup() {
     password: password,
     email: email,
     phoneno: phone,
-    clgname: college,
+    clg: college,
+    clgName: collegeName,
     clgID: clgID,
     passwordCheck: passwordCheck,
   };
@@ -342,7 +344,10 @@ function Signup() {
                     type='radio'
                     name='college'
                     //className='border-md border-left-0 pl-3'
-                    onChange={(e) => setCollege(e.target.value)}
+                    onChange={(e) => {
+                      setCollege(e.target.value);
+                      setCollegeName(e.target.value);
+                    }}
                     value={"PICT"}
                     required
                   />
@@ -362,8 +367,11 @@ function Signup() {
                     type='radio'
                     name='college'
                     //className='bg-white border-md border-left-0 pl-3'
-                    onChange={(e) => setCollege(e.target.value)}
-                    value={"College name"}
+                    onChange={(e) => {
+                      setCollege(e.target.value);
+                      setCollegeName(e.target.value);
+                    }}
+                    value={"other college"}
                     required
                   />
                   <label
@@ -413,8 +421,8 @@ function Signup() {
                         name='college'
                         placeholder='College Name'
                         className='form-control bg-white border-left-0 border-md'
-                        onChange={(e) => setCollege(e.target.value)}
-                        value={college === "College name" ? "" : college}
+                        value={collegeName}
+                        onChange={(e) => setCollegeName(e.target.value)}
                         required
                       />
                       <span className='asterisk_input'> </span>
@@ -470,7 +478,12 @@ function Signup() {
                   )}
                 </div>
 
-                <div className={spinner}>
+                <div
+                  className={spinner}
+                  onClick={() => {
+                    console.log(values);
+                    console.log(errors);
+                  }}>
                   <button
                     type='submit'
                     className='btn stylebtn btn-block py-2'
