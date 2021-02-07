@@ -10,9 +10,9 @@ export const info = [
 
     <p>
       <h3>Timings</h3> <br/>
-      12-02-2020 , Friday : 10:00am to 7:00pm <br/>
-      13-02-2020 , Saturday : 10:00am to 6:00pm <br/>
-      14-02-2020 , Sunday : 9:00am to 11:00am
+      12-02-2021 , Friday : 10:00am to 7:00pm <br/>
+      13-02-2021 , Saturday : 10:00am to 6:00pm <br/>
+      14-02-2021 , Sunday : 9:00am to 11:00am
       </p>
 
 
@@ -90,9 +90,9 @@ export const info = [
     
     <p>
       <h3>Timings</h3> <br/>
-      12-02-2020 , Friday : 10:00am to 7:00pm <br/>
-      13-02-2020 , Saturday : 10:00am to 6:00pm <br/>
-      14-02-2020 , Sunday : 12:00pm to 2:00pm
+      12-02-2021 , Friday : 10:00am to 7:00pm <br/>
+      13-02-2021 , Saturday : 10:00am to 6:00pm <br/>
+      14-02-2021 , Sunday : 12:00pm to 2:00pm
     </p>
     
     <h5>Registration Fees: </h5>
@@ -166,7 +166,7 @@ export const info = [
 
     <p>
     <h3>Timings</h3> <br/>
-    13-02-2020 , Saturday : 2:30pm to 5:15pm <br/>
+    13-02-2021 , Saturday : 2:30pm to 5:15pm <br/>
     </p>
 
     <h5>Registration Fees: </h5>
@@ -242,8 +242,8 @@ export const info = [
 
     <p>
       <h3>Timings</h3> <br/>
-      12-02-2020 , Friday : 10:00am to 7:00pm <br/>
-      14-02-2020 , Sunday : 10:00am to 12:00pm
+      12-02-2021 , Friday : 10:00am to 7:00pm <br/>
+      14-02-2021 , Sunday : 10:00am to 12:00pm
     </p>
 
     <h5>Registration Fees: </h5>
@@ -317,7 +317,7 @@ export const info = [
 
     <p>
       <h3>Timings</h3> <br/>
-      14-02-2020 , Sunday : 10:30am to 4:00pm
+      14-02-2021 , Sunday : 10:30am to 4:00pm
     </p>
 
     <h5>Registration Fees: </h5>
@@ -459,6 +459,13 @@ export const info = [
    Datawiz is a week-long machine learning competition hosted on Kaggle. The participants can form teams of up to 3 members and submit their predicted data values. The team with the highest accuracy on the leaderboard at the end of the week will be declared as winners.
    </p>
 
+   <p>
+   <h3>Timings</h3> <br/>
+   Round 1: 12th - 16th February 2021 <br/>
+   Round 2: 17th - 20th February 2021
+   </p>
+  
+
    <h5>Registration Fees: </h5>
    <ul>
      <li class='nonMemberPrice'>
@@ -531,9 +538,9 @@ export const info = [
 
     <p>
       <h3>Timings</h3> <br/>
-      12-02-2020, Friday : 10:00 am to 7:00pm <br/>
-      13-02-2020, Saturday : 10:00am to 6:00pm <br/>
-      14-02-2020 , Sunday : 2:00pm to 5:00pm <br/> 
+      12-02-2021, Friday : 10:00 am to 7:00pm <br/>
+      13-02-2021, Saturday : 10:00am to 6:00pm <br/>
+      14-02-2021 , Sunday : 2:00pm to 5:00pm <br/> 
     </p>
 
 
@@ -615,7 +622,7 @@ export const info = [
       <p>
       <h3>General Quiz</h3>
       <h3>Timings</h3> <br/>    
-      13-02-2020 , Saturday : <br/> 
+      13-02-2021 , Saturday : <br/> 
       Round 1:  12:00 noon to 12:30 pm <br/>
       Round 2: 1:30pm to 3:00 pm 
     </p>
@@ -623,7 +630,7 @@ export const info = [
     <p>
       <h3>Buisness Quiz</h3>
       <h3>Timings</h3> <br/>
-      12-02-2020 , Friday : <br/> 
+      12-02-2021 , Friday : <br/> 
       Round 1:  4:30pm to 5:00 pm <br/>
       Round 2: 5:30pm to 7:00 pm 
    </p>
@@ -631,7 +638,7 @@ export const info = [
    <p>
     <h3>Mela Quiz</h3>
     <h3>Timings</h3> <br/>
-    14-02-2020 , Sunday : <br/> 
+    14-02-2021 , Sunday : <br/> 
     Round 1:  11:30am to 12:00 pm <br/>
     Round 2: 1:00pm to 2:30 pm 
   </p>
@@ -704,7 +711,7 @@ export const info = [
 
     <p>
     <h3>Timings</h3> <br/>
-    14-02-2020 , Sunday : 1:00pm to 4:00pm
+    14-02-2021 , Sunday : 1:00pm to 4:00pm
     </p>
 
 
@@ -781,7 +788,7 @@ export const info = [
 
     <p>
     <h3>Timings</h3> <br/>
-    14-02-2020 , Sunday : 1:00pm to 3:30pm
+    14-02-2021 , Sunday : 1:00pm to 3:30pm
     </p>
    
     <h5>Registration Fees: </h5>
@@ -794,8 +801,10 @@ export const info = [
       </li>
     </ul>`,
     info2: `<p>
-    1) A team of maximum three candidates pursuing undergraduate/postgraduate program are allowed.
-    <br /> <br />
+    1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed. <br/>
+    2.Marking Scheme will be declared on the spot. <br/>
+    3.Research Papers sent after 10th February, 2021 11:59 PM won’t be accepted.
+    <br /> 
   </p>`,
     info3: `<p>
     1) Only soft copy i.e. a .pdf file, of the paper and abstract should be submitted. The paper should not exceed more than 6 pages.
