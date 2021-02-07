@@ -7,6 +7,17 @@ export const info = [
     info1: `<p>
     Put your logical acumen and coding expertise to the test as you clash with a round of perplexing MCQs followed by a set of time-bound coding challenges, carefully designed to assess your command over programming in the language of your choice- Python, C or C++. Showcase your technical proficiency as you have a go at competitive coding with plenty to learn and nothing to lose.   <br />
     </p>
+
+    <p>
+      <h3>Timings</h3> <br/>
+      <p>
+      12-02-2020 , Friday : 10:00am to 7:00pm <br/>
+      13-02-2020 , Saturday : 10:00am to 6:00pm <br/>
+      14-02-2020 , Sunday : 9:00am to 10:00am
+      </p>
+    </p>
+
+
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
@@ -78,6 +89,16 @@ export const info = [
     tagline: "Hone your problem-solving skills by decrypting complex questions",
     info1: `<p>
     A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
+    
+    <p>
+      <h3>Timings</h3> <br/>
+      <p>
+      12-02-2020 , Friday : 10:00am to 7:00pm <br/>
+      13-02-2020 , Saturday : 10:00am to 6:00pm <br/>
+      14-02-2020 , Sunday : 12:00pm to 2:00pm
+      </p>
+    </p>
+    
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
@@ -146,6 +167,14 @@ export const info = [
     info1: `<p>
     Get ready to paint virtual canvas with your creative and thoughtful designs! Come, digitalise your art and let your mouse be your brush.
     </p>
+
+    <p>
+    <h3>Timings</h3> <br/>
+    <p>
+    13-02-2020 , Saturday : 2:30pm to 5:15pm <br/>
+    </p>
+  </p>
+
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
@@ -216,6 +245,15 @@ export const info = [
     <br />
     Prerequisites: Theoretical and practical knowledge in the field of digital electronics, electrical circuits and physics.
     </p>
+
+    <p>
+      <h3>Timings</h3> <br/>
+      <p>
+      12-02-2020 , Friday : 10:00am to 7:00pm <br/>
+      14-02-2020 , Sunday : 10:00am to 12:00pm
+      </p>
+    </p>
+
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
@@ -284,6 +322,38 @@ export const info = [
     help you grab a chance to win funding from the investors. So showcase your 
     ideas before a panel of best marketing professionals. 
     </p>
+
+    <p>
+      <h3>General Quiz</h3>
+      <h3>Timings</h3> <br/>
+      <p>
+      13-02-2020 , Saturday : <br/> 
+      Round 1:  12:00 noon to 12:30 pm <br/>
+      Round 2: 1:30pm to 3:00 pm 
+      </p>
+    </p>
+
+    <p>
+      <h3>Buisness Quiz</h3>
+      <h3>Timings</h3> <br/>
+      <p>
+      12-02-2020 , Friday : <br/> 
+      Round 1:  4:30pm to 5:00 pm <br/>
+      Round 2: 5:30pm to 7:00 pm 
+      </p>
+   </p>
+
+   <p>
+    <h3>Mela Quiz</h3>
+    <h3>Timings</h3> <br/>
+    <p>
+    14-02-2020 , Sunday : <br/> 
+    Round 1:  11:30am to 12:00 pm <br/>
+    Round 2: 1:00pm to 2:30 pm 
+    </p>
+  </p>
+
+
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
@@ -422,6 +492,7 @@ export const info = [
     <br/>
    Datawiz is a week-long machine learning competition hosted on Kaggle. The participants can form teams of up to 3 members and submit their predicted data values. The team with the highest accuracy on the leaderboard at the end of the week will be declared as winners.
    </p>
+
    <h5>Registration Fees: </h5>
    <ul>
      <li class='nonMemberPrice'>
@@ -491,6 +562,19 @@ export const info = [
     Get ready to put your Grey Cells to work!
     
        </p>
+
+    <p>
+      <h3>Mela Quiz</h3>
+      <h3>Timings</h3> <br/>
+      <p>
+      12-02-2020, Friday : 10:00 am to 7:00pm <br/>
+      13-02-2020, Saturday : 10:00am to 6:00pm <br/>
+      14-02-2020 , Sunday : 2:00pm to 5:00pm <br/> 
+   
+      </p>
+    </p>
+
+
     <h5>Registration Fees: </h5>
     <ul>
       <li class='nonMemberPrice'>
