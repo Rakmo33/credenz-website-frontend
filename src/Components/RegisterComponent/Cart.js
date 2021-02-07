@@ -64,6 +64,7 @@ function Cart() {
 
       if (token !== undefined || token !== "") {
         var decoded = jwt_decode(token);
+        console.log(decoded);
         user = jwt(localStorage.getItem("user"));
        
       }
@@ -162,10 +163,10 @@ function Cart() {
     var decoded = jwt_decode(token);
     //alert(JSON.stringify(decoded))
 
-    // console.log(RegItems);
+    console.log(RegItems);
 
     RegItems.forEach((regItem) => {
-      //alert(JSON.stringify(regItem))
+      alert(JSON.stringify(regItem))
       //axios
       //console.log(regItem.team)
 
@@ -183,7 +184,7 @@ function Cart() {
             headers: { authorization: `Bearer ${accessToken}` },
           })
             .then((response) => {
-                // alert("insingle : " + JSON.stringify(response.data))
+                alert("insingle : " + JSON.stringify(response.data))
               console.log("insingle : " + JSON.stringify(response.data));
             })
             .catch((error) => {
@@ -323,8 +324,8 @@ function Cart() {
                           {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>*/}
-                       {decoded.clgname==='PICT' ? 
-                       <button onClick={Register} type='button' className='btn btn-info'>
+                       {decoded.ispict === true ? 
+                       <button onClick={()=>{Register()}} type='button' className='btn btn-info'>
                           Free Registeration for PICTians!
                         </button> :
                          <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser}/>} 

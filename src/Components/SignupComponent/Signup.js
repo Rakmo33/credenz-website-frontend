@@ -50,12 +50,14 @@ function Signup() {
             password: password,
             email: email,
             phoneno: phone,
+            ieee : member === "IEEE" ? true : false,
+            isPict: college === "PICT" ? true : false,
             clgname: college,
             clgID: clgID,
           })
           .then(function (response) {
             // //console.log(response);
-            // //console.log(response.data);
+            console.log(response.data);
             // const msg = response.data["accessToken"];
             localStorage.setItem("user", JSON.stringify(response.data));
             // //console.log(msg);
