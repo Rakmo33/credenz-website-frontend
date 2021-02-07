@@ -31,12 +31,21 @@ function EventModal(props) {
     var decoded = jwt_decode(token);
 
     console.log(decoded);
-    if (decoded.ieee) {
+    if ((decoded.clgname !== "PICT" || !decoded.ispict) && decoded.ieee) {
       $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
-    } else {
+      $(".pict").css({ visibility: "hidden" });
+    } else if (
+      (decoded.clgname !== "PICT" || !decoded.ispict) &&
+      !decoded.ieee
+    ) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "visible" });
+      $(".pict").css({ visibility: "hidden" });
+    } else if (decoded.ispict || decoded.clgname === "PICT") {
+      $(".memberPrice").css({ visibility: "hidden" });
+      $(".nonMemberPrice").css({ visibility: "hidden" });
+      $(".pict").css({ visibility: "visible" });
     }
   }
 
