@@ -6,6 +6,21 @@ import jwt from "jwt-decode";
 import $ from "jquery";
 import "./eventmodal.css";
 
+function checkPICT(college) {
+
+  if(college==="PICT" || college==="pict" || college==="Pune Institute of Computer Technology" 
+  || college==="P.I.C.T" || "PICT, pune") {
+    return true;
+  }
+
+  if(college.includes("PICT") || college.includes("Pune Institite of Computer Technology")) {
+    return true;
+  }
+
+  return false;
+}
+
+
 function EventModal(props) {
   let currentInfo = props.info;
   let currentTab = currentInfo.info1;
@@ -30,19 +45,19 @@ function EventModal(props) {
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
 
-    console.log(decoded);
-    if ((decoded.clgname !== "PICT" || !decoded.ispict) && decoded.ieee) {
+    console.log(decoded.clgname==="PICT");
+    if ((decoded.clgname !== "PICT" || !decoded.ispict || !checkPICT(decoded.clgname)) && decoded.ieee) {
       $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "hidden" });
     } else if (
-      (decoded.clgname !== "PICT" || !decoded.ispict) &&
+      (decoded.clgname !== "PICT" || !decoded.ispict || !checkPICT(decoded.clgname)) &&
       !decoded.ieee
     ) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "visible" });
       $(".pict").css({ visibility: "hidden" });
-    } else if (decoded.ispict || decoded.clgname === "PICT") {
+    } else if (decoded.ispict || decoded.clgname === "PICT" || checkPICT(decoded.clgname)) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "visible" });

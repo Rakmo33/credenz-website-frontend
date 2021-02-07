@@ -55,6 +55,20 @@ function Cart() {
     }
   };
 
+  function checkPICT(college) {
+
+    if(college==="PICT" || college==="pict" || college==="Pune Institute of Computer Technology" 
+    || college==="P.I.C.T" || "PICT, pune") {
+      return true;
+    }
+
+    if(college.includes("PICT") || college.includes("Pune Institite of Computer Technology")) {
+      return true;
+    }
+
+    return false;
+  }
+
   //get  current user to check if it is ieee member
 
 
@@ -254,7 +268,7 @@ function Cart() {
         <SideEventsButton />
         <div className='regPage'>
           <div className='regPageVector'>
-            {pay && (
+            {/*pay && (
               <div className='responsiveTable' style={{ order: 2 }}>
                 <h1 className='reg-head'>Transaction details</h1>
                 <br />
@@ -269,7 +283,7 @@ function Cart() {
                     value={UPIname}
                     required
                   />    
-              </div> */}
+              </div> }
                 <div className='input-group col-lg-12 mb-4'>
                   <input
                     id='transactionNumber'
@@ -291,7 +305,7 @@ function Cart() {
                   </button>
                 </div>
               </div>
-            )}
+            )*/}
 
             {!pay && (
               <div>
@@ -324,9 +338,9 @@ function Cart() {
                           {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
                           Proceed to pay Rs {sum}
                         </button>*/}
-                       {decoded.ispict === true ? 
+                       {decoded.ispict === true || checkPICT(decoded.clgname) ? 
                        <button onClick={()=>{Register()}} type='button' className='btn btn-info'>
-                          Free Registeration for PICTians!
+                          Register(Free for PICTians)
                         </button> :
                          <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser} 
                          username={decoded.username}/>} 
@@ -357,7 +371,7 @@ function Cart() {
                   </table>
                 )}
 
-                {pay && (
+                {/*pay && (
                   <>
                     <img
                       src={require("../../assests/img/gpay.jpeg")}
@@ -368,7 +382,7 @@ function Cart() {
                       <h4>UPI ID :</h4> <h4>9834570868@okbizaxis</h4>
                     </div>
                   </>
-                )}
+                )*/}
               </div>
             </div>
           </div>
