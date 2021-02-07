@@ -30,10 +30,22 @@ function EventModal(props) {
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
 
-    if (decoded.ieee) {
+    console.log(decoded);
+    if ((decoded.clgname !== "PICT" || !decoded.ispict) && decoded.ieee) {
+      $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
-    } else {
+      $(".pict").css({ visibility: "hidden" });
+    } else if (
+      (decoded.clgname !== "PICT" || !decoded.ispict) &&
+      !decoded.ieee
+    ) {
       $(".memberPrice").css({ visibility: "hidden" });
+      $(".nonMemberPrice").css({ visibility: "visible" });
+      $(".pict").css({ visibility: "hidden" });
+    } else if (decoded.ispict || decoded.clgname === "PICT") {
+      $(".memberPrice").css({ visibility: "hidden" });
+      $(".nonMemberPrice").css({ visibility: "hidden" });
+      $(".pict").css({ visibility: "visible" });
     }
   }
 

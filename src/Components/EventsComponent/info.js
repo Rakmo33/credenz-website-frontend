@@ -24,6 +24,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹50</span>&nbsp; for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
   
@@ -103,6 +106,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1)A maximum of 1 participant pursuing under-graduate program at their institution is allowed to participate. 
@@ -177,6 +183,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2:
       //ye last year ka que he iss saal ka badalna hoga
@@ -254,6 +263,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) ) Participant can participate individually.
@@ -328,6 +340,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹100</span> &nbsp;for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) A maximum of three candidates per plan pursuing undergraduate/graduate/postgraduate 
@@ -407,6 +422,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) Every Participating candidate should be pursuing Undergraduate/Graduate courses.
@@ -467,6 +485,9 @@ export const info = [
      <li class='memberPrice'>
        <span>₹50</span>&nbsp;  for IEEE members
      </li>
+     <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1)Each team of students may consist of a maximum of 3 participants.
@@ -545,6 +566,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) Candidates pursuing an Undergraduate/graduate program at their institution will be allowed to participate. It will be an individual event.
@@ -644,6 +668,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1.General Quiz: It includes everything from robotics to politics. Test your GK!
@@ -716,6 +743,9 @@ export const info = [
       <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) A team of maximum 2 is permissible for the event.
@@ -729,11 +759,7 @@ export const info = [
   </p>`,
     info3: `<p>
     1st ROUND: <br />
-    A problem statement shall be given to the participants online.
-    <br />
-    The problem statement shall be released approximately 20 days prior on the official website of Credenz '21.
-    <br />
-    The team should mail the files to webweaver.credenzlive@gmail.com in zip archive. (All files with understandable documentation.)
+    The problem statement for this year is Fictional universe. Fiction fanatics flaunt your development skills, creating a website on your favourite series anime, movies, books!
     <br/><br/>
     2nd ROUND:<br/>
     The second round shall be conducted during Credenz Live.<br/>
@@ -792,6 +818,9 @@ export const info = [
       <li class='memberPrice'>
         <span >₹120</span>&nbsp;  for IEEE members
       </li>
+      <li class='pict'>
+        <span>₹0</span>&nbsp; for PICT students
+       </li>
     </ul>`,
     info2: `<p>
     1) A team of maximum three candidates pursuing undergraduate/postgraduate program are allowed.
