@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
+import $ from "jquery";
 import "./eventmodal.css";
 
 function EventModal(props) {
@@ -23,6 +24,18 @@ function EventModal(props) {
 
     tabs[index - 1].classList.add("activeTabButton");
   };
+
+  if (localStorage.getItem("user")) {
+    const token = localStorage.getItem("user");
+    const accessToken = JSON.parse(token).accessToken;
+    var decoded = jwt_decode(token);
+
+    if (decoded.ieee) {
+      $(".nonMemberPrice").css({ visibility: "hidden" });
+    } else {
+      $(".memberPrice").css({ visibility: "hidden" });
+    }
+  }
 
   const tabSwitchHandler = (tabNumber) => {
     setTab(tabNumber);
@@ -206,18 +219,18 @@ function EventModal(props) {
         <div></div>
       )}
 
-      {/*<button
+      {
+        /*<button
         className='regNowBtn'
         onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>
         <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
         Add to Cart
       </button>*/
-      //alert(currentInfo.title)
-    }
-      
-     
+        //alert(currentInfo.title)
+      }
 
-      { !props.teams(currentInfo.title) && currentInfo.title!=='Network Treasure Hunt' ? (
+      {!props.teams(currentInfo.title) &&
+      currentInfo.title !== "Network Treasure Hunt" ? (
         <button
           className='regNowBtn'
           onClick={() =>
@@ -233,26 +246,26 @@ function EventModal(props) {
           <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
           Add to Cart
         </button>
-      ) : (
-
-       currentInfo.title==='Network Treasure Hunt' ? 
+      ) : currentInfo.title === "Network Treasure Hunt" ? (
         /*<Link
           style={{ textAlign: "center" }}
           to='https://nth.credenz.in/'>*/
-            <button className='regNowBtn'>
-                <a style={{color: 'white'}} href='https://nth.credenz.in'>Head over to the NTH website to register</a>
-            </button> 
+        <button className='regNowBtn'>
+          <a style={{ color: "white" }} href='https://nth.credenz.in'>
+            Head over to the NTH website to register
+          </a>
+        </button>
+      ) : (
         /*</Link>*/
 
-        :
         <Link
           style={{ textAlign: "center" }}
           to={`/newreg/${currentInfo.title}`}>
-            <button className='regNowBtn'>
+          <button className='regNowBtn'>
             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-              Add to Cart
+            Add to Cart
           </button>
-        </Link> 
+        </Link>
       )}
     </div>
   );

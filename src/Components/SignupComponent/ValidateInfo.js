@@ -38,6 +38,13 @@ export default function Validate(values) {
     errors.college = "";
   }
 
+  if (!values.clgID) {
+    //errors.phone = '*Phone no required.'
+    errors.clgID = "";
+  } else if (!/^[ECI]2K(17|18|19|20)[0-9]{6}$/.test(values.clgID)) {
+    errors.clgID = "*Please enter valid registration ID.";
+  }
+
   if (!values.password) {
     errors.password = "";
   } else if (values.password !== values.passwordCheck) {

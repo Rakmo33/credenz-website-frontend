@@ -9,10 +9,10 @@ export const info = [
     </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹60</span>&nbsp; for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹50</span>&nbsp; for IEEE members
       </li>
     </ul>`,
@@ -78,11 +78,12 @@ export const info = [
     tagline: "Hone your problem-solving skills by decrypting complex questions",
     info1: `<p>
     A coding competition to test your compilation of the combinations of algorithms and conceptual understanding of the programming languages C/C++. Combine logic and agility to decipher given patterns and code to decode these sequences to find the final answer.
+    <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹60</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
@@ -147,10 +148,10 @@ export const info = [
     </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
@@ -217,10 +218,10 @@ export const info = [
     </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
@@ -285,10 +286,10 @@ export const info = [
     </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹120</span> &nbsp;for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹100</span> &nbsp;for IEEE members
       </li>
     </ul>`,
@@ -364,10 +365,10 @@ export const info = [
         </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
@@ -423,10 +424,10 @@ export const info = [
    </p>
    <h5>Registration Fees: </h5>
    <ul>
-     <li>
+     <li class='nonMemberPrice'>
        <span>₹60</span>&nbsp;  for Non-IEEE members
      </li>
-     <li>
+     <li class='memberPrice'>
        <span>₹50</span>&nbsp;  for IEEE members
      </li>
     </ul>`,
@@ -492,10 +493,10 @@ export const info = [
        </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
@@ -520,7 +521,7 @@ export const info = [
 
 </p>`,
 
-    info4:`<p>
+    info4: `<p>
     1)There will be two rounds. 
     <br/>
     2)You need to qualify the threshold score to get into the next round. The threshold will be decided based upon the performance of all the teams.
@@ -533,8 +534,8 @@ export const info = [
     <strong>Winner :<strong/>&nbsp;3000/- <br/>
     <strong>1st Runner Up :<strong/>&nbsp;2000/- <br/>
     </p>`,
-    
-    info5:`<p className=' text-center'>
+
+    info5: `<p className=' text-center'>
 
     Saket Gupta &nbsp;
     <br />
@@ -567,10 +568,10 @@ export const info = [
 
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
@@ -632,10 +633,10 @@ export const info = [
     </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
-        <span>₹60</span>&nbsp;  for Non-IEEE members
+      <li class='nonMemberPrice'>
+        <span >₹60</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
+      <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
@@ -702,11 +703,11 @@ export const info = [
     </p>
     <h5>Registration Fees: </h5>
     <ul>
-      <li>
+      <li class='nonMemberPrice'>
         <span>₹150</span>&nbsp;  for Non-IEEE members
       </li>
-      <li>
-        <span>₹120</span>&nbsp;  for IEEE members
+      <li class='memberPrice'>
+        <span >₹120</span>&nbsp;  for IEEE members
       </li>
     </ul>`,
     info2: `<p>
