@@ -334,13 +334,15 @@ export const info = [
     program at their institution will be allowed per team.
     <br /> <br />
     2) Proposed business plan should not be in violation of any intellectual property rights.
+    <br/><br/>
+    3) Proposed business plan should be submitted by 10th February 2021
   </p>`,
     info3: `<p>
-    1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com
+    1) At stage 1, the soft copy of the abstract (summary) should be submitted to pisb.bplan21@gmail.com by 10th February 2021.
   <br />
   2) The Soft copy should be a .pdf file.
   <br />
-  3)The Judges will do  Evaluation, and 7 teams will compete in the next stage.
+  3)The top 7 teams will compete in the next stage.
     <br />
     4) Each team will be given 12 minutes in the final round to present their B-PLAN in front of a 
     panel of judges and audience. A warning bell will be given at 10 minutes and a final 2 minutes thereafter. 
