@@ -17,6 +17,7 @@ function Cart() {
   const [TransacID, setTransacID] = useState("");
   const [currentUser, setCurrentUser] = useState("");
   const [order_id, setorder_id] = useState("");
+  //const [clear, setClear] = useState();
   /*
   useEffect(() => {
     setorder_id(getOrderID)
@@ -55,6 +56,20 @@ function Cart() {
     }
   };
 
+  function checkPICT(college) {
+
+    if(college==="PICT" || college==="pict" || college==="Pune Institute of Computer Technology" 
+    || college==="P.I.C.T" || "PICT, pune") {
+      return true;
+    }
+
+    if(college.includes("PICT") || college.includes("Pune Institite of Computer Technology")) {
+      return true;
+    }
+
+    return false;
+  }
+
   //get  current user to check if it is ieee member
 
 
@@ -92,6 +107,7 @@ function Cart() {
   function clearCart(event) {
     localStorage.removeItem("Cart");
     localStorage.removeItem("Register");
+    
     window.location.reload(false);
   }
 
@@ -166,7 +182,7 @@ function Cart() {
     console.log(RegItems);
 
     RegItems.forEach((regItem) => {
-      alert(JSON.stringify(regItem))
+      //alert(JSON.stringify(regItem))
       //axios
       //console.log(regItem.team)
 
@@ -184,11 +200,11 @@ function Cart() {
             headers: { authorization: `Bearer ${accessToken}` },
           })
             .then((response) => {
-                alert("insingle : " + JSON.stringify(response.data))
+                //alert("insingle : " + JSON.stringify(response.data))
               console.log("insingle : " + JSON.stringify(response.data));
             })
             .catch((error) => {
-              alert("Error!" + error); //request fails with 500
+              //alert("Error!" + error); //request fails with 500
             });
         }
       } else {
@@ -254,7 +270,7 @@ function Cart() {
         <SideEventsButton />
         <div className='regPage'>
           <div className='regPageVector'>
-            {pay && (
+            {/*pay && (
               <div className='responsiveTable' style={{ order: 2 }}>
                 <h1 className='reg-head'>Transaction details</h1>
                 <br />
@@ -269,7 +285,7 @@ function Cart() {
                     value={UPIname}
                     required
                   />    
-              </div> */}
+              </div> }
                 <div className='input-group col-lg-12 mb-4'>
                   <input
                     id='transactionNumber'
@@ -291,7 +307,7 @@ function Cart() {
                   </button>
                 </div>
               </div>
-            )}
+            )*/}
 
             {!pay && (
               <div>
@@ -318,22 +334,20 @@ function Cart() {
                     <tbody>
                       {eventList}
                       <tr></tr>
-                      <tr>
+                     {localStorage.getItem("Cart")!=="" && <tr>
                         <td></td>
                         <td >
-                          {/*<button onClick={payment} type='button' className='btn btn-outline-info'>
-                          Proceed to pay Rs {sum}
-                        </button>*/}
-                       {decoded.ispict === true ? 
-                       <button onClick={()=>{Register()}} type='button' className='btn btn-info'>
-                          Free Registeration for PICTians!
+                         
+                      {decoded.ispict === true || checkPICT(decoded.clgname) ? <button onClick={()=>{Register()}} type='button' className='btn btn-info'>
+                          Register(Free for PICTians)
                         </button> :
                          <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser} 
-                         username={decoded.username}/>} 
+                         username={decoded.username}/> }
+                           
                         </td>
-                        <td></td>
-                      </tr>
-                      <tr>
+                      <td></td>
+                      </tr> }
+                      {localStorage.getItem("Cart")!=="" && <tr>
                         <td></td>
                         <td>
                           <button
@@ -344,20 +358,21 @@ function Cart() {
                           </button>
                         </td>
                         <td></td>
-                      </tr>
+                      </tr>}
+                      { !checkPICT(decoded.clgname) || decoded.ispict ?
                       <tr>
                         <td></td>
-                        <td>
+                         <td>
                           After clicking on proceed to pay the payment will be requested  
                           under the name of "FOLOOSI TECHNOLOGIES PVT LTD", we request you to accept that and proceed further. 
                         </td>
                         <td></td>
-                      </tr>
+                      </tr> : null }
                     </tbody>
                   </table>
                 )}
 
-                {pay && (
+                {/*pay && (
                   <>
                     <img
                       src={require("../../assests/img/gpay.jpeg")}
@@ -368,7 +383,7 @@ function Cart() {
                       <h4>UPI ID :</h4> <h4>9834570868@okbizaxis</h4>
                     </div>
                   </>
-                )}
+                )*/}
               </div>
             </div>
           </div>
