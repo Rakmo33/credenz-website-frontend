@@ -47,15 +47,32 @@ function EventModal(props) {
 
     console.log(decoded);
 
+    if(checkPICT(decoded.clgname) || decoded.ispict) {
+      $(".memberPrice").css({ visibility: "hidden" });
+      $(".nonMemberPrice").css({ visibility: "hidden" });
+      $(".pict").css({ visibility: "visible" });
+    }else if(decoded.ieee) {
+      $(".memberPrice").css({ visibility: "visible" });
+      $(".nonMemberPrice").css({ visibility: "hidden" });
+      $(".pict").css({ visibility: "hidden" });
+    }else {
+      $(".memberPrice").css({ visibility: "hidden" });
+      $(".nonMemberPrice").css({ visibility: "visible" });
+      $(".pict").css({ visibility: "hidden" });
+
+    }
+
+    /*
     if ((decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) && decoded.ieee) {
       $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "hidden" });
     } else if (
-      //console.log()
+    
       (decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) &&
       !decoded.ieee
     ) {
+      console.log("else if")
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "visible" });
       $(".pict").css({ visibility: "hidden" });
@@ -63,7 +80,7 @@ function EventModal(props) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "visible" });
-    }
+    }*/
   }
 
   const tabSwitchHandler = (tabNumber) => {

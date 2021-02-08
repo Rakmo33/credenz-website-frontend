@@ -165,15 +165,6 @@ function Cart() {
   function Register() {
     // alert("Registered Succesfully! Go to profile page to check!");
     let RegItems = JSON.parse(localStorage.getItem("Register"));
-    // let RegItems1 = localStorage.getItem("Register").split(",");
-
-    // alert(JSON.stringify(RegItems));
-    //alert(typeof(RegItems))
-
-    /*
-    API call
-    */
-
     const token = localStorage.getItem("user");
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
@@ -186,28 +177,50 @@ function Cart() {
       //axios
       //console.log(regItem.team)
 
+      //console.log("")
       if (regItem.team === "single") {
+
+        //alert("single")
         if (regItem.username === decoded.username) {
+          //alert("username is equal")
+          //alert()
+          
           axios({
             method: "post",
-            url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
-              getUsername(regItem.event)[0]
-            }`,
-            data: {
-              trans_id: TransacID,
-              approved: false,
+            url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${getUsername(regItem.event)[0]}`,
+            
+            headers: { 
+              authorization: `Bearer ${accessToken}`,
+              'Content-Type': 'application/json;charset=UTF-8',
+              "Access-Control-Allow-Origin": "*", 
             },
-            headers: { authorization: `Bearer ${accessToken}` },
           })
             .then((response) => {
                 //alert("insingle : " + JSON.stringify(response.data))
               console.log("insingle : " + JSON.stringify(response.data));
+              clearCart();
             })
             .catch((error) => {
               //alert("Error!" + error); //request fails with 500
             });
+
+            /*const requestOptions = {
+              method: "POST",
+              headers: { "Content-Type": "application/json", authorization: `Bearer ${accessToken}` },
+            };
+
+            fetch(`${process.env.REACT_APP_API_URL}/${decoded.username}/${getUsername(regItem.event)[0]}`, requestOptions)
+              .then((response) => {
+                alert(response)
+                return response.json();
+              })
+              .then((data) => {
+                
+              });*/
+
         }
       } else {
+        alert("team")
         var players = [];
         let count = 1;
 
@@ -226,7 +239,7 @@ function Cart() {
 
         // console.log(regItem.username + " " + decoded.username);
         // alert(regItem.event);
-
+        console.log("inside team")
         // if (regItem.username === decoded.username) {
         axios
           .post(
@@ -237,8 +250,8 @@ function Cart() {
               event_name: getUsername(regItem.event)[0],
               team_username: regItem.teamName,
               no_of_players: count,
-              trans_id: TransacID,
-              approved: true,
+              //trans_id: TransacID,
+              //approved: true,
             },
             {
               headers: {
@@ -249,6 +262,7 @@ function Cart() {
           .then((response) => {
             // alert("team :" + JSON.stringify(response.data));
             console.log("team :" + JSON.stringify(response.data));
+            clearCart();
             // alert("Error");
           })
           .catch((error) => {
@@ -259,8 +273,8 @@ function Cart() {
         //console.log("else");
       } //else
     });
-    setPay(true);
-    clearCart();
+    //setPay(true);
+    //clearCart();
   }
 
   if (localStorage.getItem("user")) {
@@ -270,45 +284,6 @@ function Cart() {
         <SideEventsButton />
         <div className='regPage'>
           <div className='regPageVector'>
-            {/*pay && (
-              <div className='responsiveTable' style={{ order: 2 }}>
-                <h1 className='reg-head'>Transaction details</h1>
-                <br />
-                {/* <div className='input-group col-lg-12 mb-4'>
-                  <input
-                    id='name'
-                    type='text'
-                    name='name'
-                    placeholder='Name of UPI holder'
-                    className='form-control bg-white border-md'
-                    onChange={(e) => setUPIname(e.target.value)}
-                    value={UPIname}
-                    required
-                  />    
-              </div> }
-                <div className='input-group col-lg-12 mb-4'>
-                  <input
-                    id='transactionNumber'
-                    type='text'
-                    name='phone'
-                    pattern='.{10,}'
-                    placeholder='Transaction ID'
-                    className='form-control bg-white border-md'
-                    onChange={(e) => setTransacID(e.target.value)}
-                    value={TransacID}
-                    required
-                  />
-                </div>
-                <div>
-                  <button type='submit' className='btn stylebtn btn-block py-2'>
-                    <span className='font-weight-bold'>
-                      Click here after payment to register
-                    </span>
-                  </button>
-                </div>
-              </div>
-            )*/}
-
             {!pay && (
               <div>
                 <h1 className='reg-head'>Your cart</h1>
@@ -334,11 +309,11 @@ function Cart() {
                     <tbody>
                       {eventList}
                       <tr></tr>
-                     {localStorage.getItem("Cart")!=="" && <tr>
+                     {(localStorage.getItem("Cart")!=="" && localStorage.getItem("Cart")!==null) && <tr>
                         <td></td>
                         <td >
                          
-                      {decoded.ispict === true || checkPICT(decoded.clgname) ? <button onClick={()=>{Register()}} type='button' className='btn btn-info'>
+                      {decoded.ispict === true || checkPICT(decoded.clgname) ? <button onClick={()=>Register()} type='button' className='btn btn-info'>
                           Register(Free for PICTians)
                         </button> :
                          <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser} 
@@ -347,7 +322,7 @@ function Cart() {
                         </td>
                       <td></td>
                       </tr> }
-                      {localStorage.getItem("Cart")!=="" && <tr>
+                      {(localStorage.getItem("Cart")!=="" && localStorage.getItem("Cart")!==null) && <tr>
                         <td></td>
                         <td>
                           <button
@@ -372,18 +347,7 @@ function Cart() {
                   </table>
                 )}
 
-                {/*pay && (
-                  <>
-                    <img
-                      src={require("../../assests/img/gpay.jpeg")}
-                      alt='gpay'
-                      width='350'
-                    />
-                    <div style={{ color: "white", margin: "10px" }}>
-                      <h4>UPI ID :</h4> <h4>9834570868@okbizaxis</h4>
-                    </div>
-                  </>
-                )*/}
+                
               </div>
             </div>
           </div>
