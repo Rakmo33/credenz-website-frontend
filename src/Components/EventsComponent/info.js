@@ -268,8 +268,9 @@ export const info = [
        </li>
     </ul>`,
     info2: `<p>
-    1) ) Participant can participate individually.
-    <br /> <br />
+
+    1) A maximum of 1 participant pursuing under-graduate program at their institution is allowed to participate.  
+      <br /> <br />
     2) Participants will be provided with credentials to join tinkercad for the 2nd round.
     <br /><br />
     3) Participants can use datasheets for the components they are using and are supposed to provide a link of the same.
@@ -443,7 +444,7 @@ export const info = [
     4) Concepts such as IPO, short selling and high frequency trading will be inculcated within the event.
      <br />
   </p>`,
-    info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.
+    info4: `<p>Top 3 participants with Highest Capital at the end of Day 2 will be declared as winners.
     <br/>
     <strong>Prizes</strong><br/>
     <strong>Winner :</strong>&nbsp;3000/- <br/>
@@ -504,12 +505,14 @@ export const info = [
     2)One account per participant
     <br /> <br />
     3)Signing In on Kaggle through Multiple accounts is prohibited.
+    <br /> <br />
+    4)Statement will be mailed with dataset on 12th February 2021.
 <br /> <br />
-    4)No private sharing outside teams.
+    5)No private sharing outside teams.
 <br /> <br />
-    5)Privately sharing code or data outside of teams is not permitted.
+    6)Privately sharing code or data outside of teams is not permitted.
 <br /> <br />
-    6)Results should be reproducible to be eligible for prizes.
+    7)Results should be reproducible to be eligible for prizes.
   </p>`,
     info3: `<p>
     Team Mergers: <br />
@@ -834,7 +837,7 @@ export const info = [
     info2: `<p>
     1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed. <br/>
     2.Marking Scheme will be declared on the spot. <br/>
-    3.Research Papers sent after 10th February, 2021 11:59 PM won’t be accepted.
+    3.Research Papers sent after 10th February, 2021 won’t be accepted.
     <br /> 
   </p>`,
     info3: `<p>

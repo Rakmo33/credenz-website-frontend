@@ -58,6 +58,8 @@ const Profile = () => {
             //     return obj.event_username;
             //   })
             // );
+
+            console.log(response.data);
             setEvents(response.data);
           })
           .catch((error) => {
