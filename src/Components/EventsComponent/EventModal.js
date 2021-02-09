@@ -97,6 +97,9 @@ function EventModal(props) {
     }*/
   }
 
+  let decodedclgname = decoded ? decoded.clgname : "";
+  let decodedispict = decoded ? decoded.clgname : "";
+
   const tabSwitchHandler = (tabNumber) => {
     setTab(tabNumber);
 
@@ -136,6 +139,81 @@ function EventModal(props) {
       setSelectedQuiz(tempSelectedQuiz);
       console.log(selectedQuiz);
     }
+  };
+
+  const callAddToCart = (
+    title,
+    cart,
+    setCart,
+    eventReg,
+    setEventReg,
+    selectedQuiz
+  ) => {
+    if (title === "Quiz") {
+      if (selectedQuiz[0]) {
+        if (
+          // pictian and playing for first time
+          (checkPICT(decodedclgname) || decodedispict) &&
+          !(
+            cartArray.includes("General Quiz") ||
+            props.checkIfRegistered("generalquiz")
+          ) &&
+          // non-pictian and not added to cart
+          !(checkPICT(decodedclgname) || decodedispict) &&
+          !cartArray.includes(currentInfo.title)
+        ) {
+        } else {
+          if (cartArray.includes("General Quiz"))
+            alert("General Quiz already added to cart!");
+          else alert("You have already registered for General Quiz!");
+
+          return;
+        }
+      }
+
+      if (selectedQuiz[1]) {
+        if (
+          // pictian and playing for first time
+          (checkPICT(decodedclgname) || decodedispict) &&
+          !(
+            cartArray.includes("MELA Quiz") ||
+            props.checkIfRegistered("melaquiz")
+          ) &&
+          // non-pictian and not added to cart
+          !(checkPICT(decodedclgname) || decodedispict) &&
+          !cartArray.includes(currentInfo.title)
+        ) {
+        } else {
+          if (cartArray.includes("MELA Quiz"))
+            alert("MELA Quiz already added to cart!");
+          else alert("You have already registered for MELA Quiz!");
+
+          return;
+        }
+      }
+
+      if (selectedQuiz[2]) {
+        if (
+          // pictian and playing for first time
+          (checkPICT(decodedclgname) || decodedispict) &&
+          !(
+            cartArray.includes("BizTech Quiz") ||
+            props.checkIfRegistered("biztechquiz")
+          ) &&
+          // non-pictian and not added to cart
+          !(checkPICT(decodedclgname) || decodedispict) &&
+          !cartArray.includes(currentInfo.title)
+        ) {
+        } else {
+          if (cartArray.includes("BizTech Quiz"))
+            alert("BizTech Quiz already added to cart!");
+          else alert("You have already registered for BizTech Quiz!");
+
+          return;
+        }
+      }
+    }
+    props.addToCart(title, cart, setCart, eventReg, setEventReg, selectedQuiz);
   };
 
   return (
@@ -291,12 +369,17 @@ function EventModal(props) {
 
       {!props.teams(currentInfo.title) &&
       currentInfo.title !== "Network Treasure Hunt" ? (
-        !cartArray.includes(currentInfo.title) &&
-        !props.checkIfRegistered(currentInfo.event_username) ? (
+        ((checkPICT(decodedclgname) || decodedispict) &&
+          !(
+            cartArray.includes(currentInfo.title) ||
+            props.checkIfRegistered(currentInfo.event_username)
+          )) ||
+        (!(checkPICT(decodedclgname) || decodedispict) &&
+          !cartArray.includes(currentInfo.title)) ? (
           <button
             className='regNowBtn'
             onClick={() =>
-              props.addToCart(
+              callAddToCart(
                 currentInfo.title,
                 props.cart,
                 props.setCart,
@@ -311,13 +394,15 @@ function EventModal(props) {
         ) : (
           <button
             className='regNowBtn'
+            disabled
             onClick={() => {
               return;
             }}>
             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-            {props.checkIfRegistered(currentInfo.event_username)
-              ? "Already Registered!"
-              : "Event added!"}
+            {(checkPICT(decodedclgname) || decodedispict) &&
+            props.checkIfRegistered(currentInfo.event_username)
+              ? "Registered!"
+              : "Event added to cart!"}
           </button>
         )
       ) : currentInfo.title === "Network Treasure Hunt" ? (
@@ -329,9 +414,14 @@ function EventModal(props) {
             Head over to the NTH website to register
           </a>
         </button>
-      ) : (
-        /*</Link>*/
-
+      ) : /*</Link>*/
+      ((checkPICT(decodedclgname) || decodedispict) &&
+          !(
+            cartArray.includes(currentInfo.title) ||
+            props.checkIfRegistered(currentInfo.event_username)
+          )) ||
+        (!(checkPICT(decodedclgname) || decodedispict) &&
+          !cartArray.includes(currentInfo.title)) ? (
         <Link
           style={{ textAlign: "center" }}
           to={`/newreg/${currentInfo.title}`}>
@@ -340,6 +430,14 @@ function EventModal(props) {
             Add to Cart
           </button>
         </Link>
+      ) : (
+        <button disabled className='regNowBtn'>
+          <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+          {(checkPICT(decodedclgname) || decodedispict) &&
+          props.checkIfRegistered(currentInfo.event_username)
+            ? "Registered!"
+            : "Event added to cart!"}
+        </button>
       )}
     </div>
   );

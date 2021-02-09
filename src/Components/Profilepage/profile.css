@@ -223,6 +223,7 @@
 .profilepage .container .eve table {
   margin: auto;
   background-color: #0c3264;
+  pointer-events: none;
 }
 
 .profilepage .container .eve table tbody {
@@ -237,8 +238,8 @@
 .profilepage .container .eve table tr {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 4fr;
-      grid-template-columns: 1fr 4fr;
+  -ms-grid-columns: 1fr 2fr 2fr;
+      grid-template-columns: 1fr 2fr 2fr;
   border-radius: 10px;
 }
 

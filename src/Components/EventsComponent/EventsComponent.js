@@ -151,7 +151,7 @@ const Events = (props) => {
           if (selectedQuiz[0]) {
             let singleRegObject = {
               team: "single",
-              event: "Quiz",
+              event: "General Quiz",
               username: localStorage.getItem("user")
                 ? JSON.stringify(user["username"]).replace(/"/g, "")
                 : "",
@@ -165,7 +165,7 @@ const Events = (props) => {
           if (selectedQuiz[1]) {
             let singleRegObject = {
               team: "single",
-              event: "Quiz",
+              event: "MELA Quiz",
               username: localStorage.getItem("user")
                 ? JSON.stringify(user["username"]).replace(/"/g, "")
                 : "",
@@ -179,7 +179,7 @@ const Events = (props) => {
           if (selectedQuiz[2]) {
             let singleRegObject = {
               team: "single",
-              event: "Quiz",
+              event: "BizTech Quiz",
               username: localStorage.getItem("user")
                 ? JSON.stringify(user["username"]).replace(/"/g, "")
                 : "",

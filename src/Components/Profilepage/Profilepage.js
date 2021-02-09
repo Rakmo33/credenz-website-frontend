@@ -35,6 +35,41 @@ const Profile = () => {
 
   let user = "";
 
+  function findUsername(event_username) {
+    switch (event_username) {
+      case "clash":
+        return "Clash";
+      case "rc":
+        return "Reverse Coding";
+      case "pixelate":
+        return "Pixelate";
+      case "cretronix":
+        return "Cretronix";
+      case "bplan":
+        return "Bplan";
+      case "wallstreet":
+        return "Wallstreet";
+      case "datawiz":
+        return "Datawiz";
+      case "enigma":
+        return "Enigma";
+      case "generalquiz":
+        return "General Quiz";
+      case "biztechquiz":
+        return "BizTech Quiz";
+      case "melaquiz":
+        return "MELA Quiz";
+      case "webweaver":
+        return "Webweaver";
+      case "paperpresentation":
+        return "Paper Presentation";
+      case "nth":
+        return "Network Treasure Hunt";
+      default:
+        return "Invalid event";
+    }
+  }
+
   function getEvents() {
     if (localStorage.getItem("user")) {
       var token = localStorage.getItem("user");
@@ -71,7 +106,7 @@ const Profile = () => {
 
   useEffect(() => {
     getEvents();
-      document.title=`CREDENZ LIVE | Profile`;
+    document.title = `CREDENZ LIVE | Profile`;
   }, []);
 
   if (localStorage.getItem("user")) {
@@ -80,14 +115,13 @@ const Profile = () => {
     user = jwt(localStorage.getItem("user"));
 
     if (Events !== undefined) {
-      console.log(Events)
+      console.log(Events);
       EventList = Events.map((x) => {
         return (
           <tr>
             <th scope='row'>{count++}</th>
-            <td>
-              {x.event_username} : { x.random_pw }
-            </td>
+            <td>{findUsername(x.event_username)}</td>
+            <td>{x.random_pw}</td>
           </tr>
         );
       });
@@ -100,7 +134,7 @@ const Profile = () => {
     }
 
     return (
-      <div style={{background:'black'}} >
+      <div style={{ background: "black" }}>
         <Nav />
         <div className='profilepage'>
           <div className='container'>
@@ -178,6 +212,13 @@ const Profile = () => {
                 </div>
                 <div className='table-container'>
                   <table className='table table-striped table-dark'>
+                    <thead>
+                      <tr>
+                        <th scope='col'>#</th>
+                        <th scope='col'>Event</th>
+                        <th scope='col'>Password</th>
+                      </tr>
+                    </thead>
                     <tbody>{EventList}</tbody>
                   </table>
                 </div>

@@ -150,11 +150,11 @@ function ModalBody({ handleClose, type, event, event_info }) {
               </Link>
             </p>
 
-            <p className='hint-text'>
+            {/* <p className='hint-text'>
               <Link id='create' to='/edit' onClick={handleClose}>
                 Forgot Password?
               </Link>
-            </p>
+            </p> */}
           </form>
         </div>
       </div>
