@@ -150,14 +150,14 @@ function EventModal(props) {
       if (selectedQuiz[0]) {
         if (
           // pictian and playing for first time
-          (checkPICT(decodedclgname) || decodedispict) &&
-          !(
-            cartArray.includes("General Quiz") ||
-            props.checkIfRegistered("generalquiz")
-          ) &&
+          ((checkPICT(decodedclgname) || decodedispict) &&
+            !(
+              cartArray.includes("General Quiz") ||
+              props.checkIfRegistered("generalquiz")
+            )) ||
           // non-pictian and not added to cart
-          !(checkPICT(decodedclgname) || decodedispict) &&
-          !cartArray.includes(currentInfo.title)
+          (!(checkPICT(decodedclgname) || decodedispict) &&
+            !cartArray.includes("General Quiz"))
         ) {
         } else {
           if (cartArray.includes("General Quiz"))
@@ -171,14 +171,14 @@ function EventModal(props) {
       if (selectedQuiz[1]) {
         if (
           // pictian and playing for first time
-          (checkPICT(decodedclgname) || decodedispict) &&
-          !(
-            cartArray.includes("MELA Quiz") ||
-            props.checkIfRegistered("melaquiz")
-          ) &&
+          ((checkPICT(decodedclgname) || decodedispict) &&
+            !(
+              cartArray.includes("MELA Quiz") ||
+              props.checkIfRegistered("melaquiz")
+            )) ||
           // non-pictian and not added to cart
-          !(checkPICT(decodedclgname) || decodedispict) &&
-          !cartArray.includes(currentInfo.title)
+          (!(checkPICT(decodedclgname) || decodedispict) &&
+            !cartArray.includes("MELA Quiz"))
         ) {
         } else {
           if (cartArray.includes("MELA Quiz"))
@@ -192,14 +192,14 @@ function EventModal(props) {
       if (selectedQuiz[2]) {
         if (
           // pictian and playing for first time
-          (checkPICT(decodedclgname) || decodedispict) &&
-          !(
-            cartArray.includes("BizTech Quiz") ||
-            props.checkIfRegistered("biztechquiz")
-          ) &&
+          ((checkPICT(decodedclgname) || decodedispict) &&
+            !(
+              cartArray.includes("BizTech Quiz") ||
+              props.checkIfRegistered("biztechquiz")
+            )) ||
           // non-pictian and not added to cart
-          !(checkPICT(decodedclgname) || decodedispict) &&
-          !cartArray.includes(currentInfo.title)
+          (!(checkPICT(decodedclgname) || decodedispict) &&
+            !cartArray.includes("BizTech Quiz"))
         ) {
         } else {
           if (cartArray.includes("BizTech Quiz"))
