@@ -168,6 +168,7 @@
             table {
                 margin: auto;
                 background-color: #0c3264;
+                pointer-events: none;
                 tbody {
                     text-align: center;
                 }
@@ -177,7 +178,7 @@
                 }
                 tr {
                     display: grid;
-                    grid-template-columns: 1fr 4fr;
+                    grid-template-columns: 1fr 2fr 2fr;
                     border-radius: 10px;
                     &:hover {
                         background-color: initial;

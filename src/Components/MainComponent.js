@@ -72,7 +72,7 @@ function Main() {
   };
 
   const EditProfilePage = () => {
-    return <Edit />;
+    return <Home />;
   };
 
   const TeamPage = () => {
@@ -106,9 +106,9 @@ function Main() {
   const NewRegPage = () => {
     return <NewReg />;
   };
-  
+
   const IpayPage = () => {
-    return <NewReg/>;
+    return <NewReg />;
   };
 
   const RefundPage = () => {
@@ -137,7 +137,7 @@ function Main() {
         <Route path='/sideEvents' component={SideEvents} />
         <Route path='/leaderboard' component={LeaderBoardPage} />
         <Route path='/signup' component={SignUpPage} />
-        <Route path='/edit' component={EditProfilePage} />
+        {/* <Route path='/edit' component={EditProfilePage} /> */}
         <Route path='/team' component={TeamPage} />
         <Route path='/profile' component={ProfilePage} />
         <Route path='/admin' component={AdminPage} />
@@ -148,7 +148,7 @@ function Main() {
         <Route path='/refund' component={RefundPage} />
         <Route path='/privacy' component={PrivacyPage} />
         <Route path='/terms' component={TermsPage} />
-        <Route path='/ipay' component={IpayPage}/>
+        <Route path='/ipay' component={IpayPage} />
         <Redirect to='/home' />
       </Switch>
       {/* <Footer /> */}

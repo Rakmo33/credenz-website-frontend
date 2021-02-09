@@ -43,8 +43,12 @@ function Cart() {
         return ["datawiz", 60, 50];
       case "Enigma":
         return ["enigma", 50, 40];
-      case "Quiz":
-        return ["quiz", 50, 40];
+      case "General Quiz":
+        return ["generalquiz", 50, 40];
+      case "BizTech Quiz":
+        return ["biztechquiz", 50, 40];
+      case "MELA Quiz":
+        return ["melaquiz", 50, 40];
       case "Webweaver":
         return ["webweaver", 60, 50];
       case "Paper Presentation":
@@ -57,13 +61,20 @@ function Cart() {
   };
 
   function checkPICT(college) {
-
-    if(college==="PICT" || college==="pict" || college==="Pune Institute of Computer Technology" 
-    || college==="P.I.C.T" || "PICT, pune") {
+    if (
+      college === "PICT" ||
+      college === "pict" ||
+      college === "Pune Institute of Computer Technology" ||
+      college === "P.I.C.T" ||
+      "PICT, pune"
+    ) {
       return true;
     }
 
-    if(college.includes("PICT") || college.includes("Pune Institite of Computer Technology")) {
+    if (
+      college.includes("PICT") ||
+      college.includes("Pune Institite of Computer Technology")
+    ) {
       return true;
     }
 
@@ -72,18 +83,16 @@ function Cart() {
 
   //get  current user to check if it is ieee member
 
-
   let user = "";
-    if (localStorage.getItem("user")) {
-      var token = localStorage.getItem("user");
+  if (localStorage.getItem("user")) {
+    var token = localStorage.getItem("user");
 
-      if (token !== undefined || token !== "") {
-        var decoded = jwt_decode(token);
-        console.log(decoded);
-        user = jwt(localStorage.getItem("user"));
-       
-      }
+    if (token !== undefined || token !== "") {
+      var decoded = jwt_decode(token);
+      console.log(decoded);
+      user = jwt(localStorage.getItem("user"));
     }
+  }
 
   let sum = 0;
   let RegItems = JSON.parse(localStorage.getItem("Register"));
@@ -107,7 +116,7 @@ function Cart() {
   function clearCart(event) {
     localStorage.removeItem("Cart");
     localStorage.removeItem("Register");
-    
+
     window.location.reload(false);
   }
 
@@ -179,24 +188,25 @@ function Cart() {
 
       //console.log("")
       if (regItem.team === "single") {
-
         //alert("single")
         if (regItem.username === decoded.username) {
           //alert("username is equal")
           //alert()
-          
+
           axios({
             method: "post",
-            url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${getUsername(regItem.event)[0]}`,
-            
-            headers: { 
+            url: `${process.env.REACT_APP_API_URL}/${decoded.username}/${
+              getUsername(regItem.event)[0]
+            }`,
+
+            headers: {
               authorization: `Bearer ${accessToken}`,
-              'Content-Type': 'application/json;charset=UTF-8',
-              "Access-Control-Allow-Origin": "*", 
+              "Content-Type": "application/json;charset=UTF-8",
+              "Access-Control-Allow-Origin": "*",
             },
           })
             .then((response) => {
-                //alert("insingle : " + JSON.stringify(response.data))
+              //alert("insingle : " + JSON.stringify(response.data))
               console.log("insingle : " + JSON.stringify(response.data));
               clearCart();
             })
@@ -204,7 +214,7 @@ function Cart() {
               //alert("Error!" + error); //request fails with 500
             });
 
-            /*const requestOptions = {
+          /*const requestOptions = {
               method: "POST",
               headers: { "Content-Type": "application/json", authorization: `Bearer ${accessToken}` },
             };
@@ -217,10 +227,9 @@ function Cart() {
               .then((data) => {
                 
               });*/
-
         }
       } else {
-        alert("team")
+        alert("team");
         var players = [];
         let count = 1;
 
@@ -239,7 +248,7 @@ function Cart() {
 
         // console.log(regItem.username + " " + decoded.username);
         // alert(regItem.event);
-        console.log("inside team")
+        console.log("inside team");
         // if (regItem.username === decoded.username) {
         axios
           .post(
@@ -309,45 +318,62 @@ function Cart() {
                     <tbody>
                       {eventList}
                       <tr></tr>
-                     {(localStorage.getItem("Cart")!=="" && localStorage.getItem("Cart")!==null) && <tr>
-                        <td></td>
-                        <td >
-                         
-                      {decoded.ispict === true || checkPICT(decoded.clgname) ? <button onClick={()=>Register()} type='button' className='btn btn-info'>
-                          Register(Free for PICTians)
-                        </button> :
-                         <Ipay sum={sum} Register={Register} getUsername={getUsername} currentUser={currentUser} 
-                         username={decoded.username}/> }
-                           
-                        </td>
-                      <td></td>
-                      </tr> }
-                      {(localStorage.getItem("Cart")!=="" && localStorage.getItem("Cart")!==null) && <tr>
-                        <td></td>
-                        <td>
-                          <button
-                            onClick={clearCart}
-                            type='button'
-                            className='btn btn-outline-danger'>
-                            Clear Cart
-                          </button>
-                        </td>
-                        <td></td>
-                      </tr>}
-                      { !checkPICT(decoded.clgname) || decoded.ispict ?
-                      <tr>
-                        <td></td>
-                         <td>
-                          After clicking on proceed to pay the payment will be requested  
-                          under the name of "FOLOOSI TECHNOLOGIES PVT LTD", we request you to accept that and proceed further. 
-                        </td>
-                        <td></td>
-                      </tr> : null }
+                      {localStorage.getItem("Cart") !== "" &&
+                        localStorage.getItem("Cart") !== null && (
+                          <tr>
+                            <td></td>
+                            <td>
+                              {decoded.ispict === true ||
+                              checkPICT(decoded.clgname) ? (
+                                <button
+                                  onClick={() => Register()}
+                                  type='button'
+                                  className='btn btn-info'>
+                                  Register(Free for PICTians)
+                                </button>
+                              ) : (
+                                <Ipay
+                                  sum={sum}
+                                  Register={Register}
+                                  getUsername={getUsername}
+                                  currentUser={currentUser}
+                                  username={decoded.username}
+                                />
+                              )}
+                            </td>
+                            <td></td>
+                          </tr>
+                        )}
+                      {localStorage.getItem("Cart") !== "" &&
+                        localStorage.getItem("Cart") !== null && (
+                          <tr>
+                            <td></td>
+                            <td>
+                              <button
+                                onClick={clearCart}
+                                type='button'
+                                className='btn btn-outline-danger'>
+                                Clear Cart
+                              </button>
+                            </td>
+                            <td></td>
+                          </tr>
+                        )}
+                      {!checkPICT(decoded.clgname) || !decoded.ispict ? (
+                        <tr>
+                          <td></td>
+                          <td>
+                            After clicking on proceed to pay the payment will be
+                            requested under the name of "FOLOOSI TECHNOLOGIES
+                            PVT LTD", we request you to accept that and proceed
+                            further.
+                          </td>
+                          <td></td>
+                        </tr>
+                      ) : null}
                     </tbody>
                   </table>
                 )}
-
-                
               </div>
             </div>
           </div>
