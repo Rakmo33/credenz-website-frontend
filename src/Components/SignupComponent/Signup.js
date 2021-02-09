@@ -50,9 +50,9 @@ function Signup() {
             password: password,
             email: email,
             phoneno: phone,
-            ieee : member === "IEEE" ? true : false,
+            ieee: member === "IEEE" ? true : false,
             isPict: college === "PICT" ? true : false,
-            clgname: college,
+            clgname: collegeName,
             clgID: clgID,
           })
           .then(function (response) {
@@ -371,7 +371,7 @@ function Signup() {
                     //className='bg-white border-md border-left-0 pl-3'
                     onChange={(e) => {
                       setCollege(e.target.value);
-                      setCollegeName(e.target.value);
+                      // setCollegeName(e.target.value);
                     }}
                     value={"other college"}
                     required
@@ -423,7 +423,7 @@ function Signup() {
                         name='college'
                         placeholder='College Name'
                         className='form-control bg-white border-left-0 border-md'
-                        value={collegeName}
+                        // value={collegeName}
                         onChange={(e) => setCollegeName(e.target.value)}
                         required
                       />

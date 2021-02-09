@@ -13,7 +13,7 @@ function checkPICT(college) {
     college === "pict" ||
     college === "Pune Institute of Computer Technology" ||
     college === "P.I.C.T" ||
-    "PICT, pune"
+    college === "PICT, pune"
   ) {
     return true;
   }
@@ -98,7 +98,7 @@ function EventModal(props) {
   }
 
   let decodedclgname = decoded ? decoded.clgname : "";
-  let decodedispict = decoded ? decoded.clgname : "";
+  let decodedispict = decoded ? decoded.ispict : "";
 
   const tabSwitchHandler = (tabNumber) => {
     setTab(tabNumber);

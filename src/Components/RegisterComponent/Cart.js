@@ -30,7 +30,7 @@ function Cart() {
       case "Clash":
         return ["clash", 60, 50];
       case "Reverse Coding":
-        return ["rc", 60, 50];
+        return ["rc", 1, 50];
       case "Pixelate":
         return ["pixelate", 50, 40];
       case "Cretronix":
@@ -66,7 +66,7 @@ function Cart() {
       college === "pict" ||
       college === "Pune Institute of Computer Technology" ||
       college === "P.I.C.T" ||
-      "PICT, pune"
+      college === "PICT, pune"
     ) {
       return true;
     }
