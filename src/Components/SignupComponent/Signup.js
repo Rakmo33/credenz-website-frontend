@@ -100,6 +100,10 @@ function Signup() {
               setSpinner("form-group col-lg-12 ");
               setShowAlert(true);
             }
+
+            setSpinner("form-group col-lg-12 ");
+            setShowAlert(true);
+
             // throw e;
 
             // //console.log("Axios alert" + e);
@@ -158,9 +162,12 @@ function Signup() {
       <Nav />
       <div className='container mt-5 signupFormWrap'>
         {showAlert ? (
-          <Alert show={showAlert} setShow={setShowAlert} var='danger'>
-            Sign Up Failed!
-          </Alert>
+          <div style={{ marginTop: "50px" }}>
+            <Alert show={showAlert} setShow={setShowAlert} var='danger'>
+              Sign Up Failed! You can try again with a different unique
+              username!
+            </Alert>
+          </div>
         ) : null}
         <div className='row py-5 mt-4 align-items-center '>
           <div className='col-md-5 pr-lg-5 mb-5 mb-md-0'>

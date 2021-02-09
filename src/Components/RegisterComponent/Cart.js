@@ -30,7 +30,7 @@ function Cart() {
       case "Clash":
         return ["clash", 60, 50];
       case "Reverse Coding":
-        return ["rc", 1, 50];
+        return ["rc", 60, 50];
       case "Pixelate":
         return ["pixelate", 50, 40];
       case "Cretronix":
