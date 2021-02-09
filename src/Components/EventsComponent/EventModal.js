@@ -56,7 +56,7 @@ function EventModal(props) {
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
 
-    console.log(decoded);
+    // console.log(decoded);
 
     if (checkPICT(decoded.clgname) || decoded.ispict) {
       $(".memberPrice").css({ visibility: "hidden" });
@@ -129,15 +129,12 @@ function EventModal(props) {
     if (index === 1) {
       tempSelectedQuiz[0] = e.target.checked ? true : false;
       setSelectedQuiz(tempSelectedQuiz);
-      console.log(selectedQuiz);
     } else if (index === 2) {
       tempSelectedQuiz[1] = e.target.checked ? true : false;
       setSelectedQuiz(tempSelectedQuiz);
-      console.log(selectedQuiz);
     } else if (index === 3) {
       tempSelectedQuiz[2] = e.target.checked ? true : false;
       setSelectedQuiz(tempSelectedQuiz);
-      console.log(selectedQuiz);
     }
   };
 

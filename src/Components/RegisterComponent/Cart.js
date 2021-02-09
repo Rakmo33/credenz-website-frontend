@@ -89,7 +89,7 @@ function Cart() {
 
     if (token !== undefined || token !== "") {
       var decoded = jwt_decode(token);
-      console.log(decoded);
+      // console.log(decoded);
       user = jwt(localStorage.getItem("user"));
     }
   }
@@ -102,7 +102,7 @@ function Cart() {
     i = 2;
   }
   if (RegItems) {
-    console.log(RegItems);
+    // console.log(RegItems);
     RegItems.map((regItem) => {
       sum = sum + getUsername(regItem.event)[i];
     });
@@ -179,7 +179,7 @@ function Cart() {
     var decoded = jwt_decode(token);
     //alert(JSON.stringify(decoded))
 
-    console.log(RegItems);
+    // console.log(RegItems);
 
     RegItems.forEach((regItem) => {
       //alert(JSON.stringify(regItem))
@@ -207,7 +207,7 @@ function Cart() {
           })
             .then((response) => {
               //alert("insingle : " + JSON.stringify(response.data))
-              console.log("insingle : " + JSON.stringify(response.data));
+              // console.log("insingle : " + JSON.stringify(response.data));
               clearCart();
             })
             .catch((error) => {
@@ -248,7 +248,7 @@ function Cart() {
 
         // console.log(regItem.username + " " + decoded.username);
         // alert(regItem.event);
-        console.log("inside team");
+        // console.log("inside team");
         // if (regItem.username === decoded.username) {
         axios
           .post(
@@ -270,7 +270,7 @@ function Cart() {
           )
           .then((response) => {
             // alert("team :" + JSON.stringify(response.data));
-            console.log("team :" + JSON.stringify(response.data));
+            // console.log("team :" + JSON.stringify(response.data));
             clearCart();
             // alert("Error");
           })
