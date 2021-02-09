@@ -115,7 +115,7 @@ const Profile = () => {
     user = jwt(localStorage.getItem("user"));
 
     if (Events !== undefined) {
-      console.log(Events);
+      // console.log(Events);
       EventList = Events.map((x) => {
         return (
           <tr>

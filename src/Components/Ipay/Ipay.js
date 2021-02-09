@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { Ippopay } from "react-ippopay";
 import jwt from "jwt-decode";
-import axios from 'axios';
+import axios from "axios";
 
 const Ipay = (props) => {
   const [isIppopayOpen, setIsIppoPayOpen] = useState(false);
@@ -23,18 +23,18 @@ const Ipay = (props) => {
   };
   const ippopayHandler = (e) => {
     if (e.data.status === "success") {
-      console.log("success");
-      alert("success");
+      // console.log("success");
+      alert("Registered Successfully!");
       props.Register();
 
-      axios.post(`${process.env.REACT_APP_API_URL}/${props.username}/sendmail`)
-      .then(function(response){
-        console.log(response)
-      })
-
+      axios
+        .post(`${process.env.REACT_APP_API_URL}/${props.username}/sendmail`)
+        .then(function (response) {
+          console.log(response);
+        });
     }
     if (e.data.status === "failure") {
-      console.log("failure" );
+      console.log("failure");
     }
   };
 
@@ -72,13 +72,13 @@ const Ipay = (props) => {
       .then((data) => {
         //alert(JSON.stringify(data.data.order.order_id))
         //alert("orderid" + data)
-      
+
         setOrder_id(data.data.order.order_id);
-        
+
         // this.setState({ order_id: data.data.order.order_id });
       });
   }, []);
-  
+
   // render() {
   if (order_id !== "" || order_id !== undefined) {
     // console.log(order_id);

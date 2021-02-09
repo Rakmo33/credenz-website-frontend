@@ -72,8 +72,8 @@ const Events = (props) => {
   }
 
   const checkIfRegistered = (eventName) => {
-    console.log(Events);
-    console.log(eventName);
+    // console.log(Events);
+    // console.log(eventName);
     if (Events !== undefined) {
       for (let i = 0; i < Events.length; i++) {
         if (Events[i].event_username === eventName) {

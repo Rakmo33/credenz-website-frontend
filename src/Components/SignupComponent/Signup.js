@@ -57,7 +57,7 @@ function Signup() {
           })
           .then(function (response) {
             // //console.log(response);
-            console.log(response.data);
+            // console.log(response.data);
             // const msg = response.data["accessToken"];
             localStorage.setItem("user", JSON.stringify(response.data));
             // //console.log(msg);
@@ -483,8 +483,8 @@ function Signup() {
                 <div
                   className={spinner}
                   onClick={() => {
-                    console.log(values);
-                    console.log(errors);
+                    // console.log(values);
+                    // console.log(errors);
                   }}>
                   <button
                     type='submit'
