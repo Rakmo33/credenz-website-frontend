@@ -5,21 +5,28 @@ import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
 import $ from "jquery";
 import "./eventmodal.css";
+import Events from "./EventsComponent";
 
 function checkPICT(college) {
-
-  if(college==="PICT" || college==="pict" || college==="Pune Institute of Computer Technology" 
-  || college==="P.I.C.T" || "PICT, pune") {
+  if (
+    college === "PICT" ||
+    college === "pict" ||
+    college === "Pune Institute of Computer Technology" ||
+    college === "P.I.C.T" ||
+    "PICT, pune"
+  ) {
     return true;
   }
 
-  if(college.includes("PICT") || college.includes("Pune Institite of Computer Technology")) {
+  if (
+    college.includes("PICT") ||
+    college.includes("Pune Institite of Computer Technology")
+  ) {
     return true;
   }
 
   return false;
 }
-
 
 function EventModal(props) {
   let currentInfo = props.info;
@@ -40,6 +47,10 @@ function EventModal(props) {
     tabs[index - 1].classList.add("activeTabButton");
   };
 
+  var cartArray = localStorage.getItem("Cart")
+    ? localStorage.getItem("Cart").split(",")
+    : [];
+
   if (localStorage.getItem("user")) {
     const token = localStorage.getItem("user");
     const accessToken = JSON.parse(token).accessToken;
@@ -47,19 +58,30 @@ function EventModal(props) {
 
     console.log(decoded);
 
-    if ((decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) && decoded.ieee) {
+    if (
+      (decoded.clgname !== "PICT" ||
+        !(decoded.ispict !== undefined ? decoded.pict : true) ||
+        !checkPICT(decoded.clgname)) &&
+      decoded.ieee
+    ) {
       $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "hidden" });
     } else if (
       //console.log()
-      (decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) &&
+      (decoded.clgname !== "PICT" ||
+        !(decoded.ispict !== undefined ? decoded.pict : true) ||
+        !checkPICT(decoded.clgname)) &&
       !decoded.ieee
     ) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "visible" });
       $(".pict").css({ visibility: "hidden" });
-    } else if (decoded.clgname === "PICT" || checkPICT(decoded.clgname) || (decoded.ispict!==undefined?decoded.pict:false)) {
+    } else if (
+      decoded.clgname === "PICT" ||
+      checkPICT(decoded.clgname) ||
+      (decoded.ispict !== undefined ? decoded.pict : false)
+    ) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "visible" });
@@ -260,21 +282,35 @@ function EventModal(props) {
 
       {!props.teams(currentInfo.title) &&
       currentInfo.title !== "Network Treasure Hunt" ? (
-        <button
-          className='regNowBtn'
-          onClick={() =>
-            props.addToCart(
-              currentInfo.title,
-              props.cart,
-              props.setCart,
-              props.eventReg,
-              props.setEventReg,
-              selectedQuiz
-            )
-          }>
-          <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-          Add to Cart
-        </button>
+        !cartArray.includes(currentInfo.title) &&
+        !props.checkIfRegistered(currentInfo.event_username) ? (
+          <button
+            className='regNowBtn'
+            onClick={() =>
+              props.addToCart(
+                currentInfo.title,
+                props.cart,
+                props.setCart,
+                props.eventReg,
+                props.setEventReg,
+                selectedQuiz
+              )
+            }>
+            <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+            Add to Cart
+          </button>
+        ) : (
+          <button
+            className='regNowBtn'
+            onClick={() => {
+              return;
+            }}>
+            <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+            {props.checkIfRegistered(currentInfo.event_username)
+              ? "Already Registered!"
+              : "Event added!"}
+          </button>
+        )
       ) : currentInfo.title === "Network Treasure Hunt" ? (
         /*<Link
           style={{ textAlign: "center" }}

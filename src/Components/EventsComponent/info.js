@@ -2,6 +2,7 @@ export const info = [
   // 1
   {
     title: "Clash",
+    event_username: "clash",
     src: "/logos/clash.png",
     tagline: "Clash is based on Competitive Programming!",
     info1: `<p>
@@ -86,6 +87,7 @@ export const info = [
   // 2
   {
     title: "Reverse Coding",
+    event_username: "rc",
     src: "/logos/rc.png",
     tagline: "Hone your problem-solving skills by decrypting complex questions",
     info1: `<p>
@@ -162,6 +164,7 @@ export const info = [
   // 3#
   {
     title: "Pixelate",
+    event_username: "pixelate",
     src: "/logos/pixelate.png",
 
     tagline:
@@ -238,6 +241,7 @@ export const info = [
   //4#
   {
     title: "Cretronix",
+    event_username: "cretronix",
     src: "/logos/cretronix.png",
 
     tagline: "Build and exhibit your own circuits by solving tech problems.",
@@ -316,6 +320,7 @@ export const info = [
   //5#
   {
     title: "Bplan",
+    event_username: "bplan",
     src: "/logos/bplan.png",
 
     tagline:
@@ -409,6 +414,7 @@ export const info = [
   //6#
   {
     title: "Wallstreet",
+    event_username: "wallstreet",
     src: "/logos/wallstreet.png",
 
     tagline:
@@ -469,6 +475,7 @@ export const info = [
   //7#
   {
     title: "Datawiz",
+    event_username: "datawiz",
     src: "/logos/datawiz.png",
 
     tagline:
@@ -547,6 +554,7 @@ export const info = [
   //8#
   {
     title: "Enigma",
+    event_username: "enigma",
     src: "/logos/enigma.png",
 
     tagline:
@@ -635,6 +643,7 @@ export const info = [
   //9#
   {
     title: "Quiz",
+    event_username: "quizz",
     src: "/logos/quiz.png",
 
     tagline:
@@ -729,6 +738,7 @@ export const info = [
   //10#
   {
     title: "Webweaver",
+    event_username: "webweaver",
     src: "/logos/web.png",
 
     tagline:
@@ -802,6 +812,7 @@ export const info = [
   //11#
   {
     title: "Paper Presentation",
+    event_username: "paperpresentation",
     src: "/logos/paper.png",
 
     tagline:
@@ -871,6 +882,7 @@ export const info = [
   //12#
   {
     title: "Network Treasure Hunt",
+    event_username: "nthh",
     src: "/logos/nth.png",
 
     tagline:

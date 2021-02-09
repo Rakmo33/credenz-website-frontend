@@ -6,6 +6,8 @@ import Animation from "./Animation";
 import Footer from "../Footer/footer";
 import jwt from "jwt-decode";
 import Alert from "../Alert/alert";
+import jwt_decode from "jwt-decode";
+
 // import { Nav } from "react-bootstrap";
 import Navbar from "../Navbar/Navbar";
 
@@ -27,10 +29,62 @@ const Events = (props) => {
   const handleClose1 = () => setShowLogin(false);
   const handleShow1 = () => setShowLogin(true);
 
+  const [Events, setEvents] = useState(undefined);
+  let user = "";
+
   // const handleShow = (event) => {
   //   setShow(true);
   //   setEvent(event);
   // };
+
+  function getEvents() {
+    if (localStorage.getItem("user")) {
+      var token = localStorage.getItem("user");
+      if (token !== undefined || token !== "") {
+        var decoded = jwt_decode(token);
+        user = jwt(localStorage.getItem("user"));
+        const accessToken = JSON.parse(token).accessToken;
+        //alert(typeof(decoded.username))
+
+        //console.log("type" + typeof accessToken);
+        //console.log(accessToken);
+
+        axios({
+          method: "get",
+          url: `${process.env.REACT_APP_API_URL}/${decoded.username}/present`,
+          headers: { authorization: `Bearer ${accessToken}` },
+        })
+          .then((response) => {
+            //console.log(
+            //   response.data.map((obj) => {
+            //     return obj.event_username;
+            //   })
+            // );
+            setEvents(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    } else {
+      //console.log("logged out!");
+    }
+  }
+
+  const checkIfRegistered = (eventName) => {
+    console.log(Events);
+    console.log(eventName);
+    if (Events !== undefined) {
+      for (let i = 0; i < Events.length; i++) {
+        if (Events[i].event_username === eventName) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      return false;
+    }
+  };
 
   async function AllEvents() {
     const response = await axios.get(
@@ -45,6 +99,8 @@ const Events = (props) => {
 
   useEffect(() => {
     let result = AllEvents();
+    getEvents();
+
     document.title = `CREDENZ LIVE | Events`;
     result.then((res) => {
       setEVENTS(res);
@@ -221,7 +277,10 @@ const Events = (props) => {
     <div className='evePage' style={{ marginTop: "70px" }}>
       <Navbar cartNum={tempCartNum} />
       <SideEvent />
-      <Animation addToCart={addToCart} teams={teams}></Animation>
+      <Animation
+        addToCart={addToCart}
+        teams={teams}
+        checkIfRegistered={checkIfRegistered}></Animation>
       <Modal1
         show={show}
         handleClose={handleClose}

@@ -265,7 +265,8 @@ function Animation(props) {
             setEventReg={setEventReg}
             addToCart={props.addToCart}
             teams={props.teams}
-            onClick={closeModalHandler}></EventModal>
+            onClick={closeModalHandler}
+            checkIfRegistered={props.checkIfRegistered}></EventModal>
         )}
         <div className='roboWrap '>
           <div
