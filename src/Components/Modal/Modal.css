@@ -2,16 +2,28 @@
     color: teal;
 }
 
-.upmodal{
+.upmodal {
     /* background: linear-gradient(45deg, #09b7ec , #2c8bda ); */
-    background: rgb(9,183,236);
-    background: linear-gradient(45deg, rgba(9,183,236,1) 50%, rgba(44,139,218,1) 80%);
+    background: rgb(9, 183, 236);
+    background: linear-gradient(45deg, rgba(9, 183, 236, 1) 50%, rgba(44, 139, 218, 1) 80%);
 }
 
-.upmodal li{
-    background: rgba(0, 0, 0, 0.5);
+.upmodal .modal-title {
+    margin: 0 auto;
+}
+
+.upmodal .close {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.upmodal li {
+    background: rgba(0, 0, 0, 0.678);
     color: #fff;
-    padding: 5px;
+    font-size: 16px;
+    padding: 10px;
+    margin: 5px 0px;
+    border-radius: 5px;
 }
 
 .modal-title {
@@ -114,7 +126,7 @@
 .modal-login .loginbtnn {
     font-size: 17px;
     background: linear-gradient(45deg, #09b7ec, #2c8bda);
-        color: #fff !important;
+    color: #fff !important;
 }
 
 .modal-login .modal-footer {

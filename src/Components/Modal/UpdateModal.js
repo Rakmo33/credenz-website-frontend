@@ -49,10 +49,9 @@ function Modal2({ show, handleClose }) {
         keyboard={false}>
         <Modal.Header className='upmodal' closeButton>
           <Modal.Title>
-            {" "}
             <div>
               <h1>Updates</h1>
-            </div>{" "}
+            </div>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='upmodal'>
