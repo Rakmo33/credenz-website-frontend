@@ -279,6 +279,7 @@ const Events = (props) => {
       <SideEvent />
       <Animation
         addToCart={addToCart}
+        callLoginModal={handleShow1}
         teams={teams}
         checkIfRegistered={checkIfRegistered}></Animation>
       <Modal1

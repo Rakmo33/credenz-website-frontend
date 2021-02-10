@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Name from "./Name";
 import Radio from "./Radio";
 import axios from "axios";
+import Alert from "../Alert/alert";
 // import jwt_decode from "jwt-decode";
 // import jwt from "jwt-decode";
 import { Link } from "react-router-dom";
@@ -10,7 +11,9 @@ const NameWrap = (props) => {
   // //console.log(props.formData);
 
   let accessToken = "";
-
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMsg, setAlertMsg] = useState("");
+  const [alertColor, setAlertColor] = useState("");
   // if (localStorage.getItem("user")) {
   // const token = localStorage.getItem("user");
   // const accessToken = JSON.parse(token).accessToken;
@@ -32,6 +35,13 @@ const NameWrap = (props) => {
 
   function storeReg() {
     if (!cartArray.includes(props.formData.event)) {
+      if (props.formData.teamName === "") {
+        setAlertMsg("Enter valid team name!");
+        setAlertColor("danger");
+        setShowAlert(true);
+
+        return;
+      }
       // let user = "";
       // if (localStorage.getItem("user")) {
       //   user = jwt(localStorage.getItem("user"));
@@ -50,10 +60,19 @@ const NameWrap = (props) => {
       tempRegArray.push(props.formData);
       //console.log(tempRegArray);
       localStorage.setItem("Register", JSON.stringify(tempRegArray));
-      alert("Event team saved.");
-      window.location.href = "/events";
+      // alert("Event team saved.");
+      setAlertMsg("Event added to cart!");
+      setAlertColor("success");
+
+      setShowAlert(true);
+
+      setTimeout(() => {
+        window.location.href = "/events";
+      }, 500);
     } else {
-      alert("Event already present in the cart!");
+      setAlertMsg("Event already present in the cart!");
+      setAlertColor("danger");
+      setShowAlert(true);
     }
   }
 
@@ -132,12 +151,13 @@ const NameWrap = (props) => {
   } else if (teamAllowed && props.formData.team === "team") {
     return (
       <form className={props.cls}>
+        {showAlert ? (
+          <Alert show={showAlert} setShow={setShowAlert} var={alertColor}>
+            {alertMsg}
+          </Alert>
+        ) : null}
         <div className='form-row col-flex'>
-          {/* NAME OF PARTICIPANTS */}
-          {/* //console.log(props.formData) */}
-
           <p id='choose-events'>Enter Names of your team members</p>
-
           <div>
             <Name
               index={""}
@@ -148,35 +168,34 @@ const NameWrap = (props) => {
               name='teamName'></Name>
 
             <Name
-                index={"2"}
-                id='Name1'
-                team={props.formData.team}
-                value={props.formData.name1}
-                changeHandler={props.setFormData}
-                 name='name1'></Name>
+              index={"2"}
+              id='Name1'
+              team={props.formData.team}
+              value={props.formData.name1}
+              changeHandler={props.setFormData}
+              name='name1'></Name>
 
             <Name
-                index={"3"}
-                id='Name1'
-                team={props.formData.team}
-                value={props.formData.name2}
-                changeHandler={props.setFormData}
-                 name='name1'></Name>
-            
-            <Name
-                index={"4"}
-                id='Name1'
-                team={props.formData.team}
-                value={props.formData.name3}
-                changeHandler={props.setFormData}
-                 name='name1'></Name>
+              index={"3"}
+              id='Name1'
+              team={props.formData.team}
+              value={props.formData.name2}
+              changeHandler={props.setFormData}
+              name='name1'></Name>
 
+            <Name
+              index={"4"}
+              id='Name1'
+              team={props.formData.team}
+              value={props.formData.name3}
+              changeHandler={props.setFormData}
+              name='name1'></Name>
 
             <div style={{ textAlign: "center", marginTop: 10 }}>
               <button
                 style={{ marginRight: 10 }}
                 onClick={() => storeReg()}
-                type='submit'
+                type='button'
                 className='btn btn-outline-info'>
                 Save
               </button>
@@ -187,7 +206,6 @@ const NameWrap = (props) => {
               </Link>
             </div>
           </div>
-
           {/*   <Name
                 index={"1*"}
                 id='Name1'

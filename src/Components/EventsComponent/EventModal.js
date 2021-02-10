@@ -51,50 +51,39 @@ function EventModal(props) {
     ? localStorage.getItem("Cart").split(",")
     : [];
 
+  // not logged in
+  if (!localStorage.getItem("user")) {
+    $(".memberPrice").css({ visibility: "hidden" });
+    $(".nonMemberPrice").css({ visibility: "hidden" });
+    $(".pict").css({ visibility: "hidden" });
+    $(".guestPrice").css({ visibility: "visible" });
+  }
+
   if (localStorage.getItem("user")) {
     const token = localStorage.getItem("user");
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
 
-    // console.log(decoded);
-
+    // pictian
     if (checkPICT(decoded.clgname) || decoded.ispict) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "visible" });
-    } else if (decoded.ieee) {
-      $(".memberPrice").css({ visibility: "visible" });
-      $(".nonMemberPrice").css({ visibility: "hidden" });
-      $(".pict").css({ visibility: "hidden" });
-    } else {
-      $(".memberPrice").css({ visibility: "hidden" });
-      $(".nonMemberPrice").css({ visibility: "visible" });
-      $(".pict").css({ visibility: "hidden" });
+      $(".guestPrice").css({ visibility: "hidden" });
     }
-
-    /*
-    if ((decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) && decoded.ieee) {
+    //member
+    else if (decoded.ieee) {
       $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "hidden" });
-    } else if (
-    
-      (decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) &&
-      !decoded.ieee
-    ) {
-      console.log("else if")
+      $(".guestPrice").css({ visibility: "hidden" });
+    } //non-member
+    else {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "visible" });
       $(".pict").css({ visibility: "hidden" });
-    } else if (
-      decoded.clgname === "PICT" ||
-      checkPICT(decoded.clgname) ||
-      (decoded.ispict !== undefined ? decoded.pict : false)
-    ) {
-      $(".memberPrice").css({ visibility: "hidden" });
-      $(".nonMemberPrice").css({ visibility: "hidden" });
-      $(".pict").css({ visibility: "visible" });
-    }*/
+      $(".guestPrice").css({ visibility: "hidden" });
+    }
   }
 
   let decodedclgname = decoded ? decoded.clgname : "";
@@ -419,14 +408,21 @@ function EventModal(props) {
           )) ||
         (!(checkPICT(decodedclgname) || decodedispict) &&
           !cartArray.includes(currentInfo.title)) ? (
-        <Link
-          style={{ textAlign: "center" }}
-          to={`/newreg/${currentInfo.title}`}>
-          <button className='regNowBtn'>
-            <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-            Add to Cart
-          </button>
-        </Link>
+        // <Link
+        //   style={{ textAlign: "center" }}
+        //   to={`/newreg/${currentInfo.title}`}>
+        <button
+          className='regNowBtn'
+          onClick={() => {
+            if (!localStorage.getItem("user")) {
+              props.callLoginModal();
+            } else {
+              window.location.href = `/newreg/${currentInfo.title}`;
+            }
+          }}>
+          <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+          Add to Cart
+        </button> // </Link>
       ) : (
         <button disabled className='regNowBtn'>
           <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
