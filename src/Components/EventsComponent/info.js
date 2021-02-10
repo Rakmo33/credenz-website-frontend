@@ -878,7 +878,7 @@ export const info = [
     info2: `<p>
     1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed. <br/>
     2.Marking Scheme will be declared on the spot. <br/>
-    3.Research Papers sent after 10th February, 2021 11:59 PM won’t be accepted.
+    3.Research Papers sent after 11th February, 2021 11:59 PM won’t be accepted.
     <br /> 
   </p>`,
     info3: `<p>
