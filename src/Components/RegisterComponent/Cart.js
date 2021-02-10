@@ -171,7 +171,7 @@ function Cart() {
     </tr>
   );
 
-  function Register() {
+  async function Register() {
     // alert("Registered Succesfully! Go to profile page to check!");
     let RegItems = JSON.parse(localStorage.getItem("Register"));
     const token = localStorage.getItem("user");
@@ -181,7 +181,7 @@ function Cart() {
 
     // console.log(RegItems);
 
-    RegItems.forEach((regItem) => {
+    await RegItems.forEach((regItem, index) => {
       //alert(JSON.stringify(regItem))
       //axios
       //console.log(regItem.team)
@@ -208,7 +208,20 @@ function Cart() {
             .then((response) => {
               //alert("insingle : " + JSON.stringify(response.data))
               // console.log("insingle : " + JSON.stringify(response.data));
-              clearCart();
+              if (index === RegItems.length - 1) {
+                clearCart();
+
+                axios({
+                  method: "get",
+                  url: `${process.env.REACT_APP_API_URL}/${decoded.username}/sendmail`,
+                })
+                  .then((response) => {
+                    alert("Email Sent!");
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                  });
+              }
             })
             .catch((error) => {
               //alert("Error!" + error); //request fails with 500
@@ -229,7 +242,7 @@ function Cart() {
               });*/
         }
       } else {
-        alert("team");
+        // alert("team");
         var players = [];
         let count = 1;
 
@@ -271,7 +284,20 @@ function Cart() {
           .then((response) => {
             // alert("team :" + JSON.stringify(response.data));
             // console.log("team :" + JSON.stringify(response.data));
-            clearCart();
+            if (index === RegItems.length - 1) {
+              clearCart();
+
+              axios({
+                method: "get",
+                url: `${process.env.REACT_APP_API_URL}/${decoded.username}/sendmail`,
+              })
+                .then((response) => {
+                  alert("Email Sent!");
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+            }
             // alert("Error");
           })
           .catch((error) => {

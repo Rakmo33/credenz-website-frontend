@@ -92,6 +92,7 @@ function Signup() {
               //console.log("Axios alert" + e);
               // alert("Axios error!" + e);
               setSpinner("form-group col-lg-12 ");
+              setShowAlert(true);
             }
           })
           .catch((e) => {
@@ -114,6 +115,7 @@ function Signup() {
         //console.log("Axios alert" + e);
         // alert("Axios error!" + e);
         setSpinner("form-group col-lg-12 ");
+        setShowAlert(true);
       }
     }
 
@@ -164,8 +166,8 @@ function Signup() {
         {showAlert ? (
           <div style={{ marginTop: "50px" }}>
             <Alert show={showAlert} setShow={setShowAlert} var='danger'>
-              Sign Up Failed! You can try again with a different unique
-              username!
+              Sign Up Failed! You can try again with a different username or
+              email.
             </Alert>
           </div>
         ) : null}
