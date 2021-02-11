@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
 import Ipay from "../Ipay/Ipay";
 import { data } from "jquery";
+import Alert from "../Alert/alert";
 
 function Cart() {
   const [pay, setPay] = useState(false);
@@ -17,6 +18,10 @@ function Cart() {
   const [TransacID, setTransacID] = useState("");
   const [currentUser, setCurrentUser] = useState("");
   const [order_id, setorder_id] = useState("");
+
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMsg, setAlertMsg] = useState("");
+  const [alertColor, setAlertColor] = useState("");
   //const [clear, setClear] = useState();
   /*
   useEffect(() => {
@@ -117,7 +122,11 @@ function Cart() {
     localStorage.removeItem("Cart");
     localStorage.removeItem("Register");
 
-    window.location.reload(false);
+    setAlertColor("success");
+    setAlertMsg("Registered Successfully! Check 'My Profile' page.");
+    setShowAlert(true);
+
+    // window.location.reload(false);
   }
 
   function clearEvent(event) {
@@ -171,7 +180,7 @@ function Cart() {
     </tr>
   );
 
-  async function Register() {
+  function Register() {
     // alert("Registered Succesfully! Go to profile page to check!");
     let RegItems = JSON.parse(localStorage.getItem("Register"));
     const token = localStorage.getItem("user");
@@ -181,7 +190,7 @@ function Cart() {
 
     // console.log(RegItems);
 
-    await RegItems.forEach((regItem, index) => {
+    RegItems.forEach((regItem, index) => {
       //alert(JSON.stringify(regItem))
       //axios
       //console.log(regItem.team)
@@ -206,7 +215,7 @@ function Cart() {
             },
           })
             .then((response) => {
-              console.log(regItem);
+              // console.log(regItem);
               //alert("insingle : " + JSON.stringify(response.data))
               // console.log("insingle : " + JSON.stringify(response.data));
               if (index === RegItems.length - 1) {
@@ -217,7 +226,12 @@ function Cart() {
                   url: `${process.env.REACT_APP_API_URL}/${decoded.username}/sendmail`,
                 })
                   .then((response) => {
-                    alert("Email Sent!");
+                    console.log("Email sent");
+                    setAlertColor("success");
+                    setShowAlert(true);
+                    setAlertMsg(
+                      "An email with your login details and the schedule has been sent to you!"
+                    );
                   })
                   .catch((error) => {
                     console.log(error);
@@ -285,7 +299,6 @@ function Cart() {
           .then((response) => {
             // alert("team :" + JSON.stringify(response.data));
             // console.log("team :" + JSON.stringify(response.data));
-            console.log(regItem);
 
             if (index === RegItems.length - 1) {
               clearCart();
@@ -295,7 +308,11 @@ function Cart() {
                 url: `${process.env.REACT_APP_API_URL}/${decoded.username}/sendmail`,
               })
                 .then((response) => {
-                  alert("Email Sent!");
+                  setAlertColor("success");
+                  setShowAlert(true);
+                  setAlertMsg(
+                    "An email with your login details and the schedule has been sent to you!"
+                  );
                 })
                 .catch((error) => {
                   console.log(error);
@@ -320,6 +337,7 @@ function Cart() {
       <div style={{ background: "black" }}>
         <Nav />
         <SideEventsButton />
+
         <div className='regPage'>
           <div className='regPageVector'>
             {!pay && (
@@ -336,8 +354,18 @@ function Cart() {
           <div className='container'>
             <div className='row'>
               <div className='col'>
+                {showAlert ? (
+                  <Alert
+                    show={showAlert}
+                    setShow={setShowAlert}
+                    var={alertColor}>
+                    {alertMsg}
+                  </Alert>
+                ) : null}
                 {!pay && (
-                  <table className='table table-striped'>
+                  <table
+                    className='table table-striped'
+                    style={{ width: "100%" }}>
                     <thead>
                       <tr>
                         <th scope='col'></th>
