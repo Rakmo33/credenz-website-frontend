@@ -63,6 +63,7 @@ function EventModal(props) {
     const token = localStorage.getItem("user");
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
+    console.log(decoded);
 
     // pictian
     if (checkPICT(decoded.clgname) || decoded.ispict) {

@@ -206,6 +206,7 @@ function Cart() {
             },
           })
             .then((response) => {
+              console.log(regItem);
               //alert("insingle : " + JSON.stringify(response.data))
               // console.log("insingle : " + JSON.stringify(response.data));
               if (index === RegItems.length - 1) {
@@ -284,6 +285,8 @@ function Cart() {
           .then((response) => {
             // alert("team :" + JSON.stringify(response.data));
             // console.log("team :" + JSON.stringify(response.data));
+            console.log(regItem);
+
             if (index === RegItems.length - 1) {
               clearCart();
 

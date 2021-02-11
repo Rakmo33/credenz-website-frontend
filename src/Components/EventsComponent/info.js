@@ -464,10 +464,9 @@ export const info = [
       <br />
     3) Mock NEWS will be flashed regarding listed companies and their sectors based on which participants will buy/sell stocks to ultimately become the biggest gainer.
       <br />
-    4) Concepts such as IPO, short selling and high frequency trading will be inculcated within the event.
-     <br />
+   
   </p>`,
-    info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.
+    info4: `<p>Top 2 participants with Highest Capital at the end of Day 3 will be declared as winners.
     <br/>
     <strong>Prizes</strong><br/>
     <strong>Winner :</strong>&nbsp;3000/- <br/>
