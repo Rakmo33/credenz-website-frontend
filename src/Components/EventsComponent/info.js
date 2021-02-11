@@ -22,6 +22,9 @@ export const info = [
       <li class='nonMemberPrice'>
         <span>₹60</span>&nbsp; for Non-IEEE members
       </li>
+      <li class='guestPrice'>
+        <span>₹60</span>
+      </li>
       <li class='memberPrice'>
         <span>₹50</span>&nbsp; for IEEE members
       </li>
@@ -105,6 +108,9 @@ export const info = [
       <li class='nonMemberPrice'>
         <span>₹60</span>&nbsp;  for Non-IEEE members
       </li>
+      <li class='guestPrice'>
+        <span>₹60</span>
+      </li>
       <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
@@ -182,6 +188,9 @@ export const info = [
     <ul>
       <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
+      </li>
+      <li class='guestPrice'>
+        <span>₹50</span>
       </li>
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
@@ -264,6 +273,9 @@ export const info = [
       <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
+      <li class='guestPrice'>
+        <span>₹50</span>
+      </li>
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
@@ -341,6 +353,9 @@ export const info = [
     <ul>
       <li class='nonMemberPrice'>
         <span>₹120</span> &nbsp;for Non-IEEE members
+      </li>
+      <li class='guestPrice'>
+        <span>₹120</span>
       </li>
       <li class='memberPrice'>
         <span>₹100</span> &nbsp;for IEEE members
@@ -427,6 +442,9 @@ export const info = [
       <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
       </li>
+      <li class='guestPrice'>
+        <span>₹50</span>
+      </li>
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
       </li>
@@ -446,10 +464,9 @@ export const info = [
       <br />
     3) Mock NEWS will be flashed regarding listed companies and their sectors based on which participants will buy/sell stocks to ultimately become the biggest gainer.
       <br />
-    4) Concepts such as IPO, short selling and high frequency trading will be inculcated within the event.
-     <br />
+   
   </p>`,
-    info4: `<p>Top 3 participants with Highest Capital at the end of Day 3 will be declared as winners.
+    info4: `<p>Top 2 participants with Highest Capital at the end of Day 3 will be declared as winners.
     <br/>
     <strong>Prizes</strong><br/>
     <strong>Winner :</strong>&nbsp;3000/- <br/>
@@ -497,6 +514,9 @@ export const info = [
    <ul>
      <li class='nonMemberPrice'>
        <span>₹60</span>&nbsp;  for Non-IEEE members
+     </li>
+     <li class='guestPrice'>
+       <span>₹60</span>
      </li>
      <li class='memberPrice'>
        <span>₹50</span>&nbsp;  for IEEE members
@@ -579,6 +599,9 @@ export const info = [
     <ul>
       <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
+      </li>
+      <li class='guestPrice'>
+        <span>₹50</span>
       </li>
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
@@ -663,7 +686,7 @@ export const info = [
     </p>
 
     <p>
-      <h3>Buisness Quiz</h3>
+      <h3>BizTech Quiz</h3>
       <h3>Timings</h3> <br/>
       12-02-2021 , Friday : <br/> 
       Round 1:  4:30pm to 5:00 pm <br/>
@@ -671,7 +694,7 @@ export const info = [
    </p>
 
    <p>
-    <h3>Mela Quiz</h3>
+    <h3>MELA Quiz</h3>
     <h3>Timings</h3> <br/>
     14-02-2021 , Sunday : <br/> 
     Round 1:  11:30am to 12:00 pm <br/>
@@ -682,6 +705,9 @@ export const info = [
     <ul>
       <li class='nonMemberPrice'>
         <span>₹50</span>&nbsp;  for Non-IEEE members
+      </li>
+      <li class='guestPrice'>
+        <span>₹50</span>
       </li>
       <li class='memberPrice'>
         <span>₹40</span>&nbsp;  for IEEE members
@@ -759,6 +785,9 @@ export const info = [
       <li class='nonMemberPrice'>
         <span >₹60</span>&nbsp;  for Non-IEEE members
       </li>
+      <li class='guestPrice'>
+        <span >₹60</span>
+      </li>
       <li class='memberPrice'>
         <span>₹50</span>&nbsp;  for IEEE members
       </li>
@@ -835,6 +864,9 @@ export const info = [
       <li class='nonMemberPrice'>
         <span>₹150</span>&nbsp;  for Non-IEEE members
       </li>
+      <li class='guestPrice'>
+        <span>₹150</span>
+      </li>
       <li class='memberPrice'>
         <span >₹120</span>&nbsp;  for IEEE members
       </li>
@@ -845,7 +877,7 @@ export const info = [
     info2: `<p>
     1.A team of maximum three candidates pursuing undergraduate/postgraduate program is allowed. <br/>
     2.Marking Scheme will be declared on the spot. <br/>
-    3.Research Papers sent after 10th February, 2021 11:59 PM won’t be accepted.
+    3.Research Papers sent after 11th February, 2021 11:59 PM won’t be accepted.
     <br /> 
   </p>`,
     info3: `<p>

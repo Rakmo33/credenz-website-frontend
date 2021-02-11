@@ -24,7 +24,7 @@ const Ipay = (props) => {
   const ippopayHandler = (e) => {
     if (e.data.status === "success") {
       // console.log("success");
-      alert("Registered Successfully!");
+      // alert("Registered Successfully!");
       props.Register();
 
       axios
@@ -40,7 +40,7 @@ const Ipay = (props) => {
 
   useEffect(() => {
     window.addEventListener("message", ippopayHandler);
-  });
+  }, []);
 
   useEffect(() => {
     let user = "";

@@ -12,6 +12,12 @@ function ModalTitle({ type, event }) {
         <div>Login</div>
       </div>
     );
+  else if (type === "clashRC")
+    return (
+      <div className='clashRC-title'>
+        <div>Choose Your Category</div>
+      </div>
+    );
   else {
     switch (event) {
       case "clash":
@@ -156,6 +162,35 @@ function ModalBody({ handleClose, type, event, event_info }) {
               </Link>
             </p> */}
           </form>
+        </div>
+      </div>
+    );
+  } else if ((type = "clashRC")) {
+    return (
+      <div id='myModal'>
+        <div className='modal-login clashRC'>
+          <div className='category'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='//clashjr.credenz.in/'
+              className='regNowBtn playNow'>
+              {/* <i class='fa fa-gamepad'></i> */}
+              Junior
+            </a>
+            <p>FE-SE</p>
+          </div>
+          <div className='category'>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='//clashsr.credenz.in/'
+              className='regNowBtn playNow'>
+              {/* <i class='fa fa-gamepad'></i> */}
+              Senior
+            </a>
+            <p>TE-BE</p>
+          </div>
         </div>
       </div>
     );

@@ -15,6 +15,8 @@
 .upmodal .close {
     margin: 0 !important;
     padding: 0 !important;
+    position: absolute;
+    right: 20px;
 }
 
 .upmodal li {
@@ -28,7 +30,10 @@
 
 .modal-title {
     text-align: center;
-    margin-left: 35%;
+    /* margin-left: 35%; */
+    margin: auto;
+    margin-left: 20px;
+    width: 100%;
 }
 
 .modal-login .modal-content {
@@ -204,6 +209,74 @@
     padding: 15px;
     border-radius: 50%;
     animation: rotate 1s infinite;
+}
+
+.modal-login.clashRC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-login.clashRC .regNowBtn {
+    background: linear-gradient(to right, #02243b, #065572);
+    height: fit-content;
+    margin: 15px auto;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    box-shadow: 0 0 3px #000;
+    transition: all 0.1s;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.modal-login.clashRC .regNowBtn i {
+    margin: 0 10px;
+}
+
+.modal-login.clashRC .regNowBtn:hover {
+    background-color: #ce0833;
+}
+
+.modal-login.clashRC .playNow {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: linear-gradient(to right, #02243b, #065572);
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+
+/* 
+.clashRC-title{
+    margin: auto !important;
+} */
+
+.modal-login.clashRC .category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+.modal-login.clashRC .category p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.modal-login.clashRC .playNow i {
+    font-size: 22px;
+}
+
+.modal-login.clashRC .playNow:hover {
+    transform: scale(1.07);
 }
 
 @keyframes rotate {

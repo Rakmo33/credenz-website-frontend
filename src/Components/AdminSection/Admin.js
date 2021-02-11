@@ -3,14 +3,14 @@ import { Row, Container } from "react-bootstrap";
 import AdminEvent from "./event";
 import AdminUpdate from "./update";
 import classes from "./Admin.module.css";
-import Approve from './approve';
+import Approve from "./approve";
 import Nav from "../Navbar/Navbar";
 
 class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      approve:false,
+      approve: false,
       addupd: false,
       editupd: false,
     };
@@ -51,28 +51,28 @@ class Admin extends Component {
         addupd: false,
         editeve: false,
       });
-    }else if(type === "approve"){
+    } else if (type === "approve") {
       this.setState({
-        approve:<Approve/>,
-        addupd:false,
-        editupd:false
-      })
+        approve: <Approve />,
+        addupd: false,
+        editupd: false,
+      });
     }
   };
 
   render() {
     return (
       <>
-      <Nav/>
-      <Container style={{ marginTop: "10vh" }}>
-        <Row>
-          <div>
-            <h1>Admin Section</h1>
-          </div>
-        </Row>
+        <Nav />
+        <Container style={{ marginTop: "10vh" }}>
+          <Row>
+            <div>
+              <h1>Admin Section</h1>
+            </div>
+          </Row>
 
-        <Row>
-          {/*
+          <Row>
+            {/*
           <Col>
             <div>
               <button
@@ -97,21 +97,21 @@ class Admin extends Component {
               <div className={classes.formdiv}>{this.state.editeve}</div>
             </div>
           </Col>*/}
-        </Row>
-        <Row>
-        <button
-            type='submit'
-            className='btn btn-primary'
-            onClick={() => this.onSubmit("addUpdate")}>
-            Add Update
-          </button>
-          <button
-            type='submit'
-            className='btn btn-primary'
-            onClick={() => this.onSubmit("approve")}>
-            Approve
-          </button>
-          {/*
+          </Row>
+          <Row>
+            <button
+              type='submit'
+              className='btn btn-primary'
+              onClick={() => this.onSubmit("addUpdate")}>
+              Add Update
+            </button>
+            <button
+              type='submit'
+              className='btn btn-primary'
+              onClick={() => this.onSubmit("approve")}>
+              Approve
+            </button>
+            {/*
           <Col>
             <div>
               <button
@@ -134,15 +134,15 @@ class Admin extends Component {
               <div className={classes.formdiv}>{this.state.editupd}</div>
             </div>
           </Col>*/}
-        </Row>
-      </Container>
-      <Container >
-        <Row>
-        <div className={classes.formdiv}>{this.state.addupd}</div>
-        <div>{this.state.approve}</div>
-        </Row>
-      </Container>
-       </> 
+          </Row>
+        </Container>
+        <Container>
+          <Row>
+            <div className={classes.formdiv}>{this.state.addupd}</div>
+            <div>{this.state.approve}</div>
+          </Row>
+        </Container>
+      </>
     );
   }
 }

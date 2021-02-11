@@ -264,6 +264,7 @@ function Animation(props) {
             eventReg={eventReg}
             setEventReg={setEventReg}
             addToCart={props.addToCart}
+            callLoginModal={props.callLoginModal}
             teams={props.teams}
             onClick={closeModalHandler}
             checkIfRegistered={props.checkIfRegistered}></EventModal>

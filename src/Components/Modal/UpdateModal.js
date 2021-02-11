@@ -30,9 +30,20 @@ function Modal2({ show, handleClose }) {
         if (res[i].info === undefined) updates.push("undefined");
         else updates.push(res[i].info);
       }
+
+      // updates.push(
+      //   `To view the schedule for all the events,  <a href='//docs.google.com/spreadsheets/d/1BG5cq5WYoyE7xJb4_gSp62sB0XKpAvty9JhJ984s1lM/edit#gid=0' target="_blank" >Click Here!</a>`
+      // );
+
+      console.log(updates);
+
       setUpdateList(
         updates.map((x, index) => {
-          return <li key={index}>{x}</li>;
+          return (
+            <li key={index} dangerouslySetInnerHTML={{ __html: x }}>
+              {/* {x} */}
+            </li>
+          );
         })
       );
     });

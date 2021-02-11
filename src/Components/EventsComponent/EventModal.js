@@ -5,6 +5,8 @@ import jwt_decode from "jwt-decode";
 import jwt from "jwt-decode";
 import $ from "jquery";
 import "./eventmodal.css";
+import Modal1 from "../Modal/Modal";
+
 import Events from "./EventsComponent";
 
 function checkPICT(college) {
@@ -32,6 +34,11 @@ function EventModal(props) {
   let currentInfo = props.info;
   let currentTab = currentInfo.info1;
   let cls = `modalWrap ${props.cls}`;
+
+  const [showClashRC, setShowClashRC] = useState(false);
+  const handleCloseClashRC = () => setShowClashRC(false);
+  const handleShowClashRC = () => setShowClashRC(true);
+
   const [selectedQuiz, setSelectedQuiz] = useState([false, false, false]);
 
   const [tab, setTab] = useState(1);
@@ -51,50 +58,40 @@ function EventModal(props) {
     ? localStorage.getItem("Cart").split(",")
     : [];
 
+  // not logged in
+  if (!localStorage.getItem("user")) {
+    $(".memberPrice").css({ visibility: "hidden" });
+    $(".nonMemberPrice").css({ visibility: "hidden" });
+    $(".pict").css({ visibility: "hidden" });
+    $(".guestPrice").css({ visibility: "visible" });
+  }
+
   if (localStorage.getItem("user")) {
     const token = localStorage.getItem("user");
     const accessToken = JSON.parse(token).accessToken;
     var decoded = jwt_decode(token);
+    // console.log(decoded)
 
-    // console.log(decoded);
-
+    // pictian
     if (checkPICT(decoded.clgname) || decoded.ispict) {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "visible" });
-    } else if (decoded.ieee) {
-      $(".memberPrice").css({ visibility: "visible" });
-      $(".nonMemberPrice").css({ visibility: "hidden" });
-      $(".pict").css({ visibility: "hidden" });
-    } else {
-      $(".memberPrice").css({ visibility: "hidden" });
-      $(".nonMemberPrice").css({ visibility: "visible" });
-      $(".pict").css({ visibility: "hidden" });
+      $(".guestPrice").css({ visibility: "hidden" });
     }
-
-    /*
-    if ((decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) && decoded.ieee) {
+    //member
+    else if (decoded.ieee) {
       $(".memberPrice").css({ visibility: "visible" });
       $(".nonMemberPrice").css({ visibility: "hidden" });
       $(".pict").css({ visibility: "hidden" });
-    } else if (
-    
-      (decoded.clgname !== "PICT" || !(decoded.ispict!==undefined?decoded.pict:true) || !checkPICT(decoded.clgname)) &&
-      !decoded.ieee
-    ) {
-      console.log("else if")
+      $(".guestPrice").css({ visibility: "hidden" });
+    } //non-member
+    else {
       $(".memberPrice").css({ visibility: "hidden" });
       $(".nonMemberPrice").css({ visibility: "visible" });
       $(".pict").css({ visibility: "hidden" });
-    } else if (
-      decoded.clgname === "PICT" ||
-      checkPICT(decoded.clgname) ||
-      (decoded.ispict !== undefined ? decoded.pict : false)
-    ) {
-      $(".memberPrice").css({ visibility: "hidden" });
-      $(".nonMemberPrice").css({ visibility: "hidden" });
-      $(".pict").css({ visibility: "visible" });
-    }*/
+      $(".guestPrice").css({ visibility: "hidden" });
+    }
   }
 
   let decodedclgname = decoded ? decoded.clgname : "";
@@ -301,141 +298,156 @@ function EventModal(props) {
           dangerouslySetInnerHTML={{ __html: currentTabInfo }}
         />
       </div>
-
-      {currentInfo.title === "Quiz" ? (
-        <div className='quizCheckboxWrap'>
-          <div className='quizCheckboxes'>
-            <input
-              class='form-check-input'
-              type='checkbox'
-              value='general'
-              id='quiz1'
-              name='quiz1'
-              onChange={(e) => {
-                quizHandler(e, 1);
-              }}
-            />
-            <label class='form-check-label' for='quiz1'>
-              <strong>General quiz</strong>
-            </label>
+      <div className='cartplayBtns'>
+        {currentInfo.title === "Quiz" ? (
+          <div className='quizCheckboxWrap'>
+            <div className='quizCheckboxes'>
+              <input
+                class='form-check-input'
+                type='checkbox'
+                value='general'
+                id='quiz1'
+                name='quiz1'
+                onChange={(e) => {
+                  quizHandler(e, 1);
+                }}
+              />
+              <label class='form-check-label' for='quiz1'>
+                <strong>General quiz</strong>
+              </label>
+            </div>
+            <div className='quizCheckboxes'>
+              <input
+                onChange={(e) => {
+                  quizHandler(e, 2);
+                }}
+                class='form-check-input'
+                type='checkbox'
+                value='mela'
+                id='quiz2'
+                name='quiz2'
+              />
+              <label class='form-check-label' for='quiz2'>
+                <strong>MELA quiz</strong>
+              </label>
+            </div>
+            <div className='quizCheckboxes'>
+              <input
+                onChange={(e) => {
+                  quizHandler(e, 3);
+                }}
+                class='form-check-input'
+                type='checkbox'
+                value='biztech'
+                id='quiz3'
+                name='quiz3'
+              />
+              <label class='form-check-label' for='quiz3'>
+                <strong>BizTech quiz</strong>
+              </label>
+            </div>
           </div>
-          <div className='quizCheckboxes'>
-            <input
-              onChange={(e) => {
-                quizHandler(e, 2);
-              }}
-              class='form-check-input'
-              type='checkbox'
-              value='mela'
-              id='quiz2'
-              name='quiz2'
-            />
-            <label class='form-check-label' for='quiz2'>
-              <strong>MELA quiz</strong>
-            </label>
-          </div>
-          <div className='quizCheckboxes'>
-            <input
-              onChange={(e) => {
-                quizHandler(e, 3);
-              }}
-              class='form-check-input'
-              type='checkbox'
-              value='biztech'
-              id='quiz3'
-              name='quiz3'
-            />
-            <label class='form-check-label' for='quiz3'>
-              <strong>BizTech quiz</strong>
-            </label>
-          </div>
-        </div>
-      ) : (
-        <div></div>
-      )}
+        ) : (
+          <div></div>
+        )}
 
-      {
-        /*<button
-        className='regNowBtn'
-        onClick={() => addToCart(currentInfo.title, props.cart, props.setCart)}>
-        <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-        Add to Cart
-      </button>*/
-        //alert(currentInfo.title)
-      }
-
-      {!props.teams(currentInfo.title) &&
-      currentInfo.title !== "Network Treasure Hunt" ? (
+        {!props.teams(currentInfo.title) &&
+        currentInfo.title !== "Network Treasure Hunt" ? (
+          ((checkPICT(decodedclgname) || decodedispict) &&
+            !(
+              cartArray.includes(currentInfo.title) ||
+              props.checkIfRegistered(currentInfo.event_username)
+            )) ||
+          (!(checkPICT(decodedclgname) || decodedispict) &&
+            !cartArray.includes(currentInfo.title)) ? (
+            <button
+              className='regNowBtn'
+              onClick={() =>
+                callAddToCart(
+                  currentInfo.title,
+                  props.cart,
+                  props.setCart,
+                  props.eventReg,
+                  props.setEventReg,
+                  selectedQuiz
+                )
+              }>
+              <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+              Add to Cart
+            </button>
+          ) : (
+            <button
+              className='regNowBtn'
+              disabled
+              onClick={() => {
+                return;
+              }}>
+              <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
+              {(checkPICT(decodedclgname) || decodedispict) &&
+              props.checkIfRegistered(currentInfo.event_username)
+                ? "Registered!"
+                : "Event added to cart!"}
+            </button>
+          )
+        ) : currentInfo.title === "Network Treasure Hunt" ? (
+          /*<Link
+          style={{ textAlign: "center" }}
+          to='https://nth.credenz.in/'>*/
+          <button className='regNowBtn'>
+            <a style={{ color: "white" }} href='https://nth.credenz.in'>
+              Head over to the NTH website to register
+            </a>
+          </button>
+        ) : /*</Link>*/
         ((checkPICT(decodedclgname) || decodedispict) &&
-          !(
-            cartArray.includes(currentInfo.title) ||
-            props.checkIfRegistered(currentInfo.event_username)
-          )) ||
-        (!(checkPICT(decodedclgname) || decodedispict) &&
-          !cartArray.includes(currentInfo.title)) ? (
+            !(
+              cartArray.includes(currentInfo.title) ||
+              props.checkIfRegistered(currentInfo.event_username)
+            )) ||
+          (!(checkPICT(decodedclgname) || decodedispict) &&
+            !cartArray.includes(currentInfo.title)) ? (
+          // <Link
+          //   style={{ textAlign: "center" }}
+          //   to={`/newreg/${currentInfo.title}`}>
           <button
             className='regNowBtn'
-            onClick={() =>
-              callAddToCart(
-                currentInfo.title,
-                props.cart,
-                props.setCart,
-                props.eventReg,
-                props.setEventReg,
-                selectedQuiz
-              )
-            }>
+            onClick={() => {
+              if (!localStorage.getItem("user")) {
+                props.callLoginModal();
+              } else {
+                window.location.href = `/newreg/${currentInfo.title}`;
+              }
+            }}>
             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
             Add to Cart
-          </button>
+          </button> // </Link>
         ) : (
-          <button
-            className='regNowBtn'
-            disabled
-            onClick={() => {
-              return;
-            }}>
+          <button disabled className='regNowBtn'>
             <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
             {(checkPICT(decodedclgname) || decodedispict) &&
             props.checkIfRegistered(currentInfo.event_username)
               ? "Registered!"
               : "Event added to cart!"}
           </button>
-        )
-      ) : currentInfo.title === "Network Treasure Hunt" ? (
-        /*<Link
-          style={{ textAlign: "center" }}
-          to='https://nth.credenz.in/'>*/
-        <button className='regNowBtn'>
-          <a style={{ color: "white" }} href='https://nth.credenz.in'>
-            Head over to the NTH website to register
-          </a>
+        )}
+
+        <button
+          target='_blank'
+          rel='noopener noreferrer'
+          onClick={() => {
+            handleShowClashRC();
+          }}
+          // href='//clashjr.credenz.in/'
+          className='regNowBtn playNow'>
+          <i class='fa fa-gamepad'></i>
+          Play Now!
         </button>
-      ) : /*</Link>*/
-      ((checkPICT(decodedclgname) || decodedispict) &&
-          !(
-            cartArray.includes(currentInfo.title) ||
-            props.checkIfRegistered(currentInfo.event_username)
-          )) ||
-        (!(checkPICT(decodedclgname) || decodedispict) &&
-          !cartArray.includes(currentInfo.title)) ? (
-        <Link
-          style={{ textAlign: "center" }}
-          to={`/newreg/${currentInfo.title}`}>
-          <button className='regNowBtn'>
-            <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-            Add to Cart
-          </button>
-        </Link>
-      ) : (
-        <button disabled className='regNowBtn'>
-          <i class='fa fa-lg fa-shopping-cart' title='Cart' value='5'></i>
-          {(checkPICT(decodedclgname) || decodedispict) &&
-          props.checkIfRegistered(currentInfo.event_username)
-            ? "Registered!"
-            : "Event added to cart!"}
-        </button>
-      )}
+      </div>
+      <Modal1
+        show={showClashRC}
+        handleClose={handleCloseClashRC}
+        type={"clashRC"}
+      />
     </div>
   );
 }
