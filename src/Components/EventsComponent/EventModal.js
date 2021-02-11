@@ -298,59 +298,59 @@ function EventModal(props) {
           dangerouslySetInnerHTML={{ __html: currentTabInfo }}
         />
       </div>
-      <div className='cartplayBtns'>
-        {currentInfo.title === "Quiz" ? (
-          <div className='quizCheckboxWrap'>
-            <div className='quizCheckboxes'>
-              <input
-                class='form-check-input'
-                type='checkbox'
-                value='general'
-                id='quiz1'
-                name='quiz1'
-                onChange={(e) => {
-                  quizHandler(e, 1);
-                }}
-              />
-              <label class='form-check-label' for='quiz1'>
-                <strong>General quiz</strong>
-              </label>
-            </div>
-            <div className='quizCheckboxes'>
-              <input
-                onChange={(e) => {
-                  quizHandler(e, 2);
-                }}
-                class='form-check-input'
-                type='checkbox'
-                value='mela'
-                id='quiz2'
-                name='quiz2'
-              />
-              <label class='form-check-label' for='quiz2'>
-                <strong>MELA quiz</strong>
-              </label>
-            </div>
-            <div className='quizCheckboxes'>
-              <input
-                onChange={(e) => {
-                  quizHandler(e, 3);
-                }}
-                class='form-check-input'
-                type='checkbox'
-                value='biztech'
-                id='quiz3'
-                name='quiz3'
-              />
-              <label class='form-check-label' for='quiz3'>
-                <strong>BizTech quiz</strong>
-              </label>
-            </div>
+      {currentInfo.title === "Quiz" ? (
+        <div className='quizCheckboxWrap'>
+          <div className='quizCheckboxes'>
+            <input
+              class='form-check-input'
+              type='checkbox'
+              value='general'
+              id='quiz1'
+              name='quiz1'
+              onChange={(e) => {
+                quizHandler(e, 1);
+              }}
+            />
+            <label class='form-check-label' for='quiz1'>
+              <strong>General quiz</strong>
+            </label>
           </div>
-        ) : (
-          <div></div>
-        )}
+          <div className='quizCheckboxes'>
+            <input
+              onChange={(e) => {
+                quizHandler(e, 2);
+              }}
+              class='form-check-input'
+              type='checkbox'
+              value='mela'
+              id='quiz2'
+              name='quiz2'
+            />
+            <label class='form-check-label' for='quiz2'>
+              <strong>MELA quiz</strong>
+            </label>
+          </div>
+          <div className='quizCheckboxes'>
+            <input
+              onChange={(e) => {
+                quizHandler(e, 3);
+              }}
+              class='form-check-input'
+              type='checkbox'
+              value='biztech'
+              id='quiz3'
+              name='quiz3'
+            />
+            <label class='form-check-label' for='quiz3'>
+              <strong>BizTech quiz</strong>
+            </label>
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
 
+      <div className='cartplayBtns'>
         {!props.teams(currentInfo.title) &&
         currentInfo.title !== "Network Treasure Hunt" ? (
           ((checkPICT(decodedclgname) || decodedispict) &&
@@ -431,7 +431,7 @@ function EventModal(props) {
           </button>
         )}
         {currentInfo.title === "Paper Presentation" ||
-        currentInfo.title === "Web Weaver" ||
+        currentInfo.title === "Webweaver" ||
         currentInfo.title === "Datawiz" ||
         currentInfo.title === "Pixelate" ||
         currentInfo.title === "Network Treasure Hunt" ||
@@ -465,7 +465,13 @@ function EventModal(props) {
       <Modal1
         show={showClashRC}
         handleClose={handleCloseClashRC}
-        type={"clashRC"}
+        type={
+          currentInfo.title === "Clash"
+            ? "clash"
+            : currentInfo.title === "Reverse Coding"
+            ? "rc"
+            : null
+        }
       />
     </div>
   );
