@@ -12,7 +12,7 @@ function ModalTitle({ type, event }) {
         <div>Login</div>
       </div>
     );
-  else if (type === "clashRC")
+  else if (type === "clash" || type === "rc")
     return (
       <div className='clashRC-title'>
         <div>Choose Your Category</div>
@@ -165,7 +165,7 @@ function ModalBody({ handleClose, type, event, event_info }) {
         </div>
       </div>
     );
-  } else if ((type = "clashRC")) {
+  } else if (type === "clash" || type === "rc") {
     return (
       <div id='myModal'>
         <div className='modal-login clashRC'>
@@ -173,7 +173,13 @@ function ModalBody({ handleClose, type, event, event_info }) {
             <a
               target='_blank'
               rel='noopener noreferrer'
-              href='//clashjr.credenz.in/'
+              href={
+                type === "clash"
+                  ? "//clashjr.credenz.in/"
+                  : type === "rc"
+                  ? "//rcjunior.credenz.in/"
+                  : "//credenz.in"
+              }
               className='regNowBtn playNow'>
               {/* <i class='fa fa-gamepad'></i> */}
               Junior
@@ -184,7 +190,13 @@ function ModalBody({ handleClose, type, event, event_info }) {
             <a
               target='_blank'
               rel='noopener noreferrer'
-              href='//clashsr.credenz.in/'
+              href={
+                type === "clash"
+                  ? "//clashsr.credenz.in/"
+                  : type === "rc"
+                  ? "//rcsenior.credenz.in/"
+                  : "//credenz.in"
+              }
               className='regNowBtn playNow'>
               {/* <i class='fa fa-gamepad'></i> */}
               Senior
