@@ -456,7 +456,7 @@ function EventModal(props) {
               }
             }}
             // href='//clashjr.credenz.in/'
-            className='regNowBtn playNow'>
+            className='regNowBtn playNow bounce'>
             <i class='fa fa-gamepad'></i>
             Play Now!
           </button>

@@ -16,8 +16,9 @@ $tabsBG: #ffffff27;
 $tabsText: #ffffff;
 $cart: radial-gradient(circle, rgb(236, 64, 12) 50%, rgb(255, 72, 0) 80%);
 $cart: linear-gradient(to left, #242525, #4d4b4b);
-$cart: linear-gradient(to right, #02243b, #065572);
+$cart: linear-gradient(to right, #02243b, #02243b);
 $play: linear-gradient(to left, #02243b, #065572);
+$play2: linear-gradient(to right, #02243b, #065572);
 $cartHover: #ce0833;
 .evePage {
     .showModal1 {
@@ -105,11 +106,57 @@ $cartHover: #ce0833;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
             border-bottom-left-radius: 5px;
-            background: $play;
+            // background: $play;
+            background: #02243b;
+            transition: all 0.3s ease-in;
             padding-right: 15px;
+            animation: bounce 4s ease infinite;
             cursor: pointer;
             &:hover {
+                transition: all 0.3s ease-in;
                 transform: scale(1.07);
+                animation: none;
+                background: #053f55;
+                box-shadow: 0 0 5px 1px #fff;
+            }
+        }
+        @keyframes bounce {
+            5% {
+                background: #02243b;
+            }
+            14% {
+                background: #053f55;
+            }
+            18% {
+                background: #02243b;
+                box-shadow: 0 0 5px 1px #fff;
+            }
+            22% {
+                background: #065572;
+            }
+            28% {
+                background: #02243b;
+            }
+            85% {
+                transform: translateY(0%);
+            }
+            90% {
+                transform: translateY(-11%);
+            }
+            92% {
+                transform: translateY(0%);
+            }
+            95% {
+                transform: translateY(-7%);
+            }
+            97% {
+                transform: translateY(0%);
+            }
+            99% {
+                transform: translateY(-3%);
+            }
+            100% {
+                transform: translateY(0);
             }
         }
         hr {
