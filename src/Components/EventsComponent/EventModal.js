@@ -430,18 +430,37 @@ function EventModal(props) {
               : "Event added to cart!"}
           </button>
         )}
-
-        <button
-          target='_blank'
-          rel='noopener noreferrer'
-          onClick={() => {
-            handleShowClashRC();
-          }}
-          // href='//clashjr.credenz.in/'
-          className='regNowBtn playNow'>
-          <i class='fa fa-gamepad'></i>
-          Play Now!
-        </button>
+        {currentInfo.title === "Paper Presentation" ||
+        currentInfo.title === "Web Weaver" ||
+        currentInfo.title === "Datawiz" ||
+        currentInfo.title === "Pixelate" ||
+        currentInfo.title === "Network Treasure Hunt" ||
+        currentInfo.title === "Bplan" ? null : (
+          <button
+            target='_blank'
+            rel='noopener noreferrer'
+            onClick={() => {
+              if (
+                currentInfo.title === "Clash" ||
+                currentInfo.title === "Reverse Coding"
+              ) {
+                handleShowClashRC();
+              } else if (currentInfo.title === "Enigma") {
+                window.open("http://enigma.credenz.in/", "_blank");
+              } else if (currentInfo.title === "Quiz") {
+                window.open("http://quiz.credenz.in/", "_blank");
+              } else if (currentInfo.title === "Cretronix") {
+                window.open("http://cretronix.credenz.in/", "_blank");
+              } else if (currentInfo.title === "Wallstreet") {
+                window.open("http://wallstreet.credenz.in/", "_blank");
+              }
+            }}
+            // href='//clashjr.credenz.in/'
+            className='regNowBtn playNow'>
+            <i class='fa fa-gamepad'></i>
+            Play Now!
+          </button>
+        )}
       </div>
       <Modal1
         show={showClashRC}
