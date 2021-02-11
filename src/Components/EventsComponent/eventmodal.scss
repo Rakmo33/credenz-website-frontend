@@ -18,6 +18,7 @@ $cart: radial-gradient(circle, rgb(236, 64, 12) 50%, rgb(255, 72, 0) 80%);
 $cart: linear-gradient(to left, #242525, #4d4b4b);
 $cart: linear-gradient(to right, #02243b, #065572);
 $play: linear-gradient(to left, #02243b, #065572);
+$play2: linear-gradient(to right, #02243b, #065572);
 $cartHover: #ce0833;
 .evePage {
     .showModal1 {
@@ -107,9 +108,51 @@ $cartHover: #ce0833;
             border-bottom-left-radius: 5px;
             background: $play;
             padding-right: 15px;
+            animation: bounce 4s ease infinite;
             cursor: pointer;
             &:hover {
                 transform: scale(1.07);
+                animation: none;
+                filter: brightness(1.35);
+            }
+        }
+        @keyframes bgChange {
+            from {
+                background: linear-gradient(to left, #02243b, #065572);
+            }
+            to {
+                background: linear-gradient(to left, #065572, #02243b);
+            }
+        }
+        @keyframes bounce {
+            0% {
+                background: $play;
+            }
+            50% {
+                background: $play2;
+            }
+            85% {
+                transform: translateY(0%);
+            }
+            90% {
+                transform: translateY(-11%);
+                filter: brightness(1.25);
+            }
+            92% {
+                transform: translateY(0%);
+            }
+            95% {
+                transform: translateY(-7%);
+                filter: brightness(0.97);
+            }
+            97% {
+                transform: translateY(0%);
+            }
+            99% {
+                transform: translateY(-3%);
+            }
+            100% {
+                transform: translateY(0);
             }
         }
         hr {

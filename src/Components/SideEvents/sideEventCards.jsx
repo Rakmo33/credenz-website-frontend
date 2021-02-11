@@ -11,7 +11,7 @@ const SideEventCards = () => {
         <EventCard
           logo={web1}
           name='Space Cruiser'
-          hostedURL={null}
+          hostedURL={"https://spaceship.credenz.in/"}
           info={
             "There is an outbreak of a space ship combat. Enter into your almighty spaceship and destroy the attackers, to be the protector of the universe.The whole hopes of are on you cheif!!"
           }
@@ -20,7 +20,7 @@ const SideEventCards = () => {
         <EventCard
           logo={web2}
           name='Castle Runner'
-          hostedURL={"http://mario.credenz.in/"}
+          hostedURL={"https://castlerunner.credenz.in/"}
           info={
             "Race against time and clear the exciting levels by reaching the castle. Collect coins and good mushrooms, beware of the big red enemy mushrooms. To win the game, clear all the levels!"
           }

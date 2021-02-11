@@ -18,7 +18,11 @@ const EventCard = ({ logo, name, info, hostedURL }) => {
           <div className='card-body'>
             <h5 className='card-title'>{name}</h5>
             <p className='card-text'>{info}</p>
-            <a href={hostedURL} className=''>
+            <a
+              href={hostedURL}
+              target='_blank'
+              rel='noopener noreferrer'
+              className=''>
               {/* <button className="kave-btn eventbtn">
                   <span className="kave-line"></span>
                   Play
