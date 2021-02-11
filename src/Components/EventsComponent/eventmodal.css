@@ -80,8 +80,8 @@
 }
 
 .evePage .modalWrap .regNowBtn {
-  background: -webkit-gradient(linear, left top, right top, from(#02243b), to(#065572));
-  background: linear-gradient(to right, #02243b, #065572);
+  background: -webkit-gradient(linear, left top, right top, from(#02243b), to(#02243b));
+  background: linear-gradient(to right, #02243b, #02243b);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -110,8 +110,9 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  background: -webkit-gradient(linear, right top, left top, from(#02243b), to(#065572));
-  background: linear-gradient(to left, #02243b, #065572);
+  background: #02243b;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
   padding-right: 15px;
   -webkit-animation: bounce 4s ease infinite;
           animation: bounce 4s ease infinite;
@@ -123,44 +124,34 @@
 }
 
 .evePage .modalWrap .playNow:hover {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
   -webkit-transform: scale(1.07);
           transform: scale(1.07);
   -webkit-animation: none;
           animation: none;
-  -webkit-filter: brightness(1.35);
-          filter: brightness(1.35);
-}
-
-@-webkit-keyframes bgChange {
-  from {
-    background: -webkit-gradient(linear, right top, left top, from(#02243b), to(#065572));
-    background: linear-gradient(to left, #02243b, #065572);
-  }
-  to {
-    background: -webkit-gradient(linear, right top, left top, from(#065572), to(#02243b));
-    background: linear-gradient(to left, #065572, #02243b);
-  }
-}
-
-@keyframes bgChange {
-  from {
-    background: -webkit-gradient(linear, right top, left top, from(#02243b), to(#065572));
-    background: linear-gradient(to left, #02243b, #065572);
-  }
-  to {
-    background: -webkit-gradient(linear, right top, left top, from(#065572), to(#02243b));
-    background: linear-gradient(to left, #065572, #02243b);
-  }
+  background: #053f55;
+  -webkit-box-shadow: 0 0 5px 1px #fff;
+          box-shadow: 0 0 5px 1px #fff;
 }
 
 @-webkit-keyframes bounce {
-  0% {
-    background: -webkit-gradient(linear, right top, left top, from(#02243b), to(#065572));
-    background: linear-gradient(to left, #02243b, #065572);
+  5% {
+    background: #02243b;
   }
-  50% {
-    background: -webkit-gradient(linear, left top, right top, from(#02243b), to(#065572));
-    background: linear-gradient(to right, #02243b, #065572);
+  14% {
+    background: #053f55;
+  }
+  18% {
+    background: #02243b;
+    -webkit-box-shadow: 0 0 5px 1px #fff;
+            box-shadow: 0 0 5px 1px #fff;
+  }
+  22% {
+    background: #065572;
+  }
+  28% {
+    background: #02243b;
   }
   85% {
     -webkit-transform: translateY(0%);
@@ -169,8 +160,6 @@
   90% {
     -webkit-transform: translateY(-11%);
             transform: translateY(-11%);
-    -webkit-filter: brightness(1.25);
-            filter: brightness(1.25);
   }
   92% {
     -webkit-transform: translateY(0%);
@@ -179,8 +168,6 @@
   95% {
     -webkit-transform: translateY(-7%);
             transform: translateY(-7%);
-    -webkit-filter: brightness(0.97);
-            filter: brightness(0.97);
   }
   97% {
     -webkit-transform: translateY(0%);
@@ -197,13 +184,22 @@
 }
 
 @keyframes bounce {
-  0% {
-    background: -webkit-gradient(linear, right top, left top, from(#02243b), to(#065572));
-    background: linear-gradient(to left, #02243b, #065572);
+  5% {
+    background: #02243b;
   }
-  50% {
-    background: -webkit-gradient(linear, left top, right top, from(#02243b), to(#065572));
-    background: linear-gradient(to right, #02243b, #065572);
+  14% {
+    background: #053f55;
+  }
+  18% {
+    background: #02243b;
+    -webkit-box-shadow: 0 0 5px 1px #fff;
+            box-shadow: 0 0 5px 1px #fff;
+  }
+  22% {
+    background: #065572;
+  }
+  28% {
+    background: #02243b;
   }
   85% {
     -webkit-transform: translateY(0%);
@@ -212,8 +208,6 @@
   90% {
     -webkit-transform: translateY(-11%);
             transform: translateY(-11%);
-    -webkit-filter: brightness(1.25);
-            filter: brightness(1.25);
   }
   92% {
     -webkit-transform: translateY(0%);
@@ -222,8 +216,6 @@
   95% {
     -webkit-transform: translateY(-7%);
             transform: translateY(-7%);
-    -webkit-filter: brightness(0.97);
-            filter: brightness(0.97);
   }
   97% {
     -webkit-transform: translateY(0%);
