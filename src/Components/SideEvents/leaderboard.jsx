@@ -21,35 +21,31 @@ const Leaderboard = () => {
 
     */
 
-    useEffect(() => {
-      
-      
-        axios({
-          method: "get",
-          url: `http://localhost:5000/leaderboard`,
-        })
-          .then((response) => {
-            /*//console.log(
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: `http://localhost:5000/leaderboard`,
+    })
+      .then((response) => {
+        /*//console.log(
               response.data.map((obj) => {
                 return obj.event_username;
               })
             );*/
-            //users= response.data;
-            setScore(response.data)
-          })
-          .catch((error) => {
-            //console.log(error);
-          });
+        //users= response.data;
+        setScore(response.data);
+      })
+      .catch((error) => {
+        //console.log(error);
+      });
+  }, []);
 
-      
-    }, [])
-
-    users = Score;
-    let rank = [];
-    var i;
-    for(i=0; i<users.length; i++) {
-      rank[i] = i+1;
-    }
+  users = Score;
+  let rank = [];
+  var i;
+  for (i = 0; i < users.length; i++) {
+    rank[i] = i + 1;
+  }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -95,44 +91,46 @@ const Leaderboard = () => {
     }
   }
 
-  return (
-    <div className='leaderBoardTab' style={{ minHeight: "100vh" }}>
-      <Social />
-      <div
-        className='row'
-        style={{
-          justifyContent: "center",
-          marginBottom: "20px",
-          marginTop: "20px",
-        }}>
-        <div className='col-xl-9 col-md-9  mt-4'>
-          <div className='row leaderboard-head'>
-            <div className='search-box'>
-              <input
-                type='text'
-                id='search'
-                placeholder='Search..'
-                onChange={handleSearch}
-                value={input}
-                autoComplete='off'></input>
-              <div className='dropdown'>
-                <div className='default' onClick={handleClick}>
-                  {default_op}
-                </div>
-                <ul className={classes}>
-                  <li onClick={handleSelect}>Username</li>
-                  <li onClick={handleSelect}>Institution</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className='row body'>
-            <Table users={users} rank={rank}/>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return null;
+
+  // return (
+  //   <div className='leaderBoardTab' style={{ minHeight: "100vh" }}>
+  //     <Social />
+  //     <div
+  //       className='row'
+  //       style={{
+  //         justifyContent: "center",
+  //         marginBottom: "20px",
+  //         marginTop: "20px",
+  //       }}>
+  //       <div className='col-xl-9 col-md-9  mt-4'>
+  //         <div className='row leaderboard-head'>
+  //           <div className='search-box'>
+  //             <input
+  //               type='text'
+  //               id='search'
+  //               placeholder='Search..'
+  //               onChange={handleSearch}
+  //               value={input}
+  //               autoComplete='off'></input>
+  //             <div className='dropdown'>
+  //               <div className='default' onClick={handleClick}>
+  //                 {default_op}
+  //               </div>
+  //               <ul className={classes}>
+  //                 <li onClick={handleSelect}>Username</li>
+  //                 <li onClick={handleSelect}>Institution</li>
+  //               </ul>
+  //             </div>
+  //           </div>
+  //         </div>
+  //         <div className='row body'>
+  //           <Table users={users} rank={rank}/>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Leaderboard;

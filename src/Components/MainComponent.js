@@ -64,7 +64,8 @@ function Main() {
   };
 
   const LeaderBoardPage = () => {
-    return <LeaderBoard />;
+    return null;
+    // return <LeaderBoard />;
   };
 
   const SignUpPage = () => {
@@ -135,7 +136,7 @@ function Main() {
         <Route path='/contact' component={ContactPage} />
         <Route path='/about' component={AboutPage} />
         <Route path='/sideEvents' component={SideEvents} />
-        <Route path='/leaderboard' component={LeaderBoardPage} />
+        {/* <Route path='/leaderboard' component={HomePage} /> */}
         <Route path='/signup' component={SignUpPage} />
         {/* <Route path='/edit' component={EditProfilePage} /> */}
         <Route path='/team' component={TeamPage} />

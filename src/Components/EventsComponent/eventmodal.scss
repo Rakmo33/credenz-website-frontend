@@ -193,7 +193,7 @@ $cartHover: #ce0833;
             }
             ul.tabs {
                 display: grid;
-                grid-template-columns: repeat( auto-fit, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
                 align-items: center;
                 justify-content: center;
                 width: 100%;
@@ -218,9 +218,6 @@ $cartHover: #ce0833;
                         p {
                             margin: 0;
                             color: $tabsText;
-                        }
-                        &:hover {
-                            // transform: scale(1.1);
                         }
                     }
                 }
