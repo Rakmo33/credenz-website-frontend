@@ -430,7 +430,8 @@ function EventModal(props) {
               : "Event added to cart!"}
           </button>
         )}
-        {currentInfo.title === "Paper Presentation" ||
+        {/* {
+        currentInfo.title === "Paper Presentation" ||
         currentInfo.title === "Webweaver" ||
         currentInfo.title === "Datawiz" ||
         currentInfo.title === "Pixelate" ||
@@ -460,7 +461,7 @@ function EventModal(props) {
             <i class='fa fa-gamepad'></i>
             Play Now!
           </button>
-        )}
+        )} */}
       </div>
       <Modal1
         show={showClashRC}

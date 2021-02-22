@@ -5,9 +5,27 @@ import web1 from "../../assests/img/webweaver1.jpeg";
 import web2 from "../../assests/img/web3.jpeg";
 const SideEventCards = () => {
   return (
-    <div className='sideEventTab' style={{ minHeight: "100vh" }}>
+    <div
+      className='sideEventTab'
+      style={{
+        minHeight: "93vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        margin: "0 auto",
+      }}>
       {/* <h3 className="event-title title-1">Web Weaver</h3> */}
-      <div className='row content' style={{ marginTop: "40px" }}>
+      <div
+        className='row content'
+        style={{
+          marginTop: "40px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: "0 auto",
+        }}>
         <EventCard
           logo={web1}
           name='Space Cruiser'
